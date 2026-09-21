@@ -28,6 +28,7 @@ The first objective is to validate the evidence/reconstruction contract against 
 Read the live pilot notebook before doing more reconstruction:
 
 - `docs/E0_A_STUD_IN_SCARLET_EVIDENCE_CONTRACT_PILOT.md`
+- `docs/E0_A_STUD_IN_SCARLET_PRIMARY_REVIEW_PACKET.md`
 
 Completed:
 
@@ -48,6 +49,8 @@ New E0 model findings already recorded in the pilot notebook:
 - rules-derived compatible registration witnesses must never be imported as historical witness evidence;
 - setup-time decisions such as Drunk shown identity need a committed-prefix boundary that is not limited to Night event sequence numbers;
 - one short source fragment may support multiple distinct semantics: player action, Storyteller commitment, and information delivery.
+
+The next action is now bounded: perform one direct primary-video pass using `docs/E0_A_STUD_IN_SCARLET_PRIMARY_REVIEW_PACKET.md`. Do not spend another round expanding secondary-source search unless the primary review exposes a specific missing locator.
 
 Still required before E0 can admit a decision slice:
 
