@@ -1,0 +1,342 @@
+# E0 Pilot — A Stud In Scarlet Evidence Contract Reconstruction
+
+> Status: **IN PROGRESS**
+>
+> Purpose: validate the Evidence Lab workflow against one real expert/trusted Storyteller primary source before freezing the persisted schema or implementation stack.
+>
+> This document is a pilot notebook, not the final schema.
+
+## 1. Primary source record
+
+Pilot-local source key (not a frozen ID scheme):
+
+`SRC-E0-ASIS-YT`
+
+| Field | Current value | Derivation | Verification | Provenance |
+|---|---|---|---|---|
+| platform | YouTube | OBSERVED | UNVERIFIED | primary source metadata |
+| platform source ID | `qZBvRfM3Xow` | OBSERVED | UNVERIFIED | primary source metadata |
+| title | `A Stud In Scarlet | NRB Play Blood On The Clocktower` | OBSERVED | UNVERIFIED | primary source metadata |
+| channel / publisher | No Rolls Barred | OBSERVED | UNVERIFIED | primary source metadata |
+| publication date | 2021-02-05 | OBSERVED | UNVERIFIED | primary source metadata |
+| URL | `https://www.youtube.com/watch?v=qZBvRfM3Xow` | OBSERVED | UNVERIFIED | primary source locator |
+| Storyteller | Ben Burns | OBSERVED | UNVERIFIED | primary video description identifies “Storyteller Ben” |
+| co-Storyteller / assistant | UNKNOWN | UNKNOWN | UNVERIFIED | secondary sources name Adam; primary in-video verification still required |
+| script | UNKNOWN | UNKNOWN | UNVERIFIED | Trouble Brewing is a strong secondary lead but is not yet promoted to a primary-backed assertion |
+| inclusion reason | TARGETED_RESEARCH_CASE | NOT_APPLICABLE | UNVERIFIED | selected to stress-test Drunk / Fortune Teller / Recluse / Chef evidence semantics |
+
+### Storyteller qualification evidence
+
+Qualification is separate from game reconstruction.
+
+Official The Pandemonium Institute material documents Ben Burns as a long-running Blood on the Clocktower content creator / representative with years of involvement in the game:
+
+- `https://bloodontheclocktower.com/blogs/news/ben-burns-appreciation-post`
+- `https://bloodontheclocktower.com/blogs/news/an-update-on-community-management-and-content-creation-at-tpi`
+
+Current pilot treatment:
+
+- qualification candidate: `VERIFIED_EXPERT_OR_TRUSTED`;
+- verification: `UNVERIFIED`;
+- do not derive GOLD until a human verification pass confirms both qualification evidence and the individual decision slice.
+
+## 2. Screening record
+
+This is a reconstruction-value screen, not a quality score.
+
+| Screening dimension | Current assessment | Status / note |
+|---|---|---|
+| primary source exists | YES | official No Rolls Barred YouTube upload |
+| public source | YES | public YouTube source |
+| game identity recoverable | YES | source title and episode identity are stable |
+| Storyteller identity recoverable | YES | Ben is named in primary metadata |
+| setup / seating recoverability | LIKELY | detailed secondary index exists; primary in-video verification pending |
+| Night 1 recoverability | LIKELY | detailed secondary index and prior D5F notes agree; timestamps still required |
+| grimoire / Storyteller view visibility | UNKNOWN | must be confirmed from the primary playback |
+| player action visibility | LIKELY | Fortune Teller target pair is indexed secondarily; primary playback required |
+| Storyteller output visibility | LIKELY | Night-1 outputs are indexed secondarily; primary playback required |
+| choice-specific rationale | UNKNOWN | do not assume general Ben commentary is rationale for a particular choice |
+| explicit rejected alternatives | UNKNOWN | only record if the primary source actually contains them |
+| editing gaps | PRESENT / EXPECTED | produced YouTube episode; exact continuity around setup decisions must be checked |
+| reconstructable phase selected for E0 | Night 1 + required setup commitments | intentionally bounded first pass |
+
+Selection decision: **keep for E0 reconstruction**.
+
+## 3. Evidence fragments currently supported by the primary source
+
+These are the only current primary-backed fragments collected in this pass. They come from primary source metadata/description rather than the in-video timeline, so timestamps are not applicable.
+
+### FRAG-ASIS-META-001
+
+- source: `SRC-E0-ASIS-YT`
+- locator: YouTube title / channel metadata
+- timestamp: NOT_APPLICABLE
+- fact: source title and publisher identify the episode as the No Rolls Barred Blood on the Clocktower video “A Stud In Scarlet”
+- derivation: OBSERVED
+- verification: UNVERIFIED
+
+### FRAG-ASIS-META-002
+
+- source: `SRC-E0-ASIS-YT`
+- locator: YouTube description
+- timestamp: NOT_APPLICABLE
+- fact: Ben is identified as the Storyteller
+- derivation: OBSERVED
+- verification: UNVERIFIED
+
+## 4. Locator-only secondary leads
+
+The following information is **not corpus evidence** and must not be imported as OBSERVED / RECONSTRUCTED facts.
+
+It exists only to tell a reviewer what to look for in the primary video.
+
+Secondary lead sources include the public No Rolls Barred fan index and the prior CampBoardGameHost D5F research branch.
+
+Candidate setup / Night-1 picture:
+
+- Luke — Imp;
+- Oli — Ravenkeeper;
+- Blair — Fortune Teller;
+- Tom — Monk;
+- Elliott — Recluse;
+- Laurie — Scarlet Woman;
+- Isaac — Undertaker;
+- Jon — Chef;
+- Sullivan — Drunk, shown Empath;
+- candidate Fortune Teller red herring: Sullivan;
+- candidate Night-1 Chef information: `1`;
+- candidate Night-1 Drunk-as-Empath information: `0`;
+- candidate Night-1 Fortune Teller player choice: Tom + Elliott;
+- candidate Night-1 Fortune Teller delivered result: YES.
+
+All items above remain locator leads until primary fragments with timestamps are extracted.
+
+The old D5F phrase “Fortune Teller YES via Recluse-as-Demon” is specifically **not** imported as historical fact.
+
+## 5. Primary in-video extraction queue
+
+The next primary playback pass must capture short timestamped fragments around the following boundaries.
+
+### Q1 — setup commitments before Night 1
+
+Need primary evidence for:
+
+- actual setup / seating;
+- Sullivan actually being the Drunk;
+- the Townsfolk identity shown to Sullivan;
+- Fortune Teller red herring if visible/announced;
+- Demon bluffs if visible and material to the committed prefix.
+
+Important:
+
+- “Drunk shown Empath” is a Storyteller-controlled setup commitment candidate.
+- Exact ordering among setup commitments may be unavailable in an edited video.
+- If only “committed before Night 1” can be established, preserve that weaker temporal fact rather than inventing a total order.
+
+### Q2 — Chef Night-1 delivery
+
+Need to capture:
+
+- timestamp before delivery;
+- timestamp/range of delivered number;
+- any visible/commented registration treatment;
+- any explicit rationale.
+
+Do not assume that a Storyteller-delivered number is automatically a discretionary Storyteller decision.
+
+Evidence Lab records the delivery. Whether the output had multiple legal alternatives is downstream rules knowledge unless the primary source itself establishes the choice.
+
+### Q3 — Drunk shown-Empath Night-1 information
+
+Need to capture:
+
+- alive-neighbour context at that moment;
+- the delivered number;
+- any explicit Storyteller commentary showing why that number was chosen;
+- whether the source makes clear that this is intentionally false/misleading information.
+
+The pilot must not infer a persistent “fake world” unless the historical source supports the concrete delivered information. Cross-night policy belongs to later analysis unless additional primary decisions are reconstructed.
+
+### Q4 — Fortune Teller player action and Storyteller output
+
+This boundary is especially important.
+
+Need separate fragments for:
+
+1. Blair commits the two selected players;
+2. after that player-controlled action is committed, the Storyteller output is determined/delivered;
+3. the delivered YES/NO result;
+4. any explicit registration statement;
+5. any explicit rationale or rejected alternative.
+
+The decision-time prefix for a Fortune Teller output must include the committed target pair but must not include the later delivered result.
+
+### Q5 — registration witness
+
+For the candidate Tom + Elliott -> YES interaction:
+
+- visible YES does not by itself authorize a durable `registration_witness = Recluse-as-Demon` assertion;
+- if Ben explicitly states or visibly records the registration decision, capture that timestamped fragment;
+- otherwise keep the actual registration witness UNKNOWN.
+
+Do not recover the witness by importing CampBoardGameHost legality logic.
+
+## 6. Provisional decision-slice candidates
+
+These are **candidates**, not admitted DecisionSlices.
+
+### CANDIDATE-1 — Drunk shown identity
+
+Potential observed choice:
+
+`shown_identity = Empath`
+
+Required before admission:
+
+- timestamped primary evidence that Sullivan is the Drunk and is shown/believes Empath;
+- setup-prefix reconstruction sufficient to establish the decision context;
+- decision actor attribution;
+- human verification pass.
+
+### CANDIDATE-2 — Drunk Night-1 information
+
+Potential observed choice:
+
+`delivered_information = 0`
+
+Required before admission:
+
+- timestamped primary evidence;
+- relevant committed prefix;
+- distinction between historical delivery and downstream evaluation;
+- human verification pass.
+
+### CANDIDATE-3 — Fortune Teller Night-1 output
+
+Potential observed output:
+
+`targets = [Tom, Elliott]`
+`delivered_result = YES`
+
+Required before admission:
+
+- timestamped primary player-action fragment;
+- timestamped primary result fragment;
+- boundary after target commitment and before result delivery;
+- registration witness remains UNKNOWN unless explicitly evidenced;
+- human verification pass.
+
+### CANDIDATE-4 — Chef Night-1 information
+
+Potential observed output:
+
+`delivered_information = 1`
+
+Required before admission:
+
+- timestamped primary fragment;
+- sufficient prefix;
+- do not assert “expert chose 1 from alternatives” unless evidence establishes that a genuine Storyteller choice existed;
+- human verification pass.
+
+E0 still targets at least three admitted decision slices, but quantity must not override provenance.
+
+## 7. Schema / workflow gaps exposed so far
+
+These are findings from the real pilot, not frozen solutions.
+
+### Gap A — research locator leads are not evidence assertions
+
+Secondary indexes and prior D5F reconstruction are extremely useful for finding the right primary-video region.
+
+They should not be forced into the evidence derivation enum.
+
+Potential need:
+
+- a lightweight non-corpus “research lead / locator note” concept; or
+- an explicitly disposable acquisition notebook outside durable corpus export.
+
+Do not add a persisted `ResearchLead` entity until the rest of E0 shows whether this recurs.
+
+### Gap B — not every primary-video fact has a timestamp
+
+Video title, source ID, description and publication metadata are primary evidence but are not timeline fragments.
+
+The future EvidenceFragment locator needs to handle source metadata as well as timed media regions without inventing `00:00`.
+
+### Gap C — edited video can establish partial temporal order
+
+A setup fact may be provably committed before Night 1 while its exact position among other setup decisions remains unknown.
+
+The durable model must not require a fabricated total order for facts whose exact ordering is not evidenced.
+
+The existing architecture already helps by separating setup commitments from the ordered semantic event stream; E0 should test whether that is sufficient.
+
+### Gap D — delivered output is not automatically a decision
+
+The corpus can observe “Storyteller delivered X”.
+
+It cannot automatically conclude “Storyteller freely chose X from alternatives” without either:
+
+- explicit primary evidence; or
+- downstream rules analysis.
+
+This suggests the final model may need a clean distinction between a historical Storyteller-controlled delivery/event and a research-qualified decision slice.
+
+Do not freeze that distinction until the primary Night-1 pass is complete.
+
+### Gap E — decision actor may be uncertain in co-Storyteller productions
+
+The source clearly identifies Ben as Storyteller in metadata, while secondary material also describes Adam as participating in Storyteller duties.
+
+A decision slice may need:
+
+- responsible Storyteller;
+- co-Storyteller / assistant context;
+- UNKNOWN actor when the source does not show which person committed a choice.
+
+Do not attribute every setup choice to Ben merely because he is the named expert.
+
+### Gap F — verification needs its own audit trail
+
+Because AI extraction may propose evidence but human confirmation is required for VERIFIED/GOLD, E1 likely needs an auditable verification record rather than a bare boolean/status.
+
+E0 should determine the minimum fields after the first human pass.
+
+## 8. Draft export pressure — not a schema
+
+The pilot currently requires these semantic groups:
+
+```text
+source
+screening
+source-locator fragment
+historical assertion
+setup commitment
+semantic event
+decision-slice candidate
+verified decision slice
+storyteller qualification evidence
+verification record
+```
+
+This is only an inventory of observed needs.
+
+Do not turn it into tables/classes/files until the E0 primary reconstruction and gap audit are complete.
+
+## 9. Current completion state
+
+- source record: STARTED
+- screening: STARTED
+- primary metadata fragments: STARTED
+- primary timed evidence fragments: NOT YET EXTRACTED
+- setup reconstruction: LOCATOR LEADS ONLY
+- ordered Night-1 timeline: NOT YET PRIMARY-VERIFIED
+- admitted decision slices: 0
+- registration witness: UNKNOWN
+- explicit rationale: UNKNOWN
+- explicit rejected alternative: UNKNOWN
+- schema/workflow gap audit: STARTED
+- draft export pressure: STARTED
+
+The pilot must remain open until timestamped primary evidence supports the material Night-1 claims.
