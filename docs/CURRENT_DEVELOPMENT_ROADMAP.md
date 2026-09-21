@@ -73,10 +73,10 @@ No production legality or policy scoring is implemented.
 
 After E0 validates the workflow:
 
-- choose implementation stack;
+- choose implementation stack and working-store technology (SQLite is the current leading candidate);
 - define stable semantic IDs;
 - implement domain entities;
-- implement SQLite working store;
+- implement the selected local working store;
 - implement schema version;
 - implement deterministic migrations from the first persisted version;
 - implement versioned JSON/JSONL export/import;
@@ -206,7 +206,7 @@ Do not choose the UI framework before E0.
 E1 should choose the smallest local-first stack that gives:
 
 - strong typed/domain validation;
-- SQLite support;
+- practical local structured persistence;
 - deterministic migrations;
 - easy JSON/JSONL;
 - low-friction testing;
