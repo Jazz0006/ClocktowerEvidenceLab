@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: infrastructure/bootstrap design
+> Status: E0 evidence contract pilot — active
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -32,7 +32,7 @@ Storyteller-app telemetry is deferred.
 
 ## 3. Milestones
 
-### E0 — Evidence contract pilot — NEXT
+### E0 — Evidence contract pilot — ACTIVE
 
 Goal:
 
@@ -50,6 +50,25 @@ Why:
 - Recluse registration implications;
 - Chef information;
 - existing D5F research context makes reconstruction gaps easier to identify.
+
+Bootstrap gate completed on 2026-09-21:
+
+- all eight bootstrap documents existed on the live repository;
+- repository boundaries and evidence invariants were consistent;
+- one conflict was corrected before pilot work: SQLite / exact working-store technology had been described as both frozen and deferred; it is now explicitly provisional through E0;
+- working branch: `e0-evidence-contract-pilot`.
+
+Pilot notebook:
+
+- `docs/E0_A_STUD_IN_SCARLET_EVIDENCE_CONTRACT_PILOT.md`
+
+Current pilot state:
+
+- primary video identity confirmed;
+- source record and screening started;
+- secondary/D5F reconstruction retained only as locator leads;
+- timed Night-1 primary fragments still required before any decision slice is admitted;
+- registration witness remains UNKNOWN until directly supported by primary evidence.
 
 Deliverables:
 
