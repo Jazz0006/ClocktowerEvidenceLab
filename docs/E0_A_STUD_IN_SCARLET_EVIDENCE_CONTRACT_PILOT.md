@@ -15,12 +15,12 @@ Pilot-local source key (not a frozen ID scheme):
 | Field | Current value | Derivation | Verification | Provenance |
 |---|---|---|---|---|
 | platform | YouTube | OBSERVED | UNVERIFIED | primary source metadata |
-| platform source ID | `qZBvRfM3Xow` | OBSERVED | UNVERIFIED | primary source metadata |
-| title | `A Stud In Scarlet | NRB Play Blood On The Clocktower` | OBSERVED | UNVERIFIED | primary source metadata |
-| channel / publisher | No Rolls Barred | OBSERVED | UNVERIFIED | primary source metadata |
-| publication date | 2021-02-05 | OBSERVED | UNVERIFIED | primary source metadata |
+| platform source ID | `qZBvRfM3Xow` | OBSERVED | UNVERIFIED | stable primary-source locator |
+| title | `A Stud In Scarlet | NRB Play Blood On The Clocktower` | RECONSTRUCTED | UNVERIFIED | consistent public indexes referencing the primary locator; direct primary-page body not captured in this pass |
+| channel / publisher | No Rolls Barred | RECONSTRUCTED | UNVERIFIED | consistent public indexes referencing the primary locator |
+| publication date | 2021-02-05 | RECONSTRUCTED | UNVERIFIED | consistent public episode indexes; primary-page metadata still needs direct verification |
 | URL | `https://www.youtube.com/watch?v=qZBvRfM3Xow` | OBSERVED | UNVERIFIED | primary source locator |
-| Storyteller | Ben Burns | OBSERVED | UNVERIFIED | primary video description identifies “Storyteller Ben” |
+| Storyteller | Ben Burns | RECONSTRUCTED | UNVERIFIED | consistent episode indexes / prior source catalog; in-video or direct primary-description verification still required |
 | co-Storyteller / assistant | UNKNOWN | UNKNOWN | UNVERIFIED | secondary sources name Adam; primary in-video verification still required |
 | script | UNKNOWN | UNKNOWN | UNVERIFIED | Trouble Brewing is a strong secondary lead but is not yet promoted to a primary-backed assertion |
 | inclusion reason | TARGETED_RESEARCH_CASE | NOT_APPLICABLE | UNVERIFIED | selected to stress-test Drunk / Fortune Teller / Recluse / Chef evidence semantics |
@@ -64,25 +64,18 @@ Selection decision: **keep for E0 reconstruction**.
 
 ## 3. Evidence fragments currently supported by the primary source
 
-These are the only current primary-backed fragments collected in this pass. They come from primary source metadata/description rather than the in-video timeline, so timestamps are not applicable.
+These are the only current **source-locator facts** collected in this pass. The automated acquisition path could not retrieve the primary YouTube page body or timed captions, so title/publisher/date/Storyteller metadata must not be overstated as direct primary-content observation. Timed gameplay evidence remains absent.
 
-### FRAG-ASIS-META-001
+### FRAG-ASIS-LOCATOR-001
 
 - source: `SRC-E0-ASIS-YT`
-- locator: YouTube title / channel metadata
+- locator: `https://www.youtube.com/watch?v=qZBvRfM3Xow`
 - timestamp: NOT_APPLICABLE
-- fact: source title and publisher identify the episode as the No Rolls Barred Blood on the Clocktower video “A Stud In Scarlet”
+- fact: stable primary-video locator / platform source ID
 - derivation: OBSERVED
 - verification: UNVERIFIED
 
-### FRAG-ASIS-META-002
-
-- source: `SRC-E0-ASIS-YT`
-- locator: YouTube description
-- timestamp: NOT_APPLICABLE
-- fact: Ben is identified as the Storyteller
-- derivation: OBSERVED
-- verification: UNVERIFIED
+Direct title/channel/date/Storyteller metadata remains reconstructed from consistent public indexes in this pass and is not promoted to a primary-content EvidenceFragment.
 
 ## 4. Locator-only secondary leads
 
@@ -112,6 +105,73 @@ Candidate setup / Night-1 picture:
 All items above remain locator leads until primary fragments with timestamps are extracted.
 
 The old D5F phrase “Fortune Teller YES via Recluse-as-Demon” is specifically **not** imported as historical fact.
+
+## 4.1 Legacy D5F separation audit
+
+The prior CampBoardGameHost branch was inspected directly rather than relying on memory.
+
+Relevant legacy artifacts:
+
+- `docs/SDE_2D5F_EXTERNAL_EVIDENCE_SOURCE_CATALOG_2026-09-21.tsv`;
+- `Sde2D5FExpertObservedFirstNightEvidenceTest.kt`;
+- `Sde2D5FAStudInScarletCandidateBuilder`.
+
+The legacy fixture itself explicitly states:
+
+- the detailed state came from a public episode index;
+- the YouTube recording is the primary source;
+- material Night-1 primary verification was still pending;
+- the candidate must not be promoted to admitted GOLD before that verification.
+
+This is important because the old catalog also contains fields such as:
+
+`Chef=1 requires Elliott Recluse to register Evil`
+
+and
+
+`FT Tom+Elliott=YES requires Elliott to register as Demon`.
+
+Those are **downstream rules-engine witness projections**, not evidence that the historical Storyteller consciously committed those exact registration witnesses.
+
+Evidence Lab treatment:
+
+- the old setup/Night-1 values remain locator leads;
+- the old compatible-witness enumeration is not imported as historical provenance;
+- actual registration witness stays UNKNOWN unless the primary recording supports it;
+- later CampBoardGameHost analysis may independently recover compatible witness sets after Evidence Lab export.
+
+### Why this matters
+
+This pilot has exposed a concrete contamination path:
+
+```text
+secondary reconstruction
+    + downstream rules legality
+    -> plausible historical explanation
+    -> accidentally written as observed expert decision
+```
+
+The Evidence Lab contract must prevent that collapse.
+
+## 4.2 Primary timed-evidence acquisition result
+
+A bounded automated acquisition pass was attempted before declaring a manual-review requirement.
+
+Result:
+
+- the stable YouTube source locator is known;
+- public search indexes recover the episode identity and detailed secondary event summary;
+- no trustworthy primary Night-1 timestamps were recovered;
+- the primary YouTube playback page/body was not retrievable through the current automated path;
+- no usable primary caption/timed-transcript endpoint was recovered;
+- searches for timestamped mirrors/index citations did not yield a primary-backed timestamp;
+- the old D5F source catalog confirms that primary Night-1 timestamp verification had never been completed there either.
+
+Therefore the current stopping condition is evidential, not analytical:
+
+> the next promotion step requires direct/manual primary playback or another primary-source caption path that exposes timestamps.
+
+Do not substitute the fan index, Bilibili mirrors, old D5F fixture order or rules-engine reconstruction for primary timestamp verification.
 
 ## 5. Primary in-video extraction queue
 
@@ -297,6 +357,30 @@ A decision slice may need:
 
 Do not attribute every setup choice to Ben merely because he is the named expert.
 
+### Gap G — acquisition provenance is distinct from evidence provenance
+
+The pilot now has three materially different things:
+
+1. a primary-source locator;
+2. secondary locator/reconstruction leads;
+3. primary timed gameplay fragments (currently missing).
+
+A future workflow must make it difficult to mistake “we found the primary URL” for “this gameplay fact was verified against the primary source”.
+
+This may be a workflow-state concern rather than a new domain entity. Do not freeze a schema solution yet.
+
+### Gap H — downstream compatible witnesses must not masquerade as historical witnesses
+
+The legacy D5F case demonstrates the exact failure mode: a rules engine can prove that a visible result has only certain compatible registration explanations, while the historical source still does not tell us which witness the Storyteller actually used or conceptualized.
+
+Evidence Lab therefore needs to preserve separately:
+
+- observed delivered result;
+- explicitly evidenced historical witness, if any;
+- UNKNOWN historical witness otherwise.
+
+Compatible/legal witness enumeration remains downstream.
+
 ### Gap F — verification needs its own audit trail
 
 Because AI extraction may propose evidence but human confirmation is required for VERIFIED/GOLD, E1 likely needs an auditable verification record rather than a bare boolean/status.
@@ -328,7 +412,8 @@ Do not turn it into tables/classes/files until the E0 primary reconstruction and
 
 - source record: STARTED
 - screening: STARTED
-- primary metadata fragments: STARTED
+- source-locator evidence: STARTED
+- direct primary metadata/content verification: BLOCKED ON PRIMARY PLAYBACK ACCESS
 - primary timed evidence fragments: NOT YET EXTRACTED
 - setup reconstruction: LOCATOR LEADS ONLY
 - ordered Night-1 timeline: NOT YET PRIMARY-VERIFIED
