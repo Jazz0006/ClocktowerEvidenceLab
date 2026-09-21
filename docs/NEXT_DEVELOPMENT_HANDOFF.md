@@ -19,6 +19,10 @@ Also consult the relevant CampBoardGameHost D5F evidence documents only as resea
 
 Bootstrap consistency review is complete and E0 is active on working branch `e0-evidence-contract-pilot`.
 
+Draft PR: `#1` — `E0: evidence contract pilot — A Stud In Scarlet`.
+
+Keep the PR draft until direct primary review and the E0 contract audit are complete.
+
 No application implementation is authorized yet beyond what is needed to perform and document the E0 pilot.
 
 The first objective is to validate the evidence/reconstruction contract against one real expert primary source.
