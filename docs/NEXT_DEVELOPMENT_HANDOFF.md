@@ -34,14 +34,16 @@ Completed:
 - live repo/default branch/HEAD checked before work;
 - all bootstrap files read;
 - bootstrap consistency issue around prematurely frozen SQLite wording corrected;
-- primary YouTube source identified as video ID `qZBvRfM3Xow`;
+- stable primary YouTube locator identified as video ID `qZBvRfM3Xow`;
 - source record and screening started;
-- Ben qualification source leads recorded from official TPI material;
-- prior D5F and public episode indexes demoted to locator-only leads rather than corpus facts.
+- Ben qualification evidence sources recorded from official TPI material, still awaiting human verification status;
+- prior D5F and public episode indexes demoted to locator-only leads rather than corpus facts;
+- legacy D5F candidate code inspected directly and confirmed to be `PRIMARY_VERIFICATION_PENDING`;
+- old D5F registration-witness statements identified as downstream rules projections, not primary historical observations.
 
 Still required before E0 can admit a decision slice:
 
-- primary in-video timestamps for setup and Night 1;
+- direct/manual primary playback (or an equivalent primary caption path) to recover in-video timestamps for setup and Night 1;
 - primary confirmation of setup/seating/shown identity;
 - ordered player-action vs Storyteller-output boundaries;
 - human verification pass;
