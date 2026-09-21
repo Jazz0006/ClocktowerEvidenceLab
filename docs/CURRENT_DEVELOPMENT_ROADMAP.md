@@ -64,10 +64,11 @@ Pilot notebook:
 
 Current pilot state:
 
-- primary video identity confirmed;
+- stable primary-video locator confirmed (`qZBvRfM3Xow`); direct timed primary content is not yet captured;
 - source record and screening started;
 - secondary/D5F reconstruction retained only as locator leads;
-- timed Night-1 primary fragments still required before any decision slice is admitted;
+- legacy D5F rules-derived registration witnesses explicitly quarantined from historical evidence;
+- timed Night-1 primary fragments still require direct/manual primary playback before any decision slice is admitted;
 - registration witness remains UNKNOWN until directly supported by primary evidence.
 
 Deliverables:
