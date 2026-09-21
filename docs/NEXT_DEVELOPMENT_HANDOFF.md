@@ -17,11 +17,38 @@ Also consult the relevant CampBoardGameHost D5F evidence documents only as resea
 
 ## 2. Current state
 
-This repository is at bootstrap/E0.
+Bootstrap consistency review is complete and E0 is active on working branch `e0-evidence-contract-pilot`.
 
 No application implementation is authorized yet beyond what is needed to perform and document the E0 pilot.
 
 The first objective is to validate the evidence/reconstruction contract against one real expert primary source.
+
+## 2.1 Current E0 progress — 2026-09-21
+
+Read the live pilot notebook before doing more reconstruction:
+
+- `docs/E0_A_STUD_IN_SCARLET_EVIDENCE_CONTRACT_PILOT.md`
+
+Completed:
+
+- live repo/default branch/HEAD checked before work;
+- all bootstrap files read;
+- bootstrap consistency issue around prematurely frozen SQLite wording corrected;
+- primary YouTube source identified as video ID `qZBvRfM3Xow`;
+- source record and screening started;
+- Ben qualification source leads recorded from official TPI material;
+- prior D5F and public episode indexes demoted to locator-only leads rather than corpus facts.
+
+Still required before E0 can admit a decision slice:
+
+- primary in-video timestamps for setup and Night 1;
+- primary confirmation of setup/seating/shown identity;
+- ordered player-action vs Storyteller-output boundaries;
+- human verification pass;
+- explicit confirmation or UNKNOWN treatment of registration witness;
+- explicit rationale/rejected alternatives only where the primary source truly contains them.
+
+Do not import the prior D5F phrase `Fortune Teller YES via Recluse-as-Demon` as a verified witness. The visible result and the historical registration witness are separate evidence questions.
 
 ## 3. First pilot case
 
