@@ -1,0 +1,33 @@
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend if later selected
+node_modules/
+dist/
+build/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local evidence working files
+.local/
+scratch/
+downloads/
+media/
+
+# Never commit private/unreviewed submissions
+corpus/private/
