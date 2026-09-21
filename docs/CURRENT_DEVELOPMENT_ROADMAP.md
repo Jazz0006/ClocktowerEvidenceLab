@@ -62,6 +62,10 @@ Pilot notebook:
 
 - `docs/E0_A_STUD_IN_SCARLET_EVIDENCE_CONTRACT_PILOT.md`
 
+Primary review packet:
+
+- `docs/E0_A_STUD_IN_SCARLET_PRIMARY_REVIEW_PACKET.md`
+
 Current pilot state:
 
 - stable primary-video locator confirmed (`qZBvRfM3Xow`); direct timed primary content is not yet captured;
