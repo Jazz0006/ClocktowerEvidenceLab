@@ -25,8 +25,8 @@ Storyteller-app telemetry is deferred.
 - Winner is not a decision-quality label.
 - Storyteller identity/independence is retained.
 - GOLD is decision-level and derived.
-- Working persistence is SQLite.
-- Durable interchange is versioned JSON/JSONL.
+- Working persistence technology is not frozen before E0 completes; SQLite is the current leading candidate.
+- Durable interchange must be versioned; JSON/JSONL is the current direction, with exact export shape validated by E0.
 - Raw media is referenced, not copied.
 - Real corpus and regression fixtures remain separate.
 
