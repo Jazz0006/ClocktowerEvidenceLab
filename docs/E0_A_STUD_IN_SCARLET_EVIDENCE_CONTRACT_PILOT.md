@@ -241,6 +241,52 @@ For the candidate Tom + Elliott -> YES interaction:
 
 Do not recover the witness by importing CampBoardGameHost legality logic.
 
+## 5.1 Provisional semantic timeline skeleton — locator only
+
+This section deliberately tests the event/commitment vocabulary without promoting secondary reconstruction into the corpus.
+
+### Setup commitment group — exact internal order UNKNOWN
+
+Secondary locator leads consistently suggest the following commitments existed before Night 1:
+
+- nine-player seating / actual roles;
+- Sullivan actual role = Drunk;
+- Sullivan shown / believed role = Empath;
+- Fortune Teller red herring = Sullivan;
+- Demon bluffs = Saint / Slayer / Soldier.
+
+At this stage these are **not canonical setup facts**.
+
+The useful modeling observation is that an edited source may establish all of them as pre-Night-1 commitments without revealing their exact internal commit order.
+
+### Night 1 — candidate interactions
+
+Secondary locator leads suggest:
+
+1. Chef interaction: Jon receives `1`;
+2. Drunk-as-Empath interaction: Sullivan receives `0`;
+3. Fortune Teller interaction: Blair selects Tom + Elliott and receives YES.
+
+Do **not** treat the numbering above as verified historical global order. It mirrors the current secondary index only.
+
+For primary extraction, the Fortune Teller compound lead must be split into at least:
+
+```text
+PLAYER_ACTION_COMMITTED
+    Blair -> [Tom, Elliott]
+
+<decision boundary candidate>
+
+STORYTELLER_CHOICE_COMMITTED or historical-output commitment
+    result = YES
+
+INFORMATION_DELIVERED
+    recipient = Blair
+    result = YES
+```
+
+Whether the middle event should be represented as a distinct Storyteller-choice event is itself part of the E0 audit. Evidence Lab must not invent a discretionary choice merely because downstream rules analysis can enumerate alternatives.
+
 ## 6. Provisional decision-slice candidates
 
 These are **candidates**, not admitted DecisionSlices.
@@ -380,6 +426,38 @@ Evidence Lab therefore needs to preserve separately:
 - UNKNOWN historical witness otherwise.
 
 Compatible/legal witness enumeration remains downstream.
+
+### Gap I — setup decisions need a committed-prefix boundary too
+
+The current architecture correctly says that authoritative history consists of:
+
+- setup commitments; plus
+- ordered semantic events.
+
+However, the current conceptual `DecisionSlice` boundary is described mainly as an event-sequence boundary.
+
+The A Stud pilot includes at least one high-value candidate decision that occurs during setup: the Drunk's shown identity (and potentially Red Herring / Demon bluffs).
+
+A future decision-prefix contract must therefore be able to express:
+
+- which setup commitments were already fixed;
+- which setup commitment is the observed choice under study;
+- which later setup commitments were not yet committed, when the source can establish that order;
+- UNKNOWN internal ordering when an edited source cannot establish it.
+
+Do not solve this by pretending setup commitments are ordinary Night-1 events solely to satisfy one sequence-number field.
+
+### Gap J — compound source moments may contain player action, Storyteller commitment and delivery
+
+A single short video region may show the Fortune Teller selecting two targets and then receiving a result.
+
+The historical semantics are still distinct:
+
+- player-controlled target commitment;
+- possible Storyteller-controlled result commitment;
+- information delivery.
+
+Field/event-level provenance should allow several semantic assertions/events to cite the same or overlapping source fragment without collapsing them into one event.
 
 ### Gap F — verification needs its own audit trail
 
