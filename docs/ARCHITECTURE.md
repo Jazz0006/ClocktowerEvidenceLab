@@ -183,9 +183,9 @@ Later events are unavailable to the counterfactual reconstruction.
 
 ### Working store
 
-SQLite.
+The working-store technology is not frozen during E0. SQLite is the current leading candidate because the project is local-first, but E1 owns the implementation-stack decision after the evidence pilot exposes real workflow requirements.
 
-The first implementation should make the database replaceable through a repository/storage boundary.
+Whatever store is selected, the first implementation should keep persistence replaceable through a repository/storage boundary.
 
 ### Durable export
 
