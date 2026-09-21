@@ -34,10 +34,16 @@ Official The Pandemonium Institute material documents Ben Burns as a long-runnin
 - `https://bloodontheclocktower.com/blogs/news/ben-burns-appreciation-post`
 - `https://bloodontheclocktower.com/blogs/news/an-update-on-community-management-and-content-creation-at-tpi`
 
+Current qualification evidence collected from official TPI material:
+
+- TPI describes Ben as integral to Blood on the Clocktower for many years, including early conventions, the Kickstarter, and official Twitch/YouTube work;
+- TPI separately describes him as leading YouTube/Twitch content and appearing at conventions as a special guest / representative of the game.
+
 Current pilot treatment:
 
 - qualification candidate: `VERIFIED_EXPERT_OR_TRUSTED`;
-- verification: `UNVERIFIED`;
+- evidence source quality: official TPI;
+- verification: `UNVERIFIED` because Evidence Lab requires a human verification pass before promotion;
 - do not derive GOLD until a human verification pass confirms both qualification evidence and the individual decision slice.
 
 ## 2. Screening record
