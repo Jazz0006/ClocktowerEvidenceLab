@@ -41,12 +41,20 @@ Completed:
 - legacy D5F candidate code inspected directly and confirmed to be `PRIMARY_VERIFICATION_PENDING`;
 - old D5F registration-witness statements identified as downstream rules projections, not primary historical observations.
 
+New E0 model findings already recorded in the pilot notebook:
+
+- secondary locator leads require a workflow state separate from corpus evidence;
+- source-locator confirmation is not the same thing as primary-content verification;
+- rules-derived compatible registration witnesses must never be imported as historical witness evidence;
+- setup-time decisions such as Drunk shown identity need a committed-prefix boundary that is not limited to Night event sequence numbers;
+- one short source fragment may support multiple distinct semantics: player action, Storyteller commitment, and information delivery.
+
 Still required before E0 can admit a decision slice:
 
 - direct/manual primary playback (or an equivalent primary caption path) to recover in-video timestamps for setup and Night 1;
 - primary confirmation of setup/seating/shown identity;
 - ordered player-action vs Storyteller-output boundaries;
-- human verification pass;
+- human verification pass after the timestamped primary extraction;
 - explicit confirmation or UNKNOWN treatment of registration witness;
 - explicit rationale/rejected alternatives only where the primary source truly contains them.
 
