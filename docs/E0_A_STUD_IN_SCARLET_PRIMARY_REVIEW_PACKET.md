@@ -390,16 +390,20 @@ No choice-specific rationale or rejected alternative was reported for this setup
 
 ### P3 result — Chef
 
-- `11:53` — Chef interaction is visible/reviewed.
+- `11:53` — Jon's Chef interaction is visible/reviewed.
+- delivered number = `1`.
 
-The reviewer did **not** supply the delivered number in this pass.
-
-Therefore:
+Evidence treatment:
 
 - Chef interaction occurrence = VERIFIED;
-- Chef delivered value = UNKNOWN in the Evidence Lab primary record for now.
+- Chef delivered value = `1`;
+- derivation = OBSERVED;
+- verification = VERIFIED by human primary review;
+- no explicit registration statement or choice-specific rationale was supplied.
 
-Do not promote the secondary `Chef = 1` lead until the number is directly reported from primary playback.
+This supports a verified information-delivery event.
+
+It does **not** by itself promote Chef=1 into a discretionary Storyteller DecisionSlice; any registration/legality explanation remains downstream unless primary evidence establishes it.
 
 ### P4 result — Drunk-as-Empath information
 
@@ -430,19 +434,34 @@ Evidence treatment:
 - both are primary-reviewed;
 - semantic ordering is target commitment before result delivery;
 - exact sub-timestamp boundary within the source fragment is not yet captured;
-- no explicit historical Recluse registration witness was supplied;
-- historical registration witness therefore remains UNKNOWN;
+- the reviewer reports that the mechanics make the interaction naturally read as Elliott's Recluse registering as Demon;
+- that registration witness is therefore recorded only as an **INFERRED reviewer interpretation**, not as an OBSERVED primary-source statement;
+- historical registration witness remains UNKNOWN at the evidence layer because no explicit source statement was supplied;
 - no choice-specific rationale or rejected alternative was supplied.
 
 This single fragment supports multiple semantics and is a concrete test of the rule that source fragments and semantic events are many-to-many rather than one-to-one.
 
+### Additional game-context result
+
+The reviewer confirms that Ben is running this game for beginner / new players.
+
+Evidence treatment:
+
+- beginner-table context = PRESENT;
+- derivation = OBSERVED through human primary review;
+- verification = VERIFIED;
+- exact source timestamp = not supplied.
+
+This is game-level context, not a rationale automatically attached to every individual Storyteller choice.
+
 ### Remaining smallest primary-review gaps
 
-Only a few facts are still needed for the bounded Night-1 pass:
+The bounded Night-1 pass is now materially complete.
 
-1. Chef delivered number at/around `11:53`;
-2. whether the primary source explicitly states a registration witness for the `15:18` Fortune Teller YES (if not, confirm “no explicit registration statement”);
-3. optional exact screenshot timestamp for the setup/grimoire frame;
-4. optional sub-second/sub-range split inside `15:18` if the target commitment and YES delivery can be cleanly separated.
+Optional precision improvements remain:
 
-None of these should be guessed.
+1. exact screenshot timestamp for the setup/grimoire frame;
+2. finer timestamp split inside `15:18` between target commitment and YES delivery;
+3. an explicit source statement about Recluse registration, if one exists.
+
+None of these is required to preserve the currently verified observations.
