@@ -22,6 +22,6 @@ jobs:
       - name: Ruff check
         run: ruff check .
       - name: Ruff format
-        run: ruff format --check .
+        run: ruff format --check --diff .
       - name: Pytest
         run: pytest
