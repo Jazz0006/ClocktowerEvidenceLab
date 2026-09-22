@@ -1,6 +1,6 @@
 # E0 Pilot — A Stud In Scarlet Evidence Contract Reconstruction
 
-> Status: **IN PROGRESS**
+> Status: **E0 PILOT COMPLETE — retained as reconstruction notebook**
 >
 > Purpose: validate the Evidence Lab workflow against one real expert/trusted Storyteller primary source before freezing the persisted schema or implementation stack.
 >
@@ -468,7 +468,9 @@ These are admitted as traceable historical decision slices, but **not GOLD-quali
   - `FRAG-ASIS-09-49-DRUNK`
 - derivation: RECONSTRUCTED
 - verification: VERIFIED
-- decision actor: Storyteller-controlled setup commitment; personal actor attribution remains UNKNOWN unless primary source establishes it
+- observed-value evidence: primary-supported reconstruction;
+- decision-control classification: Storyteller-controlled by Evidence Lab's normative decision taxonomy;
+- personal actor attribution remains UNKNOWN unless primary source establishes it
 - committed-prefix precision: PARTIAL / setup internal ordering UNKNOWN
 - rationale: UNKNOWN
 - rejected alternatives: UNKNOWN
@@ -585,11 +587,11 @@ Do not attribute every setup choice to Ben merely because he is the named expert
 
 ### Gap G — acquisition provenance is distinct from evidence provenance
 
-The pilot now has three materially different things:
+The pilot demonstrated three materially different things:
 
 1. a primary-source locator;
 2. secondary locator/reconstruction leads;
-3. primary timed gameplay fragments (currently missing).
+3. primary timed gameplay fragments, later obtained through human primary review.
 
 A future workflow must make it difficult to mistake “we found the primary URL” for “this gameplay fact was verified against the primary source”.
 
@@ -676,6 +678,19 @@ Therefore the final workflow must preserve:
 5. explicit non-promotion of the inference to OBSERVED.
 
 This is not the same as UNKNOWN: we may have a strong inference while still lacking direct historical witness evidence.
+
+### Gap M — observed choice value and decision-control ownership have different bases
+
+The Drunk-shown-identity slice exposes a subtle provenance distinction:
+
+- primary evidence establishes the historical value: Sullivan is the Drunk and is shown/believes Empath;
+- the classification of “shown identity” as a Storyteller-controlled decision family comes from the project's normative Blood on the Clocktower decision taxonomy, not from the source clip itself.
+
+Similarly, Red Herring is explicitly classified in `AGENTS.md` as a Storyteller-controlled setup commitment.
+
+E1 should therefore avoid treating “source proves observed value” and “domain semantics classify who controls this decision” as the same provenance claim.
+
+This does **not** require importing the CampBoardGameHost legality engine. It only requires the Evidence Lab decision taxonomy to make its control-ownership basis explicit.
 
 ### Gap F — verification needs its own audit trail
 
