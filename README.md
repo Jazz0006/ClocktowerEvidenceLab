@@ -69,10 +69,10 @@ Direct telemetry from the Storyteller app is explicitly deferred.
 
 ## Storage direction
 
-The project is local-first.
+The project is local-first. The exact working-store technology remains deliberately unfrozen during E0.
 
-- **SQLite** is the working database.
-- **JSON / JSONL** is the durable interchange and archive format.
+- **SQLite** is the current leading candidate for the working database, not a frozen E0 decision.
+- **JSON / JSONL** is the current durable-interchange direction; the exact export shape is validated by E0 before the first persisted schema is frozen.
 - Public source media is not copied into the repository; retain source identifiers, URLs, timestamps and concise evidential notes.
 - Small curated public reconstructions may be versioned in Git.
 - A large corpus may later move to separate storage without changing the canonical export contract.

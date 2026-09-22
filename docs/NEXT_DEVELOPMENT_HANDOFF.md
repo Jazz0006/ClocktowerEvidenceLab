@@ -1,4 +1,4 @@
-# NEXT DEVELOPMENT HANDOFF — E0 Evidence Contract Pilot
+# NEXT DEVELOPMENT HANDOFF — E0 Complete / E1 Foundation Next
 
 ## 1. Read first
 
@@ -17,11 +17,101 @@ Also consult the relevant CampBoardGameHost D5F evidence documents only as resea
 
 ## 2. Current state
 
-This repository is at bootstrap/E0.
+Bootstrap consistency review and the E0 evidence-contract pilot are complete on working branch `e0-evidence-contract-pilot`.
 
-No application implementation is authorized yet beyond what is needed to perform and document the E0 pilot.
+Draft PR: `#1` — `E0: evidence contract pilot — A Stud In Scarlet`.
 
-The first objective is to validate the evidence/reconstruction contract against one real expert primary source.
+Primary review and the E0 contract audit are complete. Keep PR #1 draft until the user explicitly authorizes merge.
+
+Do not begin E1 implementation on this E0 branch unless explicitly requested. The next implementation milestone is E1 domain/persistence foundation after E0 integration.
+
+Read these two completion artifacts before starting E1:
+
+- `docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md`
+- `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md`
+
+## 2.0 Final PR consistency audit — 2026-09-22
+
+Final audit result: **PASS**.
+
+- PR #1 remains draft;
+- branch is based cleanly on `main` with no behind commits at the audit point;
+- changed files are documentation only;
+- no application code, schema, database, UI or rules engine was introduced;
+- E0 completion state is consistent across roadmap, pilot, completion audit and handoff;
+- Chef=`1` is consistently recorded as a verified delivery event;
+- Fortune Teller Recluse-as-Demon remains INFERRED reviewer interpretation while source-observed historical witness stays UNKNOWN;
+- E1 proposal now includes stable Storyteller identity, game-scoped `GameSeat`, `ReconstructionRevision`, revision-scoped reconstructed entities and source screening/selection dimensions;
+- Storyteller qualification uses the canonical `EvidenceAssertion` path rather than a parallel evidence subsystem;
+- no GitHub Actions workflow/check is configured yet for this docs-only bootstrap stage.
+
+When merge is explicitly authorized, prefer **squash merge** because the E0 branch contains many small documentation/audit commits that represent one semantic milestone.
+
+## 2.1 Final E0 state — 2026-09-22
+
+Read the live pilot notebook before doing more reconstruction:
+
+- `docs/E0_A_STUD_IN_SCARLET_EVIDENCE_CONTRACT_PILOT.md`
+- `docs/E0_A_STUD_IN_SCARLET_PRIMARY_REVIEW_PACKET.md`
+
+Completed:
+
+- live repo/default branch/HEAD checked before work;
+- all bootstrap files read;
+- bootstrap consistency issue around prematurely frozen SQLite wording corrected;
+- stable primary YouTube locator identified as video ID `qZBvRfM3Xow`;
+- source record and bounded screening completed for E0 pilot scope;
+- Ben qualification evidence sources recorded from official TPI material, still awaiting human verification status;
+- prior D5F and public episode indexes demoted to locator-only leads rather than corpus facts;
+- legacy D5F candidate code inspected directly and confirmed to be `PRIMARY_VERIFICATION_PENDING`;
+- old D5F registration-witness statements identified as downstream rules projections, not primary historical observations.
+
+New E0 model findings already recorded in the pilot notebook:
+
+- secondary locator leads require a workflow state separate from corpus evidence;
+- source-locator confirmation is not the same thing as primary-content verification;
+- rules-derived compatible registration witnesses must never be imported as historical witness evidence;
+- setup-time decisions such as Drunk shown identity need a committed-prefix boundary that is not limited to Night event sequence numbers;
+- one short source fragment may support multiple distinct semantics: player action, Storyteller commitment, and information delivery.
+
+The bounded primary-video pass is complete. Do not spend another round expanding this one case unless a later audit needs a specific missing locator.
+
+Primary review 1 has now admitted three non-GOLD E0 DecisionSlices:
+
+1. Drunk shown identity = Empath;
+2. Red Herring = Sullivan;
+3. Drunk-as-Empath Night-1 information = 0, with explicit rationale and rejected alternative 2.
+
+The 15:18 Fortune Teller interaction is primary-verified as player targets Tom+Elliott plus delivered YES, but remains an output-event / DecisionSlice candidate because the historical registration witness and discretionary-choice basis are not primary-evidenced.
+
+Final bounded primary-review state:
+
+- Chef=1 verified at 11:53;
+- Drunk-as-Empath=0 verified at 12:41 with explicit rationale and rejected alternative 2;
+- Fortune Teller Tom+Elliott -> YES verified at 15:18;
+- Recluse-as-Demon retained only as INFERRED reviewer interpretation; source-observed historical registration witness remains UNKNOWN;
+- beginner/new-player game context verified at game level;
+- optional screenshot/sub-timestamp precision may be added later but does not block E1.
+
+Do not import the prior D5F phrase `Fortune Teller YES via Recluse-as-Demon` as a verified witness. The visible result and the historical registration witness are separate evidence questions.
+
+## 2.2 E1 next action
+
+After PR #1 is integrated, start E1 from a fresh branch.
+
+Use the E1 proposal to implement the provenance core first:
+
+1. Python project/quality tooling;
+2. semantic IDs and derivation/verification enums;
+3. Source / EvidenceFragment / EvidenceAssertion;
+4. SQLite schema v1 + migration;
+5. persistence round-trip tests;
+6. versioned JSON export;
+7. add Storyteller / Game / GameSeat / ReconstructionRevision;
+8. add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
+9. represent Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions rather than a parallel evidence subsystem.
+
+Do not choose the E2 UI framework yet.
 
 ## 3. First pilot case
 

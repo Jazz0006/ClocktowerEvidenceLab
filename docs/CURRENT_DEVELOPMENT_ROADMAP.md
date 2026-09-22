@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: infrastructure/bootstrap design
+> Status: E0 evidence contract pilot — COMPLETE; E1 foundation proposal ready
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -25,14 +25,14 @@ Storyteller-app telemetry is deferred.
 - Winner is not a decision-quality label.
 - Storyteller identity/independence is retained.
 - GOLD is decision-level and derived.
-- Working persistence is SQLite.
-- Durable interchange is versioned JSON/JSONL.
+- Working persistence technology is not frozen before E0 completes; SQLite is the current leading candidate.
+- Durable interchange must be versioned; JSON/JSONL is the current direction, with exact export shape validated by E0.
 - Raw media is referenced, not copied.
 - Real corpus and regression fixtures remain separate.
 
 ## 3. Milestones
 
-### E0 — Evidence contract pilot — NEXT
+### E0 — Evidence contract pilot — COMPLETE
 
 Goal:
 
@@ -50,6 +50,35 @@ Why:
 - Recluse registration implications;
 - Chef information;
 - existing D5F research context makes reconstruction gaps easier to identify.
+
+Bootstrap gate completed on 2026-09-21:
+
+- all eight bootstrap documents existed on the live repository;
+- repository boundaries and evidence invariants were consistent;
+- one conflict was corrected before pilot work: SQLite / exact working-store technology had been described as both frozen and deferred; it is now explicitly provisional through E0;
+- working branch: `e0-evidence-contract-pilot`.
+
+Pilot notebook:
+
+- `docs/E0_A_STUD_IN_SCARLET_EVIDENCE_CONTRACT_PILOT.md`
+
+Primary review packet:
+
+- `docs/E0_A_STUD_IN_SCARLET_PRIMARY_REVIEW_PACKET.md`
+
+Current pilot state:
+
+- stable primary-video locator confirmed (`qZBvRfM3Xow`);
+- first human primary-review pass completed with a setup/grimoire screenshot plus timestamps 09:49, 10:32, 11:53, 12:41 and 15:18;
+- full visible setup/seating and Demon bluffs are now primary-supported;
+- Sullivan actual Drunk + shown Empath and Red Herring setup commitments are primary-supported;
+- Drunk-as-Empath 0 is primary-verified with explicit choice-specific rationale and explicit rejection of alternative 2;
+- Fortune Teller Tom+Elliott -> YES is primary-verified as player action + delivered output; Recluse-as-Demon is retained only as an INFERRED reviewer interpretation while source-observed historical witness remains UNKNOWN;
+- Chef=1 is primary-verified as a delivery event without being forced into a DecisionSlice;
+- beginner/new-player table context is primary-reviewed and kept at game level rather than copied into every choice rationale;
+- 3 E0 DecisionSlices are admitted, none GOLD-qualified yet;
+- E0 completion audit: `docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md`;
+- E1 proposal: `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md`.
 
 Deliverables:
 
@@ -69,14 +98,16 @@ A downstream researcher can understand exactly what happened, what remains unkno
 
 No production legality or policy scoring is implemented.
 
-### E1 — Domain and persistence foundation
+### E1 — Domain and persistence foundation — READY TO START AFTER E0 PR INTEGRATION
 
-After E0 validates the workflow:
+E0 has validated the workflow. Use `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md` as the implementation proposal.
 
-- choose implementation stack;
+Next:
+
+- choose implementation stack and working-store technology (SQLite is the current leading candidate);
 - define stable semantic IDs;
 - implement domain entities;
-- implement SQLite working store;
+- implement the selected local working store;
 - implement schema version;
 - implement deterministic migrations from the first persisted version;
 - implement versioned JSON/JSONL export/import;
@@ -206,7 +237,7 @@ Do not choose the UI framework before E0.
 E1 should choose the smallest local-first stack that gives:
 
 - strong typed/domain validation;
-- SQLite support;
+- practical local structured persistence;
 - deterministic migrations;
 - easy JSON/JSONL;
 - low-friction testing;

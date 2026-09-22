@@ -22,8 +22,8 @@ Fast focused tests for:
 
 ### Tier 1 — persistence and serialization
 
-- SQLite repository round trips;
-- JSON/JSONL export/import round trips;
+- working-store repository round trips once the E1 store is selected;
+- JSON/JSONL export/import round trips once the first durable export contract is frozen;
 - schema version presence;
 - migration determinism;
 - no lossy conversion of provenance fields.
