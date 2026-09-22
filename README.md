@@ -4,7 +4,7 @@ Clocktower Evidence Lab is a local-first evidence collection and reconstruction 
 
 Its first objective is deliberately narrow:
 
-> Turn high-value external real games—especially games run by verified experienced/trusted Storytellers—into structured, verifiable Storyteller decision evidence that can be reused by CampBoardGameHost and future research.
+> Turn high-value external real games—especially games run by verified experienced/trusted Storytellers—into structured, verifiable whole-game evidence from which Storyteller decisions can later be studied in their full information context.
 
 The project is **not** a recommendation engine and does not decide whether an observed Storyteller choice was good or bad.
 
@@ -45,9 +45,11 @@ raw evidence references
     ↓
 evidence assertions
     ↓
-versioned canonical reconstruction
+versioned canonical whole-game reconstruction
     ↓
-decision-time slices
+ordered information / state history
+    ↓
+optional decision-time slices
     ↓
 verification
     ↓
@@ -58,12 +60,16 @@ CampBoardGameHost analysis
 
 ## First-phase scope
 
-The first phase focuses on external evidence only:
+The first phase focuses on external evidence only.
 
-1. expert / official primary-video games;
-2. other high-fidelity real-game videos;
-3. structured public game records such as ClockTracker;
+Collection is now **whole-game first**. The immediate source-research priority is:
+
+1. high-fidelity structured public real-game records, especially ClockTracker records created by experienced/trusted Storytellers;
+2. expert / official primary-video games used to fill missing rationale, table-state and social context;
+3. other high-fidelity real-game videos;
 4. community reports and postmortems as qualitative evidence.
+
+A DecisionSlice is a downstream projection from a reconstructed game, not the primary acquisition unit.
 
 Direct telemetry from the Storyteller app is explicitly deferred.
 
