@@ -272,7 +272,103 @@ Frozen E1-6 boundaries:
 
 Final E1-6 gate: install + Ruff check + Ruff format + full pytest all GREEN at `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
 
-## 2.8 Next action — E1-7 reconstruction identity persistence
+## 2.8 Next action — C0 ClockTracker corpus suitability audit
+
+Pause new E1 implementation work long enough to run a bounded source-quality research gate.
+
+The project direction was corrected on 2026-09-23:
+
+- the primary acquisition unit is now explicitly the **whole real game**, not a single clue or isolated DecisionSlice;
+- the research objective is to preserve interacting setup/information/state history so later analysis can study the overall effect of multiple Storyteller choices;
+- ClockTracker may already contain much of the structured state that was manually reconstructed from YouTube in E0;
+- YouTube/video should therefore be treated primarily as an enrichment source for rationale, social context, exact timing and gaps, unless the ClockTracker audit shows strong structured records are too rare.
+
+### ClockTracker findings already established
+
+Inspection of the current public ClockTracker implementation established that a game can contain:
+
+- Storyteller and game metadata;
+- structured grimoire tokens;
+- role and related/shown role;
+- alignment;
+- seat/order and player name/identity;
+- death and ghost-vote state;
+- reminder tokens;
+- Demon bluffs;
+- Fabled;
+- Notes;
+- final win state;
+- multiple grimoire pages.
+
+New grimoire pages clone the previous page and can then diverge, so a careful recorder can preserve successive game states.
+
+Do **not** misinterpret `GrimoireSnapshot` as the game timeline. Current code creates those snapshots as edit/restore history before record modifications. They are not automatic Night-1 / Night-2 snapshots.
+
+The inspected code also did not establish a canonical structured night-action/event-log table. Ordered actions and delivered information may therefore depend heavily on Notes and the recorder's use of pages/reminders.
+
+### C0 procedure
+
+Screen approximately 50–100 public **Storyteller-recorded** ClockTracker games without fully reconstructing them all.
+
+Use a reproducible sampling method and preserve the denominator.
+
+For each sampled game, record enough to classify it:
+
+~~~text
+A
+  full/near-full grimoire
+  + detailed ordered Notes/event history
+  + sufficient multi-clue context for whole-game reconstruction
+
+B
+  strong grimoire / reminders / bluffs / multi-page state
+  + incomplete process Notes
+
+C
+  setup/final state/result only
+  or insufficient process detail
+~~~
+
+Measure:
+
+1. A/B/C distribution;
+2. full grimoire availability;
+3. detailed Notes frequency;
+4. Demon bluff / reminder-token population;
+5. multi-page grimoire usage;
+6. nightly action / delivered-information recoverability;
+7. Storyteller identity and expert/trusted qualification feasibility;
+8. explicit rationale frequency;
+9. stable public locator/access characteristics;
+10. estimated human effort to promote a strong record into a corpus-ready whole-game reconstruction.
+
+Do not infer quality from schema support alone.
+
+### C0 decision gate
+
+If A/B records are common enough:
+
+~~~text
+ClockTracker structured record
+    → base whole-game reconstruction
+    → selective YouTube/video enrichment
+~~~
+
+If A/B records are rare:
+
+~~~text
+ClockTracker
+    → discovery / partial-state support
+
+video
+    → primary whole-game reconstruction source
+~~~
+
+The audit result should be written back into `docs/CURRENT_DEVELOPMENT_ROADMAP.md`, `docs/SOURCE_COLLECTION_STRATEGY.md` and this handoff before bulk ingestion is designed.
+
+## 2.9 Deferred next implementation step — E1-7 reconstruction identity persistence
+
+After C0, resume E1 unless the audit exposes a domain-model gap.
 
 Implement tests-first:
 
