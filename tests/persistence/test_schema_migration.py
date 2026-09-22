@@ -106,15 +106,9 @@ def test_schema_preserves_provenance_and_ownership_boundaries(tmp_path: Path) ->
     inspector = inspect(engine)
 
     source_columns = {column["name"] for column in inspector.get_columns("sources")}
-    fragment_columns = {
-        column["name"] for column in inspector.get_columns("evidence_fragments")
-    }
-    assertion_columns = {
-        column["name"] for column in inspector.get_columns("evidence_assertions")
-    }
-    link_columns = {
-        column["name"] for column in inspector.get_columns("assertion_fragments")
-    }
+    fragment_columns = {column["name"] for column in inspector.get_columns("evidence_fragments")}
+    assertion_columns = {column["name"] for column in inspector.get_columns("evidence_assertions")}
+    link_columns = {column["name"] for column in inspector.get_columns("assertion_fragments")}
 
     assert {"platform_source_id", "external_locator"} <= source_columns
     assert {"title", "publisher", "published_on"}.isdisjoint(source_columns)
