@@ -53,7 +53,29 @@ def _schema_signature(engine) -> tuple:
                 for constraint in inspector.get_unique_constraints(table_name)
             )
         )
-        signature.append((table_name, columns, foreign_keys, unique_constraints))
+        check_constraints = tuple(
+            sorted(constraint["sqltext"] for constraint in inspector.get_check_constraints(table_name))
+        )
+        indexes = tuple(
+            sorted(
+                (
+                    index["name"],
+                    tuple(index["column_names"]),
+                    bool(index["unique"]),
+                )
+                for index in inspector.get_indexes(table_name)
+            )
+        )
+        signature.append(
+            (
+                table_name,
+                columns,
+                foreign_keys,
+                unique_constraints,
+                check_constraints,
+                indexes,
+            )
+        )
 
     return tuple(signature)
 
