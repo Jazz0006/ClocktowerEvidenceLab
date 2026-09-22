@@ -91,8 +91,7 @@ def upgrade() -> None:
             name="ck_evidence_fragments_range_order",
         ),
         sa.CheckConstraint(
-            "(locator_kind NOT IN ('TIMESTAMP', 'TIMESTAMP_RANGE') "
-            "OR source_start_ms IS NOT NULL)",
+            "(locator_kind NOT IN ('TIMESTAMP', 'TIMESTAMP_RANGE') OR source_start_ms IS NOT NULL)",
             name="ck_evidence_fragments_timestamp_requires_start",
         ),
         sa.CheckConstraint(
@@ -125,8 +124,7 @@ def upgrade() -> None:
         sa.Column("scope", sa.String(length=32), nullable=False),
         sa.Column("reconstruction_revision_id", sa.String(length=128), nullable=True),
         sa.CheckConstraint(
-            "derivation IN ('OBSERVED', 'RECONSTRUCTED', 'INFERRED', 'UNKNOWN', "
-            "'NOT_APPLICABLE')",
+            "derivation IN ('OBSERVED', 'RECONSTRUCTED', 'INFERRED', 'UNKNOWN', 'NOT_APPLICABLE')",
             name="ck_evidence_assertions_derivation",
         ),
         sa.CheckConstraint(
