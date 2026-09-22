@@ -39,6 +39,8 @@ E1-3 migration gate head: `b643cd051942992b04bf7f36b0cb5ba82832cca4`.
 
 E1-4 persistence gate head: `0d11e4c480754ba70d3965740c4de01238cab7ac`.
 
+E1-5 interchange gate head: `7cfd032e15986e0b3247cb39210600dc14856bbd`.
+
 PR #2 remains draft.
 
 Read these two completion artifacts before starting E1:
@@ -219,30 +221,50 @@ Frozen E1-4 boundaries:
 
 Final E1-4 gate: install + Ruff check + Ruff format + full pytest all GREEN.
 
-## 2.6 Next action — E1-5 versioned provenance interchange
+## 2.6 E1-5 versioned provenance interchange — COMPLETE
 
-Implement the first durable interchange contract for the entities that actually exist today:
+Implemented tests-first:
 
-1. a versioned JSON envelope for Source / EvidenceFragment / EvidenceAssertion;
-2. deterministic canonical serialization when the same `exported_at` and semantic content are supplied;
-3. strict import validation;
-4. bundle-level referential integrity for Source → Fragment and Assertion → Fragment references.
+- versioned JSON bundle for Source / EvidenceFragment / EvidenceAssertion;
+- explicit `schema_name` and schema version 1;
+- deterministic canonical ordering by semantic IDs;
+- strict Pydantic import validation;
+- bundle-level Source → Fragment and Assertion → Fragment referential integrity.
 
-Required E1-5 tests:
+Frozen E1-5 boundaries:
 
-- schema version is explicit and unsupported versions are rejected;
-- stable semantic IDs survive export/import;
+- durable export uses domain field names, not SQLite storage names such as `value_json` or link-table ordering columns;
+- input collection order does not change canonical JSON output;
+- assertion `fragment_ids` order remains durable provenance order;
 - UNKNOWN and INFERRED remain distinct;
-- reviewer inference provenance survives;
-- structured JSON values survive;
-- assertion fragment ordering survives;
+- reviewer inference provenance survives export/import;
 - source timestamps remain source locator fields only;
-- input collection ordering does not change canonical JSON output;
-- duplicate semantic IDs and orphan fragment/source references are rejected.
+- duplicate semantic IDs and orphan references are rejected;
+- export contains only domain entities that actually exist; no placeholder Game/Storyteller/Decision rows were introduced.
 
-Do not couple export shape to SQLite column names beyond the durable domain semantics. Do not invent placeholder Game/Storyteller/Decision records in this provenance-core bundle.
+Final E1-5 gate: install + Ruff check + Ruff format + full pytest all GREEN at `7cfd032e15986e0b3247cb39210600dc14856bbd`.
 
-After E1-5, proceed to Storyteller / Game / GameSeat / ReconstructionRevision as the next domain layer.
+## 2.7 Next action — E1-6 reconstruction identity layer
+
+Implement tests-first:
+
+1. `Storyteller`;
+2. `Game`;
+3. `GameSeat`;
+4. `ReconstructionRevision`.
+
+Required E1-6 invariants:
+
+- Storyteller has stable semantic identity plus independence key, but no quality score;
+- qualification evidence remains ordinary Storyteller-subject EvidenceAssertions;
+- GameSeat is strictly game-scoped and does not introduce global player identity;
+- Game owns exactly one optional `current_reconstruction_revision_id`;
+- ReconstructionRevision carries game ID and optional parent revision ID;
+- a Game current-revision pointer must refer to a revision of that same game once bundle/persistence referential checks are added;
+- revisions do not store a second mutable current/superseded flag;
+- no setup/event/decision/rules logic is introduced in this slice.
+
+Do not yet add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
 
 ## 3. First pilot case
 

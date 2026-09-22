@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-4 COMPLETE)
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-5 COMPLETE)
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -161,21 +161,32 @@ E1-4 is complete:
 - assertion + fragment-link insert is transactional, so a failed provenance link leaves no partial assertion row;
 - final E1-4 quality gate is GREEN.
 
-Next E1-5:
+E1-5 is complete:
 
-- define the first durable versioned JSON interchange for the existing provenance core only;
-- keep this contract independent of SQLite row/layout details;
-- prove deterministic serialization, schema-version rejection, UNKNOWN/INFERRED preservation and N:M provenance round-trip;
-- do not invent placeholder Game/Decision entities just to make the export look complete.
+- versioned provenance JSON envelope implemented for Source / EvidenceFragment / EvidenceAssertion;
+- schema name/version are explicit and unsupported versions are rejected;
+- canonical serialization is deterministic for the same semantic content and exported_at;
+- bundle import validates duplicate semantic IDs and Source → Fragment / Assertion → Fragment referential integrity;
+- UNKNOWN / INFERRED, reviewer inference provenance, structured JSON values and ordered assertion-fragment provenance round-trip without loss;
+- export shape is domain-shaped rather than SQLite-shaped;
+- source timestamps remain source-locator fields only;
+- no placeholder Game/Storyteller/Decision records were invented;
+- final E1-5 quality gate is GREEN at `7cfd032e15986e0b3247cb39210600dc14856bbd`.
+
+Next E1-6:
+
+- implement Storyteller / Game / GameSeat / ReconstructionRevision as the next domain layer;
+- keep GameSeat game-scoped with no global player identity;
+- make Game.current_reconstruction_revision_id the sole current-revision owner;
+- keep Storyteller identity/independence separate from qualification evidence;
+- do not yet implement SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
 
 Later E1 steps:
 
-- Storyteller / Game / GameSeat / ReconstructionRevision;
-- persistence round-trip tests;
-- versioned JSON export;
-- Storyteller / Game / GameSeat / ReconstructionRevision;
-- SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
-- Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions.
+- persist and round-trip Storyteller / Game / GameSeat / ReconstructionRevision;
+- extend versioned interchange for that domain layer;
+- add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
+- represent Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions.
 
 Success condition:
 
