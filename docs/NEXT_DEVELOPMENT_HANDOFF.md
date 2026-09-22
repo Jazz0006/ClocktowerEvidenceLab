@@ -1,4 +1,4 @@
-# NEXT DEVELOPMENT HANDOFF — E0 Evidence Contract Pilot
+# NEXT DEVELOPMENT HANDOFF — E0 Complete / E1 Foundation Next
 
 ## 1. Read first
 
@@ -17,17 +17,20 @@ Also consult the relevant CampBoardGameHost D5F evidence documents only as resea
 
 ## 2. Current state
 
-Bootstrap consistency review is complete and E0 is active on working branch `e0-evidence-contract-pilot`.
+Bootstrap consistency review and the E0 evidence-contract pilot are complete on working branch `e0-evidence-contract-pilot`.
 
 Draft PR: `#1` — `E0: evidence contract pilot — A Stud In Scarlet`.
 
-Keep the PR draft until direct primary review and the E0 contract audit are complete.
+Primary review and the E0 contract audit are complete. Keep PR #1 draft until the user explicitly authorizes merge.
 
-No application implementation is authorized yet beyond what is needed to perform and document the E0 pilot.
+Do not begin E1 implementation on this E0 branch unless explicitly requested. The next implementation milestone is E1 domain/persistence foundation after E0 integration.
 
-The first objective is to validate the evidence/reconstruction contract against one real expert primary source.
+Read these two completion artifacts before starting E1:
 
-## 2.1 Current E0 progress — 2026-09-21
+- `docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md`
+- `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md`
+
+## 2.1 Final E0 state — 2026-09-22
 
 Read the live pilot notebook before doing more reconstruction:
 
@@ -54,7 +57,7 @@ New E0 model findings already recorded in the pilot notebook:
 - setup-time decisions such as Drunk shown identity need a committed-prefix boundary that is not limited to Night event sequence numbers;
 - one short source fragment may support multiple distinct semantics: player action, Storyteller commitment, and information delivery.
 
-The next action is now bounded: perform one direct primary-video pass using `docs/E0_A_STUD_IN_SCARLET_PRIMARY_REVIEW_PACKET.md`. Do not spend another round expanding secondary-source search unless the primary review exposes a specific missing locator.
+The bounded primary-video pass is complete. Do not spend another round expanding this one case unless a later audit needs a specific missing locator.
 
 Primary review 1 has now admitted three non-GOLD E0 DecisionSlices:
 
@@ -64,15 +67,32 @@ Primary review 1 has now admitted three non-GOLD E0 DecisionSlices:
 
 The 15:18 Fortune Teller interaction is primary-verified as player targets Tom+Elliott plus delivered YES, but remains an output-event / DecisionSlice candidate because the historical registration witness and discretionary-choice basis are not primary-evidenced.
 
-Remaining bounded primary-review gaps:
+Final bounded primary-review state:
 
-- Chef delivered number at/around 11:53;
-- explicit confirmation that the 15:18 primary source does or does not state a Recluse registration witness;
-- optional exact screenshot timestamp for the setup frame;
-- optional finer timestamp split within 15:18 between target commitment and YES delivery;
-- second verification pass before any GOLD qualification.
+- Chef=1 verified at 11:53;
+- Drunk-as-Empath=0 verified at 12:41 with explicit rationale and rejected alternative 2;
+- Fortune Teller Tom+Elliott -> YES verified at 15:18;
+- Recluse-as-Demon retained only as INFERRED reviewer interpretation; source-observed historical registration witness remains UNKNOWN;
+- beginner/new-player game context verified at game level;
+- optional screenshot/sub-timestamp precision may be added later but does not block E1.
 
 Do not import the prior D5F phrase `Fortune Teller YES via Recluse-as-Demon` as a verified witness. The visible result and the historical registration witness are separate evidence questions.
+
+## 2.2 E1 next action
+
+After PR #1 is integrated, start E1 from a fresh branch.
+
+Use the E1 proposal to implement the provenance core first:
+
+1. Python project/quality tooling;
+2. semantic IDs and derivation/verification enums;
+3. Source / EvidenceFragment / EvidenceAssertion;
+4. SQLite schema v1 + migration;
+5. persistence round-trip tests;
+6. versioned JSON export;
+7. only then add Game / SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
+
+Do not choose the E2 UI framework yet.
 
 ## 3. First pilot case
 
