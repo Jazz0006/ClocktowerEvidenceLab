@@ -6,7 +6,7 @@
 
 ## 1. Recommended foundation stack
 
-Freeze for E1:
+Recommended baseline to freeze when E1 implementation is explicitly started:
 
 - Python 3.12+;
 - Pydantic v2 for domain/input validation;
@@ -16,6 +16,8 @@ Freeze for E1:
 - pytest for tests;
 - Ruff for formatting/linting;
 - versioned JSON / JSONL for durable interchange.
+
+This stack is an E1 proposal, not an implementation already authorized by E0 completion. Freeze it at E1 start after the user approves moving into implementation.
 
 Do **not** choose the E2 UI framework yet.
 
@@ -45,6 +47,14 @@ Do not let SQLite rows or SQLAlchemy models become the authoritative domain API.
 Stable semantic IDs are application/domain IDs.
 
 Database row IDs, if used internally, must never become durable corpus identifiers.
+
+### Decision-control taxonomy
+
+Decision-control ownership is domain classification, not source provenance.
+
+The E1 domain should be able to state that a decision family is player-controlled, Storyteller-controlled or unknown without pretending the primary source proved that classification.
+
+Keep this lightweight: it is not a legality engine and must not enumerate legal alternatives.
 
 ## 3. Minimum E1 domain model
 
