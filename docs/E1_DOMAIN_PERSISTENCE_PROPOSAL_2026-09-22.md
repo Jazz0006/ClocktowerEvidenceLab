@@ -71,8 +71,47 @@ Needed fields include:
 - stable external locator / platform ID;
 - title/publisher/date when known;
 - source fidelity/category;
-- discovery/inclusion reason;
+- discovery path / inclusion reason;
+- inventory/screening state such as discovered, screened, reconstructable, selected or rejected;
+- rejection reason when applicable;
 - metadata derivation/verification where material.
+
+These fields satisfy the source-census / selection-bias requirements without inventing a separate `ResearchLead` entity during E1.
+
+### Storyteller
+
+Stable public identity / independence key for Storyteller evidence aggregation.
+
+Needed fields include:
+
+- semantic Storyteller ID;
+- public display name when appropriate;
+- independence key;
+- optional public identity/source links;
+- no derived quality score.
+
+Multiple games by the same Storyteller must resolve to the same independence identity when evidence supports that linkage.
+
+### GameSeat
+
+Game-scoped participant/seat identity.
+
+This is required by the E0 pilot for stable references such as:
+
+- Sullivan as the Drunk / shown Empath;
+- Blair selecting Tom + Elliott;
+- Jon receiving Chef information.
+
+Needed fields include:
+
+- semantic seat ID;
+- game ID;
+- seat/order label or number;
+- display name / game-scoped participant label;
+- optional evidence-backed player-experience metadata;
+- no requirement for a global player identity.
+
+Events, setup commitments and assertions should reference seat IDs rather than copying names into free text.
 
 ### Game
 
@@ -82,10 +121,26 @@ Needed fields include:
 
 - semantic game ID;
 - script when known;
-- storyteller identity/context;
+- Storyteller ID(s) / role context;
 - player/table context such as beginner/new-player when evidenced;
 - reconstruction status;
 - current reconstruction revision ID.
+
+### ReconstructionRevision
+
+Versioned interpretation of a game's reconstructable historical state.
+
+Needed fields include:
+
+- semantic revision ID;
+- game ID;
+- parent revision ID when applicable;
+- created_at;
+- reason / concise change note;
+- current/superseded status;
+- no rewriting of raw EvidenceFragments.
+
+Corrections to seating, setup interpretation, event order or decision boundaries create a new revision rather than silently mutating the evidence history.
 
 ### EvidenceFragment
 
@@ -201,14 +256,19 @@ Minimum fields:
 E1 must support:
 
 ```text
+Storyteller       1:N  Game role assignments
+Game              1:N  GameSeat
+Game              1:N  ReconstructionRevision
 EvidenceFragment  N:M  EvidenceAssertion
-EvidenceAssertion N:M SetupCommitment / SemanticEvent
+EvidenceAssertion N:M  SetupCommitment / SemanticEvent
 EvidenceFragment  N:M  SemanticEvent when direct linkage is useful
 DecisionSlice     -> observed-choice assertion(s)
 DecisionSlice     -> explicit prefix members
 DecisionSlice     -> rationale/rejected-alternative assertions
 VerificationRecord -> any verifiable semantic target
 ```
+
+Events and setup commitments must reference `GameSeat` semantic IDs when they refer to players/seats. Do not rely on copied display names as identity.
 
 Do not assume one source fragment maps to one event.
 
@@ -291,7 +351,11 @@ Use a versioned bundle envelope, conceptually:
 {
   "schema_version": 1,
   "exported_at": "...",
+  "storytellers": [],
+  "storyteller_qualification_evidence": [],
   "games": [],
+  "game_seats": [],
+  "reconstruction_revisions": [],
   "sources": [],
   "evidence_fragments": [],
   "assertions": [],
@@ -321,16 +385,20 @@ Tier 0 / domain:
 
 Tier 1 / persistence:
 
-- create/read/update reconstruction revision;
+- create/read/update reconstruction revision without rewriting raw evidence;
+- source screening / selection / rejection metadata round-trip;
+- Storyteller independence identity round-trip;
+- GameSeat references survive setup/event/decision round-trip;
 - evidence N:M provenance round-trip;
 - verification record round-trip;
 - migration from empty DB to schema v1;
-- JSON export/import round-trip.
+- JSON export/import round-trip including Storyteller qualification evidence.
 
 Tier 2 / pilot regression:
 
 Represent the E0 A Stud pilot generically and prove:
 
+- the nine game-scoped seats can be referenced stably without creating global player identities;
 - Sullivan actual Drunk + shown Empath can require multiple fragments/assertions;
 - Chef=1 survives as a verified delivery without becoming a DecisionSlice;
 - Drunk-Empath 0 preserves rationale and rejected alternative 2;
@@ -372,7 +440,8 @@ The smallest useful implementation slice should be:
 4. SQLite schema v1 + migration;
 5. persistence round-trip tests;
 6. versioned export of those entities;
-7. then add Game / SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
+7. then add Storyteller / Game / GameSeat / ReconstructionRevision;
+8. then add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord / StorytellerQualificationEvidence.
 
 This sequence proves the provenance core before adding higher-level reconstruction structures.
 
