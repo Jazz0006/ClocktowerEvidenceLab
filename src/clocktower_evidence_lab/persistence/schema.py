@@ -99,8 +99,7 @@ evidence_fragments = sa.Table(
         name="ck_evidence_fragments_range_order",
     ),
     sa.CheckConstraint(
-        "(locator_kind NOT IN ('TIMESTAMP', 'TIMESTAMP_RANGE') "
-        "OR source_start_ms IS NOT NULL)",
+        "(locator_kind NOT IN ('TIMESTAMP', 'TIMESTAMP_RANGE') OR source_start_ms IS NOT NULL)",
         name="ck_evidence_fragments_timestamp_requires_start",
     ),
     sa.CheckConstraint(
