@@ -1,6 +1,6 @@
 # E1 Domain and Persistence Proposal — 2026-09-22
 
-> Status: **PROPOSED FROM COMPLETED E0**
+> Status: **FROZEN FOR E1 IMPLEMENTATION**
 >
 > Goal: implement the smallest local-first foundation that can losslessly represent the E0 pilot and support reconstruction of a second real game.
 
@@ -17,7 +17,7 @@ Recommended baseline to freeze when E1 implementation is explicitly started:
 - Ruff for formatting/linting;
 - versioned JSON / JSONL for durable interchange.
 
-This stack is an E1 proposal, not an implementation already authorized by E0 completion. Freeze it at E1 start after the user approves moving into implementation.
+This stack is frozen for E1 implementation. E1 may refine dependency versions and internal module shape, but changing the language, working-store technology, persistence approach or migration strategy requires an explicit architecture update.
 
 Do **not** choose the E2 UI framework yet.
 
@@ -55,6 +55,17 @@ Decision-control ownership is domain classification, not source provenance.
 The E1 domain should be able to state that a decision family is player-controlled, Storyteller-controlled or unknown without pretending the primary source proved that classification.
 
 Keep this lightweight: it is not a legality engine and must not enumerate legal alternatives.
+
+### E1-start ownership audit
+
+Before implementation, E1 freezes these anti-dual-track rules:
+
+- `Game.current_reconstruction_revision_id` is the single owner of which revision is current; revisions do not maintain a second mutable current/superseded status.
+- `VerificationRecord` is the single owner of verification transitions; entity-level current verification is a projection, not a separately writable fact.
+- reconstruction-dependent assertions are revision-scoped; raw/source-backed or non-reconstruction assertions are not silently attached to a revision.
+- direct EvidenceFragment-to-event links are locator support only and do not create a parallel claim/verification subsystem.
+
+These constraints prevent ownership duplication, reconstruction-revision leakage and provenance divergence without adding a new abstraction layer.
 
 ## 3. Minimum E1 domain model
 
@@ -129,7 +140,7 @@ Needed fields include:
 - Storyteller ID(s) / role context;
 - player/table context such as beginner/new-player when evidenced;
 - reconstruction status;
-- current reconstruction revision ID.
+- current reconstruction revision ID, which is the sole authoritative pointer to the current revision.
 
 ### ReconstructionRevision
 
@@ -142,7 +153,7 @@ Needed fields include:
 - parent revision ID when applicable;
 - created_at;
 - reason / concise change note;
-- current/superseded status;
+- no independently writable current/superseded flag; currentness is derived from `Game.current_reconstruction_revision_id` and revision ancestry;
 - no rewriting of raw EvidenceFragments.
 
 Corrections to seating, setup interpretation, event order or decision boundaries create a new revision rather than silently mutating the evidence history.
@@ -173,12 +184,13 @@ Must support:
 - subject / assertion type;
 - structured value;
 - derivation status;
-- verification status;
+- current verification status as a projection of VerificationRecord history (`UNVERIFIED` when no verification record exists), not as an independently writable source of truth;
 - provenance links to one or more EvidenceFragments;
 - optional reviewer inference provenance;
-- revision membership / supersedes relation where the assertion is reconstruction-dependent.
+- reconstruction revision ID when and only when the assertion depends on a reconstruction revision;
+- supersedes relation where a reconstruction-dependent assertion replaces an earlier interpretation.
 
-Raw/source-backed claims remain append-only. Reconstruction-dependent assertions are revised by creating a new revision-scoped assertion or superseding relation rather than mutating prior history in place.
+Raw/source-backed and non-reconstruction claims remain append-only and have no reconstruction revision ID. Reconstruction-dependent assertions must carry a reconstruction revision ID and are revised by creating a new revision-scoped assertion or superseding relation rather than mutating prior history in place. An assertion must never be silently reused across revisions merely because its structured value happens to match.
 
 ### SetupCommitment
 
@@ -239,6 +251,8 @@ Do not store downstream legal alternatives in Evidence Lab.
 
 Audit trail for verification.
 
+VerificationRecord is the sole write/audit owner of verification transitions. A target's current verification status is a derived projection from this history; do not maintain a second mutable verification flag that can diverge.
+
 Minimum fields:
 
 - verification record ID;
@@ -276,7 +290,7 @@ Game              1:N  ReconstructionRevision
 ReconstructionRevision 1:N SetupCommitment / SemanticEvent / DecisionSlice
 EvidenceFragment  N:M  EvidenceAssertion
 EvidenceAssertion N:M  SetupCommitment / SemanticEvent
-EvidenceFragment  N:M  SemanticEvent when direct linkage is useful
+EvidenceFragment  N:M  SemanticEvent when direct locator linkage is useful (this does not replace assertion-level derivation/verification where a concrete factual claim is being made)
 DecisionSlice     -> observed-choice assertion(s)
 DecisionSlice     -> explicit prefix members
 DecisionSlice     -> rationale/rejected-alternative assertions
