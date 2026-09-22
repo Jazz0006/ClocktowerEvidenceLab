@@ -56,14 +56,21 @@ New E0 model findings already recorded in the pilot notebook:
 
 The next action is now bounded: perform one direct primary-video pass using `docs/E0_A_STUD_IN_SCARLET_PRIMARY_REVIEW_PACKET.md`. Do not spend another round expanding secondary-source search unless the primary review exposes a specific missing locator.
 
-Still required before E0 can admit a decision slice:
+Primary review 1 has now admitted three non-GOLD E0 DecisionSlices:
 
-- direct/manual primary playback (or an equivalent primary caption path) to recover in-video timestamps for setup and Night 1;
-- primary confirmation of setup/seating/shown identity;
-- ordered player-action vs Storyteller-output boundaries;
-- human verification pass after the timestamped primary extraction;
-- explicit confirmation or UNKNOWN treatment of registration witness;
-- explicit rationale/rejected alternatives only where the primary source truly contains them.
+1. Drunk shown identity = Empath;
+2. Red Herring = Sullivan;
+3. Drunk-as-Empath Night-1 information = 0, with explicit rationale and rejected alternative 2.
+
+The 15:18 Fortune Teller interaction is primary-verified as player targets Tom+Elliott plus delivered YES, but remains an output-event / DecisionSlice candidate because the historical registration witness and discretionary-choice basis are not primary-evidenced.
+
+Remaining bounded primary-review gaps:
+
+- Chef delivered number at/around 11:53;
+- explicit confirmation that the 15:18 primary source does or does not state a Recluse registration witness;
+- optional exact screenshot timestamp for the setup frame;
+- optional finer timestamp split within 15:18 between target commitment and YES delivery;
+- second verification pass before any GOLD qualification.
 
 Do not import the prior D5F phrase `Fortune Teller YES via Recluse-as-Demon` as a verified witness. The visible result and the historical registration witness are separate evidence questions.
 
