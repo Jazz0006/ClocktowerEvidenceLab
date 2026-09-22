@@ -49,9 +49,7 @@ class Game(_DomainModel):
 
     @model_validator(mode="after")
     def _validate_storyteller_assignments(self) -> "Game":
-        storyteller_ids = [
-            assignment.storyteller_id for assignment in self.storyteller_assignments
-        ]
+        storyteller_ids = [assignment.storyteller_id for assignment in self.storyteller_assignments]
         if len(set(storyteller_ids)) != len(storyteller_ids):
             raise ValueError("game storyteller assignments must use unique storyteller IDs")
         return self
