@@ -93,6 +93,7 @@ def test_assertions_support_many_to_many_fragment_provenance() -> None:
         value="RECLUSE",
         derivation=Derivation.RECONSTRUCTED,
         fragment_ids=("fragment:setup:frame", "fragment:review:role"),
+        reconstruction_revision_id="revision:game1:1",
     )
     visible_result = EvidenceAssertion(
         assertion_id="assertion:ft:result",
@@ -106,6 +107,19 @@ def test_assertions_support_many_to_many_fragment_provenance() -> None:
 
     assert actual_role.fragment_ids == ("fragment:setup:frame", "fragment:review:role")
     assert visible_result.fragment_ids == ("fragment:review:role",)
+
+
+def test_reconstructed_assertion_requires_explicit_revision_scope() -> None:
+    with pytest.raises(ValidationError):
+        EvidenceAssertion(
+            assertion_id="assertion:reconstruction-without-revision",
+            subject_type="GAME_SEAT",
+            subject_id="seat:game1:4",
+            assertion_type="ACTUAL_ROLE",
+            value="RECLUSE",
+            derivation=Derivation.RECONSTRUCTED,
+            fragment_ids=("fragment:setup:frame", "fragment:review:role"),
+        )
 
 
 def test_assertion_requires_nonempty_unique_fragment_provenance() -> None:
