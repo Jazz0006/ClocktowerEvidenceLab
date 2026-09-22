@@ -70,7 +70,7 @@ Selection decision: **keep for E0 reconstruction**.
 
 ## 3. Evidence fragments currently supported by the primary source
 
-These are the only current **source-locator facts** collected in this pass. The automated acquisition path could not retrieve the primary YouTube page body or timed captions, so title/publisher/date/Storyteller metadata must not be overstated as direct primary-content observation. Timed gameplay evidence remains absent.
+Automated acquisition recovered only the stable primary locator. Human primary review subsequently supplied a grimoire/setup frame and timed gameplay evidence. Keep the automated-acquisition limitation as provenance history, but treat the human-reviewed fragments in §3.1 as the current authoritative E0 evidence set.
 
 ### FRAG-ASIS-LOCATOR-001
 
@@ -182,11 +182,11 @@ This is the first human primary-review pass. It is stronger than the earlier aut
 
 The timestamps are evidence locators. They are **not automatically historical event times** for setup facts whose real commitment occurred before the video explained/revealed them.
 
-## 4. Locator-only secondary leads
+## 4. Historical locator-only secondary leads
 
-The following information is **not corpus evidence** and must not be imported as OBSERVED / RECONSTRUCTED facts.
+The following information was used only as an acquisition aid before primary playback.
 
-It exists only to tell a reviewer what to look for in the primary video.
+It is **not corpus evidence** and must not be imported as OBSERVED / RECONSTRUCTED facts merely because the secondary sources were accurate. Primary-reviewed replacements now exist for the bounded setup/Night-1 facts.
 
 Secondary lead sources include the public No Rolls Barred fan index and the prior CampBoardGameHost D5F research branch.
 
@@ -207,7 +207,7 @@ Candidate setup / Night-1 picture:
 - candidate Night-1 Fortune Teller player choice: Tom + Elliott;
 - candidate Night-1 Fortune Teller delivered result: YES.
 
-All items above remain locator leads until primary fragments with timestamps are extracted.
+These items remain secondary locator leads in provenance history. Where §3.1 now contains matching primary-reviewed evidence, the primary evidence supersedes the locator lead for corpus reconstruction.
 
 The old D5F phrase “Fortune Teller YES via Recluse-as-Demon” is specifically **not** imported as historical fact.
 
@@ -272,15 +272,13 @@ Result:
 - searches for timestamped mirrors/index citations did not yield a primary-backed timestamp;
 - the old D5F source catalog confirms that primary Night-1 timestamp verification had never been completed there either.
 
-Therefore the current stopping condition is evidential, not analytical:
+This automated limitation was later resolved by direct human primary playback.
 
-> the next promotion step requires direct/manual primary playback or another primary-source caption path that exposes timestamps.
+Do not erase this acquisition history: it demonstrates why locator discovery and evidence verification are separate workflow states. Secondary indexes, mirrors, old D5F fixture order and rules-engine reconstruction still must not substitute for primary verification.
 
-Do not substitute the fan index, Bilibili mirrors, old D5F fixture order or rules-engine reconstruction for primary timestamp verification.
+## 5. Primary in-video extraction checklist — bounded pass complete
 
-## 5. Primary in-video extraction queue
-
-The next primary playback pass must capture short timestamped fragments around the following boundaries.
+The bounded primary playback pass captured the material setup/Night-1 fragments required for E0. The checklist below is retained as the workflow template that proved useful.
 
 ### Q1 — setup commitments before Night 1
 
@@ -300,12 +298,11 @@ Important:
 
 ### Q2 — Chef Night-1 delivery
 
-Need to capture:
+Captured:
 
-- timestamp before delivery;
-- timestamp/range of delivered number;
-- any visible/commented registration treatment;
-- any explicit rationale.
+- `11:53`;
+- Jon's Chef receives `1`;
+- no explicit registration treatment or choice-specific rationale was supplied in the review.
 
 Do not assume that a Storyteller-delivered number is automatically a discretionary Storyteller decision.
 
@@ -313,12 +310,12 @@ Evidence Lab records the delivery. Whether the output had multiple legal alterna
 
 ### Q3 — Drunk shown-Empath Night-1 information
 
-Need to capture:
+Captured:
 
-- alive-neighbour context at that moment;
-- the delivered number;
-- any explicit Storyteller commentary showing why that number was chosen;
-- whether the source makes clear that this is intentionally false/misleading information.
+- `12:41`;
+- Sullivan-as-Empath receives `0`;
+- Ben explicitly explains that `2` would be less believable;
+- this supplies both choice-specific rationale and an explicitly rejected alternative.
 
 The pilot must not infer a persistent “fake world” unless the historical source supports the concrete delivered information. Cross-night policy belongs to later analysis unless additional primary decisions are reconstructed.
 
@@ -326,13 +323,15 @@ The pilot must not infer a persistent “fake world” unless the historical sou
 
 This boundary is especially important.
 
-Need separate fragments for:
+Captured in one compound source fragment at `15:18`:
 
-1. Blair commits the two selected players;
-2. after that player-controlled action is committed, the Storyteller output is determined/delivered;
-3. the delivered YES/NO result;
-4. any explicit registration statement;
-5. any explicit rationale or rejected alternative.
+1. Blair commits Tom + Elliott;
+2. the Storyteller delivers YES;
+3. target commitment semantically precedes result delivery;
+4. no explicit registration statement was supplied;
+5. no choice-specific rationale or rejected alternative was supplied.
+
+A knowledgeable reviewer infers Recluse-as-Demon from mechanics, but that remains INFERRED rather than OBSERVED.
 
 The decision-time prefix for a Fortune Teller output must include the committed target pair but must not include the later delivered result.
 
@@ -723,4 +722,4 @@ Do not turn it into tables/classes/files until the E0 primary reconstruction and
 - schema/workflow gap audit: STARTED
 - draft export pressure: STARTED
 
-The pilot must remain open until timestamped primary evidence supports the material Night-1 claims.
+The bounded E0 primary reconstruction is complete enough for the evidence-contract completion audit. Optional precision improvements may still be added later, but they are not required to justify E1.
