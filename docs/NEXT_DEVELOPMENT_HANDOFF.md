@@ -1,4 +1,4 @@
-# NEXT DEVELOPMENT HANDOFF — E0 Complete / E1 Foundation Next
+# NEXT DEVELOPMENT HANDOFF — E1 Domain / Persistence Foundation
 
 ## 1. Read first
 
@@ -17,13 +17,15 @@ Also consult the relevant CampBoardGameHost D5F evidence documents only as resea
 
 ## 2. Current state
 
-Bootstrap consistency review and the E0 evidence-contract pilot are complete on working branch `e0-evidence-contract-pilot`.
+Bootstrap consistency review and the E0 evidence-contract pilot are complete and merged to `main`.
 
-Draft PR: `#1` — `E0: evidence contract pilot — A Stud In Scarlet`.
+PR `#1` — `E0: evidence contract pilot — A Stud In Scarlet` — was squash-merged to `main` on 2026-09-22.
 
-Primary review and the E0 contract audit are complete. Keep PR #1 draft until the user explicitly authorizes merge.
+Merged `main` commit: `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
 
-Do not begin E1 implementation on this E0 branch unless explicitly requested. The next implementation milestone is E1 domain/persistence foundation after E0 integration.
+Current E1 working branch: `e1-domain-persistence-foundation`.
+
+E1 implementation is now the active next milestone. Start from `e1-domain-persistence-foundation`; do not reopen the merged E0 branch for implementation work.
 
 Read these two completion artifacts before starting E1:
 
@@ -97,7 +99,7 @@ Do not import the prior D5F phrase `Fortune Teller YES via Recluse-as-Demon` as 
 
 ## 2.2 E1 next action
 
-After PR #1 is integrated, start E1 from a fresh branch.
+E0 is integrated. Start E1 from the already-created fresh branch `e1-domain-persistence-foundation`.
 
 Use the E1 proposal to implement the provenance core first:
 
