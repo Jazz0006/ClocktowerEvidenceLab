@@ -249,19 +249,21 @@ Minimum fields:
 - evidence fragment IDs checked;
 - concise note.
 
-### StorytellerQualificationEvidence
+### Storyteller qualification evidence
 
-Keep qualification evidence separate from individual game/decision evidence.
+Do **not** create a second evidence entity for Storyteller qualification.
 
-Minimum fields:
+Qualification facts are ordinary `EvidenceAssertion` records whose subject is a `Storyteller`, backed by the normal Source / EvidenceFragment provenance and VerificationRecord audit trail.
 
-- Storyteller ID;
-- concise qualification fact;
-- Source ID and/or EvidenceFragment / EvidenceAssertion provenance;
-- derivation;
-- verification.
+Examples:
 
-Do not create a second provenance path made only of ad-hoc URLs. Qualification evidence should reuse the same Source / EvidenceFragment / VerificationRecord infrastructure as game evidence.
+- long-running official/community Storyteller involvement;
+- official content/convention role;
+- other evidence supporting the project's trust/experience classification.
+
+A Storyteller qualification summary or derived status may be materialized as a view/application projection later, but the evidence owner remains `EvidenceAssertion`.
+
+This avoids a second derivation/verification/provenance model.
 
 ## 4. Provenance relationships
 
@@ -366,7 +368,6 @@ Use a versioned bundle envelope, conceptually:
   "schema_version": 1,
   "exported_at": "...",
   "storytellers": [],
-  "storyteller_qualification_evidence": [],
   "games": [],
   "game_seats": [],
   "reconstruction_revisions": [],
@@ -407,7 +408,7 @@ Tier 1 / persistence:
 - evidence N:M provenance round-trip;
 - verification record round-trip;
 - migration from empty DB to schema v1;
-- JSON export/import round-trip including Storyteller qualification evidence.
+- JSON export/import round-trip including Storyteller-subject qualification assertions.
 
 Tier 2 / pilot regression:
 
@@ -457,7 +458,8 @@ The smallest useful implementation slice should be:
 5. persistence round-trip tests;
 6. versioned export of those entities;
 7. then add Storyteller / Game / GameSeat / ReconstructionRevision;
-8. then add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord / StorytellerQualificationEvidence.
+8. then add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
+9. represent Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions, with no parallel evidence subsystem.
 
 This sequence proves the provenance core before adding higher-level reconstruction structures.
 
