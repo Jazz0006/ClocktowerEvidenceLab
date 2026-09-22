@@ -1,9 +1,8 @@
 from enum import Enum
 
 import pytest
-from pydantic import TypeAdapter, ValidationError
-
 from clocktower_evidence_lab.domain.primitives import Derivation, SemanticId, Verification
+from pydantic import TypeAdapter, ValidationError
 
 
 def test_evidence_status_axes_are_independent_string_enums() -> None:
