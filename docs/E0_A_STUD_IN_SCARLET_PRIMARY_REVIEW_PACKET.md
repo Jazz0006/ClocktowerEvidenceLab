@@ -344,3 +344,105 @@ The pilot notebook should then be updated with:
 - admitted DecisionSlices;
 - unresolved UNKNOWNs;
 - any additional schema/workflow gaps exposed by direct playback.
+
+## 9. Primary review 1 — human-supplied results (2026-09-22)
+
+Reviewer supplied a direct screenshot from the primary video plus playback timestamps.
+
+This is the first human primary-review pass. The screenshot itself is not committed to the repository; only concise factual reconstruction/provenance is retained.
+
+### P2 result — setup / Drunk shown identity
+
+Primary visual frame supports the full visible grimoire/seating reconstruction:
+
+| Seat | Player | Visible / reconstructed role |
+|---:|---|---|
+| 1 | Luke | Imp |
+| 2 | Oli | Ravenkeeper |
+| 3 | Blair | Fortune Teller |
+| 4 | Tom | Monk |
+| 5 | Elliott | Recluse |
+| 6 | Laurie | Scarlet Woman |
+| 7 | Isaac | Undertaker |
+| 8 | Jon | Chef |
+| 9 | Sullivan | shown Empath |
+
+The same frame visibly supports Demon bluffs:
+
+- Saint;
+- Slayer;
+- Soldier.
+
+Additional timed primary review:
+
+- `09:49` — Sullivan is established as the actual Drunk.
+- Combining the primary frame with `09:49` supports: Sullivan actual role = Drunk; shown/believed role = Empath.
+
+Exact historical setup-commit ordering remains UNKNOWN. The source timestamp is when evidence is presented to the viewer, not automatically the original historical commit time.
+
+### Additional setup result — Fortune Teller Red Herring
+
+- `10:32` — Sullivan is made the Fortune Teller Red Herring.
+
+This is a primary-supported Storyteller-controlled setup commitment.
+
+No choice-specific rationale or rejected alternative was reported for this setup choice.
+
+### P3 result — Chef
+
+- `11:53` — Chef interaction is visible/reviewed.
+
+The reviewer did **not** supply the delivered number in this pass.
+
+Therefore:
+
+- Chef interaction occurrence = VERIFIED;
+- Chef delivered value = UNKNOWN in the Evidence Lab primary record for now.
+
+Do not promote the secondary `Chef = 1` lead until the number is directly reported from primary playback.
+
+### P4 result — Drunk-as-Empath information
+
+- `12:41` — Sullivan is given `0`.
+- Ben explicitly explains the choice by saying that `2` would be a little unbelievable.
+
+Evidence treatment:
+
+- delivered information = `0`;
+- derivation = OBSERVED;
+- verification = VERIFIED by human primary review;
+- explicit choice-specific rationale = PRESENT;
+- explicit rejected alternative = `2`;
+- no conclusion is drawn about whether `1` was considered/rejected.
+
+This is the strongest current E0 Storyteller-decision slice because both the observed choice and a choice-specific rejected alternative are primary-supported.
+
+### P5/P6 result — Fortune Teller
+
+- `15:18` — Blair chooses Tom and Elliott; result delivered is YES.
+
+The reviewer supplied one timestamp for the compound interaction rather than separate sub-timestamps.
+
+Evidence treatment:
+
+- player-controlled target pair = Tom + Elliott;
+- delivered result = YES;
+- both are primary-reviewed;
+- semantic ordering is target commitment before result delivery;
+- exact sub-timestamp boundary within the source fragment is not yet captured;
+- no explicit historical Recluse registration witness was supplied;
+- historical registration witness therefore remains UNKNOWN;
+- no choice-specific rationale or rejected alternative was supplied.
+
+This single fragment supports multiple semantics and is a concrete test of the rule that source fragments and semantic events are many-to-many rather than one-to-one.
+
+### Remaining smallest primary-review gaps
+
+Only a few facts are still needed for the bounded Night-1 pass:
+
+1. Chef delivered number at/around `11:53`;
+2. whether the primary source explicitly states a registration witness for the `15:18` Fortune Teller YES (if not, confirm “no explicit registration statement”);
+3. optional exact screenshot timestamp for the setup/grimoire frame;
+4. optional sub-second/sub-range split inside `15:18` if the target commitment and YES delivery can be cleanly separated.
+
+None of these should be guessed.
