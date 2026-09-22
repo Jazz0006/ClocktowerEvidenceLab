@@ -41,6 +41,8 @@ E1-4 persistence gate head: `0d11e4c480754ba70d3965740c4de01238cab7ac`.
 
 E1-5 interchange gate head: `7cfd032e15986e0b3247cb39210600dc14856bbd`.
 
+E1-6 reconstruction identity domain gate head: `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
+
 PR #2 remains draft.
 
 Read these two completion artifacts before starting E1:
@@ -244,25 +246,42 @@ Frozen E1-5 boundaries:
 
 Final E1-5 gate: install + Ruff check + Ruff format + full pytest all GREEN at `7cfd032e15986e0b3247cb39210600dc14856bbd`.
 
-## 2.7 Next action — E1-6 reconstruction identity layer
+## 2.7 E1-6 reconstruction identity layer — COMPLETE
+
+Implemented tests-first:
+
+- `Storyteller`;
+- `StorytellerAssignment`;
+- `Game`;
+- `GameSeat`;
+- `ReconstructionRevision`;
+- `ReconstructionStatus`.
+
+Frozen E1-6 boundaries:
+
+- Storyteller identity/independence is descriptive identity only; no qualification score is stored on Storyteller;
+- qualification evidence remains ordinary Storyteller-subject EvidenceAssertions;
+- GameSeat is game-scoped and has no global player ID;
+- evidence-backed player experience may be retained as raw game-scoped metadata rather than guessed coarse labels;
+- Game is the sole owner of `current_reconstruction_revision_id`;
+- ReconstructionRevision has no writable current/superseded flag;
+- revisions require timezone-aware creation time and cannot parent themselves;
+- duplicate Storyteller assignments are rejected;
+- cross-entity same-game referential checks are intentionally deferred to the persistence/bundle boundary where all referenced entities are available;
+- no setup/event/decision/rules logic was introduced.
+
+Final E1-6 gate: install + Ruff check + Ruff format + full pytest all GREEN at `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
+
+## 2.8 Next action — E1-7 reconstruction identity persistence
 
 Implement tests-first:
 
-1. `Storyteller`;
-2. `Game`;
-3. `GameSeat`;
-4. `ReconstructionRevision`.
-
-Required E1-6 invariants:
-
-- Storyteller has stable semantic identity plus independence key, but no quality score;
-- qualification evidence remains ordinary Storyteller-subject EvidenceAssertions;
-- GameSeat is strictly game-scoped and does not introduce global player identity;
-- Game owns exactly one optional `current_reconstruction_revision_id`;
-- ReconstructionRevision carries game ID and optional parent revision ID;
-- a Game current-revision pointer must refer to a revision of that same game once bundle/persistence referential checks are added;
-- revisions do not store a second mutable current/superseded flag;
-- no setup/event/decision/rules logic is introduced in this slice.
+1. extend current SQLAlchemy Core metadata for Storyteller / Game / StorytellerAssignment / GameSeat / ReconstructionRevision;
+2. add a deterministic Alembic migration from provenance-core v1 to the new schema;
+3. add append-only insert/get persistence round trips;
+4. enforce game-scoped referential integrity, including GameSeat → Game and ReconstructionRevision → Game;
+5. enforce that a revision parent belongs to the same game and that Game.current_reconstruction_revision_id, when present, resolves to a revision of that same game;
+6. keep Game as the only current-revision owner.
 
 Do not yet add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
 

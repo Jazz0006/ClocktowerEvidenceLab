@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-5 COMPLETE)
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-6 COMPLETE)
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -173,18 +173,28 @@ E1-5 is complete:
 - no placeholder Game/Storyteller/Decision records were invented;
 - final E1-5 quality gate is GREEN at `7cfd032e15986e0b3247cb39210600dc14856bbd`.
 
-Next E1-6:
+E1-6 is complete:
 
-- implement Storyteller / Game / GameSeat / ReconstructionRevision as the next domain layer;
-- keep GameSeat game-scoped with no global player identity;
-- make Game.current_reconstruction_revision_id the sole current-revision owner;
-- keep Storyteller identity/independence separate from qualification evidence;
-- do not yet implement SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
+- Storyteller / StorytellerAssignment / Game / GameSeat / ReconstructionRevision domain contracts are implemented tests-first;
+- Storyteller stores stable identity and independence key but no qualification score;
+- GameSeat is strictly game-scoped and exposes no global-player identity field;
+- Game.current_reconstruction_revision_id is the only current-revision pointer;
+- ReconstructionRevision contains game/parent identity, timezone-aware creation time and change note, with no second current/superseded flag;
+- duplicate Storyteller assignments and self-parenting revisions are rejected;
+- no SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord or rules logic was introduced;
+- final E1-6 quality gate is GREEN at `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
+
+Next E1-7:
+
+- extend SQLAlchemy/Alembic schema for Storyteller / Game / GameSeat / ReconstructionRevision;
+- add append-only persistence round-trip for those entities;
+- enforce game-scoped foreign keys and same-game current/parent revision integrity where the persistence boundary has enough information;
+- preserve Game as sole current-revision owner;
+- do not add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord yet.
 
 Later E1 steps:
 
-- persist and round-trip Storyteller / Game / GameSeat / ReconstructionRevision;
-- extend versioned interchange for that domain layer;
+- extend versioned interchange for Storyteller / Game / GameSeat / ReconstructionRevision;
 - add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
 - represent Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions.
 
