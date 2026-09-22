@@ -54,7 +54,10 @@ def _schema_signature(engine) -> tuple:
             )
         )
         check_constraints = tuple(
-            sorted(constraint["sqltext"] for constraint in inspector.get_check_constraints(table_name))
+            sorted(
+                constraint["sqltext"]
+                for constraint in inspector.get_check_constraints(table_name)
+            )
         )
         indexes = tuple(
             sorted(
