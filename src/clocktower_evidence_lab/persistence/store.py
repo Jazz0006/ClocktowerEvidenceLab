@@ -72,9 +72,7 @@ class SQLiteProvenanceStore:
     def get_source(self, source_id: SemanticId) -> Source | None:
         with self.engine.connect() as connection:
             row = (
-                connection.execute(
-                    sa.select(sources).where(sources.c.source_id == source_id)
-                )
+                connection.execute(sa.select(sources).where(sources.c.source_id == source_id))
                 .mappings()
                 .one_or_none()
             )
