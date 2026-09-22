@@ -61,8 +61,9 @@ Evidence:
 
 Treatment:
 
-- derivation: RECONSTRUCTED;
+- observed-value derivation: RECONSTRUCTED from primary evidence;
 - verification: VERIFIED;
+- decision-control classification: Storyteller-controlled by the Evidence Lab normative decision taxonomy;
 - historical setup internal order: UNKNOWN;
 - personal Storyteller actor attribution: UNKNOWN unless separately evidenced;
 - rationale: UNKNOWN;
@@ -249,6 +250,19 @@ The pilot repeatedly needed UNKNOWN for:
 - absent rationale.
 
 UNKNOWN is normal evidence, not an error state.
+
+### 6.11 Observed value provenance and decision-control taxonomy are separate
+
+Primary evidence can establish **what happened** without itself explaining **which game actor owns that kind of choice**.
+
+E0 uses the Evidence Lab's normative decision taxonomy to classify known control ownership, for example:
+
+- Red Herring as Storyteller-controlled;
+- Drunk shown identity as a Storyteller decision family.
+
+This classification must remain separate from source provenance.
+
+E1 must not imply that a primary clip “proved” control ownership merely because it proved the observed value, and it must not import downstream legality enumeration to fill that gap.
 
 ## 7. What E0 rejects
 
