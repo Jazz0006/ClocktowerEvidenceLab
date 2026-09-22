@@ -43,7 +43,7 @@ Completed:
 - all bootstrap files read;
 - bootstrap consistency issue around prematurely frozen SQLite wording corrected;
 - stable primary YouTube locator identified as video ID `qZBvRfM3Xow`;
-- source record and screening started;
+- source record and bounded screening completed for E0 pilot scope;
 - Ben qualification evidence sources recorded from official TPI material, still awaiting human verification status;
 - prior D5F and public episode indexes demoted to locator-only leads rather than corpus facts;
 - legacy D5F candidate code inspected directly and confirmed to be `PRIMARY_VERIFICATION_PENDING`;
@@ -90,7 +90,9 @@ Use the E1 proposal to implement the provenance core first:
 4. SQLite schema v1 + migration;
 5. persistence round-trip tests;
 6. versioned JSON export;
-7. only then add Game / SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
+7. add Storyteller / Game / GameSeat / ReconstructionRevision;
+8. add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
+9. represent Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions rather than a parallel evidence subsystem.
 
 Do not choose the E2 UI framework yet.
 
