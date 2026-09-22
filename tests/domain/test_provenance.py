@@ -1,10 +1,9 @@
-from datetime import date
-
 import pytest
 from pydantic import ValidationError
 
 from clocktower_evidence_lab.domain.primitives import Derivation, Verification
 from clocktower_evidence_lab.domain.provenance import (
+    AssertionScope,
     EvidenceAssertion,
     EvidenceFragment,
     InclusionReason,
@@ -23,9 +22,8 @@ def test_source_workflow_dimensions_remain_independent() -> None:
         source_id="source:youtube:example",
         kind=SourceKind.VIDEO,
         platform="youtube",
-        external_locator="example",
-        title="Example game",
-        published_on=date(2026, 9, 1),
+        platform_source_id="example",
+        external_locator="https://example.test/watch/example",
         inclusion_reason=InclusionReason.EXPERT_SOURCE_CENSUS,
         screening_status=ScreeningStatus.SCREENED,
         reconstructability=Reconstructability.PARTIAL,
@@ -37,6 +35,19 @@ def test_source_workflow_dimensions_remain_independent() -> None:
     assert source.reconstructability is Reconstructability.PARTIAL
     assert source.selection_disposition is SelectionDisposition.REJECTED
     assert source.rejection_reason == "Night decisions are edited out."
+
+
+def test_source_does_not_duplicate_evidentiary_metadata_fields() -> None:
+    with pytest.raises(ValidationError):
+        Source(
+            source_id="source:youtube:metadata-duplication",
+            kind=SourceKind.VIDEO,
+            platform="youtube",
+            platform_source_id="metadata-duplication",
+            external_locator="https://example.test/watch/metadata-duplication",
+            inclusion_reason=InclusionReason.SYSTEMATIC_SAMPLE,
+            title="This belongs in an EvidenceAssertion.",
+        )
 
 
 def test_rejected_source_requires_rejection_reason() -> None:
@@ -93,6 +104,7 @@ def test_assertions_support_many_to_many_fragment_provenance() -> None:
         value="RECLUSE",
         derivation=Derivation.RECONSTRUCTED,
         fragment_ids=("fragment:setup:frame", "fragment:review:role"),
+        scope=AssertionScope.RECONSTRUCTION,
         reconstruction_revision_id="revision:game1:1",
     )
     visible_result = EvidenceAssertion(
@@ -109,7 +121,7 @@ def test_assertions_support_many_to_many_fragment_provenance() -> None:
     assert visible_result.fragment_ids == ("fragment:review:role",)
 
 
-def test_reconstructed_assertion_requires_explicit_revision_scope() -> None:
+def test_reconstruction_scoped_assertion_requires_explicit_revision_id() -> None:
     with pytest.raises(ValidationError):
         EvidenceAssertion(
             assertion_id="assertion:reconstruction-without-revision",
@@ -119,7 +131,23 @@ def test_reconstructed_assertion_requires_explicit_revision_scope() -> None:
             value="RECLUSE",
             derivation=Derivation.RECONSTRUCTED,
             fragment_ids=("fragment:setup:frame", "fragment:review:role"),
+            scope=AssertionScope.RECONSTRUCTION,
         )
+
+
+def test_reconstructed_source_metadata_is_not_forced_into_game_revision() -> None:
+    assertion = EvidenceAssertion(
+        assertion_id="assertion:source:title",
+        subject_type="SOURCE",
+        subject_id="source:youtube:example",
+        assertion_type="TITLE",
+        value="Example game",
+        derivation=Derivation.RECONSTRUCTED,
+        fragment_ids=("fragment:index:title",),
+    )
+
+    assert assertion.scope is AssertionScope.EVIDENCE
+    assert assertion.reconstruction_revision_id is None
 
 
 def test_assertion_requires_nonempty_unique_fragment_provenance() -> None:
@@ -190,6 +218,7 @@ def test_inferred_assertion_may_be_revision_scoped_without_changing_derivation()
             reviewer_key="reviewer:human:1",
             review_pass_id="review-pass:e0-primary-1",
         ),
+        scope=AssertionScope.RECONSTRUCTION,
         reconstruction_revision_id="revision:game1:1",
     )
 
@@ -197,7 +226,7 @@ def test_inferred_assertion_may_be_revision_scoped_without_changing_derivation()
     assert assertion.reconstruction_revision_id == "revision:game1:1"
 
 
-def test_observed_assertion_cannot_be_silently_revision_scoped() -> None:
+def test_evidence_scoped_assertion_cannot_be_silently_given_revision_id() -> None:
     with pytest.raises(ValidationError):
         EvidenceAssertion(
             assertion_id="assertion:observed-revision-leak",
