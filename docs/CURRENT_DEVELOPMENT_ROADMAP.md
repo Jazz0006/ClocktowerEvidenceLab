@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 evidence contract pilot — COMPLETE; E1 foundation proposal ready
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — READY TO START
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -98,9 +98,13 @@ A downstream researcher can understand exactly what happened, what remains unkno
 
 No production legality or policy scoring is implemented.
 
-### E1 — Domain and persistence foundation — READY TO START AFTER E0 PR INTEGRATION
+### E1 — Domain and persistence foundation — READY TO START
 
-E0 has validated the workflow. Use `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md` as the implementation proposal.
+E0 has validated the workflow and PR #1 has been squash-merged to `main` at `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
+
+Current E1 branch: `e1-domain-persistence-foundation`.
+
+Use `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md` as the implementation proposal.
 
 Next:
 
