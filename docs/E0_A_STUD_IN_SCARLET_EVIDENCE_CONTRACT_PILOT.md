@@ -56,13 +56,13 @@ This is a reconstruction-value screen, not a quality score.
 | public source | YES | public YouTube source |
 | game identity recoverable | YES | source title and episode identity are stable |
 | Storyteller identity recoverable | YES | Ben is named in primary metadata |
-| setup / seating recoverability | LIKELY | detailed secondary index exists; primary in-video verification pending |
-| Night 1 recoverability | LIKELY | detailed secondary index and prior D5F notes agree; timestamps still required |
-| grimoire / Storyteller view visibility | UNKNOWN | must be confirmed from the primary playback |
-| player action visibility | LIKELY | Fortune Teller target pair is indexed secondarily; primary playback required |
-| Storyteller output visibility | LIKELY | Night-1 outputs are indexed secondarily; primary playback required |
-| choice-specific rationale | UNKNOWN | do not assume general Ben commentary is rationale for a particular choice |
-| explicit rejected alternatives | UNKNOWN | only record if the primary source actually contains them |
+| setup / seating recoverability | YES | human-reviewed primary frame supports full visible seating/roles and Demon bluffs |
+| Night 1 recoverability | PARTIAL / HIGH | primary timestamps now captured for Chef interaction, Drunk information, and Fortune Teller interaction; Chef value still missing |
+| grimoire / Storyteller view visibility | YES | user-supplied primary frame visibly exposes setup/grimoire state |
+| player action visibility | YES | at 15:18 Blair selects Tom + Elliott |
+| Storyteller output visibility | YES | at 12:41 Sullivan receives 0; at 15:18 Fortune Teller receives YES |
+| choice-specific rationale | PRESENT | at 12:41 Ben explains why 2 would be less believable |
+| explicit rejected alternatives | PRESENT | at 12:41 alternative 2 is explicitly rejected as less believable |
 | editing gaps | PRESENT / EXPECTED | produced YouTube episode; exact continuity around setup decisions must be checked |
 | reconstructable phase selected for E0 | Night 1 + required setup commitments | intentionally bounded first pass |
 
@@ -82,6 +82,93 @@ These are the only current **source-locator facts** collected in this pass. The 
 - verification: UNVERIFIED
 
 Direct title/channel/date/Storyteller metadata remains reconstructed from consistent public indexes in this pass and is not promoted to a primary-content EvidenceFragment.
+
+## 3.1 First human-verified primary fragments — 2026-09-22
+
+### FRAG-ASIS-SETUP-FRAME-001
+
+- source: `SRC-E0-ASIS-YT`
+- locator: user-supplied screenshot captured from the primary video; exact playback timestamp not supplied
+- fact: visible grimoire/seating supports:
+  - seat 1 Luke — Imp;
+  - seat 2 Oli — Ravenkeeper;
+  - seat 3 Blair — Fortune Teller;
+  - seat 4 Tom — Monk;
+  - seat 5 Elliott — Recluse;
+  - seat 6 Laurie — Scarlet Woman;
+  - seat 7 Isaac — Undertaker;
+  - seat 8 Jon — Chef;
+  - seat 9 Sullivan — shown Empath;
+  - Demon bluffs — Saint / Slayer / Soldier.
+- derivation: OBSERVED
+- verification: VERIFIED by human primary review
+- note: the image is not committed; only concise facts/provenance are retained.
+
+### FRAG-ASIS-09-49-DRUNK
+
+- source: `SRC-E0-ASIS-YT`
+- timestamp: `09:49`
+- fact: Sullivan is established as the actual Drunk
+- derivation: OBSERVED
+- verification: VERIFIED by human primary review
+
+Combined with `FRAG-ASIS-SETUP-FRAME-001`, this supports the concrete historical setup fact:
+
+`Sullivan actual role = Drunk; shown/believed role = Empath`
+
+with derivation `RECONSTRUCTED`.
+
+### FRAG-ASIS-10-32-RED-HERRING
+
+- source: `SRC-E0-ASIS-YT`
+- timestamp: `10:32`
+- fact: Sullivan is made the Fortune Teller Red Herring
+- derivation: OBSERVED
+- verification: VERIFIED by human primary review
+- explicit rationale: none reported
+- explicit rejected alternative: none reported
+
+### FRAG-ASIS-11-53-CHEF
+
+- source: `SRC-E0-ASIS-YT`
+- timestamp: `11:53`
+- fact: Chef Night-1 interaction occurs
+- delivered value: UNKNOWN in this primary-review pass
+- derivation: OBSERVED for interaction occurrence
+- verification: VERIFIED for occurrence only
+
+The secondary lead `Chef = 1` is **not** promoted yet.
+
+### FRAG-ASIS-12-41-DRUNK-EMPATH
+
+- source: `SRC-E0-ASIS-YT`
+- timestamp: `12:41`
+- fact: Sullivan, believing Empath, is given `0`
+- derivation: OBSERVED
+- verification: VERIFIED by human primary review
+- explicit rationale: Ben explains that `2` would be less believable
+- explicit rejected alternative: `2`
+- unobserved alternatives: no claim is made about whether `1` was considered or rejected
+
+### FRAG-ASIS-15-18-FORTUNE-TELLER
+
+- source: `SRC-E0-ASIS-YT`
+- timestamp: `15:18`
+- fact: Blair chooses Tom + Elliott and receives YES
+- derivation: OBSERVED
+- verification: VERIFIED by human primary review
+- player-controlled choice: target pair Tom + Elliott
+- Storyteller output: YES
+- historical registration witness: UNKNOWN
+- explicit rationale: none reported
+- explicit rejected alternative: none reported
+- precision note: one timestamp currently covers both target commitment and result delivery; exact sub-boundary is not yet timestamped
+
+### Verification note
+
+This is the first human primary-review pass. It is stronger than the earlier automated locator work because the reviewer directly watched the primary video and supplied timestamps.
+
+The timestamps are evidence locators. They are **not automatically historical event times** for setup facts whose real commitment occurred before the video explained/revealed them.
 
 ## 4. Locator-only secondary leads
 
@@ -253,27 +340,31 @@ This section deliberately tests the event/commitment vocabulary without promotin
 
 ### Setup commitment group — exact internal order UNKNOWN
 
-Secondary locator leads consistently suggest the following commitments existed before Night 1:
+Primary visual/timed evidence now supports:
 
-- nine-player seating / actual roles;
+- nine-player seating / visible setup as reconstructed above;
 - Sullivan actual role = Drunk;
 - Sullivan shown / believed role = Empath;
 - Fortune Teller red herring = Sullivan;
 - Demon bluffs = Saint / Slayer / Soldier.
 
-At this stage these are **not canonical setup facts**.
+These facts may now enter the current reconstruction revision.
+
+Their **exact historical setup-commit order remains UNKNOWN**. Source presentation timestamps such as 09:49 and 10:32 must not be mistaken for proof that the original setup choices were committed in that same order.
 
 The useful modeling observation is that an edited source may establish all of them as pre-Night-1 commitments without revealing their exact internal commit order.
 
-### Night 1 — candidate interactions
+### Night 1 — primary-reviewed interaction order
 
-Secondary locator leads suggest:
+Primary playback timestamps now support:
 
-1. Chef interaction: Jon receives `1`;
-2. Drunk-as-Empath interaction: Sullivan receives `0`;
-3. Fortune Teller interaction: Blair selects Tom + Elliott and receives YES.
+1. `11:53` — Chef interaction occurs; delivered number still UNKNOWN in this review pass;
+2. `12:41` — Sullivan-as-Empath receives `0`; Ben explicitly rejects `2` as less believable;
+3. `15:18` — Blair selects Tom + Elliott and receives YES.
 
-Do **not** treat the numbering above as verified historical global order. It mirrors the current secondary index only.
+The timestamp order above is primary-supported source order.
+
+For the Fortune Teller interaction, the target commitment semantically precedes the result delivery, but both currently share one source timestamp.
 
 For primary extraction, the Fortune Teller compound lead must be split into at least:
 
@@ -352,6 +443,77 @@ Required before admission:
 - human verification pass.
 
 E0 still targets at least three admitted decision slices, but quantity must not override provenance.
+
+## 6.1 Admitted E0 decision slices after primary review 1
+
+These are admitted as traceable historical decision slices, but **not GOLD-qualified yet**.
+
+### DS-ASIS-001 — Drunk shown identity = Empath
+
+- decision family: setup / Drunk shown identity
+- observed choice: Empath
+- evidence:
+  - `FRAG-ASIS-SETUP-FRAME-001`;
+  - `FRAG-ASIS-09-49-DRUNK`
+- derivation: RECONSTRUCTED
+- verification: VERIFIED
+- decision actor: Storyteller-controlled setup commitment; personal actor attribution remains UNKNOWN unless primary source establishes it
+- committed-prefix precision: PARTIAL / setup internal ordering UNKNOWN
+- rationale: UNKNOWN
+- rejected alternatives: UNKNOWN
+- GOLD: NOT YET ELIGIBLE because exact setup prefix/order and actor attribution remain incomplete
+
+### DS-ASIS-002 — Fortune Teller Red Herring = Sullivan
+
+- decision family: setup / Red Herring
+- observed choice: Sullivan
+- evidence: `FRAG-ASIS-10-32-RED-HERRING`
+- derivation: OBSERVED
+- verification: VERIFIED
+- committed-prefix precision: PARTIAL / setup internal ordering UNKNOWN
+- rationale: UNKNOWN
+- rejected alternatives: UNKNOWN
+- GOLD: NOT YET ELIGIBLE because committed setup-prefix completeness has not been established
+
+### DS-ASIS-003 — Drunk-as-Empath Night-1 information = 0
+
+- decision family: impaired information
+- observed choice: `0`
+- evidence: `FRAG-ASIS-12-41-DRUNK-EMPATH`
+- derivation: OBSERVED
+- verification: VERIFIED
+- explicit rationale: PRESENT — Ben says `2` would be less believable
+- explicit rejected alternative: `2`
+- unobserved alternative treatment: UNKNOWN for `1`
+- committed prefix currently includes:
+  - verified setup commitments above;
+  - a verified Chef interaction at 11:53 whose delivered value is still UNKNOWN
+- GOLD: NOT YET ELIGIBLE because the prior Chef output is missing from the committed prefix
+
+This slice is already high-value positive expert evidence even before GOLD qualification because it preserves:
+
+```text
+expert chose 0
++ explicit choice-specific reason
++ explicit rejected alternative 2
+!= claim that 1 or 2 are globally bad
+```
+
+### Fortune Teller remains an output event / decision candidate
+
+The 15:18 primary fragment is now verified for:
+
+- player choice: Tom + Elliott;
+- delivered result: YES.
+
+However, Evidence Lab still does not have primary evidence that the YES represented a discretionary Storyteller choice via a specific registration witness.
+
+Therefore:
+
+- the semantic player-action event may be admitted;
+- the YES delivery event may be admitted;
+- the historical registration witness remains UNKNOWN;
+- promotion to a Storyteller DecisionSlice remains pending evidence about the nature of the Storyteller choice, rather than importing downstream legality.
 
 ## 7. Schema / workflow gaps exposed so far
 
@@ -465,6 +627,26 @@ The historical semantics are still distinct:
 
 Field/event-level provenance should allow several semantic assertions/events to cite the same or overlapping source fragment without collapsing them into one event.
 
+### Gap K — evidence locator time and historical event time are different clocks
+
+The human review exposed this directly.
+
+For example:
+
+- `09:49` is when the source establishes to the reviewer that Sullivan is the Drunk;
+- the actual setup commitment necessarily existed earlier.
+
+Therefore a future model must not overload one timestamp field to mean both:
+
+1. **source locator time** — where evidence appears in the recording;
+2. **historical semantic time/order** — when the game commitment/action actually occurred.
+
+For edited/explanatory video, these can differ substantially.
+
+The event model may use semantic ordering while provenance independently carries source timestamps.
+
+Do not infer historical setup order from the order in which an edited video explains setup facts.
+
 ### Gap F — verification needs its own audit trail
 
 Because AI extraction may propose evidence but human confirmation is required for VERIFIED/GOLD, E1 likely needs an auditable verification record rather than a bare boolean/status.
@@ -497,14 +679,14 @@ Do not turn it into tables/classes/files until the E0 primary reconstruction and
 - source record: STARTED
 - screening: STARTED
 - source-locator evidence: STARTED
-- direct primary metadata/content verification: BLOCKED ON PRIMARY PLAYBACK ACCESS
-- primary timed evidence fragments: NOT YET EXTRACTED
-- setup reconstruction: LOCATOR LEADS ONLY
-- ordered Night-1 timeline: NOT YET PRIMARY-VERIFIED
-- admitted decision slices: 0
-- registration witness: UNKNOWN
-- explicit rationale: UNKNOWN
-- explicit rejected alternative: UNKNOWN
+- direct primary gameplay review: STARTED / HUMAN-REVIEWED
+- primary timed evidence fragments: 4 timed fragments + 1 primary setup frame captured
+- setup reconstruction: PRIMARY-SUPPORTED; exact internal commit order remains UNKNOWN
+- ordered Night-1 timeline: PARTIAL PRIMARY-VERIFIED; Chef value still UNKNOWN
+- admitted decision slices: 3 (none GOLD-qualified yet)
+- registration witness: UNKNOWN for Fortune Teller YES
+- explicit rationale: PRESENT for Drunk-as-Empath 0
+- explicit rejected alternative: PRESENT — 2 for the Drunk-as-Empath decision
 - schema/workflow gap audit: STARTED
 - draft export pressure: STARTED
 
