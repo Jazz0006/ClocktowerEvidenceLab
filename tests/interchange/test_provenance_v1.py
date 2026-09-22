@@ -26,7 +26,6 @@ from clocktower_evidence_lab.interchange.provenance_v1 import (
     load_provenance_bundle,
 )
 
-
 EXPORTED_AT = datetime(2026, 9, 22, 12, 0, tzinfo=UTC)
 
 
@@ -222,7 +221,7 @@ def test_orphan_assertion_fragment_reference_is_rejected() -> None:
             exported_at=EXPORTED_AT,
             sources=(_source(),),
             evidence_fragments=(_fragment(),),
-            assertions=_inferred_assertion(fragment_ids=("fragment:missing",)),
+            assertions=(_inferred_assertion(fragment_ids=("fragment:missing",)),),
         )
 
 
