@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 evidence contract pilot — active
+> Status: E0 evidence contract pilot — COMPLETE; E1 foundation proposal ready
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -32,7 +32,7 @@ Storyteller-app telemetry is deferred.
 
 ## 3. Milestones
 
-### E0 — Evidence contract pilot — ACTIVE
+### E0 — Evidence contract pilot — COMPLETE
 
 Goal:
 
@@ -73,9 +73,12 @@ Current pilot state:
 - full visible setup/seating and Demon bluffs are now primary-supported;
 - Sullivan actual Drunk + shown Empath and Red Herring setup commitments are primary-supported;
 - Drunk-as-Empath 0 is primary-verified with explicit choice-specific rationale and explicit rejection of alternative 2;
-- Fortune Teller Tom+Elliott -> YES is primary-verified as player action + delivered output, while historical registration witness remains UNKNOWN;
-- 3 E0 DecisionSlices are now admitted, none GOLD-qualified yet;
-- Chef interaction is primary-verified at 11:53 but its delivered value is still UNKNOWN in the primary record.
+- Fortune Teller Tom+Elliott -> YES is primary-verified as player action + delivered output; Recluse-as-Demon is retained only as an INFERRED reviewer interpretation while source-observed historical witness remains UNKNOWN;
+- Chef=1 is primary-verified as a delivery event without being forced into a DecisionSlice;
+- beginner/new-player table context is primary-reviewed and kept at game level rather than copied into every choice rationale;
+- 3 E0 DecisionSlices are admitted, none GOLD-qualified yet;
+- E0 completion audit: `docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md`;
+- E1 proposal: `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md`.
 
 Deliverables:
 
@@ -95,9 +98,11 @@ A downstream researcher can understand exactly what happened, what remains unkno
 
 No production legality or policy scoring is implemented.
 
-### E1 — Domain and persistence foundation
+### E1 — Domain and persistence foundation — READY TO START AFTER E0 PR INTEGRATION
 
-After E0 validates the workflow:
+E0 has validated the workflow. Use `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md` as the implementation proposal.
+
+Next:
 
 - choose implementation stack and working-store technology (SQLite is the current leading candidate);
 - define stable semantic IDs;
