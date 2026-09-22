@@ -25,6 +25,10 @@ Merged `main` commit: `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
 
 Current E1 working branch: `e1-domain-persistence-foundation`.
 
+Draft PR: `#2` — `E1: domain and persistence foundation`.
+
+Keep PR #2 draft during E1 implementation.
+
 E1 implementation is now the active next milestone. Start from `e1-domain-persistence-foundation`; do not reopen the merged E0 branch for implementation work.
 
 Read these two completion artifacts before starting E1:
