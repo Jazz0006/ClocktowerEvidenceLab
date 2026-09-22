@@ -1,6 +1,5 @@
 """Core provenance entities for external evidence collection."""
 
-from datetime import date
 from enum import StrEnum
 from typing import Annotated
 
@@ -9,6 +8,7 @@ from pydantic import BaseModel, ConfigDict, Field, JsonValue, model_validator
 from clocktower_evidence_lab.domain.primitives import Derivation, SemanticId
 
 ShortText = Annotated[str, Field(min_length=1, max_length=256)]
+LocatorText = Annotated[str, Field(min_length=1, max_length=2_048)]
 LongText = Annotated[str, Field(min_length=1, max_length=4_000)]
 SourceMillis = Annotated[int, Field(ge=0)]
 
@@ -54,6 +54,11 @@ class SelectionDisposition(StrEnum):
     DEFERRED = "DEFERRED"
 
 
+class AssertionScope(StrEnum):
+    EVIDENCE = "EVIDENCE"
+    RECONSTRUCTION = "RECONSTRUCTION"
+
+
 class SourceLocatorKind(StrEnum):
     TIMESTAMP = "TIMESTAMP"
     TIMESTAMP_RANGE = "TIMESTAMP_RANGE"
@@ -68,12 +73,10 @@ class Source(_DomainModel):
 
     source_id: SemanticId
     kind: SourceKind
-    external_locator: ShortText
+    external_locator: LocatorText
     inclusion_reason: InclusionReason
     platform: ShortText | None = None
-    title: ShortText | None = None
-    publisher: ShortText | None = None
-    published_on: date | None = None
+    platform_source_id: ShortText | None = None
     discovery_note: LongText | None = None
     screening_status: ScreeningStatus = ScreeningStatus.NOT_SCREENED
     reconstructability: Reconstructability = Reconstructability.UNKNOWN
@@ -126,7 +129,7 @@ class EvidenceFragment(_DomainModel):
 class InferenceProvenance(_DomainModel):
     """Reviewer provenance for a claim that is explicitly an inference."""
 
-    reviewer_key: ShortText
+    reviewer_key: SemanticId
     review_pass_id: SemanticId | None = None
     note: LongText | None = None
 
@@ -142,6 +145,7 @@ class EvidenceAssertion(_DomainModel):
     derivation: Derivation
     fragment_ids: tuple[SemanticId, ...]
     inference_provenance: InferenceProvenance | None = None
+    scope: AssertionScope = AssertionScope.EVIDENCE
     reconstruction_revision_id: SemanticId | None = None
 
     @model_validator(mode="after")
@@ -157,8 +161,11 @@ class EvidenceAssertion(_DomainModel):
         elif self.inference_provenance is not None:
             raise ValueError("inference_provenance is only valid for inferred assertions")
 
-        if self.derivation is Derivation.RECONSTRUCTED and self.reconstruction_revision_id is None:
-            raise ValueError("reconstructed assertion requires reconstruction_revision_id")
-        if self.derivation is Derivation.OBSERVED and self.reconstruction_revision_id is not None:
-            raise ValueError("observed assertion cannot be reconstruction-revision scoped")
+        if (
+            self.scope is AssertionScope.RECONSTRUCTION
+            and self.reconstruction_revision_id is None
+        ):
+            raise ValueError("reconstruction-scoped assertion requires reconstruction_revision_id")
+        if self.scope is AssertionScope.EVIDENCE and self.reconstruction_revision_id is not None:
+            raise ValueError("evidence-scoped assertion cannot carry reconstruction_revision_id")
         return self
