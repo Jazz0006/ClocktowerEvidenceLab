@@ -57,7 +57,7 @@ This is a reconstruction-value screen, not a quality score.
 | game identity recoverable | YES | source title and episode identity are stable |
 | Storyteller identity recoverable | YES | Ben is named in primary metadata |
 | setup / seating recoverability | YES | human-reviewed primary frame supports full visible seating/roles and Demon bluffs |
-| Night 1 recoverability | PARTIAL / HIGH | primary timestamps now captured for Chef interaction, Drunk information, and Fortune Teller interaction; Chef value still missing |
+| Night 1 recoverability | HIGH | primary timestamps now capture Chef=1, Drunk information=0, and Fortune Teller Tom+Elliott -> YES |
 | grimoire / Storyteller view visibility | YES | user-supplied primary frame visibly exposes setup/grimoire state |
 | player action visibility | YES | at 15:18 Blair selects Tom + Elliott |
 | Storyteller output visibility | YES | at 12:41 Sullivan receives 0; at 15:18 Fortune Teller receives YES |
@@ -132,12 +132,13 @@ with derivation `RECONSTRUCTED`.
 
 - source: `SRC-E0-ASIS-YT`
 - timestamp: `11:53`
-- fact: Chef Night-1 interaction occurs
-- delivered value: UNKNOWN in this primary-review pass
-- derivation: OBSERVED for interaction occurrence
-- verification: VERIFIED for occurrence only
+- fact: Jon's Chef receives `1`
+- derivation: OBSERVED
+- verification: VERIFIED by human primary review
+- explicit registration statement: none supplied
+- explicit rationale: none supplied
 
-The secondary lead `Chef = 1` is **not** promoted yet.
+This supports a verified information-delivery event. It does not by itself establish a discretionary Storyteller decision or historical registration witness.
 
 ### FRAG-ASIS-12-41-DRUNK-EMPATH
 
@@ -159,10 +160,21 @@ The secondary lead `Chef = 1` is **not** promoted yet.
 - verification: VERIFIED by human primary review
 - player-controlled choice: target pair Tom + Elliott
 - Storyteller output: YES
-- historical registration witness: UNKNOWN
+- historical registration witness: UNKNOWN at the evidence layer
+- reviewer inference: Elliott's Recluse registering as Demon is the mechanically evident explanation; derivation = INFERRED, not OBSERVED
 - explicit rationale: none reported
 - explicit rejected alternative: none reported
 - precision note: one timestamp currently covers both target commitment and result delivery; exact sub-boundary is not yet timestamped
+
+### FRAG-ASIS-CONTEXT-BEGINNER
+
+- source: `SRC-E0-ASIS-YT`
+- timestamp: UNKNOWN / not supplied
+- fact: Ben is running the game for beginner / new players
+- derivation: OBSERVED through human primary review
+- verification: VERIFIED
+- scope: game-level context
+- important: do not automatically treat this as the rationale for every individual Storyteller decision
 
 ### Verification note
 
@@ -358,7 +370,7 @@ The useful modeling observation is that an edited source may establish all of th
 
 Primary playback timestamps now support:
 
-1. `11:53` — Chef interaction occurs; delivered number still UNKNOWN in this review pass;
+1. `11:53` — Jon's Chef receives `1`;
 2. `12:41` — Sullivan-as-Empath receives `0`; Ben explicitly rejects `2` as less believable;
 3. `15:18` — Blair selects Tom + Elliott and receives YES.
 
@@ -487,8 +499,8 @@ These are admitted as traceable historical decision slices, but **not GOLD-quali
 - unobserved alternative treatment: UNKNOWN for `1`
 - committed prefix currently includes:
   - verified setup commitments above;
-  - a verified Chef interaction at 11:53 whose delivered value is still UNKNOWN
-- GOLD: NOT YET ELIGIBLE because the prior Chef output is missing from the committed prefix
+  - verified Chef delivery = `1` at 11:53
+- GOLD: still pending the dedicated second verification / qualification gate rather than missing Chef-prefix data
 
 This slice is already high-value positive expert evidence even before GOLD qualification because it preserves:
 
@@ -506,14 +518,15 @@ The 15:18 primary fragment is now verified for:
 - player choice: Tom + Elliott;
 - delivered result: YES.
 
-However, Evidence Lab still does not have primary evidence that the YES represented a discretionary Storyteller choice via a specific registration witness.
+The reviewer notes that, given the reconstructed setup and normal game mechanics, the evident explanation is that Elliott's Recluse registered as Demon for this interaction.
 
-Therefore:
+Evidence Lab treatment remains deliberately split:
 
-- the semantic player-action event may be admitted;
-- the YES delivery event may be admitted;
-- the historical registration witness remains UNKNOWN;
-- promotion to a Storyteller DecisionSlice remains pending evidence about the nature of the Storyteller choice, rather than importing downstream legality.
+- the semantic player-action event is admitted;
+- the YES delivery event is admitted;
+- `Recluse-as-Demon` is stored only as an INFERRED reviewer interpretation;
+- the source-observed historical registration witness remains UNKNOWN because Ben did not explicitly state it in the supplied primary review;
+- promotion to a Storyteller DecisionSlice must not silently convert that inference into an OBSERVED witness.
 
 ## 7. Schema / workflow gaps exposed so far
 
@@ -647,6 +660,24 @@ The event model may use semantic ordering while provenance independently carries
 
 Do not infer historical setup order from the order in which an edited video explains setup facts.
 
+### Gap L — reviewer inference needs provenance separate from source observation
+
+The first human review produced a useful example:
+
+- primary source visibly supports Tom + Elliott -> YES;
+- a knowledgeable reviewer can infer that Recluse-as-Demon is the mechanically evident explanation;
+- the source itself did not explicitly state that historical registration witness.
+
+Therefore the final workflow must preserve:
+
+1. source-observed fact;
+2. reviewer inference;
+3. inference provenance / reviewer;
+4. verification of the source fact;
+5. explicit non-promotion of the inference to OBSERVED.
+
+This is not the same as UNKNOWN: we may have a strong inference while still lacking direct historical witness evidence.
+
 ### Gap F — verification needs its own audit trail
 
 Because AI extraction may propose evidence but human confirmation is required for VERIFIED/GOLD, E1 likely needs an auditable verification record rather than a bare boolean/status.
@@ -682,9 +713,11 @@ Do not turn it into tables/classes/files until the E0 primary reconstruction and
 - direct primary gameplay review: STARTED / HUMAN-REVIEWED
 - primary timed evidence fragments: 4 timed fragments + 1 primary setup frame captured
 - setup reconstruction: PRIMARY-SUPPORTED; exact internal commit order remains UNKNOWN
-- ordered Night-1 timeline: PARTIAL PRIMARY-VERIFIED; Chef value still UNKNOWN
+- ordered Night-1 timeline: PRIMARY-VERIFIED for the bounded Chef / Drunk-Empath / Fortune Teller interactions
 - admitted decision slices: 3 (none GOLD-qualified yet)
-- registration witness: UNKNOWN for Fortune Teller YES
+- Chef delivery: VERIFIED = 1
+- Fortune Teller historical registration witness: UNKNOWN at source-observation layer; Recluse-as-Demon retained only as INFERRED reviewer interpretation
+- game context: beginner/new-player table VERIFIED by human primary review
 - explicit rationale: PRESENT for Drunk-as-Empath 0
 - explicit rejected alternative: PRESENT — 2 for the Drunk-as-Empath decision
 - schema/workflow gap audit: STARTED
