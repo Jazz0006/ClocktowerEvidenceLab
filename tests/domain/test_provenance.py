@@ -177,6 +177,40 @@ def test_reviewer_inference_stays_inferred_and_requires_provenance() -> None:
     assert assertion.inference_provenance is not None
 
 
+def test_inferred_assertion_may_be_revision_scoped_without_changing_derivation() -> None:
+    assertion = EvidenceAssertion(
+        assertion_id="assertion:revision-inference",
+        subject_type="INTERACTION",
+        subject_id="interaction:game1:ft1",
+        assertion_type="REGISTRATION_WITNESS",
+        value="RECLUSE_AS_DEMON",
+        derivation=Derivation.INFERRED,
+        fragment_ids=("fragment:ft:yes",),
+        inference_provenance=InferenceProvenance(
+            reviewer_key="reviewer:human:1",
+            review_pass_id="review-pass:e0-primary-1",
+        ),
+        reconstruction_revision_id="revision:game1:1",
+    )
+
+    assert assertion.derivation is Derivation.INFERRED
+    assert assertion.reconstruction_revision_id == "revision:game1:1"
+
+
+def test_observed_assertion_cannot_be_silently_revision_scoped() -> None:
+    with pytest.raises(ValidationError):
+        EvidenceAssertion(
+            assertion_id="assertion:observed-revision-leak",
+            subject_type="GAME",
+            subject_id="game:1",
+            assertion_type="TABLE_CONTEXT",
+            value="BEGINNER",
+            derivation=Derivation.OBSERVED,
+            fragment_ids=("fragment:context",),
+            reconstruction_revision_id="revision:game1:1",
+        )
+
+
 def test_verification_is_not_an_independently_writable_assertion_field() -> None:
     with pytest.raises(ValidationError):
         EvidenceAssertion(
