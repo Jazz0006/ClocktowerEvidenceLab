@@ -183,9 +183,9 @@ Later events are unavailable to the counterfactual reconstruction.
 
 ### Working store
 
-The working-store technology is not frozen during E0. SQLite is the current leading candidate because the project is local-first, but E1 owns the implementation-stack decision after the evidence pilot exposes real workflow requirements.
+E1 freezes SQLite as the initial local working store, with SQLAlchemy 2.x Core as the persistence adapter layer and Alembic for deterministic migrations.
 
-Whatever store is selected, the first implementation should keep persistence replaceable through a repository/storage boundary.
+Pydantic domain models remain separate from SQL rows. SQLite primary keys or row identifiers must never become durable corpus identifiers, and persistence remains replaceable behind an application/persistence boundary.
 
 ### Durable export
 

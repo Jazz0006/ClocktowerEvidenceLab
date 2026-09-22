@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — READY TO START
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-1 COMPLETE)
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -25,8 +25,8 @@ Storyteller-app telemetry is deferred.
 - Winner is not a decision-quality label.
 - Storyteller identity/independence is retained.
 - GOLD is decision-level and derived.
-- Working persistence technology is not frozen before E0 completes; SQLite is the current leading candidate.
-- Durable interchange must be versioned; JSON/JSONL is the current direction, with exact export shape validated by E0.
+- E1 implementation stack is frozen: Python 3.12+, Pydantic v2, SQLite, SQLAlchemy 2.x Core, Alembic, pytest, Ruff.
+- Durable interchange is versioned JSON/JSONL; exact entity envelope can evolve during E1 without changing semantic ownership.
 - Raw media is referenced, not copied.
 - Real corpus and regression fixtures remain separate.
 
@@ -98,24 +98,47 @@ A downstream researcher can understand exactly what happened, what remains unkno
 
 No production legality or policy scoring is implemented.
 
-### E1 — Domain and persistence foundation — READY TO START
+### E1 — Domain and persistence foundation — ACTIVE
 
 E0 has validated the workflow and PR #1 has been squash-merged to `main` at `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
 
 Current E1 branch: `e1-domain-persistence-foundation`.
 
-Use `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md` as the implementation proposal.
+Draft PR: `#2` — keep draft until explicit merge authorization.
 
-Next:
+Use `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md` as the implementation contract.
 
-- choose implementation stack and working-store technology (SQLite is the current leading candidate);
-- define stable semantic IDs;
-- implement domain entities;
-- implement the selected local working store;
-- implement schema version;
-- implement deterministic migrations from the first persisted version;
-- implement versioned JSON/JSONL export/import;
-- add focused integrity tests.
+E1-start architecture audit froze these ownership constraints:
+
+- `Game.current_reconstruction_revision_id` is the sole owner of current revision;
+- `VerificationRecord` is the sole owner of verification transitions;
+- reconstruction-dependent EvidenceAssertions must be explicitly revision-scoped;
+- direct EvidenceFragment-to-event links are locator support, not a second claim/verification path.
+
+E1-1 is complete:
+
+- Python 3.12+ project/quality tooling is established;
+- the E1 stack is frozen to Pydantic v2 + SQLite + SQLAlchemy Core + Alembic + pytest + Ruff + versioned JSON/JSONL;
+- GitHub Actions runs the quality gate;
+- stable semantic-ID validation exists independently of database rows;
+- Derivation and Verification are separate durable enums;
+- tests-first RED was observed before implementation and the final E1-1 quality run is GREEN.
+
+Next E1-2:
+
+- implement only Source / EvidenceFragment / EvidenceAssertion domain contracts first;
+- preserve source locator time separately from historical semantic time;
+- preserve N:M evidence provenance;
+- do not add SQLite schema or higher reconstruction entities until those contracts are tested.
+
+Later E1 steps:
+
+- SQLite schema v1 + deterministic Alembic migration;
+- persistence round-trip tests;
+- versioned JSON export;
+- Storyteller / Game / GameSeat / ReconstructionRevision;
+- SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
+- Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions.
 
 Success condition:
 
@@ -236,16 +259,15 @@ Do not create empty architecture layers merely to match the tree. Add them when 
 
 ## 6. First implementation decision gate
 
-Do not choose the UI framework before E0.
+The E1 foundation decision is now frozen:
 
-E1 should choose the smallest local-first stack that gives:
+- Python 3.12+;
+- Pydantic v2;
+- SQLite;
+- SQLAlchemy 2.x Core;
+- Alembic;
+- pytest;
+- Ruff;
+- versioned JSON / JSONL.
 
-- strong typed/domain validation;
-- practical local structured persistence;
-- deterministic migrations;
-- easy JSON/JSONL;
-- low-friction testing;
-- practical desktop/local-browser workflow;
-- future transcript/analysis tooling.
-
-Python is a strong candidate because of the evidence-processing workload, but it is not yet a frozen implementation decision.
+Do not choose the E2 UI framework yet. The UI must adapt to the durable evidence/domain contract rather than owning it.

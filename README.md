@@ -69,13 +69,18 @@ Direct telemetry from the Storyteller app is explicitly deferred.
 
 ## Storage direction
 
-The project is local-first. The exact working-store technology remains deliberately unfrozen during E0.
+The project is local-first. E1 has frozen the initial implementation foundation:
 
-- **SQLite** is the current leading candidate for the working database, not a frozen E0 decision.
-- **JSON / JSONL** is the current durable-interchange direction; the exact export shape is validated by E0 before the first persisted schema is frozen.
-- Public source media is not copied into the repository; retain source identifiers, URLs, timestamps and concise evidential notes.
-- Small curated public reconstructions may be versioned in Git.
-- A large corpus may later move to separate storage without changing the canonical export contract.
+- **Python 3.12+** with **Pydantic v2** for domain/input validation;
+- **SQLite** as the local working database;
+- **SQLAlchemy 2.x Core** for persistence adapters, without making database rows the domain API;
+- **Alembic** for deterministic schema migrations;
+- **pytest** and **Ruff** for the quality gate;
+- **versioned JSON / JSONL** for durable interchange.
+
+The E2 UI framework remains deliberately unfrozen.
+
+Public source media is not copied into the repository; retain source identifiers, URLs, timestamps and concise evidential notes. Small curated public reconstructions may be versioned in Git. A large corpus may later move to separate storage without changing the canonical export contract.
 
 See:
 

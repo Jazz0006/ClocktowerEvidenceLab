@@ -83,7 +83,19 @@ Keep these separate. Do not synthesize a quality label at ingestion time.
 
 ## 6. Storyteller qualification
 
-Maintain qualification evidence separately from game reconstruction.
+Maintain Storyteller-qualification facts separately from game reconstruction semantics, but do **not** create a second evidence subsystem.
+
+Qualification evidence uses the ordinary evidence path:
+
+```text
+Storyteller subject
+    ← EvidenceAssertion
+    ← EvidenceFragment
+    ← Source
+    + VerificationRecord audit trail
+```
+
+A later qualification summary/status may be a derived projection. Its underlying evidence remains ordinary EvidenceAssertion data.
 
 Suggested descriptive levels:
 

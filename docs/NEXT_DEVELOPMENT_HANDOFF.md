@@ -29,7 +29,11 @@ Draft PR: `#2` — `E1: domain and persistence foundation`.
 
 Keep PR #2 draft during E1 implementation.
 
-E1 implementation is now the active next milestone. Start from `e1-domain-persistence-foundation`; do not reopen the merged E0 branch for implementation work.
+E1 implementation is active on `e1-domain-persistence-foundation`; do not reopen the merged E0 branch for implementation work.
+
+E1-1 code/quality gate head: `95e933c87e694e9d11552a5f7aad8749ed3f3d72`.
+
+PR #2 remains draft.
 
 Read these two completion artifacts before starting E1:
 
@@ -101,23 +105,69 @@ Final bounded primary-review state:
 
 Do not import the prior D5F phrase `Fortune Teller YES via Recluse-as-Demon` as a verified witness. The visible result and the historical registration witness are separate evidence questions.
 
-## 2.2 E1 next action
+## 2.2 E1 current implementation state
 
-E0 is integrated. Start E1 from the already-created fresh branch `e1-domain-persistence-foundation`.
+E1-1 is complete.
 
-Use the E1 proposal to implement the provenance core first:
+Frozen foundation:
 
-1. Python project/quality tooling;
-2. semantic IDs and derivation/verification enums;
-3. Source / EvidenceFragment / EvidenceAssertion;
+- Python 3.12+;
+- Pydantic v2;
+- SQLite;
+- SQLAlchemy 2.x Core;
+- Alembic;
+- pytest;
+- Ruff;
+- versioned JSON / JSONL.
+
+Implemented:
+
+- `pyproject.toml` and Python package skeleton;
+- PR quality workflow;
+- `SemanticId` validation with no database-row coupling;
+- independent `Derivation` and `Verification` enums.
+
+Tests-first evidence:
+
+- the initial quality setup exposed packaging/lint prerequisites and they were corrected without weakening the test;
+- the meaningful domain RED reached pytest with `ModuleNotFoundError` for the not-yet-implemented primitives;
+- implementation then reached full GREEN: install, `ruff check .`, `ruff format --check .`, and `pytest` all passed.
+
+E1-start architecture audit also tightened ownership:
+
+- `Game.current_reconstruction_revision_id` is the sole current-revision owner;
+- `VerificationRecord` owns verification transitions; current target verification is a projection;
+- reconstruction-dependent assertions must carry revision identity;
+- direct EvidenceFragment-to-event links do not replace assertion derivation/verification.
+
+## 2.3 Next action — E1-2 provenance entities
+
+Implement only the first provenance-domain layer, tests-first:
+
+1. `Source`;
+2. `EvidenceFragment`;
+3. `EvidenceAssertion`.
+
+Required E1-2 invariants:
+
+- source timestamp/range is a source locator only, never historical semantic time;
+- EvidenceFragment and EvidenceAssertion support N:M provenance without assuming one fragment = one fact;
+- derivation remains independent from verification;
+- reviewer inference can be represented without promotion to OBSERVED;
+- raw/source-backed assertions are not revision-scoped;
+- reconstruction-dependent assertion revision behavior is not implemented implicitly before ReconstructionRevision exists;
+- IDs remain stable semantic IDs, never row IDs.
+
+Do not yet add SQLite schema, Storyteller/Game entities, DecisionSlice, rules legality, policy scoring or E2 UI.
+
+After E1-2, continue with:
+
 4. SQLite schema v1 + migration;
 5. persistence round-trip tests;
 6. versioned JSON export;
-7. add Storyteller / Game / GameSeat / ReconstructionRevision;
-8. add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
-9. represent Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions rather than a parallel evidence subsystem.
-
-Do not choose the E2 UI framework yet.
+7. Storyteller / Game / GameSeat / ReconstructionRevision;
+8. SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
+9. Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions.
 
 ## 3. First pilot case
 
