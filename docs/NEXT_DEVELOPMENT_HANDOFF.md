@@ -30,6 +30,23 @@ Read these two completion artifacts before starting E1:
 - `docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md`
 - `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md`
 
+## 2.0 Final PR consistency audit — 2026-09-22
+
+Final audit result: **PASS**.
+
+- PR #1 remains draft;
+- branch is based cleanly on `main` with no behind commits at the audit point;
+- changed files are documentation only;
+- no application code, schema, database, UI or rules engine was introduced;
+- E0 completion state is consistent across roadmap, pilot, completion audit and handoff;
+- Chef=`1` is consistently recorded as a verified delivery event;
+- Fortune Teller Recluse-as-Demon remains INFERRED reviewer interpretation while source-observed historical witness stays UNKNOWN;
+- E1 proposal now includes stable Storyteller identity, game-scoped `GameSeat`, `ReconstructionRevision`, revision-scoped reconstructed entities and source screening/selection dimensions;
+- Storyteller qualification uses the canonical `EvidenceAssertion` path rather than a parallel evidence subsystem;
+- no GitHub Actions workflow/check is configured yet for this docs-only bootstrap stage.
+
+When merge is explicitly authorized, prefer **squash merge** because the E0 branch contains many small documentation/audit commits that represent one semantic milestone.
+
 ## 2.1 Final E0 state — 2026-09-22
 
 Read the live pilot notebook before doing more reconstruction:
