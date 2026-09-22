@@ -402,6 +402,8 @@ Exact JSON field names may evolve during E1 implementation.
 
 For larger corpora, JSONL may split entity streams while retaining the same semantic IDs and schema version.
 
+E1 may introduce a narrowly named provenance-core interchange before later reconstruction entities exist. That first contract must contain only implemented semantics; do not add empty speculative entity records merely to mimic the eventual full-corpus bundle. A later full-corpus interchange may version independently when Game/Reconstruction/Decision semantics are implemented.
+
 ## 10. E1 tests required before E2
 
 Tier 0 / domain:

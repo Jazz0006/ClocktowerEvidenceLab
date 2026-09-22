@@ -37,6 +37,8 @@ E1-2 domain gate head: `ad8174e971d598b4ebc8f72287010c4dd99b689e`.
 
 E1-3 migration gate head: `b643cd051942992b04bf7f36b0cb5ba82832cca4`.
 
+E1-4 persistence gate head: `0d11e4c480754ba70d3965740c4de01238cab7ac`.
+
 PR #2 remains draft.
 
 Read these two completion artifacts before starting E1:
@@ -194,30 +196,53 @@ Frozen E1-3 boundaries:
 
 Final E1-3 gate: migration from empty DB, deterministic schema comparison, migrated-vs-current metadata equality, Ruff and full pytest all GREEN.
 
-## 2.5 Next action — E1-4 persistence round trip
+## 2.5 E1-4 persistence round trip — COMPLETE
 
-Proceed tests-first with repository/storage behavior for only the existing provenance core:
+Implemented tests-first:
 
-1. create/open a migrated SQLite working database;
-2. persist and load Source;
-3. persist and load EvidenceFragment;
-4. persist and load EvidenceAssertion plus ordered N:M fragment links;
-5. enforce foreign keys on application-owned SQLite connections.
+- application SQLite engine owner with foreign-key enforcement;
+- append-only SQLAlchemy Core provenance store;
+- Source insert/get;
+- EvidenceFragment insert/get;
+- EvidenceAssertion + ordered N:M provenance insert/get.
 
-Required tests:
+Frozen E1-4 boundaries:
 
-- Source workflow dimensions round-trip independently;
-- source locator timestamps round-trip exactly;
-- structured assertion JSON round-trips without type/value loss;
-- OBSERVED / RECONSTRUCTED / INFERRED / UNKNOWN remain unchanged;
-- inference provenance round-trips;
-- assertion scope and reconstruction revision ID round-trip independently from derivation;
-- one fragment may support multiple assertions and one assertion may reference multiple ordered fragments;
-- invalid foreign references fail rather than silently persisting orphan provenance.
+- persistence adapters reconstruct domain models rather than returning SQL rows as the domain API;
+- no update/delete/upsert behavior exists;
+- assertion + fragment links are one transaction;
+- foreign keys are actually enabled on application-owned SQLite connections;
+- structured JSON and UNKNOWN survive round-trip;
+- reviewer inference remains INFERRED with reviewer provenance;
+- derivation and reconstruction scope remain independent;
+- fragment ordering is preserved without treating that order as historical semantic event order.
 
-Do not add Game/Storyteller/DecisionSlice, VerificationRecord, export format, rules legality, scoring or UI in E1-4.
+Final E1-4 gate: install + Ruff check + Ruff format + full pytest all GREEN.
 
-After E1-4, implement the first versioned JSON export/import contract.
+## 2.6 Next action — E1-5 versioned provenance interchange
+
+Implement the first durable interchange contract for the entities that actually exist today:
+
+1. a versioned JSON envelope for Source / EvidenceFragment / EvidenceAssertion;
+2. deterministic canonical serialization when the same `exported_at` and semantic content are supplied;
+3. strict import validation;
+4. bundle-level referential integrity for Source → Fragment and Assertion → Fragment references.
+
+Required E1-5 tests:
+
+- schema version is explicit and unsupported versions are rejected;
+- stable semantic IDs survive export/import;
+- UNKNOWN and INFERRED remain distinct;
+- reviewer inference provenance survives;
+- structured JSON values survive;
+- assertion fragment ordering survives;
+- source timestamps remain source locator fields only;
+- input collection ordering does not change canonical JSON output;
+- duplicate semantic IDs and orphan fragment/source references are rejected.
+
+Do not couple export shape to SQLite column names beyond the durable domain semantics. Do not invent placeholder Game/Storyteller/Decision records in this provenance-core bundle.
+
+After E1-5, proceed to Storyteller / Game / GameSeat / ReconstructionRevision as the next domain layer.
 
 ## 3. First pilot case
 

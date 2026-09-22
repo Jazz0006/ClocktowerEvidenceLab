@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-3 COMPLETE)
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-4 COMPLETE)
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -149,16 +149,28 @@ E1-3 is complete:
 - the quality workflow now emits Ruff formatting diffs on failure;
 - final E1-3 quality gate is GREEN.
 
-Next E1-4:
+E1-4 is complete:
 
-- implement repository/storage adapters for Source, EvidenceFragment and EvidenceAssertion;
-- tests-first round-trip the domain models through migrated SQLite;
-- enable SQLite foreign-key enforcement in the application connection owner;
-- prove UNKNOWN/INFERRED, structured JSON, N:M fragment ordering and workflow dimensions survive round-trip without loss.
+- append-only SQLAlchemy Core store implemented for Source, EvidenceFragment and EvidenceAssertion;
+- only insert/get operations exist; no update/delete/upsert path was introduced;
+- application-owned SQLite engines enable `PRAGMA foreign_keys=ON` on every DBAPI connection;
+- Source workflow dimensions and source locator timestamps round-trip exactly;
+- assertion JSON values, derivation, inference provenance, scope and reconstruction revision ID round-trip without loss;
+- ordered N:M assertion-fragment provenance survives persistence;
+- orphan fragment references fail under foreign-key enforcement;
+- assertion + fragment-link insert is transactional, so a failed provenance link leaves no partial assertion row;
+- final E1-4 quality gate is GREEN.
+
+Next E1-5:
+
+- define the first durable versioned JSON interchange for the existing provenance core only;
+- keep this contract independent of SQLite row/layout details;
+- prove deterministic serialization, schema-version rejection, UNKNOWN/INFERRED preservation and N:M provenance round-trip;
+- do not invent placeholder Game/Decision entities just to make the export look complete.
 
 Later E1 steps:
 
-- versioned JSON export;
+- Storyteller / Game / GameSeat / ReconstructionRevision;
 - persistence round-trip tests;
 - versioned JSON export;
 - Storyteller / Game / GameSeat / ReconstructionRevision;
