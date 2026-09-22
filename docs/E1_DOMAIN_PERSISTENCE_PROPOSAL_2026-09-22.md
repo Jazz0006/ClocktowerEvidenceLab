@@ -72,9 +72,14 @@ Needed fields include:
 - title/publisher/date when known;
 - source fidelity/category;
 - discovery path / inclusion reason;
-- inventory/screening state such as discovered, screened, reconstructable, selected or rejected;
+- discovery metadata;
+- screening status/result;
+- reconstructability assessment;
+- selection disposition / selected-for-reconstruction flag;
 - rejection reason when applicable;
 - metadata derivation/verification where material.
+
+These are **separate workflow dimensions**, not one mutually exclusive status enum. A source may be discovered, screened, judged reconstructable and then selected; a rejected source still remains in the denominator.
 
 These fields satisfy the source-census / selection-bias requirements without inventing a separate `ResearchLead` entity during E1.
 
@@ -171,7 +176,9 @@ Must support:
 - verification status;
 - provenance links to one or more EvidenceFragments;
 - optional reviewer inference provenance;
-- revision history.
+- revision membership / supersedes relation where the assertion is reconstruction-dependent.
+
+Raw/source-backed claims remain append-only. Reconstruction-dependent assertions are revised by creating a new revision-scoped assertion or superseding relation rather than mutating prior history in place.
 
 ### SetupCommitment
 
@@ -181,6 +188,7 @@ Must support:
 
 - semantic commitment ID;
 - game ID;
+- reconstruction revision ID;
 - commitment kind;
 - structured value;
 - assertion/provenance links;
@@ -196,6 +204,7 @@ Must support at least:
 
 - semantic event ID;
 - game ID;
+- reconstruction revision ID;
 - phase;
 - event kind;
 - actor/control owner when known;
@@ -213,6 +222,7 @@ Must support:
 
 - semantic decision ID;
 - game ID;
+- reconstruction revision ID;
 - decision family/type;
 - observed choice;
 - links to evidence assertions/fragments;
@@ -245,11 +255,13 @@ Keep qualification evidence separate from individual game/decision evidence.
 
 Minimum fields:
 
-- storyteller key;
-- source locator;
+- Storyteller ID;
 - concise qualification fact;
+- Source ID and/or EvidenceFragment / EvidenceAssertion provenance;
 - derivation;
 - verification.
+
+Do not create a second provenance path made only of ad-hoc URLs. Qualification evidence should reuse the same Source / EvidenceFragment / VerificationRecord infrastructure as game evidence.
 
 ## 4. Provenance relationships
 
@@ -259,6 +271,7 @@ E1 must support:
 Storyteller       1:N  Game role assignments
 Game              1:N  GameSeat
 Game              1:N  ReconstructionRevision
+ReconstructionRevision 1:N SetupCommitment / SemanticEvent / DecisionSlice
 EvidenceFragment  N:M  EvidenceAssertion
 EvidenceAssertion N:M  SetupCommitment / SemanticEvent
 EvidenceFragment  N:M  SemanticEvent when direct linkage is useful
@@ -276,8 +289,9 @@ Do not assume one source fragment maps to one event.
 
 E0 showed that a single integer boundary is insufficient.
 
-For E1, prefer an explicit prefix reference:
+For E1, prefer an explicit prefix reference within one ReconstructionRevision:
 
+- reconstruction revision ID;
 - known prior setup commitment IDs;
 - known prior semantic event IDs;
 - ordering certainty / boundary note;
@@ -386,8 +400,9 @@ Tier 0 / domain:
 Tier 1 / persistence:
 
 - create/read/update reconstruction revision without rewriting raw evidence;
-- source screening / selection / rejection metadata round-trip;
+- source discovery / screening / reconstructability / selection / rejection dimensions round-trip without collapsing into one state;
 - Storyteller independence identity round-trip;
+- SetupCommitment / SemanticEvent / DecisionSlice cannot silently cross ReconstructionRevision boundaries;
 - GameSeat references survive setup/event/decision round-trip;
 - evidence N:M provenance round-trip;
 - verification record round-trip;
@@ -402,7 +417,8 @@ Represent the E0 A Stud pilot generically and prove:
 - Sullivan actual Drunk + shown Empath can require multiple fragments/assertions;
 - Chef=1 survives as a verified delivery without becoming a DecisionSlice;
 - Drunk-Empath 0 preserves rationale and rejected alternative 2;
-- Fortune Teller YES preserves OBSERVED result + INFERRED reviewer witness + UNKNOWN source-observed witness without collapsing statuses.
+- Fortune Teller YES preserves OBSERVED result + INFERRED reviewer witness + UNKNOWN source-observed witness without collapsing statuses;
+- a corrected reconstruction can create a new revision without rewriting the raw primary fragments or the prior revision.
 
 No test may branch on the case ID in production code.
 
