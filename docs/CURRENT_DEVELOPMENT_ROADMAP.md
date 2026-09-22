@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-2 COMPLETE)
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-3 COMPLETE)
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -136,15 +136,29 @@ E1-2 is complete:
 - evidentiary source metadata such as reconstructed title/publisher/date is expressed as Source-subject EvidenceAssertions, preventing a second metadata provenance system;
 - final E1-2 quality gate is GREEN.
 
-Next E1-3:
+E1-3 is complete:
 
-- implement SQLite schema v1 and deterministic Alembic migration for the E1-1/E1-2 provenance core;
-- keep SQL tables as persistence adapters rather than domain owners;
-- add migration tests before adding repository round-trip behavior.
+- current SQLAlchemy Core metadata exists for Source, EvidenceFragment, EvidenceAssertion and assertion-fragment N:M links;
+- semantic IDs are database primary keys; no surrogate row IDs were introduced;
+- Alembic revision `0001_provenance_core` deterministically migrates an empty SQLite database to schema v1;
+- the historical migration is explicit and does not import current metadata to create tables;
+- migration tests prove two fresh databases produce the same structural signature;
+- migration tests prove current metadata and migrated schema agree on columns, primary/foreign keys, unique/check constraints and indexes;
+- structured assertion JSON, source locator fields, assertion scope/revision identity and inference provenance are persisted structurally;
+- EvidenceAssertion has no mutable verification column;
+- the quality workflow now emits Ruff formatting diffs on failure;
+- final E1-3 quality gate is GREEN.
+
+Next E1-4:
+
+- implement repository/storage adapters for Source, EvidenceFragment and EvidenceAssertion;
+- tests-first round-trip the domain models through migrated SQLite;
+- enable SQLite foreign-key enforcement in the application connection owner;
+- prove UNKNOWN/INFERRED, structured JSON, N:M fragment ordering and workflow dimensions survive round-trip without loss.
 
 Later E1 steps:
 
-- persistence round-trip tests;
+- versioned JSON export;
 - persistence round-trip tests;
 - versioned JSON export;
 - Storyteller / Game / GameSeat / ReconstructionRevision;

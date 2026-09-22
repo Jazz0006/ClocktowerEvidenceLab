@@ -364,11 +364,13 @@ Tests must prove that verification cannot silently rewrite derivation.
 
 Start with:
 
-- schema version `1`;
+- working-store schema version `1`, represented by Alembic revision `0001_provenance_core`;
+- Alembic as the sole owner of working-store migration position; do not add a second mutable schema-version table;
 - forward-only deterministic migrations;
 - migration history committed to Git;
 - no production database checked into Git;
-- a tiny test database created dynamically by tests.
+- tiny test databases created dynamically by tests;
+- a test proving the historical migration schema matches the current SQLAlchemy Core metadata shape.
 
 The E0 pilot should be represented as a small versioned public corpus fixture/export only after the generic schema exists.
 

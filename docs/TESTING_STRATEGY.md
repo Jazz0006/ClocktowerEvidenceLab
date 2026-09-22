@@ -112,7 +112,7 @@ E1 uses Python 3.12+ with the following local quality gate:
 ```bash
 python -m pip install -e ".[dev]"
 ruff check .
-ruff format --check .
+ruff format --check --diff .
 pytest
 ```
 

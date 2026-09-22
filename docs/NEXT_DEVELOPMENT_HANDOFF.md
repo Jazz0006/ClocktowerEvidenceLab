@@ -35,6 +35,8 @@ E1-1 code/quality gate head: `95e933c87e694e9d11552a5f7aad8749ed3f3d72`.
 
 E1-2 domain gate head: `ad8174e971d598b4ebc8f72287010c4dd99b689e`.
 
+E1-3 migration gate head: `b643cd051942992b04bf7f36b0cb5ba82832cca4`.
+
 PR #2 remains draft.
 
 Read these two completion artifacts before starting E1:
@@ -168,26 +170,54 @@ Frozen E1-2 boundaries:
 
 Final E1-2 gate: install + Ruff check + Ruff format + pytest all GREEN.
 
-## 2.4 Next action — E1-3 SQLite schema v1
+## 2.4 E1-3 SQLite schema v1 — COMPLETE
 
-Proceed tests-first with only the persistence structure needed for E1-1/E1-2:
+Implemented tests-first:
 
-1. SQLAlchemy Core metadata/tables for Source, EvidenceFragment, EvidenceAssertion and N:M assertion-fragment links;
-2. schema-version/migration ownership;
-3. Alembic initial migration from empty database to schema v1;
-4. deterministic migration tests.
+- SQLAlchemy Core current metadata for the provenance core;
+- Alembic environment and explicit initial migration;
+- migration revision `0001_provenance_core`;
+- migration determinism and metadata-equivalence tests.
 
-Required boundaries:
+Frozen E1-3 boundaries:
 
-- semantic IDs are stored explicitly and are not database row IDs;
-- source timestamps remain locator fields;
-- assertion scope/revision ID survive structurally;
-- structured assertion value is losslessly representable;
-- no mutable verification column is added to EvidenceAssertion;
-- no Storyteller/Game/DecisionSlice tables yet;
-- migration must be deterministic and create the same schema from an empty database.
+- semantic IDs are SQL primary keys; no database row ID is used as corpus identity;
+- Alembic owns working-store migration position; there is no parallel mutable schema-version table;
+- historical migration code explicitly creates v1 and does not delegate table creation to current metadata;
+- Source evidentiary metadata remains assertion-owned rather than duplicated as source columns;
+- source timestamps remain source-locator columns only;
+- N:M assertion-fragment links preserve fragment order;
+- assertion structured values use SQLite/SQLAlchemy JSON;
+- assertion revision scope is persisted without a premature FK to ReconstructionRevision, which is not implemented yet;
+- EvidenceAssertion has no verification column;
+- Storyteller/Game/DecisionSlice tables remain absent.
 
-After E1-3, add repository persistence round-trip tests and adapters.
+Final E1-3 gate: migration from empty DB, deterministic schema comparison, migrated-vs-current metadata equality, Ruff and full pytest all GREEN.
+
+## 2.5 Next action — E1-4 persistence round trip
+
+Proceed tests-first with repository/storage behavior for only the existing provenance core:
+
+1. create/open a migrated SQLite working database;
+2. persist and load Source;
+3. persist and load EvidenceFragment;
+4. persist and load EvidenceAssertion plus ordered N:M fragment links;
+5. enforce foreign keys on application-owned SQLite connections.
+
+Required tests:
+
+- Source workflow dimensions round-trip independently;
+- source locator timestamps round-trip exactly;
+- structured assertion JSON round-trips without type/value loss;
+- OBSERVED / RECONSTRUCTED / INFERRED / UNKNOWN remain unchanged;
+- inference provenance round-trips;
+- assertion scope and reconstruction revision ID round-trip independently from derivation;
+- one fragment may support multiple assertions and one assertion may reference multiple ordered fragments;
+- invalid foreign references fail rather than silently persisting orphan provenance.
+
+Do not add Game/Storyteller/DecisionSlice, VerificationRecord, export format, rules legality, scoring or UI in E1-4.
+
+After E1-4, implement the first versioned JSON export/import contract.
 
 ## 3. First pilot case
 
