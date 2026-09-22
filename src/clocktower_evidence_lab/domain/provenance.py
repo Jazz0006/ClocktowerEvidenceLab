@@ -157,11 +157,14 @@ class EvidenceAssertion(_DomainModel):
         elif self.inference_provenance is not None:
             raise ValueError("inference_provenance is only valid for inferred assertions")
 
-        if self.derivation is Derivation.RECONSTRUCTED:
-            if self.reconstruction_revision_id is None:
-                raise ValueError("reconstructed assertion requires reconstruction_revision_id")
-        elif self.reconstruction_revision_id is not None:
-            raise ValueError(
-                "reconstruction_revision_id is only valid for reconstructed assertions"
-            )
+        if (
+            self.derivation is Derivation.RECONSTRUCTED
+            and self.reconstruction_revision_id is None
+        ):
+            raise ValueError("reconstructed assertion requires reconstruction_revision_id")
+        if (
+            self.derivation is Derivation.OBSERVED
+            and self.reconstruction_revision_id is not None
+        ):
+            raise ValueError("observed assertion cannot be reconstruction-revision scoped")
         return self
