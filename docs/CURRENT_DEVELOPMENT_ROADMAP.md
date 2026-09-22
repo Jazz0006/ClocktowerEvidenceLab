@@ -68,12 +68,14 @@ Primary review packet:
 
 Current pilot state:
 
-- stable primary-video locator confirmed (`qZBvRfM3Xow`); direct timed primary content is not yet captured;
-- source record and screening started;
-- secondary/D5F reconstruction retained only as locator leads;
-- legacy D5F rules-derived registration witnesses explicitly quarantined from historical evidence;
-- timed Night-1 primary fragments still require direct/manual primary playback before any decision slice is admitted;
-- registration witness remains UNKNOWN until directly supported by primary evidence.
+- stable primary-video locator confirmed (`qZBvRfM3Xow`);
+- first human primary-review pass completed with a setup/grimoire screenshot plus timestamps 09:49, 10:32, 11:53, 12:41 and 15:18;
+- full visible setup/seating and Demon bluffs are now primary-supported;
+- Sullivan actual Drunk + shown Empath and Red Herring setup commitments are primary-supported;
+- Drunk-as-Empath 0 is primary-verified with explicit choice-specific rationale and explicit rejection of alternative 2;
+- Fortune Teller Tom+Elliott -> YES is primary-verified as player action + delivered output, while historical registration witness remains UNKNOWN;
+- 3 E0 DecisionSlices are now admitted, none GOLD-qualified yet;
+- Chef interaction is primary-verified at 11:53 but its delivered value is still UNKNOWN in the primary record.
 
 Deliverables:
 
