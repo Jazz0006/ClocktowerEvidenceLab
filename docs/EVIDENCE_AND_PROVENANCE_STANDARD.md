@@ -52,6 +52,14 @@ For video evidence, a fragment should normally include:
 
 Do not copy long transcripts.
 
+## 3.1 Source metadata provenance
+
+Stable source identity and locator fields belong on the Source record.
+
+Descriptive metadata whose truth itself must be evidenced—such as a title, publisher/channel or publication date reconstructed from indexes—uses the normal EvidenceAssertion path with the Source as subject. Do not maintain a second derivation/verification mechanism inside Source metadata fields.
+
+Assertion derivation and reconstruction-revision membership are independent dimensions. A RECONSTRUCTED source-metadata claim need not belong to a game ReconstructionRevision; conversely an INFERRED interpretation may be explicitly scoped to one reconstruction revision.
+
 ## 4. Reconstruction completeness
 
 Track completeness by region or phase, not only by whole game.

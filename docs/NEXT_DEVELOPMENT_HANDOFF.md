@@ -33,6 +33,8 @@ E1 implementation is active on `e1-domain-persistence-foundation`; do not reopen
 
 E1-1 code/quality gate head: `95e933c87e694e9d11552a5f7aad8749ed3f3d72`.
 
+E1-2 domain gate head: `ad8174e971d598b4ebc8f72287010c4dd99b689e`.
+
 PR #2 remains draft.
 
 Read these two completion artifacts before starting E1:
@@ -140,34 +142,52 @@ E1-start architecture audit also tightened ownership:
 - reconstruction-dependent assertions must carry revision identity;
 - direct EvidenceFragment-to-event links do not replace assertion derivation/verification.
 
-## 2.3 Next action — E1-2 provenance entities
+## 2.3 E1-2 provenance entities — COMPLETE
 
-Implement only the first provenance-domain layer, tests-first:
+Implemented tests-first:
 
-1. `Source`;
-2. `EvidenceFragment`;
-3. `EvidenceAssertion`.
+- `Source`;
+- `EvidenceFragment`;
+- `EvidenceAssertion`;
+- source workflow enums;
+- source locator kinds;
+- reviewer inference provenance;
+- explicit assertion scope.
 
-Required E1-2 invariants:
+Frozen E1-2 boundaries:
 
-- source timestamp/range is a source locator only, never historical semantic time;
-- EvidenceFragment and EvidenceAssertion support N:M provenance without assuming one fragment = one fact;
-- derivation remains independent from verification;
-- reviewer inference can be represented without promotion to OBSERVED;
-- raw/source-backed assertions are not revision-scoped;
-- reconstruction-dependent assertion revision behavior is not implemented implicitly before ReconstructionRevision exists;
-- IDs remain stable semantic IDs, never row IDs.
+- Source owns stable identity/locator and collection-workflow state only.
+- Source title/publisher/publication-date claims with derivation/verification use Source-subject EvidenceAssertions rather than duplicated Source fields.
+- source timestamp/range is source-location evidence only, never historical semantic time.
+- fragment/assertion provenance is N:M.
+- reviewer inference stays INFERRED.
+- Verification is not writable on EvidenceAssertion; VerificationRecord remains the future audit owner.
+- assertion derivation and reconstruction-revision scope are independent dimensions.
+- reconstruction-scoped assertions require a revision ID; evidence-scoped assertions cannot silently carry one.
+- no legality, registration-witness enumeration, policy scoring, Game entity, DecisionSlice or UI was introduced.
 
-Do not yet add SQLite schema, Storyteller/Game entities, DecisionSlice, rules legality, policy scoring or E2 UI.
+Final E1-2 gate: install + Ruff check + Ruff format + pytest all GREEN.
 
-After E1-2, continue with:
+## 2.4 Next action — E1-3 SQLite schema v1
 
-4. SQLite schema v1 + migration;
-5. persistence round-trip tests;
-6. versioned JSON export;
-7. Storyteller / Game / GameSeat / ReconstructionRevision;
-8. SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
-9. Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions.
+Proceed tests-first with only the persistence structure needed for E1-1/E1-2:
+
+1. SQLAlchemy Core metadata/tables for Source, EvidenceFragment, EvidenceAssertion and N:M assertion-fragment links;
+2. schema-version/migration ownership;
+3. Alembic initial migration from empty database to schema v1;
+4. deterministic migration tests.
+
+Required boundaries:
+
+- semantic IDs are stored explicitly and are not database row IDs;
+- source timestamps remain locator fields;
+- assertion scope/revision ID survive structurally;
+- structured assertion value is losslessly representable;
+- no mutable verification column is added to EvidenceAssertion;
+- no Storyteller/Game/DecisionSlice tables yet;
+- migration must be deterministic and create the same schema from an empty database.
+
+After E1-3, add repository persistence round-trip tests and adapters.
 
 ## 3. First pilot case
 

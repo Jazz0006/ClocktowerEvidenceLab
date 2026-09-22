@@ -63,7 +63,7 @@ Examples:
 - Reddit postmortem;
 - published article.
 
-Source stores identity and discovery/screening metadata, not reconstructed game truth.
+Source stores stable source identity/locator plus discovery/screening workflow state, not reconstructed game truth. Descriptive source metadata that itself requires derivation/verification (for example a reconstructed title, publisher or publication date) uses ordinary Source-subject EvidenceAssertions rather than a parallel metadata-confidence system.
 
 ### Game
 

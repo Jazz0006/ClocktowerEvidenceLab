@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-1 COMPLETE)
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-2 COMPLETE)
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to verified Storyteller decision evidence.
 
@@ -121,19 +121,30 @@ E1-1 is complete:
 - the E1 stack is frozen to Pydantic v2 + SQLite + SQLAlchemy Core + Alembic + pytest + Ruff + versioned JSON/JSONL;
 - GitHub Actions runs the quality gate;
 - stable semantic-ID validation exists independently of database rows;
-- Derivation and Verification are separate durable enums;
-- tests-first RED was observed before implementation and the final E1-1 quality run is GREEN.
+- Derivation and Verification are separate durable enums.
 
-Next E1-2:
+E1-2 is complete:
 
-- implement only Source / EvidenceFragment / EvidenceAssertion domain contracts first;
-- preserve source locator time separately from historical semantic time;
-- preserve N:M evidence provenance;
-- do not add SQLite schema or higher reconstruction entities until those contracts are tested.
+- Source / EvidenceFragment / EvidenceAssertion domain contracts are implemented;
+- source screening / reconstructability / selection remain independent workflow dimensions;
+- source timestamps are locator-only and cannot masquerade as historical semantic time;
+- EvidenceFragment ↔ EvidenceAssertion supports N:M provenance;
+- reviewer inference remains explicitly INFERRED with reviewer provenance;
+- Verification is not an independently writable EvidenceAssertion field;
+- assertion revision scope is independent from derivation;
+- reconstruction-scoped assertions require an explicit revision ID;
+- evidentiary source metadata such as reconstructed title/publisher/date is expressed as Source-subject EvidenceAssertions, preventing a second metadata provenance system;
+- final E1-2 quality gate is GREEN.
+
+Next E1-3:
+
+- implement SQLite schema v1 and deterministic Alembic migration for the E1-1/E1-2 provenance core;
+- keep SQL tables as persistence adapters rather than domain owners;
+- add migration tests before adding repository round-trip behavior.
 
 Later E1 steps:
 
-- SQLite schema v1 + deterministic Alembic migration;
+- persistence round-trip tests;
 - persistence round-trip tests;
 - versioned JSON export;
 - Storyteller / Game / GameSeat / ReconstructionRevision;

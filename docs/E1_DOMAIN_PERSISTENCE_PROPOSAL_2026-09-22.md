@@ -79,9 +79,7 @@ Needed fields include:
 
 - semantic source ID;
 - source type/platform;
-- stable external locator / platform ID;
-- title/publisher/date when known;
-- source fidelity/category;
+- stable external locator and optional platform source ID;
 - discovery path / inclusion reason;
 - discovery metadata;
 - screening status/result;
@@ -93,6 +91,8 @@ Needed fields include:
 These are **separate workflow dimensions**, not one mutually exclusive status enum. A source may be discovered, screened, judged reconstructable and then selected; a rejected source still remains in the denominator.
 
 These fields satisfy the source-census / selection-bias requirements without inventing a separate `ResearchLead` entity during E1.
+
+Descriptive source metadata whose truth itself has evidentiary status—such as title, publisher/channel or publication date when those values are reconstructed or independently verified—is represented through ordinary `EvidenceAssertion` records whose subject is the `Source`. Do not duplicate those facts as independently writable `Source` fields. Stable locator/identity fields remain on `Source` because they identify where the evidence comes from rather than asserting game history.
 
 ### Storyteller
 
@@ -187,10 +187,11 @@ Must support:
 - current verification status as a projection of VerificationRecord history (`UNVERIFIED` when no verification record exists), not as an independently writable source of truth;
 - provenance links to one or more EvidenceFragments;
 - optional reviewer inference provenance;
-- reconstruction revision ID when and only when the assertion depends on a reconstruction revision;
+- assertion scope independent from derivation: evidence-scoped or reconstruction-scoped;
+- reconstruction revision ID when and only when the assertion is reconstruction-scoped;
 - supersedes relation where a reconstruction-dependent assertion replaces an earlier interpretation.
 
-Raw/source-backed and non-reconstruction claims remain append-only and have no reconstruction revision ID. Reconstruction-dependent assertions must carry a reconstruction revision ID and are revised by creating a new revision-scoped assertion or superseding relation rather than mutating prior history in place. An assertion must never be silently reused across revisions merely because its structured value happens to match.
+Raw/source-backed and non-reconstruction claims remain append-only and have no reconstruction revision ID. Reconstruction-dependent assertions must carry a reconstruction revision ID and are revised by creating a new revision-scoped assertion or superseding relation rather than mutating prior history in place. Derivation does not determine revision scope: for example, source metadata may be RECONSTRUCTED without belonging to a game ReconstructionRevision, while an INFERRED reviewer interpretation may be revision-scoped. An assertion must never be silently reused across revisions merely because its structured value happens to match.
 
 ### SetupCommitment
 
