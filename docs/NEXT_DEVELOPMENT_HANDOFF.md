@@ -23,13 +23,13 @@ PR `#1` — `E0: evidence contract pilot — A Stud In Scarlet` — was squash-m
 
 Merged `main` commit: `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
 
-Current E1 working branch: `e1-domain-persistence-foundation`.
+E1 checkpoint branch: `e1-domain-persistence-foundation`.
 
-Draft PR: `#2` — `E1: domain and persistence foundation`.
+PR: `#2` — `E1: domain and persistence foundation`.
 
-Keep PR #2 draft during E1 implementation.
+E1/C0 checkpoint work is complete and the user explicitly authorized merge on 2026-09-23. Final merge audit must confirm live HEAD/checks before squash merge.
 
-E1 implementation is active on `e1-domain-persistence-foundation`; do not reopen the merged E0 branch for implementation work.
+After merge, do not continue feature expansion on this branch. Future work should start from live `main` and remain low-frequency / targeted unless a concrete replay, evidence or persistence need appears.
 
 E1-1 code/quality gate head: `95e933c87e694e9d11552a5f7aad8749ed3f3d72`.
 
@@ -43,12 +43,33 @@ E1-5 interchange gate head: `7cfd032e15986e0b3247cb39210600dc14856bbd`.
 
 E1-6 reconstruction identity domain gate head: `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
 
-PR #2 remains draft.
+PR #2 is at the final merge gate; draft status should be removed only immediately before the authorized squash merge.
 
 Read these two completion artifacts before starting E1:
 
 - `docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md`
 - `docs/E1_DOMAIN_PERSISTENCE_PROPOSAL_2026-09-22.md`
+
+## 2.A Final E1/C0 merge audit — 2026-09-23
+
+Merge authorization: **GRANTED** by the project owner.
+
+Pre-merge audit result: **PASS**, subject only to the final quality run for the checkpoint-closing documentation commit.
+
+Verified at the audit point:
+
+- PR #2 is open and mergeable;
+- branch is 76 commits ahead and 0 behind `main` before the final checkpoint-closing documentation commit;
+- latest pre-audit quality run #72 succeeded;
+- changed scope is coherent: E1 provenance/domain/persistence foundation, whole-game history contracts, tests, C0 Trouble Brewing acquisition/reconstruction research, algorithm gap audit and cross-project handoff;
+- no BotC legality engine or recommendation-policy implementation was introduced into Evidence Lab;
+- C0 is no longer quota-driven; future acquisition is targeted to concrete replay/evidence gaps;
+- R04 remains explicitly partial and blocked on direct-grimoire access rather than guessed;
+- CampBoardGameHost integration remains a handoff/replay boundary rather than duplicated policy ownership.
+
+Merge method: **squash**.
+
+After merge, treat the resulting `main` commit as the E1/C0 checkpoint baseline.
 
 ## 2.0 Final PR consistency audit — 2026-09-22
 
