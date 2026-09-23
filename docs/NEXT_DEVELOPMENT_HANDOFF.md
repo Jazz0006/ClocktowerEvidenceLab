@@ -364,27 +364,37 @@ Test-first evidence:
 
 Do **not** expand infrastructure by default.
 
-The representative set is now six reconstructed Trouble Brewing games and the first live product audit has been completed.
+The representative set is six reconstructed Trouble Brewing games and the first live product audit / cross-project handoff is complete.
 
 Read next:
 
-- `docs/C0_TB_STORYTELLER_APP_ALGORITHM_GAP_AUDIT_2026-09-23.md`.
+- `docs/C0_TB_STORYTELLER_APP_ALGORITHM_GAP_AUDIT_2026-09-23.md`;
+- `docs/C0_TB_R04_REPLAY_PREPARATION_2026-09-23.md`;
+- `docs/C0_TB_TARGETED_RATIONALE_SEARCH_2026-09-23.md`;
+- `docs/C0_TB_TO_CAMPBOARDGAMEHOST_SDE_HANDOFF_2026-09-23.md`.
 
-Key result:
+Live CampBoardGameHost recheck:
 
-- CampBoardGameHost SDE-3A has the right typed feature families;
-- the current structured shadow actually projects strategic diagnostics, while most evidence-relevant non-strategic features remain explicitly unavailable;
-- current structured candidate input bindings are `NotCaptured`;
-- current structured production shadow is First-Night-only.
+- PR #152 is MERGED;
+- `main` observed at `2a9051f1b0282bd25d01d46d36fe797857cc429d`;
+- PR #153 `SDE-3B: implement BEGINNER_CONSERVATIVE_V1 policy` is OPEN / DRAFT.
 
-These are staged implementation gaps, not a reason to redesign SDE.
+PR #153 already handles the two most important Evidence Lab warnings correctly:
 
-Next Evidence Lab work:
+- unavailable features remain explicit limitations/deferrals rather than neutral/zero evidence;
+- no unsupported numeric soft thresholds are introduced; non-zero survivors remain equivalent until richer projectors exist.
 
-1. prepare a replay-ready historical package for R04 Scott/@sancho 2025-09-10;
-2. make setup commitments, ordered events and decision boundaries explicit without enumerating legal alternatives;
-3. use R02/R01 as the next compact replay packages after R04;
-4. continue new source acquisition only for a missing evidence shape or explicit Storyteller rationale in the known calibration gaps.
+Therefore do not interrupt SDE-3B with a redesign request.
+
+R04 replay preparation is `REPLAY_PREP_PARTIAL / BLOCKED_ON_DIRECT_GRIMOIRE`; the remaining seat/role/shown-role fields could not be recovered from the current search/API/mirror access path. Do not repeat broad searches for those same fields unless a new direct-source access path appears.
+
+Next Evidence Lab work should occur only when it closes a concrete gap:
+
+1. a new direct ClockTracker/grimoire access path becomes available → close R04 replay blockers;
+2. a qualified Storyteller source contains explicit rationale for healthy-information strength, persistent impaired narrative, role exposure or bluff triplets → capture it;
+3. a new TB whole game adds a genuinely missing evidence shape → reconstruct it.
+
+Do not expand raw corpus count for its own sake.
 
 Persistence remains deferred until replay preparation is materially blocked by lack of durable storage.
 
