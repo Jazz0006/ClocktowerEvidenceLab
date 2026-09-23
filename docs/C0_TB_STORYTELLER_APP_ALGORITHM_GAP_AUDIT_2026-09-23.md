@@ -24,16 +24,26 @@ Reconstruction authority:
 
 ## 2. Live CampBoardGameHost state audited
 
-Live state checked during this audit:
+Initial audit state:
 
-- SDE-3A checkpoint PR #151 is merged to `main`;
-- live `main` at audit time: `d1f6a3b351f229196f68eed70eb897b16f5d3d8c`;
-- active continuation PR #152:
-  - branch `sde-3a-feature-projection-shadow-pipeline`;
-  - draft;
-  - head observed during audit: `63da5f339271ffef154febfed17807ba4b704aa1`;
-  - SDE-3A structured feature-projection shadow is documented as acceptance-complete / pending merge;
-  - SDE-3B `BEGINNER_CONSERVATIVE_V1` has not started on this branch.
+- SDE-3A checkpoint PR #151 was merged;
+- PR #152 was still the active draft continuation when the first comparison was performed.
+
+Follow-up live recheck later on 2026-09-23 established:
+
+- PR #152 — `SDE-3A: complete structured feature projection shadow` — MERGED at 2026-09-23 01:41 UTC;
+- CampBoardGameHost `main` became `2a9051f1b0282bd25d01d46d36fe797857cc429d`;
+- PR #153 — `SDE-3B: implement BEGINNER_CONSERVATIVE_V1 policy` — is OPEN / DRAFT;
+- observed PR #153 head during recheck: `0ae46279d5c179f6a44ed6e4c814b6f614a0057f`.
+
+PR #153 already incorporates two key Evidence Lab constraints:
+
+- unavailable feature dimensions remain explicit limitations/deferrals rather than being treated as zero or healthy;
+- the first policy slice rejects only exact zero retained credible-Evil structure, while all non-zero survivors remain in one equivalence band rather than receiving invented thresholds.
+
+The detailed current cross-project handoff is:
+
+- `docs/C0_TB_TO_CAMPBOARDGAMEHOST_SDE_HANDOFF_2026-09-23.md`
 
 Do not assume these refs remain current in a later conversation; re-query before acting.
 
