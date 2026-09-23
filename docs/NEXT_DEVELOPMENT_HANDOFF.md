@@ -272,99 +272,50 @@ Frozen E1-6 boundaries:
 
 Final E1-6 gate: install + Ruff check + Ruff format + full pytest all GREEN at `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
 
-## 2.8 Next action — C0 ClockTracker corpus suitability audit
+## 2.8 Next action — C0 Trouble Brewing evidence-acquisition sprint
 
-Pause new E1 implementation work long enough to run a bounded source-quality research gate.
+C0 is now deliberately narrow.
 
-The project direction was corrected on 2026-09-23:
+The current Storyteller App supports **Trouble Brewing only**, so do not spend the next pass on other scripts or on estimating ClockTracker-wide corpus quality.
 
-- the primary acquisition unit is now explicitly the **whole real game**, not a single clue or isolated DecisionSlice;
-- the research objective is to preserve interacting setup/information/state history so later analysis can study the overall effect of multiple Storyteller choices;
-- ClockTracker may already contain much of the structured state that was manually reconstructed from YouTube in E0;
-- YouTube/video should therefore be treated primarily as an enrichment source for rationale, social context, exact timing and gaps, unless the ClockTracker audit shows strong structured records are too rare.
-
-### ClockTracker findings already established
-
-Inspection of the current public ClockTracker implementation established that a game can contain:
-
-- Storyteller and game metadata;
-- structured grimoire tokens;
-- role and related/shown role;
-- alignment;
-- seat/order and player name/identity;
-- death and ghost-vote state;
-- reminder tokens;
-- Demon bluffs;
-- Fabled;
-- Notes;
-- final win state;
-- multiple grimoire pages.
-
-New grimoire pages clone the previous page and can then diverge, so a careful recorder can preserve successive game states.
-
-Do **not** misinterpret `GrimoireSnapshot` as the game timeline. Current code creates those snapshots as edit/restore history before record modifications. They are not automatic Night-1 / Night-2 snapshots.
-
-The inspected code also did not establish a canonical structured night-action/event-log table. Ordered actions and delivered information may therefore depend heavily on Notes and the recorder's use of pages/reminders.
-
-### C0 procedure
-
-Screen approximately 50–100 public **Storyteller-recorded** ClockTracker games without fully reconstructing them all.
-
-Use a reproducible sampling method and preserve the denominator.
-
-For each sampled game, record enough to classify it:
+Primary objective:
 
 ~~~text
-A
-  full/near-full grimoire
-  + detailed ordered Notes/event history
-  + sufficient multi-clue context for whole-game reconstruction
-
-B
-  strong grimoire / reminders / bluffs / multi-page state
-  + incomplete process Notes
-
-C
-  setup/final state/result only
-  or insufficient process detail
+find enough high-value Trouble Brewing real games
+    → reconstruct whole-game information bundles
+    → improve/calibrate the current Storyteller recommendation algorithm
 ~~~
 
-Measure:
+Current sprint target:
 
-1. A/B/C distribution;
-2. full grimoire availability;
-3. detailed Notes frequency;
-4. Demon bluff / reminder-token population;
-5. multi-page grimoire usage;
-6. nightly action / delivered-information recoverability;
-7. Storyteller identity and expert/trusted qualification feasibility;
-8. explicit rationale frequency;
-9. stable public locator/access characteristics;
-10. estimated human effort to promote a strong record into a corpus-ready whole-game reconstruction.
+- roughly 20–30 usable public Trouble Brewing whole games;
+- roughly 10–15 A-grade records if available;
+- at least 2–3 independent Storytellers;
+- several games with multi-night information evolution;
+- 1–2 same-game ClockTracker + primary-video pairs.
 
-Do not infer quality from schema support alone.
+Screen other scripts out immediately as current product-scope rejects.
 
-### C0 decision gate
+Continue to grade Trouble Brewing records A/B/C, but use the grade only to control effort:
 
-If A/B records are common enough:
+- A: reconstruct now;
+- B: retain the strong mechanical backbone and enrich selectively when useful;
+- C: normally stop unless a special external source makes the game unusually valuable.
 
-~~~text
-ClockTracker structured record
-    → base whole-game reconstruction
-    → selective YouTube/video enrichment
-~~~
+Prioritize multi-clue interaction rather than isolated decisions. Especially useful TB bundles may include combinations of Chef, Empath, Fortune Teller, Investigator, Washerwoman, Drunk, Red Herring, Poisoner, Spy/Recluse registration, Demon bluffs and multi-night information changes.
 
-If A/B records are rare:
+Initial research status:
 
-~~~text
-ClockTracker
-    → discovery / partial-state support
+- public indexed ClockTracker pages expose a substantial Trouble Brewing candidate pool;
+- one strong A-grade game is already confirmed: Scott/@sancho, Trouble Brewing, 2025-09-10, 14 players, public ClockTracker game `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30`;
+- its Notes reconstruct setup and Night/Day history through Night 7 and include Poisoner targets, Drunk information, Red Herring, Spy registration, Ravenkeeper/Undertaker/Fortune Teller information, executions, deaths and Imp transitions;
+- several additional exact public Trouble Brewing game URLs have been discovered and are queued for screening;
+- cross-source ClockTracker + matching primary-video validation remains pending.
 
-video
-    → primary whole-game reconstruction source
-~~~
+Use `docs/C0_TROUBLE_BREWING_ACQUISITION_SPRINT_2026-09-23.md` as the active C0 research log.
 
-The audit result should be written back into `docs/CURRENT_DEVELOPMENT_ROADMAP.md`, `docs/SOURCE_COLLECTION_STRATEGY.md` and this handoff before bulk ingestion is designed.
+Do not resume E1-7 until this sprint reaches the product-directed stop condition or a blocking domain-model correction is required.
+
 
 ## 2.9 Deferred next implementation step — E1-7 reconstruction identity persistence
 
