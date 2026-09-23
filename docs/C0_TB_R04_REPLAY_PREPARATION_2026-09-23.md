@@ -19,7 +19,17 @@ Primary working reconstruction:
 
 - `docs/C0_TB_RECONSTRUCTION_BATCH_01_2026-09-23.md`
 
+Replay preparation status: **REPLAY_PREP_PARTIAL / BLOCKED_ON_DIRECT_GRIMOIRE**.
+
 This replay preparation is **not yet runnable corpus truth**. It separates observed source content from reconstruction and inference so missing fields can be filled later without rewriting the event history.
+
+A follow-up access pass attempted:
+
+- the known player-side mirror Source `945f3458-39aa-4ef2-be1a-06aad9bca83c`;
+- the public ClockTracker game API route;
+- public image search for the grimoire.
+
+The current research tools did not expose the mirror/grimoire/API payload. This is an access limitation, not evidence that the fields are absent. Do not repeat broad search attempts for these same fields unless a new direct-source access path becomes available.
 
 ## 2. Source-level setup facts
 
@@ -358,4 +368,8 @@ Do not reconstruct another entire game yet.
 
 First try to close R04 blockers through a direct ClockTracker grimoire view, screenshot, mirror source, or other primary structured representation.
 
-If those fields remain inaccessible in the current research environment, preserve this package as `REPLAY_PREP_PARTIAL` and prepare R02 next; do not guess missing setup.
+Those fields remain inaccessible in the current research environment.
+
+Preserve this package as `REPLAY_PREP_PARTIAL / BLOCKED_ON_DIRECT_GRIMOIRE`. Do not guess missing setup and do not spend another search-index pass on the same blockers.
+
+R02 may be prepared next, but a more valuable parallel track is targeted acquisition of explicit Storyteller rationale for the non-strategic SDE feature families that remain under-calibrated.
