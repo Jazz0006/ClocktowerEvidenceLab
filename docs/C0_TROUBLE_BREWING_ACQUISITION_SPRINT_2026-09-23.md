@@ -105,6 +105,103 @@ This is already sufficient to demonstrate the kind of multi-clue whole-game evid
 
 These are discovery candidates only until field-level screening is completed.
 
+
+### A-grade promotion pass — 2026-09-23
+
+The first focused A-grade promotion pass produced four additional strong logical-game candidates beyond the original 2025-09-10 Scott game.
+
+#### A2 — Scott / @sancho — 2025-09-24 — Trouble Brewing
+
+Primary Storyteller-side record:
+
+- game ID: `72d771f4-e866-44cc-8c92-803955ce33e3`;
+- Scott is explicitly recorded as Storyteller;
+- Notes are indexed through at least Night 5;
+- observed content includes Poisoner targets, Monk protection, Undertaker results, Fortune Teller choices/results, Drunk state and executions/deaths.
+
+Mirror/player-side record:
+
+- game ID: `5522250b-d848-4498-a8fd-5138f40d8b53`;
+- Brian is recorded as Ravenkeeper;
+- Notes match the Storyteller-side record, including identical Night-3 sequence.
+
+Treat these as one logical game, not two corpus games.
+
+#### A3 — Ash / @CryptCore — 2025-10-03 — Trouble Brewing
+
+- game ID: `27fc5093-5c64-400e-bd47-d22df5e6087e`;
+- Storyteller: `@CryptCore`;
+- players: 12;
+- Notes are indexed from Night 1 through at least Night 5;
+- observed content includes a poisoned Washerwoman, repeated Poisoner targets, Monk saves/failed saves, Imp kills and repeated Empath information.
+
+This is strong whole-game chronological evidence rather than a setup-only record.
+
+#### A4 — Grant/Jeff mirror cluster — 2025-10-12 — Trouble Brewing
+
+Player-side records:
+
+- Grant: `21606aca-a7b2-4b38-a49f-a23112abb096`;
+- Jeff: `ab82610b-5c3d-45b0-98c1-fb11920e121c`.
+
+The indexed records expose matching chronology through at least Night 5, including:
+
+- Night 1 Poisoner poisoning the Slayer;
+- Night 2 Poisoner poisoning the Butler and Imp killing the Empath;
+- later-night continuation through Night 5.
+
+Jeff's record identifies Storytellers `@bendant` and `@pambela`.
+
+The matching date/content strongly indicates these are duplicate source records of one logical game. Preserve both Source records but link them to one Game after duplicate verification.
+
+#### A5 — Jeff / @CryptCore + @Larrikin — 2025-09-30 — Trouble Brewing
+
+- game ID: `de5f126b-89f5-4c78-a898-f5724a93430e`;
+- players: 8;
+- Storytellers: `@CryptCore`, `@Larrikin`;
+- Notes expose at least Night 1 through Night 4;
+- observed content includes Drunk Investigator misinformation and a Fortune Teller check of the Imp plus the Red Herring returning YES;
+- Day-3 notes explicitly mention the Drunk Investigator publicly revealing information before the final phase.
+
+This is a compact but high-value multi-clue reconstruction candidate.
+
+### Duplicate-cluster finding
+
+C0 now has direct evidence that ClockTracker can contain multiple public UUID records for one real game.
+
+Confirmed/high-confidence clusters:
+
+1. 2025-09-10 Scott Storyteller record `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30` and player-side mirror `945f3458-39aa-4ef2-be1a-06aad9bca83c`;
+2. 2025-09-24 Scott Storyteller record `72d771f4-e866-44cc-8c92-803955ce33e3` and Brian player record `5522250b-d848-4498-a8fd-5138f40d8b53`;
+3. 2025-10-12 Grant record `21606aca-a7b2-4b38-a49f-a23112abb096` and Jeff record `ab82610b-5c3d-45b0-98c1-fb11920e121c`.
+
+Corpus accounting must therefore distinguish Source records from logical Games before counting corpus size.
+
+### Additional high-priority A/B candidates
+
+The deeper search pass also surfaced:
+
+- `a6d316ec-64c8-43ba-8076-f1ec81fe5ba1` — lelupinblanc, Storyteller `@Lelupinblanc`, 12-player TB, Notes indexed through Night 5;
+- `a036727b-afd1-4884-8482-29021882d5bc` — Leo The Leopard player record, Storytellers Aloraine / Delta / Arito, Notes indexed through Night 4;
+- `2f460044-2bc3-4792-bd54-ae1e1b78c37e` — caspian3787 player record, Notes indexed through at least Night 5;
+- `1b5fc288-8023-4381-a704-82436fc0a0a0` — caspian3787 player record, Notes indexed through at least Night 5;
+- `78367b63-dbf7-402e-88f1-6b07ccb35a1d` — lyn/lauren player record, Notes indexed through Night 5 and public result shows Page 14 of 14;
+- `9e687315-961a-4a51-8c34-9bf2f4785023` — Scott player-side TB record with ordered Notes and Red Herring; contains a Traveller (Thief), so it is lower priority for current pure-TB algorithm calibration.
+
+These remain queued until Storyteller identity, pure-TB scope and complete note depth are checked.
+
+### Current sprint count
+
+At this point:
+
+- candidate supply target: reached;
+- strong A logical games: 5;
+- independent Storyteller identities represented among those A candidates: at least 4 Storyteller identity groups (`@sancho`, `@CryptCore`, `@bendant/@pambela`, `@CryptCore/@Larrikin`);
+- confirmed duplicate/mirror clusters: 3;
+- matching ClockTracker + primary-video pair: still 0 verified.
+
+The next search effort should prioritize promoting another 5–10 A candidates rather than expanding raw discovery volume.
+
 ## 6. Larger discovery pools
 
 Indexed profile/search surfaces show multiple Trouble Brewing games in:
