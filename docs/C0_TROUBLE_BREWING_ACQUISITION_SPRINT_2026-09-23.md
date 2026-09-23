@@ -190,17 +190,87 @@ The deeper search pass also surfaced:
 
 These remain queued until Storyteller identity, pure-TB scope and complete note depth are checked.
 
+### A-grade promotion pass 2 — 2026-09-23
+
+The second pass stops expanding raw discovery and promotes five more records into the **A reconstruction queue**. These are strong A candidates based on indexed multi-night Notes and structured game state; direct reconstruction will still verify each field before GOLD/VERIFIED use.
+
+#### A6 — lelupinblanc / @Lelupinblanc — 2025-07-29 — Trouble Brewing
+
+- game ID: `a6d316ec-64c8-43ba-8076-f1ec81fe5ba1`;
+- 12-player Trouble Brewing;
+- Storyteller: `@Lelupinblanc`;
+- indexed Notes extend through Night 5;
+- later chronology includes Scarlet Woman → Imp transition and continuing Fortune Teller information;
+- Red Herring state is present.
+
+This is useful for studying how information remains coherent after a Demon transition.
+
+#### A7 — Leo The Leopard — 2024-02-23 — Trouble Brewing
+
+- game ID: `a036727b-afd1-4884-8482-29021882d5bc`;
+- Storytellers: Aloraine / Delta / Arito;
+- indexed Notes expose Night 1, Night 2 and later nights through at least Night 4;
+- Night 1 includes Fortune Teller decoy/Red-Herring reasoning and Empath information;
+- later notes include Demon kills and public claim/world-building context.
+
+This is especially useful because it preserves not only mechanical information but some table interpretation.
+
+#### A8 — lyn/lauren — 2026-07-26 — Trouble Brewing
+
+- game ID: `78367b63-dbf7-402e-88f1-6b07ccb35a1d`;
+- indexed Notes expose Night 1 through at least Night 5;
+- Night 1 includes Poisoner action plus a Drunk information role receiving information while also poisoned;
+- later Notes continue poison/action/information chronology;
+- indexed result exposes `Page 14 of 14`, indicating unusually rich saved grimoire/page state.
+
+Storyteller identity still needs to be resolved, but reconstructability is high enough to retain this in the A queue.
+
+#### A9 — Debby — 2025-10-05 — Trouble Brewing
+
+- game ID: `66d4356f-fa9f-468d-ba49-6e6858e2e80d`;
+- indexed Notes span a multi-night game through at least Night 5;
+- observed content includes Empath information, a poisoned Fortune Teller, and an Imp starpass to the Spy;
+- this provides a compact interaction between misinformation, continuing information and Demon succession.
+
+Storyteller identity remains unresolved in the current search surface and should be recovered during reconstruction.
+
+#### A10 — caspian3787 — 2025-07-15 — Trouble Brewing
+
+- game ID: `2f460044-2bc3-4792-bd54-ae1e1b78c37e`;
+- 12-player Trouble Brewing;
+- setup records a Red Herring;
+- indexed Notes expose Night 1 and later chronology through at least Night 5;
+- later nights include repeated Poisoner actions, Demon kills and continuing information state.
+
+Storyteller identity remains unresolved in the current search surface. Check for Asheville mirror records before treating this as a new logical Game.
+
+### Cross-source enrichment search
+
+A bounded search for exact same-game public video/VOD matches was run against the highest-value candidates, including:
+
+- Scott / Asheville 2025-09-10;
+- Scott / Asheville 2025-09-24;
+- @CryptCore / Escape! Clocktower Crew 2025-10-03;
+- Leo The Leopard 2024-02-23;
+- lelupinblanc 2025-07-29.
+
+No exact ClockTracker-game ↔ primary-video match was verified.
+
+Do not spend further acquisition time on this now. Video pairing remains optional enrichment and should not block the Trouble Brewing corpus sprint.
+
 ### Current sprint count
 
 At this point:
 
 - candidate supply target: reached;
-- strong A logical games: 5;
-- independent Storyteller identities represented among those A candidates: at least 4 Storyteller identity groups (`@sancho`, `@CryptCore`, `@bendant/@pambela`, `@CryptCore/@Larrikin`);
-- confirmed duplicate/mirror clusters: 3;
+- strong/provisional-A logical games in the reconstruction queue: 10;
+- the first five have the strongest Storyteller identity + chronology confirmation;
+- the second five meet the indexed reconstructability threshold but still require field-level verification during reconstruction;
+- independent Storyteller coverage already exceeds the minimum 2–3 identity groups among records where Storyteller identity is resolved;
+- confirmed/high-confidence duplicate/mirror clusters: 3;
 - matching ClockTracker + primary-video pair: still 0 verified.
 
-The next search effort should prioritize promoting another 5–10 A candidates rather than expanding raw discovery volume.
+The A-grade acquisition threshold is now reached. Stop optimizing for raw A-count. The next useful work is to reconstruct a small representative subset of these games and extract the multi-clue information bundles that can be compared with the current Storyteller recommendation algorithm.
 
 ## 6. Larger discovery pools
 
