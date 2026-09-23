@@ -263,7 +263,38 @@ The guidance therefore adds rationale-level support to patterns already visible 
 
 It does **not** prove that the observed R02/R04/R06 Storytellers chose optimally.
 
-## 8. Acquisition decision
+## 8. ClockTracker rationale search result
+
+A dedicated Trouble Brewing ClockTracker search was run using rationale-oriented terms such as:
+
+- `because`;
+- `wanted to`;
+- `I chose`;
+- `decided`;
+- `red herring` + rationale terms;
+- `drunk` / `poisoned` + rationale terms.
+
+No usable **Trouble Brewing whole-game ClockTracker record with explicit Storyteller decision rationale** was recovered from the public search index in this pass.
+
+This is a source-family finding, not proof that no such records exist.
+
+Current practical division of labor is therefore:
+
+~~~text
+ClockTracker
+    → setup / grimoire / reminders
+    → ordered Notes
+    → mechanical whole-game backbone
+
+expert podcast / postgame / primary commentary
+    → why this information was chosen
+    → why an alternative was rejected
+    → lifecycle / balance rationale
+~~~
+
+Do not delay mechanical reconstruction waiting for ClockTracker to provide rationale that it often does not record.
+
+## 9. Acquisition decision
 
 Do not return to broad web/community advice collection.
 
@@ -282,7 +313,7 @@ Stop when the source lacks either:
 - attributable qualified Storyteller identity; or
 - a concrete decision/rationale that maps to an SDE feature.
 
-## 9. Product implication
+## 10. Product implication
 
 The new source does **not** justify changing policy weights.
 
