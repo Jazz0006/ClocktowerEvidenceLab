@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-6 COMPLETE); ClockTracker source-quality research gate — NEXT
+> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-6 COMPLETE); C0 Trouble Brewing reconstruction — ACTIVE; blocking domain correction identified before E1-7
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -110,7 +110,22 @@ Initial C0 research has already established:
 
 The detailed sprint log is `docs/C0_TROUBLE_BREWING_ACQUISITION_SPRINT_2026-09-23.md`.
 
-E1-7 remains paused until this narrowed C0 gate is complete or a blocking domain-model gap must be corrected first.
+C0 has now crossed the acquisition threshold and begun formal whole-game reconstruction.
+
+Current reconstruction artifacts:
+
+- `docs/C0_TB_RECONSTRUCTION_BATCH_01_2026-09-23.md`;
+- `docs/C0_TB_CROSS_GAME_ALGORITHM_FINDINGS_2026-09-23.md`.
+
+The first batch includes an 8-player, 12-player and 14-player game plus one partial reconstruction. Scott/@sancho 2025-09-10 is currently the strongest record, with ordered Setup → Day 7 chronology.
+
+C0 reconstruction has exposed blocking domain-model gaps before the old E1-7 persistence step:
+
+1. explicit many-to-one Source → logical Game linkage with duplicate/match state;
+2. first-class SetupCommitment;
+3. ordered SemanticEvent / information-delivery history with revision and provenance boundaries.
+
+Therefore the old E1-7 sequence must not resume unchanged. First freeze the minimal contracts for those three concepts, then implement persistence around the corrected model.
 
 ## 3. Milestones
 
@@ -266,20 +281,23 @@ E1-6 is complete:
 - no SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord or rules logic was introduced;
 - final E1-6 quality gate is GREEN at `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
 
-Next E1-7 — implementation resumes after C0:
+Next E1 contract correction — required before persistence resumes:
 
-- first review the C0 ClockTracker audit for any domain-model gap that affects whole-game reconstruction;
-- then extend SQLAlchemy/Alembic schema for Storyteller / Game / GameSeat / ReconstructionRevision;
-- add append-only persistence round-trip for those entities;
-- enforce game-scoped foreign keys and same-game current/parent revision integrity where the persistence boundary has enough information;
-- preserve Game as sole current-revision owner;
-- do not add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord yet.
+- freeze a minimal `SourceGameLink` contract so multiple ClockTracker UUID Source records can support one logical Game without inflating corpus counts;
+- freeze `SetupCommitment` for historical setup facts such as Drunk shown identity, Red Herring and Demon bluffs;
+- freeze ordered `SemanticEvent` for poison/protection/kill/execution/role-transition/information-target/information-delivery history;
+- keep these entities revision-scoped and provenance-backed;
+- preserve UNKNOWN and committed-prefix/decision-time boundaries;
+- do not add BotC legality, policy scoring or role-specific recommendation logic.
 
-Later E1 steps:
+After those contracts are frozen tests-first, resume persistence:
 
-- extend versioned interchange for Storyteller / Game / GameSeat / ReconstructionRevision;
-- add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord;
-- represent Storyteller qualification through ordinary Storyteller-subject EvidenceAssertions.
+- extend SQLAlchemy/Alembic schema for Storyteller / Game / StorytellerAssignment / GameSeat / ReconstructionRevision plus the newly required whole-game linkage/history entities;
+- add append-only persistence round trips;
+- enforce same-game and revision referential integrity;
+- preserve Game as sole current-revision owner.
+
+DecisionSlice / VerificationRecord remain later E1 work after the historical game model is durable.
 
 Success condition:
 
