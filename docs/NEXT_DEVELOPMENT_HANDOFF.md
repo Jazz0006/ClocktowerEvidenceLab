@@ -330,30 +330,50 @@ The first reconstructed batch has exposed a blocking domain correction before pe
 Do not resume the old E1-7 sequence unchanged.
 
 
-## 2.9 Next implementation step — E1 whole-game contract correction
+## 2.9 C0-driven whole-game contract correction — COMPLETE
 
-C0 did expose a domain-model gap, so the old E1-7 plan is superseded.
+C0 exposed and has now corrected the minimum blocking domain gap.
 
-Freeze the minimum domain contracts **before** adding persistence:
+Implemented tests-first in `src/clocktower_evidence_lab/domain/history.py`:
 
 1. `SourceGameLink`
-   - links one Source record to one logical Game;
-   - supports multiple Sources for the same Game;
-   - carries explicit matching state such as candidate / verified-same / verified-different / unresolved;
-   - must not silently merge sources.
+   - multiple Source records can refer to one logical Game;
+   - match state is explicit: unresolved / candidate / verified-same / verified-different;
+   - no silent UUID→Game identity collapse.
 
 2. `SetupCommitment`
-   - revision-scoped historical setup facts;
-   - examples include Drunk shown identity, Red Herring, Demon bluffs and other setup commitments;
-   - provenance remains EvidenceAssertion/EvidenceFragment-owned.
+   - reconstruction-revision scoped;
+   - deterministic setup order;
+   - generic controller/subject/targets/value;
+   - no TB-specific policy branching.
 
 3. `SemanticEvent`
-   - ordered historical game events;
-   - supports phase/order, actor/subject, target(s), result/value and explicit UNKNOWN fields;
-   - must represent poison/protection/kill/execution/death/role-transition/information-target/information-delivery without embedding Trouble-Brewing-specific policy code;
-   - later events must not leak into earlier decision boundaries.
+   - reconstruction-revision scoped;
+   - deterministic global event order plus phase label;
+   - generic actor/subject/targets/value;
+   - UNKNOWN-friendly optional actor/value;
+   - source locator timestamps are rejected as semantic historical time.
 
-Then implement persistence tests-first for:
+Test-first evidence:
+
+- RED: `cd8c9fa3a4dbf38f8e8fabbae451b1641efe3247`;
+- GREEN: `7c245da6692b2dd33cec2f8599a7dd96487abcb0`;
+- GitHub Actions quality run #58: PASS.
+
+### Immediate next action
+
+Do **not** expand infrastructure by default.
+
+Return to the product-directed C0 objective:
+
+1. continue reconstructing the existing A-grade Trouble Brewing queue;
+2. add several more representative whole-game bundles;
+3. use `docs/C0_TB_CROSS_GAME_ALGORITHM_FINDINGS_2026-09-23.md` as the hypothesis list;
+4. begin the first comparison against current Storyteller App recommendation behavior once the evidence set is sufficient.
+
+Persistence remains deferred until it becomes a real reconstruction bottleneck.
+
+If/when persistence is required, implement tests-first for:
 
 - Storyteller / Game / StorytellerAssignment / GameSeat / ReconstructionRevision;
 - SourceGameLink;
