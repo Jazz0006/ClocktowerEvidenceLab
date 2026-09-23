@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation — ACTIVE; C0 Trouble Brewing reconstruction — ACTIVE; C0-driven whole-game domain correction COMPLETE
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / READY TO MERGE; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; continuous evidence collection — LOW-FREQUENCY / TARGETED
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -74,19 +74,21 @@ YouTube/video remains important, but its default role changes from primary manua
 - exact action timing;
 - gaps or ambiguities in structured records.
 
-### Immediate research gate — C0 Trouble Brewing evidence-acquisition sprint
+### C0 Trouble Brewing evidence-acquisition sprint — CHECKPOINT COMPLETE
 
 The current Storyteller App supports **Trouble Brewing only**. C0 is therefore narrowed from a broad ClockTracker prevalence audit to a fast acquisition sprint for high-value Trouble Brewing whole games.
 
 Do not spend current effort measuring other scripts. Unsupported scripts are out of scope for this gate.
 
-Current target:
+Historical working acquisition target for this sprint was:
 
 1. discover roughly 20–30 usable public Trouble Brewing whole-game records;
 2. promote roughly 10–15 to A-grade when possible;
 3. cover at least 2–3 independent Storytellers;
 4. include several games with meaningful multi-night information evolution;
 5. find 1–2 ClockTracker + primary-video same-game pairs for enrichment validation.
+
+The product-directed stop condition has now been reached without requiring every numeric scouting target to be exhausted. The representative whole-game set, algorithm audit and cross-project handoff are sufficient for the current Storyteller App stage. Further collection is targeted, not quota-driven.
 
 Prioritize records with interacting information mechanisms rather than isolated interesting clues. High-value examples include combinations of information Townsfolk with Drunk, Red Herring, Poisoner, Spy/Recluse registration, Demon bluffs and multi-night information changes.
 
@@ -227,7 +229,7 @@ A downstream researcher can understand exactly what happened, what remains unkno
 
 No production legality or policy scoring is implemented.
 
-### E1 — Domain and persistence foundation — ACTIVE
+### E1 — Domain and persistence foundation — CHECKPOINT COMPLETE / READY TO MERGE
 
 E0 has validated the workflow and PR #1 has been squash-merged to `main` at `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
 
