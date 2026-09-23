@@ -240,6 +240,127 @@ Even this partial reconstruction is already valuable: the Night-2 Fortune Teller
 
 ---
 
+
+## 4A. Game R04 — Scott / @sancho — Trouble Brewing — 2025-09-10
+
+### 4A.1 Source identity
+
+- ClockTracker source ID: `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30`
+- locator: https://clocktracker.app/game/ffb40a93-3d7b-42c4-bba8-bc9c363dcd30
+- script: Trouble Brewing
+- player count: 14
+- Storyteller: Scott / `@sancho`
+- community: Asheville Clocktower Club
+- location: in person / Well Played Asheville
+- result: Evil won
+- source status: strongest current A-grade whole-game record
+
+The exact public game page exposes ordered Notes from Setup through Day 7.
+
+### 4A.2 Setup commitments
+
+| Commitment | Reconstructed value | Status |
+| --- | --- | --- |
+| Red Herring | Sarah (Monk) is the Red Herring for Rhonda's Fortune Teller ability | INDEX_OBSERVED |
+| Drunk | Hylinn is marked as the Drunk | INDEX_OBSERVED |
+| other full-role assignments | Present in the grimoire but not all transcribed into this batch | PARTIAL |
+
+### 4A.3 Ordered reconstruction
+
+| Phase | Reconstructed event | Status |
+| --- | --- | --- |
+| Night 1 | Paul receives Chef / Investigator / Saint information. | INDEX_OBSERVED |
+| Night 1 | Deonna poisons Brian. | INDEX_OBSERVED |
+| Night 1 | Josh is shown Chris / Paul as Chef; Notes mark Spy involvement. | INDEX_OBSERVED |
+| Night 1 | Brian is shown Holly / Deonna as Saint while poisoned. | INDEX_OBSERVED |
+| Night 1 | Hylinn receives 0 while Drunk. | INDEX_OBSERVED |
+| Night 1 | Rhonda checks Nico / Wesley and receives NO. | INDEX_OBSERVED |
+| Day 1 | Maddox is executed and dies. | INDEX_OBSERVED |
+| Night 2 | Deonna poisons Sarah. | INDEX_OBSERVED |
+| Night 2 | Sarah protects Wesley, but the protection fails because Sarah is poisoned. | INDEX_OBSERVED |
+| Night 2 | Paul kills Victor. | INDEX_OBSERVED |
+| Night 2 | Victor, as Ravenkeeper, checks Deonna and learns Poisoner. | INDEX_OBSERVED |
+| Night 2 | Wesley, as Undertaker, learns Soldier from Maddox's execution. | INDEX_OBSERVED |
+| Night 2 | Hylinn again receives 0 while Drunk. | INDEX_OBSERVED |
+| Night 2 | Rhonda checks Sarah / Josh and receives YES; Sarah is the Red Herring. | INDEX_OBSERVED |
+| Night 3 | Deonna poisons Sarah again. | INDEX_OBSERVED |
+| Night 3 | Sarah again protects Wesley; protection again fails due to poison. | INDEX_OBSERVED |
+| Night 3 | Paul kills Hylinn. | INDEX_OBSERVED |
+| Night 3 | Rhonda checks Sarah / Paul and receives YES; the pair contains both the Red Herring and the Demon. | INDEX_OBSERVED |
+| Day 3 | Nico uses Slayer on Sarah; nothing happens. | INDEX_OBSERVED |
+| Day 3 | Sarah is executed and dies. | INDEX_OBSERVED |
+| Night 4 | Deonna poisons Wesley. | INDEX_OBSERVED |
+| Night 4 | Paul kills himself. | INDEX_OBSERVED |
+| Night 4 | Hollie becomes the Imp. | INDEX_OBSERVED |
+| Night 4 | Wesley learns Scarlet Woman as Undertaker information while poisoned. | INDEX_OBSERVED |
+| Night 4 | Rhonda checks Josh / Paul and receives YES. | INDEX_OBSERVED |
+| Day 4 | Brian nominates Andrew and is executed/dies to the Virgin ability. | INDEX_OBSERVED |
+| Night 5 | Deonna poisons Wesley again. | INDEX_OBSERVED |
+| Night 5 | Hollie kills Wesley. | INDEX_OBSERVED |
+| Night 5 | Rhonda checks Josh / Andrew and receives NO. | INDEX_OBSERVED |
+| Day 5 | Josh is executed and dies. | INDEX_OBSERVED |
+| Night 6 | Deonna poisons Nico. | INDEX_OBSERVED |
+| Night 6 | Hollie kills herself. | INDEX_OBSERVED |
+| Night 6 | Deonna becomes the Imp. | INDEX_OBSERVED |
+| Night 6 | Rhonda checks Andrew / Paul and receives YES. | INDEX_OBSERVED |
+| Day 6 | Rhonda is executed and dies. | INDEX_OBSERVED |
+| Night 7 | Deonna kills Nico. | INDEX_OBSERVED |
+| Day 7 | Chris is executed with two players left including the Demon. | INDEX_OBSERVED |
+| Final | Evil team wins. | INDEX_OBSERVED |
+
+### 4A.4 Delivered-information ledger
+
+| Phase | Recipient / role | Delivered information | Reliability / interaction context |
+| --- | --- | --- | --- |
+| N1 | Paul | Chef / Investigator / Saint | exact recipient role needs grimoire transcription |
+| N1 | Josh | Chris / Paul → Chef | Notes explicitly include Spy involvement |
+| N1 | Brian | Holly / Deonna → Saint | Brian is poisoned |
+| N1 | Hylinn / shown Empath-like information role | 0 | Hylinn is the Drunk |
+| N1 | Rhonda / Fortune Teller | Nico + Wesley → NO | neither Red Herring nor known Demon in pair from Notes |
+| N2 | Victor / Ravenkeeper | Deonna → Poisoner | death-trigger information |
+| N2 | Wesley / Undertaker | Soldier | follows Maddox execution |
+| N2 | Hylinn | 0 | Drunk misinformation/constructed world continues |
+| N2 | Rhonda / Fortune Teller | Sarah + Josh → YES | Sarah is Red Herring |
+| N3 | Rhonda / Fortune Teller | Sarah + Paul → YES | Sarah = Red Herring; Paul = Demon |
+| N4 | Wesley / Undertaker | Scarlet Woman | Wesley is poisoned |
+| N4 | Rhonda / Fortune Teller | Josh + Paul → YES | Paul is prior Demon immediately before transfer |
+| N5 | Rhonda / Fortune Teller | Josh + Andrew → NO | no impairment recorded for Rhonda |
+| N6 | Rhonda / Fortune Teller | Andrew + Paul → YES | Paul is former Demon; exact registration basis should not be inferred beyond observed output |
+
+### 4A.5 Longitudinal information bundle
+
+This game contains several overlapping long-running information systems:
+
+1. **Drunk continuity** — Hylinn receives repeated 0 results across multiple nights rather than unrelated random misinformation.
+2. **Red Herring continuity** — Sarah repeatedly participates in Fortune Teller YES results before dying.
+3. **Moving Poisoner target** — poison shifts from Brian to Sarah, Wesley and Nico, changing which information/action channels are unreliable each night.
+4. **Undertaker chain** — Wesley receives apparently useful execution information, then later receives Scarlet Woman while poisoned.
+5. **Fortune Teller chain** — Rhonda receives a sequence of NO / YES / YES / YES / NO / YES across changing pairs and two Demon transfers.
+6. **Demon succession** — Paul → Hollie → Deonna changes the true evil center of gravity while older information remains in circulation.
+
+### 4A.6 Explicit unknowns
+
+- full seating/role table is not yet normalized into this reconstruction;
+- exact Demon bluff list is not transcribed here;
+- the precise historical registration basis behind every information result is not inferred unless Notes explicitly state it;
+- player claims and table belief are mostly absent from this structured record;
+- Storyteller rationale is not recovered.
+
+### 4A.7 Algorithm-facing observations — ANALYSIS ONLY
+
+R04 is currently the best calibration case for a future whole-game recommendation comparison.
+
+A locally plausible output is not sufficient. The algorithm must preserve a globally coherent evolving information landscape while:
+
+- one false channel is deliberately maintained by Drunk continuity;
+- another false/ambiguous channel is structurally created by Red Herring;
+- a moving Poisoner temporarily corrupts different roles;
+- truthful confirmation channels remain active;
+- Demon identity changes twice.
+
+This game therefore strongly supports evaluating recommendation quality at the **bundle trajectory** level rather than scoring each information result independently.
+
+
 ## 5. Batch-level findings
 
 ### 5.1 The whole-game unit is already paying off
