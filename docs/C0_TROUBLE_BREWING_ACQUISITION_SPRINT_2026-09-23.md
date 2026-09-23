@@ -307,6 +307,32 @@ ClockTracker mechanical backbone
     → rationale / social context / exact timing
 ~~~
 
+
+## 8.1 Reconstruction started — Batch 01
+
+The first formal whole-game reconstruction artifact is now:
+
+- `docs/C0_TB_RECONSTRUCTION_BATCH_01_2026-09-23.md`
+
+Batch 01 currently contains:
+
+- R01 Ash / @CryptCore — strong whole-game reconstruction;
+- R02 Jeff / @CryptCore + @Larrikin — strong whole-game reconstruction;
+- R03 Scott / @sancho 2025-09-24 — partial reconstruction with explicit chronology gaps.
+
+The working reconstruction deliberately distinguishes search-index-observed exact-game content from UNKNOWN fields and downstream ANALYSIS. None of these working rows are promoted to VERIFIED/GOLD merely because the search index exposes them.
+
+The first reconstruction pass already confirms that whole-game data adds information that isolated decisions lose:
+
+- temporary Poisoner misinformation coexists with independent truthful channels;
+- Drunk misinformation can later be directly reframed by Undertaker confirmation;
+- Fortune Teller information accumulates across nights while Red Herring and poisoning alter interpretation;
+- Demon transfer can change the meaning of earlier and later information;
+- duplicate ClockTracker source records can enrich one logical Game but must not increase the game denominator.
+
+No new implementation code has been introduced. E1-7 remains paused.
+
+
 ## 9. Next research action
 
 Continue screening the exact Trouble Brewing candidates first.
