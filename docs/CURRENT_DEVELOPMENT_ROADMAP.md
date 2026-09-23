@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 domain and persistence foundation — ACTIVE (E1-6 COMPLETE); C0 Trouble Brewing reconstruction — ACTIVE; blocking domain correction identified before E1-7
+> Status: E0 COMPLETE / MERGED; E1 foundation — ACTIVE; C0 Trouble Brewing reconstruction — ACTIVE; C0-driven whole-game domain correction COMPLETE
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -125,7 +125,13 @@ C0 reconstruction has exposed blocking domain-model gaps before the old E1-7 per
 2. first-class SetupCommitment;
 3. ordered SemanticEvent / information-delivery history with revision and provenance boundaries.
 
-Therefore the old E1-7 sequence must not resume unchanged. First freeze the minimal contracts for those three concepts, then implement persistence around the corrected model.
+The minimal contracts for those three concepts have now been implemented tests-first in `domain/history.py`.
+
+RED commit: `cd8c9fa3a4dbf38f8e8fabbae451b1641efe3247` — quality failed as expected before the module existed.
+
+GREEN commit: `7c245da6692b2dd33cec2f8599a7dd96487abcb0` — quality passed.
+
+Do not immediately expand persistence merely because the contracts now exist. The current product-directed priority remains reconstructing enough high-value Trouble Brewing games to begin an evidence-backed comparison with the Storyteller App recommendation algorithm.
 
 ## 3. Milestones
 
@@ -281,16 +287,25 @@ E1-6 is complete:
 - no SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord or rules logic was introduced;
 - final E1-6 quality gate is GREEN at `0fc9f37c73be0374162cc1e7bdf2c9718f782be4`.
 
-Next E1 contract correction — required before persistence resumes:
+C0-driven whole-game history contract correction — COMPLETE:
 
-- freeze a minimal `SourceGameLink` contract so multiple ClockTracker UUID Source records can support one logical Game without inflating corpus counts;
-- freeze `SetupCommitment` for historical setup facts such as Drunk shown identity, Red Herring and Demon bluffs;
-- freeze ordered `SemanticEvent` for poison/protection/kill/execution/role-transition/information-target/information-delivery history;
-- keep these entities revision-scoped and provenance-backed;
-- preserve UNKNOWN and committed-prefix/decision-time boundaries;
-- do not add BotC legality, policy scoring or role-specific recommendation logic.
+- `SourceGameLink` + explicit match status;
+- `SetupCommitment`;
+- ordered `SemanticEvent`;
+- generic `ControlOwner`;
+- revision-scoped setup/history;
+- UNKNOWN-friendly actor/value fields;
+- no source timestamp leakage into semantic event time;
+- no Trouble-Brewing-specific policy code.
 
-After those contracts are frozen tests-first, resume persistence:
+Next product-directed action:
+
+- continue reconstructing the existing A-grade Trouble Brewing queue;
+- prioritize whole-game bundles with multi-night information interaction;
+- begin algorithm-facing comparison once a small representative set is reconstructed;
+- defer persistence expansion unless manual reconstruction is materially blocked by lack of durable storage.
+
+When persistence becomes the bottleneck, resume with:
 
 - extend SQLAlchemy/Alembic schema for Storyteller / Game / StorytellerAssignment / GameSeat / ReconstructionRevision plus the newly required whole-game linkage/history entities;
 - add append-only persistence round trips;
