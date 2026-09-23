@@ -361,11 +361,164 @@ A locally plausible output is not sufficient. The algorithm must preserve a glob
 This game therefore strongly supports evaluating recommendation quality at the **bundle trajectory** level rather than scoring each information result independently.
 
 
+
+## 4B. Game R05 — Leo The Leopard — Trouble Brewing — 2024-02-23/24 — PARTIAL
+
+### 4B.1 Source identity
+
+- ClockTracker source ID: `a036727b-afd1-4884-8482-29021882d5bc`
+- locator: https://clocktracker.app/game/a036727b-afd1-4884-8482-29021882d5bc
+- script: Trouble Brewing
+- player count: 8
+- player presentation: Leo The Leopard as Imp
+- Storytellers: Aloraine / Delta / Arito
+- result: Evil won
+- reconstruction status: PARTIAL
+- indexed date conflict: one current search surface reports 2024-02-23 while another reports 2024-02-24; do not silently normalize until the direct source record is checked.
+
+### 4B.2 Ordered reconstruction
+
+| Phase | Reconstructed event | Status |
+| --- | --- | --- |
+| Night 1 | Gabe, as Fortune Teller, checks Cale and Ametrine. The Notes say Gabe effectively identified Cale as the “decoy for being demon”; the exact delivered YES/NO result is not safely visible in the current excerpt. | INDEX_OBSERVED / result UNKNOWN |
+| Night 1 | Icy, as Empath, receives 1 while adjacent to Azzurol, who is the Recluse. The other alive neighbour and the exact registration basis are not reconstructed. | INDEX_OBSERVED |
+| Day 1 | Current indexed excerpts do not preserve a safe complete day sequence. | UNKNOWN |
+| Night 2 | Leo, the Imp, kills Gabe. | INDEX_OBSERVED |
+| Day 2 | Gabe is dead. | INDEX_OBSERVED |
+| Day 2 | Leo tells Cale “Monk, Slayer, Mayor”. This is preserved as a player/social-information event; it is **not** promoted here to the canonical Demon-bluff list without direct-source verification. | INDEX_OBSERVED |
+| Night 3 | Leo kills Icy. | INDEX_OBSERVED |
+| Day 3 | Valnar argues that nobody should be killed; town does not follow that advice. | INDEX_OBSERVED |
+| Day 3 | Ametrine is put on the block, then Cale is put on the block. The final execution outcome is not safely recovered from this excerpt. | INDEX_OBSERVED / execution UNKNOWN |
+| Night 4 | Leo kills Valnar. | INDEX_OBSERVED |
+| Later / final | Remaining chronology is currently incomplete. | UNKNOWN |
+| Final | Evil won. | INDEX_OBSERVED |
+
+### 4B.3 Delivered-information / table-state ledger
+
+| Phase | Channel | Information | Context |
+| --- | --- | --- | --- |
+| N1 | Fortune Teller | Cale + Ametrine → result UNKNOWN | Notes explicitly frame Cale as the “decoy for being demon”; do not convert that wording into a canonical Red Herring assertion until direct review |
+| N1 | Empath | 1 | Recluse is one adjacent player; registration witness remains UNKNOWN |
+| D2 | player communication | Leo → Cale: Monk / Slayer / Mayor | social/claim context; not yet canonical setup evidence |
+| D3 | public strategy | Valnar urges no execution | table-belief / strategic context rather than Storyteller-controlled information |
+
+### 4B.4 Why this game is useful despite being PARTIAL
+
+R05 is the first batch game where indexed Notes clearly preserve **social/table reasoning alongside mechanical events**.
+
+The algorithm-facing value is different from R01–R04:
+
+- Fortune Teller interpretation is already being discussed in terms of a decoy/alternative Demon world;
+- Empath information sits next to a Recluse, so registration ambiguity matters;
+- public advice and execution pressure are visible rather than only night mechanics;
+- the Imp’s day communication is preserved.
+
+### 4B.5 Explicit unknowns
+
+- exact canonical date remains conflicted between two indexed representations;
+- full setup and seating are not transcribed;
+- canonical Red Herring identity is not asserted from the word “decoy” alone;
+- Night-1 Fortune Teller YES/NO output remains UNKNOWN;
+- later-night chronology is incomplete;
+- the status of Monk / Slayer / Mayor as official Demon bluffs is not asserted;
+- Storyteller rationale is not recovered.
+
+### 4B.6 Algorithm-facing observations — ANALYSIS ONLY
+
+R05 shows that a mechanically correct world-space model can still miss part of the real game if it ignores **what players publicly believe and communicate**.
+
+That does not mean table-belief simulation must become part of the first recommendation engine. It does mean Evidence Lab should preserve this context when available so later analysis can distinguish:
+
+- mechanical ambiguity created by setup/registration;
+- player-generated ambiguity created by claims and social interpretation.
+
+---
+
+## 4C. Game R06 — Debby — Trouble Brewing — 2025-10-05 — PARTIAL
+
+### 4C.1 Source identity
+
+- ClockTracker source ID: `66d4356f-fa9f-468d-ba49-6e6858e2e80d`
+- locator: https://clocktracker.app/game/66d4356f-fa9f-468d-ba49-6e6858e2e80d
+- script: Trouble Brewing
+- date: 2025-10-05
+- recorder/player presentation: Debby
+- result: Good won
+- indexed grimoire/page state: Page 1 of 1
+- Storyteller: UNKNOWN in the current accessible index surface
+- player count: UNKNOWN in the current accessible index surface
+- reconstruction status: PARTIAL
+
+### 4C.2 Ordered reconstruction
+
+| Phase | Reconstructed event | Status |
+| --- | --- | --- |
+| Before Night 4 | Notes state that the Mayor was executed immediately before the Night-4 section. The exact numbered day is not independently asserted here. | INDEX_OBSERVED |
+| Night 4 | Poisoner chooses the Ravenkeeper. | INDEX_OBSERVED |
+| Night 4 | Imp kills the poisoned Ravenkeeper. | INDEX_OBSERVED |
+| Night 4 | The poisoned Ravenkeeper chooses the Imp and is told Slayer. | INDEX_OBSERVED |
+| Night 4 | Fortune Teller checks Cody and Mike and receives NO. | INDEX_OBSERVED |
+| Night 4 | Butler makes a choice, but the current excerpt truncates the target. | PARTIAL / target UNKNOWN |
+| Night 5 | Imp self-kills/starpasses and the Spy becomes the new Imp. | INDEX_OBSERVED |
+| Night 5 | Fortune Teller checks the original Imp and the Investigator and receives YES. | INDEX_OBSERVED |
+| Day 5 | No execution occurs. | INDEX_OBSERVED |
+| Night 6 | The current Imp kills the Butler. | INDEX_OBSERVED |
+| Later / final | Remaining exact chronology is not safely recovered from the current excerpts. | UNKNOWN |
+| Final | Good won. | INDEX_OBSERVED |
+
+### 4C.3 Delivered-information ledger
+
+| Phase | Recipient / role | Delivered information | Reliability / interaction context |
+| --- | --- | --- | --- |
+| N4 | Ravenkeeper | Imp target → Slayer | Ravenkeeper is poisoned before being killed; this is an explicit same-night poison → death-trigger → false-information chain |
+| N4 | Fortune Teller | Cody + Mike → NO | no impairment is established for the Fortune Teller in the currently recovered N4 excerpt |
+| N5 | Fortune Teller | original Imp + Investigator → YES | occurs in the same Night-5 sequence as Imp → Spy succession; exact semantic interpretation should use ordered historical state rather than a flattened final grimoire |
+
+### 4C.4 State / interaction bundle
+
+R06 adds a particularly clean causal chain:
+
+~~~text
+Poisoner targets Ravenkeeper
+    → Imp kills Ravenkeeper
+    → poisoned death-trigger ability fires
+    → Ravenkeeper checks Imp
+    → Ravenkeeper is told Slayer
+~~~
+
+The following night then changes the Demon:
+
+~~~text
+Imp self-kills
+    → Spy becomes Imp
+    → Fortune Teller information continues
+~~~
+
+This combination is valuable because the reliability context of one information event depends on a status event earlier **the same night**, while the interpretation of the next night’s information depends on a role transition in that later night.
+
+### 4C.5 Explicit unknowns
+
+- Night 1–3 chronology is not safely recovered in the current pass;
+- Storyteller identity and player count remain UNKNOWN in the accessible index surface;
+- Butler’s Night-4 target is truncated;
+- full setup / Red Herring / Demon bluffs are not transcribed;
+- later Night-6+ chronology is incomplete;
+- Storyteller rationale is not recovered.
+
+### 4C.6 Algorithm-facing observations — ANALYSIS ONLY
+
+R06 demonstrates why “player X is poisoned on Night N” cannot be treated as loose game metadata.
+
+For recommendation replay, the impairment event must occur **before** the information-delivery event in the same semantic prefix. Otherwise the engine can accidentally evaluate the Ravenkeeper output against the wrong reliability state.
+
+It also reinforces that Demon succession is an ordered event, not merely a final-role snapshot.
+
+
 ## 5. Batch-level findings
 
 ### 5.1 The whole-game unit is already paying off
 
-Across the first three reconstructions, the important structure is not a single Storyteller output.
+Across the first six reconstructions, the important structure is not a single Storyteller output.
 
 The recurring pattern is:
 
@@ -414,11 +567,22 @@ Both sources are useful evidence, but corpus counts must remain logical-game cou
 
 ## 6. Next reconstruction batch
 
-Before expanding discovery again:
+The first representative reconstruction set is now large enough to begin an algorithm-facing audit.
 
-1. finish direct/stronger reconstruction of Scott 2025-09-24 if accessible;
-2. reconstruct Scott 2025-09-10 from the exact Storyteller record and mirror;
-3. reconstruct one compact 8-player and one larger 12–14-player game from the remaining A queue;
-4. then begin the first cross-game algorithm-facing comparison.
+Current reconstructed set includes:
 
-Do not resume E1-7 merely because this batch exists. First determine whether the reconstruction workflow exposes a blocking domain gap.
+- R01 — 12-player poison / repeated-Empath trajectory;
+- R02 — 8-player Drunk false world / Undertaker confirmation / Red Herring / starpass;
+- R03 — partial poisoned-Fortune-Teller + Undertaker chain;
+- R04 — 14-player long trajectory with Drunk + Red Herring + moving Poisoner + two Demon transfers;
+- R05 — 8-player mechanical + public-claim/table-belief context;
+- R06 — same-night poison → death-trigger misinformation + next-night Demon succession.
+
+Next action:
+
+1. preserve additional A-grade games in the queue, but stop treating reconstruction count as the primary goal;
+2. compare these six real-game bundles against the current Storyteller App recommendation state/features;
+3. identify concrete feature/policy gaps supported by repeated evidence;
+4. return to additional reconstruction only where the algorithm audit exposes a missing evidence shape.
+
+Do not infer that observed Storyteller choices are optimal and do not use final winner as a quality label.
