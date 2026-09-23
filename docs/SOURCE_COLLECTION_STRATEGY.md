@@ -69,15 +69,21 @@ Do not treat them as equivalent to a reconstructable primary game.
 
 ## 3. ClockTracker suitability gate
 
-Before building a bulk ClockTracker importer, run a bounded public-record audit.
+The current product scope is **Trouble Brewing only**. Other scripts are outside the present Storyteller App capability and must not consume C0 screening effort.
 
-Initial target:
+C0 is therefore no longer a platform-wide 50–100 game prevalence study. It is a bounded **Trouble Brewing evidence-acquisition sprint** whose purpose is to find enough high-value real games to improve the current Storyteller recommendation algorithm quickly.
 
-- screen roughly 50–100 public Storyteller-recorded games;
-- do **not** fully reconstruct all sampled games;
-- record the selection method and denominator.
+Immediate target:
 
-Classify sampled records approximately as:
+- discover roughly 20–30 usable public Trouble Brewing whole-game records;
+- promote roughly 10–15 to A-grade if the public corpus supports it;
+- cover at least 2–3 independent Storytellers when identity can be established;
+- include several games with multi-night information evolution;
+- seek 1–2 same-game ClockTracker + primary-video pairs for enrichment workflow validation.
+
+Records from unsupported scripts are screened out immediately with a scope reason such as `UNSUPPORTED_SCRIPT_CURRENT_SCOPE`; they are not reconstructed.
+
+Classify Trouble Brewing candidates approximately as:
 
 ~~~text
 A
@@ -95,17 +101,19 @@ C
   or too little process detail for whole-game reconstruction
 ~~~
 
-The audit must measure how often important fields are actually populated, not merely whether ClockTracker's schema supports them.
+Prioritize games where several information mechanisms interact, for example:
 
-Also determine:
+- Chef / Empath / Fortune Teller / Investigator / Washerwoman;
+- Drunk;
+- Red Herring;
+- Poisoner;
+- Spy / Recluse registration effects;
+- Demon bluffs;
+- information that evolves across multiple nights.
 
-- how often multiple grimoire pages are used;
-- whether pages correspond to meaningful successive game states;
-- how often Notes contain ordered night information/actions;
-- how often Storyteller rationale appears;
-- whether public access is stable enough for reproducible collection;
-- whether expert/trusted Storytellers can be identified without guessing;
-- whether source records can be cited and revisited reliably.
+Do not return to isolated-clue cherry-picking. The desired unit is still the whole game and its interacting information bundle.
+
+The gate is satisfied when the project has a sufficiently useful Trouble Brewing corpus for algorithm calibration; it does **not** require estimating ClockTracker-wide A/B/C prevalence.
 
 Important implementation finding already established from ClockTracker's current public code:
 
@@ -113,6 +121,7 @@ Important implementation finding already established from ClockTracker's current
 - `GrimoireSnapshot` is edit/restore history, **not** an automatic semantic Night-1/Night-2 timeline;
 - there is no confirmed canonical structured night-action/event-log model in the inspected code;
 - detailed Notes therefore remain important for reconstructing chronological actions and delivered information.
+
 
 ## 4. Source census before cherry-picking
 
