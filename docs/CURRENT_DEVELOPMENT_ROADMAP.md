@@ -74,34 +74,43 @@ YouTube/video remains important, but its default role changes from primary manua
 - exact action timing;
 - gaps or ambiguities in structured records.
 
-### Immediate research gate — C0 ClockTracker corpus suitability audit
+### Immediate research gate — C0 Trouble Brewing evidence-acquisition sprint
 
-Before continuing E1-7 implementation, run a bounded quality audit of approximately 50–100 public Storyteller-recorded ClockTracker games.
+The current Storyteller App supports **Trouble Brewing only**. C0 is therefore narrowed from a broad ClockTracker prevalence audit to a fast acquisition sprint for high-value Trouble Brewing whole games.
 
-This is a screening study, not bulk corpus ingestion.
+Do not spend current effort measuring other scripts. Unsupported scripts are out of scope for this gate.
 
-Measure at minimum:
+Current target:
 
-1. proportion with complete/near-complete grimoire;
-2. proportion with detailed ordered Notes;
-3. presence of Demon bluffs and relevant reminder tokens;
-4. use of multiple grimoire pages;
-5. recoverability of nightly actions and delivered information;
-6. recoverability of setup modifiers such as Drunk / Red Herring / poison state where applicable;
-7. Storyteller identity and ability to establish expert/trusted status without guessing;
-8. occurrence of explicit Storyteller rationale;
-9. stable public locator/access characteristics;
-10. approximate human effort needed to turn a strong record into a corpus-ready whole-game reconstruction.
+1. discover roughly 20–30 usable public Trouble Brewing whole-game records;
+2. promote roughly 10–15 to A-grade when possible;
+3. cover at least 2–3 independent Storytellers;
+4. include several games with meaningful multi-night information evolution;
+5. find 1–2 ClockTracker + primary-video same-game pairs for enrichment validation.
 
-Classify sampled records as A/B/C reconstructability as defined in `docs/SOURCE_COLLECTION_STRATEGY.md`.
+Prioritize records with interacting information mechanisms rather than isolated interesting clues. High-value examples include combinations of information Townsfolk with Drunk, Red Herring, Poisoner, Spy/Recluse registration, Demon bluffs and multi-night information changes.
 
-Gate outcome:
+A/B/C grading remains as defined in `docs/SOURCE_COLLECTION_STRATEGY.md`, but the success criterion is now product-directed:
 
-- if A/B records are common enough, design later ingestion around ClockTracker-first reconstruction plus selective video enrichment;
-- if strong records are rare, keep ClockTracker as a discovery/partial-state source and retain video as the primary reconstruction path;
-- do not decide this from schema capability alone; measure actual public records.
+~~~text
+enough high-quality Trouble Brewing whole games
+    → reconstruct interacting information bundles
+    → compare with current Storyteller recommendation behavior
+    → identify systematic policy/weighting gaps
+~~~
 
-E1-7 remains the next implementation step after this bounded research gate unless the audit exposes a domain-model gap that must be corrected first.
+The goal is not a statistically representative model of ClockTracker usage.
+
+Initial C0 research has already established:
+
+- public ClockTracker search/index surfaces many Trouble Brewing records across several communities and users;
+- supply quantity is therefore unlikely to be the main bottleneck;
+- at least one strong A-grade candidate has been verified: a 14-player Trouble Brewing game recorded by @sancho/Scott with detailed setup, Night/Day chronology, Poisoner targets, Drunk information, Red Herring, Spy registration, Ravenkeeper/Undertaker/Fortune Teller information and a later Imp transition;
+- the remaining problem is efficient quality screening for detailed Notes and reconstructability.
+
+The detailed sprint log is `docs/C0_TROUBLE_BREWING_ACQUISITION_SPRINT_2026-09-23.md`.
+
+E1-7 remains paused until this narrowed C0 gate is complete or a blocking domain-model gap must be corrected first.
 
 ## 3. Milestones
 
