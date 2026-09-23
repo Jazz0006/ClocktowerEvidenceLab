@@ -147,7 +147,17 @@ Live CampBoardGameHost audit result:
 - the current production shadow is explicitly First-Night-only, so multi-night Drunk/Poisoner trajectories, confirmation chains and Demon succession are not yet replayable through that path;
 - these are staged implementation gaps, not evidence for a new recommendation architecture.
 
-Current product-directed priority is now to prepare a small replay-ready evidence package from the strongest reconstructed games, beginning with R04, and to keep targeted rationale acquisition focused on the remaining policy-strength gaps rather than returning to broad source discovery.
+Current product-directed priority is now narrow and evidence-driven:
+
+- R04 replay preparation is complete as `REPLAY_PREP_PARTIAL / BLOCKED_ON_DIRECT_GRIMOIRE`; do not repeat broad search attempts for the same missing setup fields unless a new direct-source access path appears;
+- targeted rationale search found one new qualified expert-guidance source (Beardy) supporting contextual confirmation-chain / role-function-exposure semantics, but no new replayable TB whole-game rationale case;
+- live CampBoardGameHost PR #153 already preserves unavailable dimensions as limitations and avoids unsupported numeric thresholds.
+
+Cross-project handoff:
+
+- `docs/C0_TB_TO_CAMPBOARDGAMEHOST_SDE_HANDOFF_2026-09-23.md`
+
+Do not grow raw corpus count by default. Continue only where a new game/source closes a known replay blocker, adds a missing evidence shape, or supplies explicit qualified Storyteller rationale.
 
 ## 3. Milestones
 
