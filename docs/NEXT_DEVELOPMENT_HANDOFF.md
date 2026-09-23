@@ -364,14 +364,29 @@ Test-first evidence:
 
 Do **not** expand infrastructure by default.
 
-Return to the product-directed C0 objective:
+The representative set is now six reconstructed Trouble Brewing games and the first live product audit has been completed.
 
-1. continue reconstructing the existing A-grade Trouble Brewing queue;
-2. add several more representative whole-game bundles;
-3. use `docs/C0_TB_CROSS_GAME_ALGORITHM_FINDINGS_2026-09-23.md` as the hypothesis list;
-4. begin the first comparison against current Storyteller App recommendation behavior once the evidence set is sufficient.
+Read next:
 
-Persistence remains deferred until it becomes a real reconstruction bottleneck.
+- `docs/C0_TB_STORYTELLER_APP_ALGORITHM_GAP_AUDIT_2026-09-23.md`.
+
+Key result:
+
+- CampBoardGameHost SDE-3A has the right typed feature families;
+- the current structured shadow actually projects strategic diagnostics, while most evidence-relevant non-strategic features remain explicitly unavailable;
+- current structured candidate input bindings are `NotCaptured`;
+- current structured production shadow is First-Night-only.
+
+These are staged implementation gaps, not a reason to redesign SDE.
+
+Next Evidence Lab work:
+
+1. prepare a replay-ready historical package for R04 Scott/@sancho 2025-09-10;
+2. make setup commitments, ordered events and decision boundaries explicit without enumerating legal alternatives;
+3. use R02/R01 as the next compact replay packages after R04;
+4. continue new source acquisition only for a missing evidence shape or explicit Storyteller rationale in the known calibration gaps.
+
+Persistence remains deferred until replay preparation is materially blocked by lack of durable storage.
 
 If/when persistence is required, implement tests-first for:
 
