@@ -4,7 +4,7 @@ Clocktower Evidence Lab is a local-first evidence collection and reconstruction 
 
 Its first objective is deliberately narrow:
 
-> Turn high-value external real games—especially games run by verified experienced/trusted Storytellers—into structured, verifiable Storyteller decision evidence that can be reused by CampBoardGameHost and future research.
+> Turn high-value external real games—especially games run by verified experienced/trusted Storytellers—into structured, verifiable whole-game evidence from which Storyteller decisions can later be studied in their full information context.
 
 The project is **not** a recommendation engine and does not decide whether an observed Storyteller choice was good or bad.
 
@@ -45,9 +45,11 @@ raw evidence references
     ↓
 evidence assertions
     ↓
-versioned canonical reconstruction
+versioned canonical whole-game reconstruction
     ↓
-decision-time slices
+ordered information / state history
+    ↓
+optional decision-time slices
     ↓
 verification
     ↓
@@ -58,24 +60,33 @@ CampBoardGameHost analysis
 
 ## First-phase scope
 
-The first phase focuses on external evidence only:
+The first phase focuses on external evidence only.
 
-1. expert / official primary-video games;
-2. other high-fidelity real-game videos;
-3. structured public game records such as ClockTracker;
+Collection is now **whole-game first**. The immediate source-research priority is:
+
+1. high-fidelity structured public real-game records, especially ClockTracker records created by experienced/trusted Storytellers;
+2. expert / official primary-video games used to fill missing rationale, table-state and social context;
+3. other high-fidelity real-game videos;
 4. community reports and postmortems as qualitative evidence.
+
+A DecisionSlice is a downstream projection from a reconstructed game, not the primary acquisition unit.
 
 Direct telemetry from the Storyteller app is explicitly deferred.
 
 ## Storage direction
 
-The project is local-first. The exact working-store technology remains deliberately unfrozen during E0.
+The project is local-first. E1 has frozen the initial implementation foundation:
 
-- **SQLite** is the current leading candidate for the working database, not a frozen E0 decision.
-- **JSON / JSONL** is the current durable-interchange direction; the exact export shape is validated by E0 before the first persisted schema is frozen.
-- Public source media is not copied into the repository; retain source identifiers, URLs, timestamps and concise evidential notes.
-- Small curated public reconstructions may be versioned in Git.
-- A large corpus may later move to separate storage without changing the canonical export contract.
+- **Python 3.12+** with **Pydantic v2** for domain/input validation;
+- **SQLite** as the local working database;
+- **SQLAlchemy 2.x Core** for persistence adapters, without making database rows the domain API;
+- **Alembic** for deterministic schema migrations;
+- **pytest** and **Ruff** for the quality gate;
+- **versioned JSON / JSONL** for durable interchange.
+
+The E2 UI framework remains deliberately unfrozen.
+
+Public source media is not copied into the repository; retain source identifiers, URLs, timestamps and concise evidential notes. Small curated public reconstructions may be versioned in Git. A large corpus may later move to separate storage without changing the canonical export contract.
 
 See:
 

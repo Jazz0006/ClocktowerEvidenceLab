@@ -1,6 +1,6 @@
 # E1 Domain and Persistence Proposal — 2026-09-22
 
-> Status: **PROPOSED FROM COMPLETED E0**
+> Status: **FROZEN FOR E1 IMPLEMENTATION**
 >
 > Goal: implement the smallest local-first foundation that can losslessly represent the E0 pilot and support reconstruction of a second real game.
 
@@ -17,7 +17,7 @@ Recommended baseline to freeze when E1 implementation is explicitly started:
 - Ruff for formatting/linting;
 - versioned JSON / JSONL for durable interchange.
 
-This stack is an E1 proposal, not an implementation already authorized by E0 completion. Freeze it at E1 start after the user approves moving into implementation.
+This stack is frozen for E1 implementation. E1 may refine dependency versions and internal module shape, but changing the language, working-store technology, persistence approach or migration strategy requires an explicit architecture update.
 
 Do **not** choose the E2 UI framework yet.
 
@@ -56,6 +56,17 @@ The E1 domain should be able to state that a decision family is player-controlle
 
 Keep this lightweight: it is not a legality engine and must not enumerate legal alternatives.
 
+### E1-start ownership audit
+
+Before implementation, E1 freezes these anti-dual-track rules:
+
+- `Game.current_reconstruction_revision_id` is the single owner of which revision is current; revisions do not maintain a second mutable current/superseded status.
+- `VerificationRecord` is the single owner of verification transitions; entity-level current verification is a projection, not a separately writable fact.
+- reconstruction-dependent assertions are revision-scoped; raw/source-backed or non-reconstruction assertions are not silently attached to a revision.
+- direct EvidenceFragment-to-event links are locator support only and do not create a parallel claim/verification subsystem.
+
+These constraints prevent ownership duplication, reconstruction-revision leakage and provenance divergence without adding a new abstraction layer.
+
 ## 3. Minimum E1 domain model
 
 The first persisted version should support these concepts.
@@ -68,9 +79,7 @@ Needed fields include:
 
 - semantic source ID;
 - source type/platform;
-- stable external locator / platform ID;
-- title/publisher/date when known;
-- source fidelity/category;
+- stable external locator and optional platform source ID;
 - discovery path / inclusion reason;
 - discovery metadata;
 - screening status/result;
@@ -82,6 +91,8 @@ Needed fields include:
 These are **separate workflow dimensions**, not one mutually exclusive status enum. A source may be discovered, screened, judged reconstructable and then selected; a rejected source still remains in the denominator.
 
 These fields satisfy the source-census / selection-bias requirements without inventing a separate `ResearchLead` entity during E1.
+
+Descriptive source metadata whose truth itself has evidentiary status—such as title, publisher/channel or publication date when those values are reconstructed or independently verified—is represented through ordinary `EvidenceAssertion` records whose subject is the `Source`. Do not duplicate those facts as independently writable `Source` fields. Stable locator/identity fields remain on `Source` because they identify where the evidence comes from rather than asserting game history.
 
 ### Storyteller
 
@@ -129,7 +140,7 @@ Needed fields include:
 - Storyteller ID(s) / role context;
 - player/table context such as beginner/new-player when evidenced;
 - reconstruction status;
-- current reconstruction revision ID.
+- current reconstruction revision ID, which is the sole authoritative pointer to the current revision.
 
 ### ReconstructionRevision
 
@@ -142,7 +153,7 @@ Needed fields include:
 - parent revision ID when applicable;
 - created_at;
 - reason / concise change note;
-- current/superseded status;
+- no independently writable current/superseded flag; currentness is derived from `Game.current_reconstruction_revision_id` and revision ancestry;
 - no rewriting of raw EvidenceFragments.
 
 Corrections to seating, setup interpretation, event order or decision boundaries create a new revision rather than silently mutating the evidence history.
@@ -173,12 +184,14 @@ Must support:
 - subject / assertion type;
 - structured value;
 - derivation status;
-- verification status;
+- current verification status as a projection of VerificationRecord history (`UNVERIFIED` when no verification record exists), not as an independently writable source of truth;
 - provenance links to one or more EvidenceFragments;
 - optional reviewer inference provenance;
-- revision membership / supersedes relation where the assertion is reconstruction-dependent.
+- assertion scope independent from derivation: evidence-scoped or reconstruction-scoped;
+- reconstruction revision ID when and only when the assertion is reconstruction-scoped;
+- supersedes relation where a reconstruction-dependent assertion replaces an earlier interpretation.
 
-Raw/source-backed claims remain append-only. Reconstruction-dependent assertions are revised by creating a new revision-scoped assertion or superseding relation rather than mutating prior history in place.
+Raw/source-backed and non-reconstruction claims remain append-only and have no reconstruction revision ID. Reconstruction-dependent assertions must carry a reconstruction revision ID and are revised by creating a new revision-scoped assertion or superseding relation rather than mutating prior history in place. Derivation does not determine revision scope: for example, source metadata may be RECONSTRUCTED without belonging to a game ReconstructionRevision, while an INFERRED reviewer interpretation may be revision-scoped. An assertion must never be silently reused across revisions merely because its structured value happens to match.
 
 ### SetupCommitment
 
@@ -239,6 +252,8 @@ Do not store downstream legal alternatives in Evidence Lab.
 
 Audit trail for verification.
 
+VerificationRecord is the sole write/audit owner of verification transitions. A target's current verification status is a derived projection from this history; do not maintain a second mutable verification flag that can diverge.
+
 Minimum fields:
 
 - verification record ID;
@@ -276,7 +291,7 @@ Game              1:N  ReconstructionRevision
 ReconstructionRevision 1:N SetupCommitment / SemanticEvent / DecisionSlice
 EvidenceFragment  N:M  EvidenceAssertion
 EvidenceAssertion N:M  SetupCommitment / SemanticEvent
-EvidenceFragment  N:M  SemanticEvent when direct linkage is useful
+EvidenceFragment  N:M  SemanticEvent when direct locator linkage is useful (this does not replace assertion-level derivation/verification where a concrete factual claim is being made)
 DecisionSlice     -> observed-choice assertion(s)
 DecisionSlice     -> explicit prefix members
 DecisionSlice     -> rationale/rejected-alternative assertions
@@ -349,11 +364,13 @@ Tests must prove that verification cannot silently rewrite derivation.
 
 Start with:
 
-- schema version `1`;
+- working-store schema version `1`, represented by Alembic revision `0001_provenance_core`;
+- Alembic as the sole owner of working-store migration position; do not add a second mutable schema-version table;
 - forward-only deterministic migrations;
 - migration history committed to Git;
 - no production database checked into Git;
-- a tiny test database created dynamically by tests.
+- tiny test databases created dynamically by tests;
+- a test proving the historical migration schema matches the current SQLAlchemy Core metadata shape.
 
 The E0 pilot should be represented as a small versioned public corpus fixture/export only after the generic schema exists.
 
@@ -384,6 +401,8 @@ Use a versioned bundle envelope, conceptually:
 Exact JSON field names may evolve during E1 implementation.
 
 For larger corpora, JSONL may split entity streams while retaining the same semantic IDs and schema version.
+
+E1 may introduce a narrowly named provenance-core interchange before later reconstruction entities exist. That first contract must contain only implemented semantics; do not add empty speculative entity records merely to mimic the eventual full-corpus bundle. A later full-corpus interchange may version independently when Game/Reconstruction/Decision semantics are implemented.
 
 ## 10. E1 tests required before E2
 

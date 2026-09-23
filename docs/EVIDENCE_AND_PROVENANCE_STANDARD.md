@@ -52,6 +52,14 @@ For video evidence, a fragment should normally include:
 
 Do not copy long transcripts.
 
+## 3.1 Source metadata provenance
+
+Stable source identity and locator fields belong on the Source record.
+
+Descriptive metadata whose truth itself must be evidenced—such as a title, publisher/channel or publication date reconstructed from indexes—uses the normal EvidenceAssertion path with the Source as subject. Do not maintain a second derivation/verification mechanism inside Source metadata fields.
+
+Assertion derivation and reconstruction-revision membership are independent dimensions. A RECONSTRUCTED source-metadata claim need not belong to a game ReconstructionRevision; conversely an INFERRED interpretation may be explicitly scoped to one reconstruction revision.
+
 ## 4. Reconstruction completeness
 
 Track completeness by region or phase, not only by whole game.
@@ -83,7 +91,19 @@ Keep these separate. Do not synthesize a quality label at ingestion time.
 
 ## 6. Storyteller qualification
 
-Maintain qualification evidence separately from game reconstruction.
+Maintain Storyteller-qualification facts separately from game reconstruction semantics, but do **not** create a second evidence subsystem.
+
+Qualification evidence uses the ordinary evidence path:
+
+```text
+Storyteller subject
+    ← EvidenceAssertion
+    ← EvidenceFragment
+    ← Source
+    + VerificationRecord audit trail
+```
+
+A later qualification summary/status may be a derived projection. Its underlying evidence remains ordinary EvidenceAssertion data.
 
 Suggested descriptive levels:
 

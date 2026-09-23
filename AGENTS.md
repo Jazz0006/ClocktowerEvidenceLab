@@ -141,6 +141,14 @@ Production or analysis code must never branch on a known corpus case ID, exact s
 
 A regression fixture may be copied/projected from real evidence, but the real corpus itself is not production logic.
 
+### 3.11 Whole-game context is the primary collection unit
+
+The acquisition target is a reconstructable real game, not an isolated clue or isolated Storyteller choice.
+
+Preserve enough setup, ordered information, player-controlled actions, Storyteller-controlled outputs, state changes and outcome context to study how multiple clues interact across the game.
+
+Decision slices are derived analytical views over the reconstructed game history. Do not optimize source collection around single decisions when the surrounding game can be preserved.
+
 ## 4. Source and copyright policy
 
 For public video/audio sources:

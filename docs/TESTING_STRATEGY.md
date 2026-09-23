@@ -107,6 +107,15 @@ Do not make the domain model depend on a UI framework for testability.
 
 ## 7. Exact commands
 
-Exact language/tooling commands are intentionally deferred until the implementation stack is chosen during E1.
+E1 uses Python 3.12+ with the following local quality gate:
 
-Once chosen, this document becomes the authoritative command/tier reference.
+```bash
+python -m pip install -e ".[dev]"
+ruff check .
+ruff format --check --diff .
+pytest
+```
+
+GitHub Actions runs the same lint/format/test gate for pull requests to `main` and after pushes to `main`.
+
+A change that has not reached pytest because installation or linting failed is not a GREEN domain test result.
