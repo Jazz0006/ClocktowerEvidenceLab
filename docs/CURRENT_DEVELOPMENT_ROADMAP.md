@@ -131,7 +131,23 @@ RED commit: `cd8c9fa3a4dbf38f8e8fabbae451b1641efe3247` — quality failed as exp
 
 GREEN commit: `7c245da6692b2dd33cec2f8599a7dd96487abcb0` — quality passed.
 
-Do not immediately expand persistence merely because the contracts now exist. The current product-directed priority remains reconstructing enough high-value Trouble Brewing games to begin an evidence-backed comparison with the Storyteller App recommendation algorithm.
+Do not immediately expand persistence merely because the contracts now exist.
+
+The representative reconstruction set has now reached six games and the first live Storyteller App comparison is complete.
+
+New authority:
+
+- `docs/C0_TB_STORYTELLER_APP_ALGORITHM_GAP_AUDIT_2026-09-23.md`
+
+Live CampBoardGameHost audit result:
+
+- the SDE-3 feature contract already names the major evidence-backed dimensions;
+- current structured shadow projection materially populates strategic diagnostics, while most non-strategic feature families remain `NOT_PROJECTED_YET`;
+- `SdeDecisionInputBindings` has the correct committed/player-input shape, but the current structured adapter deliberately emits `NotCaptured`;
+- the current production shadow is explicitly First-Night-only, so multi-night Drunk/Poisoner trajectories, confirmation chains and Demon succession are not yet replayable through that path;
+- these are staged implementation gaps, not evidence for a new recommendation architecture.
+
+Current product-directed priority is now to prepare a small replay-ready evidence package from the strongest reconstructed games, beginning with R04, and to keep targeted rationale acquisition focused on the remaining policy-strength gaps rather than returning to broad source discovery.
 
 ## 3. Milestones
 
