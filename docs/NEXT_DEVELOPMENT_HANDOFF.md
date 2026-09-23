@@ -314,23 +314,61 @@ Initial research status:
 
 Use `docs/C0_TROUBLE_BREWING_ACQUISITION_SPRINT_2026-09-23.md` as the active C0 research log.
 
-Do not resume E1-7 until this sprint reaches the product-directed stop condition or a blocking domain-model correction is required.
+The acquisition threshold has now been reached and formal reconstruction is active.
+
+Read next:
+
+- `docs/C0_TB_RECONSTRUCTION_BATCH_01_2026-09-23.md`;
+- `docs/C0_TB_CROSS_GAME_ALGORITHM_FINDINGS_2026-09-23.md`.
+
+The first reconstructed batch has exposed a blocking domain correction before persistence resumes:
+
+1. many-to-one Source → logical Game linkage / duplicate-match state;
+2. SetupCommitment;
+3. ordered SemanticEvent / information-delivery history.
+
+Do not resume the old E1-7 sequence unchanged.
 
 
-## 2.9 Deferred next implementation step — E1-7 reconstruction identity persistence
+## 2.9 Next implementation step — E1 whole-game contract correction
 
-After C0, resume E1 unless the audit exposes a domain-model gap.
+C0 did expose a domain-model gap, so the old E1-7 plan is superseded.
 
-Implement tests-first:
+Freeze the minimum domain contracts **before** adding persistence:
 
-1. extend current SQLAlchemy Core metadata for Storyteller / Game / StorytellerAssignment / GameSeat / ReconstructionRevision;
-2. add a deterministic Alembic migration from provenance-core v1 to the new schema;
-3. add append-only insert/get persistence round trips;
-4. enforce game-scoped referential integrity, including GameSeat → Game and ReconstructionRevision → Game;
-5. enforce that a revision parent belongs to the same game and that Game.current_reconstruction_revision_id, when present, resolves to a revision of that same game;
-6. keep Game as the only current-revision owner.
+1. `SourceGameLink`
+   - links one Source record to one logical Game;
+   - supports multiple Sources for the same Game;
+   - carries explicit matching state such as candidate / verified-same / verified-different / unresolved;
+   - must not silently merge sources.
 
-Do not yet add SetupCommitment / SemanticEvent / DecisionSlice / VerificationRecord.
+2. `SetupCommitment`
+   - revision-scoped historical setup facts;
+   - examples include Drunk shown identity, Red Herring, Demon bluffs and other setup commitments;
+   - provenance remains EvidenceAssertion/EvidenceFragment-owned.
+
+3. `SemanticEvent`
+   - ordered historical game events;
+   - supports phase/order, actor/subject, target(s), result/value and explicit UNKNOWN fields;
+   - must represent poison/protection/kill/execution/death/role-transition/information-target/information-delivery without embedding Trouble-Brewing-specific policy code;
+   - later events must not leak into earlier decision boundaries.
+
+Then implement persistence tests-first for:
+
+- Storyteller / Game / StorytellerAssignment / GameSeat / ReconstructionRevision;
+- SourceGameLink;
+- SetupCommitment;
+- SemanticEvent.
+
+Preserve:
+
+- Game as the sole current-revision owner;
+- append-only persistence style;
+- semantic IDs as corpus identity;
+- UNKNOWN / INFERRED distinction;
+- no BotC legality or recommendation scoring.
+
+DecisionSlice / VerificationRecord remain deferred until the historical whole-game model round-trips cleanly.
 
 ## 3. First pilot case
 
