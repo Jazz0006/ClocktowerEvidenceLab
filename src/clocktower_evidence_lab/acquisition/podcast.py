@@ -1,8 +1,9 @@
 """Podcast RSS probing for expert-rationale source acquisition."""
 
+from collections.abc import Iterable
 from datetime import UTC, datetime
 from email.utils import parsedate_to_datetime
-from typing import Annotated, Iterable
+from typing import Annotated
 from xml.etree import ElementTree
 
 from pydantic import BaseModel, ConfigDict, Field
