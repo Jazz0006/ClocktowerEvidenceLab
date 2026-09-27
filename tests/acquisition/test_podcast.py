@@ -1,7 +1,4 @@
-from clocktower_evidence_lab.acquisition.podcast import (
-    find_episodes,
-    parse_podcast_rss,
-)
+from clocktower_evidence_lab.acquisition.podcast import find_episodes, parse_podcast_rss
 
 
 _SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
