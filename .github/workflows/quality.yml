@@ -31,3 +31,29 @@ jobs:
           clocktower-podcast-probe \
             "https://anchor.fm/s/daf1f9c/podcast/rss" \
             --title-contains "16: Drunk"
+      - name: Install podcast pilot ASR
+        if: github.head_ref == 'podcast-expert-rationale-pilot-20260928'
+        run: python -m pip install -e ".[asr]"
+      - name: Download podcast pilot audio
+        if: github.head_ref == 'podcast-expert-rationale-pilot-20260928'
+        run: |
+          curl --fail --location --retry 3 \
+            "https://anchor.fm/s/daf1f9c/podcast/play/12064958/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fproduction%2F2020-3-6%2F62131607-44100-2-4122bda6950ca.mp3" \
+            --output episode16.mp3
+      - name: Transcribe podcast pilot audio
+        if: github.head_ref == 'podcast-expert-rationale-pilot-20260928'
+        run: |
+          clocktower-podcast-asr episode16.mp3 \
+            --output episode16.asr.json \
+            --model small.en \
+            --device cpu \
+            --compute-type int8 \
+            --language en \
+            --beam-size 1
+      - name: Upload podcast pilot transcript
+        if: github.head_ref == 'podcast-expert-rationale-pilot-20260928'
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-episode-16-asr
+          path: episode16.asr.json
+          if-no-files-found: error
