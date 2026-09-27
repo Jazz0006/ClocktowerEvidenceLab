@@ -1,4 +1,4 @@
-from clocktower_evidence_lab.acquisition.podcast import find_episodes, parse_podcast_rss
+from clocktower_evidence_lab.acquisition import podcast
 
 
 _SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
@@ -44,7 +44,7 @@ _SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 
 
 def test_parse_podcast_rss_preserves_episode_and_transcript_locators() -> None:
-    episodes = parse_podcast_rss(
+    episodes = podcast.parse_podcast_rss(
         _SAMPLE_RSS,
         feed_url="https://anchor.fm/s/daf1f9c/podcast/rss",
     )
@@ -70,7 +70,7 @@ def test_parse_podcast_rss_preserves_episode_and_transcript_locators() -> None:
 
 
 def test_episode_without_feed_transcript_remains_explicitly_empty() -> None:
-    episodes = parse_podcast_rss(
+    episodes = podcast.parse_podcast_rss(
         _SAMPLE_RSS,
         feed_url="https://anchor.fm/s/daf1f9c/podcast/rss",
     )
@@ -83,10 +83,10 @@ def test_episode_without_feed_transcript_remains_explicitly_empty() -> None:
 
 
 def test_find_episodes_is_case_insensitive_and_does_not_guess() -> None:
-    episodes = parse_podcast_rss(
+    episodes = podcast.parse_podcast_rss(
         _SAMPLE_RSS,
         feed_url="https://anchor.fm/s/daf1f9c/podcast/rss",
     )
 
-    assert find_episodes(episodes, "DRUNK") == (episodes[0],)
-    assert find_episodes(episodes, "investigator") == ()
+    assert podcast.find_episodes(episodes, "DRUNK") == (episodes[0],)
+    assert podcast.find_episodes(episodes, "investigator") == ()
