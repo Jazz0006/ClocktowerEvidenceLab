@@ -16,8 +16,12 @@ dependencies = [
 
 [project.scripts]
 clocktower-podcast-probe = "clocktower_evidence_lab.acquisition.podcast_probe:main"
+clocktower-podcast-asr = "clocktower_evidence_lab.acquisition.podcast_asr:main"
 
 [project.optional-dependencies]
+asr = [
+    "faster-whisper>=1.2.1,<2",
+]
 dev = [
     "pytest>=8,<10",
     "ruff>=0.8,<1",
