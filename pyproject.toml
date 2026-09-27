@@ -14,6 +14,9 @@ dependencies = [
     "sqlalchemy>=2,<3",
 ]
 
+[project.scripts]
+clocktower-podcast-probe = "clocktower_evidence_lab.acquisition.podcast_probe:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8,<10",
