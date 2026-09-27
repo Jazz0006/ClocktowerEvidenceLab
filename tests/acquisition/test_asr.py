@@ -48,9 +48,7 @@ def test_normalize_segments_skips_blank_text_but_preserves_source_timing() -> No
         ]
     )
 
-    assert segments == (
-        TranscriptSegment(index=0, start_ms=1_000, end_ms=2_000, text="Useful."),
-    )
+    assert segments == (TranscriptSegment(index=0, start_ms=1_000, end_ms=2_000, text="Useful."),)
 
 
 def test_normalize_segments_rejects_invalid_ranges() -> None:
