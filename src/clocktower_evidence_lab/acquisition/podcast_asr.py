@@ -33,9 +33,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         transcript.model_dump_json(indent=2) + "\n",
         encoding="utf-8",
     )
-    print(
-        f"wrote {len(transcript.segments)} timestamped ASR segments to {args.output}"
-    )
+    print(f"wrote {len(transcript.segments)} timestamped ASR segments to {args.output}")
     return 0
 
 
