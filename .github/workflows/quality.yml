@@ -25,3 +25,9 @@ jobs:
         run: ruff format --check --diff .
       - name: Pytest
         run: pytest
+      - name: Podcast pilot live probe
+        if: github.head_ref == 'podcast-expert-rationale-pilot-20260928'
+        run: |
+          clocktower-podcast-probe \
+            "https://anchor.fm/s/daf1f9c/podcast/rss" \
+            --title-contains "16: Drunk"
