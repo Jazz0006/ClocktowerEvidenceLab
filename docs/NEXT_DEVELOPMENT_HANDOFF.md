@@ -1,4 +1,4 @@
-# NEXT DEVELOPMENT HANDOFF — E1 Domain / Persistence Foundation
+# NEXT DEVELOPMENT HANDOFF — Targeted E3/E4 Evidence Acquisition
 
 ## 1. Read first
 
@@ -17,19 +17,19 @@ Also consult the relevant CampBoardGameHost D5F evidence documents only as resea
 
 ## 2. Current state
 
-Bootstrap consistency review and the E0 evidence-contract pilot are complete and merged to `main`.
+E0 and the combined E1/C0 foundation/evidence checkpoint are complete and merged to `main`.
 
-PR `#1` — `E0: evidence contract pilot — A Stud In Scarlet` — was squash-merged to `main` on 2026-09-22.
+PR #1 — E0 evidence contract pilot — was squash-merged on 2026-09-22.
 
-Merged `main` commit: `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
+PR #2 — E1 domain/persistence foundation plus C0 Trouble Brewing evidence checkpoint — was squash-merged on 2026-09-23.
 
-E1 checkpoint branch: `e1-domain-persistence-foundation`.
+Current live baseline at the 2026-09-27 audit:
 
-PR: `#2` — `E1: domain and persistence foundation`.
+`main@157a91f47112a7e4af02bc6e4c9e8613ef99d490`
 
-E1/C0 checkpoint work is complete and the user explicitly authorized merge on 2026-09-23. Final merge audit must confirm live HEAD/checks before squash merge.
+There is no active implementation PR.
 
-After merge, do not continue feature expansion on this branch. Future work should start from live `main` and remain low-frequency / targeted unless a concrete replay, evidence or persistence need appears.
+The 2026-09-27 E3/E4 qualification audit is complete and found **no currently qualifying downstream policy predicate**. Future work remains low-frequency and targeted: acquire only evidence that can close a named Gap A/B/C/D, resolve a concrete replay blocker, or add a missing evidence shape.
 
 E1-1 code/quality gate head: `95e933c87e694e9d11552a5f7aad8749ed3f3d72`.
 

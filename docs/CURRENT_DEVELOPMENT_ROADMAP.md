@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / READY TO MERGE; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; continuous evidence collection — LOW-FREQUENCY / TARGETED
+> Status: E0 COMPLETE / MERGED; E1/C0 checkpoint MERGED; 2026-09-27 E3/E4 qualification audit COMPLETE — NO QUALIFYING POLICY PREDICATE; continuous evidence collection — LOW-FREQUENCY / TARGETED
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -152,14 +152,17 @@ Live CampBoardGameHost audit result:
 Current product-directed priority is now narrow and evidence-driven:
 
 - R04 replay preparation is complete as `REPLAY_PREP_PARTIAL / BLOCKED_ON_DIRECT_GRIMOIRE`; do not repeat broad search attempts for the same missing setup fields unless a new direct-source access path appears;
-- targeted rationale search found one new qualified expert-guidance source (Beardy) supporting contextual confirmation-chain / role-function-exposure semantics, but no new replayable TB whole-game rationale case;
-- live CampBoardGameHost PR #153 already preserves unavailable dimensions as limitations and avoids unsupported numeric thresholds.
+- targeted rationale search found one qualified expert-guidance source (Beardy) supporting contextual confirmation-chain / role-function-exposure semantics, but no replayable TB whole-game rationale case with complete alternatives;
+- the 2026-09-27 cross-project E3/E4 qualification audit found **no currently qualifying policy predicate** for CampBoardGameHost C5/V2;
+- current evidence may continue to justify descriptive feature surfaces / semantic regression, but not a new candidate ordering, rejection, threshold or scalar weight;
+- broad corpus growth remains paused; acquisition should target only cases that can close Gap A/B/C/D or a concrete replay blocker.
 
 Cross-project handoff:
 
 - `docs/C0_TB_TO_CAMPBOARDGAMEHOST_SDE_HANDOFF_2026-09-23.md`
+- `docs/C0_TB_E3_E4_QUALIFICATION_AUDIT_2026-09-27.md`
 
-Do not grow raw corpus count by default. Continue only where a new game/source closes a known replay blocker, adds a missing evidence shape, or supplies explicit qualified Storyteller rationale.
+Do not grow raw corpus count by default. Continue only where a new game/source closes a known replay blocker, adds a missing evidence shape, or supplies explicit qualified Storyteller rationale with enough committed state and alternatives to support a downstream E3 decision.
 
 ## 3. Milestones
 
