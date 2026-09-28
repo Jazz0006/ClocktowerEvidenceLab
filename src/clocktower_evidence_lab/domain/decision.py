@@ -219,6 +219,4 @@ def _validate_setup_prefix_order_evidence(
     setup_history: Sequence[SetupCommitment],
 ) -> None:
     if any(item.setup_order_basis is not SetupOrderBasis.EVIDENCED for item in setup_history):
-        raise ValueError(
-            "setup-prefix materialization requires evidenced historical setup order"
-        )
+        raise ValueError("setup-prefix materialization requires evidenced historical setup order")
