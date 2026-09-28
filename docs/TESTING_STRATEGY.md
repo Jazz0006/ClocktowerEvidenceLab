@@ -65,6 +65,7 @@ At minimum, tests should eventually prove:
 14. Later setup commitments and later semantic events cannot leak backward into an earlier decision prefix.
 15. Explicitly observed considered/rejected alternatives remain distinct from downstream-derived legal alternatives.
 16. UNKNOWN setup-choice rationale and alternatives survive domain/persistence/export boundaries without being guessed.
+17. Canonical-only setup ordering cannot be used to materialize a setup-time decision prefix, while event-time decisions may still consume the complete setup state after setup is committed.
 
 ## 4. Test-first policy
 
