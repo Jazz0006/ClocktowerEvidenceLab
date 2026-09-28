@@ -73,7 +73,11 @@ The current product-directed acquisition gap is no longer “find more games con
 
 CampBoardGameHost now needs empirical examples for a setup-time decision: **which already-shown Townsfolk seat becomes the Drunk**.
 
-Do not restart broad corpus growth. First re-audit existing Drunk-bearing Trouble Brewing reconstructions. Then search only for missing evidence shapes.
+Do not restart broad corpus growth. The C1B re-audit of existing Drunk-bearing Trouble Brewing reconstructions is now complete; it found 4 partial/result cases but 0 assignment cases with an evidence-backed reconstructable pre-assignment prefix.
+
+Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
+
+C1C targeted acquisition has not started. When authorized, search only for the missing evidence shapes rather than for generic games containing a Drunk.
 
 For a Drunk-bearing game, record when evidence permits:
 
