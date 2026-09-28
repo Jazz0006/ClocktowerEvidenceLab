@@ -81,7 +81,16 @@ Do not restart broad corpus growth. The C1B re-audit of existing Drunk-bearing T
 
 Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
 
-C1C targeted acquisition is now in progress. The broad search pass has been stopped after producing a small bounded review queue. Current priority is E0 `A Stud In Scarlet` setup commentary first, then `Live and Imp-Person`; official Steven Medway/Jon Gjengset Trouble Brewing playthroughs are secondary screen candidates. General expert Drunk-assignment guidance is retained as guidance evidence but does not count as a historical replay case.
+C1C targeted acquisition is now in progress and has reached **2 / 3 replayable Drunk-assignment cases**:
+
+- E0 `A Stud In Scarlet` — replayable prefix, rationale UNKNOWN;
+- `A Fond Farewell` — replayable prefix with explicit assignment rationale.
+
+Additional reviewed cases such as `Live and Imp-Person` and the Dicebreaker Trouble Brewing playthrough are result-only because they begin from an already-completed setup. G03/G04 contained no Drunk; G06 was instructional rather than a real game; G07's primary video is Private.
+
+Verified creator-level guidance from Steven Medway now supports player-first, role-first and whole-setup-first Drunk selection. G10 The Megavoid adds explicit topology-driven assignment guidance and Drunk Undertaker bluff-continuity guidance, but its playthroughs are not replay evidence until real-game status and assignment chronology are source-established.
+
+Current priority is therefore narrowly bounded: verify G10 playthrough status / Drunk presence, then continue only as needed to obtain one final real `PREFIX_RECONSTRUCTABLE` assignment case.
 
 See `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
