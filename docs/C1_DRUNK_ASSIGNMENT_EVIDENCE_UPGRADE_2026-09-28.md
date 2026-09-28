@@ -1,6 +1,6 @@
 # C1 — Drunk Assignment Evidence Upgrade
 
-> Status: **PLANNED / DOCUMENTATION CONTRACT FROZEN — implementation not started**
+> Status: **C1A COMPLETE / C1B NOT STARTED — awaiting project-owner decision**
 >
 > Date: 2026-09-28
 >
@@ -279,9 +279,32 @@ Evidence Lab must not score whether the observed choice or production recommenda
 
 ## 11. Implementation route
 
-### C1A — Generic domain contract
+### C1A — Generic domain contract — COMPLETE
 
-Tests first.
+C1A was completed tests-first on 2026-09-28.
+
+Implemented generic domain contracts:
+
+- `HistoricalPrefixBoundary` with mutually exclusive setup/event prefixes;
+- `DecisionResultLink` linking a derived decision to exactly one authoritative `SetupCommitment` or `SemanticEvent`;
+- generic `DecisionSlice` with game/revision identity, decision type, controller, observed choice, resulting-history link, optional source-backed rationale, and optional explicitly considered/rejected alternatives;
+- `ExplicitAlternative` carrying evidence-assertion references rather than downstream legal alternatives;
+- `materialize_historical_prefix(...)`, which validates game/revision identity, deterministic ordering and result linkage before projecting only the committed historical prefix.
+
+Tests-first evidence:
+
+- RED contract commit: `8ec9a22770eab30b428b5a9a97b302ab20aa6ec1`;
+- formatting-only correction: `8c80d80d997a89852c22eb77a350e86af6fb16aa`;
+- meaningful RED: quality run #120 reached pytest and failed with `ModuleNotFoundError` for the not-yet-implemented `domain.decision`;
+- GREEN implementation: `a44b6b16cd46939b8aef3db5dffb8e1d02b5c94e`;
+- exact-audit cleanup: `01ef9d3f3df09581776d9ab6b052d0f1a64b318f`;
+- final implementation gate: quality run #122 PASS, including Ruff check, Ruff format and 65 pytest tests.
+
+C1A did **not** add persistence, Alembic changes, Drunk-specific legality/policy logic, or Evidence-Lab-derived legal alternatives.
+
+C1B has not started. Stop after this checkpoint until the project owner chooses the next step.
+
+C1A implementation contract:
 
 Add the minimum generic contracts required for:
 
