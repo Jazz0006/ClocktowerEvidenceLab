@@ -266,8 +266,10 @@ C1C checkpoint — IN PROGRESS:
 - only one additional replayable assignment case remains;
 - G06 `An Introduction to Blood on the Clocktower` has been rejected after primary review because it is an instructional/game-introduction source rather than a real historical game;
 - its displayed lineup must not be imported as historical corpus evidence;
-- acquisition now requires one new real Drunk-bearing primary game for replay case 3 / 3;
-- before promoting any future candidate, confirm that the source records an actual played game rather than an illustrative setup.
+- acquisition still requires one new real Drunk-bearing primary game for replay case 3 / 3;
+- before promoting any future candidate, confirm that the source records an actual played game rather than an illustrative setup;
+- the existing Cult of the Clocktower episode 16 machine-ASR has now been re-synthesized instead of retranscribed: the strongest assignment window is 01:28:18–01:29:18, provisionally describing three Storyteller selection modes — player-first, role-first, or whole-setup-first;
+- this podcast material remains HUMAN_REVIEW_PENDING guidance, not a replay case; only the 01:28 assignment window needs to block formal promotion of its assignment claims.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
