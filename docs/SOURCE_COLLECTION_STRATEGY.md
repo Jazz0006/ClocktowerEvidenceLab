@@ -67,6 +67,52 @@ Useful for:
 
 Do not treat them as equivalent to a reconstructable primary game.
 
+## 2.1 Current targeted gap — Drunk assignment
+
+The current product-directed acquisition gap is no longer “find more games containing a Drunk.”
+
+CampBoardGameHost now needs empirical examples for a setup-time decision: **which already-shown Townsfolk seat becomes the Drunk**.
+
+Do not restart broad corpus growth. First re-audit existing Drunk-bearing Trouble Brewing reconstructions. Then search only for missing evidence shapes.
+
+For a Drunk-bearing game, record when evidence permits:
+
+- chosen Drunk seat;
+- shown Townsfolk identity;
+- surrounding shown-role / seating layout;
+- the historical setup boundary immediately before assignment;
+- which setup commitments are evidenced as already committed;
+- explicit assignment rationale;
+- explicit considered or rejected alternatives;
+- later Drunk misinformation;
+- multi-night misinformation continuity.
+
+Use replay-value descriptors rather than quality scores:
+
+```text
+RESULT_ONLY
+PREFIX_PARTIAL
+PREFIX_RECONSTRUCTABLE
+RATIONALE_EXPLICIT
+ALTERNATIVES_EXPLICIT
+```
+
+These describe evidence completeness only.
+
+Highest-value new sources are expert/trusted Storyteller POV recordings, live grimoire/setup construction, setup commentary, post-game review, or specific real-game podcast/interview explanation.
+
+Structured final grimoire records remain useful but normally provide result-only or prefix-partial assignment evidence unless chronology/commentary is also present.
+
+Immediate target:
+
+- at least 3 Drunk-assignment cases with reconstructable decision prefixes;
+- seek 1–2 explicit-rationale cases if available;
+- preserve independent Storyteller coverage where practical.
+
+Evidence Lab must not derive the legal Drunk candidate set from game rules. It may record alternative seats only when the source establishes that the Storyteller actually considered or rejected them.
+
+See `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
+
 ## 3. ClockTracker suitability gate
 
 The current product scope is **Trouble Brewing only**. Other scripts are outside the present Storyteller App capability and must not consume C0 screening effort.
