@@ -231,15 +231,19 @@ Ancillary high-value evidence from G04:
 
 The G03/G04 pair is now exhausted for Drunk-assignment acquisition.
 
-New P0 target:
+G05 `A Fond Farewell` has now passed primary review:
 
-- G05 `A Fond Farewell`;
-- official Blood on the Clocktower channel;
-- Storyteller Ben Burns;
-- exact Trouble Brewing;
-- bounded primary review only: 00:00–04:25 Intro & Setup.
+- complete role layout fixed before assignment;
+- 03:32 — Chef selected as Drunk;
+- explicit assignment rationale — support a deliberately extreme Chef misinformation narrative;
+- no alternative Drunk candidates observed;
+- 04:04 — Red Herring = Lyra;
+- 04:47 — Demon bluffs;
+- replay status: `PREFIX_RECONSTRUCTABLE`.
 
-Prior project notes are locator leads only; re-verify assignment result, prefix, rationale and alternatives against the primary setup segment.
+C1C quota is now **2 / 3 replayable assignments**, with **1 explicit historical assignment rationale**.
+
+Next action: acquire only one more targeted Drunk-bearing primary case. Prefer independent Storyteller coverage if practical.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
