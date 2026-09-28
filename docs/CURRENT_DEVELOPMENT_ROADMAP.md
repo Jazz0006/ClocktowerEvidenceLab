@@ -263,7 +263,10 @@ C1C checkpoint — IN PROGRESS:
 - Ben explicitly gives the assignment rationale: make the Chef Drunk so a ridiculously high Chef number can be used as the intended misinformation narrative;
 - surrounding Recluse / Scarlet Woman / Traveler-adjacency discussion is preserved as setup context, not misclassified as alternate Drunk candidates;
 - current replay quota is **2 / 3** and explicit historical assignment-rationale quota is **1 / 1–2**;
-- next C1C work should find only one more targeted Drunk-bearing primary case.
+- only one additional replayable assignment case remains;
+- new P0 is G06 `An Introduction to Blood on the Clocktower` (YouTube `nuOq54FHDsg`), a contemporary TPI/Steven-context real Trouble Brewing game whose published lineup identifies Kurt as Drunk shown Undertaker;
+- G06 is preferred over a generic community case because it provides independent creator/TPI Storyteller coverage;
+- primary review must still establish the pre-assignment setup prefix before it can become replay case 3 / 3.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
