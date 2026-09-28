@@ -90,7 +90,9 @@ Evidence Lab does not derive the legal candidate set. That remains downstream ru
 
 C1A and C1B are complete. C1C targeted acquisition is now in progress. The existing-corpus re-audit found four partial/result Drunk-assignment cases but no case with a sufficiently evidenced pre-assignment setup prefix for replay, so broad collection remains stopped in favour of bounded primary review.
 
-Current C1C priority is to re-check the known setup discussion in E0 `A Stud In Scarlet`, then the setup section of `Live and Imp-Person`. Qualified assignment guidance is retained separately and does not count as historical replay evidence.
+C1C now has its first replayable historical assignment case: E0 `A Stud In Scarlet`. Human primary review verifies that the complete player role/shown-role layout was already fixed before Sullivan was selected as the Drunk, and Red Herring selection occurred afterward. Assignment rationale and alternatives remain UNKNOWN.
+
+The next C1C priority is the setup section of `Live and Imp-Person`. Qualified assignment guidance remains separate and does not count as historical replay evidence.
 
 See:
 
