@@ -252,13 +252,15 @@ Creator-guidance checkpoint complete:
 - materially complete assignment guidance: player-first, role-first, whole-setup-first;
 - classification: VERIFIED CREATOR-LEVEL ASSIGNMENT GUIDANCE / NOT_A_REPLAY_CASE.
 
-Next action: screen the bounded final candidate queue for replay case 3 / 3:
+Final replay acquisition state:
 
-1. G07 `Yeah Boi!` — TPI & Friends, YouTube `EsTXhFKtER8`, exact real Trouble Brewing, P0. Check only whether a Drunk exists before deeper review.
-2. G08 Edd Gabriel `The CLASSIC script! Trouble Brewing with a LEGEND` — YouTube `xYrWpBH5mJM`, P1 if G07 fails.
-3. G09 Dicebreaker — YouTube `m9RPf8tXxR4`, P2 fallback.
+- G07 `Yeah Boi!`: rejected for current C1C because the primary YouTube video is Private;
+- G08 Edd Gabriel: HOLD until current primary access is revalidated;
+- G09 Dicebreaker `Let's Play Blood on the Clocktower`, YouTube `m9RPf8tXxR4`: current P0.
 
-Do not broaden collection unless this bounded queue fails.
+Next action: screen G09 only for whether a Drunk exists. If no Drunk, stop immediately. If a Drunk exists, review only enough setup material to establish assignment result and pre-assignment prefix.
+
+Do not broaden collection unless this bounded route fails.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
