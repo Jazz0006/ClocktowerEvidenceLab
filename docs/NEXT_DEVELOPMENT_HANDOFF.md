@@ -219,7 +219,9 @@ G02 `Live and Imp-Person` has now been reviewed:
 - assignment replay quota contribution: none;
 - separate high-value evidence: Ben explicitly plans early correct Drunk information to preserve Brooke's role belief, then sustained incorrect information.
 
-The next bounded assignment targets are G03/G04 official 2019 Trouble Brewing games.
+G03 official 2019 Game 2 has now been screened out for C1C because the primary setup contains no Drunk. Its Poisoner/Investigator/Empath Night-1 bundle is useful ancillary evidence only.
+
+The next bounded assignment target is G04 official 2019 Game 1.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
