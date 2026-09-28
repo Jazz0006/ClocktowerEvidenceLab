@@ -149,6 +149,13 @@ The boundary must support setup-time decisions as well as ordinary semantic even
 
 A boundary must never include the resulting commitment/event of the decision it is used to analyse.
 
+Setup ordering has two distinct meanings:
+
+- `SetupOrderBasis.EVIDENCED`: the relative setup order is supported strongly enough to define a historical setup-time prefix;
+- `SetupOrderBasis.CANONICAL_ONLY`: the order exists only to make reconstruction/serialization deterministic.
+
+A `CANONICAL_ONLY` order must never be used to decide which setup commitments existed before a setup-time choice. It remains safe as deterministic presentation order for event-time decisions after setup as a whole is already committed.
+
 ### Setup-time decisions
 
 Some Storyteller decisions occur while setup is still being committed rather than during the ordinary night/day event stream.
