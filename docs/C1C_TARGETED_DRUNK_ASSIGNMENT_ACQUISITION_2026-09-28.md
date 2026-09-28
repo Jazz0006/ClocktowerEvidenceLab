@@ -434,24 +434,28 @@ Source:
 
 The episode explicitly includes a Storyteller section devoted to running the Drunk.
 
-A prior machine-ASR pass identified candidate windows around the part discussing how to choose the Drunk, but that machine transcript remains `HUMAN_REVIEW_PENDING`.
+A prior machine-ASR pass identified candidate windows around the part discussing how to choose the Drunk. The assignment window at 01:28:18–01:29:18 has now received bounded human primary review.
 
 C1C treatment:
 
 - source identity/subject: verified from public episode metadata;
-- prior machine transcript: locator aid only;
-- detailed claims remain **HUMAN_REVIEW_PENDING** until checked against original audio;
-- classification: **QUALIFIED_GUIDANCE / NOT_A_REPLAY_CASE**.
+- machine transcript remains a locator/extraction aid;
+- the 01:28:18–01:29:18 assignment claims are now **HUMAN-VERIFIED** against the original audio;
+- speaker attribution for that assignment discussion is **Steven Medway**;
+- reviewer reports no material assignment condition/example was omitted from the machine paraphrase;
+- classification: **VERIFIED CREATOR-LEVEL ASSIGNMENT GUIDANCE / NOT_A_REPLAY_CASE**.
 
 Do not repeat whole-episode transcription.
 
-### A01 machine-ASR synthesis — provisional, not formal evidence
+### A01 ASR synthesis with bounded human verification
 
 The prior full-episode ASR produced 1,609 timestamped segments. The following windows are the high-value leads recovered from that pass.
 
-#### 01:28:18–01:29:18 — how to choose the Drunk — C1C P0
+#### 01:28:18–01:29:18 — how to choose the Drunk — VERIFIED
 
-Machine-ASR paraphrase indicates three distinct Storyteller approaches:
+Human primary review confirms Steven Medway is the speaker and confirms the machine paraphrase did not omit a material assignment condition.
+
+Steven describes three distinct Storyteller approaches:
 
 1. choose the **player** you want to be the Drunk;
 2. choose the **Townsfolk role** you want to function as the Drunk;
@@ -464,11 +468,13 @@ C1C significance:
 - the first two approaches imply that assignment policy may legitimately depend on both player-level context and role-level information topology;
 - no legal candidate set is implied by the podcast; legality remains downstream.
 
-Important limitation:
+Evidence status:
 
-- speaker attribution is not yet verified against the original audio;
-- exact wording is not preserved;
-- do not promote this into a verified Steven Medway quote until human review.
+- source: original podcast audio;
+- speaker: Steven Medway — VERIFIED by human primary review;
+- semantic paraphrase: VERIFIED as materially complete for the assignment point;
+- exact wording: intentionally not preserved;
+- replay status: NOT_APPLICABLE — this is creator-level guidance, not a historical game decision.
 
 #### 01:50:01–01:52:37 — Drunk Chef
 
@@ -546,15 +552,24 @@ Relevance:
 - supports history-aware policy features;
 - reinforces that Storyteller recommendation should consume committed prior observations and current game context.
 
-### A01 review priority
+### A01 review result
 
-For **C1C assignment**, only one bounded original-audio verification is now essential:
+The C1C assignment-relevant podcast checkpoint is complete.
 
-- **01:28:18–01:29:18**.
+Verified creator-level guidance now supports three legitimate Storyteller assignment modes:
 
-The later windows are valuable for Drunk misinformation / longitudinal policy calibration but do not need to block C1C assignment completion.
+1. **player-first** — decide which player should become the Drunk;
+2. **role-first** — decide which Townsfolk role should become the Drunk;
+3. **setup-first** — inspect the whole setup, then decide which player/role should become the Drunk.
 
-If the 01:28 window confirms the machine paraphrase and Steven Medway attribution, A01 can be promoted from locator-only guidance to verified creator-level assignment guidance. It still remains **NOT_A_REPLAY_CASE**.
+Architectural implication:
+
+- CampBoardGameHost must not assume Drunk assignment is reducible to role-only scoring;
+- the decision input may legitimately include player context, shown-role semantics and whole-setup topology;
+- the current late-binding route is directly compatible with Steven Medway's setup-first mode;
+- Evidence Lab still does not derive legal candidate sets.
+
+The later podcast windows remain machine-ASR guidance leads for Drunk misinformation / longitudinal policy and do not block C1C assignment completion.
 
 #### C1C-A02 — Ben Burns beginner setup guidance
 
