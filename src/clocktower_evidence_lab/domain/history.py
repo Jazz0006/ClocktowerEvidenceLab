@@ -34,6 +34,13 @@ class ControlOwner(StrEnum):
     UNKNOWN = "UNKNOWN"
 
 
+class SetupOrderBasis(StrEnum):
+    """Whether setup_order is historical chronology or only deterministic reconstruction order."""
+
+    EVIDENCED = "EVIDENCED"
+    CANONICAL_ONLY = "CANONICAL_ONLY"
+
+
 class SourceGameLink(_DomainModel):
     """A reviewed source-to-logical-game association candidate."""
 
@@ -51,6 +58,7 @@ class SetupCommitment(_DomainModel):
     game_id: SemanticId
     reconstruction_revision_id: SemanticId
     setup_order: PositiveOrder
+    setup_order_basis: SetupOrderBasis = SetupOrderBasis.CANONICAL_ONLY
     commitment_type: ShortText
     controller: ControlOwner = ControlOwner.UNKNOWN
     subject_seat_id: SemanticId | None = None
