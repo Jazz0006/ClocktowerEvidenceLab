@@ -205,19 +205,44 @@ Primary source:
 - 8-player Trouble Brewing;
 - Storyteller: Steven Medway.
 
-This is a high-value independent-Storyteller primary candidate.
+Bounded primary review result — 2026-09-28:
 
-Current indexed metadata verifies the game identity, script, player count and Storyteller, but the current search surface has not established:
+The reviewed setup frame shows an 8-player Trouble Brewing game with:
 
-- whether a Drunk is in this exact setup;
-- selected Drunk participant;
-- shown Townsfolk role;
-- assignment chronology.
+- Ben — Mayor;
+- Brittany — Poisoner;
+- Zach — Investigator;
+- Reggie — Empath;
+- Evin — Ravenkeeper;
+- Meg — Saint;
+- Eden — Undertaker;
+- Jon — Imp.
 
-Disposition:
+Therefore **no Drunk is in this setup**.
 
-- **PRIMARY_CANDIDATE / DRUNK_PRESENCE_NOT_YET_ESTABLISHED**;
-- perform only a bounded setup/grimoire review if G01/G02 do not close enough of the replay target.
+The source also shows Demon bluffs:
+
+- Recluse;
+- Fortune Teller;
+- Monk.
+
+Night-1 screenshots additionally preserve:
+
+- Brittany the Poisoner poisons Zach;
+- poisoned Zach, as Investigator, falsely learns that Reggie or Evin is the Scarlet Woman;
+- Reggie, as Empath, learns 0 for living neighbours Zach and Evin.
+
+Disposition for C1C assignment acquisition:
+
+- **SCREENED OUT — NO DRUNK**;
+- contributes 0 assignment replay cases;
+- do not spend more C1C review time on this game.
+
+Ancillary evidence value:
+
+- useful primary example of temporary Poisoner corruption;
+- useful first-night bundle where a false Investigator signal coexists with a healthy Empath 0;
+- preserve as a future C0/SDE misinformation reference if needed, but do not widen C1C scope around it.
 
 #### C1C-G04 — official Trouble Brewing October 2019 Game 1 — P2
 
