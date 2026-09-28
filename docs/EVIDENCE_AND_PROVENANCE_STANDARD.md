@@ -103,6 +103,8 @@ For Drunk assignment, keep these concepts distinct:
 
 A DecisionSlice for a setup-time choice must identify a historical prefix that ends before its resulting SetupCommitment. The resulting assignment and later setup/game events cannot be treated as inputs to that earlier decision.
 
+A deterministic reconstruction order is not automatically historical chronology. Setup commitments whose relative order is only canonical/deterministic must be marked `CANONICAL_ONLY`; only `EVIDENCED` setup order may define a setup-time historical prefix. When chronology is not established, retain the result and mark the decision prefix partial/unknown rather than inventing an order.
+
 Do not use later misinformation rationale as assignment rationale. For example, a Storyteller explaining why a Drunk Empath received 0 rather than 2 is evidence about the misinformation choice, not evidence about why that player/role was selected as the Drunk.
 
 UNKNOWN remains the correct durable value when assignment rationale or considered alternatives are not established.
