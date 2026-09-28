@@ -182,6 +182,130 @@ Disposition:
 
 > **P2 QUEUE.**
 
+### G05 — Recall Knowledge / The Grim: first-time Storyteller teaching game
+
+Source description:
+
+- first-time Storyteller Richard runs Trouble Brewing;
+- Evil Steve sits as co-Storyteller;
+- Ben Burns is a **player**, not the Storyteller;
+- the production explicitly says the two Storytellers talk through why character choices were made and the pros/cons of night choices.
+
+This is unusually high-density choice-over-alternatives material.
+
+However, qualification is the blocker:
+
+- Evil Steve's own August 2023 introduction says he had fallen in love with Clocktower only over the preceding few months;
+- later activity establishes substantial community/stream experience, but that later experience must not be leaked backward into the September 2023 decision record.
+
+Disposition:
+
+> **METHOD / DECISION-SHAPE LEAD — NOT E3 EXPERT BASELINE BY DEFAULT.**
+
+Use it to discover decision shapes, vocabulary and candidate comparisons. Do not use its observed preferences to calibrate expert policy unless contemporaneous qualification evidence becomes available.
+
+### G06 — TPI “An Introduction to Blood on the Clocktower”
+
+Primary video:
+
+- YouTube: `nuOq54FHDsg`.
+
+TPI's own retrospective states that the footage came from an honest real game with no predetermined result and supplies the complete clockwise lineup:
+
+~~~text
+Imp — Lucy
+Virgin — Misha
+Baron — Julian
+Ravenkeeper — Myeisha
+Chef — Lewis
+Drunk Undertaker — Kurt
+Evil Bone Collector — Marianna
+Saint — Doug
+Washerwoman — Fil
+Empath — Claire
+Spy — Abdallah
+~~~
+
+TPI's same-game retrospective also records a consequential interaction:
+
+- Baron Julian bluffed Recluse after being executed;
+- the Drunk Undertaker's bad information helped make that bluff believable;
+- Spy Abdallah bluffed Fortune Teller and added further confusion;
+- the game eventually ended when Good executed the real Saint.
+
+Value:
+
+- very high-confidence official setup/outcome backbone;
+- useful contrast against G01, where a Drunk Undertaker receives **true** information;
+- concrete evidence that Undertaker misinformation can interact with an evil Recluse bluff in a real game.
+
+Limitation:
+
+- the public video is an edited introduction/highlight presentation, not the canonical beginning-to-end play-through;
+- no choice-specific explanation for the exact Drunk Undertaker output has yet been recovered.
+
+Disposition:
+
+> **P1 OFFICIAL AUXILIARY WHOLE-GAME CASE; GAP-B CONTRAST LEAD.**
+
+Do not treat it as a replay-ready primary-video reconstruction without a source that restores the missing chronological detail.
+
+### G07 — TPI & Friends Trouble Brewing Episode 1
+
+Primary video:
+
+- YouTube: `4sfa8_kNxsQ`;
+- roughly 45 minutes;
+- April 2019.
+
+The Pandemonium Institute Kickstarter FAQ explicitly identifies this as the **first full play-through** released by TPI. A current curated Clocktower learning index independently classifies it among the creator-facilitated in-person games shown from beginning to end.
+
+Current strengths:
+
+- primary complete Trouble Brewing game;
+- direct TPI provenance;
+- short enough that bounded human review is affordable if a gap shape is first identified.
+
+Current missing fields:
+
+- indexed search in this pass has not recovered the setup;
+- exact Storyteller identity for the game has not yet been established from an authoritative indexed source;
+- no choice-specific rationale has yet been recovered.
+
+Disposition:
+
+> **P1 PRIMARY FULL-GAME SCREENING CANDIDATE.**
+
+Do not request a full human watch yet. First recover setup/mechanism shape or Storyteller commentary from an external index/source.
+
+## 2.1 Supporting rationale sources discovered during game scouting
+
+Two non-game sources are useful for interpreting future candidates without counting as whole-game evidence.
+
+### Jon Gjengset — early app/moderation discussion
+
+Jon explicitly describes these as active strategic Storyteller choices in Trouble Brewing:
+
+- misinformation for drunk/poisoned players;
+- who becomes the Drunk;
+- Demon bluffs.
+
+Use only as qualitative evidence that these are real policy surfaces.
+
+### Baron's Storyteller Roundtable / TPI-endorsed setup material
+
+Indexed material contains explicit Trouble Brewing examples involving:
+
+- Spy/Recluse registrations to Librarian/Investigator/Washerwoman;
+- giving a Drunk accurate information for early days;
+- self Red Herring;
+- beginner-sensitive bluff selection;
+- Demon bluffs selected by difficulty / player style.
+
+A current curated source identifies Baron Ted as a credited former TPI contributor and the publication as TPI-endorsed.
+
+This is high-value Gap C/D **rationale support**, but it is not a complete real-game record and must remain separate from the whole-game corpus.
+
 ## 3. Transcript-access experiment
 
 A bounded one-off probe tested:
@@ -220,10 +344,19 @@ The experiment answered an infrastructure question and should not be repeated on
 | G03 TPI Oct 2019 Game 2 | primary full game | yes, Steven Medway | unknown | not yet | **P1** |
 | G02 TPI Oct 2019 Game 1 | primary full game | yes, Jon Gjengset | unknown | not yet | **P1** |
 | G04 Yeah Boi! | primary full game | likely strong | unknown | not yet | **P2** |
+| G05 Richard + Evil Steve teaching game | full teaching game | contemporaneous E3 qualification uncertain | many explicit choice comparisons | yes, by design | **method lead** |
+| G06 TPI Introduction honest game | official setup + outcome; video edited | TPI | B contrast visible | no exact choice rationale yet | **P1 auxiliary** |
+| G07 TPI Episode 1 | official full game | TPI; exact ST still to establish | unknown | not yet | **P1** |
 
 ## 5. Next acquisition action
 
 Continue with **G01 first** because a complete game-state backbone is already available and only primary-video rationale/verification is missing.
+
+In parallel, screen **G07** before G02/G03 when indexed setup evidence appears: it is an official short full play-through and therefore has a lower reconstruction burden once its setup is recovered.
+
+Use **G06** specifically as a Drunk-Undertaker contrast case, not as a substitute for complete chronology.
+
+Use **G05** and the Roundtable only to improve search questions / candidate interpretation unless their evidence level separately satisfies the E3 qualification contract.
 
 Search specifically for primary/secondary locators around:
 
