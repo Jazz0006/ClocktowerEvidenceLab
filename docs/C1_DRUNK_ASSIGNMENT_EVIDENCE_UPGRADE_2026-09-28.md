@@ -1,6 +1,6 @@
 # C1 — Drunk Assignment Evidence Upgrade
 
-> Status: **C1A COMPLETE / C1B NOT STARTED — awaiting project-owner decision**
+> Status: **C1A + C1B COMPLETE / C1C NOT STARTED — awaiting project-owner decision**
 >
 > Date: 2026-09-28
 >
@@ -322,13 +322,33 @@ Mandatory invariants include:
 
 Do not add persistence in C1A.
 
-### C1B — Existing corpus projection
+### C1B — Existing corpus projection — COMPLETE
 
-Project at least three existing Drunk-bearing games into the new contract.
+C1B re-audited four existing Drunk-bearing cases:
 
-Use real UNKNOWN values aggressively.
+- E0 `A Stud In Scarlet`;
+- R02;
+- R03;
+- R04.
 
-The objective is schema pressure-testing, not GOLD promotion.
+Detailed audit:
+
+- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
+
+Result:
+
+- 4 cases contain some Drunk-assignment result evidence;
+- only E0 currently establishes both selected participant/visible seat and shown Townsfolk role;
+- 0 existing cases have an evidence-backed `PREFIX_RECONSTRUCTABLE` assignment boundary;
+- 0 existing cases contain explicit assignment rationale;
+- 0 contain explicit considered/rejected assignment alternatives;
+- therefore 0 setup-time Drunk-assignment DecisionSlices are promoted under the stricter C1A contract.
+
+C1B also exposed and corrected a generic chronology hazard: deterministic setup ordering is not automatically historical commitment order. `SetupOrderBasis.EVIDENCED` is now required for setup-time prefix materialization; `CANONICAL_ONLY` remains valid only for deterministic reconstruction ordering.
+
+This is a successful schema/evidence pressure test, not a reason to guess missing history.
+
+C1C has not started.
 
 ### C1C — Targeted acquisition
 
