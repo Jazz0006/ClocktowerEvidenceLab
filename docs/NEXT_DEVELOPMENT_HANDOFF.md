@@ -221,7 +221,15 @@ G02 `Live and Imp-Person` has now been reviewed:
 
 G03 official 2019 Game 2 has now been screened out for C1C because the primary setup contains no Drunk. Its Poisoner/Investigator/Empath Night-1 bundle is useful ancillary evidence only.
 
-The next bounded assignment target is G04 official 2019 Game 1.
+G04 official 2019 Game 1 has now also been screened out for C1C because the primary setup contains no Drunk.
+
+Ancillary high-value evidence from G04:
+
+- Nicole (Washerwoman) is shown Zach/Jordan -> Soldier;
+- the primary video explicitly states Jordan the Spy is registering as Soldier for that interaction;
+- this may be preserved as an observed historical registration witness rather than a downstream legality inference.
+
+The G03/G04 pair is now exhausted for Drunk-assignment acquisition. Resume only targeted search for new Drunk-bearing primary candidates.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
