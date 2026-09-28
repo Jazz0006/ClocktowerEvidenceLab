@@ -154,7 +154,20 @@ Current status:
 - assignment rationale: UNKNOWN;
 - next action: **BOUNDED_PRIMARY_SETUP_REVIEW_REQUIRED**.
 
-Do not import the fan recap as primary chronology.
+C1C bounded locator search on 2026-09-28 additionally confirmed:
+
+- the public episode index consistently identifies Brooke as the Drunk shown Undertaker;
+- the public index exposes the complete role layout and other setup outcomes;
+- no trustworthy setup timestamp or indexed primary transcript was recovered;
+- automated search therefore cannot establish assignment chronology.
+
+Do not guess a setup timestamp and do not import the fan recap as primary chronology.
+
+Manual review should begin at the opening Storyteller/setup section and stop once the source establishes:
+
+1. what layout/setup facts are already fixed before Brooke becomes the Drunk;
+2. the Brooke = Drunk shown Undertaker commitment;
+3. any immediately later setup commitment needed to prove the boundary.
 
 #### C1C-G03 — official Trouble Brewing October 2019 Game 2 — P2
 
