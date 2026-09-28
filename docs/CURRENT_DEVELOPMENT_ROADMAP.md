@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A COMPLETE / C1B NOT STARTED
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A + C1B COMPLETE / C1C NOT STARTED
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -227,7 +227,20 @@ C1A checkpoint — COMPLETE:
 - no persistence or Drunk-specific rules/policy were added;
 - final implementation quality run #122 passed Ruff and all 65 pytest tests.
 
-C1B is **not started**. Do not begin corpus projection automatically; wait for project-owner direction.
+C1B checkpoint — COMPLETE:
+
+- E0, R02, R03 and R04 were re-audited for Drunk assignment;
+- existing corpus yields 4 partial/result cases but 0 evidence-backed `PREFIX_RECONSTRUCTABLE` assignment cases;
+- only E0 currently establishes both selected participant/visible seat and shown Townsfolk role;
+- assignment rationale and assignment alternatives remain UNKNOWN across the existing set;
+- later Drunk misinformation and later confirmation were explicitly kept out of assignment rationale/prefix;
+- `SetupOrderBasis` now separates `EVIDENCED` historical setup order from `CANONICAL_ONLY` deterministic reconstruction order;
+- setup-time prefix materialization rejects canonical-only ordering;
+- no persistence or Drunk-specific rules/policy were added.
+
+Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
+
+C1C is **not started**. Do not begin targeted acquisition automatically; wait for project-owner direction.
 
 Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
 
