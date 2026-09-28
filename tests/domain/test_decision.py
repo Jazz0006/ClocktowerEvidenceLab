@@ -8,15 +8,26 @@ from clocktower_evidence_lab.domain.decision import (
     HistoricalPrefixBoundary,
     materialize_historical_prefix,
 )
-from clocktower_evidence_lab.domain.history import ControlOwner, SemanticEvent, SetupCommitment
+from clocktower_evidence_lab.domain.history import (
+    ControlOwner,
+    SemanticEvent,
+    SetupCommitment,
+    SetupOrderBasis,
+)
 
 
-def _setup(order: int, commitment_type: str) -> SetupCommitment:
+def _setup(
+    order: int,
+    commitment_type: str,
+    *,
+    order_basis: SetupOrderBasis = SetupOrderBasis.EVIDENCED,
+) -> SetupCommitment:
     return SetupCommitment(
         commitment_id=f"setup:game1:{order}",
         game_id="game:1",
         reconstruction_revision_id="revision:game1:1",
         setup_order=order,
+        setup_order_basis=order_basis,
         commitment_type=commitment_type,
         controller=ControlOwner.STORYTELLER,
         subject_seat_id=f"seat:game1:{order}",
@@ -230,3 +241,63 @@ def test_materialization_rejects_cross_revision_history_and_stale_result_order()
             (_setup(1, "SHOWN_ROLE_LAYOUT"), _setup(2, "DRUNK_ASSIGNMENT")),
             (),
         )
+
+
+def test_setup_prefix_requires_evidenced_historical_setup_order() -> None:
+    decision = _setup_decision(boundary_order=1, result_order=2)
+    canonical_only_history = (
+        _setup(
+            1,
+            "SHOWN_ROLE_LAYOUT",
+            order_basis=SetupOrderBasis.CANONICAL_ONLY,
+        ),
+        _setup(
+            2,
+            "DRUNK_ASSIGNMENT",
+            order_basis=SetupOrderBasis.CANONICAL_ONLY,
+        ),
+    )
+
+    with pytest.raises(ValueError, match="evidenced historical setup order"):
+        materialize_historical_prefix(decision, canonical_only_history, ())
+
+
+def test_event_prefix_does_not_require_internal_setup_order_to_be_historically_evidenced() -> None:
+    setup_history = (
+        _setup(
+            1,
+            "SHOWN_ROLE_LAYOUT",
+            order_basis=SetupOrderBasis.CANONICAL_ONLY,
+        ),
+        _setup(
+            2,
+            "DRUNK_ASSIGNMENT",
+            order_basis=SetupOrderBasis.CANONICAL_ONLY,
+        ),
+    )
+    event_history = (
+        _event(1, "PLAYER_ACTION_COMMITTED"),
+        _event(2, "INFORMATION_DELIVERED"),
+    )
+    decision = DecisionSlice(
+        decision_id="decision:game1:event-after-setup",
+        game_id="game:1",
+        reconstruction_revision_id="revision:game1:1",
+        decision_type="INFORMATION_RESULT",
+        controller=ControlOwner.STORYTELLER,
+        historical_prefix_boundary=HistoricalPrefixBoundary(event_through_order=1),
+        observed_choice={"result": "YES"},
+        resulting_history=DecisionResultLink(
+            semantic_event_id="event:game1:2",
+            event_order=2,
+        ),
+    )
+
+    setup_prefix, event_prefix = materialize_historical_prefix(
+        decision,
+        setup_history,
+        event_history,
+    )
+
+    assert setup_prefix == setup_history
+    assert event_prefix == (event_history[0],)
