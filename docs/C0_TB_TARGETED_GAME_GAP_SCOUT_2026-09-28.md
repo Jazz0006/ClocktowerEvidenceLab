@@ -300,6 +300,21 @@ Do not request a full human watch yet. First recover setup/mechanism shape or St
 
 Two non-game sources are useful for interpreting future candidates without counting as whole-game evidence.
 
+### Steven Medway — official information-reliability / challenge baseline
+
+TPI's `Behind the Curtain #1: Total Chaos? Sort Of…` supplies a useful **Gap-A design baseline**:
+
+- Good should have a significant amount of information available to use;
+- most Good information should be trustworthy most of the time rather than the Storyteller freely invalidating it;
+- misinformation is valuable partly because identifying that a datum is wrong and why it is wrong creates further deductions;
+- the Storyteller can tune the level of challenge for the particular group both before the game and while it is running.
+
+This does **not** close Gap A because it does not compare two legal outputs in one committed game state or define a numeric healthy-information floor.
+
+Use it as an official qualitative constraint: calibration should preserve a mostly-usable information environment while leaving enough uncertainty for Evil to bluff and for Good to reason about alternate worlds.
+
+Source: `https://bloodontheclocktower.com/blogs/news/behind-the-curtain-1-total-chaos-sort-of`
+
 ### Jon Gjengset — early app/moderation discussion
 
 Jon explicitly describes these as active strategic Storyteller choices in Trouble Brewing:
