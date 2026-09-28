@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C1 Drunk Assignment Evidence Upgrade
 
-> Current implementation target: **C1A — generic setup-time decision contract**
+> Current state: **C1A COMPLETE — hold before C1B pending project-owner decision**
 >
 > Current branch: `c1-drunk-assignment-evidence-upgrade`
 >
@@ -82,9 +82,20 @@ Preserve these during implementation:
 - UNKNOWN is preferred over inferred motive;
 - no persistence migration is justified merely because C1 introduces a new concept.
 
-## 5. Immediate implementation target — C1A
+## 5. C1A completion checkpoint
 
-Implement the smallest generic domain contract tests-first.
+C1A is complete. The smallest generic domain contract was implemented tests-first.
+
+Implementation evidence:
+
+- RED contract: `8ec9a22770eab30b428b5a9a97b302ab20aa6ec1`;
+- formatting-only correction before meaningful RED: `8c80d80d997a89852c22eb77a350e86af6fb16aa`;
+- quality run #120 reached pytest and failed as expected because `domain.decision` did not yet exist;
+- GREEN implementation: `a44b6b16cd46939b8aef3db5dffb8e1d02b5c94e`;
+- exact-audit cleanup: `01ef9d3f3df09581776d9ab6b052d0f1a64b318f`;
+- quality run #122: PASS — Ruff check, Ruff format and 65 pytest tests.
+
+Implemented generic domain contract:
 
 Required concepts:
 
@@ -106,9 +117,9 @@ Required concepts:
 
 Do not create Drunk-specific policy/rules classes when the generic contract is sufficient.
 
-## 6. Required C1A tests
+## 6. C1A test contract — SATISFIED
 
-At minimum define tests proving:
+The focused C1A tests prove:
 
 1. a setup-time decision prefix cannot include its own resulting SetupCommitment;
 2. later setup commitments cannot leak into that earlier prefix;
@@ -131,7 +142,9 @@ define invariant
 
 ## 7. After C1A
 
-Proceed in this order unless new evidence disproves the plan.
+**Stop here. C1B has not started. Do not proceed automatically; wait for explicit project-owner direction.**
+
+When work resumes, the planned order remains:
 
 ### C1B — existing-corpus projection
 
