@@ -440,10 +440,121 @@ C1C treatment:
 
 - source identity/subject: verified from public episode metadata;
 - prior machine transcript: locator aid only;
-- detailed assignment claims: do not promote until checked against original audio;
+- detailed claims remain **HUMAN_REVIEW_PENDING** until checked against original audio;
 - classification: **QUALIFIED_GUIDANCE / NOT_A_REPLAY_CASE**.
 
-Do not repeat whole-episode transcription. If reviewed, use only the already-identified bounded assignment window.
+Do not repeat whole-episode transcription.
+
+### A01 machine-ASR synthesis — provisional, not formal evidence
+
+The prior full-episode ASR produced 1,609 timestamped segments. The following windows are the high-value leads recovered from that pass.
+
+#### 01:28:18–01:29:18 — how to choose the Drunk — C1C P0
+
+Machine-ASR paraphrase indicates three distinct Storyteller approaches:
+
+1. choose the **player** you want to be the Drunk;
+2. choose the **Townsfolk role** you want to function as the Drunk;
+3. inspect the **whole setup**, then decide which player/role should become the Drunk.
+
+C1C significance:
+
+- this is direct conceptual support for treating Drunk assignment as an active Storyteller decision rather than a fixed template input;
+- the third approach directly matches the CampBoardGameHost late-binding route: apparent role/seat context first, Drunk selection afterward;
+- the first two approaches imply that assignment policy may legitimately depend on both player-level context and role-level information topology;
+- no legal candidate set is implied by the podcast; legality remains downstream.
+
+Important limitation:
+
+- speaker attribution is not yet verified against the original audio;
+- exact wording is not preserved;
+- do not promote this into a verified Steven Medway quote until human review.
+
+#### 01:50:01–01:52:37 — Drunk Chef
+
+Machine-ASR lead:
+
+- Drunk Chef misinformation should be chosen with the actual seating/setup in mind;
+- the magnitude of the false Chef number matters;
+- the useful false number is contextual rather than a fixed rule.
+
+Relevance:
+
+- strong support for assignment + misinformation coupling;
+- consistent with the independently primary-verified `A Fond Farewell` case, where Ben chooses the Chef as Drunk in order to support an extreme later Chef number;
+- this remains misinformation-policy guidance, not another assignment replay case.
+
+#### 01:54:39–01:56:05 — Drunk Empath continuity
+
+Machine-ASR lead:
+
+- an Empath result such as `2` can create strong self-doubt;
+- once a Drunk Empath receives information, the Storyteller should remember the prior information and maintain a believable multi-night narrative rather than treating each night independently.
+
+Relevance:
+
+- directly supports longitudinal impaired-narrative state;
+- aligns with G02 Ben Burns commentary about early true information followed by sustained false information;
+- this is a separate Drunk misinformation policy dimension, not assignment rationale.
+
+#### 01:56:10–01:57:41 — Drunk Fortune Teller
+
+Machine-ASR lead:
+
+- Fortune Teller misinformation may not require the same kind of cross-night continuity as Empath information;
+- different shown roles therefore have different narrative-memory requirements.
+
+Relevance:
+
+- argues against one generic “always stay numerically consistent” rule;
+- supports role-semantic projection downstream rather than role-name hacks in Evidence Lab.
+
+#### 02:04:10–02:07:39 — beginner/expert handling
+
+Machine-ASR lead:
+
+- some shown roles are easier for beginners to inhabit as a Drunk;
+- Monk/Soldier-like roles were discussed as more beginner-friendly than Ravenkeeper-like roles.
+
+Relevance:
+
+- supports player-experience as a legitimate assignment feature;
+- consistent with independent experienced-Storyteller guidance that assignment may change depending on whether a player is new or experienced;
+- exact role preference and speaker attribution still require audio verification.
+
+#### 02:17:37–02:22:47 — Poisoner vs Drunk control
+
+Machine-ASR lead:
+
+- a Poisoner actively chooses a target and therefore expresses player intent that the target should be impaired;
+- the Storyteller tends to respect that player-controlled intent when deciding whether/how to provide false information;
+- the Drunk differs because the Storyteller has substantially more control over the misinformation trajectory.
+
+Relevance:
+
+- supports keeping Poisoner corruption and Drunk misinformation in one broad impaired-information framework but with different control/lifetime semantics;
+- does not affect the Drunk-assignment replay quota.
+
+#### 02:22:58–02:24:17 — narrative-level summary
+
+Machine-ASR lead:
+
+- information should be chosen based on the narrative the actual game has developed rather than by evaluating a role in isolation.
+
+Relevance:
+
+- supports history-aware policy features;
+- reinforces that Storyteller recommendation should consume committed prior observations and current game context.
+
+### A01 review priority
+
+For **C1C assignment**, only one bounded original-audio verification is now essential:
+
+- **01:28:18–01:29:18**.
+
+The later windows are valuable for Drunk misinformation / longitudinal policy calibration but do not need to block C1C assignment completion.
+
+If the 01:28 window confirms the machine paraphrase and Steven Medway attribution, A01 can be promoted from locator-only guidance to verified creator-level assignment guidance. It still remains **NOT_A_REPLAY_CASE**.
 
 #### C1C-A02 — Ben Burns beginner setup guidance
 
