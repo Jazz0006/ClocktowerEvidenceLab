@@ -290,6 +290,39 @@ Ancillary evidence value:
 - unlike rules-derived compatible witnesses, this witness is source-observed and may be recorded as historical evidence;
 - useful future registration / Washerwoman / Spy calibration case outside the narrow C1C assignment quota.
 
+#### C1C-G05 — A Fond Farewell — NEW P0
+
+Primary source:
+
+- official Blood on the Clocktower YouTube channel;
+- video ID: `M5VY5GnXAxw`;
+- title: `Trouble Brewing - A Fond Farewell`;
+- Storyteller: Ben Burns;
+- exact script: Trouble Brewing;
+- source chapters expose `Intro & Setup` from 00:00 to 04:25.
+
+Prior project collection notes treat this as a Drunk-bearing game and therefore make it a much stronger next C1C candidate than an unscreened generic Trouble Brewing video.
+
+Important provenance rule:
+
+- those prior notes are a locator lead only for this C1C pass;
+- do not promote assignment result/prefix/rationale until the primary setup segment is re-reviewed under the C1 contract.
+
+Bounded primary-review questions:
+
+1. Is a Drunk actually in the setup?
+2. Which player is selected, and what Townsfolk are they shown?
+3. At that point, is the complete role/shown-role layout already fixed?
+4. Is there an explicit reason for the Drunk assignment?
+5. Are any other Drunk candidates explicitly considered/rejected?
+6. Which later setup choices (for example Red Herring or Demon bluffs) occur after assignment?
+
+Disposition:
+
+- **P0 / BOUNDED PRIMARY REVIEW — 00:00–04:25 ONLY**;
+- high-value because source quality and Storyteller qualification are already strong;
+- do not watch the full game unless the setup segment creates a specific follow-up question.
+
 ### 3.2 Assignment-guidance sources
 
 These sources improve the evidence taxonomy and tell us what to look for, but they are **not historical replay cases**.
