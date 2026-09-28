@@ -315,6 +315,23 @@ Use it as an official qualitative constraint: calibration should preserve a most
 
 Source: `https://bloodontheclocktower.com/blogs/news/behind-the-curtain-1-total-chaos-sort-of`
 
+### Official Recluse registration baseline — registration is conditional, not automatically anti-Good
+
+The official Recluse guidance supplies a concrete **Gap-A / Gap-C constraint**:
+
+- the Recluse may legally register as evil and as a Minion or Demon to other abilities;
+- registration is a Storyteller choice, not a mandatory always-evil state;
+- in the official Chef example, counting the Recluse as evil would produce a very strong `2` beside an Imp and Evil Traveller, so the Storyteller instead lets the Recluse register normally and gives the Chef the true `0`;
+- official Storyteller advice separately stresses that legal freedom is not a reason to use the most disruptive registration automatically; the decision should serve a fair, enjoyable game state.
+
+This does **not** close Gap C because it does not yet compare the expose-versus-conceal intent for a functioning Librarian/Investigator in a reconstructed whole game.
+
+It does establish a durable policy boundary: **Spy/Recluse misregistration must be evaluated for its information-strength effect; “misregister whenever possible” is not an expert baseline.**
+
+Sources:
+- `https://wiki.bloodontheclocktower.com/Recluse`
+- `https://wiki.bloodontheclocktower.com/Storyteller_Advice`
+
 ### Jon Gjengset — early app/moderation discussion
 
 Jon explicitly describes these as active strategic Storyteller choices in Trouble Brewing:
