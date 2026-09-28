@@ -211,7 +211,15 @@ Red Herring = Sullivan selected later
 
 Rationale and alternatives remain UNKNOWN.
 
-The next bounded review target is G02 `Live and Imp-Person`.
+G02 `Live and Imp-Person` has now been reviewed:
+
+- Brooke = Drunk shown Undertaker: VERIFIED;
+- pre-assignment prefix: UNKNOWN because the source presents an already-designed setup;
+- assignment rationale / alternatives: UNKNOWN;
+- assignment replay quota contribution: none;
+- separate high-value evidence: Ben explicitly plans early correct Drunk information to preserve Brooke's role belief, then sustained incorrect information.
+
+The next bounded assignment targets are G03/G04 official 2019 Trouble Brewing games.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
