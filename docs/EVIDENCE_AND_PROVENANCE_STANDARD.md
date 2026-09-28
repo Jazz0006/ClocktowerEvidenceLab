@@ -89,6 +89,24 @@ Stronger additional evidence includes:
 
 Keep these separate. Do not synthesize a quality label at ingestion time.
 
+## 5.1 Setup-time choice evidence
+
+When a Storyteller-controlled setup choice creates a resulting setup fact, record the history and the decision evidence separately.
+
+For Drunk assignment, keep these concepts distinct:
+
+- resulting historical fact: which seat is actually the Drunk and which Townsfolk role they are shown;
+- observed Storyteller choice: the selection of that seat;
+- explicit rationale: only when stated by the source;
+- explicitly considered/rejected alternatives: only when stated or otherwise evidenced by the source;
+- legal alternatives: downstream-derived and **not** historical Evidence Lab evidence.
+
+A DecisionSlice for a setup-time choice must identify a historical prefix that ends before its resulting SetupCommitment. The resulting assignment and later setup/game events cannot be treated as inputs to that earlier decision.
+
+Do not use later misinformation rationale as assignment rationale. For example, a Storyteller explaining why a Drunk Empath received 0 rather than 2 is evidence about the misinformation choice, not evidence about why that player/role was selected as the Drunk.
+
+UNKNOWN remains the correct durable value when assignment rationale or considered alternatives are not established.
+
 ## 6. Storyteller qualification
 
 Maintain Storyteller-qualification facts separately from game reconstruction semantics, but do **not** create a second evidence subsystem.
