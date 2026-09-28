@@ -73,6 +73,23 @@ A DecisionSlice is a downstream projection from a reconstructed game, not the pr
 
 Direct telemetry from the Storyteller app is explicitly deferred.
 
+## Current targeted evidence gap — C1
+
+The current product-directed gap is **Drunk assignment**.
+
+CampBoardGameHost is moving from treating the selected Drunk identity as a fixed input to asking the Storyteller Decision Engine to choose which already-shown Townsfolk seat is actually the Drunk.
+
+Evidence Lab therefore needs to preserve:
+
+- the historical setup prefix immediately before that choice;
+- the observed selected seat / shown role;
+- explicit assignment rationale or alternatives when the source actually states them;
+- later Drunk misinformation as a separate decision.
+
+Evidence Lab does not derive the legal candidate set. That remains downstream rules-engine work.
+
+See `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
+
 ## Storage direction
 
 The project is local-first. E1 has frozen the initial implementation foundation:
