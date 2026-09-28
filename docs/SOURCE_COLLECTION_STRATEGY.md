@@ -69,6 +69,8 @@ Do not treat them as equivalent to a reconstructable primary game.
 
 Before promoting any visually complete setup into the historical-game corpus, verify that the source is actually recording a played game rather than an instructional/example presentation. A complete illustrative lineup is not historical game evidence merely because it looks like a grimoire.
 
+For active acquisition, also verify that the primary source is currently accessible to human review. A private/deleted video may remain a provenance locator, but secondary indexes describing it do not make it a reviewable primary source.
+
 ## 2.1 Current targeted gap — Drunk assignment
 
 The current product-directed acquisition gap is no longer “find more games containing a Drunk.”
