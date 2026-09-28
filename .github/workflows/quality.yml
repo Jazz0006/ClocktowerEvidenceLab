@@ -25,3 +25,55 @@ jobs:
         run: ruff format --check --diff .
       - name: Pytest
         run: pytest
+      - name: Install targeted scout tools
+        if: github.head_ref == 'targeted-tb-game-gap-scout-20260928'
+        run: python -m pip install "yt-dlp>=2026.3.17" "youtube-transcript-api>=1.2.3"
+      - name: Probe candidate YouTube transcripts
+        if: github.head_ref == 'targeted-tb-game-gap-scout-20260928'
+        shell: bash
+        run: |
+          set -u
+          mkdir -p scout
+          for id in 2TlW06GVF8I pVzZms1FTr4 m14N28Lq-jM; do
+            {
+              echo "===== $id : yt-dlp --list-subs ====="
+              yt-dlp --list-subs "https://www.youtube.com/watch?v=$id"
+              echo
+            } > "scout/$id.list-subs.txt" 2>&1 || true
+            python - "$id" > "scout/$id.transcript-api.json" 2> "scout/$id.transcript-api.err" <<'PY'
+          import json
+          import sys
+          from youtube_transcript_api import YouTubeTranscriptApi
+
+          video_id = sys.argv[1]
+          api = YouTubeTranscriptApi()
+          transcript_list = api.list(video_id)
+          available = []
+          for transcript in transcript_list:
+              available.append({
+                  "language": transcript.language,
+                  "language_code": transcript.language_code,
+                  "is_generated": transcript.is_generated,
+                  "is_translatable": transcript.is_translatable,
+              })
+          preferred = None
+          for transcript in transcript_list:
+              if transcript.language_code.startswith("en"):
+                  preferred = transcript
+                  break
+          payload = {"video_id": video_id, "available": available, "segments": []}
+          if preferred is not None:
+              payload["segments"] = [
+                  {"text": item.text, "start": item.start, "duration": item.duration}
+                  for item in preferred.fetch()
+              ]
+          print(json.dumps(payload, ensure_ascii=False))
+          PY
+          done
+      - name: Upload targeted scout artifacts
+        if: github.head_ref == 'targeted-tb-game-gap-scout-20260928'
+        uses: actions/upload-artifact@v4
+        with:
+          name: targeted-tb-game-gap-scout
+          path: scout/
+          if-no-files-found: error
