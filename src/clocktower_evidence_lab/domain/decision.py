@@ -1,6 +1,6 @@
 """Derived decision-time views over authoritative reconstruction history."""
 
-from collections.abc import Sequence
+from collections.abc import Iterable, Sequence
 from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, model_validator
@@ -18,7 +18,7 @@ class _DomainModel(BaseModel):
 
 
 class HistoricalPrefixBoundary(_DomainModel):
-    """Exclusive decision-time phase boundary expressed as the latest included order."""
+    """Decision-time boundary expressed as the latest included history order."""
 
     setup_through_order: NonNegativeOrder | None = None
     event_through_order: NonNegativeOrder | None = None
@@ -200,7 +200,7 @@ def _validate_result_link(
 
 def _validate_boundary_order_exists(
     boundary_order: int,
-    existing_orders: Sequence[int] | object,
+    existing_orders: Iterable[int],
     history_kind: str,
 ) -> None:
     if boundary_order == 0:
