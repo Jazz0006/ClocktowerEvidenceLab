@@ -552,10 +552,40 @@ C1C review order:
 3. only if Drunk exists, inspect enough setup material to determine whether the apparent role layout precedes the assignment;
 4. separately capture the 07:53 `Who to Make Drunk` guidance if it adds a rationale not already covered by Steven/Ben.
 
+Bounded human review of the `Who to Make Drunk` guidance section recovered two explicit Storyteller heuristics:
+
+1. **Topology-driven Drunk assignment**
+   - example: if an Empath is sitting between two Evil players, she would probably make that Empath the Drunk;
+   - evidence type: explicit Storyteller assignment guidance;
+   - feature family: whole-setup topology / neighbour composition;
+   - significance: direct support for setup-first assignment based on how a healthy information role would otherwise interact with the actual seating.
+
+2. **Drunk Undertaker misinformation tied to an Evil bluff**
+   - example: if the Drunk is shown Undertaker and an Evil player dies, she would probably show the Drunk Undertaker the identity that Evil player had been bluffing as;
+   - evidence type: explicit impaired-information guidance;
+   - feature family: public claim / bluff continuity;
+   - significance: false information is chosen to reinforce an already-established social narrative rather than generated independently.
+
+These two heuristics must remain semantically separate:
+
+~~~text
+setup topology
+    -> who should become Drunk
+
+public bluff / death context
+    -> what false Undertaker identity to show later
+~~~
+
+The first adds a concrete setup-first assignment rationale. The second is longitudinal misinformation policy, not assignment rationale.
+
+Current qualification caveat:
+
+- this remains independent Storyteller guidance, weaker than Steven Medway / Ben Burns creator-level evidence;
+- do not count either statement as a historical replay case.
+
 Disposition:
 
-- **P0 — BOUNDED REVIEW ONLY**;
-- do not treat guidance as a historical replay;
+- **GUIDANCE REVIEW: HIGH VALUE / PLAYTHROUGH REPLAY STATUS STILL UNKNOWN**;
 - do not count either playthrough until real-game status and assignment prefix are source-established.
 
 ### 3.2 Assignment-guidance sources
