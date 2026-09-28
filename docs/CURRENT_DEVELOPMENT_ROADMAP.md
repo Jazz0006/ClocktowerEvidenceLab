@@ -279,7 +279,9 @@ C1C checkpoint — IN PROGRESS:
 - G09 is therefore RESULT_ONLY / NOT PREFIX_RECONSTRUCTABLE and does not increase the replay quota beyond 2 / 3;
 - G09 ancillary facts include Empath = 1 around 52:30 and Saint as a Demon bluff around 53:05; the Empath result is mechanically compatible with Recluse registration but the historical registration witness remains UNKNOWN unless source-explicit;
 - new next lead is G10 The Megavoid `Storytelling Tips & Tricks - BLOOD ON THE CLOCKTOWER (+ game playthrough!)`, current public YouTube `G9z25aM9u7s`; its chaptering includes `07:53 Who to Make Drunk`, `11:22 Game Playthrough 1`, and `16:23 Game 2`;
-- G10 must first be checked for whether the playthroughs are actual recorded games and whether either contains a Drunk assignment with visible setup context.
+- G10 guidance review now adds two explicit heuristics: (1) an Empath between two Evil players may be selected as Drunk because of seating topology; (2) a Drunk Undertaker may be shown the role an Evil player had been bluffing as after that Evil dies;
+- these are kept separate as assignment rationale vs misinformation narrative policy;
+- G10 playthrough replay status remains unresolved and still requires checking whether either playthrough is a real game containing a reconstructable Drunk assignment.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
