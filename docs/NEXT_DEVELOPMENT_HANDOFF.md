@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C1 Drunk Assignment Evidence Upgrade
 
-> Current state: **C1A + C1B COMPLETE — hold before C1C pending project-owner decision**
+> Current state: **C1A + C1B COMPLETE / C1C IN PROGRESS — bounded primary review queue ready**
 >
 > Current branch: `c1-drunk-assignment-evidence-upgrade`
 >
@@ -177,18 +177,29 @@ Tests-first evidence:
 
 **Stop here. C1C has not started. Do not proceed automatically; wait for explicit project-owner direction.**
 
-### C1C — targeted acquisition
+### C1C — targeted acquisition — IN PROGRESS
 
-Only after the existing corpus is re-audited.
+Read:
 
-Seek missing setup-prefix / assignment-rationale evidence rather than generic “games with a Drunk.”
-
-Target approximately:
-
-- at least 3 replayable Drunk-assignment cases;
-- seek 1–2 explicit-rationale cases if available.
+- `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
 Do not resume broad quota-driven collection.
+
+Current review order:
+
+1. E0 `A Stud In Scarlet` around the known setup conversation window;
+2. `Live and Imp-Person` setup section;
+3. Steven Medway Drunk podcast bounded assignment section for guidance verification only;
+4. official 2019 Steven Medway / Jon Gjengset Trouble Brewing setup sections if needed.
+
+Current target remains:
+
+- at least 3 replayable Drunk-assignment cases;
+- seek 1–2 explicit historical assignment-rationale cases if available.
+
+Current achieved replay quota: 0 / 3.
+
+Do not enter C1D until a stable replay case exists.
 
 ### C1D — downstream replay handoff
 
