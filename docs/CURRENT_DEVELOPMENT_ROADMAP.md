@@ -257,7 +257,8 @@ C1C checkpoint — IN PROGRESS:
 - G04 official 2019 Game 1 has now also been primary-screened and contains no Drunk, so it is removed from the C1C assignment queue;
 - G04 independently provides a strong source-observed registration example: Jordan the Spy explicitly registers as Soldier to support Nicole's false Washerwoman clue;
 - current Drunk-assignment replay quota therefore remains 1 / 3;
-- next C1C work should acquire new targeted Drunk-bearing primary candidates rather than continue the now-exhausted G03/G04 official pair.
+- the exhausted G03/G04 pair has been replaced by G05 `A Fond Farewell`, an official Trouble Brewing video Storytold by Ben Burns with a bounded 00:00–04:25 Intro & Setup chapter;
+- G05 is now the highest-priority C1C assignment candidate; prior project notes are treated only as locator leads until this setup segment is re-reviewed under the C1 contract.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
