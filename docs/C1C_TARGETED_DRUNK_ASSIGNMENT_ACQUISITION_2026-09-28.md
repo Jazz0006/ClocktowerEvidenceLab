@@ -317,11 +317,48 @@ Bounded primary-review questions:
 5. Are any other Drunk candidates explicitly considered/rejected?
 6. Which later setup choices (for example Red Herring or Demon bluffs) occur after assignment?
 
-Disposition:
+Bounded primary review result — 2026-09-28:
 
-- **P0 / BOUNDED PRIMARY REVIEW — 00:00–04:25 ONLY**;
-- high-value because source quality and Storyteller qualification are already strong;
-- do not watch the full game unless the setup segment creates a specific follow-up question.
+- before the Drunk decision, the complete player-role layout is already fixed;
+- at **03:32**, Ben commits to making the **Chef** the Drunk;
+- Ben explicitly connects that assignment to a planned misinformation narrative: give the Drunk Chef a **ridiculously high number**;
+- Ben also discusses Recluse, Scarlet Woman and adjacency to a Traveler as surrounding setup/context considerations;
+- no other Drunk candidate participant/role is discussed in the reviewed segment;
+- at **04:04**, Ben selects **Lyra as the Red Herring**, explicitly because Fortune Tellers often choose their neighbours;
+- at **04:47**, Demon bluffs are assigned.
+
+Verified setup ordering:
+
+~~~text
+complete player-role layout fixed
+    ↓
+03:32 Drunk assignment: Chef
+    + explicit assignment rationale:
+      enable a deliberately extreme Chef misinformation narrative
+    ↓
+04:04 Red Herring = Lyra
+    ↓
+04:47 Demon bluffs
+~~~
+
+Current assignment status:
+
+- assignment result: VERIFIED;
+- shown role: VERIFIED = Chef;
+- assignment prefix: **PREFIX_RECONSTRUCTABLE**;
+- assignment rationale: **EXPLICIT**;
+- explicit alternative Drunk candidates: NONE OBSERVED;
+- surrounding setup considerations: PRESENT, but must not be misclassified as rejected Drunk candidates;
+- later Red Herring / bluff setup: VERIFIED as after assignment;
+- replay status: **C1C REPLAY CASE 2 / 3**.
+
+This is the first C1C historical case with explicit Drunk-assignment rationale.
+
+Do not collapse the rationale into later misinformation execution. The evidence supports both:
+1. an assignment-time reason for choosing the Chef as Drunk;
+2. a planned later misinformation style (ridiculously high Chef number).
+
+Those are related but remain separate semantic decisions.
 
 ### 3.2 Assignment-guidance sources
 
@@ -507,12 +544,13 @@ C1C has successfully produced a bounded evidence-acquisition queue and added ind
 
 It has **not yet** satisfied the full replay quota, but the first historical replay case is now complete:
 
-- replayable Drunk-assignment cases: **1 / target 3**;
-- explicit historical assignment-rationale cases: **0 / seek 1–2**;
+- replayable Drunk-assignment cases: **2 / target 3**;
+- explicit historical assignment-rationale cases: **1 / seek 1–2**;
 - qualified general assignment-rationale sources: **2+**;
 - G02 assignment result is verified but not prefix-reconstructable;
-- remaining historical assignment candidates: G03/G04 official games;
-- G02 adds one explicit real-game Drunk misinformation strategy case, separate from the assignment quota.
+- G05 `A Fond Farewell` is now replay case 2 / 3 and provides the first explicit historical assignment rationale;
+- G02 adds one explicit real-game Drunk misinformation strategy case, separate from the assignment quota;
+- G03/G04 were screened out because they contain no Drunk.
 
 Therefore C1C remains:
 
@@ -522,7 +560,11 @@ This is not a reason to enter C1D.
 
 ## 9. Next checkpoint
 
-The next C1C checkpoint is screening **G03/G04 official 2019 Trouble Brewing games** for whether a Drunk assignment exists and whether the setup construction is visible.
+The next C1C checkpoint is targeted acquisition of **one additional Drunk-bearing primary case** with visible setup construction.
+
+Current quota is now 2 / 3, so broad discovery remains unnecessary. Prefer one source that adds either:
+- independent Storyteller coverage; or
+- another explicit assignment-rationale example.
 
 G02 is closed for the assignment question:
 
