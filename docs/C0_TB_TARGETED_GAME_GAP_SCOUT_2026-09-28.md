@@ -336,6 +336,43 @@ Therefore:
 
 The experiment answered an infrastructure question and should not be repeated on every candidate.
 
+## 3.1 ClockTracker profile-API experiment
+
+ClockTracker source inspection confirmed that public profile games are exposed through:
+
+~~~text
+GET /api/user/{username}/games
+~~~
+
+and the client identifies Storyteller-owned records from `is_storyteller`, `storyteller` and `co_storytellers`.
+
+This is useful for targeted acquisition, but the endpoint returns rich game objects including grimoire data rather than a small pageable Notes index.
+
+A bounded anonymous request for `@sancho` from GitHub Actions exceeded a 30-second read timeout before any JSON was returned.
+
+Disposition:
+
+- **INFRASTRUCTURE STOP** — do not build a ClockTracker crawler or raise timeouts merely for this search;
+- the public endpoint remains useful for smaller known profiles or exact-game follow-up;
+- external search/indexes remain insufficient for reliable full-text Notes search;
+- prioritize already-known exact game URLs and qualified full-video sources instead.
+
+This is an acquisition-efficiency finding, not evidence about game content.
+
+## 3.2 Why the early TPI full play-throughs are higher priority than ordinary video games
+
+TPI's own historical production notes explain that spectators especially valued Storyteller commentary after night phases: the Storytellers discussed the decisions they had made, player moves, interesting match-ups/correlations and the levers available to shape an exciting game.
+
+The same production history led directly to filming full play-throughs from the Storyteller point of view.
+
+Therefore G07/G02/G03 are not merely short official games. They were produced in a format deliberately intended to expose **decision rationale and game-state interpretation**.
+
+Acquisition consequence:
+
+- recover setup/mechanism shape first;
+- if one contains Gap A/B/C/D mechanics, it should outrank an equally reconstructable game whose Storyteller choices are silent;
+- do not assume rationale is present for a specific decision until the primary video is checked.
+
 ## 4. Current ranking
 
 | Candidate | Whole-game state | Qualified ST | Gap shape already visible | Explicit rationale recovered | Priority |
