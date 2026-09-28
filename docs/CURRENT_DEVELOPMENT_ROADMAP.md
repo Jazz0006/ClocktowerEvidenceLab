@@ -253,7 +253,8 @@ C1C checkpoint — IN PROGRESS:
 - current replay quota is **1 / 3**;
 - G02 `Live and Imp-Person` has now been primary-reviewed: Brooke = Drunk shown Undertaker is verified, but the setup is presented already designed, so the assignment prefix remains UNKNOWN and the case does not count toward the assignment replay quota;
 - G02 separately provides explicit Ben Burns Drunk misinformation strategy: early correct information to preserve role belief, followed by sustained incorrect information;
-- next bounded assignment targets are the official 2019 Trouble Brewing G03/G04 candidates.
+- G03 official 2019 Game 2 has now been primary-screened and contains no Drunk; it is removed from the C1C assignment queue, though its Poisoner → false Investigator clue + healthy Empath 0 bundle is retained as ancillary evidence;
+- next bounded assignment target is G04 official 2019 Game 1.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
