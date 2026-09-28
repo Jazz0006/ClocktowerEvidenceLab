@@ -401,16 +401,22 @@ C1C primary-review questions:
 4. Are any alternative Drunk participants/roles explicitly considered or rejected?
 5. Which later setup commitments are visibly after the Drunk assignment?
 
-Current status:
+Primary review correction — 2026-09-28:
 
-- assignment result lead: **STRONG / PRIMARY REVIEW STILL REQUIRED**;
-- shown role lead: Undertaker;
-- assignment prefix: UNKNOWN;
-- assignment rationale: UNKNOWN;
-- independent Storyteller value: HIGH;
-- disposition: **P0 — bounded primary setup review**.
+The source is a **game introduction / illustrative explainer, not a recording of a real historical game**.
 
-Do not count G06 toward the 3-case quota until primary review establishes the historical prefix.
+Therefore the apparent lineup and Kurt = Drunk shown Undertaker must not be treated as historical game evidence.
+
+Disposition:
+
+- **REJECTED — NOT A REAL GAME**;
+- contributes 0 assignment replay cases;
+- contributes 0 historical rationale cases;
+- do not use the illustrative lineup as corpus truth.
+
+Acquisition lesson:
+
+A source may display a complete plausible setup while still being an instructional/example presentation. Before promoting a setup into historical evidence, confirm that the source is recording an actual played game rather than explaining the game with an illustrative configuration.
 
 ### 3.2 Assignment-guidance sources
 
