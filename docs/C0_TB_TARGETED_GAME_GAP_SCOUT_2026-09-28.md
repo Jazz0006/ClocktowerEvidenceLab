@@ -332,6 +332,21 @@ Sources:
 - `https://wiki.bloodontheclocktower.com/Recluse`
 - `https://wiki.bloodontheclocktower.com/Storyteller_Advice`
 
+### Steven Medway — confirmation-chain / Storyteller meddling boundary
+
+TPI's `Behind the Curtain #7: Balance` adds an important distinction for Gap A/C:
+
+- ordinary Storyteller assistance that helps Evil maintain believable bluffs is treated as part of running the game;
+- the dangerous failure mode is not any single misleading choice, but a chain of Storyteller-controlled confirmations that collectively over-certifies one player or world;
+- the article's Trouble Brewing example stacks Washerwoman, Ravenkeeper, Empath, Fortune Teller and Mayor-bounce support around one Mayor and calls that state unbalanced;
+- beginner/veteran differences are also framed in terms of entry-level versus ceiling power, reinforcing that identical legal information can have different practical weight depending on the table.
+
+This supports evaluating candidate outputs by **confirmation-chain severity and table context**, not by local truth/falsehood alone.
+
+It still does not close Gap A/C because it is a design essay rather than a reconstructed choice-over-alternatives case.
+
+Source: `https://bloodontheclocktower.com/blogs/news/behind-the-curtain-7-balance`
+
 ### Jon Gjengset — early app/moderation discussion
 
 Jon explicitly describes these as active strategic Storyteller choices in Trouble Brewing:
