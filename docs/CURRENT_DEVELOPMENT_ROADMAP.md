@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — PLANNED / DOCUMENTATION CONTRACT FROZEN
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A COMPLETE / C1B NOT STARTED
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -216,6 +216,18 @@ C1E persistence only if justified
 ```
 
 C1 completion does not require broad corpus growth or a new Alembic migration.
+
+C1A checkpoint — COMPLETE:
+
+- generic setup/event `HistoricalPrefixBoundary` implemented;
+- generic `DecisionSlice` and authoritative-result linkage implemented;
+- historical-prefix materialization prevents own-result and later-history leakage;
+- explicit alternatives are evidence-backed and structurally separate from downstream legal alternatives;
+- UNKNOWN rationale/alternatives survive domain round-trip;
+- no persistence or Drunk-specific rules/policy were added;
+- final implementation quality run #122 passed Ruff and all 65 pytest tests.
+
+C1B is **not started**. Do not begin corpus projection automatically; wait for project-owner direction.
 
 Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
 
