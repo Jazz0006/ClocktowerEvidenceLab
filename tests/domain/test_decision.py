@@ -301,3 +301,72 @@ def test_event_prefix_does_not_require_internal_setup_order_to_be_historically_e
 
     assert setup_prefix == setup_history
     assert event_prefix == (event_history[0],)
+
+
+def test_grouped_setup_layout_can_define_assignment_prefix_without_internal_role_order() -> None:
+    setup_history = (
+        SetupCommitment(
+            commitment_id="setup:game1:role-layout",
+            game_id="game:1",
+            reconstruction_revision_id="revision:game1:1",
+            setup_order=1,
+            setup_order_basis=SetupOrderBasis.EVIDENCED,
+            commitment_type="SHOWN_ROLE_LAYOUT",
+            controller=ControlOwner.STORYTELLER,
+            value={
+                "seats": [
+                    {"seat_id": "seat:1", "shown_role": "IMP"},
+                    {"seat_id": "seat:2", "shown_role": "RAVENKEEPER"},
+                    {"seat_id": "seat:3", "shown_role": "FORTUNE_TELLER"},
+                    {"seat_id": "seat:4", "shown_role": "MONK"},
+                    {"seat_id": "seat:5", "shown_role": "RECLUSE"},
+                    {"seat_id": "seat:6", "shown_role": "SCARLET_WOMAN"},
+                    {"seat_id": "seat:7", "shown_role": "UNDERTAKER"},
+                    {"seat_id": "seat:8", "shown_role": "CHEF"},
+                    {"seat_id": "seat:9", "shown_role": "EMPATH"},
+                ]
+            },
+        ),
+        SetupCommitment(
+            commitment_id="setup:game1:drunk-assignment",
+            game_id="game:1",
+            reconstruction_revision_id="revision:game1:1",
+            setup_order=2,
+            setup_order_basis=SetupOrderBasis.EVIDENCED,
+            commitment_type="DRUNK_ASSIGNMENT",
+            controller=ControlOwner.STORYTELLER,
+            subject_seat_id="seat:9",
+            value={"actual_role": "DRUNK", "shown_role": "EMPATH"},
+        ),
+        SetupCommitment(
+            commitment_id="setup:game1:red-herring",
+            game_id="game:1",
+            reconstruction_revision_id="revision:game1:1",
+            setup_order=3,
+            setup_order_basis=SetupOrderBasis.EVIDENCED,
+            commitment_type="RED_HERRING",
+            controller=ControlOwner.STORYTELLER,
+            subject_seat_id="seat:9",
+        ),
+    )
+    decision = DecisionSlice(
+        decision_id="decision:game1:drunk-assignment",
+        game_id="game:1",
+        reconstruction_revision_id="revision:game1:1",
+        decision_type="DRUNK_ASSIGNMENT",
+        controller=ControlOwner.STORYTELLER,
+        historical_prefix_boundary=HistoricalPrefixBoundary(setup_through_order=1),
+        subject_seat_id="seat:9",
+        observed_choice={"selected_seat_id": "seat:9", "shown_role": "EMPATH"},
+        resulting_history=DecisionResultLink(
+            setup_commitment_id="setup:game1:drunk-assignment",
+            setup_order=2,
+        ),
+    )
+
+    setup_prefix, event_prefix = materialize_historical_prefix(decision, setup_history, ())
+
+    assert setup_prefix == (setup_history[0],)
+    assert event_prefix == ()
+    assert setup_history[1] not in setup_prefix
+    assert setup_history[2] not in setup_prefix
