@@ -268,8 +268,11 @@ C1C checkpoint — IN PROGRESS:
 - its displayed lineup must not be imported as historical corpus evidence;
 - acquisition still requires one new real Drunk-bearing primary game for replay case 3 / 3;
 - before promoting any future candidate, confirm that the source records an actual played game rather than an illustrative setup;
-- the existing Cult of the Clocktower episode 16 machine-ASR has now been re-synthesized instead of retranscribed: the strongest assignment window is 01:28:18–01:29:18, provisionally describing three Storyteller selection modes — player-first, role-first, or whole-setup-first;
-- this podcast material remains HUMAN_REVIEW_PENDING guidance, not a replay case; only the 01:28 assignment window needs to block formal promotion of its assignment claims.
+- Cult of the Clocktower episode 16 assignment window 01:28:18–01:29:18 has now been human-verified against the original audio;
+- Steven Medway is confirmed as the speaker and the machine paraphrase is materially complete;
+- verified creator-level guidance identifies three Drunk-assignment modes: player-first, role-first and whole-setup-first;
+- this directly supports a late-bound assignment engine that can consume player context, shown-role semantics and whole-setup topology;
+- the podcast remains guidance, not a historical replay case, so the replay quota stays 2 / 3.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
