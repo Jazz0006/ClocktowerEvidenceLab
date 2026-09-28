@@ -25,3 +25,56 @@ jobs:
         run: ruff format --check --diff .
       - name: Pytest
         run: pytest
+      - name: Scan public ClockTracker TB notes for targeted rationale
+        if: github.head_ref == 'targeted-tb-game-gap-scout-20260928'
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          import urllib.request
+
+          usernames = ["sancho"]
+          rationale = re.compile(
+              r"\b(i chose|i wanted|i felt|i gave|i showed|decided|because|"
+              r"my two options|too punishing|to reward|bluff|red herring|drunk|poisoned)\b",
+              re.IGNORECASE,
+          )
+
+          for username in usernames:
+              url = f"https://clocktracker.app/api/user/{username}/games"
+              req = urllib.request.Request(
+                  url,
+                  headers={"User-Agent": "ClocktowerEvidenceLab/targeted-gap-scout"},
+              )
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  games = json.load(response)
+
+              print(f"===== @{username}: {len(games)} public-visible game records =====")
+              for game in games:
+                  script = (game.get("script") or "").strip().lower()
+                  if script != "trouble brewing":
+                      continue
+
+                  is_st = (
+                      game.get("is_storyteller") is True
+                      or (game.get("storyteller") or "").lstrip("@").lower() == username.lower()
+                      or username.lower() in {
+                          str(x).lstrip("@").lower()
+                          for x in (game.get("co_storytellers") or [])
+                      }
+                  )
+                  if not is_st:
+                      continue
+
+                  notes = game.get("notes") or ""
+                  matches = sorted({m.group(0).lower() for m in rationale.finditer(notes)})
+                  print(json.dumps({
+                      "id": game.get("id"),
+                      "date": game.get("date"),
+                      "players": game.get("player_count"),
+                      "storyteller": game.get("storyteller"),
+                      "co_storytellers": game.get("co_storytellers"),
+                      "matches": matches,
+                      "notes": notes,
+                  }, ensure_ascii=False))
+          PY
