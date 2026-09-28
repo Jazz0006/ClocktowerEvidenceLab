@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C1 Drunk Assignment Evidence Upgrade
 
-> Current state: **C1A COMPLETE — hold before C1B pending project-owner decision**
+> Current state: **C1A + C1B COMPLETE — hold before C1C pending project-owner decision**
 >
 > Current branch: `c1-drunk-assignment-evidence-upgrade`
 >
@@ -140,26 +140,42 @@ define invariant
 → exact diff review
 ```
 
-## 7. After C1A
+## 7. C1B completion checkpoint
 
-**Stop here. C1B has not started. Do not proceed automatically; wait for explicit project-owner direction.**
+C1B is complete.
 
-When work resumes, the planned order remains:
-
-### C1B — existing-corpus projection
-
-Re-audit/project at least:
+Re-audited cases:
 
 - E0 `A Stud In Scarlet`;
 - R02;
-- R04;
-- any other existing Drunk-bearing C0 reconstruction that materially helps schema pressure-testing.
+- R03;
+- R04.
 
-For E0, preserve the distinction:
+Detailed result:
 
-- Sullivan = actual Drunk / shown Empath: assignment result evidence;
-- “2 would be less believable” at 12:41: **misinformation rationale**, not assignment rationale;
-- assignment rationale remains UNKNOWN unless separate setup commentary establishes it.
+- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
+
+Key findings:
+
+- 4 cases contain some assignment-result evidence;
+- only E0 establishes both selected participant/visible seat and shown Townsfolk;
+- none has an evidence-backed reconstructable pre-assignment prefix;
+- none contains explicit assignment rationale or assignment alternatives;
+- later Drunk misinformation/confirmation cannot backfill the assignment prefix;
+- the historical E0 `DS-ASIS-001` terminology must not be silently upgraded into a replay-ready C1 Drunk-assignment DecisionSlice.
+
+C1B also added the generic `SetupOrderBasis` guard after real corpus pressure exposed that deterministic setup ordering can be only canonical rather than historical.
+
+Tests-first evidence:
+
+- RED: `058be4254f60cf34330c2fe08d22d185e493c447`;
+- quality #125 reached pytest and failed because `SetupOrderBasis` was absent;
+- history contract: `2b63cb781b0804b8744e2c56322ac29f539c2c6b`;
+- prefix guard: `d4aae665ebf291e3247df131183848130ffe2dba`;
+- formatting-only follow-ups: `5adc2e191ef58ba2322d10083d17f372b6e8c9fc`, `03a52a15c5f6f3ad3bfbc2fae574e5ee2603b255`;
+- quality #129: PASS.
+
+**Stop here. C1C has not started. Do not proceed automatically; wait for explicit project-owner direction.**
 
 ### C1C — targeted acquisition
 
