@@ -5,7 +5,12 @@ from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, model_validator
 
-from clocktower_evidence_lab.domain.history import ControlOwner, SemanticEvent, SetupCommitment
+from clocktower_evidence_lab.domain.history import (
+    ControlOwner,
+    SemanticEvent,
+    SetupCommitment,
+    SetupOrderBasis,
+)
 from clocktower_evidence_lab.domain.primitives import SemanticId
 
 ShortText = Annotated[str, Field(min_length=1, max_length=256)]
@@ -127,6 +132,7 @@ def materialize_historical_prefix(
 
     boundary = decision.historical_prefix_boundary
     if boundary.setup_through_order is not None:
+        _validate_setup_prefix_order_evidence(setup_items)
         _validate_boundary_order_exists(
             boundary.setup_through_order,
             (item.setup_order for item in setup_items),
@@ -207,3 +213,15 @@ def _validate_boundary_order_exists(
         return
     if boundary_order not in tuple(existing_orders):
         raise ValueError(f"{history_kind} prefix boundary must identify an existing history order")
+
+
+def _validate_setup_prefix_order_evidence(
+    setup_history: Sequence[SetupCommitment],
+) -> None:
+    if any(
+        item.setup_order_basis is not SetupOrderBasis.EVIDENCED
+        for item in setup_history
+    ):
+        raise ValueError(
+            "setup-prefix materialization requires evidenced historical setup order"
+        )
