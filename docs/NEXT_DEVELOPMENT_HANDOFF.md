@@ -197,9 +197,23 @@ Current target remains:
 - at least 3 replayable Drunk-assignment cases;
 - seek 1–2 explicit historical assignment-rationale cases if available.
 
-Current achieved replay quota: 0 / 3.
+Current achieved replay quota: **1 / 3**.
 
-Do not enter C1D until a stable replay case exists.
+G01 E0 is now replayable:
+
+~~~text
+complete player role / shown-role layout fixed
+    ↓
+Sullivan selected as Drunk, shown Empath
+    ↓
+Red Herring = Sullivan selected later
+~~~
+
+Rationale and alternatives remain UNKNOWN.
+
+The next bounded review target is G02 `Live and Imp-Person`.
+
+Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
 ### C1D — downstream replay handoff
 
