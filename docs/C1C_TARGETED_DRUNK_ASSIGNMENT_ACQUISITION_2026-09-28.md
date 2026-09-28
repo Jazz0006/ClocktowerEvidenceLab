@@ -583,10 +583,31 @@ Current qualification caveat:
 - this remains independent Storyteller guidance, weaker than Steven Medway / Ben Burns creator-level evidence;
 - do not count either statement as a historical replay case.
 
+Playthrough human-review checkpoint — 2026-09-29:
+
+- **Game Playthrough 1 (11:22): NO DRUNK** in the reviewed game; screen out for C1C Drunk-assignment acquisition;
+- **Game 2 (16:23): Drunk assignment is present**;
+- at approximately **16:29**, the Storyteller explicitly states that because an **Empath is sitting next to the Demon**, she decides to make that Empath the Drunk;
+- this is an **explicit historical assignment rationale candidate** linking local seating topology to the Drunk choice;
+- do not yet promote Game 2 to `PREFIX_RECONSTRUCTABLE`: real-game status, the exact already-fixed setup state before 16:29, and the resulting assignment/prefix still require completion of the bounded human review;
+- no replay-quota increment is made at this checkpoint.
+
+Provisional Game 2 evidence shape:
+
+~~~text
+Empath adjacent to Demon
+    -> explicit Storyteller rationale
+    -> choose that Empath as Drunk
+~~~
+
+This historical statement is stronger than the earlier generic 07:53 Empath-between-evil guidance because it is tied to a specific playthrough decision, but replay status remains pending until the pre-assignment prefix is source-established.
+
 Disposition:
 
-- **GUIDANCE REVIEW: HIGH VALUE / PLAYTHROUGH REPLAY STATUS STILL UNKNOWN**;
-- do not count either playthrough until real-game status and assignment prefix are source-established.
+- **GAME 1: SCREENED OUT — NO DRUNK**;
+- **GAME 2: HIGH-VALUE ASSIGNMENT-RATIONALE CANDIDATE / PREFIX REVIEW IN PROGRESS**;
+- current replay quota remains **2 / 3**;
+- do not widen acquisition while Game 2 bounded review is still open.
 
 ### 3.2 Assignment-guidance sources
 
