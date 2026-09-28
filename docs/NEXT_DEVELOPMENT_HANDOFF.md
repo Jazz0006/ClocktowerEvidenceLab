@@ -263,7 +263,11 @@ New next lead:
 
 - G10 The Megavoid `Storytelling Tips & Tricks - BLOOD ON THE CLOCKTOWER (+ game playthrough!)`, YouTube `G9z25aM9u7s`;
 - current public description chapters: 07:53 `Who to Make Drunk`, 11:22 `Game Playthrough 1`, 16:23 `Game 2`;
-- first verify whether these are actual recorded games and whether either playthrough contains a Drunk assignment with visible setup construction.
+- guidance section already yielded two useful heuristics:
+  - Empath between two Evil players -> likely Drunk assignment candidate;
+  - Drunk Undertaker after an Evil death -> show the role that Evil had been bluffing as;
+- these are guidance only, not replay evidence;
+- next verify whether either playthrough is an actual game containing a Drunk with visible setup construction.
 
 Do not broaden collection unless G10/G08 fail.
 
