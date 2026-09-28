@@ -157,6 +157,8 @@ For example, “seat X is the Drunk, shown Townsfolk Y” may be a reconstructed
 
 A decision slice must identify the historical prefix immediately before the resulting commitment. The resulting choice itself and later setup/game events must not leak backward into that prefix.
 
+A deterministic/canonical setup ordering is not evidence of historical setup chronology. Only setup order explicitly marked as evidence-backed may be used to materialize a setup-time decision prefix. If the chronology is unknown, preserve that uncertainty rather than assigning prefix membership from canonical order.
+
 Evidence Lab may record explicitly observed considered or rejected alternatives, but it must not enumerate legal alternatives from Blood on the Clocktower rules. Legal candidate enumeration remains downstream ownership.
 
 ## 4. Source and copyright policy
