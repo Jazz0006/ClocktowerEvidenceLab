@@ -1,4 +1,4 @@
-name: podcast-recluse-asr-scout
+name: podcast-recluse-fast-asr-scout
 
 on:
   pull_request:
@@ -53,7 +53,7 @@ jobs:
       - name: Upload acquisition artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: recluse-asr-scout
+          name: recluse-fast-asr-scout
           path: |
             recluse.probe.json
             recluse.asr.json
