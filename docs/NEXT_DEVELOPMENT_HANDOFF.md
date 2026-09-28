@@ -252,7 +252,13 @@ Creator-guidance checkpoint complete:
 - materially complete assignment guidance: player-first, role-first, whole-setup-first;
 - classification: VERIFIED CREATOR-LEVEL ASSIGNMENT GUIDANCE / NOT_A_REPLAY_CASE.
 
-Next action: continue targeted search for one new real Drunk-bearing primary game for replay case 3 / 3. Confirm “actual played game” status before spending time on setup chronology.
+Next action: screen the bounded final candidate queue for replay case 3 / 3:
+
+1. G07 `Yeah Boi!` — TPI & Friends, YouTube `EsTXhFKtER8`, exact real Trouble Brewing, P0. Check only whether a Drunk exists before deeper review.
+2. G08 Edd Gabriel `The CLASSIC script! Trouble Brewing with a LEGEND` — YouTube `xYrWpBH5mJM`, P1 if G07 fails.
+3. G09 Dicebreaker — YouTube `m9RPf8tXxR4`, P2 fallback.
+
+Do not broaden collection unless this bounded queue fails.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
