@@ -247,11 +247,15 @@ C1C checkpoint — IN PROGRESS:
 - P0 is E0 `A Stud In Scarlet` around the known setup discussion window;
 - P1 is `Live and Imp-Person`, where Brooke = Drunk shown Undertaker and the full layout are already strong leads;
 - qualified general assignment guidance has been found, but is not counted as historical replay evidence;
-- current replay quota remains 0 / 3 because no source has yet established an evidence-backed pre-assignment setup prefix.
+- E0 `A Stud In Scarlet` has now passed bounded primary review and is the first `PREFIX_RECONSTRUCTABLE` Drunk-assignment case;
+- its verified ordering is: complete role/shown-role layout fixed → Sullivan selected as Drunk shown Empath → Red Herring selected later;
+- assignment rationale and alternatives remain UNKNOWN;
+- current replay quota is **1 / 3**;
+- next bounded target is `Live and Imp-Person`.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
-C1D remains blocked on stable replay cases.
+C1D remains blocked until the replay package is sufficiently stable for downstream handoff.
 
 Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
 
