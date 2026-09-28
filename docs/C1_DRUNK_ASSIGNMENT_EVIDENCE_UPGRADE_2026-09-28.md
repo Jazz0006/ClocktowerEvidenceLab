@@ -1,6 +1,6 @@
 # C1 — Drunk Assignment Evidence Upgrade
 
-> Status: **C1A + C1B COMPLETE / C1C NOT STARTED — awaiting project-owner decision**
+> Status: **C1A + C1B COMPLETE / C1C IN PROGRESS — bounded primary review required**
 >
 > Date: 2026-09-28
 >
@@ -350,11 +350,31 @@ This is a successful schema/evidence pressure test, not a reason to guess missin
 
 C1C has not started.
 
-### C1C — Targeted acquisition
+### C1C — Targeted acquisition — IN PROGRESS
 
-Search specifically for missing Drunk-assignment rationale/prefix evidence.
+The first targeted search pass is complete and has deliberately stopped broad discovery.
 
-Stop when the immediate replay evidence need is satisfied.
+Authority:
+
+- `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
+
+Current bounded queue:
+
+1. E0 `A Stud In Scarlet` setup conversation around the already-known 09:49 Drunk / 10:32 Red Herring region;
+2. `Live and Imp-Person` setup section — Brooke = Drunk shown Undertaker is already a strong result/layout lead;
+3. bounded verification of the Steven Medway Drunk podcast assignment section as general guidance, not a replay case;
+4. official 2019 Trouble Brewing Game 2 (Steven Medway) and Game 1 (Jon Gjengset) only if the first two historical candidates do not close enough of the replay gap.
+
+New guidance evidence supports the architectural direction that the apparent Townsfolk setup may exist before choosing which Townsfolk becomes the Drunk, and that assignment may depend on player/seat context. This is guidance evidence only; it does not backfill historical prefixes.
+
+Current quota state remains:
+
+- replayable Drunk-assignment cases: 0 / target 3;
+- explicit historical assignment-rationale cases: 0 / seek 1–2.
+
+C1C therefore remains `IN PROGRESS / BOUNDED_PRIMARY_REVIEW_REQUIRED`.
+
+Do not enter C1D until stable replay cases exist.
 
 ### C1D — CampBoardGameHost replay handoff
 
