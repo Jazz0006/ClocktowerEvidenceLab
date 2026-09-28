@@ -480,30 +480,45 @@ Disposition:
 - **HOLD — DO NOT SPEND HUMAN REVIEW TIME YET**;
 - retain as a lead only until the primary URL can be revalidated.
 
-#### C1C-G09 — Dicebreaker Let's Play Blood on the Clocktower — NEW P0
+#### C1C-G09 — Dicebreaker Let's Play Blood on the Clocktower — REVIEWED
 
 Primary source locator:
 
 - YouTube video ID: `m9RPf8tXxR4`;
 - real Trouble Brewing playthrough.
 
-Current access check — 2026-09-29:
+Bounded primary review result — 2026-09-29:
 
-- curated current resource index identifies this as a real 2019-11-02 Trouble Brewing playthrough;
-- the indexed link currently resolves to YouTube video `m9RPf8tXxR4`;
-- unlike G07, no private-video failure has been observed in the current access check.
+The visible 7-player setup is:
 
-Current evidence status:
+- Monk;
+- Empath;
+- Recluse;
+- **Drunk shown Librarian**;
+- Imp;
+- Baron;
+- Mayor.
 
-- real-game status: established by curated live-play index;
-- Drunk presence: UNKNOWN;
-- setup chronology: UNKNOWN.
+The source presents the completed identity layout and then begins play. It does **not** expose the historical setup-construction sequence that selected the Librarian seat to become the Drunk.
 
-Disposition:
+Current assignment status:
 
-- **P0 — SCREEN DRUNK PRESENCE FIRST**;
-- if no Drunk, stop immediately;
-- if Drunk exists, inspect only the setup/reveal surface needed to establish assignment prefix.
+- Drunk presence: VERIFIED;
+- shown Townsfolk role: VERIFIED = Librarian;
+- selected participant/seat: recoverable from the visible layout if normalized later;
+- assignment prefix: **UNKNOWN / NOT PREFIX_RECONSTRUCTABLE**;
+- assignment rationale: UNKNOWN;
+- explicitly considered/rejected Drunk alternatives: UNKNOWN;
+- replay disposition: **RESULT_ONLY — DO NOT COUNT TOWARD C1C 3-CASE QUOTA**.
+
+Additional primary-reviewed facts:
+
+- around **52:30**, the Empath receives `1`;
+- around **53:05**, Saint is shown/confirmed as one of the Demon bluffs.
+
+Registration-provenance note:
+
+From the visible seating, the Empath's neighbours are compatible with the Recluse being the only apparent source of an evil registration needed for result `1`. However, unless the primary video explicitly states the registration choice, Evidence Lab must keep the historical registration witness UNKNOWN / INFERRED rather than OBSERVED. This is another useful boundary case between source evidence and downstream rules-engine explanation.
 
 ### 3.2 Assignment-guidance sources
 
