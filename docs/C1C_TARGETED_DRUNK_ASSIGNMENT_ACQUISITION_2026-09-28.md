@@ -360,6 +360,58 @@ Do not collapse the rationale into later misinformation execution. The evidence 
 
 Those are related but remain separate semantic decisions.
 
+#### C1C-G06 — An Introduction to Blood on the Clocktower — NEW P0
+
+Primary source locator:
+
+- YouTube video ID: `nuOq54FHDsg`;
+- title: `An Introduction to Blood on the Clocktower`;
+- described by contemporary BotC/TPI material as a real filmed game rather than a scripted demonstration;
+- filmed with experienced Sydney players;
+- Steven Medway is explicitly part of the Storyteller/production context.
+
+Contemporary source notes give the clockwise lineup:
+
+- Lucy — Imp;
+- Misha — Virgin;
+- Julian — Baron;
+- Myeisha — Ravenkeeper;
+- Lewis — Chef;
+- **Kurt — Drunk shown Undertaker**;
+- Marianna — evil Bone Collector Traveler;
+- Doug — Saint;
+- Fil — Washerwoman;
+- Claire — Empath;
+- Abdallah — Spy.
+
+The same source notes later Drunk Undertaker misinformation materially influenced the game.
+
+Why this is the preferred third candidate:
+
+- exact Trouble Brewing core game with a Traveler recorded separately;
+- Drunk result is already strongly identified by contemporary source material;
+- creator/TPI Storyteller context gives independent coverage beyond the Ben/NRB cases;
+- it is an actual historical game, not a generic setup example.
+
+C1C primary-review questions:
+
+1. Does the video expose the complete player-role / shown-role layout before Kurt is established as the Drunk?
+2. What exact source moment establishes Kurt = Drunk shown Undertaker?
+3. Is any assignment rationale stated?
+4. Are any alternative Drunk participants/roles explicitly considered or rejected?
+5. Which later setup commitments are visibly after the Drunk assignment?
+
+Current status:
+
+- assignment result lead: **STRONG / PRIMARY REVIEW STILL REQUIRED**;
+- shown role lead: Undertaker;
+- assignment prefix: UNKNOWN;
+- assignment rationale: UNKNOWN;
+- independent Storyteller value: HIGH;
+- disposition: **P0 — bounded primary setup review**.
+
+Do not count G06 toward the 3-case quota until primary review establishes the historical prefix.
+
 ### 3.2 Assignment-guidance sources
 
 These sources improve the evidence taxonomy and tell us what to look for, but they are **not historical replay cases**.
