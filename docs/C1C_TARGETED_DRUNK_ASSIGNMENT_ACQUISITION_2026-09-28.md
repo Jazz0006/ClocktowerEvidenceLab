@@ -520,6 +520,44 @@ Registration-provenance note:
 
 From the visible seating, the Empath's neighbours are compatible with the Recluse being the only apparent source of an evil registration needed for result `1`. However, unless the primary video explicitly states the registration choice, Evidence Lab must keep the historical registration witness UNKNOWN / INFERRED rather than OBSERVED. This is another useful boundary case between source evidence and downstream rules-engine explanation.
 
+#### C1C-G10 — The Megavoid Storytelling Tips & Tricks — NEW P0
+
+Primary source:
+
+- YouTube video ID: `G9z25aM9u7s`;
+- title: `Storytelling Tips & Tricks - BLOOD ON THE CLOCKTOWER (+ game playthrough!)`;
+- current public source;
+- exact focus: Storytelling Trouble Brewing;
+- source description chapters:
+  - 07:53 — `Who to Make Drunk`;
+  - 11:22 — `Game Playthrough 1`;
+  - 16:23 — `Game 2`.
+
+Why this is useful:
+
+- the Drunk-selection discussion is explicitly isolated into a short bounded chapter;
+- the same source immediately follows with two Trouble Brewing playthrough segments;
+- this creates a chance to connect stated Storyteller policy to actual game setup decisions without reviewing a long full-game video.
+
+Current qualification note:
+
+- The Megavoid is an independent Blood on the Clocktower Storytelling-focused creator, not TPI-affiliated;
+- current community/resource indexes regularly recommend the channel for Storyteller learning;
+- this is weaker qualification evidence than Steven Medway / Ben Burns and should remain separately labelled.
+
+C1C review order:
+
+1. verify whether the two playthrough segments are actual recorded games rather than hypothetical/simulated walkthroughs;
+2. if actual, check whether either game contains a Drunk;
+3. only if Drunk exists, inspect enough setup material to determine whether the apparent role layout precedes the assignment;
+4. separately capture the 07:53 `Who to Make Drunk` guidance if it adds a rationale not already covered by Steven/Ben.
+
+Disposition:
+
+- **P0 — BOUNDED REVIEW ONLY**;
+- do not treat guidance as a historical replay;
+- do not count either playthrough until real-game status and assignment prefix are source-established.
+
 ### 3.2 Assignment-guidance sources
 
 These sources improve the evidence taxonomy and tell us what to look for, but they are **not historical replay cases**.
