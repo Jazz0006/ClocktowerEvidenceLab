@@ -418,6 +418,74 @@ Acquisition lesson:
 
 A source may display a complete plausible setup while still being an instructional/example presentation. Before promoting a setup into historical evidence, confirm that the source is recording an actual played game rather than explaining the game with an illustrative configuration.
 
+#### C1C-G07 — Trouble Brewing: Yeah Boi! — NEW P0
+
+Primary source locator:
+
+- YouTube video ID: `EsTXhFKtER8`;
+- title: `Trouble Brewing - Yeah Boi! | TPI & Friends Play Blood on the Clocktower (in Person!)`;
+- The Pandemonium Institute / TPI & Friends;
+- exact script: Trouble Brewing;
+- real in-person played game;
+- public recommendations describe it as a compact example where experienced/expert Clocktower players are still challenged by Trouble Brewing.
+
+Why G07 is now P0:
+
+- source is clearly a real played game, avoiding the G06 instructional-source failure mode;
+- source quality / TPI context is stronger than the remaining generic community candidates;
+- it provides independent production context from the two counted Ben/NRB cases;
+- the full game is under roughly one hour, so initial Drunk-presence screening should be cheap.
+
+Current unknowns:
+
+- whether this exact setup contains a Drunk;
+- if so, selected player and shown Townsfolk role;
+- whether setup construction / assignment chronology is visible;
+- assignment rationale / alternatives.
+
+Disposition:
+
+- **P0 — SCREEN DRUNK PRESENCE FIRST**;
+- do not watch the full game merely for C1C;
+- if no Drunk, immediately reject for C1C and move to G08.
+
+#### C1C-G08 — Edd Gabriel / The CLASSIC script! Trouble Brewing with a LEGEND — P1
+
+Primary source locator:
+
+- YouTube video ID: `xYrWpBH5mJM`;
+- two real Trouble Brewing games in one video;
+- Edd Gabriel is the Storyteller;
+- public chaptering exposes game boundaries / grimoire reveals, allowing bounded screening without watching both games in full.
+
+Current status:
+
+- real-game status: established;
+- Drunk presence: UNKNOWN;
+- assignment chronology: UNKNOWN.
+
+Disposition:
+
+- **P1 — SCREEN ONLY IF G07 FAILS**;
+- preferred fallback because it gives independent experienced-Storyteller coverage.
+
+#### C1C-G09 — Dicebreaker Let's Play Blood on the Clocktower — P2
+
+Primary source locator:
+
+- YouTube video ID: `m9RPf8tXxR4`;
+- real Trouble Brewing playthrough.
+
+Current status:
+
+- Drunk presence: UNKNOWN;
+- setup chronology: UNKNOWN;
+- no current evidence advantage over G07/G08.
+
+Disposition:
+
+- **P2 / fallback only**.
+
 ### 3.2 Assignment-guidance sources
 
 These sources improve the evidence taxonomy and tell us what to look for, but they are **not historical replay cases**.
