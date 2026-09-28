@@ -73,6 +73,10 @@ A DecisionSlice is a downstream projection from a reconstructed game, not the pr
 
 Direct telemetry from the Storyteller app is explicitly deferred.
 
+Targeted expert podcasts may also be used as a complementary **rationale source**. Podcast transcripts are discovery aids only: full audio/transcripts stay outside Git, and machine-located windows require primary-audio review before they become verified evidence.
+
+See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
+
 ## Storage direction
 
 The project is local-first. E1 has frozen the initial implementation foundation:
@@ -97,3 +101,4 @@ See:
 - `docs/TESTING_STRATEGY.md`
 - `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`
+- `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
