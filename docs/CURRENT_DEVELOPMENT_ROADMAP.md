@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / READY TO MERGE; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; continuous evidence collection — LOW-FREQUENCY / TARGETED
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — PLANNED / DOCUMENTATION CONTRACT FROZEN
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -161,6 +161,64 @@ Cross-project handoff:
 
 Do not grow raw corpus count by default. Continue only where a new game/source closes a known replay blocker, adds a missing evidence shape, or supplies explicit qualified Storyteller rationale.
 
+## 2.2 C1 route correction — Drunk assignment becomes an algorithm output — 2026-09-28
+
+CampBoardGameHost is changing its setup flow so that the setup/template decides whether a Drunk exists, while the Storyteller Decision Engine later chooses which already-shown Townsfolk seat is actually the Drunk.
+
+This changes an important Evidence Lab boundary.
+
+Old downstream assumption:
+
+```text
+selected Drunk identity = fixed algorithm input
+```
+
+New downstream need:
+
+```text
+pre-assignment setup prefix
+    ↓
+Storyteller chooses Drunk seat
+    ↓
+resulting assignment
+    ↓
+later misinformation decisions
+```
+
+C1 therefore promotes setup-time decision evidence to an immediate product need.
+
+Frozen C1 direction:
+
+- Drunk existence, Drunk assignment and Drunk misinformation are separate semantics;
+- the resulting Drunk setup fact remains authoritative reconstruction history;
+- a generic DecisionSlice represents the Storyteller choice as a derived analytical view;
+- a generic HistoricalPrefixBoundary must support setup-time as well as event-time decisions;
+- the assignment decision prefix must stop before its own resulting SetupCommitment;
+- later Red Herring, Poisoner, information and outcome history must not leak backward;
+- Evidence Lab may record source-observed considered/rejected alternatives;
+- Evidence Lab must not derive legal Drunk candidates from BotC rules;
+- existing Drunk-bearing corpus is re-audited before any new acquisition;
+- new acquisition remains low-frequency and targeted at missing assignment prefix/rationale evidence;
+- persistence expansion remains deferred until the domain contract survives real corpus projection and downstream replay.
+
+Implementation order:
+
+```text
+C1A generic domain contract
+    ↓
+C1B existing-corpus Drunk re-audit/projection
+    ↓
+C1C targeted assignment-rationale acquisition
+    ↓
+C1D CampBoardGameHost replay handoff
+    ↓
+C1E persistence only if justified
+```
+
+C1 completion does not require broad corpus growth or a new Alembic migration.
+
+Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
+
 ## 3. Milestones
 
 ### E0 — Evidence contract pilot — COMPLETE
@@ -229,7 +287,11 @@ A downstream researcher can understand exactly what happened, what remains unkno
 
 No production legality or policy scoring is implemented.
 
-### E1 — Domain and persistence foundation — CHECKPOINT COMPLETE / READY TO MERGE
+### E1 — Domain and persistence foundation — COMPLETE / MERGED
+
+PR #2 was squash-merged to `main` on 2026-09-23. The E1/C0 baseline main commit is `157a91f47112a7e4af02bc6e4c9e8613ef99d490`.
+
+The detailed branch/PR status statements below are retained as historical implementation notes; they are not live merge instructions.
 
 E0 has validated the workflow and PR #1 has been squash-merged to `main` at `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
 
