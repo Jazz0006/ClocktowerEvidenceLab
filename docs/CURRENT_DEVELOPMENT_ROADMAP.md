@@ -275,8 +275,11 @@ C1C checkpoint — IN PROGRESS:
 - the podcast remains guidance, not a historical replay case, so the replay quota stays 2 / 3;
 - G07 TPI & Friends `Yeah Boi!` is rejected for current C1C because the linked primary video is now Private; old indexes remain locator-only;
 - G08 Edd Gabriel is on HOLD because current access could not be revalidated;
-- G09 Dicebreaker 2019 Trouble Brewing is promoted to P0 because a current curated live-play index resolves to its YouTube primary locator;
-- screen G09 only for Drunk presence first; do not broaden again unless this bounded route fails.
+- G09 Dicebreaker 2019 Trouble Brewing has now been primary-reviewed: the 7-player setup includes a Drunk shown Librarian, but the source presents an already-completed setup and does not expose the historical assignment construction sequence;
+- G09 is therefore RESULT_ONLY / NOT PREFIX_RECONSTRUCTABLE and does not increase the replay quota beyond 2 / 3;
+- G09 ancillary facts include Empath = 1 around 52:30 and Saint as a Demon bluff around 53:05; the Empath result is mechanically compatible with Recluse registration but the historical registration witness remains UNKNOWN unless source-explicit;
+- new next lead is G10 The Megavoid `Storytelling Tips & Tricks - BLOOD ON THE CLOCKTOWER (+ game playthrough!)`, current public YouTube `G9z25aM9u7s`; its chaptering includes `07:53 Who to Make Drunk`, `11:22 Game Playthrough 1`, and `16:23 Game 2`;
+- G10 must first be checked for whether the playthroughs are actual recorded games and whether either contains a Drunk assignment with visible setup context.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
