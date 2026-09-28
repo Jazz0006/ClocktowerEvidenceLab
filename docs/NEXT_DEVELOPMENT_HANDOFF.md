@@ -243,9 +243,9 @@ G05 `A Fond Farewell` has now passed primary review:
 
 C1C quota is now **2 / 3 replayable assignments**, with **1 explicit historical assignment rationale**.
 
-Next action: bounded primary review of G06 `An Introduction to Blood on the Clocktower` — YouTube `nuOq54FHDsg`.
+G06 `An Introduction to Blood on the Clocktower` has been rejected after primary review: it is an instructional/game-introduction video, not a recording of a real historical game. Do not use its illustrative lineup as corpus evidence.
 
-Contemporary TPI-era source material identifies Kurt as Drunk shown Undertaker in a real game with Steven Medway involved. Verify only whether the video exposes enough setup chronology for a historical prefix. If yes, G06 can become replay case 3 / 3; if not, retain only the assignment-result lead and continue targeted acquisition.
+Next action: find one new real Drunk-bearing primary game for replay case 3 / 3. Confirm “actual played game” status before spending time on setup chronology.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
