@@ -88,12 +88,15 @@ Evidence Lab therefore needs to preserve:
 
 Evidence Lab does not derive the legal candidate set. That remains downstream rules-engine work.
 
-C1A and C1B are complete. The existing-corpus re-audit found four partial/result Drunk-assignment cases but no case with a sufficiently evidenced pre-assignment setup prefix for replay. Targeted acquisition remains the next C1 stage and has not started.
+C1A and C1B are complete. C1C targeted acquisition is now in progress. The existing-corpus re-audit found four partial/result Drunk-assignment cases but no case with a sufficiently evidenced pre-assignment setup prefix for replay, so broad collection remains stopped in favour of bounded primary review.
+
+Current C1C priority is to re-check the known setup discussion in E0 `A Stud In Scarlet`, then the setup section of `Live and Imp-Person`. Qualified assignment guidance is retained separately and does not count as historical replay evidence.
 
 See:
 
 - `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`;
-- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
+- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`;
+- `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
 ## Storage direction
 
