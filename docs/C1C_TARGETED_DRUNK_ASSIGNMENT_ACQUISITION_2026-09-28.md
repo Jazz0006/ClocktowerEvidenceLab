@@ -253,12 +253,42 @@ Primary source:
 - 7-player Trouble Brewing;
 - Storyteller: Jon Gjengset.
 
-As with G03, current indexed metadata verifies game identity, script, player count and Storyteller but not Drunk presence/assignment.
+Bounded primary review result — 2026-09-28:
 
-Disposition:
+The reviewed 7-player Trouble Brewing setup shows:
 
-- **PRIMARY_CANDIDATE / DRUNK_PRESENCE_NOT_YET_ESTABLISHED**;
-- lower priority than G01/G02 because it first requires screening for whether the required evidence shape exists.
+- Jordan — Spy;
+- Jason — Ravenkeeper;
+- Reggie — Undertaker;
+- Evin — Virgin;
+- Zach — Imp;
+- Meg — Mayor;
+- Nicole — Washerwoman.
+
+Therefore **no Drunk is in this setup**.
+
+The Demon learns three bluffs:
+
+- Investigator;
+- Soldier;
+- Chef.
+
+Night-1 primary screenshots also preserve an explicit registration witness:
+
+- Nicole, as Washerwoman, falsely learns that Zach or Jordan is the Soldier;
+- the video explicitly states this information is possible because **Jordan, the Spy, is registering as the Soldier** for this interaction.
+
+Disposition for C1C assignment acquisition:
+
+- **SCREENED OUT — NO DRUNK**;
+- contributes 0 Drunk-assignment replay cases;
+- do not spend more C1C review time on this game.
+
+Ancillary evidence value:
+
+- strong primary example of an explicit historical Spy registration witness;
+- unlike rules-derived compatible witnesses, this witness is source-observed and may be recorded as historical evidence;
+- useful future registration / Washerwoman / Spy calibration case outside the narrow C1C assignment quota.
 
 ### 3.2 Assignment-guidance sources
 
