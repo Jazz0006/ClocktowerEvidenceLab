@@ -77,7 +77,9 @@ Do not restart broad corpus growth. The C1B re-audit of existing Drunk-bearing T
 
 Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
 
-C1C targeted acquisition has not started. When authorized, search only for the missing evidence shapes rather than for generic games containing a Drunk.
+C1C targeted acquisition is now in progress. The broad search pass has been stopped after producing a small bounded review queue. Current priority is E0 `A Stud In Scarlet` setup commentary first, then `Live and Imp-Person`; official Steven Medway/Jon Gjengset Trouble Brewing playthroughs are secondary screen candidates. General expert Drunk-assignment guidance is retained as guidance evidence but does not count as a historical replay case.
+
+See `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
 For a Drunk-bearing game, record when evidence permits:
 
