@@ -33,6 +33,7 @@ jobs:
         shell: bash
         run: |
           set -u
+          set +e
           mkdir -p scout
           for id in 2TlW06GVF8I pVzZms1FTr4 m14N28Lq-jM; do
             {
@@ -69,9 +70,11 @@ jobs:
               ]
           print(json.dumps(payload, ensure_ascii=False))
           PY
+            status=$?
+            echo "$status" > "scout/$id.transcript-api.status"
           done
       - name: Upload targeted scout artifacts
-        if: github.head_ref == 'targeted-tb-game-gap-scout-20260928'
+        if: always() && github.head_ref == 'targeted-tb-game-gap-scout-20260928'
         uses: actions/upload-artifact@v4
         with:
           name: targeted-tb-game-gap-scout
