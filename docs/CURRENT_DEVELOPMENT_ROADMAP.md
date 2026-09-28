@@ -258,7 +258,12 @@ C1C checkpoint — IN PROGRESS:
 - G04 independently provides a strong source-observed registration example: Jordan the Spy explicitly registers as Soldier to support Nicole's false Washerwoman clue;
 - current Drunk-assignment replay quota therefore remains 1 / 3;
 - the exhausted G03/G04 pair has been replaced by G05 `A Fond Farewell`, an official Trouble Brewing video Storytold by Ben Burns with a bounded 00:00–04:25 Intro & Setup chapter;
-- G05 is now the highest-priority C1C assignment candidate; prior project notes are treated only as locator leads until this setup segment is re-reviewed under the C1 contract.
+- G05 `A Fond Farewell` has now passed bounded primary review and is the second `PREFIX_RECONSTRUCTABLE` Drunk-assignment case;
+- verified ordering: complete role layout → Chef selected as Drunk at 03:32 → Red Herring selected at 04:04 → Demon bluffs at 04:47;
+- Ben explicitly gives the assignment rationale: make the Chef Drunk so a ridiculously high Chef number can be used as the intended misinformation narrative;
+- surrounding Recluse / Scarlet Woman / Traveler-adjacency discussion is preserved as setup context, not misclassified as alternate Drunk candidates;
+- current replay quota is **2 / 3** and explicit historical assignment-rationale quota is **1 / 1–2**;
+- next C1C work should find only one more targeted Drunk-bearing primary case.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
