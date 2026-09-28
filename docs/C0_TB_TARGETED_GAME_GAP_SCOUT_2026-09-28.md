@@ -306,6 +306,94 @@ A current curated source identifies Baron Ted as a credited former TPI contribut
 
 This is high-value Gap C/D **rationale support**, but it is not a complete real-game record and must remain separate from the whole-game corpus.
 
+### G08 — NRB Legacy Episode One, Game One
+
+Source:
+
+- No Rolls Barred Legacy Episode One;
+- released 2025-04-19;
+- Storytellers: Ben + Laurie;
+- Game One uses **standard Trouble Brewing** before the Flesh & Bone script changes begin.
+
+A detailed public secondary reconstruction provides a complete game-state backbone.
+
+Setup:
+
+| Player | Role |
+| --- | --- |
+| Jon | Empath |
+| Emily | Ravenkeeper |
+| Holly | Fortune Teller |
+| Tilly | Washerwoman |
+| Dom | Mayor |
+| Ken | Scarlet Woman |
+| Mara | Imp |
+| Sullivan | Saint |
+
+Setup commitment:
+
+- Demon bluffs: Chef / Recluse / Undertaker;
+- Fortune Teller Red Herring: Dom (Mayor).
+
+Ordered backbone:
+
+~~~text
+N1
+Washerwoman -> Emily/Mara contains Ravenkeeper
+Empath -> 0
+Fortune Teller Jon/Emily -> NO
+
+D1
+Mara (Imp) executed
+Ken (Scarlet Woman) becomes Imp
+
+N2
+Ken kills Tilly
+Fortune Teller Dom/Tilly -> YES via Red Herring
+Empath -> 0
+
+D2
+Dom executed
+
+N3
+Ken kills Holly
+Empath -> 0
+
+D3
+no execution
+
+N4
+Ken kills Sullivan
+Empath -> 1 for Ken/Emily
+
+D4
+Ken executed
+Good wins
+~~~
+
+Screening result:
+
+- whole-game reconstructability is strong;
+- the standard-TB boundary is clean for Game One;
+- the bluff triplet is known;
+- however, there is no Drunk, Poisoner, Spy or Recluse in play;
+- no choice-over-alternatives rationale for the bluff triplet has been recovered.
+
+Gap fit:
+
+- Gap A: no current explicit rationale;
+- Gap B: **no relevant impairment mechanism**;
+- Gap C: **no Spy/Recluse exposure interaction**;
+- Gap D: the bluff triplet exists, but no comparative rationale has been recovered.
+
+Disposition:
+
+> **SCREENED / DEPRIORITIZED — retain as a high-quality real-game record, but do not reconstruct now for E3.**
+
+This is an intentional application of the stop rule: a complete, well-documented game is not automatically a high-value acquisition when it does not close a current evidence gap.
+
+Game Two from the same episode is not standard Trouble Brewing after Flesh & Bone modifications and is outside the current app scope.
+
 ## 3. Transcript-access experiment
 
 A bounded one-off probe tested:
@@ -384,6 +472,7 @@ Acquisition consequence:
 | G05 Richard + Evil Steve teaching game | full teaching game | contemporaneous E3 qualification uncertain | many explicit choice comparisons | yes, by design | **method lead** |
 | G06 TPI Introduction honest game | official setup + outcome; video edited | TPI | B contrast visible | no exact choice rationale yet | **P1 auxiliary** |
 | G07 TPI Episode 1 | official full game | TPI; exact ST still to establish | unknown | not yet | **P1** |
+| G08 NRB Legacy E1 Game 1 | strong secondary reconstruction | Ben + Laurie | D only as an unexplained bluff triplet | not yet | **deprioritized** |
 
 ## 5. Next acquisition action
 
