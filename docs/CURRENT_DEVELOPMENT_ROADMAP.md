@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A + C1B COMPLETE / C1C NOT STARTED
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A + C1B COMPLETE / C1C IN PROGRESS
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -240,7 +240,18 @@ C1B checkpoint — COMPLETE:
 
 Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
 
-C1C is **not started**. Do not begin targeted acquisition automatically; wait for project-owner direction.
+C1C checkpoint — IN PROGRESS:
+
+- broad “games with a Drunk” search remains stopped;
+- a bounded primary-review queue is now established;
+- P0 is E0 `A Stud In Scarlet` around the known setup discussion window;
+- P1 is `Live and Imp-Person`, where Brooke = Drunk shown Undertaker and the full layout are already strong leads;
+- qualified general assignment guidance has been found, but is not counted as historical replay evidence;
+- current replay quota remains 0 / 3 because no source has yet established an evidence-backed pre-assignment setup prefix.
+
+Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
+
+C1D remains blocked on stable replay cases.
 
 Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
 
