@@ -256,11 +256,16 @@ Final replay acquisition state:
 
 - G07 `Yeah Boi!`: rejected for current C1C because the primary YouTube video is Private;
 - G08 Edd Gabriel: HOLD until current primary access is revalidated;
-- G09 Dicebreaker `Let's Play Blood on the Clocktower`, YouTube `m9RPf8tXxR4`: current P0.
+- G09 Dicebreaker `Let's Play Blood on the Clocktower`: primary-reviewed; Drunk shown Librarian is verified, but the video starts from an already-completed setup, so assignment prefix remains UNKNOWN and the case is RESULT_ONLY / not replayable;
+- current replay quota remains **2 / 3**.
 
-Next action: screen G09 only for whether a Drunk exists. If no Drunk, stop immediately. If a Drunk exists, review only enough setup material to establish assignment result and pre-assignment prefix.
+New next lead:
 
-Do not broaden collection unless this bounded route fails.
+- G10 The Megavoid `Storytelling Tips & Tricks - BLOOD ON THE CLOCKTOWER (+ game playthrough!)`, YouTube `G9z25aM9u7s`;
+- current public description chapters: 07:53 `Who to Make Drunk`, 11:22 `Game Playthrough 1`, 16:23 `Game 2`;
+- first verify whether these are actual recorded games and whether either playthrough contains a Drunk assignment with visible setup construction.
+
+Do not broaden collection unless G10/G08 fail.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
