@@ -273,8 +273,10 @@ C1C checkpoint — IN PROGRESS:
 - verified creator-level guidance identifies three Drunk-assignment modes: player-first, role-first and whole-setup-first;
 - this directly supports a late-bound assignment engine that can consume player context, shown-role semantics and whole-setup topology;
 - the podcast remains guidance, not a historical replay case, so the replay quota stays 2 / 3;
-- final replay acquisition is now bounded to a small queue: G07 TPI & Friends `Yeah Boi!` (P0, real TB game, screen Drunk presence first), G08 Edd Gabriel two-game Trouble Brewing video (P1), then G09 Dicebreaker (P2);
-- do not broaden again unless this bounded queue fails.
+- G07 TPI & Friends `Yeah Boi!` is rejected for current C1C because the linked primary video is now Private; old indexes remain locator-only;
+- G08 Edd Gabriel is on HOLD because current access could not be revalidated;
+- G09 Dicebreaker 2019 Trouble Brewing is promoted to P0 because a current curated live-play index resolves to its YouTube primary locator;
+- screen G09 only for Drunk presence first; do not broaden again unless this bounded route fails.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
