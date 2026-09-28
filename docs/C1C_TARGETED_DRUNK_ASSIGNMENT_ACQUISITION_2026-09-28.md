@@ -146,13 +146,22 @@ However, the currently indexed recap does **not** establish:
 - assignment rationale;
 - explicit considered/rejected alternatives.
 
-Current status:
+Bounded primary review result — 2026-09-28:
 
-- assignment result: strong secondary reconstruction lead;
-- full layout: strong secondary reconstruction lead;
-- assignment prefix: UNKNOWN;
+- around 04:10 the source reveals Brooke as the actual Drunk shown/believing Undertaker;
+- no reason is stated for choosing Brooke as the Drunk;
+- no alternative Drunk participant/role is discussed;
+- the video presents the game as an already-designed setup rather than showing the Drunk-assignment construction process;
+- therefore the source does not establish which setup commitments were historically fixed immediately before Brooke was selected.
+
+Current assignment status:
+
+- assignment result: VERIFIED by human primary review;
+- shown role: VERIFIED = Undertaker;
+- assignment prefix: **UNKNOWN / NOT PREFIX_RECONSTRUCTABLE**;
 - assignment rationale: UNKNOWN;
-- next action: **BOUNDED_PRIMARY_SETUP_REVIEW_REQUIRED**.
+- explicitly considered/rejected assignment alternatives: UNKNOWN;
+- replay disposition: **DO NOT COUNT TOWARD C1C 3-CASE ASSIGNMENT QUOTA**.
 
 C1C bounded locator search on 2026-09-28 additionally confirmed:
 
@@ -163,11 +172,29 @@ C1C bounded locator search on 2026-09-28 additionally confirmed:
 
 Do not guess a setup timestamp and do not import the fan recap as primary chronology.
 
-Manual review should begin at the opening Storyteller/setup section and stop once the source establishes:
+Manual review is now complete for the assignment question. Do not spend more time trying to manufacture setup chronology from this episode unless a new unedited/setup-construction source for the same game appears.
 
-1. what layout/setup facts are already fixed before Brooke becomes the Drunk;
-2. the Brooke = Drunk shown Undertaker commitment;
-3. any immediately later setup commitment needed to prove the boundary.
+### G02 independent value — explicit Drunk misinformation strategy
+
+The same primary review recovered a separate high-value Storyteller strategy statement from Ben.
+
+Paraphrased strategy:
+
+- give Brooke correct information for the first one or two nights so that she does not suspect she is the Drunk;
+- after that, continue giving her incorrect information.
+
+Evidence classification:
+
+- decision family: **Drunk misinformation / longitudinal impaired narrative**;
+- source type: primary Storyteller commentary in a real game;
+- historical assignment rationale: NOT APPLICABLE;
+- assignment prefix evidence: does not improve;
+- misinformation strategy/rationale: **EXPLICIT**;
+- multi-night intent: **EXPLICIT**.
+
+This must not be copied into the Drunk-assignment rationale field.
+
+It is valuable for the separate downstream impaired-narrative policy because it provides direct expert evidence for deliberate early truth followed by sustained false information to protect the Drunk's subjective role belief.
 
 #### C1C-G03 — official Trouble Brewing October 2019 Game 2 — P2
 
@@ -357,10 +384,12 @@ Use this order:
    - Red Herring is later;
    - assignment rationale/alternatives remain UNKNOWN.
 
-2. **G02 Live and Imp-Person bounded setup review**
-   - known Drunk = Brooke / shown Undertaker;
-   - full layout already available as a secondary lead;
-   - review only the setup-construction section first.
+2. **G02 Live and Imp-Person — ASSIGNMENT REVIEW COMPLETE / NOT REPLAYABLE**
+   - Brooke = Drunk shown Undertaker is primary-verified;
+   - no assignment rationale or alternatives;
+   - source shows an already-designed setup, so the pre-assignment prefix remains UNKNOWN;
+   - do not count toward the 3-case assignment quota;
+   - retain Ben's explicit multi-night Drunk misinformation strategy separately.
 
 3. **A01 Steven Medway podcast bounded assignment window**
    - verify general assignment rationale/alternatives against original audio;
@@ -393,7 +422,9 @@ It has **not yet** satisfied the full replay quota, but the first historical rep
 - replayable Drunk-assignment cases: **1 / target 3**;
 - explicit historical assignment-rationale cases: **0 / seek 1–2**;
 - qualified general assignment-rationale sources: **2+**;
-- remaining high-value bounded historical game candidates: G02 immediate + G03/G04 secondary.
+- G02 assignment result is verified but not prefix-reconstructable;
+- remaining historical assignment candidates: G03/G04 official games;
+- G02 adds one explicit real-game Drunk misinformation strategy case, separate from the assignment quota.
 
 Therefore C1C remains:
 
@@ -403,14 +434,14 @@ This is not a reason to enter C1D.
 
 ## 9. Next checkpoint
 
-The next C1C checkpoint is **G02 — Live and Imp-Person**.
+The next C1C checkpoint is screening **G03/G04 official 2019 Trouble Brewing games** for whether a Drunk assignment exists and whether the setup construction is visible.
 
-Review only the setup-construction section and answer:
+G02 is closed for the assignment question:
 
-1. Is the complete apparent role / shown-role layout already fixed before Brooke is selected as the Drunk?
-2. What exact source moment establishes Brooke = Drunk shown Undertaker?
-3. Is any assignment rationale stated?
-4. Are any alternative Drunk participants/roles explicitly considered or rejected?
-5. Which setup choices are demonstrably after assignment?
+- result = verified;
+- prefix = unknown;
+- rationale = unknown;
+- assignment alternatives = unknown;
+- misinformation strategy = explicit and retained separately.
 
-Do not use the secondary recap to manufacture chronology. If the primary source does not establish prefix membership, retain the case as partial and move to the next bounded candidate.
+Do not re-open G02 assignment chronology without a new source surface.
