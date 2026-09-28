@@ -86,16 +86,29 @@ Bounded primary-review target:
 - capture any explicit reason for choosing Sullivan/Empath;
 - capture any explicitly considered/rejected alternative.
 
+Bounded primary review result — 2026-09-28:
+
+- at the point Sullivan is selected as the Drunk, the complete player role / shown-role layout is already fixed;
+- Sullivan is selected as the Drunk while shown Empath;
+- no assignment rationale is stated;
+- no alternative Drunk participant/role is discussed;
+- Red Herring = Sullivan is selected after the Drunk assignment;
+- the internal order in which the individual roles inside the complete layout were originally chosen remains UNKNOWN.
+
 Current status:
 
-- assignment result: VERIFIED from prior E0 primary review;
+- assignment result: VERIFIED;
 - shown role: VERIFIED = Empath;
-- seat/layout: primary-supported;
-- assignment prefix: `PREFIX_PARTIAL`;
+- seat/layout: VERIFIED as already fixed before assignment;
+- assignment prefix: **PREFIX_RECONSTRUCTABLE**;
 - assignment rationale: UNKNOWN;
-- next action: **BOUNDED_PRIMARY_REVIEW_REQUIRED**.
+- explicitly considered/rejected alternatives: UNKNOWN;
+- later Red Herring: VERIFIED as after assignment;
+- replay status: **C1C REPLAY CASE 1 / 3**.
 
-This is the highest-value C1C target because the needed review window is already known and small.
+For replay, model the already-fixed complete role layout as one evidenced setup commitment group. This preserves the verified group ordering without inventing an internal role-selection order.
+
+G01 is therefore resolved and no longer blocks on primary review.
 
 #### C1C-G02 — Live and Imp-Person — P1
 
@@ -303,21 +316,33 @@ This is useful architecture evidence.
 
 It is not permission to rewrite any historical game's unknown prefix.
 
-### 5.3 E0 is the cheapest possible route to the first replayable assignment case
+### 5.3 E0 is now the first replayable assignment case
 
-C1B treated E0 conservatively because the stored evidence did not establish setup internal chronology.
+C1B correctly treated E0 conservatively because the stored evidence did not establish assignment-time prefix membership.
 
-C1C now has a concrete bounded-review hypothesis: the existing primary video itself may contain the needed chronology in the known setup discussion window.
+The C1C bounded primary review has now established enough partial chronology:
 
-Therefore do not search broadly before resolving G01.
+~~~text
+complete role / shown-role layout fixed
+    ↓
+Sullivan selected as Drunk, shown Empath
+    ↓
+Red Herring = Sullivan selected later
+~~~
+
+The exact internal order of role selection inside the complete layout remains UNKNOWN and is intentionally not reconstructed.
+
+This is sufficient for the first `PREFIX_RECONSTRUCTABLE` Drunk-assignment case.
 
 ## 6. Acquisition queue
 
 Use this order:
 
-1. **G01 E0 bounded review — approx. 09:30–10:40**
-   - highest chance of converting an existing strong result case into `PREFIX_RECONSTRUCTABLE`;
-   - also the best chance of finding assignment rationale without acquiring a new full game.
+1. **G01 E0 — COMPLETE / REPLAY CASE 1**
+   - complete role layout is verified before Drunk assignment;
+   - Sullivan = Drunk shown Empath;
+   - Red Herring is later;
+   - assignment rationale/alternatives remain UNKNOWN.
 
 2. **G02 Live and Imp-Person bounded setup review**
    - known Drunk = Brooke / shown Undertaker;
@@ -350,12 +375,12 @@ Escalate a candidate to a C1 replay case only when source review establishes eno
 
 C1C has successfully produced a bounded evidence-acquisition queue and added independent assignment-rationale guidance.
 
-It has **not yet** satisfied the replay quota:
+It has **not yet** satisfied the full replay quota, but the first historical replay case is now complete:
 
-- replayable Drunk-assignment cases: **0 / target 3**;
+- replayable Drunk-assignment cases: **1 / target 3**;
 - explicit historical assignment-rationale cases: **0 / seek 1–2**;
 - qualified general assignment-rationale sources: **2+**;
-- high-value bounded historical game candidates: **2 immediate + 2 secondary**.
+- remaining high-value bounded historical game candidates: G02 immediate + G03/G04 secondary.
 
 Therefore C1C remains:
 
@@ -365,15 +390,14 @@ This is not a reason to enter C1D.
 
 ## 9. Next checkpoint
 
-The next C1C checkpoint is the bounded primary review of G01.
+The next C1C checkpoint is **G02 — Live and Imp-Person**.
 
-The review should answer only:
+Review only the setup-construction section and answer:
 
-1. What setup facts are explicitly already fixed before Sullivan is selected?
-2. What exact statement commits Sullivan/Empath as the Drunk assignment?
-3. Is the apparent Townsfolk/seat layout already fixed?
-4. Is there explicit assignment rationale?
-5. Are any alternative Drunk seats/roles explicitly considered or rejected?
-6. Which later setup choices are demonstrably after assignment?
+1. Is the complete apparent role / shown-role layout already fixed before Brooke is selected as the Drunk?
+2. What exact source moment establishes Brooke = Drunk shown Undertaker?
+3. Is any assignment rationale stated?
+4. Are any alternative Drunk participants/roles explicitly considered or rejected?
+5. Which setup choices are demonstrably after assignment?
 
-If the source cannot establish these, retain `PREFIX_PARTIAL` and move to G02 without inventing chronology.
+Do not use the secondary recap to manufacture chronology. If the primary source does not establish prefix membership, retain the case as partial and move to the next bounded candidate.
