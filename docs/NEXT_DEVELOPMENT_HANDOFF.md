@@ -245,7 +245,12 @@ C1C quota is now **2 / 3 replayable assignments**, with **1 explicit historical 
 
 G06 `An Introduction to Blood on the Clocktower` has been rejected after primary review: it is an instructional/game-introduction video, not a recording of a real historical game. Do not use its illustrative lineup as corpus evidence.
 
-Next action: find one new real Drunk-bearing primary game for replay case 3 / 3. Confirm “actual played game” status before spending time on setup chronology.
+Next actions:
+
+1. verify only Cult of the Clocktower episode 16 window **01:28:18–01:29:18** against the original audio if promoting creator-level assignment guidance; the machine-ASR provisionally describes three assignment modes: player-first, role-first and whole-setup-first;
+2. continue targeted search for one new real Drunk-bearing primary game for replay case 3 / 3.
+
+The podcast remains guidance, not a historical replay case. Confirm “actual played game” status before spending time on setup chronology for any new candidate.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
