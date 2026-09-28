@@ -49,9 +49,7 @@ def _setup_decision(
         "reconstruction_revision_id": "revision:game1:1",
         "decision_type": "DRUNK_ASSIGNMENT",
         "controller": ControlOwner.STORYTELLER,
-        "historical_prefix_boundary": HistoricalPrefixBoundary(
-            setup_through_order=boundary_order
-        ),
+        "historical_prefix_boundary": HistoricalPrefixBoundary(setup_through_order=boundary_order),
         "subject_seat_id": "seat:game1:3",
         "observed_choice": {
             "selected_seat_id": "seat:game1:3",
