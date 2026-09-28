@@ -443,13 +443,19 @@ Current unknowns:
 - whether setup construction / assignment chronology is visible;
 - assignment rationale / alternatives.
 
+Primary-access check — 2026-09-29:
+
+- human review of the linked primary YouTube source reports the video is now **Private**;
+- older public indexes still identify the episode, but they cannot substitute for an accessible primary source.
+
 Disposition:
 
-- **P0 — SCREEN DRUNK PRESENCE FIRST**;
-- do not watch the full game merely for C1C;
-- if no Drunk, immediately reject for C1C and move to G08.
+- **REJECTED FOR CURRENT C1C — PRIMARY SOURCE NOT PUBLICLY ACCESSIBLE**;
+- contributes 0 replay cases;
+- do not ask for manual review unless the primary video becomes accessible again;
+- preserve the locator only as provenance history.
 
-#### C1C-G08 — Edd Gabriel / The CLASSIC script! Trouble Brewing with a LEGEND — P1
+#### C1C-G08 — Edd Gabriel / The CLASSIC script! Trouble Brewing with a LEGEND — HOLD
 
 Primary source locator:
 
@@ -464,27 +470,40 @@ Current status:
 - Drunk presence: UNKNOWN;
 - assignment chronology: UNKNOWN.
 
+Current access status:
+
+- current web search did not reliably surface the exact primary video;
+- accessibility has therefore not been independently confirmed.
+
 Disposition:
 
-- **P1 — SCREEN ONLY IF G07 FAILS**;
-- preferred fallback because it gives independent experienced-Storyteller coverage.
+- **HOLD — DO NOT SPEND HUMAN REVIEW TIME YET**;
+- retain as a lead only until the primary URL can be revalidated.
 
-#### C1C-G09 — Dicebreaker Let's Play Blood on the Clocktower — P2
+#### C1C-G09 — Dicebreaker Let's Play Blood on the Clocktower — NEW P0
 
 Primary source locator:
 
 - YouTube video ID: `m9RPf8tXxR4`;
 - real Trouble Brewing playthrough.
 
-Current status:
+Current access check — 2026-09-29:
 
+- curated current resource index identifies this as a real 2019-11-02 Trouble Brewing playthrough;
+- the indexed link currently resolves to YouTube video `m9RPf8tXxR4`;
+- unlike G07, no private-video failure has been observed in the current access check.
+
+Current evidence status:
+
+- real-game status: established by curated live-play index;
 - Drunk presence: UNKNOWN;
-- setup chronology: UNKNOWN;
-- no current evidence advantage over G07/G08.
+- setup chronology: UNKNOWN.
 
 Disposition:
 
-- **P2 / fallback only**.
+- **P0 — SCREEN DRUNK PRESENCE FIRST**;
+- if no Drunk, stop immediately;
+- if Drunk exists, inspect only the setup/reveal surface needed to establish assignment prefix.
 
 ### 3.2 Assignment-guidance sources
 
