@@ -251,7 +251,9 @@ C1C checkpoint — IN PROGRESS:
 - its verified ordering is: complete role/shown-role layout fixed → Sullivan selected as Drunk shown Empath → Red Herring selected later;
 - assignment rationale and alternatives remain UNKNOWN;
 - current replay quota is **1 / 3**;
-- next bounded target is `Live and Imp-Person`.
+- G02 `Live and Imp-Person` has now been primary-reviewed: Brooke = Drunk shown Undertaker is verified, but the setup is presented already designed, so the assignment prefix remains UNKNOWN and the case does not count toward the assignment replay quota;
+- G02 separately provides explicit Ben Burns Drunk misinformation strategy: early correct information to preserve role belief, followed by sustained incorrect information;
+- next bounded assignment targets are the official 2019 Trouble Brewing G03/G04 candidates.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
