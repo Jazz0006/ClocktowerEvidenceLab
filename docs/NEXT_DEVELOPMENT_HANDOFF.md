@@ -243,7 +243,9 @@ G05 `A Fond Farewell` has now passed primary review:
 
 C1C quota is now **2 / 3 replayable assignments**, with **1 explicit historical assignment rationale**.
 
-Next action: acquire only one more targeted Drunk-bearing primary case. Prefer independent Storyteller coverage if practical.
+Next action: bounded primary review of G06 `An Introduction to Blood on the Clocktower` — YouTube `nuOq54FHDsg`.
+
+Contemporary TPI-era source material identifies Kurt as Drunk shown Undertaker in a real game with Steven Medway involved. Verify only whether the video exposes enough setup chronology for a historical prefix. If yes, G06 can become replay case 3 / 3; if not, retain only the assignment-result lead and continue targeted acquisition.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
