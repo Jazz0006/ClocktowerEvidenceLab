@@ -229,7 +229,17 @@ Ancillary high-value evidence from G04:
 - the primary video explicitly states Jordan the Spy is registering as Soldier for that interaction;
 - this may be preserved as an observed historical registration witness rather than a downstream legality inference.
 
-The G03/G04 pair is now exhausted for Drunk-assignment acquisition. Resume only targeted search for new Drunk-bearing primary candidates.
+The G03/G04 pair is now exhausted for Drunk-assignment acquisition.
+
+New P0 target:
+
+- G05 `A Fond Farewell`;
+- official Blood on the Clocktower channel;
+- Storyteller Ben Burns;
+- exact Trouble Brewing;
+- bounded primary review only: 00:00–04:25 Intro & Setup.
+
+Prior project notes are locator leads only; re-verify assignment result, prefix, rationale and alternatives against the primary setup segment.
 
 Do not enter C1D automatically; continue C1C until the replay package is sufficiently stable for downstream handoff.
 
