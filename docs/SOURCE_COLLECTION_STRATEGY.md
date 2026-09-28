@@ -67,6 +67,8 @@ Useful for:
 
 Do not treat them as equivalent to a reconstructable primary game.
 
+Before promoting any visually complete setup into the historical-game corpus, verify that the source is actually recording a played game rather than an instructional/example presentation. A complete illustrative lineup is not historical game evidence merely because it looks like a grimoire.
+
 ## 2.1 Current targeted gap — Drunk assignment
 
 The current product-directed acquisition gap is no longer “find more games containing a Drunk.”
