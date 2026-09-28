@@ -88,7 +88,12 @@ Evidence Lab therefore needs to preserve:
 
 Evidence Lab does not derive the legal candidate set. That remains downstream rules-engine work.
 
-See `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
+C1A and C1B are complete. The existing-corpus re-audit found four partial/result Drunk-assignment cases but no case with a sufficiently evidenced pre-assignment setup prefix for replay. Targeted acquisition remains the next C1 stage and has not started.
+
+See:
+
+- `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`;
+- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
 
 ## Storage direction
 
