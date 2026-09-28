@@ -272,7 +272,9 @@ C1C checkpoint — IN PROGRESS:
 - Steven Medway is confirmed as the speaker and the machine paraphrase is materially complete;
 - verified creator-level guidance identifies three Drunk-assignment modes: player-first, role-first and whole-setup-first;
 - this directly supports a late-bound assignment engine that can consume player context, shown-role semantics and whole-setup topology;
-- the podcast remains guidance, not a historical replay case, so the replay quota stays 2 / 3.
+- the podcast remains guidance, not a historical replay case, so the replay quota stays 2 / 3;
+- final replay acquisition is now bounded to a small queue: G07 TPI & Friends `Yeah Boi!` (P0, real TB game, screen Drunk presence first), G08 Edd Gabriel two-game Trouble Brewing video (P1), then G09 Dicebreaker (P2);
+- do not broaden again unless this bounded queue fails.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
