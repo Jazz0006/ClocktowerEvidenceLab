@@ -61,6 +61,10 @@ At minimum, tests should eventually prove:
 10. GOLD qualification is derived from explicit evidence dimensions rather than free-form manual labeling.
 11. Export/import preserves stable semantic IDs.
 12. Working database row IDs are not required by the durable export contract.
+13. A setup-time decision prefix cannot contain its own resulting setup commitment.
+14. Later setup commitments and later semantic events cannot leak backward into an earlier decision prefix.
+15. Explicitly observed considered/rejected alternatives remain distinct from downstream-derived legal alternatives.
+16. UNKNOWN setup-choice rationale and alternatives survive domain/persistence/export boundaries without being guessed.
 
 ## 4. Test-first policy
 
