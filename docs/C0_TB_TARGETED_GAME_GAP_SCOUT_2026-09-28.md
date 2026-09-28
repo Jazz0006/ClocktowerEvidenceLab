@@ -113,6 +113,24 @@ Disposition:
 
 Do not promote any secondary-wiki event to VERIFIED. The next useful work is to locate Ben/Tom's choice explanations and verify the relevant setup/night windows from the primary video.
 
+### G01 supplemental locator — Noises From The Night
+
+NRB also released a separate `Noises From The Night | Clocktower Behind The Scenes` item from the same first in-person Clocktower recording period.
+
+Current public indexing is sufficient only to establish that:
+
+- it is behind-the-scenes material from the in-person BOTC season-one recordings;
+- the item is Patreon-hosted;
+- the surrounding cast/production overlaps the `Live and Imp-Person` recording period.
+
+This makes it a potentially high-value **rationale-enrichment locator** for G01, but not evidence.
+
+Disposition:
+
+> **SUPPLEMENTAL / PAYWALLED — do not infer any specific Storyteller rationale from it without lawful access to the primary content.**
+
+Continue exhausting public G01 sources before asking for any paid-source review.
+
 ### G02 — TPI: Trouble Brewing (October 2019, Game 1)
 
 Primary video:
@@ -394,6 +412,180 @@ This is an intentional application of the stop rule: a complete, well-documented
 
 Game Two from the same episode is not standard Trouble Brewing after Flesh & Bone modifications and is outside the current app scope.
 
+### G09 — NRB: A Stud In Scarlet
+
+Primary video:
+
+- YouTube: `qZBvRfM3Xow`;
+- released 2021-02-05;
+- full Trouble Brewing;
+- Storytellers: Ben + Adam;
+- approximately 2h09m.
+
+A detailed secondary reconstruction exposes a useful complete-game comparison shape.
+
+Key setup:
+
+- Luke — Imp;
+- Laurie — Scarlet Woman;
+- Sullivan — **Drunk shown Empath**;
+- Elliott — Recluse;
+- Isaac — Undertaker;
+- Blair — Fortune Teller;
+- remaining information/support roles include Chef, Ravenkeeper and Monk;
+- Demon bluffs: Saint / Slayer / Soldier;
+- Sullivan, the Drunk, is also Blair's Fortune Teller Red Herring.
+
+Drunk-Empath trajectory reported by the reconstruction:
+
+~~~text
+N1  Sullivan -> 0 for Luke / Jon
+N2  Sullivan -> 0 for Luke / Jon
+N3  Sullivan -> 1 for Luke / Isaac
+N4  Sullivan -> 0 for Luke / Isaac
+~~~
+
+A separate registration decision occurs on N4:
+
+- Elliott the Recluse is executed;
+- sober Undertaker Isaac is told that Elliott was the **Poisoner**.
+
+Why this matters:
+
+- it gives a clean real-game longitudinal Drunk-Empath sequence;
+- the misinformation changes when the neighbour topology changes instead of being a fixed repeated number;
+- the same game demonstrates an explicit opposite-alignment / Minion registration of a Recluse to a healthy information role.
+
+Gap fit:
+
+- Gap B: **strong comparison sample, but not independent closure** — Ben remains the qualified expert Storyteller;
+- Gap C: useful registration-shape support, but the information role is Undertaker rather than the required Librarian/Investigator target;
+- Gap D: complete bluff triplet is known, no comparative bluff rationale recovered.
+
+Disposition:
+
+> **P1 CORPUS CONTRAST / TRAJECTORY CASE.**
+
+Do not count it as the independent non-Ben Gap-B case.
+
+### G10 — NRB: The Billiard Boys
+
+Primary video:
+
+- YouTube: `r0BS2tm7ddQ`;
+- released 2021-02-26;
+- full Trouble Brewing;
+- Storytellers: Ben + Tom;
+- approximately 1h53m.
+
+Key setup:
+
+- Laurie — **Drunk shown Librarian**;
+- Adam — Spy;
+- Jon — Imp;
+- Luke — Saint;
+- Oli — Virgin;
+- Blair — Undertaker;
+- Isaac — Empath;
+- Sullivan — Mayor;
+- Demon bluffs: Fortune Teller / Monk / Recluse.
+
+Drunk first-night information:
+
+- Laurie, believing he is the Librarian, is told that **Blair or Oli is the Drunk**;
+- neither candidate is actually the Drunk.
+
+Why this matters:
+
+- the game has both a Drunk information role and a real Spy;
+- it is a compact contrast to cases where the Drunk is given true information;
+- it demonstrates a fully fabricated candidate pair rather than merely changing a number.
+
+Gap fit:
+
+- Gap B: useful one-shot impaired-information comparison, but same Ben expert lineage and no recovered choice-over-alternatives rationale;
+- Gap C: **does not qualify** — the Librarian is the Drunk, not a functioning Librarian/Investigator exposing Spy/Recluse;
+- Gap D: bluff triplet known, rationale unknown.
+
+Disposition:
+
+> **P2 SUPPORTING DRUNK CASE — do not reconstruct ahead of G01/G09 unless primary commentary reveals explicit rationale.**
+
+### G11 — NRB: Human Remains Of The Day
+
+Primary video:
+
+- YouTube: `dU35D9vtum8`;
+- released 2021-03-30;
+- full Trouble Brewing;
+- Storytellers: Ben + Tom;
+- approximately 2h02m.
+
+Key setup:
+
+- Isaac — Poisoner;
+- Carley — Imp;
+- Jon — Washerwoman;
+- Brooke — Fortune Teller;
+- Adam — Undertaker;
+- Blair — Slayer;
+- Laurie — Soldier;
+- Sullivan — Butler;
+- Demon bluffs: Empath / Recluse / Investigator;
+- Fortune Teller Red Herring: Blair.
+
+Concrete impaired-information decision:
+
+~~~text
+N1
+Isaac poisons Jon the Washerwoman
+Jon is told that Carley / Isaac contains the Empath
+actual roles: Carley = Imp, Isaac = Poisoner
+~~~
+
+The episode's secondary reconstruction also preserves a general Ben Storyteller explanation: he says he can appear to favour Evil early because Good can be helped later, while an early Evil death spiral cannot be undone.
+
+Why this matters:
+
+- a fully reconstructable poisoned first-night information output is available;
+- the false Washerwoman pair points directly at both evil players while assigning a Good role identity, creating a concrete misleading world;
+- the general early-game explanation is relevant to information-budget reasoning, although it is not yet tied to this exact Washerwoman choice.
+
+Gap fit:
+
+- Gap A: **methodologically relevant but not closed** — the early-game rationale is general, not a documented comparison of legal information alternatives;
+- Gap B: useful poisoned-information sample, but not independent of Ben;
+- Gap D: bluff triplet known, no comparative selection rationale recovered.
+
+Disposition:
+
+> **P1 POISONED-INFORMATION CONTRAST CASE.**
+
+Primary-video enrichment should focus only on the N1 Storyteller discussion and the early-game balancing explanation, not a full rewatch.
+
+### G12 — Dicebreaker Trouble Brewing one-off
+
+Primary video:
+
+- YouTube: `m9RPf8tXxR4`;
+- indexed by the current Bakery learning guide as a complete Trouble Brewing game;
+- dated 2019-11-02;
+- approximately 55 minutes;
+- classified by that guide among live plays overseen by creators and/or featuring experienced Storytellers.
+
+Current indexed search has not recovered:
+
+- exact Storyteller identity;
+- setup;
+- ordered game state;
+- decision-specific rationale.
+
+Disposition:
+
+> **P2 SCREENING ONLY.**
+
+The video is short, but do not spend human review time until a target Gap A/B/C/D mechanic is established.
+
 ## 3. Transcript-access experiment
 
 A bounded one-off probe tested:
@@ -473,6 +665,10 @@ Acquisition consequence:
 | G06 TPI Introduction honest game | official setup + outcome; video edited | TPI | B contrast visible | no exact choice rationale yet | **P1 auxiliary** |
 | G07 TPI Episode 1 | official full game | TPI; exact ST still to establish | unknown | not yet | **P1** |
 | G08 NRB Legacy E1 Game 1 | strong secondary reconstruction | Ben + Laurie | D only as an unexplained bluff triplet | not yet | **deprioritized** |
+| G09 A Stud In Scarlet | strong secondary reconstruction + primary video | Ben + Adam | B trajectory; registration support | not yet | **P1** |
+| G10 The Billiard Boys | strong secondary reconstruction + primary video | Ben + Tom | B one-shot Drunk | not yet | **P2** |
+| G11 Human Remains Of The Day | strong secondary reconstruction + primary video | Ben + Tom | poisoned info + general early-balance rationale | general only | **P1** |
+| G12 Dicebreaker one-off | primary full game | experienced/creator-supervised classification; exact ST pending | unknown | not yet | **P2** |
 
 ## 5. Next acquisition action
 
@@ -493,6 +689,12 @@ Search specifically for primary/secondary locators around:
 5. whether Jon's Librarian result involving Adam/Laurie is discussed as a Recluse-exposure choice.
 
 If no rationale is recoverable without a full manual watch, reduce G01 to a short human review packet rather than asking for a 2+ hour review.
+
+For NRB comparison cases, prioritize only:
+- G09 Drunk-Empath trajectory and Recluse->Poisoner registration discussion;
+- G11 N1 poisoned-Washerwoman discussion plus the general early-game balance explanation.
+
+G10 is retained as a fabricated-candidate-pair Drunk contrast but is lower priority unless explicit commentary is located.
 
 In parallel, continue indexed-source screening of G02/G03/G04 for setup roles and known misinformation mechanics.
 
