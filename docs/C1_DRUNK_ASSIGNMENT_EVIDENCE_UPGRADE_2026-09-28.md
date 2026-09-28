@@ -367,14 +367,17 @@ Current bounded queue:
 
 New guidance evidence supports the architectural direction that the apparent Townsfolk setup may exist before choosing which Townsfolk becomes the Drunk, and that assignment may depend on player/seat context. This is guidance evidence only; it does not backfill historical prefixes.
 
-Current quota state remains:
+Current C1C quota state:
 
-- replayable Drunk-assignment cases: 0 / target 3;
-- explicit historical assignment-rationale cases: 0 / seek 1–2.
+- replayable Drunk-assignment cases: **1 / target 3**;
+- first replayable case: E0 `A Stud In Scarlet` — complete role layout verified before Sullivan is selected as Drunk, with Red Herring selected later;
+- explicit historical assignment-rationale cases: **0 / seek 1–2**.
 
-C1C therefore remains `IN PROGRESS / BOUNDED_PRIMARY_REVIEW_REQUIRED`.
+E0's assignment rationale and alternatives correctly remain UNKNOWN.
 
-Do not enter C1D until stable replay cases exist.
+C1C therefore remains `IN PROGRESS`. The next bounded target is `Live and Imp-Person`.
+
+Do not enter C1D until the replay package is sufficiently stable for downstream handoff.
 
 ### C1D — CampBoardGameHost replay handoff
 
