@@ -1,6 +1,6 @@
 # C2 — Trouble Brewing Podcast Batch Ingestion — 2026-09-29
 
-> Status: **ACTIVE — C2A COMPLETE / C2B COMPLETE / C2C IMPLEMENTATION COMPLETE / REAL BATCH VALIDATION NEXT**
+> Status: **ACTIVE — C2A COMPLETE / C2B COMPLETE / C2C COMPLETE / REAL TWO-EPISODE VALIDATION COMPLETE / C2D IN PROGRESS**
 >
 > Scope: `Cult of the Clocktower` expert audio relevant to the current Trouble Brewing-only product scope.
 >
@@ -88,7 +88,7 @@ Implementation completion means the workflow can perform these operations; it do
 
 The repository now provides a deterministic timestamp-preserving extractor and CLI over external ASR segments. It searches for high-value Storyteller material while keeping complete transcript text outside Git-managed candidate artifacts. Rationale matching supports adjacent ASR segments and overlapping matches are merged into bounded review windows.
 
-A bounded real multi-episode C2B -> C2C run is the next validation step.
+A bounded real two-episode C2B -> C2C validation has completed successfully for Investigator and Imp. The run exercised live RSS discovery, public audio acquisition, ASR and lightweight candidate extraction while keeping full audio/transcripts outside Git.
 
 Initial target categories:
 
@@ -116,9 +116,17 @@ The extractor must preserve timestamps and distinguish:
 
 No machine-generated paraphrase is automatically VERIFIED evidence.
 
-### C2D — relevance ranking and bounded human review
+### C2D — relevance ranking and bounded human review — IN PROGRESS / TESTS-FIRST RED
 
-Rank candidate windows by current Host relevance and evidence novelty.
+The deterministic review-packet domain and writer are implemented:
+
+- nearby/overlapping candidates can be merged into one bounded listen window;
+- P0/P1/P2 are acquisition-review priorities only, never Storyteller decision-quality labels;
+- window-count and total-review-time budgets are explicit;
+- review packets retain machine summaries/tags/confidence without transcript bodies;
+- human review remains NOT_STARTED until a person actually reviews the primary source.
+
+The current branch is intentionally RED at the next contract boundary: tests expect a podcast review CLI module, but that CLI has not yet been implemented. The immediate next step is to add that thin CLI, expose it through the project scripts if needed, restore the full quality gate to GREEN, then run the real Investigator/Imp candidate artifacts through C2D.
 
 Human review should focus on a small packet rather than the full episode.
 
