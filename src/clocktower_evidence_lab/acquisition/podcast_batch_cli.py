@@ -20,9 +20,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--work-dir", type=Path, required=True)
     parser.add_argument("--plan-only", action="store_true")
+    parser.add_argument("--guid", action="append", default=[])
     args = parser.parse_args(argv)
 
     manifest = PodcastEpisodeManifest.model_validate_json(args.manifest.read_text(encoding="utf-8"))
+    if args.guid:
+        requested_guids = set(args.guid)
+        selected = tuple(entry for entry in manifest.episodes if entry.guid in requested_guids)
+        found_guids = {entry.guid for entry in selected}
+        missing_guids = requested_guids - found_guids
+        if missing_guids:
+            parser.error(f"GUIDs not present in manifest: {sorted(missing_guids)}")
+        manifest = manifest.model_copy(update={"episodes": selected})
+
     plan = build_batch_plan(manifest)
 
     if args.plan_only:
