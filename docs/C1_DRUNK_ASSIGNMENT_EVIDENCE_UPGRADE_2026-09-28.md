@@ -1,6 +1,6 @@
 # C1 — Drunk Assignment Evidence Upgrade
 
-> Status: **C1A + C1B COMPLETE / C1C IN PROGRESS — bounded primary review required**
+> Status: **C1A + C1B + C1C COMPLETE / C1D NEXT — downstream replay handoff**
 >
 > Date: 2026-09-28
 >
@@ -348,36 +348,63 @@ C1B also exposed and corrected a generic chronology hazard: deterministic setup 
 
 This is a successful schema/evidence pressure test, not a reason to guess missing history.
 
-C1C has not started.
+C1C is complete.
 
-### C1C — Targeted acquisition — IN PROGRESS
-
-The first targeted search pass is complete and has deliberately stopped broad discovery.
+### C1C — Targeted acquisition — COMPLETE
 
 Authority:
 
 - `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
-Current bounded queue:
+The bounded acquisition target has been satisfied without reopening broad corpus growth.
 
-1. E0 `A Stud In Scarlet` setup conversation around the already-known 09:49 Drunk / 10:32 Red Herring region;
-2. `Live and Imp-Person` setup section — Brooke = Drunk shown Undertaker is already a strong result/layout lead;
-3. bounded verification of the Steven Medway Drunk podcast assignment section as general guidance, not a replay case;
-4. official 2019 Trouble Brewing Game 2 (Steven Medway) and Game 1 (Jon Gjengset) only if the first two historical candidates do not close enough of the replay gap.
+Final replay package:
 
-New guidance evidence supports the architectural direction that the apparent Townsfolk setup may exist before choosing which Townsfolk becomes the Drunk, and that assignment may depend on player/seat context. This is guidance evidence only; it does not backfill historical prefixes.
+1. **G01 — A Stud In Scarlet**
+   - complete role/shown-role layout fixed before assignment;
+   - Sullivan / shown Empath selected as Drunk;
+   - Red Herring selected later;
+   - assignment prefix: `PREFIX_RECONSTRUCTABLE`;
+   - assignment rationale: UNKNOWN.
 
-Current C1C quota state:
+2. **G05 — A Fond Farewell**
+   - complete role layout fixed before assignment;
+   - Chef selected as Drunk at 03:32;
+   - explicit rationale: support a deliberately extreme Chef misinformation narrative;
+   - Red Herring at 04:04 and Demon bluffs at 04:47 occur later;
+   - assignment prefix: `PREFIX_RECONSTRUCTABLE`;
+   - assignment rationale: EXPLICIT.
 
-- replayable Drunk-assignment cases: **1 / target 3**;
-- first replayable case: E0 `A Stud In Scarlet` — complete role layout verified before Sullivan is selected as Drunk, with Red Herring selected later;
-- explicit historical assignment-rationale cases: **0 / seek 1–2**.
+3. **G10 Game 2 — The Megavoid**
+   - complete seat/shown-role layout fixed before assignment;
+   - shown Empath selected as Drunk at approximately 16:29;
+   - explicit rationale: the Empath is adjacent to the Demon;
+   - later Librarian information, Demon bluffs and night information are excluded from the assignment prefix;
+   - assignment prefix: `PREFIX_RECONSTRUCTABLE`;
+   - assignment rationale: EXPLICIT.
 
-E0's assignment rationale and alternatives correctly remain UNKNOWN.
+Final C1C quota:
 
-C1C therefore remains `IN PROGRESS`. The next bounded target is `Live and Imp-Person`.
+- replayable Drunk-assignment cases: **3 / 3**;
+- explicit historical assignment-rationale cases: **2 / seek 1–2**;
+- targeted acquisition: **STOPPED**.
 
-Do not enter C1D until the replay package is sufficiently stable for downstream handoff.
+G10 also adds useful later whole-game evidence that remains semantically separate from assignment:
+
+- 16:52 Librarian pair chosen to place uncertainty across the Drunk Empath and Undertaker;
+- 17:17 Demon bluffs = Ravenkeeper / Saint / Washerwoman;
+- 17:29 Drunk Empath receives 0;
+- 18:05 Drunk Empath deliberately receives a result of 1 that is actually correct, but is used to redirect suspicion toward a new neighbour;
+- 18:50 an executed Spy who had bluffed Virgin is shown as Virgin to the Undertaker, an explicit historical registration/bluff-continuity interaction.
+
+These later events strengthen the longitudinal evidence corpus but do not backfill the earlier assignment prefix.
+
+Creator-level guidance remains separate:
+
+- Steven Medway podcast: player-first, role-first and whole-setup-first assignment modes;
+- independent G10 guidance: topology-driven Drunk assignment and bluff-continuity misinformation.
+
+Do not perform additional C1C source discovery merely to increase sample count.
 
 ### C1D — CampBoardGameHost replay handoff
 
