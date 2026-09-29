@@ -1,5 +1,4 @@
-from clocktower_evidence_lab.acquisition import podcast
-from clocktower_evidence_lab.acquisition import podcast_manifest as manifest
+from clocktower_evidence_lab.acquisition import podcast, podcast_manifest
 
 
 _FEED_URL = "https://anchor.fm/s/daf1f9c/podcast/rss"
@@ -28,7 +27,7 @@ def test_stable_episode_id_uses_guid_not_mutable_title() -> None:
     )
     renamed = original.model_copy(update={"title": "16: The Drunk (Trouble Brewing)"})
 
-    assert manifest.stable_episode_id(original) == manifest.stable_episode_id(renamed)
+    assert podcast_manifest.stable_episode_id(original) == podcast_manifest.stable_episode_id(renamed)
 
 
 def test_stable_episode_id_falls_back_to_audio_locator_not_title() -> None:
@@ -40,7 +39,7 @@ def test_stable_episode_id_falls_back_to_audio_locator_not_title() -> None:
     )
     renamed = first.model_copy(update={"title": "Episode title two"})
 
-    assert manifest.stable_episode_id(first) == manifest.stable_episode_id(renamed)
+    assert podcast_manifest.stable_episode_id(first) == podcast_manifest.stable_episode_id(renamed)
 
 
 def test_repeated_feed_reads_deduplicate_by_stable_identity() -> None:
@@ -50,35 +49,35 @@ def test_repeated_feed_reads_deduplicate_by_stable_identity() -> None:
     )
     refreshed = original.model_copy(update={"title": "16: Updated Drunk (Trouble Brewing)"})
 
-    episode_manifest = manifest.build_episode_manifest((original, refreshed))
+    episode_manifest = podcast_manifest.build_episode_manifest((original, refreshed))
 
-    assert len(episode_manifest.episodes) == 1
-    assert episode_manifest.episodes[0].title == refreshed.title
+    assert len(episode_podcast_manifest.episodes) == 1
+    assert episode_podcast_manifest.episodes[0].title == refreshed.title
 
 
 def test_trouble_brewing_title_variants_are_in_scope() -> None:
     assert (
-        manifest.classify_trouble_brewing(
+        podcast_manifest.classify_trouble_brewing(
             "4.1: Trouble Brewing Revisited (Clocktower Con 2023)"
         )
-        is manifest.EpisodeScope.IN_SCOPE
+        is podcast_manifest.EpisodeScope.IN_SCOPE
     )
     assert (
-        manifest.classify_trouble_brewing(
+        podcast_manifest.classify_trouble_brewing(
             "24: Beggar and Gunslinger (Trouble Brewing Travelers Part 1)"
         )
-        is manifest.EpisodeScope.IN_SCOPE
+        is podcast_manifest.EpisodeScope.IN_SCOPE
     )
 
 
 def test_other_explicit_scripts_are_out_of_scope() -> None:
     assert (
-        manifest.classify_trouble_brewing("3.19: Chambermaid (Bad Moon Rising)")
-        is manifest.EpisodeScope.OUT_OF_SCOPE
+        podcast_manifest.classify_trouble_brewing("3.19: Chambermaid (Bad Moon Rising)")
+        is podcast_manifest.EpisodeScope.OUT_OF_SCOPE
     )
     assert (
-        manifest.classify_trouble_brewing("2.1: Sects and Violets Crash Course")
-        is manifest.EpisodeScope.OUT_OF_SCOPE
+        podcast_manifest.classify_trouble_brewing("2.1: Sects and Violets Crash Course")
+        is podcast_manifest.EpisodeScope.OUT_OF_SCOPE
     )
 
 
@@ -88,18 +87,18 @@ def test_manifest_preserves_locators_and_independent_workflow_states() -> None:
         guid="chef-guid",
     )
 
-    episode_manifest = manifest.build_episode_manifest((episode,))
-    entry = episode_manifest.episodes[0]
+    episode_manifest = podcast_manifest.build_episode_manifest((episode,))
+    entry = episode_podcast_manifest.episodes[0]
 
-    assert entry.source_id == manifest.stable_episode_id(episode)
-    assert entry.scope is manifest.EpisodeScope.IN_SCOPE
+    assert entry.source_id == podcast_manifest.stable_episode_id(episode)
+    assert entry.scope is podcast_manifest.EpisodeScope.IN_SCOPE
     assert entry.webpage_url == episode.webpage_url
     assert entry.audio_url == episode.audio_url
-    assert entry.transcript_availability is manifest.TranscriptAvailability.NOT_ADVERTISED
-    assert entry.acquisition_state is manifest.AcquisitionState.NOT_ATTEMPTED
-    assert entry.asr_state is manifest.AsrState.NOT_ATTEMPTED
-    assert entry.extraction_state is manifest.ExtractionState.NOT_ATTEMPTED
-    assert entry.human_review_state is manifest.HumanReviewState.NOT_STARTED
+    assert entry.transcript_availability is podcast_manifest.TranscriptAvailability.NOT_ADVERTISED
+    assert entry.acquisition_state is podcast_manifest.AcquisitionState.NOT_ATTEMPTED
+    assert entry.asr_state is podcast_manifest.AsrState.NOT_ATTEMPTED
+    assert entry.extraction_state is podcast_manifest.ExtractionState.NOT_ATTEMPTED
+    assert entry.human_review_state is podcast_manifest.HumanReviewState.NOT_STARTED
 
 
 def test_prior_processing_is_applied_by_stable_source_id_not_title() -> None:
@@ -107,27 +106,27 @@ def test_prior_processing_is_applied_by_stable_source_id_not_title() -> None:
         title="16: Renamed Drunk Episode (Trouble Brewing)",
         guid="bf668470-a3fe-41d3-85e8-d028a63cf593",
     )
-    prior = manifest.PriorEpisodeProcessing(
-        source_id=manifest.stable_episode_id(episode),
-        acquisition_state=manifest.AcquisitionState.COMPLETE,
-        asr_state=manifest.AsrState.COMPLETE,
-        extraction_state=manifest.ExtractionState.COMPLETE,
-        human_review_state=manifest.HumanReviewState.PENDING,
+    prior = podcast_manifest.PriorEpisodeProcessing(
+        source_id=podcast_manifest.stable_episode_id(episode),
+        acquisition_state=podcast_manifest.AcquisitionState.COMPLETE,
+        asr_state=podcast_manifest.AsrState.COMPLETE,
+        extraction_state=podcast_manifest.ExtractionState.COMPLETE,
+        human_review_state=podcast_manifest.HumanReviewState.PENDING,
         artifact_path="docs/C0_TB_CULT_OF_CLOCKTOWER_DRUNK_RATIONALE_PILOT_2026-09-28.md",
     )
 
-    episode_manifest = manifest.build_episode_manifest(
+    episode_manifest = podcast_manifest.build_episode_manifest(
         (episode,),
         prior_processing=(prior,),
     )
-    entry = episode_manifest.episodes[0]
+    entry = episode_podcast_manifest.episodes[0]
 
-    assert entry.acquisition_state is manifest.AcquisitionState.COMPLETE
-    assert entry.asr_state is manifest.AsrState.COMPLETE
-    assert entry.extraction_state is manifest.ExtractionState.COMPLETE
-    assert entry.human_review_state is manifest.HumanReviewState.PENDING
+    assert entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE
+    assert entry.asr_state is podcast_manifest.AsrState.COMPLETE
+    assert entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE
+    assert entry.human_review_state is podcast_manifest.HumanReviewState.PENDING
     assert entry.prior_artifact_path == prior.artifact_path
-    assert manifest.active_acquisition_queue(episode_manifest) == ()
+    assert podcast_manifest.active_acquisition_queue(episode_manifest) == ()
 
 
 def test_out_of_scope_episode_remains_in_inventory_but_not_active_queue() -> None:
@@ -136,10 +135,10 @@ def test_out_of_scope_episode_remains_in_inventory_but_not_active_queue() -> Non
         guid="bmr-guid",
     )
 
-    episode_manifest = manifest.build_episode_manifest((episode,))
+    episode_manifest = podcast_manifest.build_episode_manifest((episode,))
 
-    assert episode_manifest.episodes[0].scope is manifest.EpisodeScope.OUT_OF_SCOPE
-    assert manifest.active_acquisition_queue(episode_manifest) == ()
+    assert episode_podcast_manifest.episodes[0].scope is podcast_manifest.EpisodeScope.OUT_OF_SCOPE
+    assert podcast_manifest.active_acquisition_queue(episode_manifest) == ()
 
 
 def test_unknown_scope_episode_is_not_automatically_queued() -> None:
@@ -148,10 +147,10 @@ def test_unknown_scope_episode_is_not_automatically_queued() -> None:
         guid="special-guid",
     )
 
-    episode_manifest = manifest.build_episode_manifest((episode,))
+    episode_manifest = podcast_manifest.build_episode_manifest((episode,))
 
-    assert episode_manifest.episodes[0].scope is manifest.EpisodeScope.UNKNOWN
-    assert manifest.active_acquisition_queue(episode_manifest) == ()
+    assert episode_podcast_manifest.episodes[0].scope is podcast_manifest.EpisodeScope.UNKNOWN
+    assert podcast_manifest.active_acquisition_queue(episode_manifest) == ()
 
 
 def test_in_scope_episode_with_audio_and_no_transcript_enters_acquisition_queue() -> None:
@@ -160,10 +159,10 @@ def test_in_scope_episode_with_audio_and_no_transcript_enters_acquisition_queue(
         guid="washerwoman-guid",
     )
 
-    episode_manifest = manifest.build_episode_manifest((episode,))
+    episode_manifest = podcast_manifest.build_episode_manifest((episode,))
 
-    assert manifest.active_acquisition_queue(episode_manifest) == (
-        episode_manifest.episodes[0],
+    assert podcast_manifest.active_acquisition_queue(episode_manifest) == (
+        episode_podcast_manifest.episodes[0],
     )
 
 
@@ -172,22 +171,22 @@ def test_asr_and_extraction_complete_do_not_imply_human_review_complete() -> Non
         title="6: Recluse (Trouble Brewing)",
         guid="recluse-guid",
     )
-    prior = manifest.PriorEpisodeProcessing(
-        source_id=manifest.stable_episode_id(episode),
-        acquisition_state=manifest.AcquisitionState.COMPLETE,
-        asr_state=manifest.AsrState.COMPLETE,
-        extraction_state=manifest.ExtractionState.NO_USEFUL_CANDIDATES,
-        human_review_state=manifest.HumanReviewState.NOT_STARTED,
+    prior = podcast_manifest.PriorEpisodeProcessing(
+        source_id=podcast_manifest.stable_episode_id(episode),
+        acquisition_state=podcast_manifest.AcquisitionState.COMPLETE,
+        asr_state=podcast_manifest.AsrState.COMPLETE,
+        extraction_state=podcast_manifest.ExtractionState.NO_USEFUL_CANDIDATES,
+        human_review_state=podcast_manifest.HumanReviewState.NOT_STARTED,
     )
 
-    entry = manifest.build_episode_manifest(
+    entry = podcast_manifest.build_episode_manifest(
         (episode,),
         prior_processing=(prior,),
     ).episodes[0]
 
-    assert entry.asr_state is manifest.AsrState.COMPLETE
-    assert entry.extraction_state is manifest.ExtractionState.NO_USEFUL_CANDIDATES
-    assert entry.human_review_state is manifest.HumanReviewState.NOT_STARTED
+    assert entry.asr_state is podcast_manifest.AsrState.COMPLETE
+    assert entry.extraction_state is podcast_manifest.ExtractionState.NO_USEFUL_CANDIDATES
+    assert entry.human_review_state is podcast_manifest.HumanReviewState.NOT_STARTED
 
 
 def test_manifest_serialization_contains_only_lightweight_locator_metadata() -> None:
@@ -196,7 +195,7 @@ def test_manifest_serialization_contains_only_lightweight_locator_metadata() -> 
         guid="librarian-guid",
     )
 
-    dumped = manifest.build_episode_manifest((episode,)).model_dump(mode="json")
+    dumped = podcast_manifest.build_episode_manifest((episode,)).model_dump(mode="json")
     entry = dumped["episodes"][0]
 
     assert entry["audio_url"] == "https://example.test/audio.mp3"
