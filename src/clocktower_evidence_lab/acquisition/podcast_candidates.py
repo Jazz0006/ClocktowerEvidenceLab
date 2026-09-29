@@ -304,9 +304,7 @@ def locate_rule_candidates(
             end = min(len(materialized), position + rule.context_after + 1)
             proposals.append(
                 CandidateProposal(
-                    segment_indexes=tuple(
-                        segment.index for segment in materialized[start:end]
-                    ),
+                    segment_indexes=tuple(segment.index for segment in materialized[start:end]),
                     category=rule.category,
                     summary=rule.summary,
                     tags=rule.tags,
