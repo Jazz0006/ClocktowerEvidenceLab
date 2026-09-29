@@ -19,6 +19,7 @@ clocktower-podcast-probe = "clocktower_evidence_lab.acquisition.podcast_probe:ma
 clocktower-podcast-asr = "clocktower_evidence_lab.acquisition.podcast_asr:main"
 clocktower-podcast-manifest = "clocktower_evidence_lab.acquisition.podcast_manifest_cli:main"
 clocktower-podcast-batch = "clocktower_evidence_lab.acquisition.podcast_batch_cli:main"
+clocktower-podcast-candidates = "clocktower_evidence_lab.acquisition.podcast_candidate_cli:main"
 
 [project.optional-dependencies]
 asr = [
