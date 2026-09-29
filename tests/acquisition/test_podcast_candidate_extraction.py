@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from clocktower_evidence_lab.acquisition import asr, podcast_candidates
 
 
@@ -84,3 +86,29 @@ def test_default_c2_rules_locate_registration_and_explicit_alternative_windows()
 
     assert podcast_candidates.CandidateCategory.REGISTRATION_CHOICE in categories
     assert podcast_candidates.CandidateCategory.EXPLICIT_ALTERNATIVE in categories
+
+
+def test_extract_asr_candidate_artifact_and_writer_keep_transcript_outside_output(
+    tmp_path: Path,
+) -> None:
+    transcript = asr.AsrTranscript(
+        model_name="small.en",
+        language="en",
+        segments=_segments(
+            "The Recluse can register as evil for the Investigator.",
+            "Instead, you could show the real Minion.",
+        ),
+    )
+
+    artifact = podcast_candidates.extract_asr_candidate_artifact(
+        source_id="podcast:example",
+        transcript=transcript,
+    )
+    output = tmp_path / "candidates.json"
+    podcast_candidates.write_candidate_artifact(artifact, output)
+
+    payload = output.read_text(encoding="utf-8")
+    assert artifact.candidates
+    assert '"source_id": "podcast:example"' in payload
+    assert "The Recluse can register as evil" not in payload
+    assert "Instead, you could show the real Minion" not in payload
