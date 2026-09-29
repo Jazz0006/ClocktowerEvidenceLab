@@ -130,9 +130,11 @@ def classify_trouble_brewing(title: str) -> EpisodeScope:
     """Classify explicit script labels conservatively for the current TB-only scope."""
 
     normalized = title.casefold()
-    if "(trouble brewing)" in normalized:
+    if "trouble brewing" in normalized:
         return EpisodeScope.IN_SCOPE
-    if "(bad moon rising)" in normalized or "(sects & violets)" in normalized:
+    if "bad moon rising" in normalized:
+        return EpisodeScope.OUT_OF_SCOPE
+    if "sects & violets" in normalized or "sects and violets" in normalized:
         return EpisodeScope.OUT_OF_SCOPE
     return EpisodeScope.UNKNOWN
 
