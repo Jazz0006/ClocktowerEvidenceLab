@@ -1,4 +1,4 @@
-import clocktower_evidence_lab.acquisition.podcast_manifest as manifest
+from clocktower_evidence_lab.acquisition import podcast_manifest as manifest
 from clocktower_evidence_lab.acquisition.podcast import PodcastEpisode
 
 
