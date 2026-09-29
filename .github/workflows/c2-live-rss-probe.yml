@@ -1,0 +1,26 @@
+name: C2 live RSS probe
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e .
+      - name: Enumerate live RSS
+        run: clocktower-podcast-manifest --output c2-podcast-manifest.json
+      - name: Upload manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: c2-podcast-manifest
+          path: c2-podcast-manifest.json
+          if-no-files-found: error
