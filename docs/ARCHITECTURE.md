@@ -49,6 +49,27 @@ Policy research
 
 No arrow from the downstream analysis path may rewrite historical evidence.
 
+## 2.1 Acquisition preprocessing boundary
+
+C2 introduces a batch acquisition layer before durable evidence promotion:
+
+```text
+RSS / public media locator
+    -> episode manifest
+    -> transcript locator or ASR
+    -> machine candidate extraction
+    -> bounded human primary-source review
+    -> EvidenceFragment / EvidenceAssertion
+```
+
+The episode manifest and machine extraction artifacts are workflow/acquisition data, not a parallel truth store.
+
+They may track operational status such as acquired, ASR-complete, extracted or review-pending, but those states must not substitute for `Derivation` / `Verification`.
+
+Full copyrighted media and full machine transcripts remain outside Git and need not enter the canonical evidence export.
+
+This preprocessing layer should remain source-generic enough that future video/multimodal acquisition can feed the same reviewed-evidence boundary without changing core historical entities.
+
 ## 3. Core domain entities
 
 ### Source
