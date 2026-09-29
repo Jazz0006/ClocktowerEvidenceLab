@@ -7,6 +7,11 @@ on:
       - docs/podcast-batch-ingestion-route-20260929
     paths:
       - .github/workflows/c2-bounded-podcast-validation.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/c2-bounded-validation-token
 
 jobs:
   validate:
