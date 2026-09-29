@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C1 Drunk Assignment Evidence Upgrade
 
-> Current state: **C1A + C1B + C1C COMPLETE / C1D NEXT — downstream replay handoff**
+> Current state: **C1 COMPLETE — C1A + C1B + C1C + C1D COMPLETE; persistence deferred**
 >
 > Current branch: `c1-drunk-assignment-evidence-upgrade`
 >
@@ -175,7 +175,7 @@ Tests-first evidence:
 - formatting-only follow-ups: `5adc2e191ef58ba2322d10083d17f372b6e8c9fc`, `03a52a15c5f6f3ad3bfbc2fae574e5ee2603b255`;
 - quality #129: PASS.
 
-**C1B is closed. C1C has now also completed; the next project step is C1D.**
+**C1 is closed for the current product need. C1D downstream replay is accepted; do not reopen C1C acquisition or add persistence unless a concrete downstream gap requires it.**
 
 ### C1C — targeted acquisition — COMPLETE
 
@@ -233,22 +233,32 @@ Creator-guidance checkpoint also remains complete:
 
 Do not reopen G02/G08/G09 or search for more C1C cases unless C1D exposes a concrete missing evidence field.
 
-### C1D — downstream replay handoff
+### C1D — downstream replay handoff — COMPLETE
 
-Provide CampBoardGameHost one stable case containing:
+Authority:
 
-- pre-assignment historical prefix;
-- observed expert choice;
-- provenance;
-- source-backed rationale/alternatives where available.
+- `docs/C1D_G10_DRUNK_ASSIGNMENT_REPLAY_HANDOFF_2026-09-29.md`.
 
-CampBoardGameHost then derives legal candidates and runs the production Drunk-selection SDE.
+G10 Game 2 was replayed downstream in CampBoardGameHost PR #173.
 
-Evidence Lab does not produce a winner/verdict.
+Accepted Host executable head:
 
-### C1E — persistence only if justified
+`87240bb1e3ba6cfe61461905741659d3ba5426ae`
 
-Only after C1A–D stabilise semantics should persistence/export expansion be considered.
+Acceptance:
+
+- CI #3532 GREEN with Android full + debug assemble, ASP contracts and Real Clingo;
+- R2 #3273 GREEN;
+- Host-derived legal candidates included the observed seat-1 Empath;
+- frozen V1 remained Deferred with no policy selection.
+
+Evidence Lab did not produce a winner/verdict.
+
+### C1E — persistence only if justified — DEFERRED
+
+No persistence/export expansion is currently justified by C1.
+
+Do not add an Alembic migration until a concrete durable-corpus/export workflow requires it.
 
 ## 8. C1 completion gate
 
