@@ -40,11 +40,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     in_scope = sum(entry.scope is EpisodeScope.IN_SCOPE for entry in manifest.episodes)
     queued = len(active_acquisition_queue(manifest))
     print(
-        (
-            f"episodes={len(manifest.episodes)} "
-            f"in_scope={in_scope} "
-            f"acquisition_queue={queued}"
-        ),
+        (f"episodes={len(manifest.episodes)} in_scope={in_scope} acquisition_queue={queued}"),
         file=sys.stderr,
     )
     return 0
