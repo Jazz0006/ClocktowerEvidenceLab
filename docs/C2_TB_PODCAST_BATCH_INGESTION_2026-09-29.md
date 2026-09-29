@@ -1,6 +1,6 @@
 # C2 — Trouble Brewing Podcast Batch Ingestion — 2026-09-29
 
-> Status: **ACTIVE — C2A COMPLETE / C2B IMPLEMENTATION COMPLETE / C2C NEXT**
+> Status: **ACTIVE — C2A COMPLETE / C2B COMPLETE / C2C IMPLEMENTATION COMPLETE / REAL BATCH VALIDATION NEXT**
 >
 > Scope: `Cult of the Clocktower` expert audio relevant to the current Trouble Brewing-only product scope.
 >
