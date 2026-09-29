@@ -78,9 +78,7 @@ class CandidateArtifact(_CandidateModel):
     @model_validator(mode="after")
     def _validate_state(self) -> "CandidateArtifact":
         expected = (
-            ExtractionState.COMPLETE
-            if self.candidates
-            else ExtractionState.NO_USEFUL_CANDIDATES
+            ExtractionState.COMPLETE if self.candidates else ExtractionState.NO_USEFUL_CANDIDATES
         )
         if self.extraction_state is not expected:
             raise ValueError("extraction_state does not match candidate presence")
@@ -119,11 +117,7 @@ def materialize_candidate_artifact(
         )
 
     candidate_tuple = tuple(candidates)
-    state = (
-        ExtractionState.COMPLETE
-        if candidate_tuple
-        else ExtractionState.NO_USEFUL_CANDIDATES
-    )
+    state = ExtractionState.COMPLETE if candidate_tuple else ExtractionState.NO_USEFUL_CANDIDATES
     return CandidateArtifact(
         source_id=source_id,
         extraction_state=state,
