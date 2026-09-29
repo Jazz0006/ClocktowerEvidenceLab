@@ -57,11 +57,20 @@ C2 has now completed three implementation slices:
 
 The latest C2C quality gate passed Install / Ruff check / Ruff format / Pytest.
 
-A real multi-episode batch has **not** yet been claimed as reviewed evidence. Full audio/transcript artifacts must remain outside Git.
+A bounded real two-episode C2B -> C2C validation has completed successfully for **Investigator + Imp**. Full audio/transcript artifacts remained outside Git; the workflow uploaded lightweight validation artifacts only. This is acquisition/extraction validation, not reviewed evidence.
+
+C2D has now started. podcast_review.py and focused tests define deterministic merging, review priorities, review-time/window budgets and a lightweight packet writer. The current branch is intentionally RED because tests/acquisition/test_podcast_review_cli.py imports a not-yet-implemented podcast_review_cli.
+
+Latest known code checkpoint before documentation sync:
+- production/test HEAD: 6950ed1c8071d7ae9d6af4e8c7f612f685f58c25;
+- PR #8: Draft / mergeable;
+- bounded validation run #4: SUCCESS;
+- quality run #274: FAILURE at pytest collection only because podcast_review_cli is missing;
+- Install / Ruff check / Ruff format all passed on #274.
 
 ## 3. Current task
 
-Run a **bounded real multi-episode C2B -> C2C validation**, then move into C2D review-packet ranking if the real artifacts validate the current contracts.
+Finish **C2D review-packet CLI -> GREEN**, then generate review packets from the successful Investigator/Imp artifacts and perform bounded primary-audio review.
 
 Goal:
 
@@ -104,15 +113,24 @@ Do not put the complete transcript text into Git-managed candidate artifacts.
 
 ## 6. Implementation sequence
 
+Completed:
+
 ```text
-define candidate domain/serialization contract
-    -> focused tests
-    -> deterministic extraction primitives over timestamped segments
-    -> lightweight artifact writer
-    -> quality gate
-    -> bounded real multi-episode C2B run
-    -> C2C extraction over that batch
-    -> C2D relevance/review packets
+C2A manifest
+    -> C2B batch acquisition
+    -> C2C candidate extraction
+    -> bounded real Investigator/Imp validation
+```
+
+Current:
+
+```text
+C2D review packet model/writer
+    -> podcast_review_cli
+    -> full quality GREEN
+    -> generate Investigator/Imp review packets
+    -> bounded primary-audio review
+    -> C2E verified guidance promotion
 ```
 
 Use the existing manifest, batch runner and ASR adapter. Do not add a persistence migration unless this real workflow proves lightweight artifacts insufficient.
