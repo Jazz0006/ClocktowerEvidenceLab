@@ -174,20 +174,14 @@ def build_episode_manifest(
             ),
             scope=classify_trouble_brewing(episode.title),
             acquisition_state=(
-                prior.acquisition_state
-                if prior is not None
-                else AcquisitionState.NOT_ATTEMPTED
+                prior.acquisition_state if prior is not None else AcquisitionState.NOT_ATTEMPTED
             ),
             asr_state=prior.asr_state if prior is not None else AsrState.NOT_ATTEMPTED,
             extraction_state=(
-                prior.extraction_state
-                if prior is not None
-                else ExtractionState.NOT_ATTEMPTED
+                prior.extraction_state if prior is not None else ExtractionState.NOT_ATTEMPTED
             ),
             human_review_state=(
-                prior.human_review_state
-                if prior is not None
-                else HumanReviewState.NOT_STARTED
+                prior.human_review_state if prior is not None else HumanReviewState.NOT_STARTED
             ),
             prior_artifact_path=prior.artifact_path if prior is not None else None,
         )
