@@ -141,6 +141,41 @@ A research-ready Storyteller decision with:
 
 A DecisionSlice does not contain a quality verdict.
 
+### HistoricalPrefixBoundary
+
+A reusable decision-time boundary over the authoritative reconstruction history.
+
+The boundary must support setup-time decisions as well as ordinary semantic events. It identifies what historical commitments/events are included immediately before a Storyteller decision.
+
+A boundary must never include the resulting commitment/event of the decision it is used to analyse.
+
+Setup ordering has two distinct meanings:
+
+- `SetupOrderBasis.EVIDENCED`: the relative setup order is supported strongly enough to define a historical setup-time prefix;
+- `SetupOrderBasis.CANONICAL_ONLY`: the order exists only to make reconstruction/serialization deterministic.
+
+A `CANONICAL_ONLY` order must never be used to decide which setup commitments existed before a setup-time choice. It remains safe as deterministic presentation order for event-time decisions after setup as a whole is already committed.
+
+### Setup-time decisions
+
+Some Storyteller decisions occur while setup is still being committed rather than during the ordinary night/day event stream.
+
+Drunk assignment is the current concrete example:
+
+```text
+shown-role / seat layout committed
+    ↓
+decision boundary
+    ↓
+Storyteller chooses one shown Townsfolk seat as the actual Drunk
+    ↓
+resulting SetupCommitment
+```
+
+The resulting setup fact remains authoritative reconstruction history. A DecisionSlice is a derived analytical view that references the relevant prefix and resulting commitment.
+
+Evidence Lab stores explicitly observed considered/rejected alternatives when present, but legal-alternative enumeration belongs to the downstream rules consumer.
+
 ### Storyteller
 
 A stable public identity / independence key plus evidence supporting experience/trust qualification.

@@ -67,6 +67,71 @@ Useful for:
 
 Do not treat them as equivalent to a reconstructable primary game.
 
+Before promoting any visually complete setup into the historical-game corpus, verify that the source is actually recording a played game rather than an instructional/example presentation. A complete illustrative lineup is not historical game evidence merely because it looks like a grimoire.
+
+For active acquisition, also verify that the primary source is currently accessible to human review. A private/deleted video may remain a provenance locator, but secondary indexes describing it do not make it a reviewable primary source.
+
+## 2.1 Current targeted gap — Drunk assignment
+
+The current product-directed acquisition gap is no longer “find more games containing a Drunk.”
+
+CampBoardGameHost now needs empirical examples for a setup-time decision: **which already-shown Townsfolk seat becomes the Drunk**.
+
+Do not restart broad corpus growth. The C1B re-audit of existing Drunk-bearing Trouble Brewing reconstructions is now complete; it found 4 partial/result cases but 0 assignment cases with an evidence-backed reconstructable pre-assignment prefix.
+
+Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
+
+C1C targeted acquisition is now in progress and has reached **2 / 3 replayable Drunk-assignment cases**:
+
+- E0 `A Stud In Scarlet` — replayable prefix, rationale UNKNOWN;
+- `A Fond Farewell` — replayable prefix with explicit assignment rationale.
+
+Additional reviewed cases such as `Live and Imp-Person` and the Dicebreaker Trouble Brewing playthrough are result-only because they begin from an already-completed setup. G03/G04 contained no Drunk; G06 was instructional rather than a real game; G07's primary video is Private.
+
+Verified creator-level guidance from Steven Medway now supports player-first, role-first and whole-setup-first Drunk selection. G10 The Megavoid adds explicit topology-driven assignment guidance and Drunk Undertaker bluff-continuity guidance, but its playthroughs are not replay evidence until real-game status and assignment chronology are source-established.
+
+Current priority is therefore narrowly bounded: verify G10 playthrough status / Drunk presence, then continue only as needed to obtain one final real `PREFIX_RECONSTRUCTABLE` assignment case.
+
+See `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
+
+For a Drunk-bearing game, record when evidence permits:
+
+- chosen Drunk seat;
+- shown Townsfolk identity;
+- surrounding shown-role / seating layout;
+- the historical setup boundary immediately before assignment;
+- which setup commitments are evidenced as already committed;
+- explicit assignment rationale;
+- explicit considered or rejected alternatives;
+- later Drunk misinformation;
+- multi-night misinformation continuity.
+
+Use replay-value descriptors rather than quality scores:
+
+```text
+RESULT_ONLY
+PREFIX_PARTIAL
+PREFIX_RECONSTRUCTABLE
+RATIONALE_EXPLICIT
+ALTERNATIVES_EXPLICIT
+```
+
+These describe evidence completeness only.
+
+Highest-value new sources are expert/trusted Storyteller POV recordings, live grimoire/setup construction, setup commentary, post-game review, or specific real-game podcast/interview explanation.
+
+Structured final grimoire records remain useful but normally provide result-only or prefix-partial assignment evidence unless chronology/commentary is also present.
+
+Immediate target:
+
+- at least 3 Drunk-assignment cases with reconstructable decision prefixes;
+- seek 1–2 explicit-rationale cases if available;
+- preserve independent Storyteller coverage where practical.
+
+Evidence Lab must not derive the legal Drunk candidate set from game rules. It may record alternative seats only when the source establishes that the Storyteller actually considered or rejected them.
+
+See `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
+
 ## 3. ClockTracker suitability gate
 
 The current product scope is **Trouble Brewing only**. Other scripts are outside the present Storyteller App capability and must not consume C0 screening effort.

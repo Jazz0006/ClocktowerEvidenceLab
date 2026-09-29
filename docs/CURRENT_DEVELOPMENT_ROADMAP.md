@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / READY TO MERGE; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; continuous evidence collection — LOW-FREQUENCY / TARGETED
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — COMPLETE
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -161,6 +161,109 @@ Cross-project handoff:
 
 Do not grow raw corpus count by default. Continue only where a new game/source closes a known replay blocker, adds a missing evidence shape, or supplies explicit qualified Storyteller rationale.
 
+## 2.2 C1 route correction — Drunk assignment becomes an algorithm output — 2026-09-28
+
+CampBoardGameHost is changing its setup flow so that the setup/template decides whether a Drunk exists, while the Storyteller Decision Engine later chooses which already-shown Townsfolk seat is actually the Drunk.
+
+This changes an important Evidence Lab boundary.
+
+Old downstream assumption:
+
+```text
+selected Drunk identity = fixed algorithm input
+```
+
+New downstream need:
+
+```text
+pre-assignment setup prefix
+    ↓
+Storyteller chooses Drunk seat
+    ↓
+resulting assignment
+    ↓
+later misinformation decisions
+```
+
+C1 therefore promotes setup-time decision evidence to an immediate product need.
+
+Frozen C1 direction:
+
+- Drunk existence, Drunk assignment and Drunk misinformation are separate semantics;
+- the resulting Drunk setup fact remains authoritative reconstruction history;
+- a generic DecisionSlice represents the Storyteller choice as a derived analytical view;
+- a generic HistoricalPrefixBoundary must support setup-time as well as event-time decisions;
+- the assignment decision prefix must stop before its own resulting SetupCommitment;
+- later Red Herring, Poisoner, information and outcome history must not leak backward;
+- Evidence Lab may record source-observed considered/rejected alternatives;
+- Evidence Lab must not derive legal Drunk candidates from BotC rules;
+- existing Drunk-bearing corpus is re-audited before any new acquisition;
+- new acquisition remains low-frequency and targeted at missing assignment prefix/rationale evidence;
+- persistence expansion remains deferred until the domain contract survives real corpus projection and downstream replay.
+
+Implementation order:
+
+```text
+C1A generic domain contract
+    ↓
+C1B existing-corpus Drunk re-audit/projection
+    ↓
+C1C targeted assignment-rationale acquisition
+    ↓
+C1D CampBoardGameHost replay handoff COMPLETE
+    ↓
+C1E persistence only if justified
+```
+
+C1 completion does not require broad corpus growth or a new Alembic migration.
+
+C1A checkpoint — COMPLETE:
+
+- generic setup/event `HistoricalPrefixBoundary` implemented;
+- generic `DecisionSlice` and authoritative-result linkage implemented;
+- historical-prefix materialization prevents own-result and later-history leakage;
+- explicit alternatives are evidence-backed and structurally separate from downstream legal alternatives;
+- UNKNOWN rationale/alternatives survive domain round-trip;
+- no persistence or Drunk-specific rules/policy were added;
+- final implementation quality run #122 passed Ruff and all 65 pytest tests.
+
+C1B checkpoint — COMPLETE:
+
+- E0, R02, R03 and R04 were re-audited for Drunk assignment;
+- existing corpus yields 4 partial/result cases but 0 evidence-backed `PREFIX_RECONSTRUCTABLE` assignment cases;
+- only E0 currently establishes both selected participant/visible seat and shown Townsfolk role;
+- assignment rationale and assignment alternatives remain UNKNOWN across the existing set;
+- later Drunk misinformation and later confirmation were explicitly kept out of assignment rationale/prefix;
+- `SetupOrderBasis` now separates `EVIDENCED` historical setup order from `CANONICAL_ONLY` deterministic reconstruction order;
+- setup-time prefix materialization rejects canonical-only ordering;
+- no persistence or Drunk-specific rules/policy were added.
+
+Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
+
+C1C checkpoint — COMPLETE:
+
+- broad “games with a Drunk” search remains stopped;
+- bounded targeted acquisition reached the required replay package without quota-driven expansion;
+- G01 `A Stud In Scarlet` is replay case 1: complete role/shown-role layout fixed before Sullivan / shown Empath is selected as Drunk; Red Herring is later; rationale remains UNKNOWN;
+- G05 `A Fond Farewell` is replay case 2: complete role layout fixed before Chef is selected as Drunk at 03:32; Ben explicitly ties the assignment to an extreme Chef misinformation plan; Red Herring and Demon bluffs are later;
+- G10 The Megavoid Game 2 is replay case 3: complete seat/shown-role layout fixed before the shown Empath is selected as Drunk at approximately 16:29 because the Empath is adjacent to the Demon;
+- final replay quota is **3 / 3**;
+- explicit historical assignment-rationale cases are **2 / seek 1–2**;
+- G10 Game 1 contains no Drunk and is screened out;
+- G10 later evidence is retained separately from assignment: Librarian uncertainty-shaping information, Demon bluffs, multi-night Drunk Empath information, and a Spy -> Virgin Undertaker registration/bluff-continuity interaction;
+- Steven Medway's podcast assignment window remains verified creator-level guidance rather than a replay case;
+- G02 and G09 remain result-only for assignment chronology;
+- G03/G04 contain no Drunk;
+- G06 is instructional rather than a real historical game;
+- G07 is currently inaccessible and G08 remains held, but neither is needed now that the bounded quota is satisfied;
+- targeted acquisition is **STOPPED** unless downstream replay exposes a concrete missing field.
+
+Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
+
+C1D is COMPLETE. G10 Game 2 crossed into CampBoardGameHost PR #173; Host independently derived the legal candidate domain and accepted the historical replay at executable head `87240bb1e3ba6cfe61461905741659d3ba5426ae` with CI #3532 and R2 #3273 GREEN. Evidence Lab did not own the recommendation verdict. C1E persistence expansion remains deferred because no current workflow requires a new migration.
+
+Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
+
 ## 3. Milestones
 
 ### E0 — Evidence contract pilot — COMPLETE
@@ -229,7 +332,11 @@ A downstream researcher can understand exactly what happened, what remains unkno
 
 No production legality or policy scoring is implemented.
 
-### E1 — Domain and persistence foundation — CHECKPOINT COMPLETE / READY TO MERGE
+### E1 — Domain and persistence foundation — COMPLETE / MERGED
+
+PR #2 was squash-merged to `main` on 2026-09-23. The E1/C0 baseline main commit is `157a91f47112a7e4af02bc6e4c9e8613ef99d490`.
+
+The detailed branch/PR status statements below are retained as historical implementation notes; they are not live merge instructions.
 
 E0 has validated the workflow and PR #1 has been squash-merged to `main` at `6a672a9dc6b7fa13f98aef8a7e6b1e616889d667`.
 

@@ -104,6 +104,31 @@ Direct title/channel/date/Storyteller metadata remains reconstructed from consis
 - verification: VERIFIED by human primary review
 - note: the image is not committed; only concise facts/provenance are retained.
 
+### FRAG-ASIS-C1C-SETUP-PREFIX-001 — 2026-09-28 bounded primary review
+
+- source: `SRC-E0-ASIS-YT`
+- locator: primary-video setup discussion around the previously identified Drunk-assignment region; reviewer also supplied a frame of the complete setup
+- fact: at the point Sullivan is selected as the Drunk, the complete player role / seat layout has already been fixed:
+  - seat 1 Luke — Imp;
+  - seat 2 Oli — Ravenkeeper;
+  - seat 3 Blair — Fortune Teller;
+  - seat 4 Tom — Monk;
+  - seat 5 Elliott — Recluse;
+  - seat 6 Laurie — Scarlet Woman;
+  - seat 7 Isaac — Undertaker;
+  - seat 8 Jon — Chef;
+  - seat 9 Sullivan — shown Empath.
+- fact: no assignment rationale is stated for selecting Sullivan as the Drunk
+- fact: no alternative Drunk participant/role is discussed in the reviewed segment
+- fact: Sullivan is selected as the Fortune Teller Red Herring after the Drunk assignment
+- derivation: OBSERVED through human primary review
+- verification: VERIFIED
+- important chronology:
+  - complete player role / shown-role layout is established before the Drunk assignment;
+  - the Drunk assignment itself is not part of its own prefix;
+  - Red Herring selection is later setup history and must not leak backward into the assignment prefix.
+- precision: this evidence establishes **prefix membership and ordering between setup groups**. It does not establish the internal order in which the individual player roles were originally selected.
+
 ### FRAG-ASIS-09-49-DRUNK
 
 - source: `SRC-E0-ASIS-YT`
@@ -349,21 +374,31 @@ Do not recover the witness by importing CampBoardGameHost legality logic.
 
 This section deliberately tests the event/commitment vocabulary without promoting secondary reconstruction into the corpus.
 
-### Setup commitment group — exact internal order UNKNOWN
+### Setup commitment groups — C1C chronology refinement
 
-Primary visual/timed evidence now supports:
+Primary review now supports a stronger partial order for the Drunk-assignment decision:
 
-- nine-player seating / visible setup as reconstructed above;
-- Sullivan actual role = Drunk;
-- Sullivan shown / believed role = Empath;
-- Fortune Teller red herring = Sullivan;
-- Demon bluffs = Saint / Slayer / Soldier.
+1. the complete nine-player role / shown-role layout is already fixed;
+2. Sullivan is selected as the actual Drunk while shown Empath;
+3. Sullivan is selected as the Fortune Teller Red Herring afterward.
 
-These facts may now enter the current reconstruction revision.
+The internal order in which the individual roles inside the complete layout were originally chosen remains UNKNOWN. C1 does not need to invent that order.
 
-Their **exact historical setup-commit order remains UNKNOWN**. Source presentation timestamps such as 09:49 and 10:32 must not be mistaken for proof that the original setup choices were committed in that same order.
+For Drunk-assignment replay, the complete role layout can therefore be represented as one evidenced setup commitment group immediately before the decision boundary:
 
-The useful modeling observation is that an edited source may establish all of them as pre-Night-1 commitments without revealing their exact internal commit order.
+```text
+complete player role / shown-role layout committed
+    ↓
+<Drunk-assignment decision boundary>
+    ↓
+Sullivan = actual Drunk, shown Empath
+    ↓
+later setup: Red Herring = Sullivan
+```
+
+This is sufficient for `PREFIX_RECONSTRUCTABLE` assignment replay while preserving UNKNOWN internal layout chronology.
+
+Demon bluffs remain visible in the setup frame, but C1C does not require their exact commitment time for the Drunk-assignment prefix unless the source separately establishes that ordering.
 
 ### Night 1 — primary-reviewed interaction order
 
@@ -471,10 +506,13 @@ These are admitted as traceable historical decision slices, but **not GOLD-quali
 - observed-value evidence: primary-supported reconstruction;
 - decision-control classification: Storyteller-controlled by Evidence Lab's normative decision taxonomy;
 - personal actor attribution remains UNKNOWN unless primary source establishes it
-- committed-prefix precision: PARTIAL / setup internal ordering UNKNOWN
+- C1C committed-prefix precision: **PREFIX_RECONSTRUCTABLE**
+- evidenced prefix: complete player role / shown-role layout fixed before Drunk assignment
+- later excluded setup: Red Herring selection occurs after Drunk assignment
+- internal order among the individual layout roles: UNKNOWN and not required for this grouped prefix
 - rationale: UNKNOWN
-- rejected alternatives: UNKNOWN
-- GOLD: NOT YET ELIGIBLE because exact setup prefix/order and actor attribution remain incomplete
+- considered/rejected alternatives: UNKNOWN
+- GOLD: still NOT YET ELIGIBLE because personal actor attribution / independent GOLD qualification gates remain separate questions
 
 ### DS-ASIS-002 — Fortune Teller Red Herring = Sullivan
 
@@ -725,8 +763,8 @@ Do not turn it into tables/classes/files until the E0 primary reconstruction and
 - screening: STARTED
 - source-locator evidence: STARTED
 - direct primary gameplay review: STARTED / HUMAN-REVIEWED
-- primary timed evidence fragments: 4 timed fragments + 1 primary setup frame captured
-- setup reconstruction: PRIMARY-SUPPORTED; exact internal commit order remains UNKNOWN
+- primary timed evidence fragments: 4 timed fragments + primary setup-frame / C1C bounded setup-prefix review captured
+- setup reconstruction: PRIMARY-SUPPORTED; complete role-layout-before-Drunk and Drunk-before-Red-Herring ordering VERIFIED, while internal role-selection order remains UNKNOWN
 - ordered Night-1 timeline: PRIMARY-VERIFIED for the bounded Chef / Drunk-Empath / Fortune Teller interactions
 - admitted decision slices: 3 (none GOLD-qualified yet)
 - Chef delivery: VERIFIED = 1

@@ -73,6 +73,39 @@ A DecisionSlice is a downstream projection from a reconstructed game, not the pr
 
 Direct telemetry from the Storyteller app is explicitly deferred.
 
+## Current targeted evidence gap — C1
+
+The current product-directed gap is **Drunk assignment**.
+
+CampBoardGameHost is moving from treating the selected Drunk identity as a fixed input to asking the Storyteller Decision Engine to choose which already-shown Townsfolk seat is actually the Drunk.
+
+Evidence Lab therefore needs to preserve:
+
+- the historical setup prefix immediately before that choice;
+- the observed selected seat / shown role;
+- explicit assignment rationale or alternatives when the source actually states them;
+- later Drunk misinformation as a separate decision.
+
+Evidence Lab does not derive the legal candidate set. That remains downstream rules-engine work.
+
+C1A, C1B and C1C are complete. The bounded targeted-acquisition pass reached the replay target without reopening broad corpus growth.
+
+C1C now has three `PREFIX_RECONSTRUCTABLE` Drunk-assignment cases:
+
+- E0 `A Stud In Scarlet`: complete layout -> Sullivan / shown Empath selected as Drunk -> later Red Herring;
+- `A Fond Farewell`: complete layout -> Chef selected as Drunk with explicit rationale -> later Red Herring/bluffs;
+- The Megavoid Game 2: complete layout -> shown Empath selected as Drunk because adjacent to the Demon -> later information/bluff decisions.
+
+The replay quota is **3 / 3**, with **2 explicit historical assignment-rationale cases**. Targeted C1C acquisition is stopped.
+
+The next step is C1D: hand one stable historical prefix + observed choice + provenance package to CampBoardGameHost. CampBoardGameHost remains responsible for legal candidate derivation and recommendation replay/evaluation.
+
+See:
+
+- `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`;
+- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`;
+- `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
+
 ## Storage direction
 
 The project is local-first. E1 has frozen the initial implementation foundation:
