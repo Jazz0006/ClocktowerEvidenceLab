@@ -1,13 +1,11 @@
-import clocktower_evidence_lab.acquisition.c2_podcast as c2_podcast
-import clocktower_evidence_lab.acquisition.podcast_manifest as podcast_manifest
-from clocktower_evidence_lab.acquisition.podcast import PodcastEpisode
+from clocktower_evidence_lab.acquisition import c2_podcast, podcast, podcast_manifest
 
 
 _FEED_URL = "https://anchor.fm/s/daf1f9c/podcast/rss"
 
 
-def _episode(title: str, guid: str) -> PodcastEpisode:
-    return PodcastEpisode(
+def _episode(title: str, guid: str) -> podcast.PodcastEpisode:
+    return podcast.PodcastEpisode(
         feed_url=_FEED_URL,
         title=title,
         guid=guid,
