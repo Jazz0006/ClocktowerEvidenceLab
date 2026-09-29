@@ -1,6 +1,7 @@
 """C2D deterministic review-packet ranking over lightweight machine candidates."""
 
 from enum import StrEnum
+from pathlib import Path
 from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -190,3 +191,18 @@ def _review_sort_key(window: ReviewWindow) -> tuple[int, int, float, int, int]:
         window.end_ms - window.start_ms,
         window.start_ms,
     )
+
+
+def write_review_packet(
+    packet: ReviewPacket,
+    output_path: str | Path,
+) -> Path:
+    """Write a lightweight review packet without source transcript text."""
+
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        packet.model_dump_json(indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return target
