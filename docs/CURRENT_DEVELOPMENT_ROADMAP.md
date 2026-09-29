@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A + C1B COMPLETE / C1C IN PROGRESS
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A + C1B + C1C COMPLETE / C1D NEXT
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -240,52 +240,27 @@ C1B checkpoint — COMPLETE:
 
 Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
 
-C1C checkpoint — IN PROGRESS:
+C1C checkpoint — COMPLETE:
 
 - broad “games with a Drunk” search remains stopped;
-- a bounded primary-review queue is now established;
-- P0 is E0 `A Stud In Scarlet` around the known setup discussion window;
-- P1 is `Live and Imp-Person`, where Brooke = Drunk shown Undertaker and the full layout are already strong leads;
-- qualified general assignment guidance has been found, but is not counted as historical replay evidence;
-- E0 `A Stud In Scarlet` has now passed bounded primary review and is the first `PREFIX_RECONSTRUCTABLE` Drunk-assignment case;
-- its verified ordering is: complete role/shown-role layout fixed → Sullivan selected as Drunk shown Empath → Red Herring selected later;
-- assignment rationale and alternatives remain UNKNOWN;
-- current replay quota is **1 / 3**;
-- G02 `Live and Imp-Person` has now been primary-reviewed: Brooke = Drunk shown Undertaker is verified, but the setup is presented already designed, so the assignment prefix remains UNKNOWN and the case does not count toward the assignment replay quota;
-- G02 separately provides explicit Ben Burns Drunk misinformation strategy: early correct information to preserve role belief, followed by sustained incorrect information;
-- G03 official 2019 Game 2 has now been primary-screened and contains no Drunk; it is removed from the C1C assignment queue, though its Poisoner → false Investigator clue + healthy Empath 0 bundle is retained as ancillary evidence;
-- G04 official 2019 Game 1 has now also been primary-screened and contains no Drunk, so it is removed from the C1C assignment queue;
-- G04 independently provides a strong source-observed registration example: Jordan the Spy explicitly registers as Soldier to support Nicole's false Washerwoman clue;
-- current Drunk-assignment replay quota therefore remains 1 / 3;
-- the exhausted G03/G04 pair has been replaced by G05 `A Fond Farewell`, an official Trouble Brewing video Storytold by Ben Burns with a bounded 00:00–04:25 Intro & Setup chapter;
-- G05 `A Fond Farewell` has now passed bounded primary review and is the second `PREFIX_RECONSTRUCTABLE` Drunk-assignment case;
-- verified ordering: complete role layout → Chef selected as Drunk at 03:32 → Red Herring selected at 04:04 → Demon bluffs at 04:47;
-- Ben explicitly gives the assignment rationale: make the Chef Drunk so a ridiculously high Chef number can be used as the intended misinformation narrative;
-- surrounding Recluse / Scarlet Woman / Traveler-adjacency discussion is preserved as setup context, not misclassified as alternate Drunk candidates;
-- current replay quota is **2 / 3** and explicit historical assignment-rationale quota is **1 / 1–2**;
-- only one additional replayable assignment case remains;
-- G06 `An Introduction to Blood on the Clocktower` has been rejected after primary review because it is an instructional/game-introduction source rather than a real historical game;
-- its displayed lineup must not be imported as historical corpus evidence;
-- acquisition still requires one new real Drunk-bearing primary game for replay case 3 / 3;
-- before promoting any future candidate, confirm that the source records an actual played game rather than an illustrative setup;
-- Cult of the Clocktower episode 16 assignment window 01:28:18–01:29:18 has now been human-verified against the original audio;
-- Steven Medway is confirmed as the speaker and the machine paraphrase is materially complete;
-- verified creator-level guidance identifies three Drunk-assignment modes: player-first, role-first and whole-setup-first;
-- this directly supports a late-bound assignment engine that can consume player context, shown-role semantics and whole-setup topology;
-- the podcast remains guidance, not a historical replay case, so the replay quota stays 2 / 3;
-- G07 TPI & Friends `Yeah Boi!` is rejected for current C1C because the linked primary video is now Private; old indexes remain locator-only;
-- G08 Edd Gabriel is on HOLD because current access could not be revalidated;
-- G09 Dicebreaker 2019 Trouble Brewing has now been primary-reviewed: the 7-player setup includes a Drunk shown Librarian, but the source presents an already-completed setup and does not expose the historical assignment construction sequence;
-- G09 is therefore RESULT_ONLY / NOT PREFIX_RECONSTRUCTABLE and does not increase the replay quota beyond 2 / 3;
-- G09 ancillary facts include Empath = 1 around 52:30 and Saint as a Demon bluff around 53:05; the Empath result is mechanically compatible with Recluse registration but the historical registration witness remains UNKNOWN unless source-explicit;
-- new next lead is G10 The Megavoid `Storytelling Tips & Tricks - BLOOD ON THE CLOCKTOWER (+ game playthrough!)`, current public YouTube `G9z25aM9u7s`; its chaptering includes `07:53 Who to Make Drunk`, `11:22 Game Playthrough 1`, and `16:23 Game 2`;
-- G10 guidance review now adds two explicit heuristics: (1) an Empath between two Evil players may be selected as Drunk because of seating topology; (2) a Drunk Undertaker may be shown the role an Evil player had been bluffing as after that Evil dies;
-- these are kept separate as assignment rationale vs misinformation narrative policy;
-- G10 playthrough replay status remains unresolved and still requires checking whether either playthrough is a real game containing a reconstructable Drunk assignment.
+- bounded targeted acquisition reached the required replay package without quota-driven expansion;
+- G01 `A Stud In Scarlet` is replay case 1: complete role/shown-role layout fixed before Sullivan / shown Empath is selected as Drunk; Red Herring is later; rationale remains UNKNOWN;
+- G05 `A Fond Farewell` is replay case 2: complete role layout fixed before Chef is selected as Drunk at 03:32; Ben explicitly ties the assignment to an extreme Chef misinformation plan; Red Herring and Demon bluffs are later;
+- G10 The Megavoid Game 2 is replay case 3: complete seat/shown-role layout fixed before the shown Empath is selected as Drunk at approximately 16:29 because the Empath is adjacent to the Demon;
+- final replay quota is **3 / 3**;
+- explicit historical assignment-rationale cases are **2 / seek 1–2**;
+- G10 Game 1 contains no Drunk and is screened out;
+- G10 later evidence is retained separately from assignment: Librarian uncertainty-shaping information, Demon bluffs, multi-night Drunk Empath information, and a Spy -> Virgin Undertaker registration/bluff-continuity interaction;
+- Steven Medway's podcast assignment window remains verified creator-level guidance rather than a replay case;
+- G02 and G09 remain result-only for assignment chronology;
+- G03/G04 contain no Drunk;
+- G06 is instructional rather than a real historical game;
+- G07 is currently inaccessible and G08 remains held, but neither is needed now that the bounded quota is satisfied;
+- targeted acquisition is **STOPPED** unless downstream replay exposes a concrete missing field.
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
-C1D remains blocked until the replay package is sufficiently stable for downstream handoff.
+C1D is now the next active step: hand one stable evidence-backed Drunk-assignment case to CampBoardGameHost for downstream legal-candidate derivation and production SDE replay. Evidence Lab must not own the recommendation verdict.
 
 Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
 
