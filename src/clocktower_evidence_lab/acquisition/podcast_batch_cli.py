@@ -22,9 +22,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--plan-only", action="store_true")
     args = parser.parse_args(argv)
 
-    manifest = PodcastEpisodeManifest.model_validate_json(
-        args.manifest.read_text(encoding="utf-8")
-    )
+    manifest = PodcastEpisodeManifest.model_validate_json(args.manifest.read_text(encoding="utf-8"))
     plan = build_batch_plan(manifest)
 
     if args.plan_only:
