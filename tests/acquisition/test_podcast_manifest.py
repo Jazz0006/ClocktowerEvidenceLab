@@ -1,4 +1,4 @@
-from clocktower_evidence_lab.acquisition import podcast_manifest as manifest
+import clocktower_evidence_lab.acquisition.podcast_manifest as manifest
 from clocktower_evidence_lab.acquisition.podcast import PodcastEpisode
 
 
@@ -54,6 +54,32 @@ def test_repeated_feed_reads_deduplicate_by_stable_identity() -> None:
 
     assert len(episode_manifest.episodes) == 1
     assert episode_manifest.episodes[0].title == refreshed.title
+
+
+def test_trouble_brewing_title_variants_are_in_scope() -> None:
+    assert (
+        manifest.classify_trouble_brewing(
+            "4.1: Trouble Brewing Revisited (Clocktower Con 2023)"
+        )
+        is manifest.EpisodeScope.IN_SCOPE
+    )
+    assert (
+        manifest.classify_trouble_brewing(
+            "24: Beggar and Gunslinger (Trouble Brewing Travelers Part 1)"
+        )
+        is manifest.EpisodeScope.IN_SCOPE
+    )
+
+
+def test_other_explicit_scripts_are_out_of_scope() -> None:
+    assert (
+        manifest.classify_trouble_brewing("3.19: Chambermaid (Bad Moon Rising)")
+        is manifest.EpisodeScope.OUT_OF_SCOPE
+    )
+    assert (
+        manifest.classify_trouble_brewing("2.1: Sects and Violets Crash Course")
+        is manifest.EpisodeScope.OUT_OF_SCOPE
+    )
 
 
 def test_manifest_preserves_locators_and_independent_workflow_states() -> None:
