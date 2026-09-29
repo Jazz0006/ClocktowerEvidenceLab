@@ -112,3 +112,44 @@ def test_extract_asr_candidate_artifact_and_writer_keep_transcript_outside_outpu
     assert '"source_id": "podcast:example"' in payload
     assert "The Recluse can register as evil" not in payload
     assert "Instead, you could show the real Minion" not in payload
+
+
+def test_rule_locator_matches_required_term_groups_across_adjacent_segments() -> None:
+    rule = podcast_candidates.CandidateRule(
+        rule_id="split-rationale",
+        category=podcast_candidates.CandidateCategory.STORYTELLER_RATIONALE,
+        term_groups=(("storyteller",), ("because", "reason", "why")),
+        summary="Keyword-located potential Storyteller rationale.",
+        context_before=0,
+        context_after=1,
+    )
+    segments = _segments(
+        "As the Storyteller, I choose the Recluse here.",
+        "Because the Investigator already has very strong information.",
+        "Unrelated later discussion.",
+    )
+
+    proposals = podcast_candidates.locate_rule_candidates(segments, rules=(rule,))
+
+    assert len(proposals) == 1
+    assert proposals[0].segment_indexes == (0, 1)
+
+
+def test_rule_locator_deduplicates_overlapping_matches_for_one_rule() -> None:
+    rule = podcast_candidates.CandidateRule(
+        rule_id="repeated-rationale",
+        category=podcast_candidates.CandidateCategory.STORYTELLER_RATIONALE,
+        term_groups=(("storyteller",), ("because",)),
+        summary="Keyword-located potential Storyteller rationale.",
+        context_before=1,
+        context_after=1,
+    )
+    segments = _segments(
+        "The Storyteller chooses this because it opens worlds.",
+        "The Storyteller may choose it because the table is converging.",
+    )
+
+    proposals = podcast_candidates.locate_rule_candidates(segments, rules=(rule,))
+
+    assert len(proposals) == 1
+    assert proposals[0].segment_indexes == (0, 1)
