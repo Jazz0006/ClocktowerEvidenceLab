@@ -1,6 +1,6 @@
 # C1 — Drunk Assignment Evidence Upgrade
 
-> Status: **C1A + C1B + C1C COMPLETE / C1D NEXT — downstream replay handoff**
+> Status: **C1 COMPLETE — C1A + C1B + C1C + C1D COMPLETE; C1E persistence deferred**
 >
 > Date: 2026-09-28
 >
@@ -406,18 +406,32 @@ Creator-level guidance remains separate:
 
 Do not perform additional C1C source discovery merely to increase sample count.
 
-### C1D — CampBoardGameHost replay handoff
+### C1D — CampBoardGameHost replay handoff — COMPLETE
 
-Export one stable Drunk-assignment case and confirm the downstream project can:
+Authority:
 
-- derive its legal alternatives itself;
-- reconstruct the intended decision prefix;
-- run the current Drunk-selection algorithm;
-- compare without Evidence Lab owning the verdict.
+- `docs/C1D_G10_DRUNK_ASSIGNMENT_REPLAY_HANDOFF_2026-09-29.md`.
 
-### C1E — Persistence only if justified
+G10 Game 2 crossed the Evidence Lab → CampBoardGameHost boundary successfully.
 
-Only after C1A–D stabilise the semantics, decide whether to persist/export:
+Downstream Host acceptance:
+
+- PR #173;
+- executable head `87240bb1e3ba6cfe61461905741659d3ba5426ae`;
+- CI #3532 GREEN, including Android full unit tests + debug APK assemble, ASP contracts and Real Clingo;
+- R2 #3273 GREEN.
+
+The Host independently derived legal Drunk candidates, mapped the observed historical Empath choice into that domain, and replayed the case through the existing DLB-3A shadow/DecisionTrace surface while frozen V1 remained Deferred with no selection.
+
+Evidence Lab did not enumerate legal alternatives or produce a recommendation verdict.
+
+### C1E — Persistence only if justified — DEFERRED / NOT REQUIRED FOR C1
+
+C1A–D semantics are stable enough for the current product need without adding persistence.
+
+Do not add an Alembic migration now merely because C1 introduced setup-time DecisionSlice semantics.
+
+A future persistence/export expansion may include:
 
 - Game / GameSeat / ReconstructionRevision;
 - SourceGameLink;
@@ -426,11 +440,11 @@ Only after C1A–D stabilise the semantics, decide whether to persist/export:
 - HistoricalPrefixBoundary;
 - DecisionSlice.
 
-Do not create an Alembic migration merely because C1 introduced a new concept.
+Reopen persistence only when a concrete corpus/export workflow needs these records durably stored rather than reconstructed/documented.
 
 ## 12. C1 completion gate
 
-C1 is complete when:
+C1 completion gate — SATISFIED:
 
 - setup-time DecisionSlice is represented by a stable generic domain contract;
 - Drunk assignment and Drunk misinformation are structurally separate;
