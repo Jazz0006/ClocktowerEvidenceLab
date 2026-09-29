@@ -74,6 +74,14 @@ class BatchProgress(_BatchModel):
     asr_relative_path: RelativePath | None = None
     asr_model: str | None = Field(default=None, min_length=1, max_length=512)
     asr_segment_count: int | None = Field(default=None, ge=0)
+    asr_skipped_existing: bool = False
+
+
+class BatchRunResult(_BatchModel):
+    """Result of executing a batch plan in an external work directory."""
+
+    progress: tuple[BatchProgress, ...]
+    blocked_items: tuple[BatchPlanItem, ...]
 
 
 def build_batch_plan(manifest: PodcastEpisodeManifest) -> BatchPlan:
@@ -198,17 +206,26 @@ def run_audio_asr(
     if not audio_path.is_file():
         raise FileNotFoundError(audio_path)
 
-    transcript = transcriber(
-        audio_path,
-        model_name=model_name,
-        device=device,
-        compute_type=compute_type,
-        language=language,
-    )
-
     asr_path = work_root / item.asr_relative_path
-    asr_path.parent.mkdir(parents=True, exist_ok=True)
-    asr_path.write_text(transcript.model_dump_json(indent=2) + "\n", encoding="utf-8")
+    if asr_path.is_file():
+        transcript = asr.AsrTranscript.model_validate_json(
+            asr_path.read_text(encoding="utf-8")
+        )
+        asr_skipped_existing = True
+    else:
+        transcript = transcriber(
+            audio_path,
+            model_name=model_name,
+            device=device,
+            compute_type=compute_type,
+            language=language,
+        )
+        asr_path.parent.mkdir(parents=True, exist_ok=True)
+        asr_path.write_text(
+            transcript.model_dump_json(indent=2) + "\n",
+            encoding="utf-8",
+        )
+        asr_skipped_existing = False
 
     payload_sha256, payload_bytes = _hash_file(audio_path)
     return BatchProgress(
@@ -221,6 +238,51 @@ def run_audio_asr(
         asr_relative_path=item.asr_relative_path,
         asr_model=transcript.model_name,
         asr_segment_count=len(transcript.segments),
+        asr_skipped_existing=asr_skipped_existing,
+    )
+
+
+def run_batch_plan(
+    plan: BatchPlan,
+    work_dir: str | Path,
+    *,
+    opener: Callable[..., BinaryIO] = urlopen,
+    transcriber: Callable[..., asr.AsrTranscript] = asr.transcribe_audio,
+) -> BatchRunResult:
+    """Execute all acquirable items while retaining blocked items explicitly."""
+
+    progress: list[BatchProgress] = []
+    blocked_items: list[BatchPlanItem] = []
+    for item in plan.items:
+        if item.mode is BatchAcquisitionMode.BLOCKED:
+            blocked_items.append(item)
+            continue
+
+        acquired = acquire_payload(item, work_dir, opener=opener)
+        if item.mode is BatchAcquisitionMode.ADVERTISED_TRANSCRIPT:
+            progress.append(
+                BatchProgress(
+                    source_id=item.source_id,
+                    acquisition_state=AcquisitionState.COMPLETE,
+                    asr_state=AsrState.NOT_REQUIRED,
+                    payload_relative_path=acquired.payload_relative_path,
+                    payload_sha256=acquired.payload_sha256,
+                    payload_bytes=acquired.payload_bytes,
+                )
+            )
+            continue
+
+        progress.append(
+            run_audio_asr(
+                item,
+                work_dir,
+                transcriber=transcriber,
+            )
+        )
+
+    return BatchRunResult(
+        progress=tuple(progress),
+        blocked_items=tuple(blocked_items),
     )
 
 
