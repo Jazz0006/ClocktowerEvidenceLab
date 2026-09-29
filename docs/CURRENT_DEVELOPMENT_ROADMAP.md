@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — C1A + C1B + C1C COMPLETE / C1D NEXT
+> Status: E0 COMPLETE / MERGED; E1 foundation checkpoint — COMPLETE / MERGED; C0 Trouble Brewing acquisition/reconstruction checkpoint — COMPLETE; C1 Drunk Assignment Evidence Upgrade — COMPLETE
 >
 > Primary objective: create a sustainable pipeline from external real-game sources to trustworthy whole-game reconstructions, preserving the interacting information context from which Storyteller decisions can later be studied.
 
@@ -210,7 +210,7 @@ C1B existing-corpus Drunk re-audit/projection
     ↓
 C1C targeted assignment-rationale acquisition
     ↓
-C1D CampBoardGameHost replay handoff
+C1D CampBoardGameHost replay handoff COMPLETE
     ↓
 C1E persistence only if justified
 ```
@@ -260,7 +260,7 @@ C1C checkpoint — COMPLETE:
 
 Detailed acquisition log: `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
 
-C1D is now the next active step: hand one stable evidence-backed Drunk-assignment case to CampBoardGameHost for downstream legal-candidate derivation and production SDE replay. Evidence Lab must not own the recommendation verdict.
+C1D is COMPLETE. G10 Game 2 crossed into CampBoardGameHost PR #173; Host independently derived the legal candidate domain and accepted the historical replay at executable head `87240bb1e3ba6cfe61461905741659d3ba5426ae` with CI #3532 and R2 #3273 GREEN. Evidence Lab did not own the recommendation verdict. C1E persistence expansion remains deferred because no current workflow requires a new migration.
 
 Authority: `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
 
