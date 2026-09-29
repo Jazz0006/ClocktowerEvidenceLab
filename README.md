@@ -73,32 +73,17 @@ A DecisionSlice is a downstream projection from a reconstructed game, not the pr
 
 Direct telemetry from the Storyteller app is explicitly deferred.
 
-## Current targeted evidence gap — C1
+Targeted expert podcasts may also be used as a complementary **rationale source**. Podcast transcripts are discovery aids only: full audio/transcripts stay outside Git, and machine-located windows require primary-audio review before they become verified evidence.
 
-The current product-directed gap is **Drunk assignment**.
+See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
 
-CampBoardGameHost is moving from treating the selected Drunk identity as a fixed input to asking the Storyteller Decision Engine to choose which already-shown Townsfolk seat is actually the Drunk.
+## Current product checkpoint — C1
 
-Evidence Lab therefore needs to preserve:
+C1 Drunk Assignment Evidence Upgrade is **complete**.
 
-- the historical setup prefix immediately before that choice;
-- the observed selected seat / shown role;
-- explicit assignment rationale or alternatives when the source actually states them;
-- later Drunk misinformation as a separate decision.
+Evidence Lab established three `PREFIX_RECONSTRUCTABLE` Drunk-assignment cases, including two with explicit historical assignment rationale. G10 Game 2 then crossed the project boundary into CampBoardGameHost C1D replay successfully: Host independently derived legal candidates and replayed the historical choice through its DLB shadow surface without Evidence Lab owning the recommendation verdict.
 
-Evidence Lab does not derive the legal candidate set. That remains downstream rules-engine work.
-
-C1A, C1B and C1C are complete. The bounded targeted-acquisition pass reached the replay target without reopening broad corpus growth.
-
-C1C now has three `PREFIX_RECONSTRUCTABLE` Drunk-assignment cases:
-
-- E0 `A Stud In Scarlet`: complete layout -> Sullivan / shown Empath selected as Drunk -> later Red Herring;
-- `A Fond Farewell`: complete layout -> Chef selected as Drunk with explicit rationale -> later Red Herring/bluffs;
-- The Megavoid Game 2: complete layout -> shown Empath selected as Drunk because adjacent to the Demon -> later information/bluff decisions.
-
-The replay quota is **3 / 3**, with **2 explicit historical assignment-rationale cases**. Targeted C1C acquisition is stopped.
-
-The next step is C1D: hand one stable historical prefix + observed choice + provenance package to CampBoardGameHost. CampBoardGameHost remains responsible for legal candidate derivation and recommendation replay/evaluation.
+C1 targeted acquisition is stopped. Further collection should be product-driven: reopen only for a concrete DLB consequence-contract gap or for a separately defined C5/E3-E4 evidence target.
 
 See:
 
@@ -130,3 +115,4 @@ See:
 - `docs/TESTING_STRATEGY.md`
 - `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`
+- `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
