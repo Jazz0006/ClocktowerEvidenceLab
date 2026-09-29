@@ -217,7 +217,23 @@ Librarian and Recluse scouts subsequently reused the same route.
 
 Those artifacts are historical acquisition evidence for the workflow, not a reason to continue episode-by-episode manual scouting.
 
-## 10. Success criterion
+## 10. Current validation checkpoint
+
+The C2 batch path has completed a bounded real two-episode validation using Investigator and Imp:
+
+```text
+live RSS
+    -> stable manifest identity
+    -> public audio acquisition
+    -> timestamped ASR outside Git
+    -> lightweight structured candidate artifacts
+```
+
+The bounded validation completed successfully and uploaded only lightweight artifacts. It did not promote machine output into verified evidence.
+
+C2D is the active next layer: deterministic candidate merging/ranking into bounded review packets. The core review-packet model/writer exists; the current tests-first RED is the missing podcast review CLI entry point.
+
+## 11. Success criterion
 
 The batch workflow succeeds when automation reduces many hours of relevant expert audio to small, auditable human-review packets and those reviews add verified rationale dimensions or useful counterexamples.
 
