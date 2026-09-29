@@ -1,6 +1,6 @@
 # C1C — Targeted Drunk Assignment Acquisition
 
-> Status: **IN PROGRESS / BOUNDED PRIMARY REVIEW QUEUE READY**
+> Status: **COMPLETE — 3 / 3 PREFIX_RECONSTRUCTABLE CASES; TARGETED ACQUISITION STOPPED**
 >
 > Date: 2026-09-28
 >
@@ -520,7 +520,7 @@ Registration-provenance note:
 
 From the visible seating, the Empath's neighbours are compatible with the Recluse being the only apparent source of an evil registration needed for result `1`. However, unless the primary video explicitly states the registration choice, Evidence Lab must keep the historical registration witness UNKNOWN / INFERRED rather than OBSERVED. This is another useful boundary case between source evidence and downstream rules-engine explanation.
 
-#### C1C-G10 — The Megavoid Storytelling Tips & Tricks — NEW P0
+#### C1C-G10 — The Megavoid Storytelling Tips & Tricks — COMPLETE / REPLAY CASE 3
 
 Primary source:
 
@@ -533,24 +533,11 @@ Primary source:
   - 11:22 — `Game Playthrough 1`;
   - 16:23 — `Game 2`.
 
-Why this is useful:
-
-- the Drunk-selection discussion is explicitly isolated into a short bounded chapter;
-- the same source immediately follows with two Trouble Brewing playthrough segments;
-- this creates a chance to connect stated Storyteller policy to actual game setup decisions without reviewing a long full-game video.
-
-Current qualification note:
+Qualification note:
 
 - The Megavoid is an independent Blood on the Clocktower Storytelling-focused creator, not TPI-affiliated;
 - current community/resource indexes regularly recommend the channel for Storyteller learning;
-- this is weaker qualification evidence than Steven Medway / Ben Burns and should remain separately labelled.
-
-C1C review order:
-
-1. verify whether the two playthrough segments are actual recorded games rather than hypothetical/simulated walkthroughs;
-2. if actual, check whether either game contains a Drunk;
-3. only if Drunk exists, inspect enough setup material to determine whether the apparent role layout precedes the assignment;
-4. separately capture the 07:53 `Who to Make Drunk` guidance if it adds a rationale not already covered by Steven/Ben.
+- this remains weaker qualification evidence than Steven Medway / Ben Burns and should stay separately labelled.
 
 Bounded human review of the `Who to Make Drunk` guidance section recovered two explicit Storyteller heuristics:
 
@@ -566,7 +553,7 @@ Bounded human review of the `Who to Make Drunk` guidance section recovered two e
    - feature family: public claim / bluff continuity;
    - significance: false information is chosen to reinforce an already-established social narrative rather than generated independently.
 
-These two heuristics must remain semantically separate:
+These two heuristics remain semantically separate:
 
 ~~~text
 setup topology
@@ -576,38 +563,126 @@ public bluff / death context
     -> what false Undertaker identity to show later
 ~~~
 
-The first adds a concrete setup-first assignment rationale. The second is longitudinal misinformation policy, not assignment rationale.
+The first is assignment guidance. The second is longitudinal misinformation policy.
 
-Current qualification caveat:
+### G10 Game Playthrough 1
 
-- this remains independent Storyteller guidance, weaker than Steven Medway / Ben Burns creator-level evidence;
-- do not count either statement as a historical replay case.
+Human review result:
 
-Playthrough human-review checkpoint — 2026-09-29:
+- **NO DRUNK** in the reviewed game;
+- disposition: **SCREENED OUT — NO DRUNK**;
+- contributes 0 C1C replay cases.
 
-- **Game Playthrough 1 (11:22): NO DRUNK** in the reviewed game; screen out for C1C Drunk-assignment acquisition;
-- **Game 2 (16:23): Drunk assignment is present**;
-- at approximately **16:29**, the Storyteller explicitly states that because an **Empath is sitting next to the Demon**, she decides to make that Empath the Drunk;
-- this is an **explicit historical assignment rationale candidate** linking local seating topology to the Drunk choice;
-- do not yet promote Game 2 to `PREFIX_RECONSTRUCTABLE`: real-game status, the exact already-fixed setup state before 16:29, and the resulting assignment/prefix still require completion of the bounded human review;
-- no replay-quota increment is made at this checkpoint.
+### G10 Game 2 — historical assignment replay
 
-Provisional Game 2 evidence shape:
+Human primary review confirms that before the Drunk assignment the complete seat / shown-role layout is already fixed.
+
+Clockwise from the shown Empath seat, the reviewed layout is:
+
+1. Empath — later selected as the actual Drunk while continuing to be shown Empath;
+2. Imp;
+3. Undertaker;
+4. Librarian;
+5. Spy;
+6. Monk;
+7. Mayor;
+8. Virgin;
+9. Butler.
+
+The exact internal order in which those individual roles were originally chosen remains UNKNOWN. For C1 replay, preserve the already-fixed complete seat/shown-role layout as one evidenced grouped setup commitment rather than inventing an internal role-selection sequence.
+
+At approximately **16:29**, the Storyteller explicitly chooses the shown **Empath** to become the Drunk because the Empath is sitting next to the **Demon**.
+
+Verified assignment shape:
 
 ~~~text
-Empath adjacent to Demon
-    -> explicit Storyteller rationale
-    -> choose that Empath as Drunk
+complete seat / shown-role layout fixed
+    ↓
+16:29 Drunk assignment:
+shown Empath -> actual Drunk
+    + explicit rationale:
+      Empath is adjacent to the Demon
+    ↓
+later setup / Night-1 choices
 ~~~
 
-This historical statement is stronger than the earlier generic 07:53 Empath-between-evil guidance because it is tied to a specific playthrough decision, but replay status remains pending until the pre-assignment prefix is source-established.
+Current assignment status:
+
+- Drunk presence: VERIFIED;
+- selected shown role: VERIFIED = Empath;
+- resulting actual role: VERIFIED = Drunk;
+- pre-assignment seat/shown-role layout: VERIFIED as already fixed;
+- assignment prefix: **PREFIX_RECONSTRUCTABLE**;
+- assignment rationale: **EXPLICIT — Empath adjacent to Demon**;
+- explicitly considered/rejected alternative Drunk candidates: NONE OBSERVED;
+- replay status: **C1C REPLAY CASE 3 / 3**.
+
+The playthrough continues with player claims, execution and later-night decisions rather than only presenting a static illustrative setup, so this source is treated as a historical played-game walkthrough for C1C rather than as the rejected G06-style instructional lineup.
+
+### G10 post-assignment evidence retained separately
+
+These later decisions are useful whole-game evidence but must not leak backward into the Drunk-assignment prefix.
+
+**16:52 — Librarian information**
+
+- the Librarian is shown the Drunk-Empath seat and the Undertaker seat and learns that one of them is the Drunk;
+- the Storyteller explicitly explains choosing the Undertaker because both the Empath and Undertaker are recurring information roles, so knowing one of them is the Drunk materially affects how their information is trusted;
+- classification: healthy information / uncertainty-shaping rationale;
+- this is later than the Drunk assignment and is not assignment rationale.
+
+**17:17 — Demon bluffs**
+
+The three Demon bluffs shown are:
+
+- Ravenkeeper;
+- Saint;
+- Washerwoman.
+
+These are later than the Drunk assignment and therefore excluded from the assignment prefix.
+
+**17:29 — first reviewed Drunk-Empath information**
+
+- delivered Empath result: `0`;
+- no separate assignment rationale is inferred from this later output;
+- retain it as a Drunk-information event.
+
+**18:05 — later Drunk-Empath information**
+
+- after the living-neighbour state changes, the Storyteller deliberately gives the Drunk Empath `1`;
+- the source explicitly notes that `1` is actually correct in that state;
+- the reason is nevertheless deceptive: it is intended to push the Empath toward suspicion of the new neighbour;
+- classification: **truthful impaired-role information used as narrative misdirection**;
+- this is strong evidence that Drunk handling is not equivalent to “always lie”.
+
+**18:50 — Spy / Undertaker registration interaction**
+
+- the Spy is executed after having claimed Virgin;
+- the Undertaker is then shown **Virgin**, not Spy;
+- the source explicitly illustrates the Spy's ability to register as a good Townsfolk/Outsider for the interaction;
+- classification: source-observed historical registration / bluff-continuity choice;
+- this independently matches the source's earlier guidance that information can reinforce an Evil player's public bluff.
+
+G10 therefore contributes three distinct evidence families without conflation:
+
+~~~text
+pre-assignment topology
+    -> choose Empath as Drunk
+
+later healthy-information design
+    -> Librarian pair chosen to create uncertainty
+
+later impaired / registration narrative
+    -> Drunk Empath 0, then truthful 1 used deceptively
+    -> executed Spy bluffing Virgin is shown as Virgin to Undertaker
+~~~
 
 Disposition:
 
 - **GAME 1: SCREENED OUT — NO DRUNK**;
-- **GAME 2: HIGH-VALUE ASSIGNMENT-RATIONALE CANDIDATE / PREFIX REVIEW IN PROGRESS**;
-- current replay quota remains **2 / 3**;
-- do not widen acquisition while Game 2 bounded review is still open.
+- **GAME 2: PREFIX_RECONSTRUCTABLE / RATIONALE_EXPLICIT / REPLAY CASE 3 OF 3**;
+- C1C replay quota is now **3 / 3**;
+- explicit historical assignment-rationale cases are now **2 / seek 1–2**;
+- targeted acquisition stops here; do not broaden the queue for C1C.
 
 ### 3.2 Assignment-guidance sources
 
@@ -915,38 +990,46 @@ Escalate a candidate to a C1 replay case only when source review establishes eno
 
 ## 8. Current C1C status
 
-C1C has successfully produced a bounded evidence-acquisition queue and added independent assignment-rationale guidance.
+C1C has met its bounded acquisition target and should stop.
 
-It has **not yet** satisfied the full replay quota, but the first historical replay case is now complete:
+Final replay package:
 
-- replayable Drunk-assignment cases: **2 / target 3**;
-- explicit historical assignment-rationale cases: **1 / seek 1–2**;
+- replayable Drunk-assignment cases: **3 / target 3**;
+- explicit historical assignment-rationale cases: **2 / seek 1–2**;
 - qualified general assignment-rationale sources: **2+**;
-- G02 assignment result is verified but not prefix-reconstructable;
-- G05 `A Fond Farewell` is now replay case 2 / 3 and provides the first explicit historical assignment rationale;
-- G02 adds one explicit real-game Drunk misinformation strategy case, separate from the assignment quota;
-- G03/G04 were screened out because they contain no Drunk.
+- G01 `A Stud In Scarlet`: replay case 1 — complete layout -> Sullivan/Empath selected as Drunk -> later Red Herring;
+- G05 `A Fond Farewell`: replay case 2 — complete layout -> Chef selected as Drunk with explicit misinformation-plan rationale -> later Red Herring/bluffs;
+- G10 Game 2: replay case 3 — complete layout -> Empath selected as Drunk because adjacent to Demon -> later Librarian/bluff/night-information decisions;
+- G02 remains result-only for assignment chronology but contributes explicit multi-night Drunk misinformation strategy;
+- G09 remains result-only;
+- G03/G04 contain no Drunk;
+- G06 is not a real historical game;
+- G07 is currently inaccessible;
+- G08 remains a held lead and is no longer needed for the C1C quota.
 
-Therefore C1C remains:
+Therefore C1C is:
 
-**IN PROGRESS / BOUNDED PRIMARY REVIEW REQUIRED**
+**COMPLETE — TARGET SATISFIED / ACQUISITION STOPPED**
 
-This is not a reason to enter C1D.
+No additional C1C source discovery is justified merely to increase sample count.
 
 ## 9. Next checkpoint
 
-The next C1C checkpoint is targeted acquisition of **one additional Drunk-bearing primary case** with visible setup construction.
+The next project step is **C1D — CampBoardGameHost replay handoff**.
 
-Current quota is now 2 / 3, so broad discovery remains unnecessary. Prefer one source that adds either:
-- independent Storyteller coverage; or
-- another explicit assignment-rationale example.
+Use one stable replay case containing:
 
-G02 is closed for the assignment question:
+- evidence-backed pre-assignment historical prefix;
+- observed Drunk assignment;
+- provenance;
+- explicit rationale where available.
 
-- result = verified;
-- prefix = unknown;
-- rationale = unknown;
-- assignment alternatives = unknown;
-- misinformation strategy = explicit and retained separately.
+G10 Game 2 is especially useful as a rationale-bearing replay candidate because the complete layout exists before assignment and the rationale is directly topology-based.
 
-Do not re-open G02 assignment chronology without a new source surface.
+C1D must still preserve the ownership boundary:
+
+- Evidence Lab supplies historical prefix + observed choice + provenance;
+- CampBoardGameHost derives legal Drunk candidates and runs its production recommendation;
+- Evidence Lab does not produce a winner/verdict.
+
+Do not reopen G02/G08/G09 or broaden acquisition unless C1D reveals a concrete missing evidence field.
