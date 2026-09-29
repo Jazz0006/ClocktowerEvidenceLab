@@ -1,4 +1,5 @@
 name: C2 bounded podcast validation
+# C2C contract GREEN: trigger bounded Investigator + Imp validation.
 
 on:
   push:
