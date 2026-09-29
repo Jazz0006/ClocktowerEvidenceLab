@@ -26,7 +26,10 @@ def test_stable_episode_id_uses_guid_not_mutable_title() -> None:
     )
     renamed = original.model_copy(update={"title": "16: The Drunk (Trouble Brewing)"})
 
-    assert podcast_manifest.stable_episode_id(original) == podcast_manifest.stable_episode_id(\n        renamed\n    )
+    original_id = podcast_manifest.stable_episode_id(original)
+    renamed_id = podcast_manifest.stable_episode_id(renamed)
+
+    assert original_id == renamed_id
 
 
 def test_stable_episode_id_falls_back_to_audio_locator_not_title() -> None:
