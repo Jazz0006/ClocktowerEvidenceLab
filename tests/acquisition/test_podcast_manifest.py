@@ -51,8 +51,8 @@ def test_repeated_feed_reads_deduplicate_by_stable_identity() -> None:
 
     episode_manifest = podcast_manifest.build_episode_manifest((original, refreshed))
 
-    assert len(episode_podcast_manifest.episodes) == 1
-    assert episode_podcast_manifest.episodes[0].title == refreshed.title
+    assert len(episode_manifest.episodes) == 1
+    assert episode_manifest.episodes[0].title == refreshed.title
 
 
 def test_trouble_brewing_title_variants_are_in_scope() -> None:
@@ -88,7 +88,7 @@ def test_manifest_preserves_locators_and_independent_workflow_states() -> None:
     )
 
     episode_manifest = podcast_manifest.build_episode_manifest((episode,))
-    entry = episode_podcast_manifest.episodes[0]
+    entry = episode_manifest.episodes[0]
 
     assert entry.source_id == podcast_manifest.stable_episode_id(episode)
     assert entry.scope is podcast_manifest.EpisodeScope.IN_SCOPE
@@ -119,7 +119,7 @@ def test_prior_processing_is_applied_by_stable_source_id_not_title() -> None:
         (episode,),
         prior_processing=(prior,),
     )
-    entry = episode_podcast_manifest.episodes[0]
+    entry = episode_manifest.episodes[0]
 
     assert entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE
     assert entry.asr_state is podcast_manifest.AsrState.COMPLETE
@@ -137,7 +137,7 @@ def test_out_of_scope_episode_remains_in_inventory_but_not_active_queue() -> Non
 
     episode_manifest = podcast_manifest.build_episode_manifest((episode,))
 
-    assert episode_podcast_manifest.episodes[0].scope is podcast_manifest.EpisodeScope.OUT_OF_SCOPE
+    assert episode_manifest.episodes[0].scope is podcast_manifest.EpisodeScope.OUT_OF_SCOPE
     assert podcast_manifest.active_acquisition_queue(episode_manifest) == ()
 
 
@@ -149,7 +149,7 @@ def test_unknown_scope_episode_is_not_automatically_queued() -> None:
 
     episode_manifest = podcast_manifest.build_episode_manifest((episode,))
 
-    assert episode_podcast_manifest.episodes[0].scope is podcast_manifest.EpisodeScope.UNKNOWN
+    assert episode_manifest.episodes[0].scope is podcast_manifest.EpisodeScope.UNKNOWN
     assert podcast_manifest.active_acquisition_queue(episode_manifest) == ()
 
 
@@ -162,7 +162,7 @@ def test_in_scope_episode_with_audio_and_no_transcript_enters_acquisition_queue(
     episode_manifest = podcast_manifest.build_episode_manifest((episode,))
 
     assert podcast_manifest.active_acquisition_queue(episode_manifest) == (
-        episode_podcast_manifest.episodes[0],
+        episode_manifest.episodes[0],
     )
 
 
