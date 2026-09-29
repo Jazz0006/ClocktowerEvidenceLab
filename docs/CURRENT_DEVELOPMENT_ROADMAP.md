@@ -69,15 +69,25 @@ Reusable RSS/ASR tooling and Drunk/Librarian/Recluse scout artifacts are already
 
 C2 now turns that one-off path into a batch pipeline for the remaining Trouble Brewing-relevant episodes of the same expert series.
 
-### C2A — manifest
+### C2A — manifest — COMPLETE / GREEN
 
-Enumerate relevant episodes from live RSS and deduplicate already-processed episodes by stable source identity.
+Live RSS inventory, stable source identity, Trouble Brewing scope classification, independent workflow states and Drunk/Librarian/Recluse prior-scout deduplication are implemented and covered by deterministic tests plus a bounded live RSS validation.
 
-### C2B — batch acquisition
+### C2B — batch acquisition — IMPLEMENTATION COMPLETE / GREEN
 
-Use feed transcript when present; otherwise acquire public audio outside Git and run timestamped ASR.
+The batch planner/runner and CLI now:
 
-### C2C — structured extraction
+- prefer advertised transcript locators when present;
+- otherwise acquire public audio into an explicit external work directory;
+- run timestamped ASR through the retained optional adapter;
+- reuse existing payload and ASR artifacts after interruption;
+- preserve blocked/missing-locator items explicitly;
+- write only lightweight progress/updated-manifest metadata alongside external artifacts;
+- never promote ASR completion into human review or evidence verification.
+
+A real multi-episode operational run is still required as C2 validation; implementation completion does not mean the corpus has already been reviewed.
+
+### C2C — structured extraction — ACTIVE NEXT
 
 Extract timestamped candidate windows for Storyteller decisions, rationale, setup reasoning, misinformation, registration, bluff selection, player experience, player agency, information strength, trajectories and explicit alternatives.
 
@@ -103,17 +113,17 @@ Authority: `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`.
 
 ## 6. Immediate next action
 
-Start C2A.
+Start **C2C structured extraction**.
 
 Expected first implementation slice:
 
-1. inspect the retained podcast acquisition code;
-2. add a reproducible series/episode manifest contract;
-3. enumerate the live RSS feed;
-4. identify Trouble Brewing-relevant episodes and prior-processing status;
-5. write focused tests for identity/dedup/status semantics;
-6. run the normal Ruff/pytest quality gate;
-7. only then begin batch ASR/extraction.
+1. define a lightweight timestamped candidate contract over external transcript/ASR artifacts;
+2. preserve source ID, timestamp/range, category, concise machine summary/tags and human-review state;
+3. ensure full transcript text is not copied into Git-managed candidate artifacts;
+4. support an episode producing zero useful candidates as a normal result;
+5. keep extraction completion independent from human review / VERIFIED evidence;
+6. add focused deterministic tests and run the normal Ruff/pytest quality gate;
+7. then use the C2B runner on a bounded real multi-episode batch and feed those artifacts into C2C.
 
 Do not reopen C1 or broad whole-game scouting unless C2 uncovers a concrete evidence dependency.
 
