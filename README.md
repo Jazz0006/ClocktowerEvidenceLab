@@ -88,11 +88,17 @@ Evidence Lab therefore needs to preserve:
 
 Evidence Lab does not derive the legal candidate set. That remains downstream rules-engine work.
 
-C1A and C1B are complete. C1C targeted acquisition is now in progress. The existing-corpus re-audit found four partial/result Drunk-assignment cases but no case with a sufficiently evidenced pre-assignment setup prefix for replay, so broad collection remains stopped in favour of bounded primary review.
+C1A, C1B and C1C are complete. The bounded targeted-acquisition pass reached the replay target without reopening broad corpus growth.
 
-C1C now has its first replayable historical assignment case: E0 `A Stud In Scarlet`. Human primary review verifies that the complete player role/shown-role layout was already fixed before Sullivan was selected as the Drunk, and Red Herring selection occurred afterward. Assignment rationale and alternatives remain UNKNOWN.
+C1C now has three `PREFIX_RECONSTRUCTABLE` Drunk-assignment cases:
 
-The next C1C priority is the setup section of `Live and Imp-Person`. Qualified assignment guidance remains separate and does not count as historical replay evidence.
+- E0 `A Stud In Scarlet`: complete layout -> Sullivan / shown Empath selected as Drunk -> later Red Herring;
+- `A Fond Farewell`: complete layout -> Chef selected as Drunk with explicit rationale -> later Red Herring/bluffs;
+- The Megavoid Game 2: complete layout -> shown Empath selected as Drunk because adjacent to the Demon -> later information/bluff decisions.
+
+The replay quota is **3 / 3**, with **2 explicit historical assignment-rationale cases**. Targeted C1C acquisition is stopped.
+
+The next step is C1D: hand one stable historical prefix + observed choice + provenance package to CampBoardGameHost. CampBoardGameHost remains responsible for legal candidate derivation and recommendation replay/evaluation.
 
 See:
 
