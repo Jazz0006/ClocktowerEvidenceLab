@@ -1,5 +1,7 @@
 name: C2 live RSS probe
 
+# Temporary bounded acquisition validation; remove after manifest audit.
+
 on:
   pull_request:
     branches:
