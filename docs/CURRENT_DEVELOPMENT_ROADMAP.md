@@ -100,11 +100,17 @@ The extractor:
 
 A bounded real two-episode C2B -> C2C validation has completed successfully for Investigator and Imp.
 
-### C2D — bounded human review — IN PROGRESS / TESTS-FIRST RED
+### C2D — bounded human review — IMPLEMENTATION GREEN / REAL REVIEW QUEUE READY
 
-The review-packet model, deterministic candidate merge/ranking, time/window budgets and lightweight writer are implemented. P0/P1/P2 are review-triage priorities only and do not score Storyteller choices.
+The review-packet model, deterministic candidate merge/ranking, time/window budgets, lightweight writer and `clocktower-podcast-review` CLI are implemented and GREEN. P0/P1/P2 remain review-triage priorities only and do not score Storyteller choices.
 
-The current quality gate is RED only because tests/acquisition/test_podcast_review_cli.py defines the next thin CLI boundary while podcast_review_cli does not yet exist. Implement that CLI, restore Ruff/pytest GREEN, then generate bounded review packets from the successful Investigator/Imp validation artifacts.
+The successful bounded Investigator/Imp run #4 artifacts have now been passed through C2D without retranscription:
+
+- Investigator: 63 machine candidates -> 53 merged windows -> 12 selected review windows covering 16 candidate hits; 127.32 seconds total review time.
+- Imp: 61 machine candidates -> 50 merged windows -> 12 selected review windows covering 17 candidate hits; 258.28 seconds total review time.
+- Combined bounded primary-audio queue: 24 windows / 385.60 seconds (6m25.6s).
+
+Both review packets retain `human_review_state=NOT_STARTED`. Packet generation is acquisition assistance, not evidence verification. The next gate is actual human primary-audio review of those bounded windows.
 
 ### C2E — evidence promotion
 
@@ -124,15 +130,15 @@ Authority: `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`.
 
 ## 6. Immediate next action
 
-Continue **C2D bounded review packets** from the current tests-first RED:
+Continue **C2D bounded primary-audio review** from the generated real review queue:
 
-1. implement the missing podcast_review_cli module;
-2. expose the CLI through pyproject.toml if required by the operational workflow;
-3. restore the complete Install / Ruff check / Ruff format / pytest gate to GREEN;
-4. apply C2D to the successful bounded Investigator/Imp candidate artifacts;
-5. measure selected windows and total human-review duration;
-6. human-review only those primary-audio windows;
-7. enter C2E only for concise claims actually confirmed by primary-source review.
+1. human-review only the 24 selected Investigator/Imp primary-audio windows (6m25.6s total);
+2. confirm speaker attribution, intended meaning, context and timestamp for useful claims;
+3. explicitly reject false-positive / low-value machine candidates without promoting them;
+4. keep unreviewed or ambiguous material `NOT_STARTED` / unverified rather than guessing;
+5. enter C2E only for concise claims actually confirmed by primary-source review.
+
+Latest implementation gate: quality #284 GREEN at code checkpoint `4d8da2c4be0eae40570ffea4134d9536bc748a5d`.
 
 Do not reopen C1 or broad whole-game scouting unless C2 uncovers a concrete evidence dependency.
 
