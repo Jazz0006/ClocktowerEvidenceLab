@@ -67,6 +67,26 @@ At minimum, tests should eventually prove:
 16. UNKNOWN setup-choice rationale and alternatives survive domain/persistence/export boundaries without being guessed.
 17. Canonical-only setup ordering cannot be used to materialize a setup-time decision prefix, while event-time decisions may still consume the complete setup state after setup is committed.
 
+
+## 3.1 C2 acquisition-contract tests
+
+The podcast batch route adds workflow state that must not be confused with evidence verification.
+
+Focused tests should cover:
+
+1. stable RSS episode identity across repeated feed reads;
+2. deduplication that does not depend only on mutable title text;
+3. missing feed transcript remains a normal state and may trigger ASR;
+4. already-processed episodes can be recognized without retranscription;
+5. acquisition/ASR/extraction/human-review states remain independent;
+6. ASR complete or extraction complete never implies VERIFIED evidence;
+7. out-of-scope episodes can remain inventoried without entering the active queue;
+8. full media/transcript payloads are excluded from Git-managed manifest serialization;
+9. an in-scope episode may yield zero useful candidates without becoming an error;
+10. candidate timestamps/categories survive serialization deterministically.
+
+Live RSS/network probing should not replace deterministic parser/domain tests. Keep network-dependent checks as bounded acquisition validation, not the core unit-test contract.
+
 ## 4. Test-first policy
 
 For a new stable invariant:
