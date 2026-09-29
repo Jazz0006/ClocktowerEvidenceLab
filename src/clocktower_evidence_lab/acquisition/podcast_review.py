@@ -156,9 +156,7 @@ def _materialize_review_window(candidates: list[MachineCandidate]) -> ReviewWind
             key=lambda category: _CATEGORY_RANK[category],
         )
     )
-    summaries = tuple(
-        dict.fromkeys(candidate.summary for candidate in candidates)
-    )
+    summaries = tuple(dict.fromkeys(candidate.summary for candidate in candidates))
     tags = tuple(sorted({tag for candidate in candidates for tag in candidate.tags}))
     confidences = [
         candidate.extraction_confidence
