@@ -17,6 +17,7 @@ dependencies = [
 [project.scripts]
 clocktower-podcast-probe = "clocktower_evidence_lab.acquisition.podcast_probe:main"
 clocktower-podcast-asr = "clocktower_evidence_lab.acquisition.podcast_asr:main"
+clocktower-podcast-manifest = "clocktower_evidence_lab.acquisition.podcast_manifest_cli:main"
 
 [project.optional-dependencies]
 asr = [
