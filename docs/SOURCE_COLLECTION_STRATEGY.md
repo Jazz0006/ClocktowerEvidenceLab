@@ -78,12 +78,12 @@ live podcast RSS
     -> episode manifest
     -> transcript locator or ASR
     -> structured candidate extraction
-    -> relevance ranking
+    -> relevance ranking / review packets
     -> bounded human audio review
     -> concise provenance-backed expert guidance
 ```
 
-The earlier Drunk, Librarian and Recluse podcast scouts prove the route and should be treated as already-processed source identities when building the batch manifest.
+C2A-C2C are implemented and GREEN. A bounded real two-episode validation (Investigator + Imp) completed the C2B -> C2C path successfully. C2D review-packet ranking is the active implementation slice. The earlier Drunk, Librarian and Recluse podcast scouts remain already-processed source identities and must not be needlessly retranscribed.
 
 ## 5. Podcast batch screening
 
