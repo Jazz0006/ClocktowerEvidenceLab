@@ -284,9 +284,7 @@ def test_run_batch_plan_handles_transcript_audio_and_blocked_items(
     transcript_progress, audio_progress = result.progress
     assert transcript_progress.asr_state is podcast_manifest.AsrState.NOT_REQUIRED
     assert audio_progress.asr_state is podcast_manifest.AsrState.COMPLETE
-    assert result.blocked_items[0].source_id == podcast_manifest.stable_episode_id(
-        blocked_episode
-    )
+    assert result.blocked_items[0].source_id == podcast_manifest.stable_episode_id(blocked_episode)
     assert transcriber_calls == 1
 
 
