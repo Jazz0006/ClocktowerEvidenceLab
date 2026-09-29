@@ -87,9 +87,18 @@ The batch planner/runner and CLI now:
 
 A real multi-episode operational run is still required as C2 validation; implementation completion does not mean the corpus has already been reviewed.
 
-### C2C — structured extraction — ACTIVE NEXT
+### C2C — structured extraction — IMPLEMENTATION COMPLETE / GREEN
 
-Extract timestamped candidate windows for Storyteller decisions, rationale, setup reasoning, misinformation, registration, bluff selection, player experience, player agency, information strength, trajectories and explicit alternatives.
+The extractor now provides timestamp-preserving lightweight candidate artifacts across the C2 category set, including Storyteller decisions/rationale, setup reasoning, misinformation, registration, Demon bluff reasoning, player experience/agency, information strength, confirmation chains, longitudinal trajectories, explicit alternatives and real-game examples.
+
+The extractor:
+- preserves stable source identity and start/end timestamps;
+- stores concise machine summaries/tags/confidence without transcript bodies;
+- treats zero useful candidates as a normal completed extraction;
+- keeps human-review state independent from extraction completion;
+- matches rationale terms across adjacent ASR segments and merges overlapping windows to avoid duplicate review packets.
+
+The next validation step is a bounded real multi-episode C2B -> C2C run.
 
 ### C2D — bounded human review
 
