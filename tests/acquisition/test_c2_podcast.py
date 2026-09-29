@@ -33,17 +33,14 @@ def test_c2_manifest_recognizes_retained_drunk_librarian_recluse_scouts() -> Non
 
     processed = manifest.episodes[:3]
     assert all(
-        entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE
-        for entry in processed
+        entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE for entry in processed
     )
     assert all(entry.asr_state is podcast_manifest.AsrState.COMPLETE for entry in processed)
     assert all(
-        entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE
-        for entry in processed
+        entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE for entry in processed
     )
     assert all(
-        entry.human_review_state is podcast_manifest.HumanReviewState.PENDING
-        for entry in processed
+        entry.human_review_state is podcast_manifest.HumanReviewState.PENDING for entry in processed
     )
     assert all(entry.prior_artifact_path for entry in processed)
 
