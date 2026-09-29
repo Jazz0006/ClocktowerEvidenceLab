@@ -87,9 +87,11 @@ Current implementation status:
 
 - **C2A episode manifest — COMPLETE / GREEN**;
 - **C2B batch acquisition runner + CLI — COMPLETE / GREEN**;
-- **C2C structured candidate extraction — NEXT**.
+- **C2C structured candidate extraction — COMPLETE / GREEN**;
+- **bounded real multi-episode C2B -> C2C validation — COMPLETE / GREEN** for Investigator and Imp;
+- **C2D bounded review packets — IN PROGRESS / tests-first RED**.
 
-The earlier podcast pilot proved that public RSS + audio enclosure + optional faster-whisper ASR can reduce long expert episodes to small timestamped review packets. C2 now has a reproducible manifest and resumable external-work-directory batch runner. A real multi-episode batch run, structured extraction, bounded human review and evidence promotion are still required before C2 itself is complete.
+The podcast route is now proven beyond the original one-episode pilot: a real two-episode batch completed RSS discovery, audio acquisition, ASR and lightweight candidate extraction while keeping full media/transcripts outside Git. C2D review-packet ranking/writing exists, but the current branch is intentionally RED because the tests define a podcast review CLI entry point that has not yet been implemented. C2D must return to GREEN before human review and C2E evidence promotion proceed.
 
 C2 keeps the evidence boundary explicit:
 
