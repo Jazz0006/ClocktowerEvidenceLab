@@ -73,15 +73,11 @@ def test_batch_plan_excludes_processed_and_out_of_scope_episodes() -> None:
 
     plan = podcast_batch.build_batch_plan(manifest)
 
-    assert [item.source_id for item in plan.items] == [
-        podcast_manifest.stable_episode_id(pending)
-    ]
+    assert [item.source_id for item in plan.items] == [podcast_manifest.stable_episode_id(pending)]
 
 
 def test_missing_locator_is_explicitly_blocked() -> None:
-    manifest = podcast_manifest.build_episode_manifest(
-        (_episode(audio_url=None),)
-    )
+    manifest = podcast_manifest.build_episode_manifest((_episode(audio_url=None),))
 
     item = podcast_batch.build_batch_plan(manifest).items[0]
 
