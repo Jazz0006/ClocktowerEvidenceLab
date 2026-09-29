@@ -1,6 +1,6 @@
 # C1D — G10 Game 2 Drunk Assignment Replay Handoff — 2026-09-29
 
-> Status: **EVIDENCE PACKAGE READY FOR DOWNSTREAM REPLAY**
+> Status: **COMPLETE — DOWNSTREAM HOST REPLAY ACCEPTED**
 >
 > Source project: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -190,9 +190,21 @@ CampBoardGameHost should independently confirm all of the following:
 
 ## 9. C1D success condition
 
-This handoff crosses the Evidence Lab → CampBoardGameHost boundary successfully when the downstream project has an executable regression proving requirements 1–7 above against this historical layout.
+This handoff has crossed the Evidence Lab → CampBoardGameHost boundary successfully.
 
-After that downstream acceptance:
+Accepted downstream Host checkpoint:
+
+- Host PR: #173 — `C1D: replay G10 Drunk assignment evidence`;
+- accepted executable head: `87240bb1e3ba6cfe61461905741659d3ba5426ae`;
+- Host CI #3532: GREEN;
+- Android full unit tests + debug APK assemble: GREEN;
+- ASP contract tests: GREEN;
+- Real Clingo cross-validation: GREEN;
+- R2 #3273: GREEN.
+
+The Host regression independently derived the six legal Townsfolk candidates, mapped the observed seat-1 Empath choice into that domain, carried the case through the existing DLB-3A shadow/DecisionTrace surface, and preserved frozen V1 deferral with no policy selection.
+
+Therefore:
 
 - C1D is COMPLETE;
 - C1 can close without a persistence migration;
