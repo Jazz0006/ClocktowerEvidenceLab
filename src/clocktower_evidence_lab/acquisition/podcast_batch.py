@@ -208,9 +208,7 @@ def run_audio_asr(
 
     asr_path = work_root / item.asr_relative_path
     if asr_path.is_file():
-        transcript = asr.AsrTranscript.model_validate_json(
-            asr_path.read_text(encoding="utf-8")
-        )
+        transcript = asr.AsrTranscript.model_validate_json(asr_path.read_text(encoding="utf-8"))
         asr_skipped_existing = True
     else:
         transcript = transcriber(
