@@ -46,13 +46,22 @@ C2 has now completed three implementation slices:
   - batch runner + CLI;
   - progress application that cannot promote extraction/human-review/verification state.
 
-The latest C2B quality gate passed Install / Ruff check / Ruff format / Pytest.
+- **C2C structured candidate extraction — IMPLEMENTATION COMPLETE / GREEN**
+  - timestamp-preserving lightweight candidate artifacts;
+  - 13 C2 candidate categories;
+  - concise machine summary/tags/confidence without transcript bodies;
+  - zero-candidate episodes remain normal completed extraction;
+  - human review remains independent from extraction completion;
+  - adjacent-ASR-segment rationale matching with overlapping-window deduplication;
+  - candidate CLI.
+
+The latest C2C quality gate passed Install / Ruff check / Ruff format / Pytest.
 
 A real multi-episode batch has **not** yet been claimed as reviewed evidence. Full audio/transcript artifacts must remain outside Git.
 
 ## 3. Current task
 
-Implement **C2C — structured candidate extraction**.
+Run a **bounded real multi-episode C2B -> C2C validation**, then move into C2D review-packet ranking if the real artifacts validate the current contracts.
 
 Goal:
 
