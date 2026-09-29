@@ -75,8 +75,7 @@ def test_extraction_complete_does_not_promote_human_review() -> None:
 
     assert artifact.extraction_state is podcast_manifest.ExtractionState.COMPLETE
     assert (
-        artifact.candidates[0].human_review_state
-        is podcast_manifest.HumanReviewState.NOT_STARTED
+        artifact.candidates[0].human_review_state is podcast_manifest.HumanReviewState.NOT_STARTED
     )
 
 
