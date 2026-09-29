@@ -138,7 +138,7 @@ The successful bounded Investigator/Imp run #4 artifacts were reused directly; n
 - Imp packet: 12 selected windows / 17 selected candidate hits / 258.28 seconds;
 - combined review queue: 24 windows / 385.60 seconds (6m25.6s).
 
-Both generated packets remain `human_review_state=NOT_STARTED`. The next operation is bounded primary-audio review of these windows; C2E promotion must wait for that human confirmation.
+Both generated packets remain `human_review_state=NOT_STARTED`. The durable per-window queue is `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`. The next operation is bounded primary-audio review of these windows; C2E promotion must wait for that human confirmation.
 
 Human review should focus on this small packet rather than either full episode.
 
