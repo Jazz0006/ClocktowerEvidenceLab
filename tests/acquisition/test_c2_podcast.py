@@ -1,4 +1,6 @@
-from clocktower_evidence_lab.acquisition import c2_podcast\nfrom clocktower_evidence_lab.acquisition import podcast\nfrom clocktower_evidence_lab.acquisition import podcast_manifest
+from clocktower_evidence_lab.acquisition import c2_podcast
+from clocktower_evidence_lab.acquisition import podcast
+from clocktower_evidence_lab.acquisition import podcast_manifest
 
 
 _FEED_URL = "https://anchor.fm/s/daf1f9c/podcast/rss"
