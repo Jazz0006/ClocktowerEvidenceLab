@@ -83,7 +83,13 @@ C1 Drunk Assignment Evidence Upgrade is **complete**. Its bounded acquisition ta
 
 The active task is now **C2 — Trouble Brewing Podcast Batch Ingestion**.
 
-The earlier podcast pilot proved that public RSS + audio enclosure + optional faster-whisper ASR can reduce long expert episodes to small timestamped review packets. C2 scales that path across the remaining Trouble Brewing-relevant episodes of the same series.
+Current implementation status:
+
+- **C2A episode manifest — COMPLETE / GREEN**;
+- **C2B batch acquisition runner + CLI — COMPLETE / GREEN**;
+- **C2C structured candidate extraction — NEXT**.
+
+The earlier podcast pilot proved that public RSS + audio enclosure + optional faster-whisper ASR can reduce long expert episodes to small timestamped review packets. C2 now has a reproducible manifest and resumable external-work-directory batch runner. A real multi-episode batch run, structured extraction, bounded human review and evidence promotion are still required before C2 itself is complete.
 
 C2 keeps the evidence boundary explicit:
 
