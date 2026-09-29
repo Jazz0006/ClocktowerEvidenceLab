@@ -77,19 +77,26 @@ Targeted expert podcasts may also be used as a complementary **rationale source*
 
 See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
 
-## Current product checkpoint — C1
+## Current product checkpoint — C2
 
-C1 Drunk Assignment Evidence Upgrade is **complete**.
+C1 Drunk Assignment Evidence Upgrade is **complete**. Its bounded acquisition target reached 3/3 replayable assignment cases and downstream replay succeeded, so broad Drunk-assignment searching remains stopped.
 
-Evidence Lab established three `PREFIX_RECONSTRUCTABLE` Drunk-assignment cases, including two with explicit historical assignment rationale. G10 Game 2 then crossed the project boundary into CampBoardGameHost C1D replay successfully: Host independently derived legal candidates and replayed the historical choice through its DLB shadow surface without Evidence Lab owning the recommendation verdict.
+The active task is now **C2 — Trouble Brewing Podcast Batch Ingestion**.
 
-C1 targeted acquisition is stopped. Further collection should be product-driven: reopen only for a concrete DLB consequence-contract gap or for a separately defined C5/E3-E4 evidence target.
+The earlier podcast pilot proved that public RSS + audio enclosure + optional faster-whisper ASR can reduce long expert episodes to small timestamped review packets. C2 scales that path across the remaining Trouble Brewing-relevant episodes of the same series.
 
-See:
+C2 keeps the evidence boundary explicit:
 
-- `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`;
-- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`;
-- `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
+- full audio and machine transcripts stay outside Git;
+- machine transcript/extraction is a locator and candidate-discovery layer;
+- primary-audio review promotes only concise provenance-backed guidance;
+- podcasts complement, but do not replace, whole-game reconstruction/replay evidence.
+
+Start with:
+
+- `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
+- `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
+- `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
 
 ## Storage direction
 
