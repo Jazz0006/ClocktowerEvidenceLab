@@ -2,313 +2,196 @@
 
 ## 1. Goal
 
-Build a broad but provenance-aware corpus of **whole real games** that can become the primary empirical reference for Storyteller research.
+Build a provenance-aware corpus that supports Storyteller research through two complementary source families:
 
-The acquisition target is not an isolated clue and not a preselected Storyteller decision.
+1. **whole real games** — the primary historical/replay evidence unit;
+2. **qualified expert guidance** — a complementary rationale corpus used to explain, challenge or refine policy dimensions.
 
-The target is a reconstructable game history that preserves enough setup, information, state changes and outcome context to study how multiple clues interact across time.
+Decision slices and expert-guidance claims are derived research views. Neither should erase the underlying source/provenance boundary.
 
-Decision slices may later be derived from that history, but they are not the primary source-selection unit.
+The first objective is not maximum volume. It is a repeatable process with low enough human cost that useful evidence can grow without discarding uncertainty.
 
-The first objective is not maximum volume. It is a repeatable process with low enough human cost that the corpus can grow continuously without discarding provenance or uncertainty.
+## 2. Current product scope
 
-## 2. Current source priority
+CampBoardGameHost currently targets **Trouble Brewing**. Active Evidence Lab acquisition should therefore remain Trouble Brewing-first unless a concrete cross-script requirement is opened.
 
-Source priority is based on **whole-game reconstructability and expert relevance**, not platform prestige alone.
+Unsupported scripts may be inventoried but should not consume current reconstruction/review effort.
 
-### Tier A — high-fidelity structured real-game records
+## 3. Source families
 
-Highest immediate research priority.
+### 3.1 Whole-game evidence — primary historical corpus
 
-The main candidate is public ClockTracker records, especially games recorded by independently verifiable experienced/trusted Storytellers.
+Preferred sources:
 
-A strong Tier-A record may include:
+- high-fidelity structured public real-game records;
+- expert/trusted Storyteller primary recordings;
+- other reconstructable primary real-game recordings;
+- linked multi-source records for the same game.
 
-- Storyteller identity;
-- script and player count;
-- full seating / role grimoire;
-- related/shown roles where applicable;
+Preserve when evidence permits:
+
+- setup/seating;
+- shown roles;
+- setup modifiers;
 - Demon bluffs;
-- reminder tokens such as Drunk / Poisoned / Red Herring;
-- alignment and role changes;
-- death / ghost-vote state;
-- multiple grimoire pages representing successive states;
-- detailed Notes containing night actions, delivered information, nominations/executions or post-game explanation;
-- final result.
+- ordered player actions;
+- ordered Storyteller outputs;
+- state changes;
+- misinformation/registration choices;
+- later-night evolution;
+- outcome/context;
+- explicit rationale.
 
-ClockTracker quality is heterogeneous. Platform membership alone does not make a record Tier A; the record must pass screening.
+The desired acquisition unit is still the whole game and its interacting information bundle.
 
-### Tier B — expert/trusted Storyteller primary recordings
+### 3.2 Expert audio/podcast guidance — complementary rationale corpus
 
-Examples include official TPI games and games run by independently verifiable experienced/trusted Storytellers.
+Public expert podcasts are valuable when a qualified Storyteller/designer discusses:
 
-Their main value is enrichment and verification where structured records are incomplete:
+- why one legal choice may be preferable in one context and not another;
+- setup-level reasoning;
+- misinformation continuity;
+- information strength;
+- registration intent;
+- bluff interaction;
+- player experience;
+- player agency;
+- explicit considered/rejected alternatives;
+- concrete real-game examples.
 
-- spoken Storyteller rationale;
-- player claims and bluff development;
-- table belief / social state;
-- exact timing of actions and information;
-- context omitted from structured notes.
+Podcast guidance is **not** a replayable historical game by default.
 
-A primary recording may still be the best source for a game when no high-fidelity structured record exists.
+Machine transcripts are discovery aids and locator artifacts until primary-audio review promotes a concise claim into verified evidence.
 
-### Tier C — other high-fidelity primary real-game recordings
+Current active route: `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`.
 
-Useful for real-game generalization and later user-population research even when Storyteller expertise is not independently established.
+## 4. Current acquisition priority — C2 podcast batch
 
-### Tier D — community reports / postmortems / discussions
+C1 Drunk-assignment acquisition is **complete and stopped** for the current product need.
 
-Useful for:
+Do not resume broad “find more games with a Drunk” searching unless a downstream replay exposes a concrete missing field.
 
-- explicit rationale;
-- unusual interaction discovery;
-- source leads;
-- locating stronger primary or structured records.
-
-Do not treat them as equivalent to a reconstructable primary game.
-
-Before promoting any visually complete setup into the historical-game corpus, verify that the source is actually recording a played game rather than an instructional/example presentation. A complete illustrative lineup is not historical game evidence merely because it looks like a grimoire.
-
-For active acquisition, also verify that the primary source is currently accessible to human review. A private/deleted video may remain a provenance locator, but secondary indexes describing it do not make it a reviewable primary source.
-
-## 2.1 Current targeted gap — Drunk assignment
-
-The current product-directed acquisition gap is no longer “find more games containing a Drunk.”
-
-CampBoardGameHost now needs empirical examples for a setup-time decision: **which already-shown Townsfolk seat becomes the Drunk**.
-
-Do not restart broad corpus growth. The C1B re-audit of existing Drunk-bearing Trouble Brewing reconstructions is now complete; it found 4 partial/result cases but 0 assignment cases with an evidence-backed reconstructable pre-assignment prefix.
-
-Detailed audit: `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`.
-
-C1C targeted acquisition is now in progress and has reached **2 / 3 replayable Drunk-assignment cases**:
-
-- E0 `A Stud In Scarlet` — replayable prefix, rationale UNKNOWN;
-- `A Fond Farewell` — replayable prefix with explicit assignment rationale.
-
-Additional reviewed cases such as `Live and Imp-Person` and the Dicebreaker Trouble Brewing playthrough are result-only because they begin from an already-completed setup. G03/G04 contained no Drunk; G06 was instructional rather than a real game; G07's primary video is Private.
-
-Verified creator-level guidance from Steven Medway now supports player-first, role-first and whole-setup-first Drunk selection. G10 The Megavoid adds explicit topology-driven assignment guidance and Drunk Undertaker bluff-continuity guidance, but its playthroughs are not replay evidence until real-game status and assignment chronology are source-established.
-
-Current priority is therefore narrowly bounded: verify G10 playthrough status / Drunk presence, then continue only as needed to obtain one final real `PREFIX_RECONSTRUCTABLE` assignment case.
-
-See `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
-
-For a Drunk-bearing game, record when evidence permits:
-
-- chosen Drunk seat;
-- shown Townsfolk identity;
-- surrounding shown-role / seating layout;
-- the historical setup boundary immediately before assignment;
-- which setup commitments are evidenced as already committed;
-- explicit assignment rationale;
-- explicit considered or rejected alternatives;
-- later Drunk misinformation;
-- multi-night misinformation continuity.
-
-Use replay-value descriptors rather than quality scores:
+The active acquisition task is now C2:
 
 ```text
-RESULT_ONLY
-PREFIX_PARTIAL
-PREFIX_RECONSTRUCTABLE
-RATIONALE_EXPLICIT
-ALTERNATIVES_EXPLICIT
+live podcast RSS
+    -> episode manifest
+    -> transcript locator or ASR
+    -> structured candidate extraction
+    -> relevance ranking
+    -> bounded human audio review
+    -> concise provenance-backed expert guidance
 ```
 
-These describe evidence completeness only.
+The earlier Drunk, Librarian and Recluse podcast scouts prove the route and should be treated as already-processed source identities when building the batch manifest.
 
-Highest-value new sources are expert/trusted Storyteller POV recordings, live grimoire/setup construction, setup commentary, post-game review, or specific real-game podcast/interview explanation.
+## 5. Podcast batch screening
 
-Structured final grimoire records remain useful but normally provide result-only or prefix-partial assignment evidence unless chronology/commentary is also present.
+For each episode, determine cheaply:
 
-Immediate target:
+- stable source identity;
+- Trouble Brewing relevance;
+- expert/guest identity and qualification evidence;
+- duration;
+- audio availability;
+- feed-advertised transcript availability;
+- existing prior processing status;
+- likely Storyteller/rationale density.
 
-- at least 3 Drunk-assignment cases with reconstructable decision prefixes;
-- seek 1–2 explicit-rationale cases if available;
-- preserve independent Storyteller coverage where practical.
+Prioritize episodes that directly address current algorithm dimensions.
 
-Evidence Lab must not derive the legal Drunk candidate set from game rules. It may record alternative seats only when the source establishes that the Storyteller actually considered or rejected them.
+Do not manually listen from the beginning unless automatic location fails.
 
-See `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`.
+## 6. Structured extraction target
 
-## 3. ClockTracker suitability gate
+Machine extraction should create candidate windows rather than verified claims.
 
-The current product scope is **Trouble Brewing only**. Other scripts are outside the present Storyteller App capability and must not consume C0 screening effort.
+Each candidate should preserve at least:
 
-C0 is therefore no longer a platform-wide 50–100 game prevalence study. It is a bounded **Trouble Brewing evidence-acquisition sprint** whose purpose is to find enough high-value real games to improve the current Storyteller recommendation algorithm quickly.
+- source/episode ID;
+- start/end timestamp;
+- candidate category;
+- concise machine summary;
+- referenced role/mechanism when detectable;
+- extraction confidence;
+- human-review state.
 
-Immediate target:
+Candidate categories should include Storyteller decisions/rationale, setup reasoning, misinformation, registration, bluff selection, player experience, player agency, information strength, longitudinal trajectories and explicit alternatives.
 
-- discover roughly 20–30 usable public Trouble Brewing whole-game records;
-- promote roughly 10–15 to A-grade if the public corpus supports it;
-- cover at least 2–3 independent Storytellers when identity can be established;
-- include several games with multi-night information evolution;
-- seek 1–2 same-game ClockTracker + primary-video pairs for enrichment workflow validation.
-
-Records from unsupported scripts are screened out immediately with a scope reason such as `UNSUPPORTED_SCRIPT_CURRENT_SCOPE`; they are not reconstructed.
-
-Classify Trouble Brewing candidates approximately as:
-
-~~~text
-A
-  full/near-full grimoire
-  + detailed ordered Notes or equivalent event history
-  + enough information to reconstruct interacting clues
-
-B
-  strong grimoire state
-  + reminders / bluffs / multi-page state where present
-  + incomplete event Notes
-
-C
-  setup/final state/result only
-  or too little process detail for whole-game reconstruction
-~~~
-
-Prioritize games where several information mechanisms interact, for example:
-
-- Chef / Empath / Fortune Teller / Investigator / Washerwoman;
-- Drunk;
-- Red Herring;
-- Poisoner;
-- Spy / Recluse registration effects;
-- Demon bluffs;
-- information that evolves across multiple nights.
-
-Do not return to isolated-clue cherry-picking. The desired unit is still the whole game and its interacting information bundle.
-
-The gate is satisfied when the project has a sufficiently useful Trouble Brewing corpus for algorithm calibration; it does **not** require estimating ClockTracker-wide A/B/C prevalence.
-
-Important implementation finding already established from ClockTracker's current public code:
-
-- the grimoire supports multiple pages and a new page clones the prior page before independent edits;
-- `GrimoireSnapshot` is edit/restore history, **not** an automatic semantic Night-1/Night-2 timeline;
-- there is no confirmed canonical structured night-action/event-log model in the inspected code;
-- detailed Notes therefore remain important for reconstructing chronological actions and delivered information.
-
-
-## 4. Source census before cherry-picking
-
-For priority Storytellers and structured collections, maintain a census or reproducible sample frame rather than searching only for cases matching a current hypothesis.
-
-A source inventory record should preserve:
-
-- discovered;
-- screened;
-- reconstructable;
-- selected;
-- rejected;
-- rejection reason;
-- collection/sampling path.
-
-This creates a denominator and makes selection bias visible.
-
-## 5. Screening pass
-
-Do not fully reconstruct every discovered game.
-
-A cheap screening pass should determine:
-
-- Storyteller identity and whether expertise/trust can be evidenced;
-- script and approximate player count;
-- whether setup/seating is recoverable;
-- whether Demon bluffs and setup modifiers are present;
-- whether ordered night decisions and delivered information are recoverable;
-- whether multiple grimoire states are available;
-- whether detailed Notes exist;
-- whether Storyteller commentary/rationale exists;
-- whether player/table context can be established;
-- which phases are reconstructable.
-
-The screening grade measures reconstruction value/cost only. It is not a Storyteller-quality score.
-
-## 6. Reconstruction selection
-
-Prefer a balanced queue and preserve whole-game bundles.
-
-Do not retain only:
-
-- spectacular games;
-- controversial games;
-- algorithm failures;
-- strange role interactions;
-- games containing one desired clue.
-
-Track selection reason.
-
-Recommended reasons:
-
-~~~text
-EXPERT_SOURCE_CENSUS
-SYSTEMATIC_SAMPLE
-RANDOM_SAMPLE
-TARGETED_RESEARCH_CASE
-COMMUNITY_SUBMISSION
-ALGORITHM_FAILURE_REPORT
-OTHER
-~~~
-
-## 7. Multi-source enrichment
-
-When the same game has both a structured record and a primary recording, prefer linking them rather than choosing one and discarding the other.
-
-A practical enrichment model is:
-
-~~~text
-ClockTracker / structured record
-    → mechanical game state and concise ordered notes
-
-primary video/audio
-    → missing timing
-    → spoken rationale
-    → claims / bluff development
-    → table belief and social context
-~~~
-
-Conflicts between sources remain explicit evidence disagreements; one source must not silently overwrite another.
-
-## 8. Initial expert coverage strategy
-
-The first useful corpus should contain multiple independent Storytellers before drawing strong policy conclusions.
-
-After the ClockTracker suitability gate, choose several **whole games** from at least two independently evidenced experienced/trusted Storytellers.
-
-Selection should favor games where multiple information sources interact over time, not games chosen because one isolated decision is interesting.
-
-The purpose is schema/workflow validation and expert independence, not statistical representativeness.
-
-## 9. Human-in-the-loop automation
+## 7. Human verification gate
 
 AI/tooling may assist with:
 
-- ClockTracker record screening;
-- structured-field extraction;
-- Notes parsing;
-- transcript keyword search;
-- candidate timestamp discovery;
-- proposed semantic event extraction;
-- duplicate/cross-source game detection;
-- source metadata normalization.
+- source inventory;
+- deduplication;
+- RSS parsing;
+- transcript locator discovery;
+- ASR;
+- transcript keyword/semantic search;
+- candidate classification;
+- review-packet construction.
 
 AI proposals are not evidence by themselves.
 
-Human verification remains required for evidence promoted to VERIFIED/GOLD.
+Promotion to VERIFIED expert guidance requires primary-source review sufficient to confirm:
 
-## 10. Collection success metrics
+- speaker;
+- meaning;
+- context;
+- timestamp;
+- source identity.
 
-Track:
+Use UNKNOWN rather than inventing attribution or motive.
 
-- records discovered;
-- records screened;
-- A/B/C reconstructability distribution;
-- whole games reconstructable to useful depth;
-- games with ordered multi-clue information history;
-- expert Storyteller independence count;
-- script and player-count coverage;
-- games with linked structured + video sources;
-- verified decisions derivable from reconstructed games;
-- average human effort per reconstructable whole game;
-- average incremental effort to enrich a structured record with video evidence.
+## 8. Copyright/storage boundary
 
-The primary collection metric is no longer raw decision count. It is the number and diversity of **trustworthy whole-game reconstructions** that preserve interacting information over time.
+For public audio/video:
+
+- store stable source identity and locator;
+- store timestamps/ranges;
+- store concise factual paraphrases;
+- use minimal quotation only when evidentially necessary;
+- keep full copyrighted audio/video outside Git;
+- keep full machine transcripts outside Git.
+
+Repository artifacts may contain lightweight acquisition metadata and short review packets.
+
+## 9. Selection-bias control
+
+Keep the whole-game corpus and expert-guidance corpus conceptually distinct.
+
+For whole games, preserve discovery/screening/selection reasons and do not collect only spectacular cases.
+
+For expert audio, maintain a reproducible episode manifest so the project can distinguish:
+
+- discovered;
+- in scope;
+- processed;
+- no useful rationale found;
+- candidate windows found;
+- human reviewed;
+- promoted to verified guidance.
+
+Do not retain only episodes that agree with a current Host hypothesis.
+
+## 10. Success metrics
+
+Whole-game track:
+
+- trustworthy reconstructable games;
+- independent Storyteller coverage;
+- multi-night/multi-clue context;
+- replayable decision prefixes;
+- human effort per reconstruction.
+
+Expert-audio track:
+
+- relevant episodes inventoried;
+- percent automatically acquired/transcribed;
+- high-value candidate windows per episode;
+- human review minutes per source hour;
+- verified novel guidance items;
+- independent expert coverage;
+- explicit conflicting/contrasting guidance preserved.
+
+The current C2 headline metric is **verified high-value guidance per minute of human review**, not transcript volume.
