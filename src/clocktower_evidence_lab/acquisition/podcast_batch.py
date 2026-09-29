@@ -79,7 +79,7 @@ class BatchProgress(_BatchModel):
 def build_batch_plan(manifest: PodcastEpisodeManifest) -> BatchPlan:
     """Plan acquisition only for current-scope episodes not already acquired."""
 
-    return BatchPlan(items=tuple(_plan_entry(entry) for entry in active_acquisition_queue(manifest)))
+    return BatchPlan(\n        items=tuple(_plan_entry(entry) for entry in active_acquisition_queue(manifest))\n    )
 
 
 def _plan_entry(entry: PodcastManifestEntry) -> BatchPlanItem:
