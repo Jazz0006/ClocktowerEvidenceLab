@@ -66,6 +66,32 @@ clocktower-podcast-asr episode.mp3 \
 
 The ASR JSON is an acquisition artifact and should normally remain untracked.
 
+Build the current C2 manifest:
+
+```bash
+clocktower-podcast-manifest \
+  --output /path/outside/repo/c2-manifest.json
+```
+
+Inspect the C2B batch plan without downloading:
+
+```bash
+clocktower-podcast-batch \
+  /path/outside/repo/c2-manifest.json \
+  --work-dir /path/outside/repo/c2-work \
+  --plan-only
+```
+
+Execute the resumable batch after installing ASR support:
+
+```bash
+clocktower-podcast-batch \
+  /path/outside/repo/c2-manifest.json \
+  --work-dir /path/outside/repo/c2-work
+```
+
+The batch runner reuses existing payload and ASR artifacts after interruption. It writes full source/transcript artifacts only beneath the explicit work directory; its progress and updated-manifest JSON remain machine workflow metadata, not VERIFIED evidence.
+
 ## 4. C2 manifest contract
 
 The batch manifest should track, at minimum:
