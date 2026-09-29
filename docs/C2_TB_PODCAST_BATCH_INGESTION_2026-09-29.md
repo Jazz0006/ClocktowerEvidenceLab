@@ -1,6 +1,6 @@
 # C2 — Trouble Brewing Podcast Batch Ingestion — 2026-09-29
 
-> Status: **ACTIVE CURRENT TASK**
+> Status: **ACTIVE — C2A COMPLETE / C2B IMPLEMENTATION COMPLETE / C2C NEXT**
 >
 > Scope: `Cult of the Clocktower` expert audio relevant to the current Trouble Brewing-only product scope.
 >
@@ -44,9 +44,9 @@ Whole-game evidence remains necessary for historical replay and committed-prefix
 
 ## 3. C2 batch scope
 
-### C2A — episode manifest
+### C2A — episode manifest — COMPLETE / GREEN
 
-Build a machine-readable manifest from the live public RSS feed.
+A machine-readable manifest from the live public RSS feed is implemented.
 
 The manifest must preserve stable identity and current acquisition state for every Trouble Brewing-relevant episode.
 
@@ -70,9 +70,9 @@ Do not hard-code the series inventory when the RSS can be enumerated.
 
 Already processed/scouted material must be recognized by stable source identity and not needlessly retranscribed. Current known processed episodes include the Drunk, Librarian and Recluse scouts retained from the earlier pilot.
 
-### C2B — batch acquisition
+### C2B — batch acquisition — IMPLEMENTATION COMPLETE / GREEN
 
-For remaining relevant episodes:
+The repository now provides a tested resumable batch planner/runner and CLI. For remaining relevant episodes:
 
 1. use feed-advertised transcript when available as a locator aid;
 2. otherwise acquire the public audio outside Git;
@@ -82,7 +82,9 @@ For remaining relevant episodes:
 
 Do not commit copyrighted full audio or full transcript text.
 
-### C2C — structured candidate extraction
+Implementation completion means the workflow can perform these operations; it does **not** mean the remaining live episodes have already been transcribed, reviewed or promoted. Real multi-episode execution remains part of C2 validation.
+
+### C2C — structured candidate extraction — NEXT
 
 Run the machine transcript through a structured extractor that searches for high-value Storyteller material.
 
