@@ -297,15 +297,35 @@ def locate_rule_candidates(
         normalized_groups = tuple(
             tuple(term.casefold() for term in group) for group in rule.term_groups
         )
-        for position, text in enumerate(normalized_text):
-            if not all(any(term in text for term in group) for group in normalized_groups):
-                continue
+        match_spans: list[tuple[int, int]] = []
 
-            start = max(0, position - rule.context_before)
-            end = min(len(materialized), position + rule.context_after + 1)
+        single_matches = {
+            position
+            for position, text in enumerate(normalized_text)
+            if _matches_term_groups(text, normalized_groups)
+        }
+        match_spans.extend((position, position) for position in sorted(single_matches))
+
+        for position in range(len(normalized_text) - 1):
+            if position in single_matches or position + 1 in single_matches:
+                continue
+            joined = f"{normalized_text[position]} {normalized_text[position + 1]}"
+            if _matches_term_groups(joined, normalized_groups):
+                match_spans.append((position, position + 1))
+
+        candidate_spans = [
+            (
+                max(0, start - rule.context_before),
+                min(len(materialized) - 1, end + rule.context_after),
+            )
+            for start, end in sorted(match_spans)
+        ]
+        for start, end in _merge_overlapping_spans(candidate_spans):
             proposals.append(
                 CandidateProposal(
-                    segment_indexes=tuple(segment.index for segment in materialized[start:end]),
+                    segment_indexes=tuple(
+                        segment.index for segment in materialized[start : end + 1]
+                    ),
                     category=rule.category,
                     summary=rule.summary,
                     tags=rule.tags,
@@ -314,6 +334,26 @@ def locate_rule_candidates(
             )
 
     return tuple(proposals)
+
+
+def _matches_term_groups(
+    text: str,
+    groups: tuple[tuple[str, ...], ...],
+) -> bool:
+    return all(any(term in text for term in group) for group in groups)
+
+
+def _merge_overlapping_spans(
+    spans: Iterable[tuple[int, int]],
+) -> tuple[tuple[int, int], ...]:
+    merged: list[tuple[int, int]] = []
+    for start, end in spans:
+        if not merged or start > merged[-1][1]:
+            merged.append((start, end))
+            continue
+        previous_start, previous_end = merged[-1]
+        merged[-1] = (previous_start, max(previous_end, end))
+    return tuple(merged)
 
 
 def extract_asr_candidate_artifact(
