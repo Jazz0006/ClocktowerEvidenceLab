@@ -27,7 +27,7 @@ At the start of the next conversation, re-check live `main`, this branch, open P
 
 C1 remains complete and broad Drunk-assignment acquisition remains stopped.
 
-C2 has now completed two implementation slices:
+C2 has now completed three implementation slices:
 
 - **C2A manifest — COMPLETE / GREEN**
   - live RSS parser + show/episode metadata;
