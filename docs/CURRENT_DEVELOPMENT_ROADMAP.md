@@ -85,7 +85,7 @@ The batch planner/runner and CLI now:
 - write only lightweight progress/updated-manifest metadata alongside external artifacts;
 - never promote ASR completion into human review or evidence verification.
 
-A real multi-episode operational run is still required as C2 validation; implementation completion does not mean the corpus has already been reviewed.
+A bounded real two-episode operational validation has completed successfully for Investigator and Imp. This proves the C2B acquisition path on real inputs but does not mean the resulting candidates have been human-reviewed or promoted.
 
 ### C2C — structured extraction — IMPLEMENTATION COMPLETE / GREEN
 
@@ -98,11 +98,13 @@ The extractor:
 - keeps human-review state independent from extraction completion;
 - matches rationale terms across adjacent ASR segments and merges overlapping windows to avoid duplicate review packets.
 
-The next validation step is a bounded real multi-episode C2B -> C2C run.
+A bounded real two-episode C2B -> C2C validation has completed successfully for Investigator and Imp.
 
-### C2D — bounded human review
+### C2D — bounded human review — IN PROGRESS / TESTS-FIRST RED
 
-Rank by current product relevance and novelty. Human-review only the high-value windows needed to promote evidence.
+The review-packet model, deterministic candidate merge/ranking, time/window budgets and lightweight writer are implemented. P0/P1/P2 are review-triage priorities only and do not score Storyteller choices.
+
+The current quality gate is RED only because tests/acquisition/test_podcast_review_cli.py defines the next thin CLI boundary while podcast_review_cli does not yet exist. Implement that CLI, restore Ruff/pytest GREEN, then generate bounded review packets from the successful Investigator/Imp validation artifacts.
 
 ### C2E — evidence promotion
 
@@ -122,17 +124,15 @@ Authority: `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`.
 
 ## 6. Immediate next action
 
-Start **C2C structured extraction**.
+Continue **C2D bounded review packets** from the current tests-first RED:
 
-Expected first implementation slice:
-
-1. define a lightweight timestamped candidate contract over external transcript/ASR artifacts;
-2. preserve source ID, timestamp/range, category, concise machine summary/tags and human-review state;
-3. ensure full transcript text is not copied into Git-managed candidate artifacts;
-4. support an episode producing zero useful candidates as a normal result;
-5. keep extraction completion independent from human review / VERIFIED evidence;
-6. add focused deterministic tests and run the normal Ruff/pytest quality gate;
-7. then use the C2B runner on a bounded real multi-episode batch and feed those artifacts into C2C.
+1. implement the missing podcast_review_cli module;
+2. expose the CLI through pyproject.toml if required by the operational workflow;
+3. restore the complete Install / Ruff check / Ruff format / pytest gate to GREEN;
+4. apply C2D to the successful bounded Investigator/Imp candidate artifacts;
+5. measure selected windows and total human-review duration;
+6. human-review only those primary-audio windows;
+7. enter C2E only for concise claims actually confirmed by primary-source review.
 
 Do not reopen C1 or broad whole-game scouting unless C2 uncovers a concrete evidence dependency.
 
