@@ -1,6 +1,6 @@
 # C2 — Trouble Brewing Podcast Batch Ingestion — 2026-09-29
 
-> Status: **ACTIVE — C2A COMPLETE / C2B COMPLETE / C2C COMPLETE / REAL TWO-EPISODE VALIDATION COMPLETE / C2D IN PROGRESS**
+> Status: **ACTIVE — C2A COMPLETE / C2B COMPLETE / C2C COMPLETE / REAL TWO-EPISODE VALIDATION COMPLETE / C2D IMPLEMENTATION GREEN / HUMAN REVIEW QUEUE READY**
 >
 > Scope: `Cult of the Clocktower` expert audio relevant to the current Trouble Brewing-only product scope.
 >
@@ -116,19 +116,31 @@ The extractor must preserve timestamps and distinguish:
 
 No machine-generated paraphrase is automatically VERIFIED evidence.
 
-### C2D — relevance ranking and bounded human review — IN PROGRESS / TESTS-FIRST RED
+### C2D — relevance ranking and bounded human review — IMPLEMENTATION GREEN / HUMAN REVIEW PENDING
 
-The deterministic review-packet domain and writer are implemented:
+The deterministic review-packet domain, writer and CLI are implemented:
 
 - nearby/overlapping candidates can be merged into one bounded listen window;
 - P0/P1/P2 are acquisition-review priorities only, never Storyteller decision-quality labels;
 - window-count and total-review-time budgets are explicit;
 - review packets retain machine summaries/tags/confidence without transcript bodies;
+- `clocktower-podcast-review` converts a C2C candidate artifact into a bounded C2D packet;
 - human review remains NOT_STARTED until a person actually reviews the primary source.
 
-The current branch is intentionally RED at the next contract boundary: tests expect a podcast review CLI module, but that CLI has not yet been implemented. The immediate next step is to add that thin CLI, expose it through the project scripts if needed, restore the full quality gate to GREEN, then run the real Investigator/Imp candidate artifacts through C2D.
+The full Install / Ruff check / Ruff format / pytest gate is GREEN at quality #284.
 
-Human review should focus on a small packet rather than the full episode.
+The successful bounded Investigator/Imp run #4 artifacts were reused directly; no audio was retranscribed:
+
+- run ID: `36574401873`;
+- Investigator artifact ID: `11038036661`, source `podcast:90e5895f9886d0d14325f829f548182a`;
+- Imp artifact ID: `11037392096`, source `podcast:1a7eb4d86b3f2a42b6693356f20c0253`;
+- Investigator packet: 12 selected windows / 16 selected candidate hits / 127.32 seconds;
+- Imp packet: 12 selected windows / 17 selected candidate hits / 258.28 seconds;
+- combined review queue: 24 windows / 385.60 seconds (6m25.6s).
+
+Both generated packets remain `human_review_state=NOT_STARTED`. The next operation is bounded primary-audio review of these windows; C2E promotion must wait for that human confirmation.
+
+Human review should focus on this small packet rather than either full episode.
 
 High-value current topics include:
 
