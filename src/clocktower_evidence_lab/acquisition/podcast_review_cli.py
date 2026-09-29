@@ -34,12 +34,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     write_review_packet(packet, args.output)
 
     print(
-        (
-            f"windows={len(packet.windows)} "
-            f"selected_candidates={packet.selected_candidate_count} "
-            f"review_seconds={packet.total_review_ms / 1_000:.1f} "
-            f"human_review_state={packet.human_review_state}"
-        )
+        f"windows={len(packet.windows)} "
+        f"selected_candidates={packet.selected_candidate_count} "
+        f"review_seconds={packet.total_review_ms / 1_000:.1f} "
+        f"human_review_state={packet.human_review_state}"
     )
     return 0
 
