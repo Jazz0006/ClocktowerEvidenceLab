@@ -2,11 +2,12 @@
 
 from collections.abc import Iterable
 from enum import StrEnum
+from pathlib import Path
 from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from clocktower_evidence_lab.acquisition.asr import TranscriptSegment
+from clocktower_evidence_lab.acquisition.asr import AsrTranscript, TranscriptSegment
 from clocktower_evidence_lab.acquisition.podcast_manifest import (
     ExtractionState,
     HumanReviewState,
@@ -313,3 +314,34 @@ def locate_rule_candidates(
             )
 
     return tuple(proposals)
+
+
+def extract_asr_candidate_artifact(
+    *,
+    source_id: str,
+    transcript: AsrTranscript,
+    rules: Iterable[CandidateRule] = DEFAULT_C2_RULES,
+) -> CandidateArtifact:
+    """Run conservative locator rules over an external ASR artifact."""
+
+    proposals = locate_rule_candidates(transcript.segments, rules=rules)
+    return materialize_candidate_artifact(
+        source_id=source_id,
+        segments=transcript.segments,
+        proposals=proposals,
+    )
+
+
+def write_candidate_artifact(
+    artifact: CandidateArtifact,
+    output_path: str | Path,
+) -> Path:
+    """Write only the lightweight candidate artifact, never the source transcript."""
+
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        artifact.model_dump_json(indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return target
