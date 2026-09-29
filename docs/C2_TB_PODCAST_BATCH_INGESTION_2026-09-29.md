@@ -84,9 +84,11 @@ Do not commit copyrighted full audio or full transcript text.
 
 Implementation completion means the workflow can perform these operations; it does **not** mean the remaining live episodes have already been transcribed, reviewed or promoted. Real multi-episode execution remains part of C2 validation.
 
-### C2C — structured candidate extraction — NEXT
+### C2C — structured candidate extraction — IMPLEMENTATION COMPLETE / GREEN
 
-Run the machine transcript through a structured extractor that searches for high-value Storyteller material.
+The repository now provides a deterministic timestamp-preserving extractor and CLI over external ASR segments. It searches for high-value Storyteller material while keeping complete transcript text outside Git-managed candidate artifacts. Rationale matching supports adjacent ASR segments and overlapping matches are merged into bounded review windows.
+
+A bounded real multi-episode C2B -> C2C run is the next validation step.
 
 Initial target categories:
 
