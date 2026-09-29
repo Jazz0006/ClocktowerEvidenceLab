@@ -103,9 +103,8 @@ def test_review_packet_prioritizes_direct_rationale_over_generic_discovery() -> 
     )
 
     assert len(packet.windows) == 1
-    assert (
-        packet.windows[0].categories
-        == (podcast_candidates.CandidateCategory.STORYTELLER_RATIONALE,)
+    assert packet.windows[0].categories == (
+        podcast_candidates.CandidateCategory.STORYTELLER_RATIONALE,
     )
     assert packet.windows[0].priority is podcast_review.ReviewPriority.P0
 
