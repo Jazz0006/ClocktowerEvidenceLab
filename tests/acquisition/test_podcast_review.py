@@ -1,5 +1,4 @@
-from clocktower_evidence_lab.acquisition import podcast_candidates, podcast_manifest
-from clocktower_evidence_lab.acquisition import podcast_review
+from clocktower_evidence_lab.acquisition import podcast_candidates, podcast_manifest, podcast_review
 
 
 def _candidate(
