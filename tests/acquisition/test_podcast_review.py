@@ -179,3 +179,27 @@ def test_zero_candidate_artifact_produces_empty_review_packet() -> None:
     assert packet.source_candidate_count == 0
     assert packet.selected_candidate_count == 0
     assert packet.human_review_state is podcast_manifest.HumanReviewState.NOT_STARTED
+
+
+def test_review_packet_writer_serializes_lightweight_packet(
+    tmp_path,
+) -> None:
+    artifact = _artifact(
+        (
+            _candidate(
+                10_000,
+                20_000,
+                podcast_candidates.CandidateCategory.STORYTELLER_RATIONALE,
+            ),
+        )
+    )
+    packet = podcast_review.build_review_packet(artifact)
+    output = tmp_path / "review.json"
+
+    written = podcast_review.write_review_packet(packet, output)
+
+    payload = written.read_text(encoding="utf-8")
+    assert written == output
+    assert '"schema_version": "c2d-review-packet-v1"' in payload
+    assert '"human_review_state": "NOT_STARTED"' in payload
+    assert "transcript_text" not in payload
