@@ -1,0 +1,86 @@
+from clocktower_evidence_lab.acquisition import asr, podcast_candidates
+
+
+def _segments(*texts: str) -> tuple[asr.TranscriptSegment, ...]:
+    return tuple(
+        asr.TranscriptSegment(
+            index=index,
+            start_ms=index * 1_000,
+            end_ms=(index + 1) * 1_000,
+            text=text,
+        )
+        for index, text in enumerate(texts)
+    )
+
+
+def test_rule_locator_requires_every_term_group() -> None:
+    rule = podcast_candidates.CandidateRule(
+        rule_id="registration-rationale",
+        category=podcast_candidates.CandidateCategory.REGISTRATION_CHOICE,
+        term_groups=(("recluse", "spy"), ("register", "registration")),
+        summary="Keyword-located potential registration-choice discussion.",
+        tags=("registration",),
+    )
+
+    proposals = podcast_candidates.locate_rule_candidates(
+        _segments(
+            "The Recluse is difficult.",
+            "The Recluse can register as evil here.",
+        ),
+        rules=(rule,),
+    )
+
+    assert len(proposals) == 1
+    assert proposals[0].segment_indexes == (1,)
+    assert proposals[0].category is podcast_candidates.CandidateCategory.REGISTRATION_CHOICE
+
+
+def test_rule_locator_can_include_bounded_context_without_copying_text() -> None:
+    rule = podcast_candidates.CandidateRule(
+        rule_id="rationale",
+        category=podcast_candidates.CandidateCategory.STORYTELLER_RATIONALE,
+        term_groups=(("storyteller",), ("because", "reason", "why")),
+        summary="Keyword-located potential Storyteller rationale.",
+        context_before=1,
+        context_after=1,
+    )
+    segments = _segments(
+        "Previous context.",
+        "As the Storyteller, I choose this because it changes the worlds.",
+        "Following context.",
+    )
+
+    proposals = podcast_candidates.locate_rule_candidates(segments, rules=(rule,))
+
+    assert proposals[0].segment_indexes == (0, 1, 2)
+    assert proposals[0].summary == "Keyword-located potential Storyteller rationale."
+    assert "changes the worlds" not in proposals[0].model_dump_json()
+
+
+def test_rule_locator_is_deterministic_and_returns_zero_for_no_match() -> None:
+    rule = podcast_candidates.CandidateRule(
+        rule_id="bluff",
+        category=podcast_candidates.CandidateCategory.DEMON_BLUFF_REASONING,
+        term_groups=(("demon",), ("bluff", "bluffs")),
+        summary="Keyword-located potential Demon-bluff discussion.",
+    )
+    segments = _segments("General discussion with no target terms.")
+
+    first = podcast_candidates.locate_rule_candidates(segments, rules=(rule,))
+    second = podcast_candidates.locate_rule_candidates(segments, rules=(rule,))
+
+    assert first == second == ()
+
+
+def test_default_c2_rules_locate_registration_and_explicit_alternative_windows() -> None:
+    proposals = podcast_candidates.locate_rule_candidates(
+        _segments(
+            "The Recluse can register as evil for the Investigator.",
+            "Instead, you could show the real Minion and give them another explanation.",
+        )
+    )
+
+    categories = {proposal.category for proposal in proposals}
+
+    assert podcast_candidates.CandidateCategory.REGISTRATION_CHOICE in categories
+    assert podcast_candidates.CandidateCategory.EXPLICIT_ALTERNATIVE in categories
