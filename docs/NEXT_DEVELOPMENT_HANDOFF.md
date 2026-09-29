@@ -25,81 +25,88 @@ At the start of the next conversation, re-check live `main`, this branch, open P
 
 ## 2. Current baseline
 
-C1 is complete and its targeted Drunk-assignment acquisition is stopped.
+C1 remains complete and broad Drunk-assignment acquisition remains stopped.
 
-PR #7 consolidated durable work from the old podcast branch into main, including:
+C2 has now completed two implementation slices:
 
-- RSS episode/audio/transcript locator parsing;
-- optional faster-whisper ASR;
-- timestamp normalization/tests;
-- the podcast acquisition workflow;
-- Drunk, Librarian and Recluse machine-located scout artifacts.
+- **C2A manifest — COMPLETE / GREEN**
+  - live RSS parser + show/episode metadata;
+  - stable source identity;
+  - Trouble Brewing scope classification;
+  - independent acquisition / ASR / extraction / human-review state;
+  - stable-GUID deduplication of the retained Drunk, Librarian and Recluse scouts;
+  - manifest CLI and bounded live-RSS validation.
+- **C2B batch acquisition — IMPLEMENTATION COMPLETE / GREEN**
+  - advertised-transcript-first planning;
+  - audio + optional faster-whisper fallback;
+  - explicit external work directory;
+  - resumable payload download;
+  - resumable ASR without needless retranscription;
+  - blocked-locator preservation;
+  - batch runner + CLI;
+  - progress application that cannot promote extraction/human-review/verification state.
 
-Those three episodes are prior-processed source identities for C2 and should not be needlessly retranscribed.
+The latest C2B quality gate passed Install / Ruff check / Ruff format / Pytest.
+
+A real multi-episode batch has **not** yet been claimed as reviewed evidence. Full audio/transcript artifacts must remain outside Git.
 
 ## 3. Current task
 
-Implement **C2A — episode manifest** first.
+Implement **C2C — structured candidate extraction**.
 
 Goal:
 
 ```text
-live Cult of the Clocktower RSS
-    -> reproducible episode inventory
-    -> Trouble Brewing relevance
-    -> stable identity
-    -> acquisition/transcript/ASR/extraction/review status
-    -> deduplicate previously processed episodes
+external feed transcript / ASR artifact
+    -> timestamp-preserving machine candidate extraction
+    -> lightweight candidate records
+    -> zero-or-more candidates per episode
+    -> later relevance ranking / bounded human review
 ```
 
-Do not begin by manually listening to more episodes.
+Do not start by manually listening to whole episodes.
 
-## 4. C2A minimum contract
+## 4. C2C minimum contract
 
-The manifest should preserve at least:
+Each candidate should preserve at least:
 
 - stable episode/source ID;
-- show title;
-- episode title;
-- publication date;
-- duration;
-- webpage locator when available;
-- enclosure/audio locator;
-- advertised transcript status/locator;
-- current Trouble Brewing scope classification;
-- acquisition state;
-- ASR state;
-- extraction state;
-- human-review state;
-- optional link to retained prior scout artifact.
+- start/end timestamp;
+- candidate category;
+- concise machine summary;
+- optional role/mechanism tags;
+- machine extraction quality/confidence when useful;
+- human-review state.
 
-Prefer generic podcast/acquisition semantics rather than hard-coded per-role classes.
+Initial categories remain those defined in the C2 authority document, including Storyteller decision/rationale, setup reasoning, misinformation, registration, Demon bluff reasoning, player experience/agency, information strength, confirmation chains, longitudinal trajectories, explicit alternatives and real-game examples.
+
+Do not put the complete transcript text into Git-managed candidate artifacts.
 
 ## 5. Required invariants
 
-1. stable RSS identity deduplicates repeated feed reads;
-2. already-processed episodes are recognized without relying only on title text;
-3. full audio/transcript payloads are not written into Git-managed manifest artifacts;
-4. missing transcript is a normal state that can trigger ASR;
-5. ASR complete does not imply evidence VERIFIED;
-6. extraction complete does not imply human review complete;
-7. out-of-scope scripts can remain inventoried without entering the current processing queue;
-8. a relevant episode may legitimately produce zero useful candidate windows.
+1. extraction is a locator/triage layer, not evidence verification;
+2. candidate timestamps survive deterministic serialization;
+3. extraction complete does not imply human review complete;
+4. ASR complete does not imply extraction complete;
+5. an in-scope episode may validly yield zero useful candidates;
+6. candidate records do not embed full copyrighted transcript payloads;
+7. source identity is stable and inherited from the C2A manifest;
+8. C2C remains source-generic enough to accept feed transcripts or ASR segments without creating a second evidence subsystem.
 
 ## 6. Implementation sequence
 
 ```text
-inspect retained acquisition code
-    -> define manifest domain/serialization shape
+define candidate domain/serialization contract
     -> focused tests
-    -> implementation
-    -> live RSS enumeration
-    -> dedup prior Drunk/Librarian/Recluse identities
+    -> deterministic extraction primitives over timestamped segments
+    -> lightweight artifact writer
     -> quality gate
-    -> C2B batch acquisition
+    -> bounded real multi-episode C2B run
+    -> C2C extraction over that batch
+    -> C2D relevance/review packets
 ```
 
-Use existing podcast tools rather than building a second downloader/transcriber.
+Use the existing manifest, batch runner and ASR adapter. Do not add a persistence migration unless this real workflow proves lightweight artifacts insufficient.
 
 ## 7. Evidence boundary
 
