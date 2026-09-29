@@ -19,7 +19,7 @@ Read in this order:
 7. `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
 8. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
 9. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-10. this file
+10. `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`\n11. this file
 
 At the start of the next conversation, re-check live `main`, this branch, open PRs/checks and exact file state. Do not assume this handoff's branch status is still live.
 
@@ -67,7 +67,7 @@ The successful real Investigator/Imp candidate artifacts from bounded validation
 - Imp: 61 candidates -> 50 merged windows -> 12 selected windows / 17 selected candidate hits / 258.28 seconds;
 - combined: 24 windows / 385.60 seconds (6m25.6s).
 
-Both packets remain `human_review_state=NOT_STARTED`; no candidate has been promoted to verified evidence.
+Both packets remain `human_review_state=NOT_STARTED`; no candidate has been promoted to verified evidence. The durable per-window human-review queue is `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`.
 
 Latest known code checkpoint before this documentation sync:
 - production/test HEAD: `4d8da2c4be0eae40570ffea4134d9536bc748a5d`;
