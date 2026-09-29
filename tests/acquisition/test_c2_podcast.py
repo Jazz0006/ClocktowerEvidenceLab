@@ -1,4 +1,5 @@
-from clocktower_evidence_lab.acquisition import c2_podcast, podcast_manifest
+import clocktower_evidence_lab.acquisition.c2_podcast as c2_podcast
+import clocktower_evidence_lab.acquisition.podcast_manifest as podcast_manifest
 from clocktower_evidence_lab.acquisition.podcast import PodcastEpisode
 
 
