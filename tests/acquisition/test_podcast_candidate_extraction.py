@@ -121,7 +121,7 @@ def test_rule_locator_matches_required_term_groups_across_adjacent_segments() ->
         term_groups=(("storyteller",), ("because", "reason", "why")),
         summary="Keyword-located potential Storyteller rationale.",
         context_before=0,
-        context_after=1,
+        context_after=0,
     )
     segments = _segments(
         "As the Storyteller, I choose the Recluse here.",
