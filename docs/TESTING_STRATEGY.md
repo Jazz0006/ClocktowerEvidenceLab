@@ -83,7 +83,11 @@ Focused tests should cover:
 7. out-of-scope episodes can remain inventoried without entering the active queue;
 8. full media/transcript payloads are excluded from Git-managed manifest serialization;
 9. an in-scope episode may yield zero useful candidates without becoming an error;
-10. candidate timestamps/categories survive serialization deterministically.
+10. candidate timestamps/categories survive serialization deterministically;
+11. review-packet merge/ranking/budget behavior is deterministic;
+12. C2D P0/P1/P2 values are acquisition-review priorities only and never become Storyteller decision-quality labels;
+13. review-packet generation keeps human review at NOT_STARTED until primary-source review actually occurs;
+14. review packets do not embed full transcript text or source media payloads.
 
 Live RSS/network probing should not replace deterministic parser/domain tests. Keep network-dependent checks as bounded acquisition validation, not the core unit-test contract.
 
