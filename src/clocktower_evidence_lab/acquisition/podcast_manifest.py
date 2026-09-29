@@ -1,6 +1,7 @@
 """Stable podcast episode manifest for batch acquisition workflow state."""
 
 from collections.abc import Iterable
+from datetime import datetime
 from enum import StrEnum
 from hashlib import sha256
 from typing import Annotated
@@ -9,6 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from clocktower_evidence_lab.acquisition.podcast import PodcastEpisode
 
+LocatorText = Annotated[str, Field(min_length=1, max_length=2_048)]
 ShortText = Annotated[str, Field(min_length=1, max_length=512)]
 ArtifactPath = Annotated[str, Field(min_length=1, max_length=1_024)]
 
@@ -74,14 +76,14 @@ class PodcastManifestEntry(_ManifestModel):
 
     source_id: ShortText
     show_title: ShortText | None = None
-    feed_url: str = Field(min_length=1, max_length=2_048)
+    feed_url: LocatorText
     title: ShortText
     guid: ShortText | None = None
-    published_at: object | None = None
+    published_at: datetime | None = None
     duration_seconds: int | None = Field(default=None, ge=0)
-    webpage_url: str | None = Field(default=None, min_length=1, max_length=2_048)
-    audio_url: str | None = Field(default=None, min_length=1, max_length=2_048)
-    transcript_urls: tuple[str, ...] = ()
+    webpage_url: LocatorText | None = None
+    audio_url: LocatorText | None = None
+    transcript_urls: tuple[LocatorText, ...] = ()
     transcript_availability: TranscriptAvailability
     scope: EpisodeScope
     acquisition_state: AcquisitionState = AcquisitionState.NOT_ATTEMPTED
@@ -154,7 +156,7 @@ def build_episode_manifest(
         prior = prior_by_source_id.get(source_id)
         entry = PodcastManifestEntry(
             source_id=source_id,
-            show_title=getattr(episode, "show_title", None),
+            show_title=episode.show_title,
             feed_url=episode.feed_url,
             title=episode.title,
             guid=episode.guid,
