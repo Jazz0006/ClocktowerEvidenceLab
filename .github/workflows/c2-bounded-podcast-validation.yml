@@ -1,0 +1,84 @@
+name: C2 bounded podcast validation
+
+on:
+  push:
+    branches:
+      - docs/podcast-batch-ingestion-route-20260929
+    paths:
+      - .github/workflows/c2-bounded-podcast-validation.yml
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - case_name: investigator
+            guid: 5722d8e8-b89d-4067-91ac-1550b8da428d
+          - case_name: imp
+            guid: a271357d-10af-4969-8c7e-5545b871b5cb
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install acquisition + ASR support
+        run: python -m pip install -e ".[asr]"
+      - name: Build live C2 manifest
+        run: clocktower-podcast-manifest --output manifest.json
+      - name: Acquire and transcribe bounded episode
+        run: |
+          clocktower-podcast-batch manifest.json             --work-dir work             --guid "${{ matrix.guid }}"
+      - name: Extract lightweight candidates
+        env:
+          CASE_NAME: ${{ matrix.case_name }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import pathlib
+          import subprocess
+
+          work = pathlib.Path("work")
+          result = json.loads((work / "batch-progress.json").read_text(encoding="utf-8"))
+          progress = result["progress"]
+          if len(progress) != 1:
+              raise SystemExit(f"expected one completed item, got {len(progress)}")
+
+          item = progress[0]
+          asr_relative = item.get("asr_relative_path")
+          if not asr_relative:
+              raise SystemExit("bounded validation expected AUDIO_ASR progress")
+
+          output_dir = pathlib.Path("lightweight")
+          output_dir.mkdir(parents=True, exist_ok=True)
+          subprocess.run(
+              [
+                  "clocktower-podcast-candidates",
+                  str(work / asr_relative),
+                  "--source-id",
+                  item["source_id"],
+                  "--output",
+                  str(output_dir / f"{os.environ['CASE_NAME']}-candidates.json"),
+              ],
+              check=True,
+          )
+          (output_dir / f"{os.environ['CASE_NAME']}-progress.json").write_text(
+              json.dumps(result, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          updated = json.loads((work / "manifest.updated.json").read_text(encoding="utf-8"))
+          (output_dir / f"{os.environ['CASE_NAME']}-manifest.json").write_text(
+              json.dumps(updated, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+      - name: Upload lightweight validation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: c2-bounded-${{ matrix.case_name }}
+          path: lightweight/
+          if-no-files-found: error
