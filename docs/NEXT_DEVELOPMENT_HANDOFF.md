@@ -59,18 +59,25 @@ The latest C2C quality gate passed Install / Ruff check / Ruff format / Pytest.
 
 A bounded real two-episode C2B -> C2C validation has completed successfully for **Investigator + Imp**. Full audio/transcript artifacts remained outside Git; the workflow uploaded lightweight validation artifacts only. This is acquisition/extraction validation, not reviewed evidence.
 
-C2D has now started. podcast_review.py and focused tests define deterministic merging, review priorities, review-time/window budgets and a lightweight packet writer. The current branch is intentionally RED because tests/acquisition/test_podcast_review_cli.py imports a not-yet-implemented podcast_review_cli.
+C2D implementation is now GREEN. `podcast_review.py`, focused tests and `podcast_review_cli.py` define deterministic merging, review priorities, review-time/window budgets, a lightweight packet writer and the `clocktower-podcast-review` entry point.
 
-Latest known code checkpoint before documentation sync:
-- production/test HEAD: 6950ed1c8071d7ae9d6af4e8c7f612f685f58c25;
+The successful real Investigator/Imp candidate artifacts from bounded validation run #4 were reused directly with no retranscription and converted into real C2D review packets:
+
+- Investigator: 63 candidates -> 53 merged windows -> 12 selected windows / 16 selected candidate hits / 127.32 seconds;
+- Imp: 61 candidates -> 50 merged windows -> 12 selected windows / 17 selected candidate hits / 258.28 seconds;
+- combined: 24 windows / 385.60 seconds (6m25.6s).
+
+Both packets remain `human_review_state=NOT_STARTED`; no candidate has been promoted to verified evidence.
+
+Latest known code checkpoint before this documentation sync:
+- production/test HEAD: `4d8da2c4be0eae40570ffea4134d9536bc748a5d`;
 - PR #8: Draft / mergeable;
-- bounded validation run #4: SUCCESS;
-- quality run #274: FAILURE at pytest collection only because podcast_review_cli is missing;
-- Install / Ruff check / Ruff format all passed on #274.
+- bounded validation run #4: SUCCESS, run ID `36574401873`;
+- quality #284: SUCCESS across Install / Ruff check / Ruff format / Pytest.
 
 ## 3. Current task
 
-Finish **C2D review-packet CLI -> GREEN**, then generate review packets from the successful Investigator/Imp artifacts and perform bounded primary-audio review.
+Perform the **bounded primary-audio review** over the already-generated Investigator/Imp C2D packets, then enter C2E only for claims that the human review actually confirms.
 
 Goal:
 
@@ -125,11 +132,9 @@ C2A manifest
 Current:
 
 ```text
-C2D review packet model/writer
-    -> podcast_review_cli
-    -> full quality GREEN
-    -> generate Investigator/Imp review packets
-    -> bounded primary-audio review
+C2D model/writer/CLI GREEN
+    -> real Investigator/Imp review packets GENERATED
+    -> bounded primary-audio review (24 windows / 6m25.6s)
     -> C2E verified guidance promotion
 ```
 
