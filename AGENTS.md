@@ -286,15 +286,27 @@ Highest-value early tests include:
 
 See `docs/TESTING_STRATEGY.md`.
 
-## 10. Change discipline
+## 10. Current change discipline
 
-Until the first pilot reconstruction is complete:
+Current active route is C2 podcast batch ingestion.
+
+Until C2 proves a need for broader infrastructure:
 
 - do not build recommendation logic;
 - do not implement Blood on the Clocktower legality;
-- do not optimize for large-corpus scale;
-- do not create cloud/backend infrastructure;
-- do not build AI auto-judgment of Storyteller quality;
-- do not ingest large volumes before the reconstruction workflow is validated.
+- do not add policy scoring to Evidence Lab;
+- do not add cloud/backend infrastructure merely to scale acquisition;
+- do not commit full copyrighted audio/video or full machine transcripts;
+- do not treat ASR/LLM output as verified evidence;
+- do not add persistence migrations merely for temporary acquisition artifacts;
+- do not reopen broad C1 Drunk-assignment scouting without a concrete downstream evidence gap;
+- keep current acquisition Trouble Brewing-first.
 
-The first implementation target is a reliable path from one real primary source to a verified decision slice.
+For C2, automate inventory, locator handling, ASR, candidate extraction and review prioritization while retaining human primary-source review as the evidence-promotion gate.
+
+See:
+
+- `docs/CURRENT_DEVELOPMENT_ROADMAP.md`;
+- `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
+- `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
+- `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
