@@ -1,12 +1,5 @@
-from clocktower_evidence_lab.acquisition.c2_podcast import build_c2_manifest
+from clocktower_evidence_lab.acquisition import c2_podcast, podcast_manifest
 from clocktower_evidence_lab.acquisition.podcast import PodcastEpisode
-from clocktower_evidence_lab.acquisition.podcast_manifest import (
-    AcquisitionState,
-    AsrState,
-    ExtractionState,
-    HumanReviewState,
-    active_acquisition_queue,
-)
 
 
 _FEED_URL = "https://anchor.fm/s/daf1f9c/podcast/rss"
@@ -38,13 +31,22 @@ def test_c2_manifest_recognizes_retained_drunk_librarian_recluse_scouts() -> Non
         _episode("15: Chef (Trouble Brewing)", "new-chef-guid"),
     )
 
-    manifest = build_c2_manifest(episodes)
+    manifest = c2_podcast.build_c2_manifest(episodes)
 
     processed = manifest.episodes[:3]
-    assert all(entry.acquisition_state is AcquisitionState.COMPLETE for entry in processed)
-    assert all(entry.asr_state is AsrState.COMPLETE for entry in processed)
-    assert all(entry.extraction_state is ExtractionState.COMPLETE for entry in processed)
-    assert all(entry.human_review_state is HumanReviewState.PENDING for entry in processed)
+    assert all(
+        entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE
+        for entry in processed
+    )
+    assert all(entry.asr_state is podcast_manifest.AsrState.COMPLETE for entry in processed)
+    assert all(
+        entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE
+        for entry in processed
+    )
+    assert all(
+        entry.human_review_state is podcast_manifest.HumanReviewState.PENDING
+        for entry in processed
+    )
     assert all(entry.prior_artifact_path for entry in processed)
 
-    assert active_acquisition_queue(manifest) == (manifest.episodes[3],)
+    assert podcast_manifest.active_acquisition_queue(manifest) == (manifest.episodes[3],)
