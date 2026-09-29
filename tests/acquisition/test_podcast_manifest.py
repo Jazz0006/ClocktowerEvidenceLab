@@ -1,5 +1,4 @@
-import clocktower_evidence_lab.acquisition.podcast_manifest as manifest
-from clocktower_evidence_lab.acquisition.podcast import PodcastEpisode
+from clocktower_evidence_lab.acquisition import podcast, podcast_manifest as manifest
 
 
 _FEED_URL = "https://anchor.fm/s/daf1f9c/podcast/rss"
@@ -11,8 +10,8 @@ def _episode(
     guid: str | None,
     audio_url: str | None = "https://example.test/audio.mp3",
     webpage_url: str | None = "https://example.test/episode",
-) -> PodcastEpisode:
-    return PodcastEpisode(
+) -> podcast.PodcastEpisode:
+    return podcast.PodcastEpisode(
         feed_url=_FEED_URL,
         title=title,
         guid=guid,
