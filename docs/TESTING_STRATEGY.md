@@ -134,7 +134,7 @@ Test UI behavior only where it protects a real workflow contract, such as:
 
 Do not make the domain model depend on a UI framework for testability.
 
-## 7. Exact commands
+## 7. Exact commands and acceptance layers
 
 E1 uses Python 3.12+ with the following local quality gate:
 
@@ -145,6 +145,34 @@ ruff format --check --diff .
 pytest
 ```
 
-GitHub Actions runs the same lint/format/test gate for pull requests to `main` and after pushes to `main`.
+The configured Mini MCP repository alias is `evidence`. Normal local iteration should use the allow-listed tasks:
 
-A change that has not reached pytest because installation or linting failed is not a GREEN domain test result.
+```text
+ruff-check
+ruff-format-check
+pytest
+quality
+```
+
+`quality` is the default logical-checkpoint gate and currently covers:
+
+```text
+ruff check .
+ruff format --check --diff .
+pytest
+```
+
+Use focused local validation during a bounded implementation slice, then run `quality` before committing and pushing the logical checkpoint. Do not push solely to obtain routine lint/test feedback that is already available locally.
+
+GitHub Actions is the independent acceptance layer. After the logical checkpoint is committed and pushed:
+
+1. use Mini MCP `github_pr_audit` to verify the live PR, exact head SHA, required checks, review state and mergeability;
+2. require the GitHub Actions lint/format/test gate to pass on that exact pushed HEAD;
+3. merge only after the remote acceptance gates required by repository policy are satisfied.
+
+Local GREEN and GitHub GREEN have different roles:
+
+- **local GREEN** enables efficient implementation and checkpoint formation;
+- **GitHub GREEN on exact HEAD** provides independent remote acceptance before merge.
+
+A change that has not reached pytest because installation or linting failed is not a GREEN domain test result. A locally GREEN change is not merge-ready until the required GitHub acceptance also passes on the exact checkpoint HEAD.

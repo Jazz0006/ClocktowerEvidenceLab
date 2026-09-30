@@ -268,6 +268,45 @@ identify existing owning tests
 
 Do not manufacture failing tests for mechanical edits.
 
+### 8.1 Standard development lifecycle
+
+The default repository workflow is **Mini MCP local-first + logical-checkpoint push + GitHub independent acceptance**:
+
+```text
+inspect live local state
+→ implement bounded slice
+→ focused local validation
+→ continue related micro-slices locally when appropriate
+→ reach logical checkpoint
+→ local quality
+→ exact diff review
+→ commit
+→ push
+→ Mini MCP github_pr_audit
+→ GitHub Actions independent acceptance on exact HEAD
+→ merge when all gates pass
+```
+
+This replaces push-after-every-micro-slice behavior. Related, bounded micro-slices may remain local while the branch is coherent and locally GREEN. Push when the work reaches a reviewable logical checkpoint, not merely because one small edit completed.
+
+Default local responsibilities:
+
+- inspect branch / HEAD / working-tree state before editing;
+- perform normal repository reads, edits and Git operations through Mini MCP;
+- run the narrowest meaningful focused validation while iterating;
+- run the repository-local `quality` task before checkpoint commit/push;
+- review the exact tracked diff before commit;
+- keep commits scoped to one coherent logical checkpoint.
+
+GitHub remains an independent acceptance layer rather than the primary development loop:
+
+- after push, audit the PR/check state with Mini MCP `github_pr_audit`;
+- require GitHub Actions acceptance for the exact pushed HEAD before merge;
+- treat local GREEN as necessary development evidence, not a substitute for remote acceptance;
+- merge only when required checks, review/mergeability gates and repository policy are satisfied.
+
+Do not repeatedly query GitHub Actions while local implementation is still changing. Prefer local focused tests and `quality`; use GitHub once the checkpoint is ready for independent acceptance.
+
 ## 9. Testing priorities
 
 Highest-value early tests include:
