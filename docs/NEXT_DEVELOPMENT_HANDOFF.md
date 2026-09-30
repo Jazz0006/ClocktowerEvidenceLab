@@ -83,7 +83,12 @@ Latest known code checkpoint before this documentation sync:
 
 ## 3. Current task
 
-Perform the **bounded primary-audio review** over the already-generated Investigator/Imp C2D packets, then enter C2E only for claims that the human review actually confirms.
+Keep **C2 and C3 moving in parallel**:
+
+- perform the bounded primary-audio review over the already-generated Investigator/Imp C2D packets, then enter C2E only for claims that the human review actually confirms;
+- continue automatic C2 batch ingestion rather than pausing for C3;
+- route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
+- once the first C3 Stage-1 item is VERIFIED, prepare the EvidenceLab -> CampBoardGameHost handoff immediately.
 
 Goal:
 
