@@ -300,9 +300,10 @@ Until C2 proves a need for broader infrastructure:
 - do not treat ASR/LLM output as verified evidence;
 - do not add persistence migrations merely for temporary acquisition artifacts;
 - do not reopen broad C1 Drunk-assignment scouting without a concrete downstream evidence gap;
-- keep current acquisition Trouble Brewing-first.
+- keep current acquisition Trouble Brewing-first;
+- the current C3 Drunk candidate-comparison lane is such a concrete downstream gap, but it must reuse C2 and stay focused on explicit comparison/rejection evidence rather than broad Drunk scouting.
 
-For C2, automate inventory, locator handling, ASR, candidate extraction and review prioritization while retaining human primary-source review as the evidence-promotion gate.
+For C2, automate inventory, locator handling, ASR, candidate extraction and review prioritization while retaining human primary-source review as the evidence-promotion gate. C3 may add conservative locator/review-priority refinements, but must not add BotC legality or recommendation semantics.
 
 See:
 
