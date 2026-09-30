@@ -68,9 +68,6 @@ def test_c2_manifest_deduplicates_completed_investigator_and_imp_validation() ->
         assert entry.asr_state is podcast_manifest.AsrState.COMPLETE
         assert entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE
         assert entry.human_review_state is podcast_manifest.HumanReviewState.NOT_STARTED
-        assert (
-            entry.prior_artifact_path
-            == "docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md"
-        )
+        assert entry.prior_artifact_path == "docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md"
 
     assert podcast_manifest.active_acquisition_queue(manifest) == (chef,)
