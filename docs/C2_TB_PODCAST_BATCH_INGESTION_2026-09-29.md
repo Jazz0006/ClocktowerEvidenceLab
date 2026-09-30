@@ -156,6 +156,14 @@ High-value current topics include:
 - respecting player-controlled choices;
 - examples where experts explicitly compare opposite legal choices.
 
+### C2C/C2D targeted enhancement for C3
+
+CampBoardGameHost has identified a narrow downstream evidence gap: explicit comparison or rejection among Drunk candidates under the same fixed setup/history prefix.
+
+C3 reuses this C2 pipeline and does not interrupt batch ingestion. The existing `EXPLICIT_ALTERNATIVE` category already has P0 C2D review priority, so no new ranking subsystem is needed. C2C only expands conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions.
+
+Machine matches remain unverified acquisition assistance. See `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
+
 ### C2E — promotion into durable evidence
 
 Only after primary-audio review:
