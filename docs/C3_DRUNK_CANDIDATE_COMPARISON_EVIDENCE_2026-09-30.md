@@ -74,7 +74,7 @@ Strictly prohibited:
 - stopping C2 automatic batch ingestion to perform C3;
 - reopening broad C1-style “find games with a Drunk” scouting.
 
-The historical choice, explicit alternatives, and explicit rationale are evidence. Policy interpretation remains downstream.
+The historical choice, explicit alternatives, and explicit rationale are evidence. Policy interpretation remains downstream. Snapshot interoperability is likewise a transport/projection concern, not a policy or quality label.
 
 ## 6. C2C / C2D reuse audit
 
@@ -102,7 +102,7 @@ fixed setup/history prefix
 
 Sample count is not the gate.
 
-As soon as the first qualifying evidence item is VERIFIED, prepare an EvidenceLab -> CampBoardGameHost handoff containing only the evidence/provenance needed for the Host to evaluate a first bounded, versioned Drunk production-policy predicate and rerun its production cutover gate.
+As soon as the first qualifying evidence item is VERIFIED, prepare an EvidenceLab -> CampBoardGameHost handoff containing only the evidence/provenance needed for the Host to evaluate a first bounded, versioned Drunk production-policy predicate and rerun its production cutover gate. If the TB snapshot materializer is already available and the assignment-time prefix is sufficient, include the standard `TroubleBrewingGameSnapshotV1`-compatible snapshot alongside the decision/provenance package; do not delay evidence handoff solely to manufacture a snapshot from incomplete history.
 
 ## 8. Retrospective audit of existing C1 evidence
 

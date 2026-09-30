@@ -36,9 +36,13 @@ Versioned Corpus Export
 A downstream analysis path is separate:
 
 ```text
-Versioned Corpus Export
+Versioned Corpus Export / decision-time historical prefix
     ↓
-CampBoardGameHost canonical/rules projection
+TB-only standard snapshot materialization
+    ↓
+TroubleBrewingGameSnapshotV1-compatible interchange
+    ↓
+CampBoardGameHost rules / decision-context projection
     ↓
 Legal alternatives / registration witnesses
     ↓
@@ -47,7 +51,7 @@ Exact / topology diagnostics
 Policy research
 ```
 
-No arrow from the downstream analysis path may rewrite historical evidence.
+No arrow from the downstream analysis path may rewrite historical evidence. The TB snapshot is a derived interoperability view, not a second canonical reconstruction store.
 
 ## 2.1 Acquisition preprocessing boundary
 
@@ -216,6 +220,10 @@ Derived snapshots may be stored for performance or UX:
 
 Snapshots are disposable materialized views and must not become a second source of truth.
 
+For the current Trouble Brewing-only interoperability route, decision-boundary snapshots should converge on the same domain semantics as CampBoardGameHost's versioned `TroubleBrewingGameSnapshotV1`. EvidenceLab materializes that snapshot from one reconstruction revision and one historical prefix; Host materializes it from live canonical setup/session/history owners.
+
+The snapshot state-value contract distinguishes `KNOWN(value)`, `UNCOMMITTED`, `UNKNOWN`, and `NOT_APPLICABLE`. `UNCOMMITTED` means the historical decision creating the fact has not happened at that boundary; `UNKNOWN` means the fact cannot be established from the reconstruction. Evidence derivation/verification remains a separate provenance layer and must not be collapsed into those snapshot states.
+
 ## 5. Decision-time semantics
 
 A DecisionSlice anchors to an event boundary.
@@ -286,12 +294,26 @@ If the corpus becomes large, move bulk data to separate storage while retaining 
 
 ## 8. Integration with CampBoardGameHost
 
-Initial integration is file-based export/import.
+Integration remains file-based export/import. Avoid direct database coupling and do not share mutable runtime objects across repositories.
 
-Avoid direct database coupling.
+For Trouble Brewing, the integration target is now a shared **versioned semantic snapshot contract** rather than bespoke per-case mapping:
 
-The Evidence Lab export should provide historical facts and decision boundary context.
+```text
+EvidenceLab
+SetupCommitment + SemanticEvent prefix
+    -> pure snapshot materializer
+    -> TroubleBrewingGameSnapshotV1-compatible interchange
 
-CampBoardGameHost remains responsible for mapping that evidence into its current canonical rules/game-state representation.
+CampBoardGameHost
+live canonical setup/session/history
+    -> pure snapshot projector
+    -> same TroubleBrewingGameSnapshotV1 semantics
+```
 
-This intentionally allows either project to evolve without owning the other's internal schema.
+Observed expert choice, rationale, explicit alternatives and provenance remain separate EvidenceLab decision/evidence records. They are not fields in the pre-decision game snapshot.
+
+CampBoardGameHost remains responsible for BotC legality, legal candidate derivation, rules interpretation and recommendation policy after consuming the snapshot.
+
+The first cross-project golden fixture is the already accepted G10 Drunk-assignment decision prefix: shown-seat layout known, Drunk presence known, Drunk assignment `UNCOMMITTED`, and all later setup/night facts excluded.
+
+Do not add a persistence migration merely to support this first snapshot slice. The authoritative route is `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`.

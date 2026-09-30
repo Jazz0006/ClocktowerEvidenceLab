@@ -89,9 +89,9 @@ Current implementation status:
 - **C2B batch acquisition runner + CLI — COMPLETE / GREEN**;
 - **C2C structured candidate extraction — COMPLETE / GREEN**;
 - **bounded real multi-episode C2B -> C2C validation — COMPLETE / GREEN** for Investigator and Imp;
-- **C2D bounded review packets — IN PROGRESS / tests-first RED**.
+- **C2D bounded review packets + review CLI — IMPLEMENTATION GREEN / REAL REVIEW QUEUE READY**.
 
-The podcast route is now proven beyond the original one-episode pilot: a real two-episode batch completed RSS discovery, audio acquisition, ASR and lightweight candidate extraction while keeping full media/transcripts outside Git. C2D review-packet ranking/writing exists, but the current branch is intentionally RED because the tests define a podcast review CLI entry point that has not yet been implemented. C2D must return to GREEN before human review and C2E evidence promotion proceed.
+The podcast route is now proven beyond the original one-episode pilot: a real two-episode batch completed RSS discovery, audio acquisition, ASR, lightweight candidate extraction and bounded review-packet generation while keeping full media/transcripts outside Git. The current Investigator/Imp queue contains 24 bounded primary-audio windows; human review remains the gate before C2E evidence promotion.
 
 C2 keeps the evidence boundary explicit:
 
@@ -100,10 +100,14 @@ C2 keeps the evidence boundary explicit:
 - primary-audio review promotes only concise provenance-backed guidance;
 - podcasts complement, but do not replace, whole-game reconstruction/replay evidence.
 
+The first TB-only interoperability slice is now implemented locally. Host TBGS-0 has frozen `TroubleBrewingGameSnapshotV1`; EvidenceLab projects the same snapshot semantics from one reconstruction revision + one decision-time historical prefix. The G10 pre-Drunk fixture matches Host's accepted JSON fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store: setup commitments/events remain authoritative, while observed expert choice, rationale and provenance remain separate.
+
 Start with:
 
 - `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
 - `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
+- `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`;
+- `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`;
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
 
 ## Storage direction
@@ -130,4 +134,6 @@ See:
 - `docs/TESTING_STRATEGY.md`
 - `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`
+- `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`
+- `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`
 - `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`

@@ -1,8 +1,8 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 TARGETED LANE ACTIVE**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 TARGETED LANE ACTIVE / EL-TBGS-0/1 COMPLETE LOCAL GREEN**
 >
-> Current task: **C2 — Trouble Brewing Podcast Batch Ingestion**, with **C3 — Drunk Candidate Comparison / Rejection Evidence** running as a narrow evidence lane over the same pipeline.
+> Current task: **C2 — Trouble Brewing Podcast Batch Ingestion**, with **C3 — Drunk Candidate Comparison / Rejection Evidence** running as a narrow evidence lane over the same pipeline. The TB-only snapshot interoperability slice is implemented locally and now waits only for Host TBGS-1 cross-project consumption; it does not interrupt C2/C3 acquisition.
 
 ## 1. Program objective
 
@@ -30,6 +30,8 @@ Whole-game history remains the primary historical collection unit. Expert guidan
 - raw copyrighted media and full transcripts stay outside Git.
 - expert choice/guidance is evidence, not a GOOD/BAD policy label.
 - whole-game and expert-guidance corpora remain distinguishable even when they inform the same downstream feature.
+- authoritative reconstruction remains setup commitments + semantic events; any TB Game Snapshot is a derived materialized/interchange view only.
+- snapshot semantics must distinguish `UNCOMMITTED` from evidence `UNKNOWN`; provenance/verification remains outside the snapshot payload.
 
 ## 3. Completed checkpoints
 
@@ -151,7 +153,29 @@ Do not infer rankings over unmentioned candidates, do not infer rules from outco
 
 Authority: `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
 
-## 6. C2 implementation constraints
+## 6. TB Game Snapshot interoperability — EL-TBGS-0/1 COMPLETE / LOCAL GREEN
+
+Host TBGS-0 is COMPLETE / ACCEPTED. EvidenceLab now implements the same immutable `TroubleBrewingGameSnapshotV1` semantics as a pure projection from one reconstruction revision + one historical prefix.
+
+Completed locally:
+
+```text
+Host TBGS-0 contract                           COMPLETE / ACCEPTED
+-> EvidenceLab mapping audit                  COMPLETE
+-> pure materializer + deterministic V1 JSON COMPLETE / GREEN
+-> G10 pre-Drunk golden fixture               COMPLETE / exact Host match
+```
+
+The implementation preserves event sourcing as authority, adds no legality/policy, and requires no persistence migration. The historical expert choice/rationale/provenance stays outside the pre-decision snapshot. `gameSeed` and role-type classification are explicit non-evidence projection metadata rather than invented historical facts or EvidenceLab-owned legality.
+
+The next cross-project checkpoint is Host TBGS-1 consuming/validating the same G10 V1 semantics and independently deriving the legal Drunk domain.
+
+Authorities:
+
+- `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`;
+- `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`.
+
+## 7. C2 implementation constraints
 
 - do not block C2 on YouTube automation;
 - do not retranscribe already-processed stable episode identities unnecessarily;
@@ -161,20 +185,21 @@ Authority: `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
 - preserve machine-vs-human verification state explicitly;
 - allow an episode to yield no useful candidate without treating that as failure.
 
-## 7. Immediate next action
+## 8. Immediate next action
 
-Continue both compatible lanes without interrupting C2:
+Continue acquisition and interoperability as compatible lanes without interrupting C2:
 
 1. perform the existing **C2D bounded primary-audio review** over the 24 Investigator/Imp windows (6m25.6s total), promoting only claims confirmed from primary audio;
 2. continue C2 automatic batch ingestion for remaining Trouble Brewing-relevant podcast material;
 3. apply the C3 locator enhancement to new/reprocessed C2C extraction so explicit candidate rejection/preference and conditional Drunk-assignment windows reach bounded review;
-4. as soon as one C3 item satisfies the Stage-1 VERIFIED structure, prepare the Host handoff immediately rather than waiting for a sample quota.
+4. keep the completed EL-TBGS-0/1 materializer/fixture stable while Host performs TBGS-1 cross-project consumption;
+5. as soon as one C3 item satisfies the Stage-1 VERIFIED structure, prepare the Host handoff immediately; where the evidence prefix is sufficient, include the now-available standard snapshot alongside the evidence decision/provenance package.
 
-Keep broad C1 Drunk scouting stopped. C3 is the concrete downstream evidence dependency and must stay comparison/rejection-focused.
+Keep broad C1 Drunk scouting stopped. C3 is the concrete downstream evidence dependency and must stay comparison/rejection-focused. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
 
-## 8. Deferred
+## 9. Deferred
 
-- broad non-Trouble-Brewing acquisition;
+- broad non-Trouble-Brewing acquisition or generalized cross-script GameState design;
 - Storyteller-app telemetry;
 - UI expansion;
 - new persistence migrations without demonstrated need;

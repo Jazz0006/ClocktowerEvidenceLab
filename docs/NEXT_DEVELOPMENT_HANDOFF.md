@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C2 Podcast Batch Ingestion + C3 Drunk Candidate Comparison
 
-> Current state: **C2 ACTIVE / C3 TARGETED LANE ACTIVE**
+> Current state: **C2 ACTIVE / C3 TARGETED LANE ACTIVE / EL-TBGS-0/1 COMPLETE LOCAL GREEN**
 >
 > Branch: `docs/podcast-batch-ingestion-route-20260929`
 >
@@ -21,7 +21,9 @@ Read in this order:
 9. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
 10. `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`
 11. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-12. this file
+12. `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`
+13. `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`
+14. this file
 
 At the start of the next conversation, re-check live `main`, this branch, open PRs/checks and exact file state. Do not assume this handoff's branch status is still live.
 
@@ -75,6 +77,8 @@ A new cross-project evidence dependency from CampBoardGameHost is now recorded a
 
 The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: `EXPLICIT_ALTERNATIVE` is already P0. The implementation enhancement adds conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions.
 
+The TB snapshot interoperability dependency has now crossed its EvidenceLab implementation gate. Host TBGS-0 is COMPLETE / ACCEPTED; EvidenceLab has implemented the matching `TroubleBrewingGameSnapshotV1` models, pure historical-prefix materializer, deterministic V1 JSON codec, and G10 pre-Drunk golden fixture. The generated G10 JSON matches the Host TBGS-0 fixture byte-for-byte. No persistence migration, legality layer, or policy semantics were added.
+
 Latest known code checkpoint before this documentation sync:
 - production/test HEAD: `4d8da2c4be0eae40570ffea4134d9536bc748a5d`;
 - PR #8: Draft / mergeable;
@@ -83,12 +87,13 @@ Latest known code checkpoint before this documentation sync:
 
 ## 3. Current task
 
-Keep **C2 and C3 moving in parallel**:
+Keep **C2 and C3 moving in parallel**; the EvidenceLab side of the first TB snapshot interoperability lane is now complete locally:
 
 - perform the bounded primary-audio review over the already-generated Investigator/Imp C2D packets, then enter C2E only for claims that the human review actually confirms;
 - continue automatic C2 batch ingestion rather than pausing for C3;
 - route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
-- once the first C3 Stage-1 item is VERIFIED, prepare the EvidenceLab -> CampBoardGameHost handoff immediately.
+- preserve the completed EL-TBGS-0/1 mapping/materializer/golden fixture while Host performs TBGS-1 cross-project consumption;
+- once the first C3 Stage-1 item is VERIFIED, prepare the EvidenceLab -> CampBoardGameHost handoff immediately; include the standard snapshot only when the materializer exists and the evidence prefix is sufficient.
 
 Goal:
 
@@ -147,9 +152,16 @@ C2D model/writer/CLI GREEN
     -> real Investigator/Imp review packets GENERATED
     -> bounded primary-audio review (24 windows / 6m25.6s)
     -> C2E verified guidance promotion
+
+in parallel:
+Host TBGS-0 contract                         COMPLETE / ACCEPTED
+    -> EvidenceLab TB snapshot mapping audit COMPLETE
+    -> pure materializer + deterministic V1 serialization COMPLETE / GREEN
+    -> G10 cross-project golden fixture      COMPLETE / exact Host match
+    -> Host TBGS-1 consumption               NEXT CROSS-PROJECT CHECKPOINT
 ```
 
-Use the existing manifest, batch runner and ASR adapter. Do not add a persistence migration unless this real workflow proves lightweight artifacts insufficient.
+Use the existing manifest, batch runner and ASR adapter. Do not add a persistence migration merely for snapshot interoperability or temporary acquisition artifacts.
 
 ## 7. Evidence boundary
 
@@ -166,7 +178,10 @@ Keep full copyrighted audio/transcripts outside Git.
 - do not implement BotC legality or policy scoring;
 - do not add persistence migrations without a demonstrated batch-workflow need;
 - do not make YouTube automation a prerequisite for C2;
-- do not treat machine confidence as verification.
+- do not treat machine confidence as verification;
+- do not make the TB snapshot a second canonical reconstruction store;
+- do not copy Host legality or legal-candidate enumeration into EvidenceLab;
+- do not generalize the snapshot contract beyond Trouble Brewing before a real second-script need exists.
 
 ## 9. Historical documents
 
