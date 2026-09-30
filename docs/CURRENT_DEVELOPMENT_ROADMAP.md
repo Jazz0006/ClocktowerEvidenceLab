@@ -161,21 +161,18 @@ Authority: `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
 - preserve machine-vs-human verification state explicitly;
 - allow an episode to yield no useful candidate without treating that as failure.
 
-## 6. Immediate next action
+## 7. Immediate next action
 
-Continue **C2D bounded primary-audio review** from the generated real review queue:
+Continue both compatible lanes without interrupting C2:
 
-1. human-review only the 24 selected Investigator/Imp primary-audio windows (6m25.6s total);
-2. confirm speaker attribution, intended meaning, context and timestamp for useful claims;
-3. explicitly reject false-positive / low-value machine candidates without promoting them;
-4. keep unreviewed or ambiguous material `NOT_STARTED` / unverified rather than guessing;
-5. enter C2E only for concise claims actually confirmed by primary-source review.
+1. perform the existing **C2D bounded primary-audio review** over the 24 Investigator/Imp windows (6m25.6s total), promoting only claims confirmed from primary audio;
+2. continue C2 automatic batch ingestion for remaining Trouble Brewing-relevant podcast material;
+3. apply the C3 locator enhancement to new/reprocessed C2C extraction so explicit candidate rejection/preference and conditional Drunk-assignment windows reach bounded review;
+4. as soon as one C3 item satisfies the Stage-1 VERIFIED structure, prepare the Host handoff immediately rather than waiting for a sample quota.
 
-Latest implementation gate: quality #284 GREEN at code checkpoint `4d8da2c4be0eae40570ffea4134d9536bc748a5d`.
+Keep broad C1 Drunk scouting stopped. C3 is the concrete downstream evidence dependency and must stay comparison/rejection-focused.
 
-Do not reopen C1 or broad whole-game scouting unless C2 uncovers a concrete evidence dependency.
-
-## 7. Deferred
+## 8. Deferred
 
 - broad non-Trouble-Brewing acquisition;
 - Storyteller-app telemetry;
