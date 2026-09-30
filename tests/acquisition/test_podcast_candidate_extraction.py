@@ -114,11 +114,7 @@ def test_default_c2_rules_locate_conditional_drunk_assignment_without_storytelle
         )
     )
 
-    matching = [
-        proposal
-        for proposal in proposals
-        if "conditional-choice" in proposal.tags
-    ]
+    matching = [proposal for proposal in proposals if "conditional-choice" in proposal.tags]
 
     assert len(matching) == 1
     assert matching[0].category is podcast_candidates.CandidateCategory.SETUP_LEVEL_REASONING
