@@ -109,6 +109,39 @@ def test_review_packet_prioritizes_direct_rationale_over_generic_discovery() -> 
     assert packet.windows[0].priority is podcast_review.ReviewPriority.P0
 
 
+def test_review_packet_prioritizes_explicit_alternative_as_p0() -> None:
+    artifact = _artifact(
+        (
+            _candidate(
+                10_000,
+                15_000,
+                podcast_candidates.CandidateCategory.PLAYER_EXPERIENCE,
+                confidence=0.9,
+            ),
+            _candidate(
+                30_000,
+                35_000,
+                podcast_candidates.CandidateCategory.EXPLICIT_ALTERNATIVE,
+                confidence=0.2,
+                tags=("explicit-rejection",),
+            ),
+        )
+    )
+
+    packet = podcast_review.build_review_packet(
+        artifact,
+        merge_gap_ms=0,
+        max_windows=1,
+        max_review_ms=600_000,
+    )
+
+    assert len(packet.windows) == 1
+    assert packet.windows[0].categories == (
+        podcast_candidates.CandidateCategory.EXPLICIT_ALTERNATIVE,
+    )
+    assert packet.windows[0].priority is podcast_review.ReviewPriority.P0
+
+
 def test_review_packet_respects_window_and_time_budget_deterministically() -> None:
     artifact = _artifact(
         (
