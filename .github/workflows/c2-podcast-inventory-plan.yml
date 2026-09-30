@@ -1,0 +1,76 @@
+name: C2 podcast inventory plan
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - docs/podcast-batch-ingestion-route-20260929
+    paths:
+      - .github/workflows/c2-podcast-inventory-plan.yml
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install acquisition tooling
+        run: python -m pip install -e .
+      - name: Build live manifest and acquisition plan
+        run: |
+          mkdir -p lightweight
+          clocktower-podcast-manifest --output lightweight/manifest.json
+          clocktower-podcast-batch lightweight/manifest.json \
+            --work-dir /tmp/c2-plan \
+            --plan-only > lightweight/plan.json
+      - name: Build lightweight queue summary
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          root = Path("lightweight")
+          manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+          plan = json.loads((root / "plan.json").read_text(encoding="utf-8"))
+
+          by_source = {episode["source_id"]: episode for episode in manifest["episodes"]}
+          items = []
+          for item in plan["items"]:
+              episode = by_source[item["source_id"]]
+              items.append(
+                  {
+                      "source_id": item["source_id"],
+                      "guid": episode["guid"],
+                      "title": episode["title"],
+                      "published_at": episode["published_at"],
+                      "duration_seconds": episode["duration_seconds"],
+                      "mode": item["mode"],
+                  }
+              )
+
+          summary = {
+              "schema_version": "c2-inventory-plan-summary-v1",
+              "episode_count": len(manifest["episodes"]),
+              "in_scope_count": sum(
+                  episode["scope"] == "IN_SCOPE" for episode in manifest["episodes"]
+              ),
+              "active_queue_count": len(items),
+              "mode_counts": dict(Counter(item["mode"] for item in items)),
+              "active_queue": items,
+          }
+          (root / "summary.json").write_text(
+              json.dumps(summary, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+      - name: Upload lightweight inventory artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: c2-podcast-inventory-plan
+          path: lightweight/
+          if-no-files-found: error
