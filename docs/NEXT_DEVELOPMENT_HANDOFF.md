@@ -19,7 +19,9 @@ Read in this order:
 7. `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
 8. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
 9. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-10. `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`\n11. this file
+10. `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`
+11. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+12. this file
 
 At the start of the next conversation, re-check live `main`, this branch, open PRs/checks and exact file state. Do not assume this handoff's branch status is still live.
 
