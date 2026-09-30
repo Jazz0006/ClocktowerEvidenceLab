@@ -145,6 +145,8 @@ Human review should focus on this small packet rather than either full episode.
 High-value current topics include:
 
 - which Townsfolk is selected as Drunk;
+- explicit comparison/rejection among possible Drunk candidates under one fixed setup;
+- conditional Drunk preferences whose conditions can be reconstructed at assignment time;
 - persistent Drunk misinformation across nights;
 - healthy-information strength;
 - Spy/Recluse registration intent;
