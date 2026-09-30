@@ -88,6 +88,42 @@ def test_default_c2_rules_locate_registration_and_explicit_alternative_windows()
     assert podcast_candidates.CandidateCategory.EXPLICIT_ALTERNATIVE in categories
 
 
+def test_default_c2_rules_locate_explicit_rejection_and_preference_windows() -> None:
+    proposals = podcast_candidates.locate_rule_candidates(
+        _segments(
+            "I would not make the Undertaker drunk here because the later information matters.",
+            "I would prefer making the Empath drunk when that creates a clearer setup story.",
+        )
+    )
+
+    tags = {tag for proposal in proposals for tag in proposal.tags}
+
+    assert "explicit-rejection" in tags
+    assert "explicit-preference" in tags
+    assert all(
+        proposal.category is podcast_candidates.CandidateCategory.EXPLICIT_ALTERNATIVE
+        for proposal in proposals
+        if "explicit-rejection" in proposal.tags or "explicit-preference" in proposal.tags
+    )
+
+
+def test_default_c2_rules_locate_conditional_drunk_assignment_without_storyteller_word() -> None:
+    proposals = podcast_candidates.locate_rule_candidates(
+        _segments(
+            "If the Empath is sitting between two evils, I would probably make them drunk.",
+        )
+    )
+
+    matching = [
+        proposal
+        for proposal in proposals
+        if "conditional-choice" in proposal.tags
+    ]
+
+    assert len(matching) == 1
+    assert matching[0].category is podcast_candidates.CandidateCategory.SETUP_LEVEL_REASONING
+
+
 def test_extract_asr_candidate_artifact_and_writer_keep_transcript_outside_output(
     tmp_path: Path,
 ) -> None:
