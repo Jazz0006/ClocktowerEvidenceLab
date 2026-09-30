@@ -1,6 +1,6 @@
-# NEXT DEVELOPMENT HANDOFF — C2 Podcast Batch Ingestion
+# NEXT DEVELOPMENT HANDOFF — C2 Podcast Batch Ingestion + C3 Drunk Candidate Comparison
 
-> Current state: **C2 ACTIVE**
+> Current state: **C2 ACTIVE / C3 TARGETED LANE ACTIVE**
 >
 > Branch: `docs/podcast-batch-ingestion-route-20260929`
 >
