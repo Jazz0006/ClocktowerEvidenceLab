@@ -118,7 +118,40 @@ After primary-audio review, save concise provenance-backed expert-guidance evide
 
 Authority: `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`.
 
-## 5. C2 implementation constraints
+## 5. C3 — Drunk Candidate Comparison / Rejection Evidence — ACTIVE TARGETED LANE
+
+CampBoardGameHost's Drunk-assignment production cutover audit established a concrete downstream gap: execution infrastructure is ready, but Beginner automatic assignment still lacks source-backed semantics for comparing or rejecting legal Drunk candidates under one fixed setup/history prefix.
+
+C3 therefore reuses C2 rather than creating new acquisition infrastructure:
+
+```text
+RSS / audio
+    -> ASR
+    -> C2C candidate extraction
+    -> C2D bounded review
+    -> human primary-audio verification
+    -> verified comparison evidence
+```
+
+The C2C/C2D audit found that `EXPLICIT_ALTERNATIVE` is already the correct semantic bucket and already receives P0 review priority. The narrow implementation gap is locator vocabulary: explicit rejection, explicit preference and conditional Drunk-assignment language must be discoverable even when the speaker does not say “Storyteller”.
+
+C3 Stage-1 acceptance is **not a quota**. It is one VERIFIED item with:
+
+```text
+fixed setup/history prefix
++ candidate A vs candidate B
++ explicit preference/rejection
++ rationale
++ reconstructable assignment-time context
+```
+
+Once that exists, prepare an immediate EvidenceLab -> CampBoardGameHost handoff so the Host can test a first bounded, versioned Drunk production-policy predicate.
+
+Do not infer rankings over unmentioned candidates, do not infer rules from outcomes, and do not encode legality or recommendation policy here. C5 / `BEGINNER_CONSERVATIVE_V2` remains a separate gate.
+
+Authority: `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
+
+## 6. C2 implementation constraints
 
 - do not block C2 on YouTube automation;
 - do not retranscribe already-processed stable episode identities unnecessarily;
