@@ -1,8 +1,8 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 TARGETED LANE ACTIVE**
 >
-> Current task: **C2 — Trouble Brewing Podcast Batch Ingestion**
+> Current task: **C2 — Trouble Brewing Podcast Batch Ingestion**, with **C3 — Drunk Candidate Comparison / Rejection Evidence** running as a narrow evidence lane over the same pipeline.
 
 ## 1. Program objective
 
