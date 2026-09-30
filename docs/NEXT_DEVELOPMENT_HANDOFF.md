@@ -71,6 +71,10 @@ The successful real Investigator/Imp candidate artifacts from bounded validation
 
 Both packets remain `human_review_state=NOT_STARTED`; no candidate has been promoted to verified evidence. The durable per-window human-review queue is `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`.
 
+A new cross-project evidence dependency from CampBoardGameHost is now recorded as **C3 — Drunk Candidate Comparison / Rejection Evidence**. C3 does not reopen broad Drunk scouting and does not stop C2. It reuses C2C/C2D to target explicit same-prefix comparisons, rejections and conditional preferences. The first acceptance gate is one primary-audio VERIFIED item with a fixed setup/history prefix, candidate A vs candidate B, explicit preference/rejection, rationale and reconstructable assignment-time context.
+
+The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: `EXPLICIT_ALTERNATIVE` is already P0. The implementation enhancement adds conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions.
+
 Latest known code checkpoint before this documentation sync:
 - production/test HEAD: `4d8da2c4be0eae40570ffea4134d9536bc748a5d`;
 - PR #8: Draft / mergeable;
