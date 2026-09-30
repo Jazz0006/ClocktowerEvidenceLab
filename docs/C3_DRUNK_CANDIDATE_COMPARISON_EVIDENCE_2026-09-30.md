@@ -104,7 +104,24 @@ Sample count is not the gate.
 
 As soon as the first qualifying evidence item is VERIFIED, prepare an EvidenceLab -> CampBoardGameHost handoff containing only the evidence/provenance needed for the Host to evaluate a first bounded, versioned Drunk production-policy predicate and rerun its production cutover gate.
 
-## 8. Relationship to C5
+## 8. Retrospective audit of existing C1 evidence
+
+Before acquiring new material, C3 re-audited the already human-reviewed C1 Drunk-assignment evidence.
+
+Result: **no existing VERIFIED C1 item satisfies the C3 Stage-1 comparison gate**.
+
+- `A Stud In Scarlet`: fixed prefix and selected Drunk are VERIFIED, but assignment rationale is UNKNOWN and no alternative Drunk candidate was discussed.
+- `A Fond Farewell`: fixed prefix + selected Chef + explicit assignment rationale are VERIFIED, but the review explicitly records `explicit alternative Drunk candidates: NONE OBSERVED`. Surrounding Recluse / Scarlet Woman / Traveler discussion must not be reclassified as rejected Drunk candidates.
+- G10 Game 2: fixed prefix + selected Empath + explicit adjacency-to-Demon rationale are VERIFIED, but the review explicitly records `explicitly considered/rejected alternative Drunk candidates: NONE OBSERVED`.
+- Steven Medway 01:28:18–01:29:18: VERIFIED creator guidance distinguishes player-first, role-first and setup-first assignment modes, but it does not compare candidate A with candidate B under one assignment context.
+
+Therefore C3 must acquire/verify genuinely comparative material rather than reinterpret C1 selections as rankings.
+
+The strongest retained machine-located lead is the Steven Medway Drunk episode around `02:04:10–02:07:39`, where beginner/expert handling appears to contrast Monk/Soldier-like Drunk assignments with Ravenkeeper-like assignments. This remains **NOT VERIFIED for C3** until primary-audio review confirms the exact comparison, speaker, condition and rationale.
+
+See `docs/C3_DRUNK_CANDIDATE_REVIEW_QUEUE_2026-09-30.md`.
+
+## 9. Relationship to C5
 
 C5 / `BEGINNER_CONSERVATIVE_V2` is a separate evidence and policy gate.
 
