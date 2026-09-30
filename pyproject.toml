@@ -25,6 +25,7 @@ clocktower-podcast-review = "clocktower_evidence_lab.acquisition.podcast_review_
 [project.optional-dependencies]
 asr = [
     "faster-whisper>=1.2.1,<2",
+    "av>=11,<19",
 ]
 dev = [
     "pytest>=8,<10",

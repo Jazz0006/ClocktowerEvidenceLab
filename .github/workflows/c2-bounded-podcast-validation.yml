@@ -7,6 +7,7 @@ on:
       - docs/podcast-batch-ingestion-route-20260929
     paths:
       - .github/workflows/c2-bounded-podcast-validation.yml
+      - pyproject.toml
   pull_request:
     branches:
       - main
