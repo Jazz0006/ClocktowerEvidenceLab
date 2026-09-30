@@ -45,3 +45,32 @@ def test_c2_manifest_recognizes_retained_drunk_librarian_recluse_scouts() -> Non
     assert all(entry.prior_artifact_path for entry in processed)
 
     assert podcast_manifest.active_acquisition_queue(manifest) == (manifest.episodes[3],)
+
+
+def test_c2_manifest_deduplicates_completed_investigator_and_imp_validation() -> None:
+    episodes = (
+        _episode(
+            "18: Investigator (Trouble Brewing)",
+            "5722d8e8-b89d-4067-91ac-1550b8da428d",
+        ),
+        _episode(
+            "22: Imp (Trouble Brewing)",
+            "a271357d-10af-4969-8c7e-5545b871b5cb",
+        ),
+        _episode("15: Chef (Trouble Brewing)", "new-chef-guid"),
+    )
+
+    manifest = c2_podcast.build_c2_manifest(episodes)
+
+    investigator, imp, chef = manifest.episodes
+    for entry in (investigator, imp):
+        assert entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE
+        assert entry.asr_state is podcast_manifest.AsrState.COMPLETE
+        assert entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE
+        assert entry.human_review_state is podcast_manifest.HumanReviewState.NOT_STARTED
+        assert (
+            entry.prior_artifact_path
+            == "docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md"
+        )
+
+    assert podcast_manifest.active_acquisition_queue(manifest) == (chef,)
