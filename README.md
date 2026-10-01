@@ -81,7 +81,7 @@ See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
 
 C1 Drunk Assignment Evidence Upgrade is **complete**. Its bounded acquisition target reached 3/3 replayable assignment cases and downstream replay succeeded, so broad Drunk-assignment searching remains stopped.
 
-The active task is now **C2 — Trouble Brewing Podcast Batch Ingestion**.
+The Host-unblocking task is now **C3 — Drunk Candidate Comparison / Rejection Evidence**. **C2 — Trouble Brewing Podcast Batch Ingestion** continues in parallel as the acquisition pipeline feeding bounded review.
 
 Current implementation status:
 
@@ -100,7 +100,7 @@ C2 keeps the evidence boundary explicit:
 - primary-audio review promotes only concise provenance-backed guidance;
 - podcasts complement, but do not replace, whole-game reconstruction/replay evidence.
 
-The first TB-only interoperability slice is now implemented locally. Host TBGS-0 has frozen `TroubleBrewingGameSnapshotV1`; EvidenceLab projects the same snapshot semantics from one reconstruction revision + one decision-time historical prefix. The G10 pre-Drunk fixture matches Host's accepted JSON fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store: setup commitments/events remain authoritative, while observed expert choice, rationale and provenance remain separate.
+The first TB-only interoperability slice is now **cross-project accepted**. Host TBGS-1 consumed the EvidenceLab G10 snapshot seam, independently derived the legal Drunk domain, and confirmed the V1 fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store. The remaining Host blocker is not engineering: C3 still needs one primary-audio VERIFIED same-prefix candidate comparison/rejection with rationale.
 
 Start with:
 

@@ -2,7 +2,7 @@
 
 > Date: 2026-09-30 Australia/Sydney  
 > Repository: `Jazz0006/ClocktowerEvidenceLab`  
-> Status: **EL-TBGS-0/1 IMPLEMENTED / LOCAL GREEN / TB ONLY**  
+> Status: **EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / TB ONLY**  
 > Upstream semantic contract owner: `Jazz0006/CampBoardGameHost` TBGS-0 / `TroubleBrewingGameSnapshotV1`  
 > Scope: derive a standard Trouble Brewing decision-time game snapshot from EvidenceLab historical prefixes without changing EvidenceLab's event-sourced authority or adding BotC legality/policy.
 
@@ -166,15 +166,15 @@ C3 Stage-1 remains an evidence gate for production Drunk ordering semantics. A w
 ```text
 Host TBGS-0 contract frozen                         COMPLETE / ACCEPTED
 -> EL-TBGS-0 mapping audit                         COMPLETE
--> EL-TBGS-1 pure materializer + V1 serialization COMPLETE / LOCAL GREEN
+-> EL-TBGS-1 pure materializer + V1 serialization COMPLETE / CROSS-PROJECT ACCEPTED
 -> G10 pre-Drunk golden fixture                    COMPLETE / byte-for-byte Host match
--> Host TBGS-1 cross-project consumption           NEXT HOST COORDINATION POINT
+-> Host TBGS-1 cross-project consumption           COMPLETE / ACCEPTED
 -> use the same snapshot projection for future C3 handoffs where enough prefix data exists
 ```
 
 Implementation/audit record: `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`.
 
-Do not block C2D/C2E human review while waiting for this sequence.
+This interoperability sequence is complete for the Drunk surface. Do not reopen snapshot engineering while the actual remaining blocker is C3 primary-audio verification.
 
 ## 10. Acceptance criteria
 

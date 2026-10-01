@@ -1,6 +1,6 @@
 # EL-TBGS-0/1 — Trouble Brewing Snapshot Mapping + G10 Interoperability Audit — 2026-09-30
 
-> Status: **IMPLEMENTATION COMPLETE / LOCAL GREEN**
+> Status: **IMPLEMENTATION COMPLETE / CROSS-PROJECT ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -155,24 +155,22 @@ Local validation after implementation:
 - future-result backfill protection: tested;
 - missing projection role metadata fails closed: tested.
 
-## 8. Next cross-project step
+## 8. Cross-project closure
 
-EvidenceLab's required side of the first TBGS interoperability seam is now implemented.
-
-Next coordination:
+EvidenceLab's required side of the first TBGS interoperability seam is implemented and Host TBGS-1 has accepted it.
 
 ```text
 EvidenceLab G10 V1 fixture GREEN
         |
         v
-Host TBGS-1 Drunk vertical slice
+Host TBGS-1 Drunk vertical slice COMPLETE / ACCEPTED
         |
-        +-> consume/compare the same V1 semantics
-        +-> independently derive legal Drunk candidates
-        +-> map historical Empath choice into legal domain
+        +-> same V1 semantics consumed
+        +-> legal Drunk candidates independently derived
+        +-> historical Empath choice maps into that legal domain
 ```
 
-C2/C3 acquisition continues independently.
+The snapshot/interoperability blocker is therefore closed. The remaining Host production-policy blocker is C3 Stage-1 VERIFIED candidate-comparison/rejection evidence. C2/C3 acquisition continues independently.
 
 Future C3 handoffs may include the V1 snapshot when their historical prefix is sufficiently reconstructed, but snapshot availability must not become a prerequisite for promoting otherwise valid evidence.
 

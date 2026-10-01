@@ -1,8 +1,8 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 TARGETED LANE ACTIVE / EL-TBGS-0/1 COMPLETE LOCAL GREEN**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 TARGETED LANE ACTIVE / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
 >
-> Current task: **C2 — Trouble Brewing Podcast Batch Ingestion**, with **C3 — Drunk Candidate Comparison / Rejection Evidence** running as a narrow evidence lane over the same pipeline. The TB-only snapshot interoperability slice is implemented locally and now waits only for Host TBGS-1 cross-project consumption; it does not interrupt C2/C3 acquisition.
+> Current task: **C3 — Drunk Candidate Comparison / Rejection Evidence** is now the concrete Host-unblocking lane, while **C2 — Trouble Brewing Podcast Batch Ingestion** continues in parallel. Host TBGS-1 has accepted the shared snapshot seam; no further snapshot engineering is required before C3 produces the first Stage-1 VERIFIED comparison/rejection item.
 
 ## 1. Program objective
 
@@ -153,7 +153,7 @@ Do not infer rankings over unmentioned candidates, do not infer rules from outco
 
 Authority: `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
 
-## 6. TB Game Snapshot interoperability — EL-TBGS-0/1 COMPLETE / LOCAL GREEN
+## 6. TB Game Snapshot interoperability — EL-TBGS-0/1 CROSS-PROJECT ACCEPTED
 
 Host TBGS-0 is COMPLETE / ACCEPTED. EvidenceLab now implements the same immutable `TroubleBrewingGameSnapshotV1` semantics as a pure projection from one reconstruction revision + one historical prefix.
 
@@ -168,7 +168,7 @@ Host TBGS-0 contract                           COMPLETE / ACCEPTED
 
 The implementation preserves event sourcing as authority, adds no legality/policy, and requires no persistence migration. The historical expert choice/rationale/provenance stays outside the pre-decision snapshot. `gameSeed` and role-type classification are explicit non-evidence projection metadata rather than invented historical facts or EvidenceLab-owned legality.
 
-The next cross-project checkpoint is Host TBGS-1 consuming/validating the same G10 V1 semantics and independently deriving the legal Drunk domain.
+Host TBGS-1 has now consumed/validated the same G10 V1 semantics, independently derived the legal Drunk domain, and accepted the cross-project seam. Host's post-TBGS-1 cutover recheck is still NOT PASSED solely because C3 has not yet produced a Stage-1 VERIFIED same-prefix comparison/rejection item and therefore no production-capable versioned Drunk policy is authorized.
 
 Authorities:
 
@@ -192,8 +192,9 @@ Continue acquisition and interoperability as compatible lanes without interrupti
 1. perform the existing **C2D bounded primary-audio review** over the 24 Investigator/Imp windows (6m25.6s total), promoting only claims confirmed from primary audio;
 2. continue C2 automatic batch ingestion for remaining Trouble Brewing-relevant podcast material;
 3. apply the C3 locator enhancement to new/reprocessed C2C extraction so explicit candidate rejection/preference and conditional Drunk-assignment windows reach bounded review;
-4. keep the completed EL-TBGS-0/1 materializer/fixture stable while Host performs TBGS-1 cross-project consumption;
-5. as soon as one C3 item satisfies the Stage-1 VERIFIED structure, prepare the Host handoff immediately; where the evidence prefix is sufficient, include the now-available standard snapshot alongside the evidence decision/provenance package.
+4. treat EL-TBGS-0/1 as closed unless a later bounded TB decision surface requires a schema extension;
+5. review **C3-Q01 first** (`02:04:10–02:07:39`, about 3m29s); if it satisfies the Stage-1 VERIFIED structure, stop the C3 search and prepare the Host handoff immediately;
+6. only if Q01 fails, review Q02 then Q03; where the evidence prefix is sufficient, include the standard snapshot alongside the evidence decision/provenance package.
 
 Keep broad C1 Drunk scouting stopped. C3 is the concrete downstream evidence dependency and must stay comparison/rejection-focused. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
 

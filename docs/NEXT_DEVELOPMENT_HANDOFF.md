@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C2 Podcast Batch Ingestion + C3 Drunk Candidate Comparison
 
-> Current state: **C2 ACTIVE / C3 TARGETED LANE ACTIVE / EL-TBGS-0/1 COMPLETE LOCAL GREEN**
+> Current state: **C2 ACTIVE / C3 HOST-UNBLOCKING LANE ACTIVE / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
 >
 > Branch: `docs/podcast-batch-ingestion-route-20260929`
 >
@@ -77,7 +77,7 @@ A new cross-project evidence dependency from CampBoardGameHost is now recorded a
 
 The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: `EXPLICIT_ALTERNATIVE` is already P0. The implementation enhancement adds conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions.
 
-The TB snapshot interoperability dependency has now crossed its EvidenceLab implementation gate. Host TBGS-0 is COMPLETE / ACCEPTED; EvidenceLab has implemented the matching `TroubleBrewingGameSnapshotV1` models, pure historical-prefix materializer, deterministic V1 JSON codec, and G10 pre-Drunk golden fixture. The generated G10 JSON matches the Host TBGS-0 fixture byte-for-byte. No persistence migration, legality layer, or policy semantics were added.
+The TB snapshot interoperability dependency is now closed for the current Drunk surface. Host TBGS-1 has accepted the EvidenceLab materializer/fixture and independently confirmed the G10 V1 payload byte-for-byte. No persistence migration, legality layer, or policy semantics were added. Host's post-TBGS-1 cutover recheck remains NOT PASSED solely because C3 has no Stage-1 VERIFIED same-prefix candidate comparison/rejection item yet.
 
 Latest known code checkpoint before this documentation sync:
 - production/test HEAD: `4d8da2c4be0eae40570ffea4134d9536bc748a5d`;
@@ -87,13 +87,14 @@ Latest known code checkpoint before this documentation sync:
 
 ## 3. Current task
 
-Keep **C2 and C3 moving in parallel**; the EvidenceLab side of the first TB snapshot interoperability lane is now complete locally:
+Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
 
 - perform the bounded primary-audio review over the already-generated Investigator/Imp C2D packets, then enter C2E only for claims that the human review actually confirms;
 - continue automatic C2 batch ingestion rather than pausing for C3;
 - route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
-- preserve the completed EL-TBGS-0/1 mapping/materializer/golden fixture while Host performs TBGS-1 cross-project consumption;
-- once the first C3 Stage-1 item is VERIFIED, prepare the EvidenceLab -> CampBoardGameHost handoff immediately; include the standard snapshot only when the materializer exists and the evidence prefix is sufficient.
+- treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field;
+- review `C3-Q01` first (`02:04:10–02:07:39`, about 3m29s); if it is Stage-1 qualifying, stop the C3 search and prepare the Host handoff immediately;
+- if Q01 fails, review Q02 then Q03; include the standard snapshot when the evidence prefix is sufficient.
 
 Goal:
 
@@ -158,7 +159,8 @@ Host TBGS-0 contract                         COMPLETE / ACCEPTED
     -> EvidenceLab TB snapshot mapping audit COMPLETE
     -> pure materializer + deterministic V1 serialization COMPLETE / GREEN
     -> G10 cross-project golden fixture      COMPLETE / exact Host match
-    -> Host TBGS-1 consumption               NEXT CROSS-PROJECT CHECKPOINT
+    -> Host TBGS-1 consumption               COMPLETE / ACCEPTED
+    -> post-TBGS-1 cutover gate              NOT PASSED / BLOCKED ON C3 VERIFIED EVIDENCE
 ```
 
 Use the existing manifest, batch runner and ASR adapter. Do not add a persistence migration merely for snapshot interoperability or temporary acquisition artifacts.
