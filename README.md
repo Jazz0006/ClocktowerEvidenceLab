@@ -77,19 +77,38 @@ Targeted expert podcasts may also be used as a complementary **rationale source*
 
 See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
 
-## Current product checkpoint — C1
+## Current product checkpoint — C2
 
-C1 Drunk Assignment Evidence Upgrade is **complete**.
+C1 Drunk Assignment Evidence Upgrade is **complete**. Its bounded acquisition target reached 3/3 replayable assignment cases and downstream replay succeeded, so broad Drunk-assignment searching remains stopped.
 
-Evidence Lab established three `PREFIX_RECONSTRUCTABLE` Drunk-assignment cases, including two with explicit historical assignment rationale. G10 Game 2 then crossed the project boundary into CampBoardGameHost C1D replay successfully: Host independently derived legal candidates and replayed the historical choice through its DLB shadow surface without Evidence Lab owning the recommendation verdict.
+The Host-unblocking task is now **C3 — Drunk Candidate Comparison / Rejection Evidence**. **C2 — Trouble Brewing Podcast Batch Ingestion** continues in parallel as the acquisition pipeline feeding bounded review.
 
-C1 targeted acquisition is stopped. Further collection should be product-driven: reopen only for a concrete DLB consequence-contract gap or for a separately defined C5/E3-E4 evidence target.
+Current implementation status:
 
-See:
+- **C2A episode manifest — COMPLETE / GREEN**;
+- **C2B batch acquisition runner + CLI — COMPLETE / GREEN**;
+- **C2C structured candidate extraction — COMPLETE / GREEN**;
+- **bounded real multi-episode C2B -> C2C validation — COMPLETE / GREEN** for Investigator and Imp;
+- **C2D bounded review packets + review CLI — IMPLEMENTATION GREEN / REAL REVIEW QUEUE READY**.
 
-- `docs/C1_DRUNK_ASSIGNMENT_EVIDENCE_UPGRADE_2026-09-28.md`;
-- `docs/C1B_EXISTING_DRUNK_ASSIGNMENT_REAUDIT_2026-09-28.md`;
-- `docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md`.
+The podcast route is now proven beyond the original one-episode pilot: a real two-episode batch completed RSS discovery, audio acquisition, ASR, lightweight candidate extraction and bounded review-packet generation while keeping full media/transcripts outside Git. The current Investigator/Imp queue contains 24 bounded primary-audio windows; human review remains the gate before C2E evidence promotion.
+
+C2 keeps the evidence boundary explicit:
+
+- full audio and machine transcripts stay outside Git;
+- machine transcript/extraction is a locator and candidate-discovery layer;
+- primary-audio review promotes only concise provenance-backed guidance;
+- podcasts complement, but do not replace, whole-game reconstruction/replay evidence.
+
+The first TB-only interoperability slice is now **cross-project accepted**. Host TBGS-1 consumed the EvidenceLab G10 snapshot seam, independently derived the legal Drunk domain, and confirmed the V1 fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store. The remaining Host blocker is not engineering: C3 still needs one primary-audio VERIFIED same-prefix candidate comparison/rejection with rationale.
+
+Start with:
+
+- `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
+- `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
+- `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`;
+- `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`;
+- `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
 
 ## Storage direction
 
@@ -115,4 +134,6 @@ See:
 - `docs/TESTING_STRATEGY.md`
 - `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`
+- `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`
+- `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`
 - `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`

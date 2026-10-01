@@ -268,6 +268,45 @@ identify existing owning tests
 
 Do not manufacture failing tests for mechanical edits.
 
+### 8.1 Standard development lifecycle
+
+The default repository workflow is **Mini MCP local-first + logical-checkpoint push + GitHub independent acceptance**:
+
+```text
+inspect live local state
+→ implement bounded slice
+→ focused local validation
+→ continue related micro-slices locally when appropriate
+→ reach logical checkpoint
+→ local quality
+→ exact diff review
+→ commit
+→ push
+→ Mini MCP github_pr_audit
+→ GitHub Actions independent acceptance on exact HEAD
+→ merge when all gates pass
+```
+
+This replaces push-after-every-micro-slice behavior. Related, bounded micro-slices may remain local while the branch is coherent and locally GREEN. Push when the work reaches a reviewable logical checkpoint, not merely because one small edit completed.
+
+Default local responsibilities:
+
+- inspect branch / HEAD / working-tree state before editing;
+- perform normal repository reads, edits and Git operations through Mini MCP;
+- run the narrowest meaningful focused validation while iterating;
+- run the repository-local `quality` task before checkpoint commit/push;
+- review the exact tracked diff before commit;
+- keep commits scoped to one coherent logical checkpoint.
+
+GitHub remains an independent acceptance layer rather than the primary development loop:
+
+- after push, audit the PR/check state with Mini MCP `github_pr_audit`;
+- require GitHub Actions acceptance for the exact pushed HEAD before merge;
+- treat local GREEN as necessary development evidence, not a substitute for remote acceptance;
+- merge only when required checks, review/mergeability gates and repository policy are satisfied.
+
+Do not repeatedly query GitHub Actions while local implementation is still changing. Prefer local focused tests and `quality`; use GitHub once the checkpoint is ready for independent acceptance.
+
 ## 9. Testing priorities
 
 Highest-value early tests include:
@@ -286,15 +325,28 @@ Highest-value early tests include:
 
 See `docs/TESTING_STRATEGY.md`.
 
-## 10. Change discipline
+## 10. Current change discipline
 
-Until the first pilot reconstruction is complete:
+Current active route is C2 podcast batch ingestion.
+
+Until C2 proves a need for broader infrastructure:
 
 - do not build recommendation logic;
 - do not implement Blood on the Clocktower legality;
-- do not optimize for large-corpus scale;
-- do not create cloud/backend infrastructure;
-- do not build AI auto-judgment of Storyteller quality;
-- do not ingest large volumes before the reconstruction workflow is validated.
+- do not add policy scoring to Evidence Lab;
+- do not add cloud/backend infrastructure merely to scale acquisition;
+- do not commit full copyrighted audio/video or full machine transcripts;
+- do not treat ASR/LLM output as verified evidence;
+- do not add persistence migrations merely for temporary acquisition artifacts;
+- do not reopen broad C1 Drunk-assignment scouting without a concrete downstream evidence gap;
+- keep current acquisition Trouble Brewing-first;
+- the current C3 Drunk candidate-comparison lane is such a concrete downstream gap, but it must reuse C2 and stay focused on explicit comparison/rejection evidence rather than broad Drunk scouting.
 
-The first implementation target is a reliable path from one real primary source to a verified decision slice.
+For C2, automate inventory, locator handling, ASR, candidate extraction and review prioritization while retaining human primary-source review as the evidence-promotion gate. C3 may add conservative locator/review-priority refinements, but must not add BotC legality or recommendation semantics.
+
+See:
+
+- `docs/CURRENT_DEVELOPMENT_ROADMAP.md`;
+- `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
+- `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
+- `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
