@@ -29,6 +29,7 @@ class PodcastEpisode(_AcquisitionModel):
     """Episode metadata needed to locate audio or an advertised transcript."""
 
     feed_url: LocatorText
+    show_title: ShortText | None = None
     title: ShortText
     guid: ShortText | None = None
     webpage_url: LocatorText | None = None
@@ -45,6 +46,9 @@ def parse_podcast_rss(xml_text: str, *, feed_url: str) -> tuple[PodcastEpisode, 
         root = ElementTree.fromstring(xml_text)
     except ElementTree.ParseError as exc:
         raise ValueError("invalid podcast RSS XML") from exc
+
+    channel = _first_child(root, "channel")
+    show_title = _child_text(channel, "title") if channel is not None else None
 
     episodes: list[PodcastEpisode] = []
     for item in _iter_elements(root, "item"):
@@ -69,6 +73,7 @@ def parse_podcast_rss(xml_text: str, *, feed_url: str) -> tuple[PodcastEpisode, 
         episodes.append(
             PodcastEpisode(
                 feed_url=feed_url,
+                show_title=show_title,
                 title=title,
                 guid=_child_text(item, "guid"),
                 webpage_url=_child_text(item, "link"),

@@ -1,0 +1,73 @@
+from clocktower_evidence_lab.acquisition import c2_podcast, podcast, podcast_manifest
+
+_FEED_URL = "https://anchor.fm/s/daf1f9c/podcast/rss"
+
+
+def _episode(title: str, guid: str) -> podcast.PodcastEpisode:
+    return podcast.PodcastEpisode(
+        feed_url=_FEED_URL,
+        title=title,
+        guid=guid,
+        audio_url=f"https://example.test/{guid}.mp3",
+    )
+
+
+def test_c2_manifest_recognizes_retained_drunk_librarian_recluse_scouts() -> None:
+    episodes = (
+        _episode(
+            "16: Drunk renamed (Trouble Brewing)",
+            "bf668470-a3fe-41d3-85e8-d028a63cf593",
+        ),
+        _episode(
+            "8: Librarian renamed (Trouble Brewing)",
+            "1d03c939-76bb-3f58-5d86-cd6746d9b0a3",
+        ),
+        _episode(
+            "6: Recluse renamed (Trouble Brewing)",
+            "e4b8704a-19d7-5c9f-e483-a659be61cc46",
+        ),
+        _episode("15: Chef (Trouble Brewing)", "new-chef-guid"),
+    )
+
+    manifest = c2_podcast.build_c2_manifest(episodes)
+
+    processed = manifest.episodes[:3]
+    assert all(
+        entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE for entry in processed
+    )
+    assert all(entry.asr_state is podcast_manifest.AsrState.COMPLETE for entry in processed)
+    assert all(
+        entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE for entry in processed
+    )
+    assert all(
+        entry.human_review_state is podcast_manifest.HumanReviewState.PENDING for entry in processed
+    )
+    assert all(entry.prior_artifact_path for entry in processed)
+
+    assert podcast_manifest.active_acquisition_queue(manifest) == (manifest.episodes[3],)
+
+
+def test_c2_manifest_deduplicates_completed_investigator_and_imp_validation() -> None:
+    episodes = (
+        _episode(
+            "18: Investigator (Trouble Brewing)",
+            "5722d8e8-b89d-4067-91ac-1550b8da428d",
+        ),
+        _episode(
+            "22: Imp (Trouble Brewing)",
+            "a271357d-10af-4969-8c7e-5545b871b5cb",
+        ),
+        _episode("15: Chef (Trouble Brewing)", "new-chef-guid"),
+    )
+
+    manifest = c2_podcast.build_c2_manifest(episodes)
+
+    investigator, imp, chef = manifest.episodes
+    for entry in (investigator, imp):
+        assert entry.acquisition_state is podcast_manifest.AcquisitionState.COMPLETE
+        assert entry.asr_state is podcast_manifest.AsrState.COMPLETE
+        assert entry.extraction_state is podcast_manifest.ExtractionState.COMPLETE
+        assert entry.human_review_state is podcast_manifest.HumanReviewState.NOT_STARTED
+        assert entry.prior_artifact_path == "docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md"
+
+    assert podcast_manifest.active_acquisition_queue(manifest) == (chef,)

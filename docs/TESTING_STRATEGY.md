@@ -67,6 +67,30 @@ At minimum, tests should eventually prove:
 16. UNKNOWN setup-choice rationale and alternatives survive domain/persistence/export boundaries without being guessed.
 17. Canonical-only setup ordering cannot be used to materialize a setup-time decision prefix, while event-time decisions may still consume the complete setup state after setup is committed.
 
+
+## 3.1 C2 acquisition-contract tests
+
+The podcast batch route adds workflow state that must not be confused with evidence verification.
+
+Focused tests should cover:
+
+1. stable RSS episode identity across repeated feed reads;
+2. deduplication that does not depend only on mutable title text;
+3. missing feed transcript remains a normal state and may trigger ASR;
+4. already-processed episodes can be recognized without retranscription;
+5. acquisition/ASR/extraction/human-review states remain independent;
+6. ASR complete or extraction complete never implies VERIFIED evidence;
+7. out-of-scope episodes can remain inventoried without entering the active queue;
+8. full media/transcript payloads are excluded from Git-managed manifest serialization;
+9. an in-scope episode may yield zero useful candidates without becoming an error;
+10. candidate timestamps/categories survive serialization deterministically;
+11. review-packet merge/ranking/budget behavior is deterministic;
+12. C2D P0/P1/P2 values are acquisition-review priorities only and never become Storyteller decision-quality labels;
+13. review-packet generation keeps human review at NOT_STARTED until primary-source review actually occurs;
+14. review packets do not embed full transcript text or source media payloads.
+
+Live RSS/network probing should not replace deterministic parser/domain tests. Keep network-dependent checks as bounded acquisition validation, not the core unit-test contract.
+
 ## 4. Test-first policy
 
 For a new stable invariant:
@@ -110,7 +134,7 @@ Test UI behavior only where it protects a real workflow contract, such as:
 
 Do not make the domain model depend on a UI framework for testability.
 
-## 7. Exact commands
+## 7. Exact commands and acceptance layers
 
 E1 uses Python 3.12+ with the following local quality gate:
 
@@ -121,6 +145,34 @@ ruff format --check --diff .
 pytest
 ```
 
-GitHub Actions runs the same lint/format/test gate for pull requests to `main` and after pushes to `main`.
+The configured Mini MCP repository alias is `evidence`. Normal local iteration should use the allow-listed tasks:
 
-A change that has not reached pytest because installation or linting failed is not a GREEN domain test result.
+```text
+ruff-check
+ruff-format-check
+pytest
+quality
+```
+
+`quality` is the default logical-checkpoint gate and currently covers:
+
+```text
+ruff check .
+ruff format --check --diff .
+pytest
+```
+
+Use focused local validation during a bounded implementation slice, then run `quality` before committing and pushing the logical checkpoint. Do not push solely to obtain routine lint/test feedback that is already available locally.
+
+GitHub Actions is the independent acceptance layer. After the logical checkpoint is committed and pushed:
+
+1. use Mini MCP `github_pr_audit` to verify the live PR, exact head SHA, required checks, review state and mergeability;
+2. require the GitHub Actions lint/format/test gate to pass on that exact pushed HEAD;
+3. merge only after the remote acceptance gates required by repository policy are satisfied.
+
+Local GREEN and GitHub GREEN have different roles:
+
+- **local GREEN** enables efficient implementation and checkpoint formation;
+- **GitHub GREEN on exact HEAD** provides independent remote acceptance before merge.
+
+A change that has not reached pytest because installation or linting failed is not a GREEN domain test result. A locally GREEN change is not merge-ready until the required GitHub acceptance also passes on the exact checkpoint HEAD.

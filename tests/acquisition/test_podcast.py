@@ -50,6 +50,7 @@ def test_parse_podcast_rss_preserves_episode_and_transcript_locators() -> None:
 
     drunk = episodes[0]
 
+    assert drunk.show_title == "Cult of the Clocktower"
     assert drunk.guid == "ecemnu"
     assert drunk.title.startswith("16: Drunk")
     assert drunk.webpage_url == (
@@ -76,6 +77,7 @@ def test_episode_without_feed_transcript_remains_explicitly_empty() -> None:
 
     chef = episodes[1]
 
+    assert chef.show_title == "Cult of the Clocktower"
     assert chef.guid == "chef"
     assert chef.duration_seconds == 3_723
     assert chef.transcripts == ()

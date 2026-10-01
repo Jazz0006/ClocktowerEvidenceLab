@@ -60,6 +60,35 @@ Descriptive metadata whose truth itself must be evidenced—such as a title, pub
 
 Assertion derivation and reconstruction-revision membership are independent dimensions. A RECONSTRUCTED source-metadata claim need not belong to a game ReconstructionRevision; conversely an INFERRED interpretation may be explicitly scoped to one reconstruction revision.
 
+
+## 3.2 Machine acquisition and extraction artifacts
+
+Automated acquisition stages such as RSS parsing, transcript discovery, ASR and LLM candidate extraction are **pre-evidence workflow artifacts** unless separately promoted through the normal evidence path.
+
+For podcast/video automation, preserve the distinction:
+
+```text
+source media
+    -> machine transcript / multimodal observation
+    -> machine candidate interpretation
+    -> human primary-source review
+    -> EvidenceFragment / EvidenceAssertion
+```
+
+A machine transcript or model summary does not become `OBSERVED + VERIFIED` merely because it contains a timestamp or high confidence score.
+
+Machine artifacts may retain operational states such as:
+
+- acquisition complete;
+- transcript/ASR complete;
+- extraction complete;
+- human review pending;
+- no useful candidate found.
+
+These are workflow states, not derivation/verification states.
+
+Promotion into durable evidence requires enough primary-source review to establish the claimed speaker/meaning/context and an appropriate source fragment. Keep full copyrighted transcripts outside Git; store only bounded locator/candidate metadata and concise reviewed evidence.
+
 ## 4. Reconstruction completeness
 
 Track completeness by region or phase, not only by whole game.

@@ -17,10 +17,15 @@ dependencies = [
 [project.scripts]
 clocktower-podcast-probe = "clocktower_evidence_lab.acquisition.podcast_probe:main"
 clocktower-podcast-asr = "clocktower_evidence_lab.acquisition.podcast_asr:main"
+clocktower-podcast-manifest = "clocktower_evidence_lab.acquisition.podcast_manifest_cli:main"
+clocktower-podcast-batch = "clocktower_evidence_lab.acquisition.podcast_batch_cli:main"
+clocktower-podcast-candidates = "clocktower_evidence_lab.acquisition.podcast_candidate_cli:main"
+clocktower-podcast-review = "clocktower_evidence_lab.acquisition.podcast_review_cli:main"
 
 [project.optional-dependencies]
 asr = [
     "faster-whisper>=1.2.1,<2",
+    "av>=11,<19",
 ]
 dev = [
     "pytest>=8,<10",
