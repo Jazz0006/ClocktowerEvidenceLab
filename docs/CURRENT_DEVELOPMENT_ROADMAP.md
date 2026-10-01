@@ -134,7 +134,9 @@ Oracle VM temporary audio
     -> delete temporary audio + transcript
 ```
 
-Full-episode human listening is no longer the default for every clear podcast episode. It remains available for low-confidence ASR, attribution problems, semantic conflicts, or sampled QA. The temporary workspace stays marker-gated and outside Git; `prepare`, `render`, and `cleanup` remain the lifecycle boundary.
+Full-episode human listening is no longer the default for every clear podcast episode. It remains available for low-confidence ASR, attribution problems, semantic conflicts, or sampled QA.
+
+The semantic workflow is now queue-owned by EvidenceLab rather than episode-owned by Mini MCP. A fixed external queue root stores only completed GUIDs plus one marker-gated `current` workspace. `prepare-next` selects the next in-scope Trouble Brewing episode from the fixed feed, `render-current` streams its complete transcript, and `cleanup-current` deletes the temporary media/ASR before advancing the lightweight queue state. Investigator is seeded as completed and Imp is the next priority replication sample. Adding later podcast episodes does not require new Mini MCP task names or a Mini MCP restart.
 
 ### C2E — evidence promotion
 

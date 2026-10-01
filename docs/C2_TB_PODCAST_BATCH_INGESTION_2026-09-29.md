@@ -175,11 +175,13 @@ public episode audio
     -> delete the marked temporary workspace, including audio + ASR
 ```
 
-The `clocktower-podcast-semantic` CLI owns three bounded lifecycle commands:
+The `clocktower-podcast-semantic` CLI keeps the original single-session commands for compatibility and now owns the reusable queue lifecycle used by automation:
 
-- `prepare`: reacquire one explicitly selected episode and produce complete ASR in an external marked workspace, even when the normal C2 manifest already records that source as processed;
-- `render`: stream the complete timestamped transcript to the semantic-analysis consumer without creating another transcript copy;
-- `cleanup`: recursively delete only a workspace carrying the expected semantic-session marker.
+- `prepare-next`: select the next in-scope Trouble Brewing episode from the fixed feed, resume an existing current session when present, and produce complete ASR under one external queue-owned current workspace;
+- `render-current`: stream the complete timestamped transcript for the queue's current episode without creating another transcript copy;
+- `cleanup-current`: delete only the marker-gated current workspace, then advance lightweight queue state containing completed GUIDs only.
+
+Investigator is seeded as the accepted completed benchmark; Imp is the next priority replication sample. After that, later in-scope episodes are selected by EvidenceLab itself. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
 
 Semantic review should recover, when supported:
 

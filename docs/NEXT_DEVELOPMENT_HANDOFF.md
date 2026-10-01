@@ -79,7 +79,7 @@ One human correction is retained as a regression/QA example: the machine over-ge
 
 The default clear-podcast path is therefore complete ASR -> full-transcript semantic extraction -> targeted human verification -> VERIFIED promotion. Full-episode human listening is reserved for low-confidence ASR, attribution/semantic conflicts, or sampled QA. Full audio/transcripts remain temporary and outside Git.
 
-Mini MCP currently exposes fixed Oracle allow-listed Investigator `prepare/render/cleanup` tasks plus ASR dependency installation. The next workflow slice is to generalize the same bounded task pattern to additional explicitly selected podcast episodes rather than returning to whole-episode manual listening.
+The per-episode Mini MCP task experiment has now been replaced by a fixed EvidenceLab semantic queue contract. EvidenceLab owns episode selection from the fixed Cult of the Clocktower feed and Trouble Brewing scope; Mini MCP only needs reusable `semantic:podcast:prepare-next`, `semantic:podcast:render-current`, and `semantic:podcast:cleanup-current` tasks bound to one external queue root. This removes the need to add Mini MCP task names or restart Mini MCP for each new episode.
 
 A new cross-project evidence dependency from CampBoardGameHost is now recorded as **C3 — Drunk Candidate Comparison / Rejection Evidence**. C3 does not reopen broad Drunk scouting and does not stop C2. It reuses C2C/C2D to target explicit same-prefix comparisons, rejections and conditional preferences. The first acceptance gate is one primary-audio VERIFIED item with a fixed setup/history prefix, candidate A vs candidate B, explicit preference/rejection, rationale and reconstructable assignment-time context.
 
@@ -98,7 +98,7 @@ Latest known code checkpoint before this documentation sync:
 Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
 
 - treat the Investigator C2D-S benchmark as accepted for machine-first semantic review assistance;
-- generalize the same bounded full-transcript workflow to additional explicitly selected clear podcast episodes, using targeted human verification instead of routine full-episode listening;
+- run the fixed semantic queue workflow across additional clear Trouble Brewing podcast episodes, beginning with Imp, using targeted human verification instead of routine full-episode listening;
 - keep VERIFIED evidence promotion human-confirmed; semantic output remains review assistance rather than automatic evidence promotion;
 - continue automatic C2 batch ingestion rather than pausing for C3;
 - route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;

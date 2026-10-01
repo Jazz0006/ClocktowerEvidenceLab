@@ -25,6 +25,34 @@ RSS = """<?xml version="1.0" encoding="UTF-8"?>
 </rss>
 """
 
+QUEUE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Cult of the Clocktower</title>
+    <item>
+      <title>18: Investigator (Trouble Brewing)</title>
+      <guid>5722d8e8-b89d-4067-91ac-1550b8da428d</guid>
+      <enclosure url="https://example.test/investigator.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>15: Chef (Trouble Brewing)</title>
+      <guid>chef-guid</guid>
+      <enclosure url="https://example.test/chef.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>22: Imp (Trouble Brewing)</title>
+      <guid>a271357d-10af-4969-8c7e-5545b871b5cb</guid>
+      <enclosure url="https://example.test/imp.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>Other script (Bad Moon Rising)</title>
+      <guid>bmr-guid</guid>
+      <enclosure url="https://example.test/bmr.mp3" type="audio/mpeg" />
+    </item>
+  </channel>
+</rss>
+"""
+
 
 def test_prepare_reacquires_one_episode_even_when_semantic_read_is_separate_from_prior_state(
     tmp_path, monkeypatch
@@ -232,3 +260,98 @@ def test_prepare_recovers_when_marked_progress_lost_its_asr_file(tmp_path, monke
 
     assert resumed == session
     assert calls == [(session, session.guid, root)]
+
+
+def test_prepare_next_uses_fixed_tb_queue_and_prioritizes_imp(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "queue"
+    monkeypatch.setattr(podcast_semantic, "fetch_rss", lambda *args, **kwargs: QUEUE_RSS)
+
+    calls = []
+
+    def fake_prepare(*, guid, work_dir, feed_url, timeout_seconds):
+        calls.append((guid, work_dir, feed_url, timeout_seconds))
+        return podcast_semantic.SemanticReviewSession(
+            guid=guid,
+            source_id=f"podcast:{guid}",
+            episode_title="selected",
+        )
+
+    monkeypatch.setattr(podcast_semantic, "prepare_semantic_session", fake_prepare)
+
+    session = podcast_semantic.prepare_next_semantic_session(
+        queue_root=root,
+        feed_url="https://example.test/feed.xml",
+    )
+
+    assert session.guid == podcast_semantic.IMP_GUID
+    assert calls == [
+        (
+            podcast_semantic.IMP_GUID,
+            root / podcast_semantic.CURRENT_SESSION_DIRNAME,
+            "https://example.test/feed.xml",
+            30.0,
+        )
+    ]
+
+
+def test_cleanup_current_advances_lightweight_queue_state(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "queue"
+    current = root / podcast_semantic.CURRENT_SESSION_DIRNAME
+    current.mkdir(parents=True)
+    session = podcast_semantic.SemanticReviewSession(
+        guid=podcast_semantic.IMP_GUID,
+        source_id="podcast:imp",
+        episode_title="22: Imp (Trouble Brewing)",
+    )
+
+    monkeypatch.setattr(
+        podcast_semantic,
+        "cleanup_semantic_session",
+        lambda *, work_dir: session if work_dir == current else None,
+    )
+
+    cleaned = podcast_semantic.cleanup_current_semantic_session(queue_root=root)
+    state = podcast_semantic.SemanticReviewQueueState.model_validate_json(
+        (root / podcast_semantic.QUEUE_STATE_FILENAME).read_text(encoding="utf-8")
+    )
+
+    assert cleaned == session
+    assert state.completed_guids == (
+        podcast_semantic.INVESTIGATOR_GUID,
+        podcast_semantic.IMP_GUID,
+    )
+
+
+def test_prepare_next_skips_completed_and_out_of_scope_entries(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "queue"
+    root.mkdir(parents=True)
+    (root / podcast_semantic.QUEUE_STATE_FILENAME).write_text(
+        podcast_semantic.SemanticReviewQueueState(
+            completed_guids=(
+                podcast_semantic.INVESTIGATOR_GUID,
+                podcast_semantic.IMP_GUID,
+            )
+        ).model_dump_json(indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(podcast_semantic, "fetch_rss", lambda *args, **kwargs: QUEUE_RSS)
+
+    selected = []
+
+    def fake_prepare(*, guid, work_dir, feed_url, timeout_seconds):
+        selected.append(guid)
+        return podcast_semantic.SemanticReviewSession(
+            guid=guid,
+            source_id=f"podcast:{guid}",
+            episode_title="selected",
+        )
+
+    monkeypatch.setattr(podcast_semantic, "prepare_semantic_session", fake_prepare)
+
+    podcast_semantic.prepare_next_semantic_session(
+        queue_root=root,
+        feed_url="https://example.test/feed.xml",
+    )
+
+    assert selected == ["chef-guid"]

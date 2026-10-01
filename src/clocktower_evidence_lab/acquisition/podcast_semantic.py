@@ -18,6 +18,7 @@ from clocktower_evidence_lab.acquisition.podcast_batch import (
     run_batch_plan,
 )
 from clocktower_evidence_lab.acquisition.podcast_manifest import (
+    EpisodeScope,
     build_episode_manifest,
     stable_episode_id,
 )
@@ -25,8 +26,14 @@ from clocktower_evidence_lab.acquisition.podcast_probe import fetch_rss
 
 ShortText = Annotated[str, Field(min_length=1, max_length=512)]
 SESSION_MARKER_FILENAME = ".semantic-review-session.json"
+QUEUE_STATE_FILENAME = "semantic-review-queue.json"
+CURRENT_SESSION_DIRNAME = "current"
 BATCH_PROGRESS_FILENAME = "batch-progress.json"
 UPDATED_MANIFEST_FILENAME = "manifest.updated.json"
+
+INVESTIGATOR_GUID = "5722d8e8-b89d-4067-91ac-1550b8da428d"
+IMP_GUID = "a271357d-10af-4969-8c7e-5545b871b5cb"
+SEMANTIC_REVIEW_PRIORITY_GUIDS = (IMP_GUID,)
 
 
 class _SemanticModel(BaseModel):
@@ -40,6 +47,88 @@ class SemanticReviewSession(_SemanticModel):
     guid: ShortText
     source_id: ShortText
     episode_title: ShortText
+
+
+class SemanticReviewQueueState(_SemanticModel):
+    """Small external queue state; never stores transcript or audio content."""
+
+    schema_version: str = "c2-semantic-review-queue-v1"
+    completed_guids: tuple[ShortText, ...] = (INVESTIGATOR_GUID,)
+
+
+def prepare_next_semantic_session(
+    *,
+    queue_root: str | Path,
+    feed_url: str = CULT_OF_CLOCKTOWER_FEED_URL,
+    timeout_seconds: float = 30.0,
+) -> SemanticReviewSession:
+    """Prepare or resume the next in-scope podcast without caller-selected episode input."""
+
+    root = _safe_workspace_root(queue_root)
+    current = root / CURRENT_SESSION_DIRNAME
+    existing = _read_marker_if_present(current)
+    if existing is not None:
+        return prepare_semantic_session(
+            guid=existing.guid,
+            work_dir=current,
+            feed_url=feed_url,
+            timeout_seconds=timeout_seconds,
+        )
+
+    state = _read_queue_state(root)
+    rss = fetch_rss(feed_url, timeout_seconds=timeout_seconds)
+    episodes = parse_podcast_rss(rss, feed_url=feed_url)
+    manifest = build_episode_manifest(episodes)
+    completed = set(state.completed_guids)
+    eligible_guids = tuple(
+        entry.guid
+        for entry in manifest.episodes
+        if entry.scope is EpisodeScope.IN_SCOPE
+        and entry.guid is not None
+        and entry.guid not in completed
+    )
+    if not eligible_guids:
+        raise ValueError("no unprocessed Trouble Brewing podcast episodes remain")
+
+    prioritized = tuple(guid for guid in SEMANTIC_REVIEW_PRIORITY_GUIDS if guid in eligible_guids)
+    guid = prioritized[0] if prioritized else eligible_guids[0]
+    return prepare_semantic_session(
+        guid=guid,
+        work_dir=current,
+        feed_url=feed_url,
+        timeout_seconds=timeout_seconds,
+    )
+
+
+def render_current_semantic_transcript(
+    *,
+    queue_root: str | Path,
+    output: TextIO,
+) -> SemanticReviewSession:
+    """Render the queue's current complete transcript."""
+
+    root = _safe_workspace_root(queue_root)
+    return render_semantic_transcript(
+        work_dir=root / CURRENT_SESSION_DIRNAME,
+        output=output,
+    )
+
+
+def cleanup_current_semantic_session(
+    *,
+    queue_root: str | Path,
+) -> SemanticReviewSession:
+    """Clean the current session and advance only lightweight external queue state."""
+
+    root = _safe_workspace_root(queue_root)
+    session = cleanup_semantic_session(work_dir=root / CURRENT_SESSION_DIRNAME)
+    state = _read_queue_state(root)
+    completed = tuple(dict.fromkeys((*state.completed_guids, session.guid)))
+    _write_queue_state(
+        root,
+        SemanticReviewQueueState(completed_guids=completed),
+    )
+    return session
 
 
 def prepare_semantic_session(
@@ -207,6 +296,25 @@ def _read_required_marker(root: Path) -> SemanticReviewSession:
     if session is None:
         raise ValueError("semantic workspace is missing its session marker")
     return session
+
+
+def _queue_state_path(root: Path) -> Path:
+    return root / QUEUE_STATE_FILENAME
+
+
+def _read_queue_state(root: Path) -> SemanticReviewQueueState:
+    path = _queue_state_path(root)
+    if not path.is_file():
+        return SemanticReviewQueueState()
+    return SemanticReviewQueueState.model_validate_json(path.read_text(encoding="utf-8"))
+
+
+def _write_queue_state(root: Path, state: SemanticReviewQueueState) -> None:
+    root.mkdir(parents=True, exist_ok=True)
+    _queue_state_path(root).write_text(
+        state.model_dump_json(indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def _format_ms(value: int) -> str:
