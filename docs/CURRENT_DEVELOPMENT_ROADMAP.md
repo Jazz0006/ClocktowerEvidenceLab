@@ -114,22 +114,27 @@ The successful bounded Investigator/Imp run #4 artifacts have now been passed th
 
 Both review packets retain `human_review_state=NOT_STARTED`. Packet generation is acquisition assistance, not evidence verification. The next gate is actual human primary-audio review of those bounded windows.
 
-### C2D-S — full-transcript semantic benchmark — IMPLEMENTED / LIVE INVESTIGATOR RUN PENDING
+### C2D-S — full-transcript semantic review — INVESTIGATOR BENCHMARK ACCEPTED
 
-A machine-first semantic-review path now exists for testing whether clear expert podcast audio can be understood from the complete ASR transcript rather than only keyword-located snippets.
+The first machine-first full-transcript benchmark has completed for **18: Investigator (Trouble Brewing)**. The Oracle VM produced a complete `small.en` ASR with 2,156 timestamped segments, the semantic reviewer read the complete transcript, and the user independently compared the extracted Storyteller guidance against a prior full-episode listen.
 
-The first benchmark is **18: Investigator (Trouble Brewing)**:
+The semantic extraction was accepted as materially correct. It recovered experience-dependent setup choices, whole-setup information-density considerations, Drunk/Investigator discoverability, Recluse registration options, non-Minion target rationale, and multi-role information topology that the earlier keyword locator could not reliably reconstruct.
+
+One human correction is retained as a QA example: the machine summary over-generalized the Spy discussion. The user's full-episode interpretation is that a one-Minion Spy + Investigator setup is comparatively uncommon because direct Investigator exposure reduces the Spy's room to operate; when that exact setup exists, the Storyteller may have little choice about which actual Minion can be identified. This is evidence that semantic review is useful but still benefits from targeted human verification.
+
+The accepted default path for clear expert-podcast audio is now:
 
 ```text
 Oracle VM temporary audio
     -> complete timestamped ASR
     -> full-transcript semantic reading
-    -> lightweight Storyteller considerations / rationale / conditions / alternatives
-    -> compare with the user's independent full-episode listening
+    -> Storyteller considerations / rationale / conditions / alternatives
+    -> targeted human verification of extracted findings and ambiguities
+    -> VERIFIED promotion only after human confirmation
     -> delete temporary audio + transcript
 ```
 
-The temporary workspace is marker-gated and remains outside Git. `prepare`, `render`, and `cleanup` are implemented through `clocktower-podcast-semantic`. This benchmark may justify reducing future routine listening, but it does not yet change the VERIFIED evidence gate.
+Full-episode human listening is no longer the default for every clear podcast episode. It remains available for low-confidence ASR, attribution problems, semantic conflicts, or sampled QA. The temporary workspace stays marker-gated and outside Git; `prepare`, `render`, and `cleanup` remain the lifecycle boundary.
 
 ### C2E — evidence promotion
 

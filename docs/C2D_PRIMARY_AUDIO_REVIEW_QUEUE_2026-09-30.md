@@ -2,11 +2,11 @@
 
 > Status: **MACHINE TRIAGE ONLY — NOT VERIFIED EVIDENCE**
 >
-> Source: C2 bounded validation run #4 (`36574401873`). These windows were selected deterministically from C2C machine candidates. Listening to the primary audio is required before any C2E promotion.
+> Source: C2 bounded validation run #4 (`36574401873`). These windows were selected deterministically from C2C machine candidates. After the accepted Investigator C2D-S benchmark, clear podcast episodes may use complete ASR + full-transcript semantic review before targeted primary-audio verification; machine output still cannot promote itself to C2E.
 
 ## Review protocol
 
-For each window, listen to the primary episode around the listed time range and record only what the audio actually supports. Confirm speaker attribution, intended meaning/context, and timestamp. Mark false positives or ambiguous material as rejected/uncertain rather than inferring. Do not treat machine category, summary, confidence, or priority as verified evidence.
+For clear podcast audio, first use the full-transcript semantic review to identify the Storyteller claim, rationale, conditions, alternatives, timestamp, and uncertainty. Then listen to the primary audio around the extracted high-value or ambiguous ranges and record only what the audio actually supports. Confirm speaker attribution, intended meaning/context, and timestamp. Escalate to broader/full-episode listening only when ASR quality, attribution, or semantic conflicts warrant it. Mark false positives or ambiguous material as rejected/uncertain rather than inferring. Do not treat machine category, summary, confidence, or priority as verified evidence.
 
 ## 18: Investigator (Trouble Brewing)
 

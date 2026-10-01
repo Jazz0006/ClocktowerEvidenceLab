@@ -156,19 +156,22 @@ High-value current topics include:
 - respecting player-controlled choices;
 - examples where experts explicitly compare opposite legal choices.
 
-### C2D-S — machine-first full-transcript semantic benchmark — IMPLEMENTED / LIVE BENCHMARK PENDING
+### C2D-S — machine-first full-transcript semantic review — ACCEPTED BASELINE
 
-The Investigator listening exercise exposed that the current C2C extractor is intentionally a conservative keyword locator, not a semantic understanding layer. C2 now has a bounded experiment for testing whether a complete, clear machine transcript can recover the Storyteller discussion accurately enough to reduce routine human listening.
+The Investigator listening exercise showed that the C2C extractor is intentionally a conservative keyword locator rather than a semantic understanding layer. The follow-up **18: Investigator (Trouble Brewing)** benchmark has now validated a machine-first full-transcript path for clear expert podcast audio.
 
-The experiment uses an Oracle-VM temporary workspace outside Git:
+The Oracle VM acquired the complete episode and produced a `small.en` ASR with 2,156 timestamped segments. A semantic reviewer read the complete transcript independently and extracted Storyteller considerations, rationales, setup conditions, alternatives and concrete examples. After timestamp correction against raw ASR, the user compared the result with a prior independent full-episode listen and judged the semantic understanding materially correct.
+
+The accepted path is:
 
 ```text
 public episode audio
     -> temporary full audio on Oracle VM
     -> complete timestamped ASR JSON
-    -> render the full transcript to the semantic reviewer
-    -> extract lightweight semantic findings
-    -> compare with an independent human full-episode review
+    -> full-transcript semantic review
+    -> structured candidate findings with timestamps/confidence
+    -> targeted human verification of useful findings and ambiguities
+    -> VERIFIED promotion only after human confirmation
     -> delete the marked temporary workspace, including audio + ASR
 ```
 
@@ -178,9 +181,7 @@ The `clocktower-podcast-semantic` CLI owns three bounded lifecycle commands:
 - `render`: stream the complete timestamped transcript to the semantic-analysis consumer without creating another transcript copy;
 - `cleanup`: recursively delete only a workspace carrying the expected semantic-session marker.
 
-The first benchmark is **18: Investigator (Trouble Brewing)**. Its semantic result must be compared with the user's already-completed independent full-episode listening without using that human interpretation as extraction ground truth.
-
-The semantic output should try to recover, when actually supported:
+Semantic review should recover, when supported:
 
 - speaker attribution or explicit speaker uncertainty;
 - Storyteller consideration / choice;
@@ -191,7 +192,9 @@ The semantic output should try to recover, when actually supported:
 - timestamp range;
 - semantic confidence / ambiguity.
 
-This experiment does **not** change evidence verification semantics. Machine semantic findings remain acquisition/review assistance until the benchmark establishes a reliable review policy. Full audio and full transcripts remain temporary processing artifacts and must not be committed to Git or retained as durable corpus evidence.
+The benchmark also establishes an explicit QA lesson. The machine over-generalized one Spy discussion: the human reviewer understood one-Minion Spy + Investigator setups as comparatively uncommon because direct Investigator exposure reduces the Spy's operating room; if that exact setup exists, the Storyteller may have little alternative about which actual Minion can be identified. This mismatch is small enough to accept the machine-first workflow, but important enough to preserve targeted human verification.
+
+Therefore clear podcast episodes no longer require routine full-episode human listening. Full listening is reserved for low-confidence ASR, attribution/semantic conflicts, or sampled QA. Evidence verification semantics do **not** change: machine findings remain acquisition/review assistance and cannot promote themselves to VERIFIED evidence. Full audio and full transcripts remain temporary processing artifacts and must not be committed to Git or retained as durable corpus evidence.
 
 ### C2C/C2D targeted enhancement for C3
 

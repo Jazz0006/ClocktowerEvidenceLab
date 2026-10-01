@@ -73,9 +73,13 @@ The successful real Investigator/Imp candidate artifacts from bounded validation
 
 Both packets remain `human_review_state=NOT_STARTED`; no candidate has been promoted to verified evidence. The durable per-window human-review queue is `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`.
 
-C2D-S now adds a bounded **full-transcript semantic benchmark**. `clocktower-podcast-semantic prepare/render/cleanup` supports one marked external workspace where full public audio and timestamped ASR may exist temporarily on the Oracle VM. The full transcript is streamed to the semantic reviewer, not committed or copied into durable evidence, and cleanup deletes the marked workspace afterward. The first benchmark is Investigator and must be compared against the user’s independent complete-episode listening before changing the human verification policy.
+C2D-S full-transcript semantic review is now **accepted for machine-first review assistance** after the Investigator benchmark. The Oracle VM produced a complete 2,156-segment `small.en` ASR, the semantic reviewer read the full transcript, timestamps were independently corrected against raw ASR, and the user confirmed the extracted Storyteller guidance was materially correct based on a prior full-episode listen.
 
-Mini MCP has a companion implementation branch, `evidence-semantic-podcast-tasks`, adding fixed Oracle allow-listed tasks for Investigator `prepare/render/cleanup` plus ASR dependency installation. The running Mini MCP service must load that revision before those new task names are callable.
+One human correction is retained as a regression/QA example: the machine over-generalized the Spy discussion. The user's interpretation is that a one-Minion Spy + Investigator setup is comparatively uncommon because direct exposure reduces Spy operating room; if that exact setup exists, the Storyteller may have little alternative about which actual Minion can be identified.
+
+The default clear-podcast path is therefore complete ASR -> full-transcript semantic extraction -> targeted human verification -> VERIFIED promotion. Full-episode human listening is reserved for low-confidence ASR, attribution/semantic conflicts, or sampled QA. Full audio/transcripts remain temporary and outside Git.
+
+Mini MCP currently exposes fixed Oracle allow-listed Investigator `prepare/render/cleanup` tasks plus ASR dependency installation. The next workflow slice is to generalize the same bounded task pattern to additional explicitly selected podcast episodes rather than returning to whole-episode manual listening.
 
 A new cross-project evidence dependency from CampBoardGameHost is now recorded as **C3 — Drunk Candidate Comparison / Rejection Evidence**. C3 does not reopen broad Drunk scouting and does not stop C2. It reuses C2C/C2D to target explicit same-prefix comparisons, rejections and conditional preferences. The first acceptance gate is one primary-audio VERIFIED item with a fixed setup/history prefix, candidate A vs candidate B, explicit preference/rejection, rationale and reconstructable assignment-time context.
 
@@ -93,8 +97,9 @@ Latest known code checkpoint before this documentation sync:
 
 Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
 
-- run the C2D-S full-transcript semantic benchmark for Investigator on the Oracle VM, produce an independent structured semantic summary, and compare it with the user's completed full-episode listening before changing the verification policy;
-- keep human VERIFIED semantics unchanged during the benchmark; semantic output is machine review assistance, not automatic evidence promotion;
+- treat the Investigator C2D-S benchmark as accepted for machine-first semantic review assistance;
+- generalize the same bounded full-transcript workflow to additional explicitly selected clear podcast episodes, using targeted human verification instead of routine full-episode listening;
+- keep VERIFIED evidence promotion human-confirmed; semantic output remains review assistance rather than automatic evidence promotion;
 - continue automatic C2 batch ingestion rather than pausing for C3;
 - route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
 - treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field;
