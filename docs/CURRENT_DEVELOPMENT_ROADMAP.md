@@ -114,6 +114,23 @@ The successful bounded Investigator/Imp run #4 artifacts have now been passed th
 
 Both review packets retain `human_review_state=NOT_STARTED`. Packet generation is acquisition assistance, not evidence verification. The next gate is actual human primary-audio review of those bounded windows.
 
+### C2D-S — full-transcript semantic benchmark — IMPLEMENTED / LIVE INVESTIGATOR RUN PENDING
+
+A machine-first semantic-review path now exists for testing whether clear expert podcast audio can be understood from the complete ASR transcript rather than only keyword-located snippets.
+
+The first benchmark is **18: Investigator (Trouble Brewing)**:
+
+```text
+Oracle VM temporary audio
+    -> complete timestamped ASR
+    -> full-transcript semantic reading
+    -> lightweight Storyteller considerations / rationale / conditions / alternatives
+    -> compare with the user's independent full-episode listening
+    -> delete temporary audio + transcript
+```
+
+The temporary workspace is marker-gated and remains outside Git. `prepare`, `render`, and `cleanup` are implemented through `clocktower-podcast-semantic`. This benchmark may justify reducing future routine listening, but it does not yet change the VERIFIED evidence gate.
+
 ### C2E — evidence promotion
 
 After primary-audio review, save concise provenance-backed expert-guidance evidence. Do not commit full transcripts.
@@ -189,12 +206,13 @@ Authorities:
 
 Continue acquisition and interoperability as compatible lanes without interrupting C2:
 
-1. perform the existing **C2D bounded primary-audio review** over the 24 Investigator/Imp windows (6m25.6s total), promoting only claims confirmed from primary audio;
-2. continue C2 automatic batch ingestion for remaining Trouble Brewing-relevant podcast material;
-3. apply the C3 locator enhancement to new/reprocessed C2C extraction so explicit candidate rejection/preference and conditional Drunk-assignment windows reach bounded review;
-4. treat EL-TBGS-0/1 as closed unless a later bounded TB decision surface requires a schema extension;
-5. review **C3-Q01 first** (`02:04:10–02:07:39`, about 3m29s); if it satisfies the Stage-1 VERIFIED structure, stop the C3 search and prepare the Host handoff immediately;
-6. only if Q01 fails, review Q02 then Q03; where the evidence prefix is sufficient, include the standard snapshot alongside the evidence decision/provenance package.
+1. run the **C2D-S Investigator full-transcript semantic benchmark** on the Oracle VM, extract the key Storyteller considerations independently, and compare them against the user's already-completed full-episode listening;
+2. preserve the existing human VERIFIED gate while evaluating benchmark recall/precision and any speaker/context failures; if the benchmark is strong, design the next bounded policy change as machine-first semantic review plus human sampling/ambiguity review rather than silently changing verification;
+3. continue C2 automatic batch ingestion for remaining Trouble Brewing-relevant podcast material;
+4. apply the C3 locator enhancement to new/reprocessed C2C extraction so explicit candidate rejection/preference and conditional Drunk-assignment windows reach bounded review;
+5. treat EL-TBGS-0/1 as closed unless a later bounded TB decision surface requires a schema extension;
+6. review **C3-Q01 first** (`02:04:10–02:07:39`, about 3m29s); if it satisfies the Stage-1 VERIFIED structure, stop the C3 search and prepare the Host handoff immediately;
+7. only if Q01 fails, review Q02 then Q03; where the evidence prefix is sufficient, include the standard snapshot alongside the evidence decision/provenance package.
 
 Keep broad C1 Drunk scouting stopped. C3 is the concrete downstream evidence dependency and must stay comparison/rejection-focused. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
 

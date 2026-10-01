@@ -156,6 +156,43 @@ High-value current topics include:
 - respecting player-controlled choices;
 - examples where experts explicitly compare opposite legal choices.
 
+### C2D-S — machine-first full-transcript semantic benchmark — IMPLEMENTED / LIVE BENCHMARK PENDING
+
+The Investigator listening exercise exposed that the current C2C extractor is intentionally a conservative keyword locator, not a semantic understanding layer. C2 now has a bounded experiment for testing whether a complete, clear machine transcript can recover the Storyteller discussion accurately enough to reduce routine human listening.
+
+The experiment uses an Oracle-VM temporary workspace outside Git:
+
+```text
+public episode audio
+    -> temporary full audio on Oracle VM
+    -> complete timestamped ASR JSON
+    -> render the full transcript to the semantic reviewer
+    -> extract lightweight semantic findings
+    -> compare with an independent human full-episode review
+    -> delete the marked temporary workspace, including audio + ASR
+```
+
+The `clocktower-podcast-semantic` CLI owns three bounded lifecycle commands:
+
+- `prepare`: reacquire one explicitly selected episode and produce complete ASR in an external marked workspace, even when the normal C2 manifest already records that source as processed;
+- `render`: stream the complete timestamped transcript to the semantic-analysis consumer without creating another transcript copy;
+- `cleanup`: recursively delete only a workspace carrying the expected semantic-session marker.
+
+The first benchmark is **18: Investigator (Trouble Brewing)**. Its semantic result must be compared with the user's already-completed independent full-episode listening without using that human interpretation as extraction ground truth.
+
+The semantic output should try to recover, when actually supported:
+
+- speaker attribution or explicit speaker uncertainty;
+- Storyteller consideration / choice;
+- rationale;
+- conditions and setup dependencies;
+- explicit alternatives or rejected choices;
+- concrete example versus general guidance;
+- timestamp range;
+- semantic confidence / ambiguity.
+
+This experiment does **not** change evidence verification semantics. Machine semantic findings remain acquisition/review assistance until the benchmark establishes a reliable review policy. Full audio and full transcripts remain temporary processing artifacts and must not be committed to Git or retained as durable corpus evidence.
+
 ### C2C/C2D targeted enhancement for C3
 
 CampBoardGameHost has identified a narrow downstream evidence gap: explicit comparison or rejection among Drunk candidates under the same fixed setup/history prefix.

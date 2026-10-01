@@ -2,7 +2,7 @@
 
 > Current state: **C2 ACTIVE / C3 HOST-UNBLOCKING LANE ACTIVE / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
 >
-> Branch: `docs/podcast-batch-ingestion-route-20260929`
+> Branch: `experiment/investigator-semantic-review`
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 
@@ -73,6 +73,10 @@ The successful real Investigator/Imp candidate artifacts from bounded validation
 
 Both packets remain `human_review_state=NOT_STARTED`; no candidate has been promoted to verified evidence. The durable per-window human-review queue is `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`.
 
+C2D-S now adds a bounded **full-transcript semantic benchmark**. `clocktower-podcast-semantic prepare/render/cleanup` supports one marked external workspace where full public audio and timestamped ASR may exist temporarily on the Oracle VM. The full transcript is streamed to the semantic reviewer, not committed or copied into durable evidence, and cleanup deletes the marked workspace afterward. The first benchmark is Investigator and must be compared against the user’s independent complete-episode listening before changing the human verification policy.
+
+Mini MCP has a companion implementation branch, `evidence-semantic-podcast-tasks`, adding fixed Oracle allow-listed tasks for Investigator `prepare/render/cleanup` plus ASR dependency installation. The running Mini MCP service must load that revision before those new task names are callable.
+
 A new cross-project evidence dependency from CampBoardGameHost is now recorded as **C3 — Drunk Candidate Comparison / Rejection Evidence**. C3 does not reopen broad Drunk scouting and does not stop C2. It reuses C2C/C2D to target explicit same-prefix comparisons, rejections and conditional preferences. The first acceptance gate is one primary-audio VERIFIED item with a fixed setup/history prefix, candidate A vs candidate B, explicit preference/rejection, rationale and reconstructable assignment-time context.
 
 The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: `EXPLICIT_ALTERNATIVE` is already P0. The implementation enhancement adds conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions.
@@ -89,7 +93,8 @@ Latest known code checkpoint before this documentation sync:
 
 Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
 
-- perform the bounded primary-audio review over the already-generated Investigator/Imp C2D packets, then enter C2E only for claims that the human review actually confirms;
+- run the C2D-S full-transcript semantic benchmark for Investigator on the Oracle VM, produce an independent structured semantic summary, and compare it with the user's completed full-episode listening before changing the verification policy;
+- keep human VERIFIED semantics unchanged during the benchmark; semantic output is machine review assistance, not automatic evidence promotion;
 - continue automatic C2 batch ingestion rather than pausing for C3;
 - route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
 - treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field;

@@ -92,6 +92,22 @@ clocktower-podcast-batch \
 
 The batch runner reuses existing payload and ASR artifacts after interruption. It writes full source/transcript artifacts only beneath the explicit work directory; its progress and updated-manifest JSON remain machine workflow metadata, not VERIFIED evidence.
 
+For the machine-first semantic benchmark, use the temporary semantic lifecycle:
+
+```bash
+clocktower-podcast-semantic prepare \
+  --guid <episode-guid> \
+  --work-dir /path/outside/repo/semantic-session
+
+clocktower-podcast-semantic render \
+  --work-dir /path/outside/repo/semantic-session
+
+clocktower-podcast-semantic cleanup \
+  --work-dir /path/outside/repo/semantic-session
+```
+
+`prepare` intentionally allows a previously processed episode to be re-acquired for a bounded semantic benchmark. `render` streams the complete timestamped ASR to the semantic consumer rather than writing a second transcript. `cleanup` is marker-gated and removes the temporary audio and ASR workspace after analysis. The complete transcript is therefore available for contextual understanding without becoming a durable Git artifact.
+
 ## 4. C2 manifest contract
 
 The batch manifest should track, at minimum:
@@ -146,6 +162,8 @@ Each candidate should include:
 
 Machine confidence is not verification.
 
+The original C2C keyword rules remain useful as cheap deterministic locators, but they are not treated as the ceiling of machine understanding. The C2D-S benchmark adds a full-transcript semantic pass that may identify relevant rationale even when no simple keyword rule fired. Its output must remain lightweight and provenance-linked.
+
 ## 6. Evidence rules
 
 Machine transcript text is not automatically:
@@ -187,11 +205,13 @@ An episode may validly yield no promoted evidence.
 
 ## 8. Copyright boundary
 
-Do not commit:
+Do not commit or durably publish:
 
 - full audio;
 - full machine transcript;
 - large transcript excerpts.
+
+Full audio and full ASR may exist temporarily in an explicitly marked Oracle-VM processing workspace for acquisition and semantic analysis. They must be deleted after the semantic-review session is complete or abandoned.
 
 Commit only:
 
