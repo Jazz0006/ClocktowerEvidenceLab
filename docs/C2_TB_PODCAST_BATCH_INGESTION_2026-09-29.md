@@ -177,11 +177,11 @@ public episode audio
 
 The `clocktower-podcast-semantic` CLI keeps the original single-session commands for compatibility and now owns the reusable queue lifecycle used by automation:
 
-- `prepare-next`: select the next in-scope Trouble Brewing episode from the fixed feed, resume an existing current session when present, and produce complete ASR under one external queue-owned current workspace;
+- `prepare-next`: select the next semantic-eligible episode from the fixed feed, resume an existing current session when present, and produce complete ASR under one external queue-owned current workspace. Eligibility remains Trouble Brewing-first, with only explicitly curated `UNKNOWN` general Storyteller episodes admitted; `4.2: Storytelling Like a Pro` is the current curated exception;
 - `render-current`: stream the complete timestamped transcript for the queue's current episode without creating another transcript copy;
 - `cleanup-current`: delete only the marker-gated current workspace, then advance lightweight queue state containing completed GUIDs only.
 
-Investigator is seeded as the accepted completed benchmark; Imp is the next priority replication sample. After that, later in-scope episodes are selected by EvidenceLab itself. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
+Investigator is seeded as the accepted completed benchmark, and the Imp / Drunk / Soldier / Monk / Ravenkeeper semantic passes have already exercised the queue. With C3 Stage 1 now accepted, `4.2: Storytelling Like a Pro` is the next priority when unprocessed because it is a long-form Storyteller-focused episode. After that, later Trouble Brewing-relevant episodes are selected by EvidenceLab itself. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
 
 Semantic review should recover, when supported:
 
@@ -200,9 +200,9 @@ Therefore clear podcast episodes no longer require routine full-episode human li
 
 ### C2C/C2D targeted enhancement for C3
 
-CampBoardGameHost has identified a narrow downstream evidence gap: explicit comparison or rejection among Drunk candidates under the same fixed setup/history prefix.
+CampBoardGameHost identified a narrow downstream evidence gap: explicit comparison or rejection among Drunk candidates under the same fixed setup/history prefix. C3-Q04 has now satisfied that Stage-1 gap and cleared the current Host evidence blocker.
 
-C3 reuses this C2 pipeline and does not interrupt batch ingestion. The existing `EXPLICIT_ALTERNATIVE` category already has P0 C2D review priority, so no new ranking subsystem is needed. C2C only expands conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions.
+C3 continues to reuse this C2 pipeline without interrupting batch ingestion. The existing `EXPLICIT_ALTERNATIVE` category remains P0 C2D review priority, and conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions remains useful for long-term corpus growth. Additional Drunk evidence no longer preempts the broader C2 queue.
 
 Machine matches remain unverified acquisition assistance. See `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
 

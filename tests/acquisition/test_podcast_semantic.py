@@ -86,6 +86,29 @@ ROLE_PRIORITY_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 </rss>
 """
 
+GENERAL_STORYTELLING_PRIORITY_RSS = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Cult of the Clocktower</title>
+    <item>
+      <title>13: Soldier (Trouble Brewing) - With Official Storyteller Jon Gjengset!</title>
+      <guid>soldier-guid</guid>
+      <enclosure url="https://example.test/soldier.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>4.2: Storytelling Like a Pro</title>
+      <guid>storytelling-pro-guid</guid>
+      <enclosure url="https://example.test/storytelling-pro.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>3.26: Zombuul (Bad Moon Rising)</title>
+      <guid>bmr-guid</guid>
+      <enclosure url="https://example.test/bmr.mp3" type="audio/mpeg" />
+    </item>
+  </channel>
+</rss>
+"""
+
 
 def test_prepare_reacquires_one_episode_even_when_semantic_read_is_separate_from_prior_state(
     tmp_path, monkeypatch
@@ -449,6 +472,35 @@ def test_prepare_next_prioritizes_soldier_by_title_after_guid_priorities(tmp_pat
     )
 
     assert selected == ["soldier-guid"]
+
+
+def test_prepare_next_prioritizes_curated_general_storytelling_episode(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "queue"
+    root.mkdir(parents=True)
+    monkeypatch.setattr(
+        podcast_semantic,
+        "fetch_rss",
+        lambda *args, **kwargs: GENERAL_STORYTELLING_PRIORITY_RSS,
+    )
+
+    selected = []
+
+    def fake_prepare(*, guid, work_dir, feed_url, timeout_seconds):
+        selected.append(guid)
+        return podcast_semantic.SemanticReviewSession(
+            guid=guid,
+            source_id=f"podcast:{guid}",
+            episode_title="selected",
+        )
+
+    monkeypatch.setattr(podcast_semantic, "prepare_semantic_session", fake_prepare)
+
+    podcast_semantic.prepare_next_semantic_session(
+        queue_root=root,
+        feed_url="https://example.test/feed.xml",
+    )
+
+    assert selected == ["storytelling-pro-guid"]
 
 
 def test_cleanup_current_advances_lightweight_queue_state(tmp_path, monkeypatch):
