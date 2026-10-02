@@ -19,6 +19,7 @@ from clocktower_evidence_lab.acquisition.podcast_batch import (
 )
 from clocktower_evidence_lab.acquisition.podcast_manifest import (
     EpisodeScope,
+    PodcastEpisodeManifest,
     build_episode_manifest,
     stable_episode_id,
 )
@@ -301,12 +302,25 @@ def _resume_semantic_session(
     return _run_session_acquisition(session, episode, root)
 
 
+def _build_semantic_acquisition_manifest(
+    episode: PodcastEpisode,
+) -> PodcastEpisodeManifest:
+    manifest = build_episode_manifest((episode,))
+    entry = manifest.episodes[0]
+    if entry.scope is EpisodeScope.UNKNOWN and any(
+        entry.title.startswith(prefix) for prefix in SEMANTIC_REVIEW_CURATED_UNKNOWN_TITLE_PREFIXES
+    ):
+        entry = entry.model_copy(update={"scope": EpisodeScope.IN_SCOPE})
+        return manifest.model_copy(update={"episodes": (entry,)})
+    return manifest
+
+
 def _run_session_acquisition(
     session: SemanticReviewSession,
     episode: PodcastEpisode,
     root: Path,
 ) -> SemanticReviewSession:
-    manifest = build_episode_manifest((episode,))
+    manifest = _build_semantic_acquisition_manifest(episode)
     result = run_batch_plan(build_batch_plan(manifest), root)
     if result.blocked_items or len(result.progress) != 1:
         raise RuntimeError("semantic acquisition did not complete exactly one episode")

@@ -503,6 +503,68 @@ def test_prepare_next_prioritizes_curated_general_storytelling_episode(tmp_path,
     assert selected == ["storytelling-pro-guid"]
 
 
+def test_prepare_curated_unknown_episode_enters_semantic_acquisition_plan(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "storytelling-pro"
+    monkeypatch.setattr(
+        podcast_semantic,
+        "fetch_rss",
+        lambda *args, **kwargs: GENERAL_STORYTELLING_PRIORITY_RSS,
+    )
+
+    captured_plan_sizes = []
+
+    def fake_run(plan, work_dir):
+        captured_plan_sizes.append(len(plan.items))
+        assert len(plan.items) == 1
+        item = plan.items[0]
+        asr_path = work_dir / item.asr_relative_path
+        asr_path.parent.mkdir(parents=True, exist_ok=True)
+        asr_path.write_text(
+            asr.AsrTranscript(
+                model_name="small.en",
+                language="en",
+                language_probability=1.0,
+                segments=(
+                    asr.TranscriptSegment(
+                        index=0,
+                        start_ms=0,
+                        end_ms=1_000,
+                        text="General Storyteller guidance.",
+                    ),
+                ),
+            ).model_dump_json(indent=2)
+            + "\n",
+            encoding="utf-8",
+        )
+        return podcast_batch.BatchRunResult(
+            progress=(
+                podcast_batch.BatchProgress(
+                    source_id=item.source_id,
+                    acquisition_state=podcast_manifest.AcquisitionState.COMPLETE,
+                    asr_state=podcast_manifest.AsrState.COMPLETE,
+                    payload_relative_path=item.payload_relative_path,
+                    payload_sha256="4" * 64,
+                    payload_bytes=123,
+                    asr_relative_path=item.asr_relative_path,
+                    asr_model="small.en",
+                    asr_segment_count=1,
+                ),
+            ),
+            blocked_items=(),
+        )
+
+    monkeypatch.setattr(podcast_semantic, "run_batch_plan", fake_run)
+
+    session = podcast_semantic.prepare_semantic_session(
+        guid="storytelling-pro-guid",
+        work_dir=root,
+        feed_url="https://example.test/feed.xml",
+    )
+
+    assert session.episode_title == "4.2: Storytelling Like a Pro"
+    assert captured_plan_sizes == [1]
+
+
 def test_cleanup_current_advances_lightweight_queue_state(tmp_path, monkeypatch):
     root = tmp_path / "semantic" / "queue"
     current = root / podcast_semantic.CURRENT_SESSION_DIRNAME
