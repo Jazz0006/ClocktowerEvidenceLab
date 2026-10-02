@@ -11,6 +11,7 @@ from clocktower_evidence_lab.acquisition.podcast_semantic import (
     prepare_next_semantic_session,
     prepare_semantic_session,
     render_current_semantic_transcript,
+    render_current_semantic_window,
     render_semantic_transcript,
 )
 
@@ -39,6 +40,11 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     render_current = subparsers.add_parser("render-current")
     render_current.add_argument("--queue-root", type=Path, required=True)
+
+    render_window = subparsers.add_parser("render-current-window")
+    render_window.add_argument("--queue-root", type=Path, required=True)
+    render_window.add_argument("--start-ms", type=int, required=True)
+    render_window.add_argument("--end-ms", type=int, required=True)
 
     cleanup_current = subparsers.add_parser("cleanup-current")
     cleanup_current.add_argument("--queue-root", type=Path, required=True)
@@ -76,6 +82,15 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     if args.command == "render-current":
         render_current_semantic_transcript(queue_root=args.queue_root, output=sys.stdout)
+        return 0
+
+    if args.command == "render-current-window":
+        render_current_semantic_window(
+            queue_root=args.queue_root,
+            start_ms=args.start_ms,
+            end_ms=args.end_ms,
+            output=sys.stdout,
+        )
         return 0
 
     session = cleanup_current_semantic_session(queue_root=args.queue_root)

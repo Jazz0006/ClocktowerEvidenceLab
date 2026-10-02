@@ -196,6 +196,43 @@ def render_semantic_transcript(
     return session
 
 
+def render_current_semantic_window(
+    *,
+    queue_root: str | Path,
+    start_ms: int,
+    end_ms: int,
+    output: TextIO,
+) -> SemanticReviewSession:
+    """Render only current transcript segments overlapping one bounded time window."""
+
+    if start_ms < 0 or end_ms <= start_ms:
+        raise ValueError("semantic transcript window must have 0 <= start_ms < end_ms")
+
+    root = _safe_workspace_root(queue_root) / CURRENT_SESSION_DIRNAME
+    session = _read_required_marker(root)
+    progress = _read_single_progress(root, expected_source_id=session.source_id)
+    if progress.asr_relative_path is None:
+        raise ValueError("semantic session has no ASR transcript path")
+
+    transcript_path = root / progress.asr_relative_path
+    transcript = AsrTranscript.model_validate_json(transcript_path.read_text(encoding="utf-8"))
+    selected = tuple(
+        segment
+        for segment in transcript.segments
+        if segment.end_ms >= start_ms and segment.start_ms <= end_ms
+    )
+
+    output.write(
+        f"# source_id={session.source_id} guid={session.guid} "
+        f"window={_format_ms(start_ms)}-{_format_ms(end_ms)} segments={len(selected)}\n"
+    )
+    for segment in selected:
+        output.write(
+            f"{_format_ms(segment.start_ms)}-{_format_ms(segment.end_ms)}\t{segment.text}\n"
+        )
+    return session
+
+
 def cleanup_semantic_session(*, work_dir: str | Path) -> SemanticReviewSession:
     """Delete only a marked semantic-review workspace, including audio and ASR."""
 
