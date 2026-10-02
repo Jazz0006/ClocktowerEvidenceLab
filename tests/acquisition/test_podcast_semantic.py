@@ -58,6 +58,34 @@ QUEUE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 </rss>
 """
 
+ROLE_PRIORITY_RSS = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Cult of the Clocktower</title>
+    <item>
+      <title>15: Chef (Trouble Brewing)</title>
+      <guid>chef-guid</guid>
+      <enclosure url="https://example.test/chef.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>10: Ravenkeeper (Trouble Brewing)</title>
+      <guid>ravenkeeper-guid</guid>
+      <enclosure url="https://example.test/ravenkeeper.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>12: Monk (Trouble Brewing)</title>
+      <guid>monk-guid</guid>
+      <enclosure url="https://example.test/monk.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>13: Soldier (Trouble Brewing) - With Official Storyteller Jon Gjengset!</title>
+      <guid>soldier-guid</guid>
+      <enclosure url="https://example.test/soldier.mp3" type="audio/mpeg" />
+    </item>
+  </channel>
+</rss>
+"""
+
 
 def test_prepare_reacquires_one_episode_even_when_semantic_read_is_separate_from_prior_state(
     tmp_path, monkeypatch
@@ -392,6 +420,35 @@ def test_prepare_next_prioritizes_drunk_after_imp_is_complete(tmp_path, monkeypa
     )
 
     assert selected == [podcast_semantic.DRUNK_GUID]
+
+
+def test_prepare_next_prioritizes_soldier_by_title_after_guid_priorities(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "queue"
+    root.mkdir(parents=True)
+    monkeypatch.setattr(
+        podcast_semantic,
+        "fetch_rss",
+        lambda *args, **kwargs: ROLE_PRIORITY_RSS,
+    )
+
+    selected = []
+
+    def fake_prepare(*, guid, work_dir, feed_url, timeout_seconds):
+        selected.append(guid)
+        return podcast_semantic.SemanticReviewSession(
+            guid=guid,
+            source_id=f"podcast:{guid}",
+            episode_title="selected",
+        )
+
+    monkeypatch.setattr(podcast_semantic, "prepare_semantic_session", fake_prepare)
+
+    podcast_semantic.prepare_next_semantic_session(
+        queue_root=root,
+        feed_url="https://example.test/feed.xml",
+    )
+
+    assert selected == ["soldier-guid"]
 
 
 def test_cleanup_current_advances_lightweight_queue_state(tmp_path, monkeypatch):

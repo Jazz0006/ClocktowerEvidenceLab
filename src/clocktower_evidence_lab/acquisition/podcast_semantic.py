@@ -35,6 +35,11 @@ INVESTIGATOR_GUID = "5722d8e8-b89d-4067-91ac-1550b8da428d"
 IMP_GUID = "a271357d-10af-4969-8c7e-5545b871b5cb"
 DRUNK_GUID = "bf668470-a3fe-41d3-85e8-d028a63cf593"
 SEMANTIC_REVIEW_PRIORITY_GUIDS = (IMP_GUID, DRUNK_GUID)
+SEMANTIC_REVIEW_PRIORITY_TITLE_PREFIXES = (
+    "13: Soldier (Trouble Brewing)",
+    "12: Monk (Trouble Brewing)",
+    "10: Ravenkeeper (Trouble Brewing)",
+)
 
 
 class _SemanticModel(BaseModel):
@@ -92,7 +97,25 @@ def prepare_next_semantic_session(
         raise ValueError("no unprocessed Trouble Brewing podcast episodes remain")
 
     prioritized = tuple(guid for guid in SEMANTIC_REVIEW_PRIORITY_GUIDS if guid in eligible_guids)
-    guid = prioritized[0] if prioritized else eligible_guids[0]
+    if prioritized:
+        guid = prioritized[0]
+    else:
+        eligible_by_title = {
+            entry.title: entry.guid
+            for entry in manifest.episodes
+            if entry.scope is EpisodeScope.IN_SCOPE
+            and entry.guid is not None
+            and entry.guid in eligible_guids
+        }
+        guid = next(
+            (
+                eligible_by_title[title]
+                for prefix in SEMANTIC_REVIEW_PRIORITY_TITLE_PREFIXES
+                for title in eligible_by_title
+                if title.startswith(prefix)
+            ),
+            eligible_guids[0],
+        )
     return prepare_semantic_session(
         guid=guid,
         work_dir=current,
