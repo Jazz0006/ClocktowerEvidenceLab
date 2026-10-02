@@ -184,6 +184,66 @@ def test_render_outputs_complete_timestamped_transcript_without_writing_second_c
     ]
 
 
+def test_render_current_window_outputs_only_overlapping_segments(tmp_path):
+    root = tmp_path / "semantic" / "queue"
+    current = root / podcast_semantic.CURRENT_SESSION_DIRNAME
+    asr_path = current / "episodes" / "source" / "asr.json"
+    asr_path.parent.mkdir(parents=True)
+    session = podcast_semantic.SemanticReviewSession(
+        guid="guid-window",
+        source_id="podcast:window",
+        episode_title="Window",
+    )
+    (current / podcast_semantic.SESSION_MARKER_FILENAME).write_text(
+        session.model_dump_json(indent=2) + "\n", encoding="utf-8"
+    )
+    (current / podcast_semantic.BATCH_PROGRESS_FILENAME).write_text(
+        podcast_batch.BatchRunResult(
+            progress=(
+                podcast_batch.BatchProgress(
+                    source_id=session.source_id,
+                    acquisition_state=podcast_manifest.AcquisitionState.COMPLETE,
+                    asr_state=podcast_manifest.AsrState.COMPLETE,
+                    payload_relative_path="episodes/source/source.mp3",
+                    payload_sha256="3" * 64,
+                    payload_bytes=123,
+                    asr_relative_path="episodes/source/asr.json",
+                    asr_model="small.en",
+                    asr_segment_count=3,
+                ),
+            ),
+            blocked_items=(),
+        ).model_dump_json(indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    asr_path.write_text(
+        asr.AsrTranscript(
+            model_name="small.en",
+            language="en",
+            language_probability=1.0,
+            segments=(
+                asr.TranscriptSegment(index=0, start_ms=1_000, end_ms=2_000, text="Before."),
+                asr.TranscriptSegment(index=1, start_ms=5_000, end_ms=6_000, text="Inside."),
+                asr.TranscriptSegment(index=2, start_ms=9_000, end_ms=10_000, text="After."),
+            ),
+        ).model_dump_json(indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+
+    output = StringIO()
+    podcast_semantic.render_current_semantic_window(
+        queue_root=root, start_ms=4_500, end_ms=6_500, output=output
+    )
+
+    rendered = output.getvalue()
+    assert "segments=1" in rendered
+    assert "Inside." in rendered
+    assert "Before." not in rendered
+    assert "After." not in rendered
+
+
 def test_cleanup_requires_marker_and_only_removes_marked_workspace(tmp_path):
     unmarked = tmp_path / "semantic" / "unmarked"
     unmarked.mkdir(parents=True)
