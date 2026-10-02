@@ -1,8 +1,8 @@
 # NEXT DEVELOPMENT HANDOFF — C2 Podcast Batch Ingestion + C3 Drunk Candidate Comparison
 
-> Current state: **C2 ACTIVE / C3 HOST-UNBLOCKING LANE ACTIVE / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
+> Current state: **C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
 >
-> Branch: `experiment/investigator-semantic-review`
+> Branch: `c2-storytelling-like-a-pro-semantic-priority`
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 
@@ -81,11 +81,11 @@ The default clear-podcast path is therefore complete ASR -> full-transcript sema
 
 The per-episode Mini MCP task experiment has now been replaced by a fixed EvidenceLab semantic queue contract. EvidenceLab owns episode selection from the fixed Cult of the Clocktower feed and Trouble Brewing scope; Mini MCP only needs reusable `semantic:podcast:prepare-next`, `semantic:podcast:render-current`, and `semantic:podcast:cleanup-current` tasks bound to one external queue root. This removes the need to add Mini MCP task names or restart Mini MCP for each new episode.
 
-A new cross-project evidence dependency from CampBoardGameHost is now recorded as **C3 — Drunk Candidate Comparison / Rejection Evidence**. C3 does not reopen broad Drunk scouting and does not stop C2. It reuses C2C/C2D to target explicit same-prefix comparisons, rejections and conditional preferences. The first acceptance gate is one primary-audio VERIFIED item with a fixed setup/history prefix, candidate A vs candidate B, explicit preference/rejection, rationale and reconstructable assignment-time context.
+The cross-project **C3 — Drunk Candidate Comparison / Rejection Evidence** dependency has now satisfied its first acceptance gate. Q04 is primary-audio VERIFIED with a reconstructable assignment-time condition, Monk vs Empath conditional preference, explicit rationale and trusted provenance. C3 remains available for long-term Drunk evidence, but it no longer stops C2 or blocks the current Host implementation.
 
-The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: `EXPLICIT_ALTERNATIVE` is already P0. The implementation enhancement adds conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions.
+The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: `EXPLICIT_ALTERNATIVE` is already P0. Conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions remains useful for future corpus growth.
 
-The TB snapshot interoperability dependency is now closed for the current Drunk surface. Host TBGS-1 has accepted the EvidenceLab materializer/fixture and independently confirmed the G10 V1 payload byte-for-byte. No persistence migration, legality layer, or policy semantics were added. Host's post-TBGS-1 cutover recheck remains NOT PASSED solely because C3 has no Stage-1 VERIFIED same-prefix candidate comparison/rejection item yet.
+The TB snapshot interoperability dependency is closed for the current Drunk surface. Host TBGS-1 accepted the EvidenceLab materializer/fixture and independently confirmed the G10 V1 payload byte-for-byte. Host has also completed its re-entry audit after Q04; the EvidenceLab blocker is cleared and Host now owns `DRUNK_ASSIGNMENT_Q04_V1 -> replay -> cutover gate re-run`.
 
 Latest known code checkpoint before this documentation sync:
 - production/test HEAD: `4d8da2c4be0eae40570ffea4134d9536bc748a5d`;
@@ -95,15 +95,17 @@ Latest known code checkpoint before this documentation sync:
 
 ## 3. Current task
 
-Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
+Resume **C2 as the primary lane**. C3 Stage 1 is accepted and no longer blocks Host:
 
 - treat the Investigator C2D-S benchmark as accepted for machine-first semantic review assistance;
 - treat the completed Drunk semantic pass as machine review assistance only: Q01 gives strong new-player Monk/Soldier-vs-Ravenkeeper conditional guidance, Q02 gives Empath rejection guidance, and Q03 gives a fixed Chef example, but none alone supplies the strict same-prefix A-vs-B comparison required for Stage 1;
 - treat `Cult of the Clocktower` hosts and episode guests as trusted expert/Storyteller clue sources per project-owner calibration; do not require a separate creator/official title;
 - keep VERIFIED evidence promotion human-confirmed; semantic output remains review assistance rather than automatic evidence promotion;
-- continue automatic C2 batch ingestion rather than pausing for C3;
+- continue automatic C2 batch ingestion without pausing for C3;
 - the targeted `Soldier -> Monk -> Ravenkeeper` role-cluster semantic pass is complete;
 - Q04 (`Monk`, `00:43:28-00:44:30`) was human-confirmed from primary audio on 2026-10-02 and is now **VERIFIED / C3 Stage-1 accepted**;
+- prioritize `4.2: Storytelling Like a Pro` when unprocessed; it is an explicitly curated general Storyteller episode admitted despite an `UNKNOWN` script classifier, not a general cross-script expansion;
+- use complete ASR -> full-transcript semantic understanding -> high-value timestamped findings -> targeted human confirmation only where ambiguity, downstream policy weighting/ranking, or product judgment makes confirmation necessary;
 - use only the bounded Q04 conditional preference in the Host handoff: under the source-described seating/layout condition, Monk may be preferred over the named Empath so healthy Empath information is preserved; do not infer a global role ranking;
 - Q05 (`Ravenkeeper`, `01:06:24-01:06:38`) remains supporting machine-located rejection evidence, not independently Stage-1 qualifying;
 - treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field.
@@ -172,7 +174,8 @@ Host TBGS-0 contract                         COMPLETE / ACCEPTED
     -> pure materializer + deterministic V1 serialization COMPLETE / GREEN
     -> G10 cross-project golden fixture      COMPLETE / exact Host match
     -> Host TBGS-1 consumption               COMPLETE / ACCEPTED
-    -> post-TBGS-1 cutover gate              NOT PASSED / BLOCKED ON C3 VERIFIED EVIDENCE
+    -> C3-Q04 evidence re-entry               COMPLETE / BLOCKER CLEARED
+    -> Host Q04 predicate/replay/cutover      OWNED BY HOST
 ```
 
 Use the existing manifest, batch runner and ASR adapter. Do not add a persistence migration merely for snapshot interoperability or temporary acquisition artifacts.

@@ -35,6 +35,7 @@ INVESTIGATOR_GUID = "5722d8e8-b89d-4067-91ac-1550b8da428d"
 IMP_GUID = "a271357d-10af-4969-8c7e-5545b871b5cb"
 DRUNK_GUID = "bf668470-a3fe-41d3-85e8-d028a63cf593"
 SEMANTIC_REVIEW_PRIORITY_GUIDS = (IMP_GUID, DRUNK_GUID)
+SEMANTIC_REVIEW_CURATED_UNKNOWN_TITLE_PREFIXES = ("4.2: Storytelling Like a Pro",)
 SEMANTIC_REVIEW_PRIORITY_TITLE_PREFIXES = (
     "13: Soldier (Trouble Brewing)",
     "12: Monk (Trouble Brewing)",
@@ -86,27 +87,44 @@ def prepare_next_semantic_session(
     episodes = parse_podcast_rss(rss, feed_url=feed_url)
     manifest = build_episode_manifest(episodes)
     completed = set(state.completed_guids)
-    eligible_guids = tuple(
-        entry.guid
+    eligible_entries = tuple(
+        entry
         for entry in manifest.episodes
-        if entry.scope is EpisodeScope.IN_SCOPE
-        and entry.guid is not None
+        if entry.guid is not None
         and entry.guid not in completed
+        and (
+            entry.scope is EpisodeScope.IN_SCOPE
+            or (
+                entry.scope is EpisodeScope.UNKNOWN
+                and any(
+                    entry.title.startswith(prefix)
+                    for prefix in SEMANTIC_REVIEW_CURATED_UNKNOWN_TITLE_PREFIXES
+                )
+            )
+        )
     )
+    eligible_guids = tuple(entry.guid for entry in eligible_entries if entry.guid is not None)
     if not eligible_guids:
         raise ValueError("no unprocessed Trouble Brewing podcast episodes remain")
 
+    eligible_by_title = {
+        entry.title: entry.guid for entry in eligible_entries if entry.guid is not None
+    }
+    curated_guid = next(
+        (
+            eligible_by_title[title]
+            for prefix in SEMANTIC_REVIEW_CURATED_UNKNOWN_TITLE_PREFIXES
+            for title in eligible_by_title
+            if title.startswith(prefix)
+        ),
+        None,
+    )
     prioritized = tuple(guid for guid in SEMANTIC_REVIEW_PRIORITY_GUIDS if guid in eligible_guids)
-    if prioritized:
+    if curated_guid is not None:
+        guid = curated_guid
+    elif prioritized:
         guid = prioritized[0]
     else:
-        eligible_by_title = {
-            entry.title: entry.guid
-            for entry in manifest.episodes
-            if entry.scope is EpisodeScope.IN_SCOPE
-            and entry.guid is not None
-            and entry.guid in eligible_guids
-        }
         guid = next(
             (
                 eligible_by_title[title]

@@ -1,8 +1,8 @@
 # C3 — Drunk Candidate Comparison Primary-Audio Review Queue — 2026-09-30
 
-> Status: **TARGETED MACHINE-REVIEWED QUEUE — STRICT STAGE-1 STILL OPEN**
+> Status: **C3 STAGE-1 ACCEPTED — LONG-TERM SUPPORTING QUEUE REMAINS**
 >
-> Purpose: minimize primary-audio review needed to find the first C3 Stage-1 item. This queue reuses retained Drunk-podcast ASR/scout results; it does not reopen broad Drunk scouting.
+> Purpose: preserve the targeted machine-reviewed Drunk candidate queue and its supporting leads. Q04 has already satisfied C3 Stage 1; remaining items may enrich the long-term corpus but no longer block Host or preempt the broader C2 podcast lane.
 
 ## Source
 

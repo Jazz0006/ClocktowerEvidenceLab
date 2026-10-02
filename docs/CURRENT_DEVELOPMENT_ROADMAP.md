@@ -1,8 +1,8 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 TARGETED LANE ACTIVE / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
 >
-> Current task: **C3 — Drunk Candidate Comparison / Rejection Evidence** is now the concrete Host-unblocking lane, while **C2 — Trouble Brewing Podcast Batch Ingestion** continues in parallel. Host TBGS-1 has accepted the shared snapshot seam; no further snapshot engineering is required before C3 produces the first Stage-1 VERIFIED comparison/rejection item.
+> Current task: **C2 — Trouble Brewing Podcast Batch Ingestion** is again the primary EvidenceLab lane. C3-Q04 is VERIFIED / Stage-1 accepted and has already cleared the current Host evidence blocker; additional Drunk guidance remains valuable corpus material but no longer blocks Host development.
 
 ## 1. Program objective
 
@@ -136,7 +136,7 @@ Oracle VM temporary audio
 
 Full-episode human listening is no longer the default for every clear podcast episode. It remains available for low-confidence ASR, attribution problems, semantic conflicts, or sampled QA.
 
-The semantic workflow is now queue-owned by EvidenceLab rather than episode-owned by Mini MCP. A fixed external queue root stores only completed GUIDs plus one marker-gated `current` workspace. `prepare-next` selects the next in-scope Trouble Brewing episode from the fixed feed, `render-current` streams its complete transcript, and `cleanup-current` deletes the temporary media/ASR before advancing the lightweight queue state. Investigator, Imp, `4.1: Trouble Brewing Revisited`, Drunk, Soldier, Monk, and Ravenkeeper semantic passes are complete. The role-cluster pass found Q04 in the Monk episode as the strongest conditional-preference candidate: under a reconstructable seating/layout condition, Monk is preferred as the Drunk so named information roles such as Empath can retain healthy information. Ravenkeeper adds independent healthy-preservation/rejection guidance (Q05) but no replacement candidate. The next C3 action is bounded primary-audio verification of Q04 rather than broader role scouting.
+The semantic workflow is now queue-owned by EvidenceLab rather than episode-owned by Mini MCP. A fixed external queue root stores only completed GUIDs plus one marker-gated `current` workspace. `prepare-next` selects the next semantic-eligible episode from the fixed feed, `render-current` streams its complete transcript, and `cleanup-current` deletes the temporary media/ASR before advancing the lightweight queue state. Investigator, Imp, `4.1: Trouble Brewing Revisited`, Drunk, Soldier, Monk, and Ravenkeeper semantic passes are complete. Q04 in the Monk episode is now human-verified and Stage-1 accepted. With the Host blocker cleared, the queue returns to high-value C2 collection; the explicitly curated general episode `4.2: Storytelling Like a Pro` is prioritized when unprocessed because it is Storyteller-focused despite lacking a Trouble Brewing label. This is a narrow curated exception, not a general cross-script scope expansion.
 
 ### C2E — evidence promotion
 
@@ -144,7 +144,7 @@ After primary-audio review, save concise provenance-backed expert-guidance evide
 
 Authority: `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`.
 
-## 5. C3 — Drunk Candidate Comparison / Rejection Evidence — ACTIVE TARGETED LANE
+## 5. C3 — Drunk Candidate Comparison / Rejection Evidence — STAGE-1 ACCEPTED
 
 CampBoardGameHost's Drunk-assignment production cutover audit established a concrete downstream gap: execution infrastructure is ready, but Beginner automatic assignment still lacks source-backed semantics for comparing or rejecting legal Drunk candidates under one fixed setup/history prefix.
 
@@ -213,17 +213,16 @@ Authorities:
 
 ## 8. Immediate next action
 
-Continue acquisition and interoperability as compatible lanes without interrupting C2:
+Resume C2 as the primary collection lane:
 
-1. run the **C2D-S Investigator full-transcript semantic benchmark** on the Oracle VM, extract the key Storyteller considerations independently, and compare them against the user's already-completed full-episode listening;
-2. preserve the existing human VERIFIED gate while evaluating benchmark recall/precision and any speaker/context failures; if the benchmark is strong, design the next bounded policy change as machine-first semantic review plus human sampling/ambiguity review rather than silently changing verification;
-3. continue C2 automatic batch ingestion for remaining Trouble Brewing-relevant podcast material;
-4. apply the C3 locator enhancement to new/reprocessed C2C extraction so explicit candidate rejection/preference and conditional Drunk-assignment windows reach bounded review;
-5. treat EL-TBGS-0/1 as closed unless a later bounded TB decision surface requires a schema extension;
-6. review **C3-Q01 first** (`02:04:10–02:07:39`, about 3m29s); if it satisfies the Stage-1 VERIFIED structure, stop the C3 search and prepare the Host handoff immediately;
-7. only if Q01 fails, review Q02 then Q03; where the evidence prefix is sufficient, include the standard snapshot alongside the evidence decision/provenance package.
+1. if `4.2: Storytelling Like a Pro` has not yet been processed, acquire its full audio/ASR into the external temporary workspace and run full-transcript machine semantic review first;
+2. extract high-value Storyteller guidance across setup/role assignment, misinformation, registration, Demon bluffs, information strength, cross-night consistency, player experience, star pass / ability preservation, public claims / evil narrative, and explicit alternatives/rejected choices;
+3. ask for bounded human primary-audio confirmation only where meaning is ambiguous, would materially alter downstream policy weighting/ranking, or requires product-goal judgment;
+4. clean the full audio/transcript workspace after analysis and retain only lightweight provenance-backed findings in Git;
+5. continue with the remaining high-density Trouble Brewing-relevant episodes after `4.2`, while allowing new Drunk guidance to enter the long-term corpus without blocking Host;
+6. treat EL-TBGS-0/1 and C3 Stage 1 as accepted/closed for the current Host blocker unless a new bounded downstream gap appears.
 
-Keep broad C1 Drunk scouting stopped. C3 is the concrete downstream evidence dependency and must stay comparison/rejection-focused. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
+Keep broad quota-driven C1 scouting stopped. Additional Drunk evidence is welcome as ordinary corpus growth, not as a reason to pause C2. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
 
 ## 9. Deferred
 
