@@ -150,26 +150,28 @@ Do not reinterpret the above conditional guidance as Stage-1 completion. Continu
 
 These episodes are prioritized because Q01 already establishes Soldier/Monk/Ravenkeeper as the strongest comparative cluster. Search them specifically for concrete setup examples, named rejected alternatives, and explicit assignment rationale. Stop immediately if one human-verifiable same-prefix A-vs-B item is found.
 
-### C3-Q04 — Monk conditional-preference lead
+### C3-Q04 — Monk conditional-preference evidence — VERIFIED
 
 **Window:** `00:43:28–00:44:30` in `12: Monk (Trouble Brewing)`  
-**Status:** **TOP HUMAN-REVIEW CANDIDATE / MACHINE ASR ONLY**
+**Source ID:** `podcast:91574d66c261bb0dd8bcb08469531a9c`  
+**GUID:** `e8241f55-824b-4dc5-8314-db398b5ece55`  
+**Status:** **VERIFIED / C3 STAGE-1 ACCEPTED**
 
-Machine-located meaning:
+Human primary-audio review on 2026-10-02 confirmed the machine-located meaning:
 
-- the guest says she does not choose the Drunk until she has looked at the seating/layout;
-- she gives a concrete assignment-time condition: an Empath seated between two Good players and away from the Demon;
-- under that layout she says a Drunk Monk can be the best place to put the Drunk;
-- the stated tradeoff is to preserve truthful information for the information roles while using Monk as the Drunk candidate instead.
+- the Storyteller does not choose the Drunk until after inspecting the seating/layout;
+- the source gives a concrete assignment-time condition: an Empath seated between two Good players and away from the Demon;
+- under that condition, a Drunk Monk can be the preferred place to assign the Drunk;
+- the explicit tradeoff is to preserve healthy information for the named Empath / information roles while assigning the Drunk cost to Monk instead.
 
 C3 significance:
 
 - trusted-source provenance is accepted for this podcast host/guest population;
-- the passage appears to supply a reconstructable assignment-time condition;
-- Monk is explicitly preferred while information-role candidates are explicitly preserved from Drunk assignment, with Empath named in the condition;
-- the rationale is source-backed: preserve useful healthy information when Evil already has an advantageous setup.
+- candidate A is Monk and candidate B is the named Empath under the described assignment-time condition;
+- the preference and rationale are explicit;
+- the evidence is bounded and must not be generalized into a global Monk > Empath ranking.
 
-This is therefore the strongest current candidate for the **conditional-preference** evidence shape in C3 §3. It must still be checked against the primary audio for speaker attribution and exact wording/meaning before VERIFIED promotion and Host handoff.
+This item satisfies the accepted **conditional-preference** evidence shape and closes C3 Stage 1. The bounded Host handoff is recorded in `docs/C3_Q04_VERIFIED_MONK_CONDITIONAL_PREFERENCE_HANDOFF_2026-10-02.md`.
 
 ### C3-Q05 — Ravenkeeper healthy-preservation rejection lead
 

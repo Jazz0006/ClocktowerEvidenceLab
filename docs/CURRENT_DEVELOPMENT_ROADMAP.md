@@ -171,7 +171,9 @@ fixed setup/history prefix
 + reconstructable assignment-time context
 ```
 
-Once that exists, prepare an immediate EvidenceLab -> CampBoardGameHost handoff so the Host can test a first bounded, versioned Drunk production-policy predicate.
+**C3 Stage 1 is now SATISFIED** by Q04 (`12: Monk`, `00:43:28–00:44:30`), human-confirmed from primary audio on 2026-10-02. The bounded evidence authorizes only the described conditional preference: under the source-described seating/layout condition, prefer Monk over the named Empath as the Drunk so healthy Empath information is preserved. It does not authorize a global Monk > Empath ranking.
+
+The EvidenceLab -> CampBoardGameHost handoff is recorded in `docs/C3_Q04_VERIFIED_MONK_CONDITIONAL_PREFERENCE_HANDOFF_2026-10-02.md`; Host may now test a first bounded, versioned Drunk production-policy predicate and rerun its cutover gate.
 
 Do not infer rankings over unmentioned candidates, do not infer rules from outcomes, and do not encode legality or recommendation policy here. C5 / `BEGINNER_CONSERVATIVE_V2` remains a separate gate.
 
@@ -192,7 +194,7 @@ Host TBGS-0 contract                           COMPLETE / ACCEPTED
 
 The implementation preserves event sourcing as authority, adds no legality/policy, and requires no persistence migration. The historical expert choice/rationale/provenance stays outside the pre-decision snapshot. `gameSeed` and role-type classification are explicit non-evidence projection metadata rather than invented historical facts or EvidenceLab-owned legality.
 
-Host TBGS-1 has now consumed/validated the same G10 V1 semantics, independently derived the legal Drunk domain, and accepted the cross-project seam. Host's post-TBGS-1 cutover recheck is still NOT PASSED solely because C3 has not yet produced a Stage-1 VERIFIED same-prefix comparison/rejection item and therefore no production-capable versioned Drunk policy is authorized.
+Host TBGS-1 has now consumed/validated the same G10 V1 semantics, independently derived the legal Drunk domain, and accepted the cross-project seam. The former evidence blocker is now cleared by VERIFIED C3-Q04. EvidenceLab has handed off one bounded conditional preference; Host must independently map it onto the accepted decision context, define a versioned predicate, replay it, and rerun the production cutover gate before any automatic authority changes.
 
 Authorities:
 

@@ -102,8 +102,10 @@ Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that 
 - treat `Cult of the Clocktower` hosts and episode guests as trusted expert/Storyteller clue sources per project-owner calibration; do not require a separate creator/official title;
 - keep VERIFIED evidence promotion human-confirmed; semantic output remains review assistance rather than automatic evidence promotion;
 - continue automatic C2 batch ingestion rather than pausing for C3;
-- the targeted `Soldier -> Monk -> Ravenkeeper` role-cluster semantic pass is complete; Q04 (`Monk`, `00:43:28-00:44:30`) is now the top Stage-1 human-review candidate, and Q05 (`Ravenkeeper`, `01:06:24-01:06:38`) is supporting rejection evidence;
-- verify Q04 from primary audio next; if the machine interpretation is confirmed, prepare the EvidenceLab -> CampBoardGameHost Stage-1 handoff immediately rather than continuing broad scouting;
+- the targeted `Soldier -> Monk -> Ravenkeeper` role-cluster semantic pass is complete;
+- Q04 (`Monk`, `00:43:28-00:44:30`) was human-confirmed from primary audio on 2026-10-02 and is now **VERIFIED / C3 Stage-1 accepted**;
+- use only the bounded Q04 conditional preference in the Host handoff: under the source-described seating/layout condition, Monk may be preferred over the named Empath so healthy Empath information is preserved; do not infer a global role ranking;
+- Q05 (`Ravenkeeper`, `01:06:24-01:06:38`) remains supporting machine-located rejection evidence, not independently Stage-1 qualifying;
 - treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field.
 
 Goal:

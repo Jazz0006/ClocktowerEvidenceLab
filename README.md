@@ -100,7 +100,7 @@ C2 keeps the evidence boundary explicit:
 - primary-audio review promotes only concise provenance-backed guidance;
 - podcasts complement, but do not replace, whole-game reconstruction/replay evidence.
 
-The first TB-only interoperability slice is now **cross-project accepted**. Host TBGS-1 consumed the EvidenceLab G10 snapshot seam, independently derived the legal Drunk domain, and confirmed the V1 fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store. The remaining Host blocker is not engineering: C3 still needs one primary-audio VERIFIED same-prefix candidate comparison/rejection with rationale.
+The first TB-only interoperability slice is now **cross-project accepted**. Host TBGS-1 consumed the EvidenceLab G10 snapshot seam, independently derived the legal Drunk domain, and confirmed the V1 fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store. C3 Stage 1 is now satisfied by human-verified Q04 from the Monk podcast episode; EvidenceLab has handed off one bounded conditional Drunk preference to Host for independent policy mapping, replay, and cutover recheck.
 
 Start with:
 
