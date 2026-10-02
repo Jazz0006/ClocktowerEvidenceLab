@@ -40,6 +40,11 @@ QUEUE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
       <enclosure url="https://example.test/chef.mp3" type="audio/mpeg" />
     </item>
     <item>
+      <title>16: Drunk (Trouble Brewing)</title>
+      <guid>bf668470-a3fe-41d3-85e8-d028a63cf593</guid>
+      <enclosure url="https://example.test/drunk.mp3" type="audio/mpeg" />
+    </item>
+    <item>
       <title>22: Imp (Trouble Brewing)</title>
       <guid>a271357d-10af-4969-8c7e-5545b871b5cb</guid>
       <enclosure url="https://example.test/imp.mp3" type="audio/mpeg" />
@@ -294,6 +299,41 @@ def test_prepare_next_uses_fixed_tb_queue_and_prioritizes_imp(tmp_path, monkeypa
     ]
 
 
+def test_prepare_next_prioritizes_drunk_after_imp_is_complete(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "queue"
+    root.mkdir(parents=True)
+    (root / podcast_semantic.QUEUE_STATE_FILENAME).write_text(
+        podcast_semantic.SemanticReviewQueueState(
+            completed_guids=(
+                podcast_semantic.INVESTIGATOR_GUID,
+                podcast_semantic.IMP_GUID,
+            )
+        ).model_dump_json(indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(podcast_semantic, "fetch_rss", lambda *args, **kwargs: QUEUE_RSS)
+
+    selected = []
+
+    def fake_prepare(*, guid, work_dir, feed_url, timeout_seconds):
+        selected.append(guid)
+        return podcast_semantic.SemanticReviewSession(
+            guid=guid,
+            source_id=f"podcast:{guid}",
+            episode_title="selected",
+        )
+
+    monkeypatch.setattr(podcast_semantic, "prepare_semantic_session", fake_prepare)
+
+    podcast_semantic.prepare_next_semantic_session(
+        queue_root=root,
+        feed_url="https://example.test/feed.xml",
+    )
+
+    assert selected == [podcast_semantic.DRUNK_GUID]
+
+
 def test_cleanup_current_advances_lightweight_queue_state(tmp_path, monkeypatch):
     root = tmp_path / "semantic" / "queue"
     current = root / podcast_semantic.CURRENT_SESSION_DIRNAME
@@ -330,6 +370,7 @@ def test_prepare_next_skips_completed_and_out_of_scope_entries(tmp_path, monkeyp
             completed_guids=(
                 podcast_semantic.INVESTIGATOR_GUID,
                 podcast_semantic.IMP_GUID,
+                podcast_semantic.DRUNK_GUID,
             )
         ).model_dump_json(indent=2)
         + "\n",
