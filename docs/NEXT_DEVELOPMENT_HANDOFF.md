@@ -98,13 +98,12 @@ Latest known code checkpoint before this documentation sync:
 Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
 
 - treat the Investigator C2D-S benchmark as accepted for machine-first semantic review assistance;
-- continue the fixed semantic queue workflow after completed Investigator, Imp, and `4.1: Trouble Brewing Revisited` semantic reviews; prioritize `16: Drunk (Trouble Brewing)` next because C3 is the direct Host-unblocking lane, using targeted human verification instead of routine full-episode listening;
+- treat the completed Drunk semantic pass as machine review assistance only: Q01 gives strong new-player Monk/Soldier-vs-Ravenkeeper conditional guidance, Q02 gives Empath rejection guidance, and Q03 gives a fixed Chef example, but none supplies the strict same-prefix A-vs-B comparison required for Stage 1;
 - keep VERIFIED evidence promotion human-confirmed; semantic output remains review assistance rather than automatic evidence promotion;
 - continue automatic C2 batch ingestion rather than pausing for C3;
 - route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
 - treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field;
-- review `C3-Q01` first (`02:04:10–02:07:39`, about 3m29s); if it is Stage-1 qualifying, stop the C3 search and prepare the Host handoff immediately;
-- if Q01 fails, review Q02 then Q03; include the standard snapshot when the evidence prefix is sufficient.
+- after cleaning the Drunk temporary workspace, use the fixed semantic queue to review `13: Soldier`, then `12: Monk`, then `10: Ravenkeeper`; stop immediately on the first human-verifiable same-prefix A-vs-B item and prepare the Host handoff.
 
 Goal:
 

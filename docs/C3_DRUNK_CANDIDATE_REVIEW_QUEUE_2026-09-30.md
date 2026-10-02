@@ -1,6 +1,6 @@
 # C3 — Drunk Candidate Comparison Primary-Audio Review Queue — 2026-09-30
 
-> Status: **TARGETED MACHINE-LOCATED QUEUE — NOT VERIFIED C3 EVIDENCE**
+> Status: **TARGETED MACHINE-REVIEWED QUEUE — STRICT STAGE-1 STILL OPEN**
 >
 > Purpose: minimize primary-audio review needed to find the first C3 Stage-1 item. This queue reuses retained Drunk-podcast ASR/scout results; it does not reopen broad Drunk scouting.
 
@@ -111,3 +111,39 @@ reconstructable assignment context
 Unmentioned alternatives remain `UNKNOWN`.
 
 Machine ASR, this queue, and prior scout paraphrases remain acquisition aids only.
+
+## 2026-10-02 machine semantic disposition
+
+The complete Drunk episode was reacquired and transcribed with `small.en` into **1,623 timestamped segments** outside Git. A bounded machine review of Q01/Q02/Q03 and a broader decision-language scan produced the following disposition. These are **NOT VERIFIED C3 evidence** and do not relax the Stage-1 gate.
+
+### Q01 disposition — strong conditional comparison, insufficient fixed prefix
+
+The source gives a clear experience-conditioned contrast:
+
+- in small/new-player games, Drunk Monk or Drunk Soldier can be useful because Outsider-count reasoning exposes the existence of a Drunk without forcing active misinformation chaos;
+- Drunk Ravenkeeper is explicitly not recommended for a new-player game because a new Ravenkeeper who successfully earns a night death has played well and should be rewarded with useful information;
+- veteran Ravenkeepers may be treated much more harshly.
+
+This is strong creator-level conditional guidance, but the reviewed passage is not one reconstructable concrete setup/history prefix in which candidate A and candidate B are explicitly compared before a single assignment. **Stage 1 remains open.**
+
+### Q02 disposition — explicit Empath rejection guidance, missing alternative
+
+The source says an Empath sitting next to two Evil players does not automatically need to be made Drunk: receiving `2` often makes the Empath distrust the result already. This is explicit rejection-shaped guidance with rationale, but no named alternative candidate is supplied under the same assignment context. **Stage 1 remains open.**
+
+### Q03 disposition — fixed Chef example with rationale, missing alternative
+
+The source gives a concrete two-Minion seating example where Chef was made Drunk because a false Chef `2` would create an interesting and plausible wrong world across the actual spacing of Evil/Recluse registrations. The episode also contrasts Chef's guaranteed information event with roles whose Drunk ability may never materially fire. However, the concrete example does not name or reject a second Drunk candidate in that same fixed setup. **Stage 1 remains open.**
+
+### Broader episode scan
+
+A full decision-language scan also recovered strong qualitative guidance for Investigator, Washerwoman, Undertaker, Virgin, Slayer and Mayor, plus a general setup-first principle: choose the Drunk by looking at the setup and what produces the most interesting game, not by a fixed role ranking. No reviewed segment cleanly supplied the required same-prefix `candidate A vs candidate B` evidence.
+
+## Next targeted semantic search
+
+Do not reinterpret the above conditional guidance as Stage-1 completion. Continue the fixed Cult-of-the-Clocktower semantic queue with the most relevant role episodes:
+
+1. `13: Soldier (Trouble Brewing)` — highest priority; guest is an official Storyteller;
+2. `12: Monk (Trouble Brewing)`;
+3. `10: Ravenkeeper (Trouble Brewing)`.
+
+These episodes are prioritized because Q01 already establishes Soldier/Monk/Ravenkeeper as the strongest comparative cluster. Search them specifically for concrete setup examples, named rejected alternatives, and explicit assignment rationale. Stop immediately if one human-verifiable same-prefix A-vs-B item is found.
