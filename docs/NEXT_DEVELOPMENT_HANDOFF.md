@@ -98,7 +98,7 @@ Latest known code checkpoint before this documentation sync:
 Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
 
 - treat the Investigator C2D-S benchmark as accepted for machine-first semantic review assistance;
-- run the fixed semantic queue workflow across additional clear Trouble Brewing podcast episodes, beginning with Imp, using targeted human verification instead of routine full-episode listening;
+- continue the fixed semantic queue workflow after completed Investigator, Imp, and `4.1: Trouble Brewing Revisited` semantic reviews; prioritize `16: Drunk (Trouble Brewing)` next because C3 is the direct Host-unblocking lane, using targeted human verification instead of routine full-episode listening;
 - keep VERIFIED evidence promotion human-confirmed; semantic output remains review assistance rather than automatic evidence promotion;
 - continue automatic C2 batch ingestion rather than pausing for C3;
 - route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
