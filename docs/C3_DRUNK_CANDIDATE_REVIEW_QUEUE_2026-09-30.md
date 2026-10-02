@@ -97,6 +97,8 @@ Review Q01 first. If Q01 already satisfies the C3 Stage-1 structure, stop the C3
 
 ## Stage-1 promotion gate
 
+For the `Cult of the Clocktower` series, the host and episode guests are accepted by the project owner as trusted expert/Storyteller clue sources. Do not downgrade a candidate merely because the speaker lacks a separate creator / official-Storyteller title. Source meaning/context still requires primary-audio human confirmation before VERIFIED promotion.
+
 A qualifying item must be human-confirmed from primary audio as:
 
 ```text
@@ -105,7 +107,7 @@ reconstructable assignment context
 + explicit preference or rejection
 + source-backed rationale
 + primary-source timestamp
-+ qualified Storyteller / creator provenance
++ trusted-source provenance
 ```
 
 Unmentioned alternatives remain `UNKNOWN`.
@@ -147,3 +149,24 @@ Do not reinterpret the above conditional guidance as Stage-1 completion. Continu
 3. `10: Ravenkeeper (Trouble Brewing)`.
 
 These episodes are prioritized because Q01 already establishes Soldier/Monk/Ravenkeeper as the strongest comparative cluster. Search them specifically for concrete setup examples, named rejected alternatives, and explicit assignment rationale. Stop immediately if one human-verifiable same-prefix A-vs-B item is found.
+
+### C3-Q04 — Monk conditional-preference lead
+
+**Window:** `00:43:28–00:44:30` in `12: Monk (Trouble Brewing)`  
+**Status:** **TOP HUMAN-REVIEW CANDIDATE / MACHINE ASR ONLY**
+
+Machine-located meaning:
+
+- the guest says she does not choose the Drunk until she has looked at the seating/layout;
+- she gives a concrete assignment-time condition: an Empath seated between two Good players and away from the Demon;
+- under that layout she says a Drunk Monk can be the best place to put the Drunk;
+- the stated tradeoff is to preserve truthful information for the information roles while using Monk as the Drunk candidate instead.
+
+C3 significance:
+
+- trusted-source provenance is accepted for this podcast host/guest population;
+- the passage appears to supply a reconstructable assignment-time condition;
+- Monk is explicitly preferred while information-role candidates are explicitly preserved from Drunk assignment, with Empath named in the condition;
+- the rationale is source-backed: preserve useful healthy information when Evil already has an advantageous setup.
+
+This is therefore the strongest current candidate for the **conditional-preference** evidence shape in C3 §3. It must still be checked against the primary audio for speaker attribution and exact wording/meaning before VERIFIED promotion and Host handoff.

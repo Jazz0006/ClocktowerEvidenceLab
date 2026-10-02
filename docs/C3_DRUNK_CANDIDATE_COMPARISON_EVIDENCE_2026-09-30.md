@@ -54,7 +54,7 @@ Each promoted C3 comparison must preserve, as evidence permits:
 - explicitly compared or rejected alternatives;
 - concise source-backed rationale;
 - the assignment-time context actually invoked by that rationale;
-- Storyteller / creator provenance;
+- trusted expert / Storyteller source provenance;
 - primary-source timestamp or timestamp range;
 - derivation and verification state.
 
@@ -90,7 +90,7 @@ These rules still produce machine candidates only. C2D continues to treat `EXPLI
 
 ## 7. Stage-1 acceptance condition
 
-C3 Stage 1 succeeds when at least one item is **human-verified from primary audio** with all of:
+For `Cult of the Clocktower`, the project owner accepts the host and episode guests as trusted expert/Storyteller clue sources; do not require a separate creator/official title for C3 source qualification. C3 Stage 1 succeeds when at least one item is **human-verified from primary audio** with all of:
 
 ```text
 fixed setup/history prefix
