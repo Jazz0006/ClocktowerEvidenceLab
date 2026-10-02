@@ -102,7 +102,7 @@ fixed setup/history prefix
 
 Sample count is not the gate.
 
-As soon as the first qualifying evidence item is VERIFIED, prepare an EvidenceLab -> CampBoardGameHost handoff containing only the evidence/provenance needed for the Host to evaluate a first bounded, versioned Drunk production-policy predicate and rerun its production cutover gate. If the TB snapshot materializer is already available and the assignment-time prefix is sufficient, include the standard `TroubleBrewingGameSnapshotV1`-compatible snapshot alongside the decision/provenance package; do not delay evidence handoff solely to manufacture a snapshot from incomplete history.
+C3 Stage 1 is now **SATISFIED** by human-verified Q04 from `12: Monk (Trouble Brewing)`, `00:43:28–00:44:30`. The accepted handoff is bounded to the source-described conditional preference and is recorded in `docs/C3_Q04_VERIFIED_MONK_CONDITIONAL_PREFERENCE_HANDOFF_2026-10-02.md`. CampBoardGameHost may now evaluate a first bounded, versioned Drunk production-policy predicate and rerun its production cutover gate. The standard snapshot remains the transport boundary; do not broaden Q04 into a global ranking or manufacture missing historical state.
 
 ## 8. Retrospective audit of existing C1 evidence
 
