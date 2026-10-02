@@ -98,12 +98,13 @@ Latest known code checkpoint before this documentation sync:
 Keep **C2 and C3 moving in parallel**; C3 is now the only EvidenceLab lane that can unblock the current Host Drunk production-policy gate:
 
 - treat the Investigator C2D-S benchmark as accepted for machine-first semantic review assistance;
-- treat the completed Drunk semantic pass as machine review assistance only: Q01 gives strong new-player Monk/Soldier-vs-Ravenkeeper conditional guidance, Q02 gives Empath rejection guidance, and Q03 gives a fixed Chef example, but none supplies the strict same-prefix A-vs-B comparison required for Stage 1;
+- treat the completed Drunk semantic pass as machine review assistance only: Q01 gives strong new-player Monk/Soldier-vs-Ravenkeeper conditional guidance, Q02 gives Empath rejection guidance, and Q03 gives a fixed Chef example, but none alone supplies the strict same-prefix A-vs-B comparison required for Stage 1;
+- treat `Cult of the Clocktower` hosts and episode guests as trusted expert/Storyteller clue sources per project-owner calibration; do not require a separate creator/official title;
 - keep VERIFIED evidence promotion human-confirmed; semantic output remains review assistance rather than automatic evidence promotion;
 - continue automatic C2 batch ingestion rather than pausing for C3;
-- route newly found explicit Drunk candidate comparisons/rejections through the same C2C -> C2D -> human verification path;
-- treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field;
-- after cleaning the Drunk temporary workspace, use the fixed semantic queue to review `13: Soldier`, then `12: Monk`, then `10: Ravenkeeper`; stop immediately on the first human-verifiable same-prefix A-vs-B item and prepare the Host handoff.
+- the targeted `Soldier -> Monk -> Ravenkeeper` role-cluster semantic pass is complete; Q04 (`Monk`, `00:43:28-00:44:30`) is now the top Stage-1 human-review candidate, and Q05 (`Ravenkeeper`, `01:06:24-01:06:38`) is supporting rejection evidence;
+- verify Q04 from primary audio next; if the machine interpretation is confirmed, prepare the EvidenceLab -> CampBoardGameHost Stage-1 handoff immediately rather than continuing broad scouting;
+- treat EL-TBGS-0/1 as accepted/closed unless a later bounded TB surface requires another field.
 
 Goal:
 

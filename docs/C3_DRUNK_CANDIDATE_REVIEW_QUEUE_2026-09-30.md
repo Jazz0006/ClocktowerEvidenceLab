@@ -170,3 +170,30 @@ C3 significance:
 - the rationale is source-backed: preserve useful healthy information when Evil already has an advantageous setup.
 
 This is therefore the strongest current candidate for the **conditional-preference** evidence shape in C3 §3. It must still be checked against the primary audio for speaker attribution and exact wording/meaning before VERIFIED promotion and Host handoff.
+
+### C3-Q05 — Ravenkeeper healthy-preservation rejection lead
+
+**Window:** `01:06:24–01:06:38` in `10: Ravenkeeper (Trouble Brewing)`  
+**Status:** **SECONDARY HUMAN-REVIEW CANDIDATE / MACHINE ASR ONLY**
+
+Machine-located meaning:
+
+- the guest says that when a Drunk is in the game, he likes having a Ravenkeeper who is **not** the Drunk;
+- the stated reason is that a healthy Ravenkeeper can legitimately identify another player as the Drunk, creating a useful interaction;
+- this is explicit rejection-shaped evidence for making the Ravenkeeper the Drunk under that condition.
+
+C3 significance:
+
+- trusted-source provenance is accepted for this podcast host/guest population;
+- the reason for preserving Ravenkeeper healthy is explicit;
+- however, the passage does not name the alternative Drunk candidate that should be selected instead, so Q05 alone does **not** satisfy the strict Stage-1 A-vs-B gate.
+
+### Role-cluster semantic scout result
+
+The targeted `Soldier -> Monk -> Ravenkeeper` semantic pass is now complete:
+
+- `Soldier`: useful setup guidance and Drunk-Soldier discussion, but no same-context candidate comparison;
+- `Monk`: Q04 supplies the strongest conditional-preference shape and is the current Stage-1 human-review target;
+- `Ravenkeeper`: Q05 supplies explicit healthy-preservation / rejection guidance but no named replacement candidate.
+
+The next action is therefore **not** broader role scouting. Perform bounded primary-audio verification of Q04 first. If Q04 confirms the machine interpretation, prepare the EvidenceLab -> CampBoardGameHost Stage-1 handoff immediately; keep Q05 as supporting independent evidence.
