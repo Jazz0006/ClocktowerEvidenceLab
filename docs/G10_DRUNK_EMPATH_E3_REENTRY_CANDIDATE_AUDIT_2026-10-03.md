@@ -51,20 +51,17 @@ historical Drunk Empath
 
 ## Current verdict
 
-**Do not mark E3 PASS yet.**
+**E3 FAIL under the current strict Gap-B contract; retain as strong supporting evidence.**
 
-This is now the strongest known low-cost re-entry candidate for Gap B, because the remaining gap is much narrower than “find another general Drunk principle.”
+A second pass over the retained human-review record and prior review context found no omitted source-backed field that closes the gap:
 
-There is one important contract ambiguity to preserve: the Host audit's generic E3 formula allows production-recoverable legal alternatives, while its Gap-B acquisition request more specifically asks for another legal result to be explicitly considered/rejected or clearly contrasted. G10 currently has a source-backed observed choice + rationale and a longitudinal prior-output contrast, but **not yet a same-state source-backed X-vs-Y alternative**. Under the stricter Gap-B wording it therefore remains FAIL until that point is resolved; do not weaken the gate merely because downstream rules can enumerate numbers.
+- the exact `18:05` living-neighbour identities and immediately preceding death/execution state are still not serialized in the retained evidence;
+- no same-state source-backed statement says that `0` or `2` was considered/rejected or explicitly contrasts `1` against another possible result;
+- the source does establish the observed `1`, that it was actually true, and the deceptive narrative intent behind it.
 
-The minimum closure work is:
+There is one important contract distinction to preserve: the Host audit's generic E3 formula allows production-recoverable legal alternatives, while its Gap-B acquisition request more specifically asks for another legal result to be explicitly considered/rejected or clearly contrasted. Under that stricter Gap-B wording, downstream rules enumeration must not be used to manufacture the missing X-vs-Y evidence.
 
-1. reconstruct the exact `18:05` living-neighbour state and relevant immediately preceding public/death state from the primary video;
-2. confirm whether the source states or clearly contrasts another possible output, if any;
-3. have CampBoardGameHost independently confirm the production legal-alternative surface for this decision context;
-4. explicitly decide whether The Megavoid satisfies the Host's qualified-source threshold for E3.
-
-If those checks pass, this candidate should be re-audited before spending substantial effort searching for a completely new non-Ben Drunk/Poison case.
+Therefore do **not** spend further collection bandwidth on G10 unless a new primary-source artifact exposes the missing same-state contrast or exact state. Resume new-source acquisition for an independently qualifying Drunk/Poison case.
 
 ## Boundary
 
