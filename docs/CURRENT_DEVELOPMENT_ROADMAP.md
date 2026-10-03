@@ -1,6 +1,6 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ARCHITECTURE ACCEPTED**
 >
 > Current task: **C2 — Trouble Brewing Podcast Batch Ingestion** is again the primary EvidenceLab lane. C3-Q04 is VERIFIED / Stage-1 accepted and has already cleared the current Host evidence blocker; additional Drunk guidance remains valuable corpus material but no longer blocks Host development.
 
@@ -32,6 +32,8 @@ Whole-game history remains the primary historical collection unit. Expert guidan
 - whole-game and expert-guidance corpora remain distinguishable even when they inform the same downstream feature.
 - authoritative reconstruction remains setup commitments + semantic events; any TB Game Snapshot is a derived materialized/interchange view only.
 - snapshot semantics must distinguish `UNCOMMITTED` from evidence `UNKNOWN`; provenance/verification remains outside the snapshot payload.
+- ML-ready projections remain derived evidence packaging, not new truth or training labels; `OBSERVED_CHOICE`, explicit preference/rejection, downstream `LEGAL_UNCHOSEN`, and `SYNTHETIC_NEGATIVE` must remain distinct.
+- future recommendation-model input may contain only state committed before the historical decision boundary; later decisions/events/outcome remain target/evaluation metadata.
 
 ## 3. Completed checkpoints
 
@@ -58,6 +60,23 @@ Established:
 - successful G10 downstream replay in CampBoardGameHost.
 
 C1 targeted acquisition is stopped unless a concrete downstream gap reopens it.
+
+### EL-ML0 — ML Readiness Contract — COMPLETE / ARCHITECTURE ACCEPTED
+
+The read-only audit accepted the three-layer boundary:
+
+```text
+EvidenceLab canonical evidence
+    -> RecommendationEvidenceSeedV1 derived projection
+    -> Host / future ModelLab enrichment
+    -> RecommendationTrainingExampleV1
+```
+
+`DecisionSlice` remains the canonical historical-decision owner and already supplies the key anti-leakage boundary, observed choice, rationale references and source-backed explicit alternatives. A future seed exporter should compose it with verification, source assertion provenance and Storyteller independence metadata rather than duplicate it.
+
+Q04 demonstrates a separate non-historical expert-comparative-guidance shape; a future `ExpertPreferenceEvidence` / `ComparativeGuidanceEvidence` durable type is likely useful, but implementation and any persistence migration are deferred until evidence volume or a concrete dataset-builder milestone justifies them.
+
+Authority: `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`.
 
 ## 4. Current checkpoint — C2 Podcast Batch Ingestion
 
@@ -232,4 +251,7 @@ Keep broad quota-driven C1 scouting stopped. Additional Drunk evidence is welcom
 - new persistence migrations without demonstrated need;
 - policy scoring inside Evidence Lab;
 - fully automated verification with no human promotion gate;
-- YouTube-specific batch automation as a dependency of C2.
+- YouTube-specific batch automation as a dependency of C2;
+- `RecommendationEvidenceSeedV1` implementation until a downstream dataset-builder need justifies it;
+- durable `ExpertPreferenceEvidence` / `ComparativeGuidanceEvidence` until verified comparative-guidance volume justifies a typed entity;
+- training-example schemas, SFT/DPO/QLoRA pipelines, negative-sampling recipes and model training inside EvidenceLab.

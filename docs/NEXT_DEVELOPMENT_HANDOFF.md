@@ -1,8 +1,8 @@
 # NEXT DEVELOPMENT HANDOFF — C2 Podcast Batch Ingestion + C3 Drunk Candidate Comparison
 
-> Current state: **C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED**
+> Current state: **C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ARCHITECTURE ACCEPTED**
 >
-> Branch: `c2-storytelling-like-a-pro-semantic-priority`
+> EL-ML0 docs branch at authoring: `docs/el-ml0-ml-readiness-contract-20261003`
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 
@@ -14,22 +14,27 @@ Read in this order:
 2. `README.md`
 3. `docs/ARCHITECTURE.md`
 4. `docs/EVIDENCE_AND_PROVENANCE_STANDARD.md`
-5. `docs/SOURCE_COLLECTION_STRATEGY.md`
-6. `docs/TESTING_STRATEGY.md`
-7. `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
-8. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-9. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-10. `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`
-11. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-12. `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`
-13. `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`
-14. this file
+5. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+6. `docs/SOURCE_COLLECTION_STRATEGY.md`
+7. `docs/TESTING_STRATEGY.md`
+8. `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
+9. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+10. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+11. `docs/C2D_PRIMARY_AUDIO_REVIEW_QUEUE_2026-09-30.md`
+12. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+13. `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`
+14. `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`
+15. this file
 
 At the start of the next conversation, re-check live `main`, this branch, open PRs/checks and exact file state. Do not assume this handoff's branch status is still live.
 
 ## 2. Current baseline
 
 C1 remains complete and broad Drunk-assignment acquisition remains stopped.
+
+EL-ML0 is now **COMPLETE / ARCHITECTURE ACCEPTED**. The accepted ML-readiness boundary is canonical EvidenceLab evidence -> derived `RecommendationEvidenceSeedV1` -> Host/future ModelLab enrichment -> actual training example. Implementation is deferred. `DecisionSlice` remains the historical-decision owner; Q04-like non-historical comparative guidance will likely justify a future typed `ExpertPreferenceEvidence` / `ComparativeGuidanceEvidence`, but no schema migration or C2 workflow change is authorized now.
+
+The EL-ML0 audit was based on live `origin/main` `1af0952dbee1c4804013c906dbe3505966ca10ba` before the docs-only branch was created. Future sessions must still re-check live state rather than relying on this checkpoint.
 
 C2 has now completed three implementation slices:
 
@@ -87,15 +92,16 @@ The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: 
 
 The TB snapshot interoperability dependency is closed for the current Drunk surface. Host TBGS-1 accepted the EvidenceLab materializer/fixture and independently confirmed the G10 V1 payload byte-for-byte. Host has also completed its re-entry audit after Q04; the EvidenceLab blocker is cleared and Host now owns `DRUNK_ASSIGNMENT_Q04_V1 -> replay -> cutover gate re-run`.
 
-Latest known code checkpoint before this documentation sync:
-- production/test HEAD: `4d8da2c4be0eae40570ffea4134d9536bc748a5d`;
-- PR #8: Draft / mergeable;
-- bounded validation run #4: SUCCESS, run ID `36574401873`;
-- quality #284: SUCCESS across Install / Ruff check / Ruff format / Pytest.
+Latest live baseline at the EL-ML0 audit start:
+- `origin/main`: `1af0952dbee1c4804013c906dbe3505966ca10ba`;
+- EL-ML0 docs branch was created directly from that exact main;
+- working tree was clean before EL-ML0 edits;
+- local `quality` after the docs-only audit: PASS, 139 tests;
+- the earlier bounded C2 Investigator/Imp validation run #4 remains historical acquisition evidence, not the current Git checkpoint.
 
 ## 3. Current task
 
-Resume **C2 as the primary lane**. C3 Stage 1 is accepted and no longer blocks Host:
+Resume **C2 as the primary lane**. EL-ML0 is a completed architecture checkpoint and does not compete with C2. C3 Stage 1 is accepted and no longer blocks Host:
 
 - treat the Investigator C2D-S benchmark as accepted for machine-first semantic review assistance;
 - treat the completed Drunk semantic pass as machine review assistance only: Q01 gives strong new-player Monk/Soldier-vs-Ravenkeeper conditional guidance, Q02 gives Empath rejection guidance, and Q03 gives a fixed Chef example, but none alone supplies the strict same-prefix A-vs-B comparison required for Stage 1;
@@ -210,7 +216,11 @@ Keep full copyrighted audio/transcripts outside Git.
 - do not treat machine confidence as verification;
 - do not make the TB snapshot a second canonical reconstruction store;
 - do not copy Host legality or legal-candidate enumeration into EvidenceLab;
-- do not generalize the snapshot contract beyond Trouble Brewing before a real second-script need exists.
+- do not generalize the snapshot contract beyond Trouble Brewing before a real second-script need exists;
+- do not implement ML training, recommendation scoring, or legal-candidate enumeration in EvidenceLab;
+- do not convert `LEGAL_UNCHOSEN` candidates into source-backed rejection labels or automatic DPO rejected samples;
+- do not force Q04-like general expert guidance into a fabricated historical `DecisionSlice`;
+- do not add an ML-readiness persistence migration until evidence volume or a concrete dataset-builder need justifies it.
 
 ## 9. Historical documents
 
