@@ -152,14 +152,14 @@ The snapshot itself must not embed source timestamps, evidence assertion IDs or 
 This route must not stop or replace current acquisition.
 
 ```text
-C2 podcast batch ingestion                 continues
-C3 Drunk comparison/rejection acquisition continues
-TB snapshot interoperability               proceeds as a narrow parallel architecture lane
+C2 podcast batch ingestion                 ACTIVE
+C3 Drunk comparison/rejection evidence     STAGE-1 ACCEPTED / SUPPORTING
+TB snapshot interoperability               COMPLETE / ACCEPTED for current Drunk surface
 ```
 
-Host TBGS-0 is now COMPLETE / ACCEPTED. EvidenceLab has implemented the matching pure materializer, deterministic V1 codec, and G10 golden fixture. C2/C3 continue independently.
+Host TBGS-0/1 and the matching EvidenceLab pure materializer, deterministic V1 codec, and G10 golden fixture are COMPLETE / CROSS-PROJECT ACCEPTED. C2 continues independently; additional C3 evidence is supporting corpus growth unless a new bounded Host gap appears.
 
-C3 Stage-1 remains an evidence gate for production Drunk ordering semantics. A working snapshot interchange does not authorize a recommendation preference.
+C3 Stage 1 was an evidence gate for the first production Drunk ordering predicate and is now satisfied by Q04. A working snapshot interchange still does not itself authorize any recommendation preference.
 
 ## 9. Implementation sequence
 
@@ -174,7 +174,7 @@ Host TBGS-0 contract frozen                         COMPLETE / ACCEPTED
 
 Implementation/audit record: `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`.
 
-This interoperability sequence is complete for the Drunk surface. Do not reopen snapshot engineering while the actual remaining blocker is C3 primary-audio verification.
+This interoperability sequence is complete for the Drunk surface. C3 Q04 has also cleared the former primary-audio evidence blocker. Do not reopen snapshot engineering unless a new bounded TB consumer requires an additional field or prefix projection.
 
 ## 10. Acceptance criteria
 

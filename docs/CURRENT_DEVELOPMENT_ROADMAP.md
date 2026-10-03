@@ -155,7 +155,7 @@ Oracle VM temporary audio
 
 Full-episode human listening is no longer the default for every clear podcast episode. It remains available for low-confidence ASR, attribution problems, semantic conflicts, or sampled QA.
 
-The semantic workflow is now queue-owned by EvidenceLab rather than episode-owned by Mini MCP. A fixed external queue root stores only completed GUIDs plus one marker-gated `current` workspace. `prepare-next` selects the next semantic-eligible episode from the fixed feed, `render-current` streams its complete transcript, and `cleanup-current` deletes the temporary media/ASR before advancing the lightweight queue state. Investigator, Imp, `4.1: Trouble Brewing Revisited`, Drunk, Soldier, Monk, and Ravenkeeper semantic passes are complete. Q04 in the Monk episode is now human-verified and Stage-1 accepted. With the Host blocker cleared, the queue returns to high-value C2 collection; the explicitly curated general episode `4.2: Storytelling Like a Pro` is prioritized when unprocessed because it is Storyteller-focused despite lacking a Trouble Brewing label. This is a narrow curated exception, not a general cross-script scope expansion.
+The semantic workflow is now queue-owned by EvidenceLab rather than episode-owned by Mini MCP. A fixed external queue root stores only completed GUIDs plus one marker-gated `current` workspace. `prepare-next` selects the next semantic-eligible episode from the fixed feed, `render-current` streams its complete transcript, and `cleanup-current` deletes the temporary media/ASR before advancing the lightweight queue state. Completed passes now include Investigator, Imp, `4.1: Trouble Brewing Revisited`, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, the curated `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, and Baron. Q04 in the Monk episode is human-verified and Stage-1 accepted. With the Host blocker cleared, the queue continues ordinary high-value C2 collection; the Storytelling Like a Pro exception is already processed and does not broaden scope beyond the explicitly curated case.
 
 ### C2E — evidence promotion
 
@@ -234,14 +234,14 @@ Authorities:
 
 Resume C2 as the primary collection lane:
 
-1. if `4.2: Storytelling Like a Pro` has not yet been processed, acquire its full audio/ASR into the external temporary workspace and run full-transcript machine semantic review first;
-2. extract high-value Storyteller guidance across setup/role assignment, misinformation, registration, Demon bluffs, information strength, cross-night consistency, player experience, star pass / ability preservation, public claims / evil narrative, and explicit alternatives/rejected choices;
-3. ask for bounded human primary-audio confirmation only where meaning is ambiguous, would materially alter downstream policy weighting/ranking, or requires product-goal judgment;
-4. clean the full audio/transcript workspace after analysis and retain only lightweight provenance-backed findings in Git;
-5. continue with the remaining high-density Trouble Brewing-relevant episodes after `4.2`, while allowing new Drunk guidance to enter the long-term corpus without blocking Host;
+1. re-check the queue-owned `current` semantic session before starting anything new; if `prepare-next` is already running, do not duplicate it;
+2. when ASR completes, perform a complete semantic pass over the selected Trouble Brewing-relevant episode and retain only high-value timestamped findings;
+3. prioritize Storyteller-controlled setup/role assignment, misinformation, registration, Demon bluffs, information strength, confirmation chains, cross-night consistency, player experience, anti-meta considerations, and explicit alternatives/rejected choices;
+4. ask for bounded human primary-audio confirmation only where meaning is ambiguous, would materially alter downstream policy weighting/ranking, or is needed for VERIFIED promotion;
+5. clean the full audio/transcript workspace after analysis, run the local quality gate, merge the findings checkpoint when independently green, then advance the queue;
 6. treat EL-TBGS-0/1 and C3 Stage 1 as accepted/closed for the current Host blocker unless a new bounded downstream gap appears.
 
-Keep broad quota-driven C1 scouting stopped. Additional Drunk evidence is welcome as ordinary corpus growth, not as a reason to pause C2. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
+Keep broad quota-driven C1 scouting and broad E3 hunting stopped. Additional Drunk or E3-relevant material is welcome as ordinary corpus growth, not as a reason to pause C2. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
 
 ## 9. Deferred
 

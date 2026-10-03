@@ -1,10 +1,10 @@
-# NEXT DEVELOPMENT HANDOFF — C2 Podcast Batch Ingestion + C3 Drunk Candidate Comparison
+# NEXT DEVELOPMENT HANDOFF — C2 Automatic Podcast Semantic Collection
 
-> Current state: **C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ARCHITECTURE ACCEPTED**
->
-> EL-ML0 docs branch at authoring: `docs/el-ml0-ml-readiness-contract-20261003`
+> Current state: **C2 ACTIVE / C3 STAGE-1 ACCEPTED-SUPPORTING / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ARCHITECTURE ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
+>
+> Route-sync checkpoint: `main` was `5e909ceced0a204dbf7a51ffba61e74f6f2d0f40` before this docs-only sync branch. Re-check live state at conversation start.
 
 ## 1. Read first
 
@@ -34,7 +34,7 @@ C1 remains complete and broad Drunk-assignment acquisition remains stopped.
 
 EL-ML0 is now **COMPLETE / ARCHITECTURE ACCEPTED**. The accepted ML-readiness boundary is canonical EvidenceLab evidence -> derived `RecommendationEvidenceSeedV1` -> Host/future ModelLab enrichment -> actual training example. Implementation is deferred. `DecisionSlice` remains the historical-decision owner; Q04-like non-historical comparative guidance will likely justify a future typed `ExpertPreferenceEvidence` / `ComparativeGuidanceEvidence`, but no schema migration or C2 workflow change is authorized now.
 
-The EL-ML0 audit was based on live `origin/main` `1af0952dbee1c4804013c906dbe3505966ca10ba` before the docs-only branch was created. Future sessions must still re-check live state rather than relying on this checkpoint.
+EL-ML0 remains an accepted architecture checkpoint only; it does not change the active C2 collection route. Future sessions must always re-check live state rather than relying on historical branch/checkpoint SHAs in older audit documents.
 
 C2 has now completed three implementation slices:
 
@@ -92,12 +92,12 @@ The C2C/C2D audit found no need for a new evidence schema or ranking subsystem: 
 
 The TB snapshot interoperability dependency is closed for the current Drunk surface. Host TBGS-1 accepted the EvidenceLab materializer/fixture and independently confirmed the G10 V1 payload byte-for-byte. Host has also completed its re-entry audit after Q04; the EvidenceLab blocker is cleared and Host now owns `DRUNK_ASSIGNMENT_Q04_V1 -> replay -> cutover gate re-run`.
 
-Latest live baseline at the EL-ML0 audit start:
-- `origin/main`: `1af0952dbee1c4804013c906dbe3505966ca10ba`;
-- EL-ML0 docs branch was created directly from that exact main;
-- working tree was clean before EL-ML0 edits;
-- local `quality` after the docs-only audit: PASS, 139 tests;
-- the earlier bounded C2 Investigator/Imp validation run #4 remains historical acquisition evidence, not the current Git checkpoint.
+Latest route-sync baseline before this docs-only cleanup:
+- `main`: `5e909ceced0a204dbf7a51ffba61e74f6f2d0f40` after Baron PR #28 merge;
+- Baron semantic pass: 3,018 `small.en` segments, nine NOT VERIFIED findings, no new E3 PASS;
+- local quality at the Baron checkpoint: PASS, 139 tests;
+- the next queue-owned `semantic:podcast:prepare-next` task had already been started; the next conversation must inspect the live task/current workspace before starting a duplicate;
+- the earlier bounded C2 Investigator/Imp validation run #4 remains historical acquisition/review material, not the current Git checkpoint.
 
 ## 3. Current task
 
@@ -185,19 +185,21 @@ C2A manifest
 Current:
 
 ```text
-C2D model/writer/CLI GREEN
-    -> real Investigator/Imp review packets GENERATED
-    -> bounded primary-audio review (24 windows / 6m25.6s)
-    -> C2E verified guidance promotion
+queue-owned C2 semantic collection ACTIVE
+    -> semantic:podcast:prepare-next
+    -> complete timestamped ASR outside Git
+    -> full-transcript machine semantic review
+    -> lightweight timestamped findings in Git
+    -> targeted primary-audio verification only where needed
+    -> cleanup-current
+    -> repeat
 
-in parallel:
-Host TBGS-0 contract                         COMPLETE / ACCEPTED
-    -> EvidenceLab TB snapshot mapping audit COMPLETE
-    -> pure materializer + deterministic V1 serialization COMPLETE / GREEN
-    -> G10 cross-project golden fixture      COMPLETE / exact Host match
-    -> Host TBGS-1 consumption               COMPLETE / ACCEPTED
-    -> C3-Q04 evidence re-entry               COMPLETE / BLOCKER CLEARED
-    -> Host Q04 predicate/replay/cutover      OWNED BY HOST
+historical/parallel checkpoints:
+C2D model/writer/CLI                         COMPLETE / GREEN
+Investigator/Imp bounded review packets      RETAINED / NOT VERIFIED
+Host TBGS-0/1 interoperability               COMPLETE / ACCEPTED
+C3-Q04 evidence re-entry                     COMPLETE / BLOCKER CLEARED
+Host policy/replay/cutover work              OWNED BY HOST
 ```
 
 Use the existing manifest, batch runner and ASR adapter. Do not add a persistence migration merely for snapshot interoperability or temporary acquisition artifacts.
@@ -228,6 +230,6 @@ Keep full copyrighted audio/transcripts outside Git.
 
 ## 9. Historical documents
 
-The pre-C2 roadmap/source-strategy/C1 handoff snapshots were moved under `docs/archive/` so they remain available for provenance without competing with the current authority.
+The pre-C2 roadmap/source-strategy/C1 handoff snapshots were moved under `docs/archive/` so they remain available for provenance without competing with the current authority. The completed C3 primary-audio review queue was also archived as `docs/archive/C3_DRUNK_CANDIDATE_REVIEW_QUEUE_2026-09-30.md` because its embedded Q04 next-action instructions are superseded by Stage-1 acceptance.
 
-Current authority is the C2 document set listed in section 1.
+Current authority is the active C2 document set listed in section 1 plus the accepted C3 Q04 handoff / EL-ML0 / TBGS contracts where relevant.

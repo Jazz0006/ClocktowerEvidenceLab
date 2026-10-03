@@ -170,7 +170,7 @@ Host TBGS-1 Drunk vertical slice COMPLETE / ACCEPTED
         +-> historical Empath choice maps into that legal domain
 ```
 
-The snapshot/interoperability blocker is therefore closed. The remaining Host production-policy blocker is C3 Stage-1 VERIFIED candidate-comparison/rejection evidence. C2/C3 acquisition continues independently.
+The snapshot/interoperability blocker is therefore closed. The former C3 Stage-1 production-policy evidence blocker has since been cleared by human-verified Q04. C2 continues as the primary EvidenceLab collection lane; further C3 material is supporting evidence unless Host opens a new bounded request.
 
 Future C3 handoffs may include the V1 snapshot when their historical prefix is sufficiently reconstructed, but snapshot availability must not become a prerequisite for promoting otherwise valid evidence.
 
