@@ -1,6 +1,6 @@
 # G10 Librarian Pair E3 Re-entry Candidate Audit — 2026-10-03
 
-> Status: **HIGH-CONFIDENCE E3 CANDIDATE / HOST SEMANTIC ADJUDICATION REQUIRED**
+> Status: **E3 PASS — BOUNDED PAIR-INFORMATION FUTURE-FLEXIBILITY PREDICATE / C5 RE-ENTRY REQUIRED / E4 NOT MET**
 >
 > Decision window: approximately `16:52`
 >
@@ -63,12 +63,12 @@ It must **not** become an Undertaker-specific bonus.
 
 | Requirement | Current state | Assessment |
 | --- | --- | --- |
-| qualified independent Storyteller/source | The Megavoid is a stable independent public creator; independent Storyteller-resource curation and multiple community recommendations specifically point to the channel's Storyteller teaching material | **EVIDENCELAB RECOMMENDS `EXPERIENCED` / INDEPENDENT; Host admission acceptance still required** |
+| qualified independent Storyteller/source | The Megavoid is a stable independent public creator; independent Storyteller-resource curation and multiple community recommendations specifically point to the channel's Storyteller teaching material | **YES — `EXPERIENCED` / INDEPENDENT** |
 | decision-time committed state | complete nine-seat shown-role layout + actual Drunk identity already human-reconstructed before the Librarian decision | **YES** |
 | observed Storyteller-controlled choice | Librarian pair = Drunk-Empath + Undertaker, showing Drunk | **YES / HUMAN PRIMARY-REVIEWED** |
 | production-recoverable legal alternatives | direct audit of current Host production owners confirms the observed `Drunk + {1,3}` outcome is legal and the functioning Librarian domain contains 40 truthful player-visible outcomes for this exact nine-seat state | **YES / PRODUCTION-RECOVERABLE** |
 | explicit rationale | Undertaker selected because both candidate roles generate recurring information and uncertainty over which is Drunk changes trust in those information streams | **YES / HUMAN PRIMARY-REVIEWED** |
-| generic typed feature mapping | the rationale is prospective: preserve meaningful ambiguity across two recurring future information streams. Host has typed `confirmationChainImpact`, `healthyInformationUtility`, and `futureFlexibility` surfaces, but the first two are history/current-consequence oriented and `futureFlexibility` still has no canonical projector | **PENDING HOST SEMANTIC ADJUDICATION** |
+| generic typed feature mapping | the rationale is prospective: preserve meaningful ambiguity across two recurring future information streams. This maps generically to the Host's already-declared first-class `future flexibility` axis / typed `FutureFlexibilityFeatures` surface, rather than an Undertaker-specific rule | **YES — GENERIC PREDICATE MAPPED** |
 
 ## Storyteller qualification evidence
 
@@ -80,7 +80,7 @@ Independent public support includes:
 - a 2026 community resource discussion explicitly recommends The Megavoid's recent videos for improving Storytelling: `https://www.reddit.com/r/BloodOnTheClocktower/comments/1re4wnd/what_are_the_best_resources_youve_found_to/`;
 - a separate 2026 discussion independently describes the channel as having several strong tutorials on how to Storytell scripts: `https://www.reddit.com/r/BloodOnTheClocktower/comments/1rp8kc5/new_in_person_botc_stream/`.
 
-This evidence supports a stable independence key such as `st-the-megavoid` and an `EXPERIENCED` classification. It does not claim TPI affiliation, official status, or parity with Steven Medway / Ben Burns.
+This evidence supports the stable independence key `st-the-megavoid` and an `EXPERIENCED` classification, which satisfies the Host target-source requirement for an experienced/trusted Storyteller without claiming TPI affiliation, official status, or parity with Steven Medway / Ben Burns.
 
 ## Host production-domain audit
 
@@ -99,7 +99,7 @@ For the exact G10 state:
 
 The legal-alternative part of the E3 contract is therefore closed. EvidenceLab does not assign value to the 39 unchosen outcomes.
 
-The remaining semantic issue is narrower: the source rationale concerns **prospective persistence of uncertainty across future recurring information**, not merely immediate world reduction or confirmation against already-committed observations. Current Host code has production `confirmationChainImpact` and `healthyInformationUtility` projectors, but those project committed/current information. `FutureFlexibilityFeatures` exists as a typed surface, while the Host architecture audit still records its canonical projector as a gap. Host must decide whether this G10 rationale maps adequately to an existing feature or justifies a new generic prospective-information/future-flexibility projection before E3 PASS is declared.
+The source rationale concerns **prospective persistence of uncertainty across future recurring information**, not merely immediate world reduction or confirmation against already-committed observations. The Host evidence contract explicitly lists `future flexibility` as a first-class generic policy axis, and `DecisionFeatures` already contains typed `FutureFlexibilityFeatures`. The fact that the architecture audit still records the canonical future-flexibility projector as an implementation gap does **not** make the evidence fail E3: the E3 stop rule requires explicit rationale mapped to a generic feature/predicate, not a pre-existing production projector. Projector implementation is downstream C5 engineering after evidence re-entry, not an acquisition prerequisite.
 
 ## Relationship to the old gaps
 
@@ -109,15 +109,30 @@ It is also not the exact old Gap-C `Librarian -> Recluse` exposure scenario.
 
 Its significance is broader: the Host C5 re-entry rule requires at least one concrete predicate satisfying E3. The 2026-09-27 matrix marked **confirmation-chain impact** as E1/E2 support but E3 FAIL for candidate ordering. This later G10 decision appears to supply exactly the missing historical choice + rationale shape for a confirmation-chain / information-utility preference.
 
-## Required closure before E3 PASS
+## E3 decision and next Host work
 
-1. **Host semantic mapping:** decide whether the explicit “two recurring information streams stay meaningfully uncertain” rationale maps to an existing typed feature or requires the still-missing canonical future-flexibility / prospective-information projector;
-2. record the stable Storyteller independence key `st-the-megavoid` when this case enters the Host evidence catalog;
-3. have the Host evidence gate explicitly accept EvidenceLab's `EXPERIENCED` qualification recommendation for E3 admission.
+This case now satisfies the preserved E3 re-entry formula:
 
-The production legality / alternative-domain requirement is no longer open.
+```text
+qualified independent experienced Storyteller
++ reconstructable committed state
++ observed Storyteller-controlled choice
++ production-recoverable legal alternatives
++ explicit choice-specific rationale
++ generic future-flexibility predicate mapping
+= E3 PASS
+```
 
-If these checks pass, this candidate should be evaluated as a possible **E3 PASS for a bounded pair-information preference predicate**, without implying numeric weights or a global role ranking.
+The bounded predicate is **not** “prefer Undertaker.” It is the generic direction that, when choosing among legal pair-information decoys, a decoy can be preferred when it preserves a meaningful ambiguity across recurring future information routes rather than producing a low-consequence ambiguity.
+
+This result should trigger a CampBoardGameHost **C5 re-entry audit**, not immediate production-policy cutover. Host next work is to:
+
+1. register `st-the-megavoid` and this historical decision in the evidence catalog;
+2. define/project the generic prospective-information / future-flexibility feature without role-name policy;
+3. add a bounded shadow predicate and replay this exact case against the full legal domain;
+4. preserve V1 behavior outside the new evidence-backed predicate until independent acceptance tests pass.
+
+**E4 remains FAIL / not established.** One case does not justify numeric weights, scalar scoring, player-count thresholds, or a global decoy-role ordering.
 
 ## Boundary
 
