@@ -1,6 +1,6 @@
 # G10 Librarian Pair E3 Re-entry Candidate Audit — 2026-10-03
 
-> Status: **HIGH-CONFIDENCE E3 CANDIDATE / HOST LEGAL-DOMAIN REPLAY REQUIRED**
+> Status: **HIGH-CONFIDENCE E3 CANDIDATE / HOST SEMANTIC ADJUDICATION REQUIRED**
 >
 > Decision window: approximately `16:52`
 >
@@ -63,12 +63,24 @@ It must **not** become an Undertaker-specific bonus.
 
 | Requirement | Current state | Assessment |
 | --- | --- | --- |
-| qualified independent Storyteller/source | The Megavoid is a stable independent public creator; the source states no TPI affiliation; independent community/resource indexes recommend the channel for Storyteller learning | **LIKELY EXPERIENCED / INDEPENDENT; formal Host acceptance still required** |
+| qualified independent Storyteller/source | The Megavoid is a stable independent public creator; independent Storyteller-resource curation and multiple community recommendations specifically point to the channel's Storyteller teaching material | **EVIDENCELAB RECOMMENDS `EXPERIENCED` / INDEPENDENT; Host admission acceptance still required** |
 | decision-time committed state | complete nine-seat shown-role layout + actual Drunk identity already human-reconstructed before the Librarian decision | **YES** |
 | observed Storyteller-controlled choice | Librarian pair = Drunk-Empath + Undertaker, showing Drunk | **YES / HUMAN PRIMARY-REVIEWED** |
 | production-recoverable legal alternatives | direct audit of current Host production owners confirms the observed `Drunk + {1,3}` outcome is legal and the functioning Librarian domain contains 40 truthful player-visible outcomes for this exact nine-seat state | **YES / PRODUCTION-RECOVERABLE** |
 | explicit rationale | Undertaker selected because both candidate roles generate recurring information and uncertainty over which is Drunk changes trust in those information streams | **YES / HUMAN PRIMARY-REVIEWED** |
 | generic typed feature mapping | the rationale is prospective: preserve meaningful ambiguity across two recurring future information streams. Host has typed `confirmationChainImpact`, `healthyInformationUtility`, and `futureFlexibility` surfaces, but the first two are history/current-consequence oriented and `futureFlexibility` still has no canonical projector | **PENDING HOST SEMANTIC ADJUDICATION** |
+
+## Storyteller qualification evidence
+
+EvidenceLab's descriptive qualification recommendation is **`EXPERIENCED`**, not `VERIFIED_EXPERT_OR_TRUSTED`.
+
+Independent public support includes:
+
+- Bakery by the Clocktower, an independent curated BotC advice/resource index, lists **The Megavoid YouTube Series** under `Additional Comprehensive Storyteller Advice`: `https://sites.google.com/view/bakerybytheclocktower/advice/additional-comprehensive-st-advice`;
+- a 2026 community resource discussion explicitly recommends The Megavoid's recent videos for improving Storytelling: `https://www.reddit.com/r/BloodOnTheClocktower/comments/1re4wnd/what_are_the_best_resources_youve_found_to/`;
+- a separate 2026 discussion independently describes the channel as having several strong tutorials on how to Storytell scripts: `https://www.reddit.com/r/BloodOnTheClocktower/comments/1rp8kc5/new_in_person_botc_stream/`.
+
+This evidence supports a stable independence key such as `st-the-megavoid` and an `EXPERIENCED` classification. It does not claim TPI affiliation, official status, or parity with Steven Medway / Ben Burns.
 
 ## Host production-domain audit
 
@@ -100,8 +112,8 @@ Its significance is broader: the Host C5 re-entry rule requires at least one con
 ## Required closure before E3 PASS
 
 1. **Host semantic mapping:** decide whether the explicit “two recurring information streams stay meaningfully uncertain” rationale maps to an existing typed feature or requires the still-missing canonical future-flexibility / prospective-information projector;
-2. record a stable Storyteller independence key, proposed `st-the-megavoid`;
-3. have the Host evidence gate explicitly accept the available independent qualification evidence as sufficient for `EXPERIENCED`.
+2. record the stable Storyteller independence key `st-the-megavoid` when this case enters the Host evidence catalog;
+3. have the Host evidence gate explicitly accept EvidenceLab's `EXPERIENCED` qualification recommendation for E3 admission.
 
 The production legality / alternative-domain requirement is no longer open.
 
