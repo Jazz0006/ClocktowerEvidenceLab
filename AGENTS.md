@@ -161,6 +161,25 @@ A deterministic/canonical setup ordering is not evidence of historical setup chr
 
 Evidence Lab may record explicitly observed considered or rejected alternatives, but it must not enumerate legal alternatives from Blood on the Clocktower rules. Legal candidate enumeration remains downstream ownership.
 
+### 3.13 ML-ready projection is derived, not a label source
+
+Future recommendation-model datasets must preserve a three-layer boundary:
+
+```text
+canonical EvidenceLab evidence
+    -> derived ML-ready evidence seed
+    -> Host / ModelLab enrichment
+    -> actual training example
+```
+
+A derived ML seed must not turn historical absence into preference evidence. Keep `OBSERVED_CHOICE`, explicit preference/rejection, downstream `LEGAL_UNCHOSEN`, and `SYNTHETIC_NEGATIVE` distinct. In particular, a legal but unchosen candidate is not automatically a rejected preference sample.
+
+Historical recommendation input may use only the reconstruction state committed before the decision boundary. The resulting choice, later events, later revelations and final outcome are target/evaluation metadata, not pre-decision input features.
+
+Future train/eval builders must retain grouping keys for game, source and Storyteller `independence_key`; do not randomly split multiple decisions from one game and then treat them as independent evaluation examples.
+
+Authority: `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`.
+
 ## 4. Source and copyright policy
 
 For public video/audio sources:
