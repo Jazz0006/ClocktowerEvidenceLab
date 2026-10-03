@@ -1,3 +1,5 @@
+> Archived 2026-10-03: C3 Stage 1 is accepted via Q04. This file is retained as a historical acquisition/review queue; its embedded "next action" instructions are superseded by the current C2 roadmap and handoff.
+
 # C3 — Drunk Candidate Comparison Primary-Audio Review Queue — 2026-09-30
 
 > Status: **C3 STAGE-1 ACCEPTED — LONG-TERM SUPPORTING QUEUE REMAINS**

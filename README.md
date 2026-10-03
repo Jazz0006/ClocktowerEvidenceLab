@@ -81,7 +81,7 @@ See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
 
 C1 Drunk Assignment Evidence Upgrade is **complete**. Its bounded acquisition target reached 3/3 replayable assignment cases and downstream replay succeeded, so broad Drunk-assignment searching remains stopped.
 
-The Host-unblocking task is now **C3 — Drunk Candidate Comparison / Rejection Evidence**. **C2 — Trouble Brewing Podcast Batch Ingestion** continues in parallel as the acquisition pipeline feeding bounded review.
+The primary lane is now **C2 — Trouble Brewing Podcast Batch Ingestion / full-transcript semantic review**. **C3 — Drunk Candidate Comparison / Rejection Evidence** has satisfied Stage 1 through human-verified Q04 and remains only as a supporting evidence lane unless Host opens a new bounded gap.
 
 Current implementation status:
 
@@ -89,15 +89,16 @@ Current implementation status:
 - **C2B batch acquisition runner + CLI — COMPLETE / GREEN**;
 - **C2C structured candidate extraction — COMPLETE / GREEN**;
 - **bounded real multi-episode C2B -> C2C validation — COMPLETE / GREEN** for Investigator and Imp;
-- **C2D bounded review packets + review CLI — IMPLEMENTATION GREEN / REAL REVIEW QUEUE READY**.
+- **C2D bounded review packets + review CLI — IMPLEMENTATION GREEN**;
+- **C2D-S queue-owned full-transcript semantic review — OPERATIONAL / ACCEPTED FOR MACHINE-FIRST REVIEW ASSISTANCE**.
 
-The podcast route is now proven beyond the original one-episode pilot: a real two-episode batch completed RSS discovery, audio acquisition, ASR, lightweight candidate extraction and bounded review-packet generation while keeping full media/transcripts outside Git. The current Investigator/Imp queue contains 24 bounded primary-audio windows; human review remains the gate before C2E evidence promotion.
+The podcast route is now proven beyond the original one-episode pilot. The accepted clear-audio workflow is queue-owned `prepare-next -> complete ASR -> full-transcript semantic review -> lightweight timestamped findings -> targeted human verification only where needed -> cleanup-current`. Full media/transcripts remain outside Git. The earlier Investigator/Imp 24-window packet is retained as historical/review material, while routine collection now uses the machine-first semantic path.
 
 C2 keeps the evidence boundary explicit:
 
 - full audio and machine transcripts stay outside Git;
-- machine transcript/extraction is a locator and candidate-discovery layer;
-- primary-audio review promotes only concise provenance-backed guidance;
+- machine transcript/extraction/semantic understanding is acquisition and review assistance, not verification;
+- primary-audio review is required only when promoting a finding to VERIFIED evidence, resolving ambiguity, or supporting a downstream policy judgment;
 - podcasts complement, but do not replace, whole-game reconstruction/replay evidence.
 
 The first TB-only interoperability slice is now **cross-project accepted**. Host TBGS-1 consumed the EvidenceLab G10 snapshot seam, independently derived the legal Drunk domain, and confirmed the V1 fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store. C3 Stage 1 is now satisfied by human-verified Q04 from the Monk podcast episode; EvidenceLab has handed off one bounded conditional Drunk preference to Host for independent policy mapping, replay, and cutover recheck.

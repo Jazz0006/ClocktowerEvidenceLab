@@ -1,6 +1,6 @@
 # C3 — Drunk Candidate Comparison / Rejection Evidence — 2026-09-30
 
-> Status: **ACTIVE TARGETED EVIDENCE LANE — REUSES C2**
+> Status: **STAGE-1 ACCEPTED / SUPPORTING EVIDENCE LANE — REUSES C2**
 >
 > Cross-project source: `Jazz0006/CampBoardGameHost` Drunk-assignment production cutover gate audit.
 >
@@ -8,13 +8,11 @@
 
 ## 1. Why C3 exists
 
-CampBoardGameHost has completed the Drunk-assignment execution infrastructure needed for production evaluation, including the legal candidate domain, hypothetical projection, DecisionTrace/replay, and Experienced-mode manual selection.
+CampBoardGameHost completed the Drunk-assignment execution infrastructure needed for production evaluation, including the legal candidate domain, hypothetical projection, DecisionTrace/replay, and Experienced-mode manual selection. C3 was opened because the remaining Beginner automatic-assignment blocker was evidential rather than infrastructural.
 
-The remaining Beginner automatic-assignment blocker is evidential rather than infrastructural: the Host does not yet have source-backed semantics for ranking or rejecting one legal Drunk candidate relative to another in the same fixed setup.
+That Stage-1 gap is now closed by human-verified Q04. C3 remains a supporting evidence lane for additional comparative Drunk guidance, but it no longer blocks Host development or preempts C2 automatic collection.
 
-Evidence Lab must therefore search for explicit comparative evidence without inventing downstream policy.
-
-This does **not** reopen broad Drunk scouting. The target is not “games containing a Drunk”; it is evidence that says why candidate A was preferred to, compared with, or rejected relative to candidate B under a reconstructable assignment-time context.
+This does **not** reopen broad Drunk scouting. The continuing target is not “games containing a Drunk”; it is evidence that says why candidate A was preferred to, compared with, or rejected relative to candidate B under a reconstructable assignment-time context.
 
 ## 2. Acquisition route
 
@@ -119,10 +117,10 @@ Therefore C3 must acquire/verify genuinely comparative material rather than rein
 
 The strongest retained machine-located lead is the Steven Medway Drunk episode around `02:04:10–02:07:39`, where beginner/expert handling appears to contrast Monk/Soldier-like Drunk assignments with Ravenkeeper-like assignments. This remains **NOT VERIFIED for C3** until primary-audio review confirms the exact comparison, speaker, condition and rationale.
 
-See `docs/C3_DRUNK_CANDIDATE_REVIEW_QUEUE_2026-09-30.md`.
+The original targeted review queue is preserved as historical acquisition context at `docs/archive/C3_DRUNK_CANDIDATE_REVIEW_QUEUE_2026-09-30.md`; its embedded next-action instructions are superseded by Q04 acceptance and the current C2 roadmap.
 
 ## 9. Relationship to C5
 
 C5 / `BEGINNER_CONSERVATIVE_V2` is a separate evidence and policy gate.
 
-Do not mix C3 Drunk-assignment comparison evidence with the broader C5 policy program. C3 exists only to close the current Drunk-assignment production evidence gap.
+Do not mix C3 Drunk-assignment comparison evidence with the broader C5 policy program. C3 Stage 1 has already closed its original Drunk-assignment evidence gap; any further C3 material is supporting corpus growth unless Host opens a new bounded evidence request.

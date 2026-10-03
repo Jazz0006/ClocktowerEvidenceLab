@@ -177,11 +177,11 @@ public episode audio
 
 The `clocktower-podcast-semantic` CLI keeps the original single-session commands for compatibility and now owns the reusable queue lifecycle used by automation:
 
-- `prepare-next`: select the next semantic-eligible episode from the fixed feed, resume an existing current session when present, and produce complete ASR under one external queue-owned current workspace. Eligibility remains Trouble Brewing-first, with only explicitly curated `UNKNOWN` general Storyteller episodes admitted; `4.2: Storytelling Like a Pro` is the current curated exception;
+- `prepare-next`: select the next semantic-eligible episode from the fixed feed, resume an existing current session when present, and produce complete ASR under one external queue-owned current workspace. Eligibility remains Trouble Brewing-first, with only explicitly curated `UNKNOWN` general Storyteller episodes admitted; `4.2: Storytelling Like a Pro` has already completed its curated semantic pass and does not remain a queue priority;
 - `render-current`: stream the complete timestamped transcript for the queue's current episode without creating another transcript copy;
 - `cleanup-current`: delete only the marker-gated current workspace, then advance lightweight queue state containing completed GUIDs only.
 
-Investigator is seeded as the accepted completed benchmark, and the Imp / Drunk / Soldier / Monk / Ravenkeeper semantic passes have already exercised the queue. With C3 Stage 1 now accepted, `4.2: Storytelling Like a Pro` is the next priority when unprocessed because it is a long-form Storyteller-focused episode. After that, later Trouble Brewing-relevant episodes are selected by EvidenceLab itself. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
+Investigator is seeded as the accepted completed benchmark. The queue has since completed additional semantic passes across Imp, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, and Baron. With C3 Stage 1 accepted and no broad E3 blocker active, EvidenceLab simply advances through the remaining high-value Trouble Brewing-relevant feed entries. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
 
 Semantic review should recover, when supported:
 
