@@ -182,6 +182,7 @@ The following are **not** superseded:
 
 Legend:
 
+- **VERIFIED-DIMENSION**: bounded primary-audio review has produced source-backed policy-dimension evidence ready for Host mapping/evaluation.
 - **READY-DIMENSION**: one bounded primary-audio verification could produce usable VERIFIED policy-dimension evidence.
 - **NEAR-HISTORICAL**: an observed historical choice plus rationale/alternative exists, but exact prefix or source verification still needs work.
 - **SUPPORTING**: useful dimensions exist, but evidence is not yet close to authorizing a bounded policy.
@@ -191,7 +192,7 @@ Legend:
 
 | Family | Existing evidence | Main gap | Distance | Bounded primary-audio review? | Whole-game reconstruction? | Host legal-domain enrichment? |
 | --- | --- | --- | --- | --- | --- | --- |
-| **Washerwoman** | M02 avoid over-confirming Mayor; M03 prefer roles that benefit from trusted information routing; M04 Drunk-exclusion amplification; M08 anti-meta decoy variation. All currently machine-only. | Verify exact preference/rejection wording and conditions; avoid collapsing target-role preference into a global ranking. | **READY-DIMENSION** | **YES — first target** | Not required for the first generic policy dimension. | **YES** for actual legal pair candidates and replay. |
+| **Washerwoman** | **WW1 VERIFIED:** M02 bounded avoidance of Mayor when direct confirmation over-compresses late-game uncertainty; M03 positive preference for Monk/Undertaker/Fortune Teller/Soldier-like targets when trusted routing or credibility support is valuable; M04 verified descriptive Drunk-exclusion amplification only; M08 explicit preference for decoy-category variation and rejection of a fixed Good-only/Evil-only decoy pattern. | EvidenceLab source-verification gap is closed for these bounded dimensions. Remaining work is Host mapping to legal pair candidates, policy scope and replay/evaluation; do not infer a complete target ranking. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — WW1** | Not required for these generic dimensions. | **YES** for actual legal pair candidates, feature mapping and replay. |
 | **Investigator** | Accepted semantic benchmark; Empath M03 gives a Demon-deniability pair construction; Recluse M08/M09 provide two opposite Recluse-aware pair intents; Investigator review packet contains registration / explicit-alternative windows. | Promote specific pair-construction comparisons to VERIFIED and separate "real Minion exposed" from "registration-created ambiguity" scopes. | **READY-DIMENSION** | **YES** | Not initially; a historical case would strengthen evaluation. | **YES** |
 | **Demon bluffs** | Librarian M09 links bluff choice to Good information density; Butler M03 links bluff credibility to table meta; Scarlet Woman M02 links omitted roles / Investigator bluff to Evil future flexibility; R04 preserves an observed/reconstructed Chef/Investigator/Saint bundle without rationale. | Need VERIFIED bundle/triplet comparison or explicit rejected bluff under bounded setup conditions. | **SUPPORTING -> READY-DIMENSION after review** | **YES, after Washerwoman/Investigator** | Helpful for historical evaluation, not mandatory for first dimension. | **YES**, especially candidate-set legality. |
 | **Red Herring** | R04 has observed Sarah-for-Rhonda commitment; Scarlet Woman M03 gives meta-sensitive placement guidance; Saint M02 and Butler M02 give role-interaction reasons; Recluse M07 adds causal-ambiguity interaction. | No VERIFIED same-condition preference/rejection yet; avoid turning one observed placement into ranking. | **SUPPORTING** | Not first; review when Host opens exact Red-Herring predicate. | Helpful for historical evaluation, but generic guidance can establish dimensions. | **YES** |
@@ -219,51 +220,41 @@ Legend:
 | **Mayor redirect** | Mayor M02/M03/M04 give target/state/intent comparisons; Saint M03 explicitly compares redirect severity; Scarlet Woman M05 covers redirect-to-Imp succession intervention. | Primary-audio verification and explicit bounded target classes; avoid generic balance heuristic. | **READY-DIMENSION** | **YES** | Not for first generic dimension. | **YES**, because legal redirect domain and rule-forced cases belong to Host. |
 | **Demon succession** | R04 reconstructs two Imp transitions in ordered history; Spy M11 gives a historical "less-trusted Baron becomes Demon, trusted Spy remains support" choice with rationale; Scarlet Woman M05 covers Mayor-bounce-forced successor transition as generic guidance. | Verify who controlled each transition, exact candidate Minions, and source-backed alternatives. Distinguish Storyteller selection from player-controlled Imp self-kill and automatic/forced transitions. | **NEAR-HISTORICAL** | **YES**, especially Spy M11 | Helpful for historical evaluation. | **ESSENTIAL** for legal/forced-vs-discretionary classification. |
 
-## 8. First bounded primary-audio review target
+## 8. First bounded primary-audio review — EL-LRE-WW1 COMPLETE
 
 ### EL-LRE-WW1 — healthy Washerwoman target-selection dimensions
 
-Recommended first target because Host Priority 1 begins with Washerwoman and the current episode already contains a compact cluster of explicit target-selection rationale.
+Status: **PRIMARY-AUDIO HUMAN REVIEW COMPLETE / VERIFIED** on 2026-10-04.
 
 Source:
 
 - `11: Washerwoman (Trouble Brewing) - With Official Storyteller Reggie Collins!`
 - source ID: `podcast:81f82799d83c9572fff012de09bf2247`
 
-Review windows:
+Verified results:
 
-1. `00:43:09–00:43:52` — caution against showing Mayor because confirmation can over-compress final-three uncertainty.
-2. `00:43:53–00:45:22` — preference for Monk / Undertaker / Fortune Teller / Soldier-like targets when trusted information routing or credibility support is valuable.
-3. `00:46:39–00:47:55` — truthfully showing information roles can strongly exclude Drunk worlds and amplify information confidence.
-4. `00:52:51–00:53:42` — avoid a fixed decoy alignment/category pattern because it creates Storyteller meta.
+1. `00:43:09–00:43:52` — **EXPLICIT_PREFERENCE / bounded avoidance**: Reggie explicitly advises against/cautions on showing Mayor when direct confirmation would over-compress late-game uncertainty. No additional qualification was identified in the reviewed window.
+2. `00:43:53–00:45:22` — **EXPLICIT_PREFERENCE**: Monk, Undertaker and Fortune Teller are named positive examples for trusted information routing without immediate role exposure; Soldier is a positive example where credibility support is valuable. No pairwise ranking among those roles is supported.
+3. `00:46:39–00:47:55` — **VERIFIED DESCRIPTIVE DIMENSION ONLY**: truthfully showing an information role can exclude Drunk worlds and amplify trust in that role's information. Human review explicitly classified this as strength analysis, not a Storyteller preference/rejection.
+4. `00:52:51–00:53:42` — **EXPLICIT_PREFERENCE + fixed-pattern rejection**: vary decoy category so players cannot learn a stable Storyteller Good/Evil pattern. The Outsider/public-claim deduction-compression consequence is also verified. This rejects a fixed-pattern policy, not any specific candidate.
 
-Promotion goal:
+The complete bounded handoff is recorded in `docs/EL_LRE_WW1_WASHERWOMAN_VERIFIED_HANDOFF_2026-10-04.md`.
 
-```text
-EXPLICIT_PREFERENCE / EXPLICIT_REJECTION
-+ exact condition
-+ rationale
-+ speaker attribution
-+ timestamp
-+ bounded generalization scope
-+ VERIFIED
-```
+WW1 does **not** authorize a complete Washerwoman ranking, numeric weights, deterministic Mayor exclusion, or treating Host `LEGAL_UNCHOSEN` pairs as source-backed losers.
 
-Do **not** attempt to derive a complete Washerwoman ranking from these windows.
-
-After verification, Host should own:
+EvidenceLab's verification work for these healthy-Washerwoman dimensions is complete. Host now owns:
 
 - legal pair-domain enumeration;
-- candidate projection into canonical Game State;
-- policy predicate/versioning;
+- candidate/feature projection into canonical Game State;
+- bounded versioned policy construction;
 - replay/evaluation;
-- production cutover.
+- production cutover judgment.
 
-No whole-game reconstruction is required before this review because the immediate target is generic comparative policy-dimension evidence, not a historical same-state replay case.
+No whole-game reconstruction is required for the verified generic dimensions.
 
 ## 9. Secondary high-value bounded targets
 
-After EL-LRE-WW1, the strongest ready targets are:
+With EL-LRE-WW1 complete, the strongest next ready targets are:
 
 1. **Investigator pair construction**
    - Empath `00:38:47–00:39:20`;

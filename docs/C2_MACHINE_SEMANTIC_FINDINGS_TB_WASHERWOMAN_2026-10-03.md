@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Washerwoman — 2026-10-03
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M02/M03/M04/M08 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `11: Washerwoman (Trouble Brewing) - With Official Storyteller Reggie Collins!`
 >
@@ -52,7 +52,7 @@ Potential downstream dimensions:
 - bluff-space preservation;
 - healthy-information ecology.
 
-**E3 disposition:** explicit generic choice-over-alternatives guidance, but not tied to one reconstructable historical setup.
+**Verification / LRE disposition:** **VERIFIED** by bounded primary-audio review on 2026-10-04. This is source-backed `EXPLICIT_PREFERENCE` / bounded avoidance of Mayor when direct confirmation would over-compress late-game uncertainty. The reviewed segment supplied no additional qualification. It is not a universal Mayor prohibition or a complete target ranking.
 
 ### C2-WASHERWOMAN-M03 — hidden or hard-to-believe roles can be especially useful Washerwoman targets
 
@@ -71,7 +71,7 @@ Potential downstream dimensions:
 - exposure cost;
 - trust-channel utility.
 
-**E3 disposition:** generic Storyteller guidance only.
+**Verification / LRE disposition:** **VERIFIED** by bounded primary-audio review on 2026-10-04. Reggie explicitly gives Monk, Undertaker and Fortune Teller as preferred examples because trusted routing lets them communicate without immediately outing themselves, and Soldier because credibility support is valuable. This is `EXPLICIT_PREFERENCE` with named positive examples, not a pairwise ranking and not rejection of unmentioned targets.
 
 ### C2-WASHERWOMAN-M04 — Washerwoman can effectively confirm that another information role is not the Drunk
 
@@ -91,7 +91,7 @@ Potential downstream dimensions:
 - information-confidence amplification;
 - role-information utility.
 
-**E3 disposition:** strong descriptive feature support; no fixed historical alternative comparison.
+**Verification / LRE disposition:** **VERIFIED DESCRIPTIVE POLICY-DIMENSION EVIDENCE** by bounded primary-audio review on 2026-10-04. Human review confirmed that this passage describes the strength/amplification effect only; it is **not** an explicit Storyteller preference, rejection or comparison loser.
 
 ### C2-WASHERWOMAN-M05 — historical poisoned-Washerwoman choice supports bluff-compatible misinformation over obviously broken misinformation
 
@@ -174,7 +174,7 @@ Potential downstream dimensions:
 - deduction compression;
 - public-claim interaction.
 
-**E3 disposition:** generic pair-construction guidance, not a historical fixed-state choice.
+**Verification / LRE disposition:** **VERIFIED** by bounded primary-audio review on 2026-10-04. The speakers explicitly recommend varying decoy category so players cannot learn a fixed Storyteller pattern. This supports `EXPLICIT_PREFERENCE` for variation and `EXPLICIT_REJECTION` of a fixed Good-only/Evil-only decoy-policy pattern, not rejection of any specific player. The Outsider/public-claim deduction-compression point was also confirmed.
 
 ### C2-WASHERWOMAN-M09 — new-player rules comprehension is part of effective information delivery
 
@@ -223,4 +223,4 @@ Most useful for future recommendation work:
 6. **M03** — pair information can function as a safe information-routing channel;
 7. **M09** — player experience changes whether the information is delivered reliably at all.
 
-No immediate primary-audio review is requested unless Host opens a bounded gap around pair-information strength, misinformation detectability, bluff compatibility, or Drunk self-diagnosis.
+EL-LRE-WW1 primary-audio review is now complete for M02/M03/M04/M08. See `docs/EL_LRE_WW1_WASHERWOMAN_VERIFIED_HANDOFF_2026-10-04.md`. Other findings in this episode remain NOT VERIFIED unless separately promoted.

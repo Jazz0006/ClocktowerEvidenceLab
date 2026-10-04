@@ -212,7 +212,7 @@ Current priority:
 2. **impaired/misinformation:** Drunk/Poisoned information, Chef, Empath, Fortune Teller, Washerwoman, Librarian, Investigator, Undertaker, Ravenkeeper and other controllable misinformation;
 3. **later/special:** Spy/Recluse registration, Mayor redirect, Demon succession.
 
-The first bounded review target is **EL-LRE-WW1**, using the Washerwoman episode around `00:43:09–00:47:55` plus `00:52:51–00:53:42` to verify target-selection preferences, confirmation-strength rationale and anti-meta limits. This does not authorize a complete Washerwoman ranking.
+**EL-LRE-WW1 is COMPLETE / VERIFIED.** Primary-audio review confirmed: bounded avoidance of Mayor when direct confirmation over-compresses late-game uncertainty; positive preference for Monk/Undertaker/Fortune Teller/Soldier-like targets when trusted routing or credibility support is valuable; Drunk-exclusion amplification as descriptive strength only; and explicit anti-meta preference for varying decoy category rather than following a fixed Good/Evil pattern. See `docs/EL_LRE_WW1_WASHERWOMAN_VERIFIED_HANDOFF_2026-10-04.md`. This does not authorize a complete Washerwoman ranking.
 
 C3-Q04 remains VERIFIED historical/supporting evidence and proves this acquisition shape works. It is no longer the general continuation lane. Host has already cut over `DRUNK_ASSIGNMENT_Q04_V1`; broad Drunk scouting stays closed.
 
@@ -255,11 +255,11 @@ Authorities:
 Run C2 and EL-LRE in parallel:
 
 1. re-check the queue-owned `current` semantic session before starting new C2 acquisition; do not duplicate a live `prepare-next`;
-2. execute the bounded **EL-LRE-WW1** primary-audio review for the four Washerwoman windows identified in the EL-LRE authority;
-3. promote only source-backed preference/rejection/comparison semantics with explicit conditions, rationale, timestamp, speaker and verification; do not infer a full ranking;
-4. hand the verified bounded evidence to Host without enumerating legal pairs or policy weights;
+2. treat **EL-LRE-WW1** as COMPLETE / VERIFIED and hand the bounded Washerwoman evidence to Host without enumerating legal pairs or policy weights;
+3. begin the next Priority-1 bounded review: **Investigator pair construction**, starting with Empath `00:38:47–00:39:20` and Recluse `01:06:54–01:08:37`;
+4. preserve distinct Investigator intents such as Demon deniability, Recluse-registration ambiguity, and real-Minion exposure rather than collapsing them into one ranking;
 5. continue queue-owned C2 semantic collection and use LRE-aware triage for new findings;
-6. after Washerwoman, prioritize the Investigator pair-construction windows, then Demon-bluff / Red-Herring material according to the Host family gap.
+6. after Investigator, prioritize Demon-bluff / Red-Herring material according to the Host family gap.
 
 Keep broad quota-driven C1 scouting, broad Drunk acquisition and broad C5/E3 hunting stopped. Historical E3/C5 artifacts remain valid evidence/locator records but no longer define the general continuation route.
 
