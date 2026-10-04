@@ -93,9 +93,10 @@ Current implementation status:
 - **bounded real multi-episode C2B -> C2C validation — COMPLETE / GREEN** for Investigator and Imp;
 - **C2D bounded review packets + review CLI — IMPLEMENTATION GREEN**;
 - **C2D-S queue-owned full-transcript semantic review — OPERATIONAL / ACCEPTED FOR MACHINE-FIRST REVIEW ASSISTANCE**;
-- **EL-LRE0 Host LRE evidence alignment — AUDIT COMPLETE / DOCS-ONLY**.
+- **EL-LRE0 Host LRE evidence alignment — AUDIT COMPLETE / DOCS-ONLY**;
+- **EL-ML1A Decision Point benchmark corpus audit — COMPLETE / CONTRACT ACCEPTED**: 6 conservative READY historical decision points across 3 game groups, plus >=18 high-value PARTIAL candidates. The active continuation is EL-ML1B benchmark manifest + whole-game prefix repair.
 
-The podcast route remains unchanged: queue-owned `prepare-next -> complete ASR -> full-transcript semantic review -> lightweight timestamped findings -> LRE-aware triage -> targeted human verification only where needed -> cleanup-current`. Full media/transcripts remain outside Git.
+The podcast tooling route remains available on demand: queue-owned `prepare-next -> complete ASR -> full-transcript semantic review -> lightweight timestamped findings -> LRE-aware triage -> targeted human verification only where needed -> cleanup-current`. The fixed TB queue is exhausted and broad podcast policy mining is no longer the default continuation. Full media/transcripts remain outside Git.
 
 C2 and EL-LRE keep the evidence boundary explicit:
 
@@ -111,10 +112,11 @@ The TB-only interoperability slice and EL-ML0 architecture remain accepted. Func
 
 Start with:
 
+- `docs/EL_ML1A_DECISION_POINT_BENCHMARK_AUDIT_2026-10-05.md`;
+- `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`;
 - `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`;
 - `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
 - `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
-- `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`;
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
 
 ## Storage direction

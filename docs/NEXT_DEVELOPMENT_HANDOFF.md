@@ -1,6 +1,6 @@
-# NEXT DEVELOPMENT HANDOFF — C2 + EL-LRE Replacement-Policy Evidence
+# NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **C2 FIXED TB PODCAST QUEUE EXHAUSTED / EL-LRE PRIORITY-1 VERIFIED / EL-LRE PRIORITY-2 MAJOR BATCH VERIFIED / HOST HANDOFF READY / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / DECISION BENCHMARK CONTRACT ACCEPTED / 6 READY HISTORICAL POINTS / >=18 PARTIAL CANDIDATES / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -11,13 +11,14 @@
 1. `AGENTS.md`
 2. `README.md`
 3. `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
-4. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
-5. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-6. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-7. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-8. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-9. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-10. this file
+4. `docs/EL_ML1A_DECISION_POINT_BENCHMARK_AUDIT_2026-10-05.md`
+5. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+6. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+7. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+8. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+9. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+10. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+11. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -70,23 +71,24 @@ Only the first four may be source-backed EvidenceLab relations.
 
 ## 4. Current task
 
-The current EvidenceLab milestone is **HOST HANDOFF READY**.
+The current EvidenceLab milestone is **EL-ML1B — benchmark manifest + whole-game decision-prefix repair**.
 
-Immediate work is no longer broad feed traversal. The fixed Trouble Brewing semantic-eligible podcast queue has been exhausted, and the 2026-10-04 verification batch has closed all four Priority-1 healthy/setup families plus six major Priority-2 families.
+EL-ML1A established a conservative current inventory of 6 READY historical decision points across only 3 game groups and roughly 2 Storyteller independence groups, plus at least 18 high-value PARTIAL candidates. The main bottleneck is therefore independent complete historical decision states, especially later-game/history-sensitive prefixes, not additional generic policy dimensions.
 
-Preferred next action:
+Immediate route:
 
 ```text
-consume docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md in CampBoardGameHost
--> map source-backed dimensions to Host-owned legal candidate domains / Game State features
--> define bounded versioned policy per decision family
--> replay / evaluate
--> cut over only after Host acceptance gates pass
+materialize the 6 READY benchmark seeds
+-> recover G10 later-decision prefixes
+-> close R04 blockers
+-> recover FT1-A / WW2 / UT1-A historical prefixes
+-> repair R01/R02/R03 and Investigator/Ravenkeeper candidates
+-> acquire new complete TB games only if READY still < 20
 ```
 
-EvidenceLab should resume acquisition/review only when Host opens a bounded evidence gap or source scope is deliberately broadened.
+Pilot target: 20–30 READY historical decision points, at least 8 games, at least 4 Storyteller independence groups, and at least 40% later-game/history-sensitive decisions.
 
-Do not reopen broad Drunk acquisition, broad E3/C5 hunting, or implement recommendation policy inside EvidenceLab.
+C2 and EL-LRE remain bounded on-demand lanes for gaps exposed by benchmark construction. Do not reopen broad Drunk acquisition, broad E3/C5 hunting, broad podcast policy mining, or recommendation policy inside EvidenceLab.
 
 ## 5. Verified milestone
 
@@ -112,14 +114,20 @@ Verified handoffs now exist for:
 
 Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated downstream entry point.
 
-## 6. Current family priority
+## 6. Benchmark build priority
 
-### Host consumption priority
+### EL-ML1B priority
 
-1. **Priority-1 verified set:** Washerwoman -> Investigator -> Demon bluffs -> Red Herring.
-2. **Priority-2 verified set:** Fortune Teller -> impaired Washerwoman -> Chef -> Empath -> Undertaker -> Librarian, selected according to Host implementation readiness rather than EvidenceLab review order.
+1. **Manifest first:** project the six EL-ML1A READY historical decisions into the smallest machine-readable benchmark/seed surface.
+2. **Same-game longitudinal test:** materialize the later G10 decision prefixes while preserving one G10 split group.
+3. **High-leverage repair:** close R04 blockers because one repaired game may unlock several early- and later-night decision points.
+4. **Rationale-rich prefix recovery:** FT1-A -> WW2 -> UT1-A.
+5. **Diversity repair:** R01/R02/R03 plus existing Investigator/Ravenkeeper historical cases.
+6. **New complete games only if needed:** prefer new Storyteller independence and grimoire visibility.
 
-### Remaining EvidenceLab-first gaps
+The existing Priority-1/Priority-2 EL-LRE verified set remains retrieval/evaluation evidence and may still be consumed by Host, but it no longer defines EvidenceLab's default continuation order.
+
+### On-demand EvidenceLab gaps retained
 
 1. Ravenkeeper misinformation / registration — **RK1 targeted acquisition now PARTIAL VERIFIED-DIMENSION**; official bluff-support Spy registration is direct-written VERIFIED and the early-vs-Final-3 Spy A/B comparison is ready for bounded primary-audio review;
 2. impaired Investigator — **INV2 targeted acquisition now structures the gap**: official rules distinguish wrong-seat vs wrong-Minion-type misinformation, and direct historical sources support false-world coherence, but no source-backed A-vs-B preference has yet been found;
@@ -130,11 +138,11 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 For the family-by-family evidence/gap/review/reconstruction/Host-enrichment matrix, use:
 `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`.
 
-## 7. Strongest remaining EvidenceLab leads
+## 7. On-demand EvidenceLab leads — not default continuation
 
-Do not spend more human-review effort on already-complete families unless Host identifies a concrete ambiguity.
+Do not spend more human-review effort on these policy families merely because review material exists. Re-enter them only when EL-ML1B benchmark construction or Host evaluation exposes a concrete missing comparison/context field.
 
-Default remaining lead order if Host does not request something narrower:
+When such a bounded gap exists, the retained lead order is:
 
 1. **Ravenkeeper misinformation / registration — RK1 ACTIVE**
    - `docs/EL_LRE_RK1_RAVENKEEPER_TARGETED_ACQUISITION_2026-10-04.md` now records an official direct-written bluff-support Spy-registration preference;
@@ -173,8 +181,8 @@ Default remaining lead order if Host does not request something narrower:
 - Broad Drunk scouting remains closed.
 - G10 functioning-Librarian evidence has already been consumed by Host's functioning Librarian V2 route; it remains corpus evidence rather than a current blocker.
 - EL-TBGS-0/1 remains accepted.
-- EL-ML0 remains accepted; no new schema migration is authorized by EL-LRE0.
-- Existing C5/E3 finding documents remain useful historical records and locator sources, but they no longer define global continuation priority.
+- EL-ML0 remains accepted; EL-ML1B authorizes only the smallest derived benchmark/export projection and still does **not** authorize a new persistence/schema migration.
+- Existing C5/E3 finding documents remain useful historical records, retrieval evidence and locator sources, but they no longer define global continuation priority.
 
 ## 9. C2 operational boundary
 
