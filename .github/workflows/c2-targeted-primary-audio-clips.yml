@@ -1,0 +1,202 @@
+name: C2 targeted primary-audio clips
+
+on:
+  push:
+    branches:
+      - "audio-review/**"
+    paths:
+      - ".github/c2-primary-audio-request.json"
+
+jobs:
+  build-review-pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install acquisition support
+        run: python -m pip install -e .
+
+      - name: Build live podcast manifest
+        run: clocktower-podcast-manifest --output manifest.json
+
+      - name: Ensure ffmpeg
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+
+      - name: Build bounded primary-audio review pack
+        run: |
+          python - <<'PY'
+          import json
+          import pathlib
+          import re
+          import subprocess
+          import urllib.request
+
+          request_path = pathlib.Path(".github/c2-primary-audio-request.json")
+          request = json.loads(request_path.read_text(encoding="utf-8"))
+          pack_name = request.get("pack_name")
+          clips = request.get("clips")
+
+          if not isinstance(pack_name, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,63}", pack_name):
+              raise SystemExit("pack_name must match [a-z0-9][a-z0-9-]{0,63}")
+          if not isinstance(clips, list) or not (1 <= len(clips) <= 12):
+              raise SystemExit("clips must contain 1..12 items")
+
+          manifest = json.loads(pathlib.Path("manifest.json").read_text(encoding="utf-8"))
+          by_guid = {
+              episode["guid"]: episode
+              for episode in manifest["episodes"]
+              if episode.get("guid")
+          }
+
+          normalized = []
+          total_duration = 0.0
+          seen_cases = set()
+          for raw in clips:
+              if not isinstance(raw, dict):
+                  raise SystemExit("each clip request must be an object")
+              case_name = raw.get("case_name")
+              guid = raw.get("guid")
+              start = raw.get("start_seconds")
+              end = raw.get("end_seconds")
+              if not isinstance(case_name, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,63}", case_name):
+                  raise SystemExit(f"invalid case_name: {case_name!r}")
+              if case_name in seen_cases:
+                  raise SystemExit(f"duplicate case_name: {case_name}")
+              seen_cases.add(case_name)
+              if not isinstance(guid, str) or guid not in by_guid:
+                  raise SystemExit(f"GUID not found in live manifest: {guid!r}")
+              if not isinstance(start, (int, float)) or not isinstance(end, (int, float)):
+                  raise SystemExit(f"{case_name}: start/end must be numeric seconds")
+              start = float(start)
+              end = float(end)
+              if start < 0 or end <= start:
+                  raise SystemExit(f"{case_name}: invalid time range")
+              duration = end - start
+              if duration > 600:
+                  raise SystemExit(f"{case_name}: bounded clip may not exceed 600 seconds")
+              episode = by_guid[guid]
+              episode_duration = episode.get("duration_seconds")
+              if episode_duration is not None and end > float(episode_duration) + 2:
+                  raise SystemExit(f"{case_name}: clip exceeds episode duration")
+              if not episode.get("audio_url"):
+                  raise SystemExit(f"{case_name}: episode has no public audio locator")
+              total_duration += duration
+              normalized.append((case_name, guid, start, end, episode))
+
+          if total_duration > 1200:
+              raise SystemExit("total bounded listening time may not exceed 1200 seconds")
+
+          work = pathlib.Path("work")
+          review = pathlib.Path("review")
+          work.mkdir(exist_ok=True)
+          review.mkdir(exist_ok=True)
+
+          downloaded = {}
+          metadata = {
+              "schema_version": "c2-targeted-primary-audio-pack-v1",
+              "pack_name": pack_name,
+              "total_listening_seconds": total_duration,
+              "clips": [],
+          }
+
+          for case_name, guid, start, end, episode in normalized:
+              if guid not in downloaded:
+                  target = work / f"{guid}.audio"
+                  req = urllib.request.Request(
+                      episode["audio_url"],
+                      headers={"User-Agent": "ClocktowerEvidenceLab/primary-audio-review"},
+                  )
+                  with urllib.request.urlopen(req, timeout=60) as response, target.open("wb") as output:
+                      while chunk := response.read(1024 * 1024):
+                          output.write(chunk)
+                  downloaded[guid] = target
+
+              clip_path = review / f"{case_name}.mp3"
+              subprocess.run(
+                  [
+                      "ffmpeg",
+                      "-hide_banner",
+                      "-loglevel",
+                      "error",
+                      "-ss",
+                      f"{start:.3f}",
+                      "-to",
+                      f"{end:.3f}",
+                      "-i",
+                      str(downloaded[guid]),
+                      "-vn",
+                      "-c:a",
+                      "libmp3lame",
+                      "-q:a",
+                      "4",
+                      str(clip_path),
+                  ],
+                  check=True,
+              )
+              metadata["clips"].append(
+                  {
+                      "case_name": case_name,
+                      "guid": guid,
+                      "source_id": episode["source_id"],
+                      "title": episode["title"],
+                      "webpage_url": episode.get("webpage_url"),
+                      "start_seconds": start,
+                      "end_seconds": end,
+                      "duration_seconds": end - start,
+                      "artifact_file": clip_path.name,
+                  }
+              )
+
+          (review / "metadata.json").write_text(
+              json.dumps(metadata, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          lines = [
+              f"# Primary-audio review pack — {pack_name}",
+              "",
+              f"Total bounded listening: {total_duration:.1f}s",
+              "",
+          ]
+          for item in metadata["clips"]:
+              lines.extend(
+                  [
+                      f"## {item['case_name']}",
+                      "",
+                      f"- source: {item['title']}",
+                      f"- GUID: {item['guid']}",
+                      f"- window: {item['start_seconds']:.1f}s–{item['end_seconds']:.1f}s",
+                      f"- file: {item['artifact_file']}",
+                      "",
+                  ]
+              )
+          (review / "README.md").write_text("\n".join(lines), encoding="utf-8")
+
+          for path in downloaded.values():
+              path.unlink(missing_ok=True)
+          PY
+
+      - name: Assert full source audio is not retained
+        run: |
+          test -d review
+          if find work -type f -print -quit | grep -q .; then
+            echo "full source media unexpectedly remains in work/" >&2
+            exit 1
+          fi
+
+      - name: Upload bounded review pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: c2-primary-audio-review-pack
+          path: review/
+          if-no-files-found: error
+          retention-days: 14

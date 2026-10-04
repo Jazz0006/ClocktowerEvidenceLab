@@ -215,6 +215,22 @@ The existing `EXPLICIT_ALTERNATIVE` category remains useful and P0-worthy for re
 
 C3-Q04 remains the historical proof that this bounded review shape works, but future LRE review is not restricted to Drunk. With the fixed feed queue exhausted, bounded Host evidence requests now control the next review target; additional Drunk evidence does not preempt other families unless Host opens a new bounded Drunk gap.
 
+#### Targeted primary-audio regeneration after queue exhaustion
+
+The exhausted semantic queue does not prevent re-review of an already identified timestamp. `.github/workflows/c2-targeted-primary-audio-clips.yml` provides a narrow regeneration path for primary-audio verification without restoring full audio or transcript artifacts as durable evidence.
+
+A temporary `audio-review/**` branch may add `.github/c2-primary-audio-request.json` containing one to twelve requests identified by stable podcast GUID plus `start_seconds` / `end_seconds`. The workflow:
+
+- rebuilds the live podcast manifest and resolves the GUID to its public audio locator;
+- downloads full source audio only into the ephemeral GitHub Actions runner;
+- clips only the requested bounded windows with ffmpeg;
+- limits each clip to ten minutes and the complete review pack to twenty minutes;
+- uploads only bounded MP3 clips plus lightweight metadata / review README;
+- deletes the downloaded full source before artifact upload;
+- retains the bounded artifact for fourteen days.
+
+The request branch and generated clip pack are acquisition/review infrastructure, not durable evidence. The request JSON should not be merged into `main`; only reviewed concise semantics, timestamp, provenance and verification state belong in the repository. This path exists specifically for LRE windows such as RK1/SR1/MR1/DS1 after the original temporary ASR/audio workspace has already been cleaned.
+
 Machine matches remain unverified acquisition assistance. See `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md` and `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
 
 ### C2E — promotion into durable evidence
