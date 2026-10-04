@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C2 + EL-LRE Replacement-Policy Evidence
 
-> Current state: **C2 ACTIVE / EL-LRE0 AUDIT COMPLETE / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **C2 ACTIVE / EL-LRE0 AUDIT COMPLETE / EL-LRE-WW1 VERIFIED / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -79,31 +79,26 @@ Do not implement recommendation policy in EvidenceLab.
 
 ## 5. Immediate bounded review target
 
-### EL-LRE-WW1 — healthy Washerwoman target-selection dimensions
+### EL-LRE-WW1 — COMPLETE / VERIFIED
 
-Source:
-`11: Washerwoman (Trouble Brewing) - With Official Storyteller Reggie Collins!`
+Primary-audio review on 2026-10-04 confirmed four bounded Washerwoman findings:
 
-Review these windows:
+- Mayor over-confirmation avoidance is an explicit bounded preference;
+- Monk / Undertaker / Fortune Teller / Soldier-like targets are positive examples when trusted information routing or credibility support is valuable;
+- Drunk-exclusion amplification is descriptive strength analysis only, not a preference;
+- decoy category should vary to prevent Storyteller meta; a fixed Good-only/Evil-only decoy policy is explicitly discouraged.
 
-- `00:43:09–00:43:52` — avoid over-confirming Mayor;
-- `00:43:53–00:45:22` — preference for targets that benefit from trusted information routing / credibility support;
-- `00:46:39–00:47:55` — Drunk-exclusion / confidence amplification;
-- `00:52:51–00:53:42` — anti-meta decoy-category variation.
+Authority/handoff:
+`docs/EL_LRE_WW1_WASHERWOMAN_VERIFIED_HANDOFF_2026-10-04.md`.
 
-Promotion target:
+### Next target — Investigator pair construction
 
-```text
-explicit preference/rejection
-+ condition
-+ rationale
-+ speaker
-+ timestamp
-+ bounded scope
-+ VERIFIED
-```
+Review:
 
-This is generic policy-dimension evidence. Do not infer a complete Washerwoman ranking and do not enumerate legal candidates inside EvidenceLab.
+- Empath `00:38:47–00:39:20`;
+- Recluse `01:06:54–01:08:37`.
+
+Confirm exact preference/comparison wording and keep separate the intents of Demon deniability, Recluse registration ambiguity, and real-Minion exposure.
 
 ## 6. Current family priority
 
@@ -138,7 +133,7 @@ For the family-by-family evidence/gap/review/reconstruction/Host-enrichment matr
 
 ## 7. Strongest already-located LRE leads
 
-After EL-LRE-WW1, the strongest bounded targets are:
+With EL-LRE-WW1 complete, the strongest remaining bounded targets are:
 
 1. **Investigator pair construction**
    - Empath `00:38:47–00:39:20`;
