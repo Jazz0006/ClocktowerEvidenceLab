@@ -121,7 +121,7 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 
 ### Remaining EvidenceLab-first gaps
 
-1. Ravenkeeper misinformation / registration — clearest sparse Priority-2 family;
+1. Ravenkeeper misinformation / registration — **RK1 targeted acquisition now PARTIAL VERIFIED-DIMENSION**; official bluff-support Spy registration is direct-written VERIFIED and the early-vs-Final-3 Spy A/B comparison is ready for bounded primary-audio review;
 2. impaired Investigator — healthy pair construction is already covered by INV1, but impaired-output comparison remains weak;
 3. Spy / Recluse registration — strong machine leads, pending bounded verification if Host opens the family;
 4. Mayor redirect — strong machine leads, pending bounded verification;
@@ -136,10 +136,11 @@ Do not spend more human-review effort on already-complete families unless Host i
 
 Default remaining lead order if Host does not request something narrower:
 
-1. **Ravenkeeper misinformation / registration**
-   - existing whole-game corpus includes poisoned Ravenkeeper -> Imp target -> false Slayer output;
-   - older Q05 material contains rejection-oriented machine leads;
-   - the missing piece is explicit source-backed A-vs-B comparison/rationale.
+1. **Ravenkeeper misinformation / registration — RK1 ACTIVE**
+   - `docs/EL_LRE_RK1_RAVENKEEPER_TARGETED_ACQUISITION_2026-10-04.md` now records an official direct-written bluff-support Spy-registration preference;
+   - Clocktower Academy / Beardy public transcript supplies the previously missing A/B shape: early/Night-2 Spy bluff support versus near-Final-3 direct Spy exposure for a healthy Ravenkeeper;
+   - next action is bounded primary-audio confirmation of that Beardy comparison; do not fabricate timestamps from the transcript;
+   - existing poisoned-Ravenkeeper whole-game cases remain supporting historical examples, not role-token rankings.
 
 2. **Impaired Investigator**
    - locate an exact impaired-output comparison rather than repeating healthy INV1 pair-construction evidence.

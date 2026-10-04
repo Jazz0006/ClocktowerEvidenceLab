@@ -249,9 +249,11 @@ The fixed Trouble Brewing podcast semantic queue is exhausted. EvidenceLab shoul
 
 If Host does not open a more urgent bounded gap, the default remaining evidence order is:
 
-1. **Ravenkeeper misinformation / registration**
-   - strongest remaining sparse Priority-2 family;
-   - seek explicit A-vs-B output/registration reasoning.
+1. **Ravenkeeper misinformation / registration — RK1 targeted acquisition active**
+   - official Storyteller Advice now supplies a direct-written VERIFIED bluff-support Spy-registration predicate;
+   - Clocktower Academy / Beardy public transcript supplies the previously missing early/Night-2 bluff-support vs near-Final-3 direct-Spy A/B comparison;
+   - bounded primary-audio review is still required before promoting that stage-sensitive comparison to VERIFIED;
+   - authority: `docs/EL_LRE_RK1_RAVENKEEPER_TARGETED_ACQUISITION_2026-10-04.md`.
 
 2. **Impaired Investigator**
    - healthy Investigator construction is covered by INV1;
