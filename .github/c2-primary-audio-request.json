@@ -1,0 +1,29 @@
+{
+  "pack_name": "lre-batch-02-20261005",
+  "clips": [
+    {
+      "case_name": "inv2-investigator-storyteller-block",
+      "guid": "5722d8e8-b89d-4067-91ac-1550b8da428d",
+      "start_seconds": 2910,
+      "end_seconds": 3420
+    },
+    {
+      "case_name": "mr1-saint-moderate-severity",
+      "guid": "a3ab74ce-5d04-4caa-95b5-dd08d5e26f53",
+      "start_seconds": 2025,
+      "end_seconds": 2120
+    },
+    {
+      "case_name": "mr1-undertaker-high-value-good",
+      "guid": "9a048df8-622d-0019-713a-1fd9bcdf55c4",
+      "start_seconds": 2365,
+      "end_seconds": 2445
+    },
+    {
+      "case_name": "mr1-scarlet-succession",
+      "guid": "7318fc50-8468-2822-eb62-22cae200d644",
+      "start_seconds": 3175,
+      "end_seconds": 3290
+    }
+  ]
+}
