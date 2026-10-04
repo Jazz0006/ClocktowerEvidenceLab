@@ -110,6 +110,58 @@ GENERAL_STORYTELLING_PRIORITY_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 """
 
 
+def _write_ready_semantic_workspace(root, *, guid, source_id, title):
+    asr_path = root / "episodes" / "source" / "asr.json"
+    asr_path.parent.mkdir(parents=True)
+    session = podcast_semantic.SemanticReviewSession(
+        guid=guid,
+        source_id=source_id,
+        episode_title=title,
+    )
+    (root / podcast_semantic.SESSION_MARKER_FILENAME).write_text(
+        session.model_dump_json(indent=2) + "\n",
+        encoding="utf-8",
+    )
+    asr_path.write_text(
+        asr.AsrTranscript(
+            model_name="small.en",
+            language="en",
+            language_probability=1.0,
+            segments=(
+                asr.TranscriptSegment(
+                    index=0,
+                    start_ms=0,
+                    end_ms=1_000,
+                    text="Ready semantic transcript.",
+                ),
+            ),
+        ).model_dump_json(indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    (root / podcast_semantic.BATCH_PROGRESS_FILENAME).write_text(
+        podcast_batch.BatchRunResult(
+            progress=(
+                podcast_batch.BatchProgress(
+                    source_id=source_id,
+                    acquisition_state=podcast_manifest.AcquisitionState.COMPLETE,
+                    asr_state=podcast_manifest.AsrState.COMPLETE,
+                    payload_relative_path="episodes/source/source.mp3",
+                    payload_sha256="f" * 64,
+                    payload_bytes=10,
+                    asr_relative_path="episodes/source/asr.json",
+                    asr_model="small.en",
+                    asr_segment_count=1,
+                ),
+            ),
+            blocked_items=(),
+        ).model_dump_json(indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    return session
+
+
 def test_prepare_reacquires_one_episode_even_when_semantic_read_is_separate_from_prior_state(
     tmp_path, monkeypatch
 ):
@@ -627,3 +679,129 @@ def test_prepare_next_skips_completed_and_out_of_scope_entries(tmp_path, monkeyp
     )
 
     assert selected == ["chef-guid"]
+
+
+def test_prepare_next_prefetches_when_current_session_is_ready(tmp_path, monkeypatch):
+    root = tmp_path / "semantic" / "queue"
+    current = root / podcast_semantic.CURRENT_SESSION_DIRNAME
+    _write_ready_semantic_workspace(
+        current,
+        guid=podcast_semantic.IMP_GUID,
+        source_id=f"podcast:{podcast_semantic.IMP_GUID}",
+        title="22: Imp (Trouble Brewing)",
+    )
+    monkeypatch.setattr(podcast_semantic, "fetch_rss", lambda *args, **kwargs: QUEUE_RSS)
+
+    calls = []
+
+    def fake_prepare(*, guid, work_dir, feed_url, timeout_seconds):
+        calls.append((guid, work_dir))
+        return podcast_semantic.SemanticReviewSession(
+            guid=guid,
+            source_id=f"podcast:{guid}",
+            episode_title="selected",
+        )
+
+    monkeypatch.setattr(podcast_semantic, "prepare_semantic_session", fake_prepare)
+
+    session = podcast_semantic.prepare_next_semantic_session(
+        queue_root=root,
+        feed_url="https://example.test/feed.xml",
+    )
+
+    assert session.guid == podcast_semantic.DRUNK_GUID
+    assert calls == [
+        (
+            podcast_semantic.DRUNK_GUID,
+            root / podcast_semantic.PREFETCH_SESSION_DIRNAME,
+        )
+    ]
+
+
+def test_cleanup_current_promotes_ready_prefetch(tmp_path):
+    root = tmp_path / "semantic" / "queue"
+    current = root / podcast_semantic.CURRENT_SESSION_DIRNAME
+    prefetch = root / podcast_semantic.PREFETCH_SESSION_DIRNAME
+    current_session = _write_ready_semantic_workspace(
+        current,
+        guid=podcast_semantic.IMP_GUID,
+        source_id="podcast:imp",
+        title="22: Imp (Trouble Brewing)",
+    )
+    prefetched_session = _write_ready_semantic_workspace(
+        prefetch,
+        guid=podcast_semantic.DRUNK_GUID,
+        source_id="podcast:drunk",
+        title="16: Drunk (Trouble Brewing)",
+    )
+
+    cleaned = podcast_semantic.cleanup_current_semantic_session(queue_root=root)
+    promoted = podcast_semantic.SemanticReviewSession.model_validate_json(
+        (current / podcast_semantic.SESSION_MARKER_FILENAME).read_text(encoding="utf-8")
+    )
+    state = podcast_semantic.SemanticReviewQueueState.model_validate_json(
+        (root / podcast_semantic.QUEUE_STATE_FILENAME).read_text(encoding="utf-8")
+    )
+
+    assert cleaned == current_session
+    assert promoted == prefetched_session
+    assert not prefetch.exists()
+    assert state.completed_guids == (
+        podcast_semantic.INVESTIGATOR_GUID,
+        podcast_semantic.IMP_GUID,
+    )
+
+
+def test_cleanup_current_leaves_incomplete_prefetch_for_running_acquisition(tmp_path):
+    root = tmp_path / "semantic" / "queue"
+    current = root / podcast_semantic.CURRENT_SESSION_DIRNAME
+    prefetch = root / podcast_semantic.PREFETCH_SESSION_DIRNAME
+    _write_ready_semantic_workspace(
+        current,
+        guid=podcast_semantic.IMP_GUID,
+        source_id="podcast:imp",
+        title="22: Imp (Trouble Brewing)",
+    )
+    prefetch.mkdir(parents=True)
+    prefetched_session = podcast_semantic.SemanticReviewSession(
+        guid=podcast_semantic.DRUNK_GUID,
+        source_id="podcast:drunk",
+        episode_title="16: Drunk (Trouble Brewing)",
+    )
+    (prefetch / podcast_semantic.SESSION_MARKER_FILENAME).write_text(
+        prefetched_session.model_dump_json(indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    podcast_semantic.cleanup_current_semantic_session(queue_root=root)
+
+    assert not current.exists()
+    assert prefetch.exists()
+    assert (
+        podcast_semantic.SemanticReviewSession.model_validate_json(
+            (prefetch / podcast_semantic.SESSION_MARKER_FILENAME).read_text(encoding="utf-8")
+        )
+        == prefetched_session
+    )
+
+
+def test_render_current_promotes_ready_prefetch_if_current_is_absent(tmp_path):
+    root = tmp_path / "semantic" / "queue"
+    prefetch = root / podcast_semantic.PREFETCH_SESSION_DIRNAME
+    prefetched_session = _write_ready_semantic_workspace(
+        prefetch,
+        guid=podcast_semantic.DRUNK_GUID,
+        source_id="podcast:drunk",
+        title="16: Drunk (Trouble Brewing)",
+    )
+
+    output = StringIO()
+    rendered = podcast_semantic.render_current_semantic_transcript(
+        queue_root=root,
+        output=output,
+    )
+
+    assert rendered == prefetched_session
+    assert (root / podcast_semantic.CURRENT_SESSION_DIRNAME).exists()
+    assert not prefetch.exists()
+    assert "Ready semantic transcript." in output.getvalue()

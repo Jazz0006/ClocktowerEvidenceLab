@@ -173,13 +173,14 @@ With EL-LRE-WW1 complete, the strongest remaining bounded targets are:
 Continue:
 
 ```text
-prepare-next
--> complete ASR outside Git
--> full-transcript semantic review
+prepare/ensure current
+-> start prepare-next again once current is ASR-ready so next episode runs in prefetch
+-> full-transcript semantic review of current while prefetch acquisition/ASR runs
 -> lightweight findings
 -> LRE-aware triage
 -> targeted primary-audio verification where useful
--> cleanup-current
+-> cleanup-current (promote ready prefetch)
+-> immediately start prepare-next to refill prefetch
 -> repeat
 ```
 
