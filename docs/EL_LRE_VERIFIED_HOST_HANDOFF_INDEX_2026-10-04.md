@@ -268,9 +268,12 @@ If Host does not open a more urgent bounded gap, the default remaining evidence 
    - the remaining audio-ready partitions are Recluse/Empath `2` vs `1`, Spy/Empath topology, Recluse/Librarian trust-vs-concealment, and Spy whole-setup information ecology;
    - authority: `docs/EL_LRE_SR1_SPY_RECLUSE_REGISTRATION_TARGETED_ACQUISITION_2026-10-04.md`.
 
-4. **Mayor redirect**
-   - verify state-sensitive target classes / intent;
-   - avoid a generic “help the losing team” heuristic.
+4. **Mayor redirect — MR1 targeted acquisition active**
+   - official Mayor guidance verifies a preserve-Mayor-until-final-day default with an early overwhelming-confirmation exception;
+   - official Storyteller Advice verifies Minion redirect as a bounded option when Evil is clearly ahead;
+   - official rules preserve the protected/dead/Soldier no-death legal class and give Ravenkeeper as a positive redirect example;
+   - audio-ready refinements cover target severity, repeated Demon intent, Undertaker target utility and Scarlet-Woman succession intervention;
+   - authority: `docs/EL_LRE_MR1_MAYOR_REDIRECT_TARGETED_ACQUISITION_2026-10-04.md`.
 
 5. **Demon succession**
    - first distinguish Storyteller discretion from player-controlled Imp self-kill and automatic/forced Scarlet Woman transitions.
