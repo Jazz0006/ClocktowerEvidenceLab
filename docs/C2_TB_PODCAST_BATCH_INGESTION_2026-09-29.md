@@ -181,7 +181,7 @@ The `clocktower-podcast-semantic` CLI keeps the original single-session commands
 - `render-current`: stream the complete timestamped transcript for the queue's current episode without creating another transcript copy;
 - `cleanup-current`: delete only the marker-gated current workspace, then advance lightweight queue state containing completed GUIDs only.
 
-Investigator is seeded as the accepted completed benchmark. The queue has since completed additional semantic passes across Imp, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, Baron, Librarian, Empath, Recluse, Scarlet Woman, and Mayor. With C3 Stage 1 accepted and no broad E3 blocker active, EvidenceLab simply advances through the remaining high-value Trouble Brewing-relevant feed entries. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
+Investigator is seeded as the accepted completed benchmark. The queue has since completed additional semantic passes across Imp, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, Baron, Librarian, Empath, Recluse, Scarlet Woman, and Mayor. With EL-LRE active, EvidenceLab continues through the remaining high-value Trouble Brewing-relevant feed entries while allowing a bounded Host decision-family request to raise specific review windows in priority. Broad C5/E3 hunting is not a queue objective. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
 
 Semantic review should recover, when supported:
 
@@ -198,13 +198,24 @@ The benchmark also establishes an explicit QA lesson. The machine over-generaliz
 
 Therefore clear podcast episodes no longer require routine full-episode human listening. Full listening is reserved for low-confidence ASR, attribution/semantic conflicts, or sampled QA. Evidence verification semantics do **not** change: machine findings remain acquisition/review assistance and cannot promote themselves to VERIFIED evidence. Full audio and full transcripts remain temporary processing artifacts and must not be committed to Git or retained as durable corpus evidence.
 
-### C2C/C2D targeted enhancement for C3
+### C2C/C2D targeted review for Host LRE
 
-CampBoardGameHost identified a narrow downstream evidence gap: explicit comparison or rejection among Drunk candidates under the same fixed setup/history prefix. C3-Q04 has now satisfied that Stage-1 gap and cleared the current Host evidence blocker.
+Host's staged recommendation replacement route generalizes the earlier C3 comparison need across decision families. C2 remains the acquisition system; EL-LRE is a review-priority and handoff layer over the same timestamped findings.
 
-C3 continues to reuse this C2 pipeline without interrupting batch ingestion. The existing `EXPLICIT_ALTERNATIVE` category remains P0 C2D review priority, and conservative locator coverage for explicit rejection, explicit preference and conditional Drunk-assignment expressions remains useful for long-term corpus growth. Additional Drunk evidence no longer preempts the broader C2 queue.
+Prefer bounded review when a finding contains:
 
-Machine matches remain unverified acquisition assistance. See `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
+- an observed Storyteller choice;
+- an explicit preference;
+- an explicit rejection;
+- an explicit A-vs-B comparison loser;
+- a named alternative plus source-backed rationale;
+- a clear condition or limitation that prevents over-generalization.
+
+The existing `EXPLICIT_ALTERNATIVE` category remains useful and P0-worthy for review triage. No new C2 persistence category is required merely to encode downstream `LEGAL_UNCHOSEN` or `SYNTHETIC_NEGATIVE`; those are not source-backed EvidenceLab relations.
+
+C3-Q04 remains the historical proof that this bounded review shape works, but future LRE review is not restricted to Drunk. Additional Drunk evidence does not preempt the broader queue unless Host opens a new bounded Drunk gap.
+
+Machine matches remain unverified acquisition assistance. See `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md` and `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
 
 ### C2E — promotion into durable evidence
 

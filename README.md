@@ -77,11 +77,13 @@ Targeted expert podcasts may also be used as a complementary **rationale source*
 
 See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
 
-## Current product checkpoint — C2
+## Current product checkpoint — C2 + EL-LRE
 
 C1 Drunk Assignment Evidence Upgrade is **complete**. Its bounded acquisition target reached 3/3 replayable assignment cases and downstream replay succeeded, so broad Drunk-assignment searching remains stopped.
 
-The primary lane is now **C2 — Trouble Brewing Podcast Batch Ingestion / full-transcript semantic review**. **C3 — Drunk Candidate Comparison / Rejection Evidence** has satisfied Stage 1 through human-verified Q04 and remains only as a supporting evidence lane unless Host opens a new bounded gap.
+The primary acquisition lane remains **C2 — Trouble Brewing Podcast Batch Ingestion / full-transcript semantic review**. Host-facing triage is now governed by **EL-LRE — replacement-policy evidence alignment**: bounded evidence requests are prioritized by decision family, while Host remains the owner of legality, legal alternatives, versioned policy, replay/evaluation and production cutover.
+
+**C3 — Drunk Candidate Comparison / Rejection Evidence** remains historically valid and Stage-1 accepted through human-verified Q04, but it is no longer the general continuation lane. Its comparison semantics are generalized by EL-LRE.
 
 Current implementation status:
 
@@ -90,25 +92,29 @@ Current implementation status:
 - **C2C structured candidate extraction — COMPLETE / GREEN**;
 - **bounded real multi-episode C2B -> C2C validation — COMPLETE / GREEN** for Investigator and Imp;
 - **C2D bounded review packets + review CLI — IMPLEMENTATION GREEN**;
-- **C2D-S queue-owned full-transcript semantic review — OPERATIONAL / ACCEPTED FOR MACHINE-FIRST REVIEW ASSISTANCE**.
+- **C2D-S queue-owned full-transcript semantic review — OPERATIONAL / ACCEPTED FOR MACHINE-FIRST REVIEW ASSISTANCE**;
+- **EL-LRE0 Host LRE evidence alignment — AUDIT COMPLETE / DOCS-ONLY**.
 
-The podcast route is now proven beyond the original one-episode pilot. The accepted clear-audio workflow is queue-owned `prepare-next -> complete ASR -> full-transcript semantic review -> lightweight timestamped findings -> targeted human verification only where needed -> cleanup-current`. Full media/transcripts remain outside Git. The earlier Investigator/Imp 24-window packet is retained as historical/review material, while routine collection now uses the machine-first semantic path.
+The podcast route remains unchanged: queue-owned `prepare-next -> complete ASR -> full-transcript semantic review -> lightweight timestamped findings -> LRE-aware triage -> targeted human verification only where needed -> cleanup-current`. Full media/transcripts remain outside Git.
 
-C2 keeps the evidence boundary explicit:
+C2 and EL-LRE keep the evidence boundary explicit:
 
 - full audio and machine transcripts stay outside Git;
 - machine transcript/extraction/semantic understanding is acquisition and review assistance, not verification;
-- primary-audio review is required only when promoting a finding to VERIFIED evidence, resolving ambiguity, or supporting a downstream policy judgment;
-- podcasts complement, but do not replace, whole-game reconstruction/replay evidence.
+- primary-audio review is required before a finding becomes VERIFIED evidence;
+- `OBSERVED_CHOICE`, `EXPLICIT_PREFERENCE`, `EXPLICIT_REJECTION`, `EXPLICIT_COMPARISON_LOSER`, downstream `LEGAL_UNCHOSEN`, and `SYNTHETIC_NEGATIVE` remain distinct;
+- podcasts complement, but do not replace, whole-game reconstruction/replay evidence;
+- generic expert comparative guidance can support a bounded policy dimension without being forced into a fabricated historical game;
+- one expert choice never implies a global ranking.
 
-The first TB-only interoperability slice is now **cross-project accepted**. Host TBGS-1 consumed the EvidenceLab G10 snapshot seam, independently derived the legal Drunk domain, and confirmed the V1 fixture byte-for-byte. The snapshot remains a derived interchange view, not a second truth store. C3 Stage 1 is now satisfied by human-verified Q04 from the Monk podcast episode; EvidenceLab has handed off one bounded conditional Drunk preference to Host for independent policy mapping, replay, and cutover recheck.
+The TB-only interoperability slice and EL-ML0 architecture remain accepted. Functioning Librarian V2 and `DRUNK_ASSIGNMENT_Q04_V1` are already Host-side production policy islands; EvidenceLab keeps their source evidence but does not reopen those scopes unless Host supplies a new bounded gap.
 
 Start with:
 
+- `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`;
 - `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
 - `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
-- `docs/TB_GAME_SNAPSHOT_INTEROPERABILITY_ROUTE_2026-09-30.md`;
-- `docs/EL_TBGS_0_1_MAPPING_AND_IMPLEMENTATION_AUDIT_2026-09-30.md`;
+- `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`;
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
 
 ## Storage direction

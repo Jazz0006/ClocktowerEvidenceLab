@@ -1,8 +1,8 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / C3 STAGE-1 ACCEPTED / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ARCHITECTURE ACCEPTED**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / EL-LRE0 ALIGNED / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ARCHITECTURE ACCEPTED**
 >
-> Current task: **C2 — Trouble Brewing Podcast Batch Ingestion** is again the primary EvidenceLab lane. C3-Q04 is VERIFIED / Stage-1 accepted and has already cleared the current Host evidence blocker; additional Drunk guidance remains valuable corpus material but no longer blocks Host development.
+> Current task: **C2 automatic semantic collection + EL-LRE bounded replacement-policy evidence review**. C2 remains the acquisition engine; EL-LRE now defines Host-facing evidence priority by decision family. Broad Drunk acquisition and broad C5/E3 hunting remain stopped.
 
 ## 1. Program objective
 
@@ -32,7 +32,7 @@ Whole-game history remains the primary historical collection unit. Expert guidan
 - whole-game and expert-guidance corpora remain distinguishable even when they inform the same downstream feature.
 - authoritative reconstruction remains setup commitments + semantic events; any TB Game Snapshot is a derived materialized/interchange view only.
 - snapshot semantics must distinguish `UNCOMMITTED` from evidence `UNKNOWN`; provenance/verification remains outside the snapshot payload.
-- ML-ready projections remain derived evidence packaging, not new truth or training labels; `OBSERVED_CHOICE`, explicit preference/rejection, downstream `LEGAL_UNCHOSEN`, and `SYNTHETIC_NEGATIVE` must remain distinct.
+- ML-ready projections remain derived evidence packaging, not new truth or training labels; `OBSERVED_CHOICE`, `EXPLICIT_PREFERENCE`, `EXPLICIT_REJECTION`, `EXPLICIT_COMPARISON_LOSER`, downstream `LEGAL_UNCHOSEN`, and `SYNTHETIC_NEGATIVE` must remain distinct.
 - future recommendation-model input may contain only state committed before the historical decision boundary; later decisions/events/outcome remain target/evaluation metadata.
 
 ## 3. Completed checkpoints
@@ -77,6 +77,32 @@ EvidenceLab canonical evidence
 Q04 demonstrates a separate non-historical expert-comparative-guidance shape; a future `ExpertPreferenceEvidence` / `ComparativeGuidanceEvidence` durable type is likely useful, but implementation and any persistence migration are deferred until evidence volume or a concrete dataset-builder milestone justifies them.
 
 Authority: `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`.
+
+### EL-LRE0 — Host LRE Evidence Alignment — AUDIT COMPLETE / ACTIVE ROUTE
+
+EL-LRE0 aligned EvidenceLab with Host's staged recommendation replacement route without changing the canonical evidence model or C2 ingestion architecture.
+
+The active relationship is:
+
+```text
+C2 automatic semantic collection
+        +
+Host LRE bounded evidence requests
+        ↓
+EvidenceLab verified comparative evidence
+        ↓
+Host versioned policy
+        ↓
+Host replay / evaluation
+        ↓
+Host production cutover
+```
+
+EvidenceLab records source-backed choices, preferences, rejections, comparison losers, rationale, conditions and provenance. Host owns legal alternatives, `LEGAL_UNCHOSEN`, policy scoring/versioning, replay and production authority.
+
+No SQLite/Alembic migration is required. EL-ML0 remains accepted unchanged.
+
+Authority: `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`.
 
 ## 4. Current checkpoint — C2 Podcast Batch Ingestion
 
@@ -163,40 +189,34 @@ After primary-audio review, save concise provenance-backed expert-guidance evide
 
 Authority: `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`.
 
-## 5. C3 — Drunk Candidate Comparison / Rejection Evidence — STAGE-1 ACCEPTED
+## 5. EL-LRE — replacement-policy evidence lane — ACTIVE
 
-CampBoardGameHost's Drunk-assignment production cutover audit established a concrete downstream gap: execution infrastructure is ready, but Beginner automatic assignment still lacks source-backed semantics for comparing or rejecting legal Drunk candidates under one fixed setup/history prefix.
+EL-LRE generalizes the successful C3 comparison pattern across Host decision families. It reuses C2 rather than creating another acquisition stack.
 
-C3 therefore reuses C2 rather than creating new acquisition infrastructure:
-
-```text
-RSS / audio
-    -> ASR
-    -> C2C candidate extraction
-    -> C2D bounded review
-    -> human primary-audio verification
-    -> verified comparison evidence
-```
-
-The C2C/C2D audit found that `EXPLICIT_ALTERNATIVE` is already the correct semantic bucket and already receives P0 review priority. The narrow implementation gap is locator vocabulary: explicit rejection, explicit preference and conditional Drunk-assignment language must be discoverable even when the speaker does not say “Storyteller”.
-
-C3 Stage-1 acceptance is **not a quota**. It is one VERIFIED item with:
+Highest-value evidence shape:
 
 ```text
-fixed setup/history prefix
-+ candidate A vs candidate B
-+ explicit preference/rejection
-+ rationale
-+ reconstructable assignment-time context
+fixed / bounded decision context
++ observed or explicitly preferred candidate A
++ explicit alternative B / rejected candidate / comparison loser
++ source-backed rationale
++ conditions / limitations
++ provenance / verification
 ```
 
-**C3 Stage 1 is now SATISFIED** by Q04 (`12: Monk`, `00:43:28–00:44:30`), human-confirmed from primary audio on 2026-10-02. The bounded evidence authorizes only the described conditional preference: under the source-described seating/layout condition, prefer Monk over the named Empath as the Drunk so healthy Empath information is preserved. It does not authorize a global Monk > Empath ranking.
+A historical full-domain case is valuable but is not mandatory for every policy dimension. Verified generic expert comparative guidance may support a narrow Host predicate when its scope is explicit.
 
-The EvidenceLab -> CampBoardGameHost handoff is recorded in `docs/C3_Q04_VERIFIED_MONK_CONDITIONAL_PREFERENCE_HANDOFF_2026-10-02.md`; Host may now test a first bounded, versioned Drunk production-policy predicate and rerun its cutover gate.
+Current priority:
 
-Do not infer rankings over unmentioned candidates, do not infer rules from outcomes, and do not encode legality or recommendation policy here. C5 / `BEGINNER_CONSERVATIVE_V2` remains a separate gate.
+1. **healthy first-night/setup:** Washerwoman -> Investigator -> Demon bluffs -> Red Herring;
+2. **impaired/misinformation:** Drunk/Poisoned information, Chef, Empath, Fortune Teller, Washerwoman, Librarian, Investigator, Undertaker, Ravenkeeper and other controllable misinformation;
+3. **later/special:** Spy/Recluse registration, Mayor redirect, Demon succession.
 
-Authority: `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`.
+The first bounded review target is **EL-LRE-WW1**, using the Washerwoman episode around `00:43:09–00:47:55` plus `00:52:51–00:53:42` to verify target-selection preferences, confirmation-strength rationale and anti-meta limits. This does not authorize a complete Washerwoman ranking.
+
+C3-Q04 remains VERIFIED historical/supporting evidence and proves this acquisition shape works. It is no longer the general continuation lane. Host has already cut over `DRUNK_ASSIGNMENT_Q04_V1`; broad Drunk scouting stays closed.
+
+Authority: `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`.
 
 ## 6. TB Game Snapshot interoperability — EL-TBGS-0/1 CROSS-PROJECT ACCEPTED
 
@@ -213,7 +233,7 @@ Host TBGS-0 contract                           COMPLETE / ACCEPTED
 
 The implementation preserves event sourcing as authority, adds no legality/policy, and requires no persistence migration. The historical expert choice/rationale/provenance stays outside the pre-decision snapshot. `gameSeed` and role-type classification are explicit non-evidence projection metadata rather than invented historical facts or EvidenceLab-owned legality.
 
-Host TBGS-1 has now consumed/validated the same G10 V1 semantics, independently derived the legal Drunk domain, and accepted the cross-project seam. The former evidence blocker is now cleared by VERIFIED C3-Q04. EvidenceLab has handed off one bounded conditional preference; Host must independently map it onto the accepted decision context, define a versioned predicate, replay it, and rerun the production cutover gate before any automatic authority changes.
+Host TBGS-1 has consumed/validated the same G10 V1 semantics, independently derived the legal Drunk domain, and accepted the cross-project seam. That interoperability work is closed for the current scope. Host has since cut over `DRUNK_ASSIGNMENT_Q04_V1` and functioning Librarian V2 as new-policy islands; EvidenceLab retains their source evidence but does not reopen those scopes without a new bounded Host evidence request.
 
 Authorities:
 
@@ -232,23 +252,23 @@ Authorities:
 
 ## 8. Immediate next action
 
-Resume C2 as the primary collection lane:
+Run C2 and EL-LRE in parallel:
 
-1. re-check the queue-owned `current` semantic session before starting anything new; if `prepare-next` is already running, do not duplicate it;
-2. when ASR completes, perform a complete semantic pass over the selected Trouble Brewing-relevant episode and retain only high-value timestamped findings;
-3. prioritize Storyteller-controlled setup/role assignment, misinformation, registration, Demon bluffs, information strength, confirmation chains, cross-night consistency, player experience, anti-meta considerations, and explicit alternatives/rejected choices;
-4. ask for bounded human primary-audio confirmation only where meaning is ambiguous, would materially alter downstream policy weighting/ranking, or is needed for VERIFIED promotion;
-5. clean the full audio/transcript workspace after analysis, run the local quality gate, merge the findings checkpoint when independently green, then advance the queue;
-6. treat EL-TBGS-0/1 and C3 Stage 1 as accepted/closed for the current Host blocker unless a new bounded downstream gap appears.
+1. re-check the queue-owned `current` semantic session before starting new C2 acquisition; do not duplicate a live `prepare-next`;
+2. execute the bounded **EL-LRE-WW1** primary-audio review for the four Washerwoman windows identified in the EL-LRE authority;
+3. promote only source-backed preference/rejection/comparison semantics with explicit conditions, rationale, timestamp, speaker and verification; do not infer a full ranking;
+4. hand the verified bounded evidence to Host without enumerating legal pairs or policy weights;
+5. continue queue-owned C2 semantic collection and use LRE-aware triage for new findings;
+6. after Washerwoman, prioritize the Investigator pair-construction windows, then Demon-bluff / Red-Herring material according to the Host family gap.
 
-Keep broad quota-driven C1 scouting and broad E3 hunting stopped. Additional Drunk or E3-relevant material is welcome as ordinary corpus growth, not as a reason to pause C2. Snapshot interoperability is an architecture/export lane, not an evidence-quality shortcut.
+Keep broad quota-driven C1 scouting, broad Drunk acquisition and broad C5/E3 hunting stopped. Historical E3/C5 artifacts remain valid evidence/locator records but no longer define the general continuation route.
 
 ## 9. Deferred
 
 - broad non-Trouble-Brewing acquisition or generalized cross-script GameState design;
 - Storyteller-app telemetry;
 - UI expansion;
-- new persistence migrations without demonstrated need;
+- new persistence migrations without demonstrated need, including any EL-LRE0-only migration;
 - policy scoring inside Evidence Lab;
 - fully automated verification with no human promotion gate;
 - YouTube-specific batch automation as a dependency of C2;
