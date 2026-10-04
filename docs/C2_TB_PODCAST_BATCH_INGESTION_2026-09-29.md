@@ -181,7 +181,7 @@ The `clocktower-podcast-semantic` CLI keeps the original single-session commands
 - `render-current`: stream the complete timestamped transcript for the queue's current episode without creating another transcript copy;
 - `cleanup-current`: delete only the marker-gated current workspace, then advance lightweight queue state containing completed GUIDs only.
 
-Investigator is seeded as the accepted completed benchmark. The queue has since completed additional semantic passes across Imp, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, Baron, Librarian, and Empath. With C3 Stage 1 accepted and no broad E3 blocker active, EvidenceLab simply advances through the remaining high-value Trouble Brewing-relevant feed entries. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
+Investigator is seeded as the accepted completed benchmark. The queue has since completed additional semantic passes across Imp, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, Baron, Librarian, Empath, and Recluse. With C3 Stage 1 accepted and no broad E3 blocker active, EvidenceLab simply advances through the remaining high-value Trouble Brewing-relevant feed entries. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
 
 Semantic review should recover, when supported:
 
