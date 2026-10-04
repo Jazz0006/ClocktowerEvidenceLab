@@ -255,9 +255,11 @@ If Host does not open a more urgent bounded gap, the default remaining evidence 
    - bounded primary-audio review is still required before promoting that stage-sensitive comparison to VERIFIED;
    - authority: `docs/EL_LRE_RK1_RAVENKEEPER_TARGETED_ACQUISITION_2026-10-04.md`.
 
-2. **Impaired Investigator**
-   - healthy Investigator construction is covered by INV1;
-   - remaining need is impaired-output comparison.
+2. **Impaired Investigator — INV2 targeted acquisition active**
+   - official Poisoner guidance verifies the legal distinction between changing candidate seats and changing Minion type;
+   - published / primary-reviewed historical examples support false-world-coherence and concrete impaired clues;
+   - the exact preference between wrong-player, wrong-Minion-type, partially truthful, and truthful constructions remains genuinely unsupported;
+   - authority: `docs/EL_LRE_INV2_IMPAIRED_INVESTIGATOR_TARGETED_ACQUISITION_2026-10-04.md`.
 
 3. **Spy / Recluse registration**
    - rich machine-semantic material exists;
