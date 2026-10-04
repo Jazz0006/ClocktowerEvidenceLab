@@ -125,7 +125,7 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 2. impaired Investigator — **INV2 targeted acquisition now structures the gap**: official rules distinguish wrong-seat vs wrong-Minion-type misinformation, and direct historical sources support false-world coherence, but no source-backed A-vs-B preference has yet been found;
 3. Spy / Recluse registration — **SR1 targeted acquisition now PARTIAL VERIFIED-DIMENSION / CONDITIONAL PARTITION READY**; official Chef/Recluse over-compression and Spy bluff-support predicates plus several primary-audio VERIFIED Investigator/Undertaker cases already reject a global registration default; Empath/Librarian/info-ecology partitions remain audio-ready;
 4. Mayor redirect — **MR1 targeted acquisition now PARTIAL VERIFIED-DIMENSION / TARGET-CLASS MODEL READY**; official sources verify the Mayor-survival default, early hard-confirmation exception, Evil-dominant Minion-redirect option, and legal no-death class; target severity / repeated-attack / succession refinements remain audio-ready;
-5. Demon succession — distinguish discretionary Storyteller choice from player-controlled / forced transitions before promotion.
+5. Demon succession — **DS1 control boundary is now verified**: Imp self-kill is player-controlled, ordinary successor choice is Storyteller-controlled, active Scarlet Woman succession is forced, Mayor-bounce-to-Imp controls only the trigger, and exotic Recluse succession is officially cautionary; the next evidence target is Spy M11 successor choice/rationale.
 
 For the family-by-family evidence/gap/review/reconstruction/Host-enrichment matrix, use:
 `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`.
@@ -160,8 +160,12 @@ Default remaining lead order if Host does not request something narrower:
    - next bounded reviews: Mayor `00:54:14–00:58:19` target classes and repeated attack intent, Saint `00:34:01–00:35:04` moderate severity, Undertaker `00:39:45–00:40:25` high-value Good target, Scarlet Woman `00:53:11–00:54:31` succession-forcing special case;
    - never turn the family into a generic losing-team rescue score.
 
-5. **Demon succession**
-   - verify control/legality boundary first.
+5. **Demon succession — DS1 ACTIVE**
+   - `docs/EL_LRE_DS1_DEMON_SUCCESSION_TARGETED_ACQUISITION_2026-10-05.md` now separates player-controlled Imp self-kill, Storyteller successor choice, forced Scarlet Woman succession, Mayor-triggered Demon death, and exotic Recluse interactions;
+   - ordinary multi-Minion Star Pass is the actual Storyteller successor-ranking family;
+   - active Scarlet Woman removes successor discretion, while her impairment can reopen ordinary selection;
+   - next bounded review: Spy M11 `01:53:33–01:56:28`, where a less-trusted Baron is reportedly chosen as new Demon while a trusted Spy remains support;
+   - do not treat R04/R06 observed Star Pass chains as ranking evidence without rationale.
 
 ## 8. Already-consumed / historical evidence
 
