@@ -175,11 +175,11 @@ public episode audio
     -> delete the marked temporary workspace, including audio + ASR
 ```
 
-The `clocktower-podcast-semantic` CLI keeps the original single-session commands for compatibility and now owns the reusable queue lifecycle used by automation:
+The `clocktower-podcast-semantic` CLI keeps the original single-session commands for compatibility and now owns a two-slot reusable queue lifecycle used by automation. The queue retains one `current` review workspace plus at most one `prefetch` workspace so ASR for the next episode can overlap semantic review of the current episode:
 
-- `prepare-next`: select the next semantic-eligible episode from the fixed feed, resume an existing current session when present, and produce complete ASR under one external queue-owned current workspace. Eligibility remains Trouble Brewing-first, with only explicitly curated `UNKNOWN` general Storyteller episodes admitted; `4.2: Storytelling Like a Pro` has already completed its curated semantic pass and does not remain a queue priority;
-- `render-current`: stream the complete timestamped transcript for the queue's current episode without creating another transcript copy;
-- `cleanup-current`: delete only the marker-gated current workspace, then advance lightweight queue state containing completed GUIDs only.
+- `prepare-next`: if `current` is absent, prepare/resume the current semantic episode; once `current` is ASR-ready, prepare/resume the next eligible episode under `prefetch`, excluding completed and current GUIDs. Eligibility remains Trouble Brewing-first, with only explicitly curated `UNKNOWN` general Storyteller episodes admitted; `4.2: Storytelling Like a Pro` has already completed its curated semantic pass and does not remain a queue priority;
+- `render-current`: stream the complete timestamped transcript for `current` without creating another transcript copy; if `current` is absent and a ready `prefetch` exists, promote it first;
+- `cleanup-current`: delete only the marker-gated current workspace, advance lightweight queue state containing completed GUIDs only, and atomically promote a ready `prefetch` to `current`. An incomplete `prefetch` is left in place so an in-flight acquisition is never moved or deleted.
 
 Investigator is seeded as the accepted completed benchmark. The queue has since completed additional semantic passes across Imp, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, Baron, Librarian, Empath, Recluse, Scarlet Woman, Mayor, and Fortune Teller. With EL-LRE active, EvidenceLab continues through the remaining high-value Trouble Brewing-relevant feed entries while allowing a bounded Host decision-family request to raise specific review windows in priority. Broad C5/E3 hunting is not a queue objective. Mini MCP therefore needs only one fixed allow-listed task triplet for this queue rather than per-episode task names.
 

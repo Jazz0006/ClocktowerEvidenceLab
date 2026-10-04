@@ -29,6 +29,7 @@ ShortText = Annotated[str, Field(min_length=1, max_length=512)]
 SESSION_MARKER_FILENAME = ".semantic-review-session.json"
 QUEUE_STATE_FILENAME = "semantic-review-queue.json"
 CURRENT_SESSION_DIRNAME = "current"
+PREFETCH_SESSION_DIRNAME = "prefetch"
 BATCH_PROGRESS_FILENAME = "batch-progress.json"
 UPDATED_MANIFEST_FILENAME = "manifest.updated.json"
 
@@ -74,20 +75,45 @@ def prepare_next_semantic_session(
 
     root = _safe_workspace_root(queue_root)
     current = root / CURRENT_SESSION_DIRNAME
-    existing = _read_marker_if_present(current)
-    if existing is not None:
-        return prepare_semantic_session(
-            guid=existing.guid,
-            work_dir=current,
-            feed_url=feed_url,
-            timeout_seconds=timeout_seconds,
-        )
+    prefetch = root / PREFETCH_SESSION_DIRNAME
+    existing_current = _read_marker_if_present(current)
+    if existing_current is not None:
+        if not _semantic_session_is_ready(current, existing_current):
+            return prepare_semantic_session(
+                guid=existing_current.guid,
+                work_dir=current,
+                feed_url=feed_url,
+                timeout_seconds=timeout_seconds,
+            )
+        existing_prefetch = _read_marker_if_present(prefetch)
+        if existing_prefetch is not None:
+            return prepare_semantic_session(
+                guid=existing_prefetch.guid,
+                work_dir=prefetch,
+                feed_url=feed_url,
+                timeout_seconds=timeout_seconds,
+            )
+        target_dir = prefetch
+        reserved_guids = {existing_current.guid}
+    else:
+        existing_prefetch = _read_marker_if_present(prefetch)
+        if existing_prefetch is not None:
+            session = prepare_semantic_session(
+                guid=existing_prefetch.guid,
+                work_dir=prefetch,
+                feed_url=feed_url,
+                timeout_seconds=timeout_seconds,
+            )
+            _promote_prefetch(root, require_ready=True)
+            return session
+        target_dir = current
+        reserved_guids = set()
 
     state = _read_queue_state(root)
     rss = fetch_rss(feed_url, timeout_seconds=timeout_seconds)
     episodes = parse_podcast_rss(rss, feed_url=feed_url)
     manifest = build_episode_manifest(episodes)
-    completed = set(state.completed_guids)
+    completed = set(state.completed_guids) | reserved_guids
     eligible_entries = tuple(
         entry
         for entry in manifest.episodes
@@ -137,7 +163,7 @@ def prepare_next_semantic_session(
         )
     return prepare_semantic_session(
         guid=guid,
-        work_dir=current,
+        work_dir=target_dir,
         feed_url=feed_url,
         timeout_seconds=timeout_seconds,
     )
@@ -151,6 +177,7 @@ def render_current_semantic_transcript(
     """Render the queue's current complete transcript."""
 
     root = _safe_workspace_root(queue_root)
+    _ensure_current_session(root)
     return render_semantic_transcript(
         work_dir=root / CURRENT_SESSION_DIRNAME,
         output=output,
@@ -171,6 +198,7 @@ def cleanup_current_semantic_session(
         root,
         SemanticReviewQueueState(completed_guids=completed),
     )
+    _promote_prefetch(root, require_ready=False)
     return session
 
 
@@ -250,7 +278,9 @@ def render_current_semantic_window(
     if start_ms < 0 or end_ms <= start_ms:
         raise ValueError("semantic transcript window must have 0 <= start_ms < end_ms")
 
-    root = _safe_workspace_root(queue_root) / CURRENT_SESSION_DIRNAME
+    queue = _safe_workspace_root(queue_root)
+    _ensure_current_session(queue)
+    root = queue / CURRENT_SESSION_DIRNAME
     session = _read_required_marker(root)
     progress = _read_single_progress(root, expected_source_id=session.source_id)
     if progress.asr_relative_path is None:
@@ -284,15 +314,52 @@ def cleanup_semantic_session(*, work_dir: str | Path) -> SemanticReviewSession:
     return session
 
 
+def _semantic_session_is_ready(root: Path, session: SemanticReviewSession) -> bool:
+    progress_path = root / BATCH_PROGRESS_FILENAME
+    if not progress_path.is_file():
+        return False
+    progress = _read_single_progress(root, expected_source_id=session.source_id)
+    return progress.asr_relative_path is not None and (root / progress.asr_relative_path).is_file()
+
+
+def _promote_prefetch(root: Path, *, require_ready: bool) -> SemanticReviewSession | None:
+    current = root / CURRENT_SESSION_DIRNAME
+    if _read_marker_if_present(current) is not None:
+        return None
+
+    prefetch = root / PREFETCH_SESSION_DIRNAME
+    session = _read_marker_if_present(prefetch)
+    if session is None:
+        return None
+    if not _semantic_session_is_ready(prefetch, session):
+        if require_ready:
+            raise ValueError("prefetched semantic session is not ready")
+        return None
+    if current.exists():
+        if any(current.iterdir()):
+            raise ValueError("current semantic workspace is not empty")
+        current.rmdir()
+    prefetch.rename(current)
+    return session
+
+
+def _ensure_current_session(root: Path) -> SemanticReviewSession:
+    current = root / CURRENT_SESSION_DIRNAME
+    session = _read_marker_if_present(current)
+    if session is not None:
+        return session
+    promoted = _promote_prefetch(root, require_ready=True)
+    if promoted is None:
+        raise ValueError("semantic queue has no current session")
+    return promoted
+
+
 def _resume_semantic_session(
     session: SemanticReviewSession,
     root: Path,
 ) -> SemanticReviewSession:
-    progress_path = root / BATCH_PROGRESS_FILENAME
-    if progress_path.is_file():
-        progress = _read_single_progress(root, expected_source_id=session.source_id)
-        if progress.asr_relative_path is not None and (root / progress.asr_relative_path).is_file():
-            return session
+    if _semantic_session_is_ready(root, session):
+        return session
 
     rss = fetch_rss(CULT_OF_CLOCKTOWER_FEED_URL)
     episodes = parse_podcast_rss(rss, feed_url=CULT_OF_CLOCKTOWER_FEED_URL)
