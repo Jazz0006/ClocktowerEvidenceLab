@@ -123,7 +123,7 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 
 1. Ravenkeeper misinformation / registration — **RK1 targeted acquisition now PARTIAL VERIFIED-DIMENSION**; official bluff-support Spy registration is direct-written VERIFIED and the early-vs-Final-3 Spy A/B comparison is ready for bounded primary-audio review;
 2. impaired Investigator — **INV2 targeted acquisition now structures the gap**: official rules distinguish wrong-seat vs wrong-Minion-type misinformation, and direct historical sources support false-world coherence, but no source-backed A-vs-B preference has yet been found;
-3. Spy / Recluse registration — strong machine leads, pending bounded verification if Host opens the family;
+3. Spy / Recluse registration — **SR1 targeted acquisition now PARTIAL VERIFIED-DIMENSION / CONDITIONAL PARTITION READY**; official Chef/Recluse over-compression and Spy bluff-support predicates plus several primary-audio VERIFIED Investigator/Undertaker cases already reject a global registration default; Empath/Librarian/info-ecology partitions remain audio-ready;
 4. Mayor redirect — strong machine leads, pending bounded verification;
 5. Demon succession — distinguish discretionary Storyteller choice from player-controlled / forced transitions before promotion.
 
@@ -148,8 +148,11 @@ Default remaining lead order if Host does not request something narrower:
    - direct historical examples support false-world coherence without supplying the missing same-state A/B preference;
    - next targeted review is the Cult Investigator Storyteller block around `00:48:44–00:56:49`, followed by Clocktower Academy / Firepfeiffer if needed.
 
-3. **Spy / Recluse registration**
-   - preserve multiple legitimate intents; never reduce to `register Good` vs `register Evil` default.
+3. **Spy / Recluse registration — SR1 ACTIVE**
+   - `docs/EL_LRE_SR1_SPY_RECLUSE_REGISTRATION_TARGETED_ACQUISITION_2026-10-04.md` partitions registration by information ecology, over-compression, bluff support, deniability, world-model disruption, truth-as-misinformation and anti-meta intent;
+   - direct official / primary-audio VERIFIED evidence already supports Chef, active Spy bluff, Investigator and Undertaker predicates;
+   - next bounded reviews: Recluse/Empath `01:04:57–01:06:17`, Spy/Empath `01:49:40–01:50:24`, Recluse/Librarian `01:10:21–01:11:39`, Spy information ecology `01:43:27–01:46:20`;
+   - never reduce this family to a global `register Good` / `register Evil` probability.
 
 4. **Mayor redirect**
    - Mayor `00:54:14–00:58:19`;

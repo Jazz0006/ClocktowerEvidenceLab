@@ -261,9 +261,12 @@ If Host does not open a more urgent bounded gap, the default remaining evidence 
    - the exact preference between wrong-player, wrong-Minion-type, partially truthful, and truthful constructions remains genuinely unsupported;
    - authority: `docs/EL_LRE_INV2_IMPAIRED_INVESTIGATOR_TARGETED_ACQUISITION_2026-10-04.md`.
 
-3. **Spy / Recluse registration**
-   - rich machine-semantic material exists;
-   - verify separate legitimate intents rather than create a fixed Good/Evil default.
+3. **Spy / Recluse registration — SR1 targeted acquisition active**
+   - official Recluse guidance directly verifies avoiding an over-revealing Chef registration;
+   - official Storyteller Advice verifies active Spy-bluff support;
+   - primary-audio VERIFIED Investigator / Recluse and Undertaker / Recluse / Spy cases already establish several opposite legitimate intents;
+   - the remaining audio-ready partitions are Recluse/Empath `2` vs `1`, Spy/Empath topology, Recluse/Librarian trust-vs-concealment, and Spy whole-setup information ecology;
+   - authority: `docs/EL_LRE_SR1_SPY_RECLUSE_REGISTRATION_TARGETED_ACQUISITION_2026-10-04.md`.
 
 4. **Mayor redirect**
    - verify state-sensitive target classes / intent;
