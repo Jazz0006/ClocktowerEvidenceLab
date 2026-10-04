@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Recluse — 2026-10-04
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M08/M09/M10 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `Recluse (Trouble Brewing)`
 >
@@ -184,7 +184,7 @@ Potential downstream dimensions:
 - registration;
 - marginal information value.
 
-**E3 disposition:** explicit conditional Storyteller preference, generic rather than historical.
+**Verification / LRE disposition:** **VERIFIED** by bounded primary-audio review on 2026-10-04. Human review confirmed this is an `EXPLICIT_PREFERENCE` under the stated condition: when Good already has unusually strong information (including the explicit example of Empath adjacent to two Evil players), using Recluse registration to avoid exposing the real Minion is a recommended Storyteller construction, not merely a legal possibility. It is not a universal Recluse default.
 
 ### C2-RECLUSE-M09 — Investigator can instead be shown the real Minion plus Recluse, using truthful information to create deniability
 
@@ -192,7 +192,7 @@ Potential downstream dimensions:
 
 Machine-understood meaning:
 
-- the speakers contrast the previous option with showing Investigator the real Minion and the Recluse as the two candidates;
+- the speakers describe another applicable construction: showing Investigator the real Minion and the Recluse as the two candidates;
 - once Recluse comes out, Investigator may incorrectly attribute the Minion ping to Recluse registration and discount the real Minion;
 - the information can therefore remain technically truthful while still giving Evil useful cover;
 - this is a clear example of preserving information validity while controlling how strongly the table can act on it.
@@ -205,7 +205,7 @@ Potential downstream dimensions:
 - information interpretation;
 - confirmation suppression.
 
-**E3 disposition:** strong pair-information rationale, no historical fixed state.
+**Verification / LRE disposition:** **VERIFIED BOUNDED DESIGN OPTION / RATIONALE** by primary-audio review on 2026-10-04. Human review confirmed the real-Minion + Recluse construction and its deniability rationale, but corrected the machine inference that it was an explicit comparison with M08. There is **no source-backed ordering or loser relation between M08 and M09**; both can be appropriate depending on actual game state.
 
 ### C2-RECLUSE-M10 — Undertaker Recluse registration should react to the evolving game state and world model
 
@@ -226,7 +226,7 @@ Potential downstream dimensions:
 - longitudinal information ecology;
 - dynamic game state.
 
-**E3 disposition:** strong adaptive-policy guidance; no full observed state/candidate domain.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT STATE-DEPENDENT GUIDANCE** by primary-audio review on 2026-10-04. Human review confirmed that Spy/Imp and other Recluse Undertaker registrations should be selected from the live world-model consequences, with no fixed ordering between Spy and Imp.
 
 ### C2-RECLUSE-M11 — Librarian can either reinforce Recluse trust or conceal Recluse existence, depending on the goal
 

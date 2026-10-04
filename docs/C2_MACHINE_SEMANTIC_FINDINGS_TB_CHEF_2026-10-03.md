@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Chef (Trouble Brewing) — 2026-10-03
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M04/M06/M07/M08/M09 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `Chef (Trouble Brewing)`
 >
@@ -93,7 +93,7 @@ Potential downstream dimensions:
 - Drunk self-diagnosis;
 - puzzle quality.
 
-This aligns strongly with a future distinction between `believable misinformation` and `diagnosable misinformation`.
+**Verification / LRE disposition:** **VERIFIED BOUNDED DESIGN OPTION / TRADEOFF** by primary-audio review on 2026-10-04. Human review confirmed the distinction between believable and discoverable misinformation, but corrected the machine inference that a larger false Chef number is preferred. A higher false number is a more unusual but sometimes more interesting option because it can create an impairment-diagnosis path; it is not the source-backed default.
 
 ### C2-CHEF-M05 — group meta can justify making Chef Drunk when Chef is routinely used to trigger Virgin
 
@@ -134,7 +134,7 @@ Potential downstream dimensions:
 - legal-alternative selection;
 - narrative consequence.
 
-This supports a recommendation pattern of “simple default + explicit reason to depart,” not a mandatory registration rule.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT PREFERENCE / BASELINE + REASONED DEVIATION** by primary-audio review on 2026-10-04. The speaker explicitly uses Recluse-as-Evil / Spy-as-Good as a simple personal baseline and prefers departing from it only for a concrete game-state reason. Player comprehension and intuitiveness are part of the decision; this is not a legality rule.
 
 ### C2-CHEF-M07 — avoid registration choices that accidentally over-confirm Recluse unless that consequence is intentional
 
@@ -153,6 +153,8 @@ Potential downstream dimensions:
 - world elimination;
 - Outsider discoverability;
 - information strength.
+
+**Verification / LRE disposition:** **VERIFIED EXPLICIT WARNING / POLICY CONSIDERATION** by primary-audio review on 2026-10-04. Human review confirmed that Storyteller should account for accidental confirmation leakage: a legal Chef result can over-confirm Recluse/impairment worlds by eliminating too many alternatives.
 
 ### C2-CHEF-M08 — Spy may register Evil to Chef when that creates useful cross-information ambiguity, but the cost to Evil must be considered
 
@@ -173,7 +175,7 @@ Potential downstream dimensions:
 - Evil exposure;
 - information strength.
 
-This independently reinforces the Spy-episode conclusion that Spy registration should be state-dependent rather than fixed.
+**Verification / LRE disposition:** **VERIFIED STATE-DEPENDENT GUIDANCE** by primary-audio review on 2026-10-04. Human review confirmed that fixed Spy registration is undesirable; the choice should respond to actual information consequences and Evil exposure. This is analogous to the simple-baseline + reasoned-deviation guidance above.
 
 ### C2-CHEF-M09 — higher legal Chef numbers are generally stronger Good information and should be treated as a power decision
 
@@ -191,6 +193,8 @@ Potential downstream dimensions:
 - world-space compression;
 - registration choice;
 - team-state balance.
+
+**Verification / LRE disposition:** **VERIFIED INFORMATION-STRENGTH PRINCIPLE** by primary-audio review on 2026-10-04. Human review confirmed that higher legal Chef numbers generally provide stronger Good information by compressing compatible Evil worlds. This is a power consideration to include when choosing among legal outcomes, not a blanket preference for lower numbers.
 
 ### C2-CHEF-M10 — Chef can serve as low-interference “setup bubble wrap” around more experimental interactions
 

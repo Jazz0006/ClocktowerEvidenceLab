@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Butler E3-targeted pass — 2026-10-03
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M03 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `Butler (Trouble Brewing)`
 >
@@ -69,7 +69,7 @@ Potential downstream dimensions:
 - Outsider-count structure;
 - novelty / frequency calibration.
 
-**E3 disposition:** useful Gap-D support but not a historical triplet comparison with a reconstructable committed setup.
+**Verification / LRE disposition:** **VERIFIED DESCRIPTIVE / META-SENSITIVE DIMENSION** by bounded primary-audio review on 2026-10-04. Human review confirmed the rarity/credibility reasoning and the special Drunk structural example, but **not** an explicit preference for Butler over Saint/Recluse. Butler's relative rarity describes common practice and can change bluff credibility; it must not be exported as an explicit ranking direction.
 
 ## Strict E3 result
 

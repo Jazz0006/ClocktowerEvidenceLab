@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Scarlet Woman — 2026-10-04
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M02 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `Scarlet Woman (Trouble Brewing)`
 >
@@ -56,7 +56,7 @@ Potential downstream dimensions:
 - setup composition;
 - future-flexibility value.
 
-**E3 disposition:** explicit setup rationale; no historical fixed candidate domain.
+**Verification / LRE disposition:** **VERIFIED BOUNDED DESIGN OPTION / POSITIVE EXAMPLE** by primary-audio review on 2026-10-04. Human review confirmed Investigator as a valuable Scarlet-Woman bluff surface, the option of leaving Investigator out of the bag, and the possible play of supplying Investigator as a Demon bluff for Evil coordination. The source does **not** establish this as globally preferable to other interesting bluff constructions. The project owner's separate view that the play is worth recommending is design opinion, not source evidence.
 
 ### C2-SCARLET-WOMAN-M03 — Red Herring placement can account for known Fortune Teller selection habits, but this is an advanced/meta-sensitive lever
 

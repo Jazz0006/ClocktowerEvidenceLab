@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Poisoner — 2026-10-03
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M05 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `14: Poisoner (Trouble Brewing)`
 >
@@ -115,7 +115,7 @@ Potential downstream dimensions:
 - plan robustness / dependency risk;
 - hindsight-separated rationale.
 
-**E3 disposition:** **strongest new historical candidate in this episode, but not yet E3 PASS.** The observed choice, explicit alternative and rationale are recoverable, but the full decision-time committed game state and production-recoverable legal domain are not currently reconstructed. Preserve this as a high-priority candidate if a later Host gap specifically needs immediate-value vs future-chain evidence.
+**Verification / LRE disposition:** **VERIFIED HISTORICAL COMPARATIVE EVIDENCE** by bounded primary-audio review on 2026-10-04. Human review confirmed the observed `NO` choice, the legal `YES` alternative, the contemporaneous rationale (expected continued poisoning + Fortune Teller trust in the Demon), the failed future dependency, and the later preference shift toward more robust immediate misinformation. The original `NO` is not reclassified as intrinsically wrong: it retained higher upside if the continuation chain had materialized. Exact full-prefix reconstruction remains optional downstream work for Host replay/evaluation.
 
 ### C2-POISONER-M06 — Poisoner-caused impairment is treated differently from passive Drunk impairment
 

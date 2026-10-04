@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Empath — 2026-10-04
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M03/M06/M07 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `Empath (Trouble Brewing)`
 >
@@ -75,7 +75,7 @@ Potential downstream dimensions:
 - confirmation-strength budgeting;
 - pair construction.
 
-**E3 disposition:** unusually strong explicit generic preference/rationale, but no fixed historical state and candidate domain.
+**Verification / LRE disposition:** **VERIFIED** by bounded primary-audio review on 2026-10-04. The user confirmed this is an explicit recommended/recurring Storyteller tactic: when Empath topology already creates strong pressure on the Demon, construct Investigator information using the Townsfolk neighbour plus the real Minion to preserve Demon deniability while retaining a real Minion candidate. This is `EXPLICIT_PREFERENCE` under that bounded condition, not a global pair ranking.
 
 ### C2-EMPATH-M04 — Empath can be used as a fake-Drunk candidate even when sober; uncertainty alone reduces its information power
 
@@ -138,7 +138,7 @@ Potential downstream dimensions:
 - narrative trajectory;
 - target belief state.
 
-**E3 disposition:** very strong misinformation-policy feature support; conceptually matches the already-known G10 pattern, but this episode itself does not supply a strict historical E3 state.
+**Verification / LRE disposition:** **VERIFIED BOUNDED DESIGN OPTION / RATIONALE** by primary-audio review on 2026-10-04. Human review confirmed the cross-night `0` -> later truthful `1` construction and its suspicion-redirection logic, but classified it as a clever possible play rather than an explicit Storyteller preference.
 
 ### C2-EMPATH-M07 — after a successful Poisoner hit, misinformation choice trades off immediate contradiction against concealment of the hit itself
 
@@ -159,7 +159,7 @@ Potential downstream dimensions:
 - immediate impact vs concealment;
 - longitudinal belief management.
 
-**E3 disposition:** explicit choice-over-alternatives guidance, but generic rather than a reconstructed historical same-state decision.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT TRADEOFF / STATE-DEPENDENT GUIDANCE** by primary-audio review on 2026-10-04. Human review confirmed both alternatives and the immediate-impact vs poisoning-concealment tradeoff, with no source-backed universal winner. The project owner's separate view gives somewhat more weight to avoiding unnecessary poisoning exposure while retaining result-changing as a worthwhile option when it creates uncertainty about which night was impaired; that opinion is not source evidence.
 
 ### C2-EMPATH-M08 — first-time-player suitability is part of role-assignment/setup value, and Empath is preferred for accessibility rather than raw power alone
 

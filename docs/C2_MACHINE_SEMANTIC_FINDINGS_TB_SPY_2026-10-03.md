@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Spy (Trouble Brewing) — 2026-10-03
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M09/M10 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `Spy (Trouble Brewing)`
 >
@@ -190,7 +190,7 @@ Potential downstream dimensions:
 - social credibility;
 - truth-as-misinformation.
 
-**E3 disposition:** strong historical choice-over-alternatives lead, but the episode does not provide a reconstructable full committed state/legal domain in this passage. Keep as a future bounded re-audit candidate rather than E3 PASS.
+**Verification / LRE disposition:** **VERIFIED HISTORICAL CHOICE + RATIONALE** by primary-audio review on 2026-10-04. Human review confirmed the historical truthful Spy display and the explicit social-narrative rationale. No explicit alternate token was discussed, so this is not a source-backed pairwise comparison. The project owner's view that this is an interesting play pattern is separate design opinion.
 
 ### C2-SPY-M10 — sometimes establish a truthful Spy/Undertaker precedent to preserve later poisoned/drunk Undertaker ambiguity
 
@@ -209,6 +209,8 @@ Potential downstream dimensions:
 - misinformation believability;
 - anti-meta;
 - future flexibility.
+
+**Verification / LRE disposition:** **VERIFIED DESCRIPTIVE POLICY-DIMENSION EVIDENCE** by primary-audio review on 2026-10-04. Human review confirmed the anti-meta / precedent rationale, but not an explicit Storyteller recommendation.
 
 ### C2-SPY-M11 — Star Pass target should consider the support network and player experience, not only which Minion is most trusted
 
