@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Fortune Teller — 2026-10-04
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M01/M02/M03/M04/M05/M06/M07 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `Fortune Teller (Trouble Brewing)`
 >
@@ -32,7 +32,7 @@ Potential downstream dimensions:
 - ambiguity quality;
 - Red Herring placement.
 
-**LRE relevance:** high for the current Red Herring decision family.
+**Verification / LRE disposition:** **VERIFIED** by bounded primary-audio review on 2026-10-04. Human review confirmed an explicit construction principle: Red Herring placement should coordinate with the setup's information ecology rather than act as isolated/random noise. The Chef adjacency example and the goal of preserving coherent cross-role ambiguity were both confirmed.
 
 ### C2-FORTUNE-TELLER-M02 — player tendencies/meta can be bounded enrichment context for Red Herring placement
 
@@ -52,7 +52,7 @@ Potential downstream dimensions:
 - local meta;
 - enrichment-only context.
 
-**LRE relevance:** useful bounded player-context dimension, but should not become a universal/meta-heavy rule.
+**Verification / LRE disposition:** **VERIFIED BOUNDED CONTEXT FACTOR** by primary-audio review on 2026-10-04. Sophie explicitly considers who talks a lot, appears suspicious, and is likely to be selected by the Fortune Teller so the Red Herring becomes an encountered false lead. This is a legitimate enrichment input, not a universal player-meta rule.
 
 ### C2-FORTUNE-TELLER-M03 — making Drunk the Red Herring can create a coherent but double-edged false narrative
 
@@ -73,7 +73,7 @@ Potential downstream dimensions:
 - future information harm;
 - execution externality.
 
-**LRE relevance:** comparison dimension for Red Herring selection, not an unconditional preference.
+**Verification / LRE disposition:** **VERIFIED DESCRIPTIVE TRADEOFF** by primary-audio review on 2026-10-04. Human review confirmed that Drunk-as-Red-Herring can create a coherent false narrative but may lose future misinformation value if executed early. This is not an unconditional preference.
 
 ### C2-FORTUNE-TELLER-M04 — self-Red-Herring value depends on player count and known Fortune Teller strategy
 
@@ -94,7 +94,7 @@ Potential downstream dimensions:
 - anti-meta value;
 - information compression.
 
-**LRE relevance:** unusually explicit conditional comparison for Red Herring policy; strong bounded primary-audio candidate.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT CONDITIONAL PREFERENCE** by primary-audio review on 2026-10-04. In smaller games self-Red-Herring can be preferred to disrupt efficient self-check scanning; in larger games the speakers generally prefer another target because broad coverage is already difficult; a known strong self-check tendency is an explicit anti-meta exception.
 
 ### C2-FORTUNE-TELLER-M05 — Drunk Fortune Teller should usually receive a coherent longitudinal misinformation story
 
@@ -114,7 +114,7 @@ Potential downstream dimensions:
 - target-history state;
 - improvisation budget.
 
-**LRE relevance:** strong for impaired-information families and future policy/evaluation design.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT PREFERENCE** by primary-audio review on 2026-10-04. Human review confirmed the recommendation to maintain a coherent longitudinal false-world model for Drunk Fortune Teller information while allowing bounded improvisation when player choices create a particularly useful narrative branch.
 
 ### C2-FORTUNE-TELLER-M06 — consistency should be breakable when Good needs a discoverable impairment clue
 
@@ -134,7 +134,7 @@ Potential downstream dimensions:
 - narrative break cost;
 - clue visibility.
 
-**LRE relevance:** adaptive misinformation-policy dimension; not a blanket “balance the losing team” rule.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT CONDITIONAL PREFERENCE** by primary-audio review on 2026-10-04. Human review confirmed that Storyteller may deliberately make impairment easier to diagnose when Good is struggling and preserve the misleading narrative more carefully when Good is strong. The policy dimension is impairment discoverability, not a blanket rule to make the losing side's information correct.
 
 ### C2-FORTUNE-TELLER-M07 — true information is an important part of Drunk misinformation because otherwise players can invert the channel
 
@@ -154,7 +154,7 @@ Potential downstream dimensions:
 - discoverability;
 - misinformation entropy.
 
-**LRE relevance:** high-value policy boundary for Drunk/Poisoned information.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT PREFERENCE / ANTI-INVERSION PRINCIPLE** by primary-audio review on 2026-10-04. Human review confirmed that mixing truthful and false impaired results prevents the player from solving the channel by simply inverting every answer.
 
 ### C2-FORTUNE-TELLER-M08 — too many independent YES results can expose impairment; Storyteller should account for contradiction accumulation
 

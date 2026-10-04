@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Washerwoman — 2026-10-03
 
-> Status: **MIXED — M02/M03/M04/M08 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
+> Status: **MIXED — M02/M03/M04/M05/M08 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `11: Washerwoman (Trouble Brewing) - With Official Storyteller Reggie Collins!`
 >
@@ -115,7 +115,7 @@ Potential downstream dimensions:
 - coordination probability;
 - narrative support.
 
-**E3 disposition:** **strongest historical candidate in this episode, but not yet E3 PASS.** The observed Storyteller choice and explicit rationale are present, but the complete committed decision-time state and production-recoverable legal output domain are not yet reconstructed.
+**Verification / LRE disposition:** **VERIFIED HISTORICAL COMPARATIVE EVIDENCE** by bounded primary-audio review on 2026-10-04. Human review confirmed the observed Demon + Demon-bluff false pair, the explicitly rejected failure mode of conspicuously broken misinformation that exposes poisoning, the contemporaneous Evil-exploitability rationale, and the observed downstream success. Exact full-prefix reconstruction remains optional downstream work for Host replay/evaluation.
 
 ### C2-WASHERWOMAN-M06 — Drunk Washerwoman is described as a relatively rare choice because it can self-diagnose
 

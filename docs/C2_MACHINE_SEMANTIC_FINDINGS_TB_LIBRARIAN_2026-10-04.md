@@ -1,6 +1,6 @@
 # C2 Machine Semantic Findings — Librarian — 2026-10-04
 
-> Status: **MACHINE SEMANTIC REVIEW ONLY / NOT VERIFIED**
+> Status: **MIXED — M02/M03/M07/M09/M11 PRIMARY-AUDIO HUMAN REVIEWED; OTHER FINDINGS REMAIN MACHINE SEMANTIC / NOT VERIFIED**
 >
 > Source: `8: Librarian (Trouble Brewing) - With Official Storyteller Ben Finney!`
 >
@@ -56,7 +56,7 @@ Potential downstream dimensions:
 - native Outsider count;
 - learning value vs immediate excitement.
 
-**E3 disposition:** strong explicit alternative/perspective evidence, but not a historical same-state decision.
+**Verification / LRE disposition:** **VERIFIED ALTERNATIVE EXPERT PERSPECTIVES / NO SINGLE GLOBAL PREFERENCE** by primary-audio review on 2026-10-04. Human review confirmed that the two speakers retain different but reasonable views on Librarian `0` for new players. Player experience, Storyteller facilitation, comprehension and Outsider-count context determine the value; neither view overrides the other.
 
 ### C2-LIBRARIAN-M03 — Librarian can introduce Drunk-world reasoning to new players, but a favorite interaction should not become a repeated Storyteller habit
 
@@ -77,7 +77,7 @@ Potential downstream dimensions:
 - repeated-pattern penalty;
 - Storyteller historical tendency.
 
-**E3 disposition:** generic player-experience and anti-meta guidance.
+**Verification / LRE disposition:** **VERIFIED POSITIVE DESIGN EXAMPLE + EXPLICIT ANTI-REPETITION GUIDANCE** by primary-audio review on 2026-10-04. Human review confirmed that the Drunk-thinking-they-are-Librarian interaction is explicitly enjoyed, while the speaker also explicitly says it should not be repeated too often because a favorite interaction should not become a predictable Storyteller pattern.
 
 ### C2-LIBRARIAN-M04 — Recluse + evil/Spy pairing can deliberately create a multi-role confirmation/contradiction chain
 
@@ -161,7 +161,7 @@ Potential downstream dimensions:
 - suspicion allocation;
 - information-strength calibration.
 
-**E3 disposition:** unusually clear generic preference/rationale, but not a historical same-prefix A-vs-B case.
+**Verification / LRE disposition:** **VERIFIED BOUNDED DESIGN OPTION / RATIONALE; NO EXPLICIT PREFERENCE** by primary-audio review on 2026-10-04. Soldier is an explicit low-impact-real-Drunk example and Empath/Undertaker/Mayor are explicit high-impact decoy examples. Human review corrected the machine over-read: this is an interesting role-impact-asymmetry construction, not a general preferred construction.
 
 ### C2-LIBRARIAN-M08 — showing Butler with an Evil alternative changes later voting interpretation and can create Evil social cover
 
@@ -203,7 +203,7 @@ Potential downstream dimensions:
 - setup balance;
 - whole-setup compensation.
 
-**E3 disposition:** strong qualitative Demon-bluff rationale; still not a historical bluff-triplet comparison.
+**Verification / LRE disposition:** **VERIFIED** by bounded primary-audio review on 2026-10-04. Human review confirmed an explicit bounded preference: when Good's setup has high healthy-information density, Storyteller bluff selection should favor bluffs that materially help Evil operate against that information. Librarian is a positive example and can be passed to a Minion such as Poisoner. No named specific loser or global Librarian-over-X ranking is source-backed.
 
 ### C2-LIBRARIAN-M10 — first-night information roles are intentionally useful for first-time players because they give an immediate puzzle to engage with
 
@@ -242,7 +242,7 @@ Potential downstream dimensions:
 - narrative continuity;
 - downstream confirmation chains.
 
-**E3 disposition:** strong misinformation-trajectory guidance; no complete historical decision-state comparison.
+**Verification / LRE disposition:** **VERIFIED EXPLICIT RECOMMENDATION / LONGITUDINAL CONSISTENCY** by primary-audio review on 2026-10-04. Human review confirmed that later impaired-information output should support an already-established Evil bluff/narrative when that preserves a coherent story. Librarian is one example, not a globally preferred false role.
 
 ## Strict E3 result
 
