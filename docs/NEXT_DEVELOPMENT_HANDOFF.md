@@ -122,7 +122,7 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 ### Remaining EvidenceLab-first gaps
 
 1. Ravenkeeper misinformation / registration — **RK1 targeted acquisition now PARTIAL VERIFIED-DIMENSION**; official bluff-support Spy registration is direct-written VERIFIED and the early-vs-Final-3 Spy A/B comparison is ready for bounded primary-audio review;
-2. impaired Investigator — healthy pair construction is already covered by INV1, but impaired-output comparison remains weak;
+2. impaired Investigator — **INV2 targeted acquisition now structures the gap**: official rules distinguish wrong-seat vs wrong-Minion-type misinformation, and direct historical sources support false-world coherence, but no source-backed A-vs-B preference has yet been found;
 3. Spy / Recluse registration — strong machine leads, pending bounded verification if Host opens the family;
 4. Mayor redirect — strong machine leads, pending bounded verification;
 5. Demon succession — distinguish discretionary Storyteller choice from player-controlled / forced transitions before promotion.
@@ -142,8 +142,11 @@ Default remaining lead order if Host does not request something narrower:
    - next action is bounded primary-audio confirmation of that Beardy comparison; do not fabricate timestamps from the transcript;
    - existing poisoned-Ravenkeeper whole-game cases remain supporting historical examples, not role-token rankings.
 
-2. **Impaired Investigator**
-   - locate an exact impaired-output comparison rather than repeating healthy INV1 pair-construction evidence.
+2. **Impaired Investigator — INV2 ACTIVE**
+   - `docs/EL_LRE_INV2_IMPAIRED_INVESTIGATOR_TARGETED_ACQUISITION_2026-10-04.md` now separates verified legal misinformation axes from historical observed choices;
+   - official rules permit changing the candidate seats, changing the shown Minion type, or both, but do not rank those choices;
+   - direct historical examples support false-world coherence without supplying the missing same-state A/B preference;
+   - next targeted review is the Cult Investigator Storyteller block around `00:48:44–00:56:49`, followed by Clocktower Academy / Firepfeiffer if needed.
 
 3. **Spy / Recluse registration**
    - preserve multiple legitimate intents; never reduce to `register Good` vs `register Evil` default.
