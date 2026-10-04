@@ -181,7 +181,7 @@ Oracle VM temporary audio
 
 Full-episode human listening is no longer the default for every clear podcast episode. It remains available for low-confidence ASR, attribution problems, semantic conflicts, or sampled QA.
 
-The semantic workflow is now queue-owned by EvidenceLab rather than episode-owned by Mini MCP. A fixed external queue root stores completed GUIDs plus a two-slot `current`/`prefetch` pipeline: while `current` is being semantically reviewed, `prepare-next` may acquire and transcribe the next episode into `prefetch`; `cleanup-current` promotes a ready prefetch atomically, while leaving an in-flight prefetch untouched; `render-current` can promote a ready prefetch if no current workspace exists. Completed passes now include Investigator, Imp, `4.1: Trouble Brewing Revisited`, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, the curated `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, Baron, Librarian, Empath, Recluse, Scarlet Woman, Mayor, and Fortune Teller. Q04 in the Monk episode is human-verified and Stage-1 accepted. With the Host blocker cleared, the queue continues ordinary high-value C2 collection; the Storytelling Like a Pro exception is already processed and does not broaden scope beyond the explicitly curated case.
+The semantic workflow is queue-owned by EvidenceLab rather than episode-owned by Mini MCP. A fixed external queue root stores completed GUIDs plus a two-slot `current`/`prefetch` pipeline: while `current` is being semantically reviewed, `prepare-next` may acquire and transcribe the next episode into `prefetch`; `cleanup-current` promotes a ready prefetch atomically, while leaving an in-flight prefetch untouched; `render-current` can promote a ready prefetch if no current workspace exists. Completed passes now include Investigator, Imp, `4.1: Trouble Brewing Revisited`, Drunk, Soldier, Monk, Ravenkeeper, Travelers Part 2, the curated `4.2: Storytelling Like a Pro`, Beggar/Gunslinger, the Trouble Brewing wrap-up, Saint, Butler, Spy, Virgin, Chef, Poisoner, Washerwoman, Baron, Librarian, Empath, Recluse, Scarlet Woman, Mayor, Fortune Teller, Undertaker, and Slayer. The fixed Trouble Brewing semantic-eligible podcast queue is now **EXHAUSTED**: after Slayer, `prepare-next` returned `no unprocessed Trouble Brewing podcast episodes remain`. Q04 in the Monk episode remains human-verified and Stage-1 accepted. C2 therefore shifts from feed traversal to on-demand acquisition/review only when a new bounded Host evidence gap or deliberately broadened source scope is authorized.
 
 ### C2E — evidence promotion
 
@@ -206,13 +206,13 @@ fixed / bounded decision context
 
 A historical full-domain case is valuable but is not mandatory for every policy dimension. Verified generic expert comparative guidance may support a narrow Host predicate when its scope is explicit.
 
-Current priority:
+Current milestone state:
 
-1. **healthy first-night/setup:** Washerwoman -> Investigator -> Demon bluffs -> Red Herring;
-2. **impaired/misinformation:** Drunk/Poisoned information, Chef, Empath, Fortune Teller, Washerwoman, Librarian, Investigator, Undertaker, Ravenkeeper and other controllable misinformation;
-3. **later/special:** Spy/Recluse registration, Mayor redirect, Demon succession.
+1. **Priority 1 healthy first-night/setup is VERIFIED for bounded dimensions:** Washerwoman (`WW1`), Investigator (`INV1`), Demon bluffs (`DB1`), and Red Herring (`RH1`) are ready for Host legal-domain mapping, versioned policy design, replay/evaluation and cutover work. None authorizes a complete family-wide ranking.
+2. **Priority 2 has a substantial VERIFIED set:** Fortune Teller impairment (`FT1`), impaired Washerwoman (`WW2`), Chef (`CHEF1`), Empath (`EM1`), Undertaker (`UT1`), and Librarian (`LIB1`). These provide bounded preferences, tradeoffs, historical choices and descriptive dimensions; Host still owns candidate legality, policy scope and replay.
+3. **Remaining EvidenceLab-first gaps:** Ravenkeeper misinformation is the clearest sparse Priority-2 family; impaired Investigator remains less mature. Priority-3 Spy/Recluse registration, Mayor redirect and Demon succession already have strong machine-semantic leads but should be verified only when Host opens the corresponding bounded policy gap.
 
-**EL-LRE-WW1 is COMPLETE / VERIFIED.** Primary-audio review confirmed: bounded avoidance of Mayor when direct confirmation over-compresses late-game uncertainty; positive preference for Monk/Undertaker/Fortune Teller/Soldier-like targets when trusted routing or credibility support is valuable; Drunk-exclusion amplification as descriptive strength only; and explicit anti-meta preference for varying decoy category rather than following a fixed Good/Evil pattern. See `docs/EL_LRE_WW1_WASHERWOMAN_VERIFIED_HANDOFF_2026-10-04.md`. This does not authorize a complete Washerwoman ranking.
+The consolidated Host-facing index is `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`. It is the preferred entry point for downstream consumption; individual verified handoffs remain the source of detail.
 
 C3-Q04 remains VERIFIED historical/supporting evidence and proves this acquisition shape works. It is no longer the general continuation lane. Host has already cut over `DRUNK_ASSIGNMENT_Q04_V1`; broad Drunk scouting stays closed.
 

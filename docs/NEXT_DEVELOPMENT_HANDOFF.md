@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — C2 + EL-LRE Replacement-Policy Evidence
 
-> Current state: **C2 ACTIVE / EL-LRE0 AUDIT COMPLETE / EL-LRE-WW1 VERIFIED / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **C2 FIXED TB PODCAST QUEUE EXHAUSTED / EL-LRE PRIORITY-1 VERIFIED / EL-LRE PRIORITY-2 MAJOR BATCH VERIFIED / HOST HANDOFF READY / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -11,12 +11,13 @@
 1. `AGENTS.md`
 2. `README.md`
 3. `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
-4. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-5. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-6. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-7. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-8. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-9. this file
+4. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+5. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+6. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+7. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+8. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+9. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+10. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -69,95 +70,90 @@ Only the first four may be source-backed EvidenceLab relations.
 
 ## 4. Current task
 
-Continue C2 automatic semantic collection without changing its ingestion architecture, while using the EL-LRE priority matrix to select bounded primary-audio reviews.
+The current EvidenceLab milestone is **HOST HANDOFF READY**.
 
-Do not reopen broad Drunk acquisition.
+Immediate work is no longer broad feed traversal. The fixed Trouble Brewing semantic-eligible podcast queue has been exhausted, and the 2026-10-04 verification batch has closed all four Priority-1 healthy/setup families plus six major Priority-2 families.
 
-Do not resume broad E3/C5 hunting as a general objective.
+Preferred next action:
 
-Do not implement recommendation policy in EvidenceLab.
+```text
+consume docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md in CampBoardGameHost
+-> map source-backed dimensions to Host-owned legal candidate domains / Game State features
+-> define bounded versioned policy per decision family
+-> replay / evaluate
+-> cut over only after Host acceptance gates pass
+```
 
-## 5. Immediate bounded review target
+EvidenceLab should resume acquisition/review only when Host opens a bounded evidence gap or source scope is deliberately broadened.
 
-### EL-LRE-WW1 — COMPLETE / VERIFIED
+Do not reopen broad Drunk acquisition, broad E3/C5 hunting, or implement recommendation policy inside EvidenceLab.
 
-Primary-audio review on 2026-10-04 confirmed four bounded Washerwoman findings:
+## 5. Verified milestone
 
-- Mayor over-confirmation avoidance is an explicit bounded preference;
-- Monk / Undertaker / Fortune Teller / Soldier-like targets are positive examples when trusted information routing or credibility support is valuable;
-- Drunk-exclusion amplification is descriptive strength analysis only, not a preference;
-- decoy category should vary to prevent Storyteller meta; a fixed Good-only/Evil-only decoy policy is explicitly discouraged.
+### Priority 1 — COMPLETE / VERIFIED for bounded dimensions
 
-Authority/handoff:
-`docs/EL_LRE_WW1_WASHERWOMAN_VERIFIED_HANDOFF_2026-10-04.md`.
+- Washerwoman — `WW1`;
+- Investigator — `INV1`;
+- Demon bluffs — `DB1`;
+- Red Herring — `RH1`.
 
-### Next target — Investigator pair construction
+All four are ready for Host mapping/evaluation. None authorizes a complete family-wide ranking or numeric weights.
 
-Review:
+### Priority 2 — major verified batch complete
 
-- Empath `00:38:47–00:39:20`;
-- Recluse `01:06:54–01:08:37`.
+Verified handoffs now exist for:
 
-Confirm exact preference/comparison wording and keep separate the intents of Demon deniability, Recluse registration ambiguity, and real-Minion exposure.
+- Fortune Teller impairment — `FT1`;
+- impaired Washerwoman — `WW2`;
+- Chef misinformation / registration — `CHEF1`;
+- Empath misinformation — `EM1`;
+- Undertaker display / registration — `UT1`;
+- Librarian bounded evidence — `LIB1`.
+
+Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated downstream entry point.
 
 ## 6. Current family priority
 
-### Priority 1
+### Host consumption priority
 
-1. Washerwoman
-2. Investigator
-3. Demon bluffs
-4. Red Herring
+1. **Priority-1 verified set:** Washerwoman -> Investigator -> Demon bluffs -> Red Herring.
+2. **Priority-2 verified set:** Fortune Teller -> impaired Washerwoman -> Chef -> Empath -> Undertaker -> Librarian, selected according to Host implementation readiness rather than EvidenceLab review order.
 
-### Priority 2
+### Remaining EvidenceLab-first gaps
 
-- Drunk / Poisoned information;
-- Chef;
-- Empath;
-- Fortune Teller;
-- Washerwoman;
-- Librarian;
-- Investigator;
-- Undertaker;
-- Ravenkeeper;
-- other controllable misinformation.
-
-### Priority 3
-
-- Spy / Recluse registration;
-- Mayor redirect;
-- Demon succession.
+1. Ravenkeeper misinformation / registration — clearest sparse Priority-2 family;
+2. impaired Investigator — healthy pair construction is already covered by INV1, but impaired-output comparison remains weak;
+3. Spy / Recluse registration — strong machine leads, pending bounded verification if Host opens the family;
+4. Mayor redirect — strong machine leads, pending bounded verification;
+5. Demon succession — distinguish discretionary Storyteller choice from player-controlled / forced transitions before promotion.
 
 For the family-by-family evidence/gap/review/reconstruction/Host-enrichment matrix, use:
 `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`.
 
-## 7. Strongest already-located LRE leads
+## 7. Strongest remaining EvidenceLab leads
 
-With EL-LRE-WW1 complete, the strongest remaining bounded targets are:
+Do not spend more human-review effort on already-complete families unless Host identifies a concrete ambiguity.
 
-1. **Investigator pair construction**
-   - Empath `00:38:47–00:39:20`;
-   - Recluse `01:06:54–01:08:37`.
+Default remaining lead order if Host does not request something narrower:
 
-2. **Red Herring selection**
-   - Fortune Teller `00:32:06–00:34:20` — player tendency / Drunk / Chef-topology interaction;
-   - Fortune Teller `00:34:21–00:35:29` — self-Red-Herring conditioned by player count and self-check behavior.
+1. **Ravenkeeper misinformation / registration**
+   - existing whole-game corpus includes poisoned Ravenkeeper -> Imp target -> false Slayer output;
+   - older Q05 material contains rejection-oriented machine leads;
+   - the missing piece is explicit source-backed A-vs-B comparison/rationale.
 
-3. **Poisoned Fortune Teller**
-   - Poisoner `01:09:31–01:13:29`;
-   - real `YES` vs `NO` choice with explicit rationale and later retrospective update;
-   - Fortune Teller `00:35:44–00:39:16` — coherent longitudinal misinformation, adaptive discoverability and truthful-result mixing.
+2. **Impaired Investigator**
+   - locate an exact impaired-output comparison rather than repeating healthy INV1 pair-construction evidence.
 
-4. **Impaired Washerwoman**
-   - Washerwoman `00:48:53–00:50:10`;
-   - bluff-compatible misinformation vs obviously broken misinformation that exposes poisoning.
+3. **Spy / Recluse registration**
+   - preserve multiple legitimate intents; never reduce to `register Good` vs `register Evil` default.
 
-5. **Spy / Recluse registration**
-   - rich machine-only comparison material already exists in the Spy and Recluse findings.
-
-6. **Mayor redirect**
+4. **Mayor redirect**
    - Mayor `00:54:14–00:58:19`;
-   - Saint `00:34:01–00:35:04`.
+   - Saint `00:34:01–00:35:04`;
+   - Undertaker M05 adds redirect-to-Undertaker when Good is far ahead.
+
+5. **Demon succession**
+   - verify control/legality boundary first.
 
 ## 8. Already-consumed / historical evidence
 
@@ -170,23 +166,16 @@ With EL-LRE-WW1 complete, the strongest remaining bounded targets are:
 
 ## 9. C2 operational boundary
 
-Continue:
+The fixed TB feed queue is exhausted. Do not keep polling `prepare-next` against the unchanged queue.
+
+Future C2 work begins only when:
 
 ```text
-prepare/ensure current
--> start prepare-next again once current is ASR-ready so next episode runs in prefetch
--> full-transcript semantic review of current while prefetch acquisition/ASR runs
--> lightweight findings
--> LRE-aware triage
--> targeted primary-audio verification where useful
--> cleanup-current (promote ready prefetch)
--> immediately start prepare-next to refill prefetch
--> repeat
+Host opens a bounded evidence gap
+OR an explicitly approved new source / queue scope is added
 ```
 
-Machine output remains NOT VERIFIED until primary-audio promotion.
-
-Full audio and full transcripts remain outside Git.
+Then reuse the existing acquisition -> ASR -> semantic review -> targeted primary-audio verification pipeline. Machine output remains NOT VERIFIED until primary-audio promotion, and full audio/transcripts remain outside Git.
 
 ## 10. When to reconstruct more history
 
@@ -210,4 +199,4 @@ Do not reconstruct a whole game merely to turn generic expert guidance into a hi
 - do not restart broad C5/E3 hunting;
 - do not add SQLite/Alembic migration for EL-LRE0;
 - do not redesign EL-ML0;
-- do not stop C2 automatic semantic collection.
+- do not broaden the exhausted C2 queue implicitly; any new source scope must be deliberate and documented.

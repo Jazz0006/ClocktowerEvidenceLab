@@ -193,22 +193,22 @@ Legend:
 | Family | Existing evidence | Main gap | Distance | Bounded primary-audio review? | Whole-game reconstruction? | Host legal-domain enrichment? |
 | --- | --- | --- | --- | --- | --- | --- |
 | **Washerwoman** | **WW1 VERIFIED:** M02 bounded avoidance of Mayor when direct confirmation over-compresses late-game uncertainty; M03 positive preference for Monk/Undertaker/Fortune Teller/Soldier-like targets when trusted routing or credibility support is valuable; M04 verified descriptive Drunk-exclusion amplification only; M08 explicit preference for decoy-category variation and rejection of a fixed Good-only/Evil-only decoy pattern. | EvidenceLab source-verification gap is closed for these bounded dimensions. Remaining work is Host mapping to legal pair candidates, policy scope and replay/evaluation; do not infer a complete target ranking. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — WW1** | Not required for these generic dimensions. | **YES** for actual legal pair candidates, feature mapping and replay. |
-| **Investigator** | Accepted semantic benchmark; Empath M03 gives a Demon-deniability pair construction; Recluse M08/M09 provide two opposite Recluse-aware pair intents; Investigator review packet contains registration / explicit-alternative windows. | Promote specific pair-construction comparisons to VERIFIED and separate "real Minion exposed" from "registration-created ambiguity" scopes. | **READY-DIMENSION** | **YES** | Not initially; a historical case would strengthen evaluation. | **YES** |
-| **Demon bluffs** | Librarian M09 links bluff choice to Good information density; Butler M03 links bluff credibility to table meta; Scarlet Woman M02 links omitted roles / Investigator bluff to Evil future flexibility; R04 preserves an observed/reconstructed Chef/Investigator/Saint bundle without rationale. | Need VERIFIED bundle/triplet comparison or explicit rejected bluff under bounded setup conditions. | **SUPPORTING -> READY-DIMENSION after review** | **YES, after Washerwoman/Investigator** | Helpful for historical evaluation, not mandatory for first dimension. | **YES**, especially candidate-set legality. |
-| **Red Herring** | R04 has observed Sarah-for-Rhonda commitment; Scarlet Woman M03 gives meta-sensitive placement guidance; Saint M02 and Butler M02 give role-interaction reasons; Recluse M07 adds causal-ambiguity interaction. | No VERIFIED same-condition preference/rejection yet; avoid turning one observed placement into ranking. | **SUPPORTING** | Not first; review when Host opens exact Red-Herring predicate. | Helpful for historical evaluation, but generic guidance can establish dimensions. | **YES** |
+| **Investigator** | **INV1 VERIFIED:** Demon-deniability pair construction under strong Empath topology; conditional use of Recluse registration when Good information is already unusually strong; independently useful real-Minion + Recluse construction. | EvidenceLab source-verification gap is closed for these bounded dimensions. Host must keep the distinct intents separate and must not infer a global pair ranking. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — INV1** | Not required for these generic dimensions. | **YES** for legal pair enumeration, feature projection and replay. |
+| **Demon bluffs** | **DB1 VERIFIED:** prefer bluff classes that materially help Evil operate when Good information density is high; bluff rarity/meta affects credibility descriptively; omitted-role / Investigator bluff surfaces provide future-flexibility examples without a global ordering. | EvidenceLab has bounded class-level policy dimensions, but no complete bluff-triplet ranking or numeric weights. Host owns legal bluff domain, policy scope and replay. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — DB1** | Not required for current generic dimensions; useful only for exact historical replay. | **YES**, especially legal bluff-set enumeration. |
+| **Red Herring** | **RH1 VERIFIED:** coordinate Red Herring with information ecology; player target tendencies may be bounded enrichment; Drunk-as-Red-Herring is a trajectory tradeoff; self-Red-Herring has explicit player-count / self-check-conditioned preference. | EvidenceLab source-verification gap is closed for these bounded dimensions. Host must not turn contextual meta or Drunk tradeoffs into universal rankings. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — RH1** | Not required for generic dimensions. | **YES** for legal candidates, topology features and replay. |
 
 ### Priority 2 — impaired / misinformation decisions
 
 | Family | Existing evidence | Main gap | Distance | Bounded primary-audio review? | Whole-game reconstruction? | Host legal-domain enrichment? |
 | --- | --- | --- | --- | --- | --- | --- |
-| **Drunk / Poisoned information — generic** | Empath M06/M07 longitudinal narrative and impact-vs-detectability; Poisoner M06/M07 active-player-agency and coordination-risk; Librarian M11 narrative continuity; Scarlet Woman M04 prior-check history. | Verify bounded comparisons and preserve impairment source/lifetime. | **READY-DIMENSION** | YES | Usually not for generic dimensions. | YES |
-| **Chef** | Recluse M05 Chef `3` vs less-compressing output; Chef M04 believable vs discoverable misinformation; Chef M06–M09 registration/intuitiveness/information-strength dimensions. | Verification and clear conditions; no global "low number is better" rule. | **READY-DIMENSION** | YES when Chef policy is next | Not initially. | YES |
-| **Empath** | G10 ~18:05 observed Drunk Empath `1` with rationale to redirect suspicion, but exact neighbour state / explicit alternative is incomplete; Empath M06/M07 provide generic longitudinal and poisoned-output comparisons. | Pair the strong historical observation with VERIFIED comparative guidance; exact prefix only if Host wants historical replay. | **NEAR-HISTORICAL + READY-DIMENSION** | YES | Only for historical replay of G10. | YES |
-| **Fortune Teller** | Poisoner M05 is a real poisoned-FT `YES` vs `NO` choice with explicit rationale and retrospective tradeoff; Scarlet Woman M04 adds longitudinal check-history context. | Primary-audio verification; exact historical prefix if used as replay case. | **NEAR-HISTORICAL** | **YES — especially high value for Priority 2** | Helpful if promoted as historical decision; not required for generic immediate-vs-future-chain dimension. | YES |
-| **Washerwoman — impaired** | Washerwoman M05 historical Poisoner-hit choice: Demon + Demon-bluff misinformation chosen over obviously broken misinformation; explicit failure mode and rationale. | Primary-audio verification and, for historical replay, exact setup/prefix. | **NEAR-HISTORICAL** | **YES** | Helpful for historical replay, not required for generic bluff-compatibility dimension. | YES |
-| **Librarian — impaired** | Librarian M02/M03 Drunk/zero handling, M07 high-impact decoy logic, M11 poisoned later-info bluff support. | Need explicit bounded output comparison under one impairment condition. | **SUPPORTING** | Later | Usually no at first. | YES |
-| **Investigator — impaired** | Investigator benchmark has misinformation/registration windows; Recluse-aware Investigator guidance exists; one-Minion Spy correction establishes a strong scope limitation. | Verify exact impaired-output choices rather than relying on broad semantic summary. | **SUPPORTING** | Later | Only if a historical case emerges. | YES |
-| **Undertaker** | Spy M09 historical true-Spy display with social-rationale; M10 precedent/anti-meta; Recluse M10 adaptive registration; R04 poisoned Undertaker gets Scarlet Woman after Demon transition. | Verify historical choice/alternative; R04 still lacks full setup. | **NEAR-HISTORICAL** | YES when Undertaker becomes active Host gap | R04 reconstruction would materially help. | YES |
+| **Drunk / Poisoned information — generic** | FT1, EM1, CHEF1, LIB1 and WW2 collectively verify longitudinal narrative consistency, immediate-value vs future-chain robustness, impact-vs-detectability, impairment discoverability, anti-inversion and bluff-compatible misinformation dimensions. | Do not collapse family-specific evidence into one universal misinformation rule; impairment source, role ability and time history remain required scope variables. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **PARTIALLY COMPLETE via family handoffs** | Usually not for generic dimensions. | **YES** |
+| **Chef** | **CHEF1 VERIFIED:** believable vs discoverable misinformation are distinct objectives; simple registration baseline + reasoned deviation; avoid accidental over-confirmation; higher legal Chef numbers are generally stronger Good information. | No global low-number/high-number default or numeric weights are source-backed. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — CHEF1** | Not initially. | **YES** |
+| **Empath** | **EM1 VERIFIED:** cross-night truthful information can sustain a false narrative; poisoned output explicitly trades immediate misinformation impact against concealment of impairment. G10 remains a useful historical lead. | Historical G10 replay still needs exact prefix if Host wants it; EM1 itself does not supply a fixed winner for the impact-vs-concealment tradeoff. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — EM1** | Only for historical replay of G10. | **YES** |
+| **Fortune Teller** | **FT1 VERIFIED:** historical poisoned-FT `YES` vs `NO` choice with rationale and retrospective robustness lesson; coherent longitudinal Drunk misinformation; discoverability control; truthful/false mixing prevents inversion. | Exact historical prefix is only needed for Host replay; no global `YES`/`NO` preference is authorized. | **VERIFIED-HISTORICAL + VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — FT1** | Helpful for exact historical replay, not required for generic dimensions. | **YES** |
+| **Washerwoman — impaired** | **WW2 VERIFIED:** historical Poisoner-hit false pair using Demon + Demon bluff; explicit rejection of obviously broken misinformation that exposes poisoning; observed Evil exploitability. | Do not infer Demon + bluff is always best or manufacture unmentioned legal alternatives. | **VERIFIED-HISTORICAL / HOST-ENRICHMENT** | **COMPLETE — WW2** | Helpful only if Host wants exact replay. | **YES** |
+| **Librarian — impaired** | **LIB1 VERIFIED:** competing beginner perspectives for zero info; anti-repetition for favorite Drunk interaction; role-impact asymmetry as design option; later impaired information should support established bluff/narrative. | No single global beginner rule and no ranking from the low-impact/high-impact example. | **VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — LIB1** | Usually no at first. | **YES** |
+| **Investigator — impaired** | Investigator benchmark has misinformation/registration windows; healthy Investigator construction is VERIFIED via INV1; one-Minion Spy correction establishes an important scope limitation. | Exact impaired-output comparison remains less mature than the completed Priority-2 families. | **SUPPORTING / REMAINING GAP** | **YES when Host opens this family** | Only if a historical case emerges. | **YES** |
+| **Undertaker** | **UT1 VERIFIED:** historical truthful Spy display chosen for social difficulty; truthful precedent has descriptive anti-meta value; Recluse Undertaker registration should be state-dependent with no Spy-vs-Imp default. | R04 remains optional historical reconstruction; do not turn UT1-B into a preference or UT1-C into a fixed role ordering. | **VERIFIED-HISTORICAL + VERIFIED-DIMENSION / HOST-ENRICHMENT** | **COMPLETE — UT1** | R04 only if exact replay is wanted. | **YES** |
 | **Ravenkeeper** | Existing whole-game corpus preserves Ravenkeeper outputs; older C3/Q05 material contains rejection-oriented machine lead; current C2 has less mature comparative Ravenkeeper output guidance than other families. | Need explicit source-backed A-vs-B misinformation/registration comparison. | **SUPPORTING / SPARSE** | Not before stronger families | Likely useful for historical cases. | YES |
 | **Other controllable false information** | C2 continues collecting role-agnostic dimensions: information strength, narrative continuity, player experience, bluff support, anti-meta, coordination risk. | Promote only when Host names a bounded family/predicate. | **SUPPORTING** | On demand | On demand | YES |
 
@@ -252,49 +252,49 @@ EvidenceLab's verification work for these healthy-Washerwoman dimensions is comp
 
 No whole-game reconstruction is required for the verified generic dimensions.
 
-## 9. Secondary high-value bounded targets
+## 9. Next bounded targets after the 2026-10-04 verification batch
 
-With EL-LRE-WW1 complete, the strongest next ready targets are:
+Priority 1 is now complete for bounded evidence dimensions, and the strongest Priority-2 families have also been verified. The next EvidenceLab review target should therefore be selected by a concrete Host gap rather than by a fixed review conveyor belt.
 
-1. **Investigator pair construction**
-   - Empath `00:38:47–00:39:20`;
-   - Recluse `01:06:54–01:08:37`;
-   - verify distinct intents: preserve Demon deniability, route through Recluse, or show real Minion + Recluse.
+If Host does not open a narrower urgent gap, the default remaining order is:
 
-2. **Poisoned Fortune Teller immediate-vs-future-chain**
-   - Poisoner `01:09:31–01:13:29`;
-   - explicit historical `YES` vs `NO`, rationale, failed dependency and retrospective preference shift.
+1. **Ravenkeeper misinformation / registration**
+   - currently the clearest sparse Priority-2 family;
+   - seek an explicit A-vs-B false-information or registration comparison with rationale rather than collecting more generic examples.
 
-3. **Impaired Washerwoman bluff-compatible misinformation**
-   - Washerwoman `00:48:53–00:50:10`;
-   - chosen Demon + bluff construction vs obviously broken misinformation that exposes Poisoner.
+2. **Impaired Investigator**
+   - healthy pair construction is already VERIFIED through INV1;
+   - remaining need is an exact impaired-output comparison, not more generic Investigator setup guidance.
 
-4. **Spy/Recluse registration policy dimensions**
-   - begin with Recluse M05/M06/M08/M09 and Spy M01/M08;
-   - preserve opposite legitimate intents rather than creating a fixed registration default.
+3. **Spy / Recluse registration**
+   - machine-semantic material is rich and already contains opposite legitimate intents;
+   - verify scope partitions rather than inventing a fixed Good/Evil registration default.
 
-5. **Mayor redirect**
-   - Mayor `00:54:14–00:58:19` plus Saint `00:34:01–00:35:04`;
-   - verify state-sensitive redirect severity and intent without turning this into a generic "balance the game" heuristic.
+4. **Mayor redirect**
+   - Mayor `00:54:14–00:58:19`, Saint `00:34:01–00:35:04`, plus Undertaker M05 provide strong leads;
+   - verify bounded target classes / intent without turning state awareness into a generic losing-team rescue heuristic.
+
+5. **Demon succession**
+   - only after distinguishing Storyteller-controlled choice from Imp self-kill and automatic/forced Scarlet Woman transition.
 
 ## 10. C2 integration
 
-C2 automatic semantic collection remains the primary acquisition engine.
+C2 remains the acquisition engine, but the fixed Trouble Brewing semantic-eligible feed queue is now **exhausted** after Slayer. No new ingestion stack is created for LRE.
 
-No new ingestion stack is created for LRE.
-
-C2 should continue:
+The standing workflow is now event-driven:
 
 ```text
-prepare-next
--> ASR outside Git
+Host opens bounded evidence gap OR source scope is deliberately broadened
+-> acquire / ASR outside Git
 -> full-transcript semantic review
 -> lightweight findings
 -> LRE-aware triage
--> targeted primary-audio verification only where useful
--> cleanup-current
--> repeat
+-> targeted primary-audio verification where useful
+-> cleanup temporary artifacts
+-> hand off verified bounded evidence to Host
 ```
+
+Do not repeatedly call `prepare-next` against the exhausted fixed queue unless queue eligibility has intentionally changed.
 
 LRE-aware triage should prioritize findings containing:
 
