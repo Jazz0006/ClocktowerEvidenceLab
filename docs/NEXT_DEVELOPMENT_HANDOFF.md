@@ -124,7 +124,7 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 1. Ravenkeeper misinformation / registration — **RK1 targeted acquisition now PARTIAL VERIFIED-DIMENSION**; official bluff-support Spy registration is direct-written VERIFIED and the early-vs-Final-3 Spy A/B comparison is ready for bounded primary-audio review;
 2. impaired Investigator — **INV2 targeted acquisition now structures the gap**: official rules distinguish wrong-seat vs wrong-Minion-type misinformation, and direct historical sources support false-world coherence, but no source-backed A-vs-B preference has yet been found;
 3. Spy / Recluse registration — **SR1 targeted acquisition now PARTIAL VERIFIED-DIMENSION / CONDITIONAL PARTITION READY**; official Chef/Recluse over-compression and Spy bluff-support predicates plus several primary-audio VERIFIED Investigator/Undertaker cases already reject a global registration default; Empath/Librarian/info-ecology partitions remain audio-ready;
-4. Mayor redirect — strong machine leads, pending bounded verification;
+4. Mayor redirect — **MR1 targeted acquisition now PARTIAL VERIFIED-DIMENSION / TARGET-CLASS MODEL READY**; official sources verify the Mayor-survival default, early hard-confirmation exception, Evil-dominant Minion-redirect option, and legal no-death class; target severity / repeated-attack / succession refinements remain audio-ready;
 5. Demon succession — distinguish discretionary Storyteller choice from player-controlled / forced transitions before promotion.
 
 For the family-by-family evidence/gap/review/reconstruction/Host-enrichment matrix, use:
@@ -154,10 +154,11 @@ Default remaining lead order if Host does not request something narrower:
    - next bounded reviews: Recluse/Empath `01:04:57–01:06:17`, Spy/Empath `01:49:40–01:50:24`, Recluse/Librarian `01:10:21–01:11:39`, Spy information ecology `01:43:27–01:46:20`;
    - never reduce this family to a global `register Good` / `register Evil` probability.
 
-4. **Mayor redirect**
-   - Mayor `00:54:14–00:58:19`;
-   - Saint `00:34:01–00:35:04`;
-   - Undertaker M05 adds redirect-to-Undertaker when Good is far ahead.
+4. **Mayor redirect — MR1 ACTIVE**
+   - `docs/EL_LRE_MR1_MAYOR_REDIRECT_TARGETED_ACQUISITION_2026-10-04.md` now records direct official Mayor-survival / early-hard-confirmation guidance and the Evil-dominant Minion-redirect option;
+   - the legal no-death redirect class is separated from preference evidence;
+   - next bounded reviews: Mayor `00:54:14–00:58:19` target classes and repeated attack intent, Saint `00:34:01–00:35:04` moderate severity, Undertaker `00:39:45–00:40:25` high-value Good target, Scarlet Woman `00:53:11–00:54:31` succession-forcing special case;
+   - never turn the family into a generic losing-team rescue score.
 
 5. **Demon succession**
    - verify control/legality boundary first.
