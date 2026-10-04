@@ -1,8 +1,8 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ACTIVE / EL-LRE0 ALIGNED / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ARCHITECTURE ACCEPTED**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ON-DEMAND / EL-LRE0 ALIGNED / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ACCEPTED / EL-ML1A BENCHMARK AUDIT COMPLETE**
 >
-> Current task: **C2 automatic semantic collection + EL-LRE bounded replacement-policy evidence review**. C2 remains the acquisition engine; EL-LRE now defines Host-facing evidence priority by decision family. Broad Drunk acquisition and broad C5/E3 hunting remain stopped.
+> Current task: **EL-ML1B benchmark manifest + whole-game decision-prefix repair**. C2 and EL-LRE remain available as bounded on-demand evidence lanes, but broad podcast policy mining is no longer the default. Broad Drunk acquisition and broad C5/E3 hunting remain stopped.
 
 ## 1. Program objective
 
@@ -78,33 +78,48 @@ Q04 demonstrates a separate non-historical expert-comparative-guidance shape; a 
 
 Authority: `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`.
 
+### EL-ML1A — Decision Point Benchmark Corpus Audit — COMPLETE / CONTRACT ACCEPTED
+
+EL-ML1A re-audited the existing corpus for the stronger model-backed recommendation goal rather than deterministic policy replacement. The conservative inventory is:
+
+```text
+READY historical decision points: 6
+independent game groups:          3
+Storyteller independence groups: approximately 2
+high-value PARTIAL candidates:    >= 18
+```
+
+The main scarcity is now independent, leak-free whole-game decision states rather than generic expert principles. The accepted pilot target is 20–30 READY historical decision points across at least 8 games and 4 Storyteller independence groups, with at least 40% later-game/history-sensitive decisions.
+
+Broad podcast policy mining is no longer the default marginal-value path. The next route is EL-ML1B: materialize the six READY benchmark seeds, repair G10/R04/FT1-A/WW2/UT1-A historical prefixes, then acquire new complete games only if existing repair cannot reach the pilot target.
+
+Authority: `docs/EL_ML1A_DECISION_POINT_BENCHMARK_AUDIT_2026-10-05.md`.
+
 ### EL-LRE0 — Host LRE Evidence Alignment — AUDIT COMPLETE / ACTIVE ROUTE
 
 EL-LRE0 aligned EvidenceLab with Host's staged recommendation replacement route without changing the canonical evidence model or C2 ingestion architecture.
 
-The active relationship is:
+The retained EL-LRE relationship is:
 
 ```text
-C2 automatic semantic collection
+on-demand C2 acquisition / review
         +
 Host LRE bounded evidence requests
         ↓
 EvidenceLab verified comparative evidence
         ↓
-Host versioned policy
+Host versioned policy / retrieval evidence
         ↓
 Host replay / evaluation
-        ↓
-Host production cutover
 ```
 
 EvidenceLab records source-backed choices, preferences, rejections, comparison losers, rationale, conditions and provenance. Host owns legal alternatives, `LEGAL_UNCHOSEN`, policy scoring/versioning, replay and production authority.
 
-No SQLite/Alembic migration is required. EL-ML0 remains accepted unchanged.
+No SQLite/Alembic migration is required. EL-ML0 remains accepted unchanged; EL-ML1B may add only the smallest derived benchmark/export projection required by the concrete benchmark consumer.
 
 Authority: `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`.
 
-## 4. Current checkpoint — C2 Podcast Batch Ingestion
+## 4. C2 Podcast Batch Ingestion — Operational Background
 
 The earlier podcast pilot proved the route:
 
@@ -252,16 +267,16 @@ Authorities:
 
 ## 8. Immediate next action
 
-Run C2 and EL-LRE in parallel:
+Run **EL-ML1B — benchmark manifest + existing-corpus prefix repair**:
 
-1. re-check the queue-owned `current` semantic session before starting new C2 acquisition; do not duplicate a live `prepare-next`;
-2. treat **EL-LRE-WW1** as COMPLETE / VERIFIED and hand the bounded Washerwoman evidence to Host without enumerating legal pairs or policy weights;
-3. begin the next Priority-1 bounded review: **Investigator pair construction**, starting with Empath `00:38:47–00:39:20` and Recluse `01:06:54–01:08:37`;
-4. preserve distinct Investigator intents such as Demon deniability, Recluse-registration ambiguity, and real-Minion exposure rather than collapsing them into one ranking;
-5. continue queue-owned C2 semantic collection and use LRE-aware triage for new findings;
-6. after Investigator, prioritize Demon-bluff / Red-Herring material according to the Host family gap.
+1. implement the smallest derived benchmark/`RecommendationEvidenceSeedV1` projection for the six EL-ML1A READY historical decisions;
+2. materialize bounded prefixes for the three later G10 decisions, keeping every G10 point in one split group;
+3. close the known R04 replay blockers before searching for another whole game;
+4. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
+5. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
+6. only if READY remains below 20 after repair, acquire new complete Trouble Brewing games with Storyteller/grimoire visibility and greater Storyteller independence.
 
-Keep broad quota-driven C1 scouting, broad Drunk acquisition and broad C5/E3 hunting stopped. Historical E3/C5 artifacts remain valid evidence/locator records but no longer define the general continuation route.
+C2 and EL-LRE remain bounded on-demand lanes for benchmark-discovered evidence gaps. Keep broad quota-driven C1 scouting, broad Drunk acquisition, broad C5/E3 hunting and broad podcast policy mining stopped.
 
 ## 9. Deferred
 
@@ -272,6 +287,6 @@ Keep broad quota-driven C1 scouting, broad Drunk acquisition and broad C5/E3 hun
 - policy scoring inside Evidence Lab;
 - fully automated verification with no human promotion gate;
 - YouTube-specific batch automation as a dependency of C2;
-- `RecommendationEvidenceSeedV1` implementation until a downstream dataset-builder need justifies it;
+- durable persistence/schema migration for `RecommendationEvidenceSeedV1`; EL-ML1B authorizes only the smallest derived benchmark/export projection needed by the concrete benchmark consumer;
 - durable `ExpertPreferenceEvidence` / `ComparativeGuidanceEvidence` until verified comparative-guidance volume justifies a typed entity;
-- training-example schemas, SFT/DPO/QLoRA pipelines, negative-sampling recipes and model training inside EvidenceLab.
+- generalized training-example schemas, SFT/DPO/QLoRA pipelines, negative-sampling recipes and model training inside EvidenceLab.
