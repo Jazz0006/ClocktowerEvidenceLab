@@ -186,18 +186,23 @@ Primary-audio review owns promotion.
 
 ## 7. Human-review priority
 
-Prefer windows that map to known Storyteller research needs:
+Prefer windows that map to known Storyteller research needs and current Host LRE decision-family gaps:
 
 - whole-setup choice rationale;
+- healthy first-night pair/target construction;
 - Drunk selection and persistent Drunk trajectory;
 - healthy-information strength;
+- impaired-information choice and longitudinal consistency;
 - confirmation-chain severity;
 - Spy/Recluse exposure versus concealment;
-- Demon bluff selection;
+- Demon bluff and Red Herring selection;
+- Mayor redirection and Demon succession when Storyteller-controlled;
 - player experience / beginner handling;
 - player agency;
-- explicit rejected/contrasted alternatives;
-- reasons one legal output was chosen over another.
+- explicit preference/rejection/contrasted alternatives;
+- reasons one output was chosen over another.
+
+When EL-LRE has an active bounded request, raise windows with an explicit A-vs-B preference, explicit rejection or historical Storyteller choice plus rationale. Do not infer that other downstream-legal candidates were rejected merely because the source did not choose them.
 
 Stop early on low-value generic discussion.
 
@@ -239,19 +244,22 @@ Those artifacts are historical acquisition evidence for the workflow, not a reas
 
 ## 10. Current validation checkpoint
 
-The C2 batch path has completed a bounded real two-episode validation using Investigator and Imp:
+The C2 batch path completed bounded real Investigator/Imp validation and has since matured into the accepted queue-owned semantic workflow:
 
 ```text
 live RSS
     -> stable manifest identity
     -> public audio acquisition
     -> timestamped ASR outside Git
-    -> lightweight structured candidate artifacts
+    -> full-transcript semantic review
+    -> lightweight timestamped findings
+    -> bounded primary-audio verification when needed
+    -> cleanup-current
 ```
 
-The bounded validation completed successfully and uploaded only lightweight artifacts. It did not promote machine output into verified evidence.
+C2D review-packet generation and the review CLI are implemented and GREEN. The Investigator full-transcript benchmark established machine-first semantic review as accepted acquisition assistance; machine output still cannot promote itself to VERIFIED evidence.
 
-C2D is the active next layer: deterministic candidate merging/ranking into bounded review packets. The core review-packet model/writer exists; the current tests-first RED is the missing podcast review CLI entry point.
+EL-LRE now supplies bounded Host-facing review priority without changing this pipeline. The first current target is the healthy Washerwoman review defined in `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`.
 
 ## 11. Success criterion
 

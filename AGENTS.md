@@ -346,9 +346,9 @@ See `docs/TESTING_STRATEGY.md`.
 
 ## 10. Current change discipline
 
-Current active route is C2 podcast batch ingestion.
+Current active route is **C2 automatic podcast semantic collection + EL-LRE bounded replacement-policy evidence requests**.
 
-Until C2 proves a need for broader infrastructure:
+Until a concrete downstream need proves otherwise:
 
 - do not build recommendation logic;
 - do not implement Blood on the Clocktower legality;
@@ -356,16 +356,19 @@ Until C2 proves a need for broader infrastructure:
 - do not add cloud/backend infrastructure merely to scale acquisition;
 - do not commit full copyrighted audio/video or full machine transcripts;
 - do not treat ASR/LLM output as verified evidence;
-- do not add persistence migrations merely for temporary acquisition artifacts;
+- do not add persistence migrations merely for temporary acquisition artifacts or EL-LRE0;
 - do not reopen broad C1 Drunk-assignment scouting without a concrete downstream evidence gap;
 - keep current acquisition Trouble Brewing-first;
-- the current C3 Drunk candidate-comparison lane is such a concrete downstream gap, but it must reuse C2 and stay focused on explicit comparison/rejection evidence rather than broad Drunk scouting.
+- keep `OBSERVED_CHOICE`, `EXPLICIT_PREFERENCE`, `EXPLICIT_REJECTION`, `EXPLICIT_COMPARISON_LOSER`, downstream `LEGAL_UNCHOSEN`, and `SYNTHETIC_NEGATIVE` distinct;
+- do not resume broad C5/E3 hunting as the general acquisition objective;
+- treat C3 as a completed historical/supporting lane whose reusable comparison semantics are now generalized by EL-LRE.
 
-For C2, automate inventory, locator handling, ASR, candidate extraction and review prioritization while retaining human primary-source review as the evidence-promotion gate. C3 may add conservative locator/review-priority refinements, but must not add BotC legality or recommendation semantics.
+For C2, automate inventory, locator handling, ASR, candidate extraction and review prioritization while retaining human primary-source review as the evidence-promotion gate. EL-LRE may prioritize bounded primary-audio review of explicit preferences, rejections, comparisons and historical choices, but it must not add BotC legality, legal-candidate enumeration, recommendation scoring, replay policy or production cutover authority.
 
 See:
 
 - `docs/CURRENT_DEVELOPMENT_ROADMAP.md`;
+- `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`;
 - `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
 - `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`.
