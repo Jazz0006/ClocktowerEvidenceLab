@@ -144,18 +144,23 @@ After EL-LRE-WW1, the strongest bounded targets are:
    - Empath `00:38:47–00:39:20`;
    - Recluse `01:06:54–01:08:37`.
 
-2. **Poisoned Fortune Teller**
-   - Poisoner `01:09:31–01:13:29`;
-   - real `YES` vs `NO` choice with explicit rationale and later retrospective update.
+2. **Red Herring selection**
+   - Fortune Teller `00:32:06–00:34:20` — player tendency / Drunk / Chef-topology interaction;
+   - Fortune Teller `00:34:21–00:35:29` — self-Red-Herring conditioned by player count and self-check behavior.
 
-3. **Impaired Washerwoman**
+3. **Poisoned Fortune Teller**
+   - Poisoner `01:09:31–01:13:29`;
+   - real `YES` vs `NO` choice with explicit rationale and later retrospective update;
+   - Fortune Teller `00:35:44–00:39:16` — coherent longitudinal misinformation, adaptive discoverability and truthful-result mixing.
+
+4. **Impaired Washerwoman**
    - Washerwoman `00:48:53–00:50:10`;
    - bluff-compatible misinformation vs obviously broken misinformation that exposes poisoning.
 
-4. **Spy / Recluse registration**
+5. **Spy / Recluse registration**
    - rich machine-only comparison material already exists in the Spy and Recluse findings.
 
-5. **Mayor redirect**
+6. **Mayor redirect**
    - Mayor `00:54:14–00:58:19`;
    - Saint `00:34:01–00:35:04`.
 
