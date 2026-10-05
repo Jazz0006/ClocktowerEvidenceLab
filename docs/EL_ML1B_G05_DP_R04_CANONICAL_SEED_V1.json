@@ -1,0 +1,709 @@
+{
+  "schema_name": "clocktower-historical-decision-seed",
+  "schema_version": 1,
+  "materialization_id": "historical-seed:g05:red-herring:v1",
+  "prefix_materialization_ref": "prefix:g05:before-red-herring:v1",
+  "game_group": "game-group:g05",
+  "source_group": "source-group:g05-a-fond-farewell",
+  "storyteller_independence_key": "st-ben-burns",
+  "game": {
+    "game_id": "evidence:c1c:g05-a-fond-farewell",
+    "script": "trouble_brewing",
+    "storyteller_assignments": [
+      {
+        "storyteller_id": "storyteller:ben-burns",
+        "role": "STORYTELLER"
+      }
+    ],
+    "reconstruction_status": "PARTIAL",
+    "current_reconstruction_revision_id": "revision:g05:1"
+  },
+  "reconstruction_revision": {
+    "revision_id": "revision:g05:1",
+    "game_id": "evidence:c1c:g05-a-fond-farewell",
+    "parent_revision_id": null,
+    "created_at": "2026-10-05T20:07:00+08:00",
+    "change_note": "EL-ML1B-1B canonical materialization of the recovered G05 setup history shared by DP-R03 and DP-R04."
+  },
+  "storytellers": [
+    {
+      "storyteller_id": "storyteller:ben-burns",
+      "independence_key": "st-ben-burns",
+      "display_name": "Ben Burns"
+    }
+  ],
+  "game_seats": [
+    {
+      "seat_id": "seat:g05:1",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 1,
+      "seat_label": "Seat 1",
+      "display_name": "InspirationFollows",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:2",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 2,
+      "seat_label": "Seat 2",
+      "display_name": "Buster",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:3",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 3,
+      "seat_label": "Seat 3",
+      "display_name": "Kyra",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:4",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 4,
+      "seat_label": "Seat 4",
+      "display_name": "Ellen",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:5",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 5,
+      "seat_label": "Seat 5",
+      "display_name": "Lyra",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:6",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 6,
+      "seat_label": "Seat 6",
+      "display_name": "Viva La Sam",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:7",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 7,
+      "seat_label": "Seat 7",
+      "display_name": "Ekin",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:8",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 8,
+      "seat_label": "Seat 8",
+      "display_name": "patters",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:9",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 9,
+      "seat_label": "Seat 9",
+      "display_name": "Barrow",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:10",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 10,
+      "seat_label": "Seat 10",
+      "display_name": "Iris",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:11",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 11,
+      "seat_label": "Seat 11",
+      "display_name": "Maggot",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:12",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 12,
+      "seat_label": "Seat 12",
+      "display_name": "Gecko",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:13",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 13,
+      "seat_label": "Seat 13",
+      "display_name": "Ffin",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:14",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 14,
+      "seat_label": "Seat 14",
+      "display_name": "Chiz",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:15",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 15,
+      "seat_label": "Seat 15",
+      "display_name": "Rachel",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:16",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 16,
+      "seat_label": "Seat 16",
+      "display_name": "Malakai",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:17",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 17,
+      "seat_label": "Seat 17",
+      "display_name": "Reznora",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:18",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 18,
+      "seat_label": "Seat 18",
+      "display_name": "Malashaan",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:19",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 19,
+      "seat_label": "Seat 19",
+      "display_name": "Milk",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g05:20",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "seat_order": 20,
+      "seat_label": "Seat 20",
+      "display_name": "sincerity",
+      "experience_metadata": null
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "source:g05:a-fond-farewell-youtube",
+      "kind": "VIDEO",
+      "external_locator": "https://www.youtube.com/watch?v=M5VY5GnXAxw",
+      "inclusion_reason": "TARGETED_RESEARCH_CASE",
+      "platform": "YouTube",
+      "platform_source_id": "M5VY5GnXAxw",
+      "discovery_note": "Official A Fond Farewell primary video. Full table map recovered from the 2026-09-22 primary-video/full-grimoire review retained in the sibling Host repository and reconciled with the later EvidenceLab bounded setup review.",
+      "screening_status": "SCREENED",
+      "reconstructability": "RECONSTRUCTABLE",
+      "selection_disposition": "SELECTED",
+      "rejection_reason": null
+    }
+  ],
+  "source_game_links": [
+    {
+      "link_id": "source-game-link:g05:a-fond-farewell",
+      "source_id": "source:g05:a-fond-farewell-youtube",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "match_status": "VERIFIED_SAME",
+      "note": "Primary reviews confirm the recovered setup map and bounded setup decisions belong to A Fond Farewell."
+    }
+  ],
+  "evidence_fragments": [
+    {
+      "fragment_id": "fragment:g05:full-grimoire-frame",
+      "source_id": "source:g05:a-fond-farewell-youtube",
+      "locator_kind": "FRAME",
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "locator": "full-grimoire primary frame reviewed 2026-09-22",
+      "note": "Manual primary review recovers the full 20-seat player-to-role mapping. Seat numbers are analysis-derived clockwise identifiers."
+    },
+    {
+      "fragment_id": "fragment:g05:traveller-alignments-0302-0311",
+      "source_id": "source:g05:a-fond-farewell-youtube",
+      "locator_kind": "TIMESTAMP_RANGE",
+      "source_start_ms": 182000,
+      "source_end_ms": 191000,
+      "locator": null,
+      "note": "Bureaucrat/Chiz and Scapegoat/Reznora are assigned Evil; the other three Travellers are Good."
+    },
+    {
+      "fragment_id": "fragment:g05:drunk-choice-0332",
+      "source_id": "source:g05:a-fond-farewell-youtube",
+      "locator_kind": "TIMESTAMP",
+      "source_start_ms": 212000,
+      "source_end_ms": null,
+      "locator": null,
+      "note": "Later EvidenceLab primary review records Ben committing to make the shown Chef the Drunk and tying the choice to an extreme Chef misinformation plan."
+    },
+    {
+      "fragment_id": "fragment:g05:washerwoman-info-0355",
+      "source_id": "source:g05:a-fond-farewell-youtube",
+      "locator_kind": "TIMESTAMP",
+      "source_start_ms": 235000,
+      "source_end_ms": null,
+      "locator": null,
+      "note": "Primary review records Washerwoman information selected as Fortune Teller between Viva La Sam and Maggot."
+    },
+    {
+      "fragment_id": "fragment:g05:red-herring-0404",
+      "source_id": "source:g05:a-fond-farewell-youtube",
+      "locator_kind": "TIMESTAMP",
+      "source_start_ms": 244000,
+      "source_end_ms": null,
+      "locator": null,
+      "note": "Later EvidenceLab primary review records Lyra/Undertaker selected as Red Herring because Fortune Tellers often choose neighbours."
+    }
+  ],
+  "evidence_assertions": [
+    {
+      "assertion_id": "assertion:g05:pre-drunk-state",
+      "subject_type": "SETUP_COMMITMENT",
+      "subject_id": "setup:g05:pre-drunk-state",
+      "assertion_type": "HISTORICAL_PREFIX_SETUP",
+      "value": {
+        "seats": [
+          {
+            "seat_id": "seat:g05:1",
+            "shown_role": "SCARLET_WOMAN"
+          },
+          {
+            "seat_id": "seat:g05:2",
+            "shown_role": "SLAYER"
+          },
+          {
+            "seat_id": "seat:g05:3",
+            "shown_role": "SAINT"
+          },
+          {
+            "seat_id": "seat:g05:4",
+            "shown_role": "POISONER"
+          },
+          {
+            "seat_id": "seat:g05:5",
+            "shown_role": "UNDERTAKER"
+          },
+          {
+            "seat_id": "seat:g05:6",
+            "shown_role": "FORTUNE_TELLER"
+          },
+          {
+            "seat_id": "seat:g05:7",
+            "shown_role": "IMP"
+          },
+          {
+            "seat_id": "seat:g05:8",
+            "shown_role": "SOLDIER"
+          },
+          {
+            "seat_id": "seat:g05:9",
+            "shown_role": "RAVENKEEPER"
+          },
+          {
+            "seat_id": "seat:g05:10",
+            "shown_role": "BARON"
+          },
+          {
+            "seat_id": "seat:g05:11",
+            "shown_role": "MAYOR"
+          },
+          {
+            "seat_id": "seat:g05:12",
+            "shown_role": "CHEF"
+          },
+          {
+            "seat_id": "seat:g05:13",
+            "shown_role": "RECLUSE"
+          },
+          {
+            "seat_id": "seat:g05:14",
+            "shown_role": "BUREAUCRAT",
+            "traveller_alignment": "EVIL"
+          },
+          {
+            "seat_id": "seat:g05:15",
+            "shown_role": "GUNSLINGER",
+            "traveller_alignment": "GOOD"
+          },
+          {
+            "seat_id": "seat:g05:16",
+            "shown_role": "WASHERWOMAN"
+          },
+          {
+            "seat_id": "seat:g05:17",
+            "shown_role": "SCAPEGOAT",
+            "traveller_alignment": "EVIL"
+          },
+          {
+            "seat_id": "seat:g05:18",
+            "shown_role": "BUTLER"
+          },
+          {
+            "seat_id": "seat:g05:19",
+            "shown_role": "BEGGAR",
+            "traveller_alignment": "GOOD"
+          },
+          {
+            "seat_id": "seat:g05:20",
+            "shown_role": "THIEF",
+            "traveller_alignment": "GOOD"
+          }
+        ]
+      },
+      "derivation": "RECONSTRUCTED",
+      "fragment_ids": [
+        "fragment:g05:full-grimoire-frame",
+        "fragment:g05:traveller-alignments-0302-0311"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    },
+    {
+      "assertion_id": "assertion:g05:drunk-assignment-choice",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g05:drunk-assignment",
+      "assertion_type": "OBSERVED_CHOICE",
+      "value": {
+        "selected_seat_id": "seat:g05:12",
+        "shown_role": "CHEF",
+        "resulting_actual_role": "DRUNK"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g05:drunk-choice-0332",
+        "fragment:g05:full-grimoire-frame"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    },
+    {
+      "assertion_id": "assertion:g05:drunk-assignment-result",
+      "subject_type": "SETUP_COMMITMENT",
+      "subject_id": "setup:g05:drunk-assignment",
+      "assertion_type": "RESULTING_SETUP_FACT",
+      "value": {
+        "actual_role": "DRUNK",
+        "shown_role": "CHEF"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g05:drunk-choice-0332",
+        "fragment:g05:full-grimoire-frame"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    },
+    {
+      "assertion_id": "assertion:g05:drunk-assignment-rationale",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g05:drunk-assignment",
+      "assertion_type": "RATIONALE",
+      "value": {
+        "summary": "Ben chooses the shown Chef as the Drunk to enable a deliberately extreme Chef misinformation narrative."
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g05:drunk-choice-0332"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    },
+    {
+      "assertion_id": "assertion:g05:washerwoman-info",
+      "subject_type": "SETUP_COMMITMENT",
+      "subject_id": "setup:g05:washerwoman-info",
+      "assertion_type": "FIRST_NIGHT_INFORMATION_SELECTION",
+      "value": {
+        "recipient_seat_id": "seat:g05:16",
+        "shown_role": "WASHERWOMAN",
+        "shown_character": "FORTUNE_TELLER",
+        "candidate_seat_ids": [
+          "seat:g05:6",
+          "seat:g05:11"
+        ]
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g05:washerwoman-info-0355"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    },
+    {
+      "assertion_id": "assertion:g05:red-herring-result",
+      "subject_type": "SETUP_COMMITMENT",
+      "subject_id": "setup:g05:red-herring",
+      "assertion_type": "RESULTING_SETUP_FACT",
+      "value": {
+        "red_herring_seat_id": "seat:g05:5",
+        "shown_role": "UNDERTAKER"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g05:red-herring-0404",
+        "fragment:g05:full-grimoire-frame"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    },
+    {
+      "assertion_id": "assertion:g05:red-herring-choice",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g05:red-herring",
+      "assertion_type": "OBSERVED_CHOICE",
+      "value": {
+        "selected_seat_id": "seat:g05:5",
+        "shown_role": "UNDERTAKER",
+        "red_herring": true
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g05:red-herring-0404",
+        "fragment:g05:full-grimoire-frame"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    },
+    {
+      "assertion_id": "assertion:g05:red-herring-rationale",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g05:red-herring",
+      "assertion_type": "RATIONALE",
+      "value": {
+        "summary": "Ben explains that Fortune Tellers often choose their neighbours."
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g05:red-herring-0404"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g05:1"
+    }
+  ],
+  "setup_history": [
+    {
+      "commitment_id": "setup:g05:pre-drunk-state",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "reconstruction_revision_id": "revision:g05:1",
+      "setup_order": 1,
+      "setup_order_basis": "EVIDENCED",
+      "commitment_type": "SHOWN_ROLE_AND_TRAVELLER_STATE",
+      "controller": "STORYTELLER",
+      "subject_seat_id": null,
+      "target_seat_ids": [],
+      "value": {
+        "seats": [
+          {
+            "seat_id": "seat:g05:1",
+            "shown_role": "SCARLET_WOMAN"
+          },
+          {
+            "seat_id": "seat:g05:2",
+            "shown_role": "SLAYER"
+          },
+          {
+            "seat_id": "seat:g05:3",
+            "shown_role": "SAINT"
+          },
+          {
+            "seat_id": "seat:g05:4",
+            "shown_role": "POISONER"
+          },
+          {
+            "seat_id": "seat:g05:5",
+            "shown_role": "UNDERTAKER"
+          },
+          {
+            "seat_id": "seat:g05:6",
+            "shown_role": "FORTUNE_TELLER"
+          },
+          {
+            "seat_id": "seat:g05:7",
+            "shown_role": "IMP"
+          },
+          {
+            "seat_id": "seat:g05:8",
+            "shown_role": "SOLDIER"
+          },
+          {
+            "seat_id": "seat:g05:9",
+            "shown_role": "RAVENKEEPER"
+          },
+          {
+            "seat_id": "seat:g05:10",
+            "shown_role": "BARON"
+          },
+          {
+            "seat_id": "seat:g05:11",
+            "shown_role": "MAYOR"
+          },
+          {
+            "seat_id": "seat:g05:12",
+            "shown_role": "CHEF"
+          },
+          {
+            "seat_id": "seat:g05:13",
+            "shown_role": "RECLUSE"
+          },
+          {
+            "seat_id": "seat:g05:14",
+            "shown_role": "BUREAUCRAT",
+            "traveller_alignment": "EVIL"
+          },
+          {
+            "seat_id": "seat:g05:15",
+            "shown_role": "GUNSLINGER",
+            "traveller_alignment": "GOOD"
+          },
+          {
+            "seat_id": "seat:g05:16",
+            "shown_role": "WASHERWOMAN"
+          },
+          {
+            "seat_id": "seat:g05:17",
+            "shown_role": "SCAPEGOAT",
+            "traveller_alignment": "EVIL"
+          },
+          {
+            "seat_id": "seat:g05:18",
+            "shown_role": "BUTLER"
+          },
+          {
+            "seat_id": "seat:g05:19",
+            "shown_role": "BEGGAR",
+            "traveller_alignment": "GOOD"
+          },
+          {
+            "seat_id": "seat:g05:20",
+            "shown_role": "THIEF",
+            "traveller_alignment": "GOOD"
+          }
+        ]
+      }
+    },
+    {
+      "commitment_id": "setup:g05:drunk-assignment",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "reconstruction_revision_id": "revision:g05:1",
+      "setup_order": 2,
+      "setup_order_basis": "EVIDENCED",
+      "commitment_type": "DRUNK_ASSIGNMENT",
+      "controller": "STORYTELLER",
+      "subject_seat_id": "seat:g05:12",
+      "target_seat_ids": [],
+      "value": {
+        "actual_role": "DRUNK",
+        "shown_role": "CHEF"
+      }
+    },
+    {
+      "commitment_id": "setup:g05:washerwoman-info",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "reconstruction_revision_id": "revision:g05:1",
+      "setup_order": 3,
+      "setup_order_basis": "EVIDENCED",
+      "commitment_type": "FIRST_NIGHT_INFORMATION_SELECTION",
+      "controller": "STORYTELLER",
+      "subject_seat_id": "seat:g05:16",
+      "target_seat_ids": [
+        "seat:g05:6",
+        "seat:g05:11"
+      ],
+      "value": {
+        "shown_character": "FORTUNE_TELLER"
+      }
+    },
+    {
+      "commitment_id": "setup:g05:red-herring",
+      "game_id": "evidence:c1c:g05-a-fond-farewell",
+      "reconstruction_revision_id": "revision:g05:1",
+      "setup_order": 4,
+      "setup_order_basis": "EVIDENCED",
+      "commitment_type": "RED_HERRING_ASSIGNMENT",
+      "controller": "STORYTELLER",
+      "subject_seat_id": "seat:g05:5",
+      "target_seat_ids": [],
+      "value": {
+        "red_herring": true,
+        "shown_role": "UNDERTAKER"
+      }
+    }
+  ],
+  "event_history": [],
+  "history_provenance": [
+    {
+      "history_item_id": "setup:g05:pre-drunk-state",
+      "evidence_assertion_ids": [
+        "assertion:g05:pre-drunk-state"
+      ]
+    },
+    {
+      "history_item_id": "setup:g05:drunk-assignment",
+      "evidence_assertion_ids": [
+        "assertion:g05:drunk-assignment-result"
+      ]
+    },
+    {
+      "history_item_id": "setup:g05:washerwoman-info",
+      "evidence_assertion_ids": [
+        "assertion:g05:washerwoman-info"
+      ]
+    },
+    {
+      "history_item_id": "setup:g05:red-herring",
+      "evidence_assertion_ids": [
+        "assertion:g05:red-herring-result"
+      ]
+    }
+  ],
+  "decision": {
+    "decision_id": "decision:g05:red-herring",
+    "game_id": "evidence:c1c:g05-a-fond-farewell",
+    "reconstruction_revision_id": "revision:g05:1",
+    "decision_type": "RED_HERRING_ASSIGNMENT",
+    "controller": "STORYTELLER",
+    "historical_prefix_boundary": {
+      "setup_through_order": 3,
+      "event_through_order": null
+    },
+    "subject_seat_id": "seat:g05:5",
+    "observed_choice": {
+      "selected_seat_id": "seat:g05:5",
+      "shown_role": "UNDERTAKER",
+      "red_herring": true
+    },
+    "resulting_history": {
+      "setup_commitment_id": "setup:g05:red-herring",
+      "setup_order": 4,
+      "semantic_event_id": null,
+      "event_order": null
+    },
+    "rationale_assertion_ids": [
+      "assertion:g05:red-herring-rationale"
+    ],
+    "explicitly_considered_alternatives": null,
+    "explicitly_rejected_alternatives": null
+  },
+  "observed_choice_assertion_ids": [
+    "assertion:g05:red-herring-choice"
+  ],
+  "choice_verification": "VERIFIED"
+}

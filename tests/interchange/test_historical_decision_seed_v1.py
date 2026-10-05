@@ -19,6 +19,8 @@ from clocktower_evidence_lab.interchange.historical_decision_seed_v1 import (
 SEED_FIXTURE = Path("docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json")
 G01_R01_SEED_FIXTURE = Path("docs/EL_ML1B_G01_DP_R01_CANONICAL_SEED_V1.json")
 G01_R02_SEED_FIXTURE = Path("docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json")
+G05_R03_SEED_FIXTURE = Path("docs/EL_ML1B_G05_DP_R03_CANONICAL_SEED_V1.json")
+G05_R04_SEED_FIXTURE = Path("docs/EL_ML1B_G05_DP_R04_CANONICAL_SEED_V1.json")
 MANIFEST_FIXTURE = Path("docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json")
 
 
@@ -110,6 +112,67 @@ def test_checked_in_g01_seeds_share_reconstruction_and_materialize_leak_free_pre
     )
 
 
+def test_checked_in_g05_seeds_share_reconstruction_and_preserve_intermediate_setup() -> None:
+    r03 = load_historical_decision_seed_v1(G05_R03_SEED_FIXTURE.read_text(encoding="utf-8"))
+    r04 = load_historical_decision_seed_v1(G05_R04_SEED_FIXTURE.read_text(encoding="utf-8"))
+
+    assert r03.game == r04.game
+    assert r03.game.game_id == "evidence:c1c:g05-a-fond-farewell"
+    assert r03.reconstruction_revision == r04.reconstruction_revision
+    assert r03.storytellers == r04.storytellers
+    assert r03.sources == r04.sources
+    assert r03.setup_history == r04.setup_history
+    assert r03.storyteller_independence_key == r04.storyteller_independence_key == "st-ben-burns"
+    assert len(r03.game_seats) == 20
+
+    r03_setup, r03_events = materialize_historical_prefix(
+        r03.decision, r03.setup_history, r03.event_history
+    )
+    assert [item.commitment_id for item in r03_setup] == ["setup:g05:pre-drunk-state"]
+    assert r03_events == ()
+    assert r03.decision.observed_choice == {
+        "selected_seat_id": "seat:g05:12",
+        "shown_role": "CHEF",
+        "resulting_actual_role": "DRUNK",
+    }
+    assert r03.decision.explicitly_rejected_alternatives is None
+
+    r04_setup, r04_events = materialize_historical_prefix(
+        r04.decision, r04.setup_history, r04.event_history
+    )
+    assert [item.commitment_id for item in r04_setup] == [
+        "setup:g05:pre-drunk-state",
+        "setup:g05:drunk-assignment",
+        "setup:g05:washerwoman-info",
+    ]
+    assert r04_events == ()
+    assert r04.decision.observed_choice == {
+        "selected_seat_id": "seat:g05:5",
+        "shown_role": "UNDERTAKER",
+        "red_herring": True,
+    }
+    assert r04.decision.explicitly_rejected_alternatives is None
+
+    pre_drunk_state = r03_setup[0].value
+    assert isinstance(pre_drunk_state, dict)
+    seats = {item["seat_id"]: item for item in pre_drunk_state["seats"]}
+    assert seats["seat:g05:12"]["shown_role"] == "CHEF"
+    assert seats["seat:g05:14"]["traveller_alignment"] == "EVIL"
+    assert seats["seat:g05:15"]["traveller_alignment"] == "GOOD"
+    assert seats["seat:g05:17"]["traveller_alignment"] == "EVIL"
+
+    encoded_r03 = dump_historical_decision_seed_v1(r03)
+    encoded_r04 = dump_historical_decision_seed_v1(r04)
+    assert (
+        dump_historical_decision_seed_v1(load_historical_decision_seed_v1(encoded_r03))
+        == encoded_r03
+    )
+    assert (
+        dump_historical_decision_seed_v1(load_historical_decision_seed_v1(encoded_r04))
+        == encoded_r04
+    )
+
+
 def test_g10_dp_r05_manifest_refs_are_backed_by_checked_in_seed() -> None:
     seed = _seed()
     manifest = load_decision_point_benchmark_manifest_v1(
@@ -132,9 +195,13 @@ def test_g10_dp_r05_manifest_refs_are_backed_by_checked_in_seed() -> None:
     by_id = {entry.benchmark_id: entry for entry in manifest.entries}
     g01_r01 = load_historical_decision_seed_v1(G01_R01_SEED_FIXTURE.read_text(encoding="utf-8"))
     g01_r02 = load_historical_decision_seed_v1(G01_R02_SEED_FIXTURE.read_text(encoding="utf-8"))
+    g05_r03 = load_historical_decision_seed_v1(G05_R03_SEED_FIXTURE.read_text(encoding="utf-8"))
+    g05_r04 = load_historical_decision_seed_v1(G05_R04_SEED_FIXTURE.read_text(encoding="utf-8"))
     for benchmark_id, checked_in_seed in (
         ("benchmark:el-ml1b:dp-r01", g01_r01),
         ("benchmark:el-ml1b:dp-r02", g01_r02),
+        ("benchmark:el-ml1b:dp-r03", g05_r03),
+        ("benchmark:el-ml1b:dp-r04", g05_r04),
     ):
         entry = by_id[benchmark_id]
         assert (
@@ -145,14 +212,7 @@ def test_g10_dp_r05_manifest_refs_are_backed_by_checked_in_seed() -> None:
         assert entry.observed_choice == checked_in_seed.decision.observed_choice
         assert entry.storyteller_independence_key == checked_in_seed.storyteller_independence_key
 
-    remaining = [
-        by_id[benchmark_id]
-        for benchmark_id in (
-            "benchmark:el-ml1b:dp-r03",
-            "benchmark:el-ml1b:dp-r04",
-            "benchmark:el-ml1b:dp-r06",
-        )
-    ]
+    remaining = [by_id["benchmark:el-ml1b:dp-r06"]]
     assert all(
         entry.materialization_state is BenchmarkMaterializationState.DOCUMENTED_READY
         for entry in remaining

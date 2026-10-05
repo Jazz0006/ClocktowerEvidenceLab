@@ -71,19 +71,21 @@
       "decision_family": "DRUNK_ASSIGNMENT",
       "game_group": "game-group:g05",
       "source_group": "source-group:g05-a-fond-farewell",
-      "storyteller_independence_key": null,
+      "storyteller_independence_key": "st-ben-burns",
       "historical_evidence_refs": [
-        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::C1C-G05 A Fond Farewell"
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::C1C-G05 A Fond Farewell",
+        "docs/G05_A_FOND_FAREWELL_SETUP_RECOVERY_2026-10-05.md::recovered pre-Drunk table state"
       ],
       "observed_choice": {
-        "shown_role": "Chef",
-        "actual_role": "Drunk"
+        "selected_seat_id": "seat:g05:12",
+        "shown_role": "CHEF",
+        "resulting_actual_role": "DRUNK"
       },
       "verification": "VERIFIED",
       "readiness": "READY",
-      "materialization_state": "DOCUMENTED_READY",
-      "canonical_decision_id": null,
-      "prefix_materialization_ref": null,
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:g05:drunk-assignment",
+      "prefix_materialization_ref": "prefix:g05:before-drunk-assignment:v1",
       "rationale_evidence_refs": [
         "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G05 planned extreme Chef misinformation"
       ],
@@ -94,9 +96,8 @@
         "RATIONALE_BLIND_REVIEW"
       ],
       "host_enrichment_requirements": [
-        "CANONICAL_DECISION_IMPORT",
-        "CANONICAL_PREFIX_MATERIALIZATION",
-        "LEGAL_CANDIDATE_DOMAIN"
+        "LEGAL_CANDIDATE_DOMAIN",
+        "TRAVELLER_DOMAIN"
       ]
     },
     {
@@ -105,18 +106,21 @@
       "decision_family": "RED_HERRING_ASSIGNMENT",
       "game_group": "game-group:g05",
       "source_group": "source-group:g05-a-fond-farewell",
-      "storyteller_independence_key": null,
+      "storyteller_independence_key": "st-ben-burns",
       "historical_evidence_refs": [
-        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G05 Red Herring 04:04"
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G05 Red Herring 04:04",
+        "docs/G05_A_FOND_FAREWELL_SETUP_RECOVERY_2026-10-05.md::setup chronology relevant to DP-R04"
       ],
       "observed_choice": {
-        "red_herring": "Lyra"
+        "selected_seat_id": "seat:g05:5",
+        "shown_role": "UNDERTAKER",
+        "red_herring": true
       },
       "verification": "VERIFIED",
       "readiness": "READY",
-      "materialization_state": "DOCUMENTED_READY",
-      "canonical_decision_id": null,
-      "prefix_materialization_ref": null,
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:g05:red-herring",
+      "prefix_materialization_ref": "prefix:g05:before-red-herring:v1",
       "rationale_evidence_refs": [
         "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G05 Fortune Tellers often choose neighbours"
       ],
@@ -127,9 +131,8 @@
         "RATIONALE_BLIND_REVIEW"
       ],
       "host_enrichment_requirements": [
-        "CANONICAL_DECISION_IMPORT",
-        "CANONICAL_PREFIX_MATERIALIZATION",
-        "LEGAL_CANDIDATE_DOMAIN"
+        "LEGAL_CANDIDATE_DOMAIN",
+        "TRAVELLER_DOMAIN"
       ]
     },
     {
