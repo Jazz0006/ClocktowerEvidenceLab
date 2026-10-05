@@ -95,9 +95,9 @@ Broad podcast policy mining is no longer the default marginal-value path. The ne
 
 Authority: `docs/EL_ML1A_DECISION_POINT_BENCHMARK_AUDIT_2026-10-05.md`.
 
-### EL-ML1B-1 — Benchmark Manifest V1 — IMPLEMENTATION COMPLETE / CANONICALIZATION GAP EXPOSED
+### EL-ML1B-1 — Benchmark Manifest V1 — IMPLEMENTATION COMPLETE
 
-The first machine-readable benchmark surface is now implemented:
+The first machine-readable benchmark surface is implemented:
 
 - versioned `DecisionPointBenchmarkManifestV1` / entry contract;
 - deterministic JSON dump/load;
@@ -107,9 +107,28 @@ The first machine-readable benchmark surface is now implemented:
 - allowed evaluation-mode metadata;
 - a checked-in six-row manifest at `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
 
-The six EL-ML1A rows are intentionally exported as `DOCUMENTED_READY`, not falsely upgraded to canonical ML seeds. The audit exposed that most historical evidence still lives in documentation rather than durable machine-readable `DecisionSlice + historical prefix + provenance` records. Canonical decision IDs and prefix materialization refs therefore remain null until EvidenceLab actually imports/materializes those records.
+### EL-ML1B-1B — Canonical historical decision materialization — IN PROGRESS / 1 OF 6 MATERIALIZED
 
-This is a real structural gap, not a reason to invent IDs. The next bounded step is **EL-ML1B-1B — canonical historical decision materialization**, beginning with the best-supported G10/G01/G05 cases and preserving one game-level split group per game.
+The six-row canonicalization audit is complete. It confirms that benchmark `READY` does not by itself justify a canonical machine seed.
+
+The first real materialization is **DP-R05 — G10 Game 2 Drunk assignment**:
+
+- generic derived `HistoricalDecisionSeedV1` contract;
+- checked-in canonical seed at `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`;
+- real `DecisionSlice` + evidenced grouped setup history + source/assertion provenance;
+- executable `HistoricalPrefixBoundary` that yields only the pre-assignment shown-role layout;
+- manifest state promoted to `CANONICAL_SEED_MATERIALIZED`;
+- Host enrichment requirement reduced to `LEGAL_CANDIDATE_DOMAIN`.
+
+The remaining five rows stay `DOCUMENTED_READY`. Current audit disposition:
+
+- **G01 DP-R01/DP-R02:** strongest next pair; materialize together from one canonical G01 reconstruction, after resolving Storyteller/controller grouping without inventing a single Ben+Adam identity;
+- **G05 DP-R03/DP-R04:** blocked because the repository currently records that the complete layout was fixed but does not retain the full seat/role map;
+- **G10 DP-R06:** blocked until setup chronology/completeness at the Librarian decision boundary is evidence-backed; do not infer Demon-bluff prefix membership from video order or BotC rules.
+
+Authority: `docs/EL_ML1B_CANONICALIZATION_AUDIT_2026-10-05.md`.
+
+No persistence migration, Host legality, legal-candidate enumeration, recommendation scoring, or inferred rejection semantics were added.
 
 ### EL-LRE0 — Host LRE Evidence Alignment — AUDIT COMPLETE / ACTIVE ROUTE
 

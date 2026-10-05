@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 BENCHMARK MANIFEST V1 IMPLEMENTED / 6 DOCUMENTED_READY ROWS / CANONICAL SEED MATERIALIZATION GAP EXPOSED / >=18 PARTIAL CANDIDATES / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 MANIFEST COMPLETE / EL-ML1B-1B IN PROGRESS / DP-R05 G10 CANONICAL SEED MATERIALIZED / 5 DOCUMENTED_READY ROWS REMAIN / >=18 PARTIAL CANDIDATES / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -12,13 +12,16 @@
 2. `README.md`
 3. `docs/CURRENT_DEVELOPMENT_ROADMAP.md`
 4. `docs/EL_ML1A_DECISION_POINT_BENCHMARK_AUDIT_2026-10-05.md`
-5. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-6. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
-7. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-8. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-9. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-10. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-11. this file
+5. `docs/EL_ML1B_CANONICALIZATION_AUDIT_2026-10-05.md`
+6. `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`
+7. `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`
+8. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+9. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+10. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+11. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+12. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+13. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+14. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -72,15 +75,17 @@ EL-ML1A established a conservative current inventory of 6 READY historical decis
 Immediate route:
 
 ```text
-EL-ML1B-1B canonicalize the 6 DOCUMENTED_READY rows where evidence supports it
--> recover G10 later-decision prefixes
+EL-ML1B-1B DP-R05 G10 canonical seed          COMPLETE / GREEN locally
+-> canonicalize G01 DP-R01 + DP-R02 together NEXT
+-> repair G05 full setup map for DP-R03/R04
+-> recover G10 later-decision prefixes only with evidence-backed setup chronology
 -> close R04 blockers
 -> recover FT1-A / WW2 / UT1-A historical prefixes
 -> repair R01/R02/R03 and Investigator/Ravenkeeper candidates
 -> acquire new complete TB games only if READY still < 20
 ```
 
-`docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json` is the current machine-readable manifest. Its six rows intentionally have null canonical decision/prefix refs until actual canonical materialization occurs; do not fill those fields with invented IDs.
+`docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json` is the current machine-readable manifest. DP-R05 now has real canonical decision/prefix refs backed by `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`; the other five rows intentionally remain `DOCUMENTED_READY` with null canonical refs. Do not fill those fields until their own canonical materialization succeeds.
 
 Pilot target: 20–30 READY historical decision points, at least 8 games, at least 4 Storyteller independence groups, and at least 40% later-game/history-sensitive decisions.
 
@@ -114,12 +119,13 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 
 ### EL-ML1B priority
 
-1. **Manifest first:** project the six EL-ML1A READY historical decisions into the smallest machine-readable benchmark/seed surface.
-2. **Same-game longitudinal test:** materialize the later G10 decision prefixes while preserving one G10 split group.
-3. **High-leverage repair:** close R04 blockers because one repaired game may unlock several early- and later-night decision points.
-4. **Rationale-rich prefix recovery:** FT1-A -> WW2 -> UT1-A.
-5. **Diversity repair:** R01/R02/R03 plus existing Investigator/Ravenkeeper historical cases.
-6. **New complete games only if needed:** prefer new Storyteller independence and grimoire visibility.
+1. **Canonicalize G01 next:** materialize DP-R01 + DP-R02 from one shared reconstruction; preserve Ben Burns + Adam controller/independence uncertainty rather than inventing one identity.
+2. **Repair G05 bounded setup state:** recover the missing full seat/role map before DP-R03 or DP-R04 can become canonical seeds.
+3. **Same-game longitudinal test:** materialize later G10 decisions only after the exact historical prefix—including setup chronology needed by event-prefix materialization—is evidence-backed.
+4. **High-leverage repair:** close R04 blockers because one repaired game may unlock several early- and later-night decision points.
+5. **Rationale-rich prefix recovery:** FT1-A -> WW2 -> UT1-A.
+6. **Diversity repair:** R01/R02/R03 plus existing Investigator/Ravenkeeper historical cases.
+7. **New complete games only if needed:** prefer new Storyteller independence and grimoire visibility.
 
 The existing Priority-1/Priority-2 EL-LRE verified set remains retrieval/evaluation evidence and may still be consumed by Host, but it no longer defines EvidenceLab's default continuation order.
 

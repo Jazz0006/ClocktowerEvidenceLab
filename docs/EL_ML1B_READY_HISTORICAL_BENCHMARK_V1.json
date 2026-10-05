@@ -147,15 +147,15 @@
         "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G10 Game 2 historical assignment replay"
       ],
       "observed_choice": {
-        "seat": 1,
-        "shown_role": "Empath",
-        "actual_role": "Drunk"
+        "selected_seat_id": "seat:g10:1",
+        "shown_role": "EMPATH",
+        "resulting_actual_role": "DRUNK"
       },
       "verification": "VERIFIED",
       "readiness": "READY",
-      "materialization_state": "DOCUMENTED_READY",
-      "canonical_decision_id": null,
-      "prefix_materialization_ref": null,
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:g10:drunk-assignment",
+      "prefix_materialization_ref": "prefix:g10-game2:before-drunk-assignment:v1",
       "rationale_evidence_refs": [
         "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G10 Empath adjacent to Demon"
       ],
@@ -166,8 +166,6 @@
         "RATIONALE_BLIND_REVIEW"
       ],
       "host_enrichment_requirements": [
-        "CANONICAL_DECISION_IMPORT",
-        "CANONICAL_PREFIX_MATERIALIZATION",
         "LEGAL_CANDIDATE_DOMAIN"
       ]
     },

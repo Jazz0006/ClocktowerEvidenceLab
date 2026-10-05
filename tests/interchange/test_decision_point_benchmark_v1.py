@@ -146,9 +146,22 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
         "game-group:g10-game2",
     }
     assert all(entry.readiness is BenchmarkReadiness.READY for entry in manifest.entries)
+
+    by_id = {entry.benchmark_id: entry for entry in manifest.entries}
+    materialized = by_id["benchmark:el-ml1b:dp-r05"]
+    assert (
+        materialized.materialization_state
+        is BenchmarkMaterializationState.CANONICAL_SEED_MATERIALIZED
+    )
+    assert materialized.canonical_decision_id == "decision:g10:drunk-assignment"
+    assert materialized.prefix_materialization_ref == "prefix:g10-game2:before-drunk-assignment:v1"
+
+    remaining = [
+        entry for entry in manifest.entries if entry.benchmark_id != "benchmark:el-ml1b:dp-r05"
+    ]
     assert all(
         entry.materialization_state is BenchmarkMaterializationState.DOCUMENTED_READY
-        for entry in manifest.entries
+        for entry in remaining
     )
-    assert all(entry.canonical_decision_id is None for entry in manifest.entries)
-    assert all(entry.prefix_materialization_ref is None for entry in manifest.entries)
+    assert all(entry.canonical_decision_id is None for entry in remaining)
+    assert all(entry.prefix_materialization_ref is None for entry in remaining)

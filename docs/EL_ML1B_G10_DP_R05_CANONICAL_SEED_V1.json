@@ -1,0 +1,376 @@
+{
+  "schema_name": "clocktower-historical-decision-seed",
+  "schema_version": 1,
+  "materialization_id": "historical-seed:g10-game2:drunk-assignment:v1",
+  "prefix_materialization_ref": "prefix:g10-game2:before-drunk-assignment:v1",
+  "game_group": "game-group:g10-game2",
+  "source_group": "source-group:g10-megavoid-game2",
+  "storyteller_independence_key": "st-the-megavoid",
+  "game": {
+    "game_id": "evidence:c1d:g10-game2",
+    "script": "trouble_brewing",
+    "storyteller_assignments": [
+      {
+        "storyteller_id": "storyteller:the-megavoid",
+        "role": "STORYTELLER"
+      }
+    ],
+    "reconstruction_status": "PARTIAL",
+    "current_reconstruction_revision_id": "revision:g10:1"
+  },
+  "reconstruction_revision": {
+    "revision_id": "revision:g10:1",
+    "game_id": "evidence:c1d:g10-game2",
+    "parent_revision_id": null,
+    "created_at": "2026-10-05T08:15:00+08:00",
+    "change_note": "EL-ML1B-1B canonical materialization of the verified G10 Game 2 Drunk-assignment prefix."
+  },
+  "storytellers": [
+    {
+      "storyteller_id": "storyteller:the-megavoid",
+      "independence_key": "st-the-megavoid",
+      "display_name": "The Megavoid"
+    }
+  ],
+  "game_seats": [
+    {
+      "seat_id": "seat:g10:1",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 1,
+      "seat_label": "Seat 1",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:2",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 2,
+      "seat_label": "Seat 2",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:3",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 3,
+      "seat_label": "Seat 3",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:4",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 4,
+      "seat_label": "Seat 4",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:5",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 5,
+      "seat_label": "Seat 5",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:6",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 6,
+      "seat_label": "Seat 6",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:7",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 7,
+      "seat_label": "Seat 7",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:8",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 8,
+      "seat_label": "Seat 8",
+      "display_name": null,
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:g10:9",
+      "game_id": "evidence:c1d:g10-game2",
+      "seat_order": 9,
+      "seat_label": "Seat 9",
+      "display_name": null,
+      "experience_metadata": null
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "source:g10:megavoid-storytelling-tips-youtube",
+      "kind": "VIDEO",
+      "external_locator": "https://www.youtube.com/watch?v=G9z25aM9u7s",
+      "inclusion_reason": "TARGETED_RESEARCH_CASE",
+      "platform": "YouTube",
+      "platform_source_id": "G9z25aM9u7s",
+      "discovery_note": "The Megavoid Storytelling Tips & Tricks video; Game 2 begins around 16:23.",
+      "screening_status": "SCREENED",
+      "reconstructability": "PARTIAL",
+      "selection_disposition": "SELECTED",
+      "rejection_reason": null
+    }
+  ],
+  "source_game_links": [
+    {
+      "link_id": "source-game-link:g10:megavoid-game2",
+      "source_id": "source:g10:megavoid-storytelling-tips-youtube",
+      "game_id": "evidence:c1d:g10-game2",
+      "match_status": "VERIFIED_SAME",
+      "note": "Human primary review confirms Game 2 is the historical played-game walkthrough used by the G10 reconstruction."
+    }
+  ],
+  "evidence_fragments": [
+    {
+      "fragment_id": "fragment:g10:game2-setup-prefix",
+      "source_id": "source:g10:megavoid-storytelling-tips-youtube",
+      "locator_kind": "TIMESTAMP_RANGE",
+      "source_start_ms": 983000,
+      "source_end_ms": 989000,
+      "locator": null,
+      "note": "Before the Drunk assignment, the complete nine-seat shown-role layout is already fixed; the internal order of individual role selection remains unknown."
+    },
+    {
+      "fragment_id": "fragment:g10:drunk-assignment-1629",
+      "source_id": "source:g10:megavoid-storytelling-tips-youtube",
+      "locator_kind": "TIMESTAMP",
+      "source_start_ms": 989000,
+      "source_end_ms": null,
+      "locator": null,
+      "note": "The Storyteller selects the shown Empath at seat 1 as the Drunk and explains that the Empath is adjacent to the Demon."
+    }
+  ],
+  "evidence_assertions": [
+    {
+      "assertion_id": "assertion:g10:shown-layout-before-drunk",
+      "subject_type": "SETUP_COMMITMENT",
+      "subject_id": "setup:g10:shown-layout",
+      "assertion_type": "HISTORICAL_PREFIX_SETUP",
+      "value": {
+        "has_drunk": true,
+        "seats": [
+          {
+            "seat_id": "seat:g10:1",
+            "shown_role": "EMPATH"
+          },
+          {
+            "seat_id": "seat:g10:2",
+            "shown_role": "IMP"
+          },
+          {
+            "seat_id": "seat:g10:3",
+            "shown_role": "UNDERTAKER"
+          },
+          {
+            "seat_id": "seat:g10:4",
+            "shown_role": "LIBRARIAN"
+          },
+          {
+            "seat_id": "seat:g10:5",
+            "shown_role": "SPY"
+          },
+          {
+            "seat_id": "seat:g10:6",
+            "shown_role": "MONK"
+          },
+          {
+            "seat_id": "seat:g10:7",
+            "shown_role": "MAYOR"
+          },
+          {
+            "seat_id": "seat:g10:8",
+            "shown_role": "VIRGIN"
+          },
+          {
+            "seat_id": "seat:g10:9",
+            "shown_role": "BUTLER"
+          }
+        ]
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g10:game2-setup-prefix"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g10:1"
+    },
+    {
+      "assertion_id": "assertion:g10:drunk-assignment-choice",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g10:drunk-assignment",
+      "assertion_type": "OBSERVED_CHOICE",
+      "value": {
+        "selected_seat_id": "seat:g10:1",
+        "shown_role": "EMPATH",
+        "resulting_actual_role": "DRUNK"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g10:drunk-assignment-1629"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g10:1"
+    },
+    {
+      "assertion_id": "assertion:g10:drunk-assignment-result",
+      "subject_type": "SETUP_COMMITMENT",
+      "subject_id": "setup:g10:drunk-assignment",
+      "assertion_type": "RESULTING_SETUP_FACT",
+      "value": {
+        "actual_role": "DRUNK",
+        "shown_role": "EMPATH"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g10:drunk-assignment-1629"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g10:1"
+    },
+    {
+      "assertion_id": "assertion:g10:drunk-assignment-rationale",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g10:drunk-assignment",
+      "assertion_type": "RATIONALE",
+      "value": {
+        "summary": "Shown Empath selected because the Empath is adjacent to the Demon."
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g10:drunk-assignment-1629"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g10:1"
+    }
+  ],
+  "setup_history": [
+    {
+      "commitment_id": "setup:g10:shown-layout",
+      "game_id": "evidence:c1d:g10-game2",
+      "reconstruction_revision_id": "revision:g10:1",
+      "setup_order": 1,
+      "setup_order_basis": "EVIDENCED",
+      "commitment_type": "SHOWN_ROLE_LAYOUT",
+      "controller": "STORYTELLER",
+      "subject_seat_id": null,
+      "target_seat_ids": [],
+      "value": {
+        "has_drunk": true,
+        "seats": [
+          {
+            "seat_id": "seat:g10:1",
+            "shown_role": "EMPATH"
+          },
+          {
+            "seat_id": "seat:g10:2",
+            "shown_role": "IMP"
+          },
+          {
+            "seat_id": "seat:g10:3",
+            "shown_role": "UNDERTAKER"
+          },
+          {
+            "seat_id": "seat:g10:4",
+            "shown_role": "LIBRARIAN"
+          },
+          {
+            "seat_id": "seat:g10:5",
+            "shown_role": "SPY"
+          },
+          {
+            "seat_id": "seat:g10:6",
+            "shown_role": "MONK"
+          },
+          {
+            "seat_id": "seat:g10:7",
+            "shown_role": "MAYOR"
+          },
+          {
+            "seat_id": "seat:g10:8",
+            "shown_role": "VIRGIN"
+          },
+          {
+            "seat_id": "seat:g10:9",
+            "shown_role": "BUTLER"
+          }
+        ]
+      }
+    },
+    {
+      "commitment_id": "setup:g10:drunk-assignment",
+      "game_id": "evidence:c1d:g10-game2",
+      "reconstruction_revision_id": "revision:g10:1",
+      "setup_order": 2,
+      "setup_order_basis": "EVIDENCED",
+      "commitment_type": "DRUNK_ASSIGNMENT",
+      "controller": "STORYTELLER",
+      "subject_seat_id": "seat:g10:1",
+      "target_seat_ids": [],
+      "value": {
+        "actual_role": "DRUNK",
+        "shown_role": "EMPATH"
+      }
+    }
+  ],
+  "event_history": [],
+  "history_provenance": [
+    {
+      "history_item_id": "setup:g10:shown-layout",
+      "evidence_assertion_ids": [
+        "assertion:g10:shown-layout-before-drunk"
+      ]
+    },
+    {
+      "history_item_id": "setup:g10:drunk-assignment",
+      "evidence_assertion_ids": [
+        "assertion:g10:drunk-assignment-result"
+      ]
+    }
+  ],
+  "decision": {
+    "decision_id": "decision:g10:drunk-assignment",
+    "game_id": "evidence:c1d:g10-game2",
+    "reconstruction_revision_id": "revision:g10:1",
+    "decision_type": "DRUNK_ASSIGNMENT",
+    "controller": "STORYTELLER",
+    "historical_prefix_boundary": {
+      "setup_through_order": 1,
+      "event_through_order": null
+    },
+    "subject_seat_id": "seat:g10:1",
+    "observed_choice": {
+      "selected_seat_id": "seat:g10:1",
+      "shown_role": "EMPATH",
+      "resulting_actual_role": "DRUNK"
+    },
+    "resulting_history": {
+      "setup_commitment_id": "setup:g10:drunk-assignment",
+      "setup_order": 2,
+      "semantic_event_id": null,
+      "event_order": null
+    },
+    "rationale_assertion_ids": [
+      "assertion:g10:drunk-assignment-rationale"
+    ],
+    "explicitly_considered_alternatives": null,
+    "explicitly_rejected_alternatives": null
+  },
+  "observed_choice_assertion_ids": [
+    "assertion:g10:drunk-assignment-choice"
+  ],
+  "choice_verification": "VERIFIED"
+}
