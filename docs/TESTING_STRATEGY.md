@@ -66,6 +66,8 @@ At minimum, tests should eventually prove:
 15. Explicitly observed considered/rejected alternatives remain distinct from downstream-derived legal alternatives.
 16. UNKNOWN setup-choice rationale and alternatives survive domain/persistence/export boundaries without being guessed.
 17. Canonical-only setup ordering cannot be used to materialize a setup-time decision prefix, while event-time decisions may still consume the complete setup state after setup is committed.
+18. A documented benchmark-ready decision must not claim canonical decision/prefix materialization until real canonical references exist.
+19. Benchmark manifests preserve game/source/Storyteller grouping and cannot silently split one historical game into independent benchmark identities.
 
 
 ## 3.1 C2 acquisition-contract tests
