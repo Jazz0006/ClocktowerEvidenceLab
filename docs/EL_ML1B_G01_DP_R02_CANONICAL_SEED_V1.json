@@ -1,0 +1,74 @@
+{
+  "schema_name":"clocktower-historical-decision-seed",
+  "schema_version":1,
+  "materialization_id":"historical-seed:g01:drunk-empath-night1:v1",
+  "prefix_materialization_ref":"prefix:g01:before-drunk-empath-night1:v1",
+  "game_group":"game-group:g01",
+  "source_group":"source-group:g01-a-stud-in-scarlet",
+  "storyteller_independence_key":"st-ben-burns",
+  "game":{"game_id":"evidence:e0:g01-a-stud-in-scarlet","script":"trouble_brewing","storyteller_assignments":[{"storyteller_id":"storyteller:ben-burns","role":"STORYTELLER"}],"reconstruction_status":"PARTIAL","current_reconstruction_revision_id":"revision:g01:1"},
+  "reconstruction_revision":{"revision_id":"revision:g01:1","game_id":"evidence:e0:g01-a-stud-in-scarlet","parent_revision_id":null,"created_at":"2026-10-05T16:51:00+08:00","change_note":"EL-ML1B-1B canonical materialization of the verified G01 setup and bounded Night-1 history shared by DP-R01 and DP-R02."},
+  "storytellers":[{"storyteller_id":"storyteller:ben-burns","independence_key":"st-ben-burns","display_name":"Ben Burns"}],
+  "game_seats":[
+    {"seat_id":"seat:g01:1","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":1,"seat_label":"Seat 1","display_name":"Luke","experience_metadata":null},
+    {"seat_id":"seat:g01:2","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":2,"seat_label":"Seat 2","display_name":"Oli","experience_metadata":null},
+    {"seat_id":"seat:g01:3","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":3,"seat_label":"Seat 3","display_name":"Blair","experience_metadata":null},
+    {"seat_id":"seat:g01:4","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":4,"seat_label":"Seat 4","display_name":"Tom","experience_metadata":null},
+    {"seat_id":"seat:g01:5","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":5,"seat_label":"Seat 5","display_name":"Elliott","experience_metadata":null},
+    {"seat_id":"seat:g01:6","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":6,"seat_label":"Seat 6","display_name":"Laurie","experience_metadata":null},
+    {"seat_id":"seat:g01:7","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":7,"seat_label":"Seat 7","display_name":"Isaac","experience_metadata":null},
+    {"seat_id":"seat:g01:8","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":8,"seat_label":"Seat 8","display_name":"Jon","experience_metadata":null},
+    {"seat_id":"seat:g01:9","game_id":"evidence:e0:g01-a-stud-in-scarlet","seat_order":9,"seat_label":"Seat 9","display_name":"Sullivan","experience_metadata":null}
+  ],
+  "sources":[{"source_id":"source:g01:asis-youtube","kind":"VIDEO","external_locator":"https://www.youtube.com/watch?v=qZBvRfM3Xow","inclusion_reason":"TARGETED_RESEARCH_CASE","platform":"YouTube","platform_source_id":"qZBvRfM3Xow","discovery_note":"No Rolls Barred A Stud In Scarlet. Ben Burns is the conservative Storyteller split anchor; Adam co-Storyteller/assistant context is not promoted to a synthetic joint or unsupported stable identity.","screening_status":"SCREENED","reconstructability":"PARTIAL","selection_disposition":"SELECTED","rejection_reason":null}],
+  "source_game_links":[{"link_id":"source-game-link:g01:asis","source_id":"source:g01:asis-youtube","game_id":"evidence:e0:g01-a-stud-in-scarlet","match_status":"VERIFIED_SAME","note":"Human primary review confirms the setup and Night-1 evidence belong to A Stud In Scarlet."}],
+  "evidence_fragments":[
+    {"fragment_id":"fragment:g01:setup-prefix","source_id":"source:g01:asis-youtube","locator_kind":"TIMESTAMP_RANGE","source_start_ms":570000,"source_end_ms":640000,"locator":null,"note":"Bounded primary review establishes complete nine-seat shown-role layout before Drunk assignment and Red Herring afterward; internal role-selection order remains unknown."},
+    {"fragment_id":"fragment:g01:drunk-assignment-0949","source_id":"source:g01:asis-youtube","locator_kind":"TIMESTAMP","source_start_ms":589000,"source_end_ms":null,"locator":null,"note":"Sullivan, already shown Empath at seat 9, is established as actual Drunk."},
+    {"fragment_id":"fragment:g01:red-herring-1032","source_id":"source:g01:asis-youtube","locator_kind":"TIMESTAMP","source_start_ms":632000,"source_end_ms":null,"locator":null,"note":"Sullivan is made Fortune Teller Red Herring after Drunk assignment."},
+    {"fragment_id":"fragment:g01:chef-1153","source_id":"source:g01:asis-youtube","locator_kind":"TIMESTAMP","source_start_ms":713000,"source_end_ms":null,"locator":null,"note":"Jon's Chef receives 1 before Sullivan's Empath information."},
+    {"fragment_id":"fragment:g01:drunk-empath-1241","source_id":"source:g01:asis-youtube","locator_kind":"TIMESTAMP","source_start_ms":761000,"source_end_ms":null,"locator":null,"note":"Sullivan, believing Empath, receives 0; Ben explains that 2 would be less believable. No claim is made that 1 was considered or rejected."}
+  ],
+  "evidence_assertions":[
+    {"assertion_id":"assertion:g01:shown-layout-before-drunk","subject_type":"SETUP_COMMITMENT","subject_id":"setup:g01:shown-layout","assertion_type":"HISTORICAL_PREFIX_SETUP","value":{"seats":[{"seat_id":"seat:g01:1","shown_role":"IMP"},{"seat_id":"seat:g01:2","shown_role":"RAVENKEEPER"},{"seat_id":"seat:g01:3","shown_role":"FORTUNE_TELLER"},{"seat_id":"seat:g01:4","shown_role":"MONK"},{"seat_id":"seat:g01:5","shown_role":"RECLUSE"},{"seat_id":"seat:g01:6","shown_role":"SCARLET_WOMAN"},{"seat_id":"seat:g01:7","shown_role":"UNDERTAKER"},{"seat_id":"seat:g01:8","shown_role":"CHEF"},{"seat_id":"seat:g01:9","shown_role":"EMPATH"}]},"derivation":"OBSERVED","fragment_ids":["fragment:g01:setup-prefix"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"},
+    {"assertion_id":"assertion:g01:drunk-assignment-result","subject_type":"SETUP_COMMITMENT","subject_id":"setup:g01:drunk-assignment","assertion_type":"RESULTING_SETUP_FACT","value":{"actual_role":"DRUNK","shown_role":"EMPATH"},"derivation":"OBSERVED","fragment_ids":["fragment:g01:setup-prefix","fragment:g01:drunk-assignment-0949"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"},
+    {"assertion_id":"assertion:g01:red-herring-result","subject_type":"SETUP_COMMITMENT","subject_id":"setup:g01:red-herring","assertion_type":"RESULTING_SETUP_FACT","value":{"red_herring_seat_id":"seat:g01:9"},"derivation":"OBSERVED","fragment_ids":["fragment:g01:red-herring-1032"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"},
+    {"assertion_id":"assertion:g01:chef-night1-event","subject_type":"SEMANTIC_EVENT","subject_id":"event:g01:n1-chef-info","assertion_type":"INFORMATION_DELIVERED","value":{"shown_role":"CHEF","information":1},"derivation":"OBSERVED","fragment_ids":["fragment:g01:chef-1153"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"},
+    {"assertion_id":"assertion:g01:drunk-empath-night1-choice","subject_type":"DECISION_SLICE","subject_id":"decision:g01:n1-drunk-empath-info","assertion_type":"OBSERVED_CHOICE","value":0,"derivation":"OBSERVED","fragment_ids":["fragment:g01:drunk-empath-1241"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"},
+    {"assertion_id":"assertion:g01:drunk-empath-night1-result","subject_type":"SEMANTIC_EVENT","subject_id":"event:g01:n1-drunk-empath-info","assertion_type":"INFORMATION_DELIVERED","value":{"shown_role":"EMPATH","information":0},"derivation":"OBSERVED","fragment_ids":["fragment:g01:drunk-empath-1241"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"},
+    {"assertion_id":"assertion:g01:drunk-empath-night1-rationale","subject_type":"DECISION_SLICE","subject_id":"decision:g01:n1-drunk-empath-info","assertion_type":"RATIONALE","value":{"summary":"Ben explains that giving 2 would be less believable."},"derivation":"OBSERVED","fragment_ids":["fragment:g01:drunk-empath-1241"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"},
+    {"assertion_id":"assertion:g01:drunk-empath-night1-rejected-2","subject_type":"DECISION_SLICE","subject_id":"decision:g01:n1-drunk-empath-info","assertion_type":"EXPLICIT_REJECTION","value":2,"derivation":"OBSERVED","fragment_ids":["fragment:g01:drunk-empath-1241"],"inference_provenance":null,"scope":"RECONSTRUCTION","reconstruction_revision_id":"revision:g01:1"}
+  ],
+  "setup_history":[
+    {"commitment_id":"setup:g01:shown-layout","game_id":"evidence:e0:g01-a-stud-in-scarlet","reconstruction_revision_id":"revision:g01:1","setup_order":1,"setup_order_basis":"EVIDENCED","commitment_type":"SHOWN_ROLE_LAYOUT","controller":"STORYTELLER","subject_seat_id":null,"target_seat_ids":[],"value":{"seats":[{"seat_id":"seat:g01:1","shown_role":"IMP"},{"seat_id":"seat:g01:2","shown_role":"RAVENKEEPER"},{"seat_id":"seat:g01:3","shown_role":"FORTUNE_TELLER"},{"seat_id":"seat:g01:4","shown_role":"MONK"},{"seat_id":"seat:g01:5","shown_role":"RECLUSE"},{"seat_id":"seat:g01:6","shown_role":"SCARLET_WOMAN"},{"seat_id":"seat:g01:7","shown_role":"UNDERTAKER"},{"seat_id":"seat:g01:8","shown_role":"CHEF"},{"seat_id":"seat:g01:9","shown_role":"EMPATH"}]}},
+    {"commitment_id":"setup:g01:drunk-assignment","game_id":"evidence:e0:g01-a-stud-in-scarlet","reconstruction_revision_id":"revision:g01:1","setup_order":2,"setup_order_basis":"EVIDENCED","commitment_type":"DRUNK_ASSIGNMENT","controller":"STORYTELLER","subject_seat_id":"seat:g01:9","target_seat_ids":[],"value":{"actual_role":"DRUNK","shown_role":"EMPATH"}},
+    {"commitment_id":"setup:g01:red-herring","game_id":"evidence:e0:g01-a-stud-in-scarlet","reconstruction_revision_id":"revision:g01:1","setup_order":3,"setup_order_basis":"EVIDENCED","commitment_type":"RED_HERRING_ASSIGNMENT","controller":"STORYTELLER","subject_seat_id":"seat:g01:9","target_seat_ids":[],"value":{"red_herring":true}}
+  ],
+  "event_history":[
+    {"event_id":"event:g01:n1-chef-info","game_id":"evidence:e0:g01-a-stud-in-scarlet","reconstruction_revision_id":"revision:g01:1","event_order":1,"phase":"NIGHT_1","event_type":"INFORMATION_DELIVERED","controller":"STORYTELLER","actor_seat_id":null,"subject_seat_id":"seat:g01:8","target_seat_ids":[],"value":{"shown_role":"CHEF","information":1}},
+    {"event_id":"event:g01:n1-drunk-empath-info","game_id":"evidence:e0:g01-a-stud-in-scarlet","reconstruction_revision_id":"revision:g01:1","event_order":2,"phase":"NIGHT_1","event_type":"INFORMATION_DELIVERED","controller":"STORYTELLER","actor_seat_id":null,"subject_seat_id":"seat:g01:9","target_seat_ids":[],"value":{"shown_role":"EMPATH","information":0}}
+  ],
+  "history_provenance":[
+    {"history_item_id":"setup:g01:shown-layout","evidence_assertion_ids":["assertion:g01:shown-layout-before-drunk"]},
+    {"history_item_id":"setup:g01:drunk-assignment","evidence_assertion_ids":["assertion:g01:drunk-assignment-result"]},
+    {"history_item_id":"setup:g01:red-herring","evidence_assertion_ids":["assertion:g01:red-herring-result"]},
+    {"history_item_id":"event:g01:n1-chef-info","evidence_assertion_ids":["assertion:g01:chef-night1-event"]},
+    {"history_item_id":"event:g01:n1-drunk-empath-info","evidence_assertion_ids":["assertion:g01:drunk-empath-night1-result"]}
+  ],
+  "decision":{
+    "decision_id":"decision:g01:n1-drunk-empath-info",
+    "game_id":"evidence:e0:g01-a-stud-in-scarlet",
+    "reconstruction_revision_id":"revision:g01:1",
+    "decision_type":"IMPAIRED_EMPATH_INFORMATION",
+    "controller":"STORYTELLER",
+    "historical_prefix_boundary":{"setup_through_order":null,"event_through_order":1},
+    "subject_seat_id":"seat:g01:9",
+    "observed_choice":0,
+    "resulting_history":{"setup_commitment_id":null,"setup_order":null,"semantic_event_id":"event:g01:n1-drunk-empath-info","event_order":2},
+    "rationale_assertion_ids":["assertion:g01:drunk-empath-night1-rationale"],
+    "explicitly_considered_alternatives":null,
+    "explicitly_rejected_alternatives":[{"value":2,"evidence_assertion_ids":["assertion:g01:drunk-empath-night1-rejected-2"]}]
+  },
+  "observed_choice_assertion_ids":["assertion:g01:drunk-empath-night1-choice"],
+  "choice_verification":"VERIFIED"
+}

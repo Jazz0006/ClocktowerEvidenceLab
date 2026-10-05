@@ -1,6 +1,6 @@
 # EL-ML1B-1B — Canonical Historical Decision Materialization Audit — 2026-10-05
 
-> Status: **READ-ONLY CANONICALIZATION AUDIT COMPLETE / DP-R05 MATERIALIZED FIRST**
+> Status: **CANONICALIZATION AUDIT COMPLETE / DP-R01 + DP-R02 + DP-R05 MATERIALIZED**
 >
 > Scope: the six historical rows in `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
 >
@@ -32,8 +32,8 @@ source-backed game / reconstruction identity
 
 | Benchmark | Current audit verdict | Materialization action | Evidence gap / reason |
 | --- | --- | --- | --- |
-| **DP-R01 — G01 Drunk assignment** | **NEXT CANDIDATE / NOT PROMOTED IN THIS SLICE** | keep `DOCUMENTED_READY` | The complete nine-seat layout and the ordering “layout -> Drunk assignment -> later Red Herring” are retained and verified. Before promotion, create the canonical source/game/revision objects and resolve the Storyteller grouping/controller provenance for the Ben Burns + Adam game instead of inventing a single independence key. |
-| **DP-R02 — G01 Drunk-Empath Night-1 = 0** | **NEXT CANDIDATE / NOT PROMOTED IN THIS SLICE** | keep `DOCUMENTED_READY` | Strong retained evidence exists: verified setup, Red Herring, prior Chef `1`, observed `0`, explicit rationale, and explicit rejection of `2`. It should be materialized together with DP-R01 so both decisions share one canonical G01 reconstruction and split group. |
+| **DP-R01 — G01 Drunk assignment** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The shared G01 reconstruction preserves the verified grouped nine-seat shown-role layout before the Drunk assignment and later Red Herring. Ben Burns is used only as the conservative split anchor; controller remains generic `STORYTELLER`, and no synthetic joint Ben+Adam identity or unsupported personal actor attribution is created. |
+| **DP-R02 — G01 Drunk-Empath Night-1 = 0** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The same G01 reconstruction preserves the verified setup, Red Herring, prior Chef `1`, observed `0`, explicit rationale, and explicit rejected `2`. Alternative `1` remains unmentioned/unknown rather than being converted into rejection evidence. |
 | **DP-R03 — G05 Chef becomes Drunk** | **CANONICALIZATION BLOCKED** | keep `DOCUMENTED_READY` | Primary review proves that the complete player-role layout was fixed before the 03:32 Drunk assignment, but the current repository does not retain that complete seat/role map. Re-acquire only that bounded setup state; do not reconstruct it from later facts or rules. |
 | **DP-R04 — G05 Red Herring = Lyra** | **CANONICALIZATION BLOCKED** | keep `DOCUMENTED_READY` | The Drunk -> Red Herring -> bluffs ordering and choice rationale are verified, but the retained canonical prefix still lacks the complete G05 setup map needed to materialize the state. Repair DP-R03/DP-R04 together from the same bounded setup source. |
 | **DP-R05 — G10 Empath becomes Drunk** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | G10 retains the full nine-seat shown-role layout as one evidenced grouped setup commitment, the 16:29 assignment result, explicit Demon-adjacency rationale, source provenance, and stable Storyteller independence key. The unknown internal order of individual role selection remains unknown rather than being fabricated. |
@@ -80,6 +80,50 @@ excluded
 
 The IDs previously used only by the G10 TBGS regression fixture are now backed by this checked-in non-test canonical seed instead of being used as unsupported manifest references.
 
+### 3.1 G01 DP-R01 + DP-R02 shared reconstruction materialization
+
+Two additional checked-in seeds now share one canonical G01 identity:
+
+- `docs/EL_ML1B_G01_DP_R01_CANONICAL_SEED_V1.json`;
+- `docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json`.
+
+Both use:
+
+- game: `evidence:e0:g01-a-stud-in-scarlet`;
+- reconstruction revision: `revision:g01:1`;
+- source group: `source-group:g01-a-stud-in-scarlet`;
+- conservative split anchor: `st-ben-burns`.
+
+The split anchor does **not** assert that Ben personally made every decision. The retained source also contains co-Storyteller/assistant context involving Adam, but the canonical seed does not fabricate a synthetic joint identity or an unsupported stable Adam identity.
+
+DP-R01 materializes:
+
+```text
+historical prefix
+    = setup:g01:shown-layout
+
+excluded
+    = setup:g01:drunk-assignment
+    = setup:g01:red-herring
+    = Night-1 history
+```
+
+DP-R02 materializes:
+
+```text
+historical prefix
+    = complete bounded setup history
+    + event:g01:n1-chef-info = 1
+
+excluded
+    = event:g01:n1-drunk-empath-info = 0
+    = later Fortune Teller / later game history
+```
+
+The DP-R02 source-backed negative evidence is intentionally narrow: only `2` is explicitly rejected as less believable. Unmentioned `1` is not treated as considered, rejected, or inferior.
+
+Demon bluffs remain retained elsewhere as evidence, but are intentionally omitted from these bounded canonical seeds because their exact setup chronology relative to DP-R01 is not evidence-backed.
+
 ## 4. Authority boundaries preserved
 
 This slice does not contain:
@@ -96,14 +140,13 @@ The seed is a versioned **derived interchange artifact** over existing EvidenceL
 
 ## 5. Next bounded action
 
-Continue EL-ML1B-1B with **G01 DP-R01 + DP-R02 as one reconstruction slice**.
+Continue EL-ML1B-1B with **G05 bounded setup-map recovery for DP-R03 + DP-R04**.
 
-Before promotion:
+Next bounded action:
 
-1. establish one shared canonical G01 game/revision/source bundle from the retained E0 primary-review evidence;
-2. resolve Storyteller/controller grouping without collapsing Ben Burns + Adam into an invented identity;
-3. materialize DP-R01's setup prefix;
-4. materialize DP-R02's event prefix including the verified prior Chef `1`;
-5. preserve explicit rejected `2` for DP-R02 while leaving unmentioned `1` as unknown rather than rejection.
+1. re-acquire only the missing complete G05 seat/role map from the already-known primary source;
+2. preserve the already-verified ordering Drunk assignment -> Red Herring -> later bluffs without importing rules or later facts backward;
+3. materialize DP-R03 and DP-R04 together only if the full pre-decision setup can be source-backed;
+4. leave G10 DP-R06 blocked until its setup chronology at the Librarian boundary is evidence-backed.
 
-G05 should wait for bounded recovery of the missing full setup map. G10 DP-R06 should wait for evidence-backed setup chronology at the Librarian boundary.
+No broad new acquisition is justified yet.
