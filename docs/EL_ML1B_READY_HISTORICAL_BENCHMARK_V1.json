@@ -176,19 +176,26 @@
       "source_group": "source-group:g10-megavoid-game2",
       "storyteller_independence_key": "st-the-megavoid",
       "historical_evidence_refs": [
-        "docs/G10_LIBRARIAN_PAIR_E3_REENTRY_CANDIDATE_AUDIT_2026-10-03.md::Primary-verified historical state"
+        "docs/G10_LIBRARIAN_PAIR_E3_REENTRY_CANDIDATE_AUDIT_2026-10-03.md::Primary-verified historical state",
+        "docs/G10_DP_R06_LIBRARIAN_PREFIX_RECOVERY_2026-10-05.md::Historical-prefix consequence"
       ],
       "observed_choice": {
-        "actual_outsider_seat": 1,
-        "actual_outsider_role": "Drunk",
-        "decoy_seat": 3,
-        "decoy_role": "Undertaker"
+        "recipient_seat_id": "seat:g10:4",
+        "shown_character": "DRUNK",
+        "candidate_seat_ids": [
+          "seat:g10:1",
+          "seat:g10:3"
+        ],
+        "actual_outsider_seat_id": "seat:g10:1",
+        "actual_outsider_role": "DRUNK",
+        "decoy_seat_id": "seat:g10:3",
+        "decoy_role": "UNDERTAKER"
       },
       "verification": "VERIFIED",
       "readiness": "READY",
-      "materialization_state": "DOCUMENTED_READY",
-      "canonical_decision_id": null,
-      "prefix_materialization_ref": null,
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:g10:librarian-information",
+      "prefix_materialization_ref": "prefix:g10-game2:before-librarian-information:v1",
       "rationale_evidence_refs": [
         "docs/G10_LIBRARIAN_PAIR_E3_REENTRY_CANDIDATE_AUDIT_2026-10-03.md::recurring information rationale"
       ],
@@ -199,8 +206,6 @@
         "RATIONALE_BLIND_REVIEW"
       ],
       "host_enrichment_requirements": [
-        "CANONICAL_DECISION_IMPORT",
-        "CANONICAL_PREFIX_MATERIALIZATION",
         "LEGAL_CANDIDATE_DOMAIN"
       ]
     }

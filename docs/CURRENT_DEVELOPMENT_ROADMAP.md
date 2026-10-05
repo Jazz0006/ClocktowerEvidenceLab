@@ -107,21 +107,22 @@ The first machine-readable benchmark surface is implemented:
 - allowed evaluation-mode metadata;
 - a checked-in six-row manifest at `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
 
-### EL-ML1B-1B — Canonical historical decision materialization — IN PROGRESS / 5 OF 6 MATERIALIZED
+### EL-ML1B-1B — Canonical historical decision materialization — COMPLETE / 6 OF 6 MATERIALIZED
 
 The six-row canonicalization audit is complete. It confirms that benchmark `READY` does not by itself justify a canonical machine seed.
 
-Five READY rows now have genuine canonical seeds:
+All six READY rows now have genuine canonical seeds:
 
 - **DP-R01 — G01 Drunk assignment** at `docs/EL_ML1B_G01_DP_R01_CANONICAL_SEED_V1.json`;
 - **DP-R02 — G01 Drunk-Empath Night-1 = 0** at `docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json`;
 - **DP-R03 — G05 Chef becomes Drunk** at `docs/EL_ML1B_G05_DP_R03_CANONICAL_SEED_V1.json`;
 - **DP-R04 — G05 Red Herring = Lyra** at `docs/EL_ML1B_G05_DP_R04_CANONICAL_SEED_V1.json`;
-- **DP-R05 — G10 Game 2 Drunk assignment** at `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`.
+- **DP-R05 — G10 Game 2 Drunk assignment** at `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`;
+- **DP-R06 — G10 Librarian pair** at `docs/EL_ML1B_G10_DP_R06_CANONICAL_SEED_V1.json`.
 
 G05's previously missing full setup map was recovered from an earlier primary-video/full-grimoire reconstruction and is retained in `docs/G05_A_FOND_FAREWELL_SETUP_RECOVERY_2026-10-05.md`. The recovered state includes all 20 seats and five Traveller alignments. DP-R04 also preserves the already-committed Washerwoman information selection between the Drunk and Red-Herring choices. Traveller state remains a Host enrichment requirement for legality/counterfactual execution; EvidenceLab does not compress the table or implement Traveller rules.
 
-Only **DP-R06 — G10 Librarian pair** remains `DOCUMENTED_READY`. It stays blocked until setup chronology/completeness at the Librarian decision boundary is evidence-backed; do not infer Demon-bluff prefix membership from video order or BotC rules.
+G10 DP-R05 and DP-R06 now share one bounded setup history: shown layout -> Drunk assignment -> Librarian information -> later Demon bluffs. The 17:17 bluff timing is retained from manual primary-source screenshot review, so DP-R06 can safely stop before its own result and the later bluffs without rule inference.
 
 Authority: `docs/EL_ML1B_CANONICALIZATION_AUDIT_2026-10-05.md`.
 
@@ -326,8 +327,8 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-1B:** recover the exact G10 DP-R06 Librarian pre-decision setup chronology; five of six READY rows are already canonical seeds;
-2. materialize further bounded G10/later-game prefixes only when exact chronology is evidence-backed, keeping every G10 point in one split group;
+1. **EL-ML1B-2:** use the completed shared G10 reconstruction to attempt the retained ~17:29, ~18:05 and ~18:50 later decisions as a same-game longitudinal prefix test;
+2. materialize each only when exact chronology is evidence-backed, keeping every G10 point in one split group;
 3. close the known R04 replay blockers before searching for another whole game;
 4. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
 5. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;

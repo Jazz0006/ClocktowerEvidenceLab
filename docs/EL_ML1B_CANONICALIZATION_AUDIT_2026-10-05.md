@@ -1,6 +1,6 @@
 # EL-ML1B-1B — Canonical Historical Decision Materialization Audit — 2026-10-05
 
-> Status: **CANONICALIZATION AUDIT COMPLETE / DP-R01 THROUGH DP-R05 MATERIALIZED / DP-R06 REMAINS BLOCKED**
+> Status: **COMPLETE / ALL SIX READY HISTORICAL DECISIONS MATERIALIZED**
 >
 > Scope: the six historical rows in `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
 >
@@ -37,9 +37,9 @@ source-backed game / reconstruction identity
 | **DP-R03 — G05 Chef becomes Drunk** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The previously missing 20-seat map was recovered from the earlier primary-video/full-grimoire reconstruction. The prefix preserves all base roles plus five Traveller roles/alignments already committed before the Drunk choice, while keeping the internal role-selection order unknown. |
 | **DP-R04 — G05 Red Herring = Lyra** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The same reconstruction establishes a stricter prefix than the earlier audit knew: after the Drunk assignment and before Red Herring, the Washerwoman information pair had already been selected. DP-R04 therefore includes that intermediate commitment and excludes the later Demon bluffs. |
 | **DP-R05 — G10 Empath becomes Drunk** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | G10 retains the full nine-seat shown-role layout as one evidenced grouped setup commitment, the 16:29 assignment result, explicit Demon-adjacency rationale, source provenance, and stable Storyteller independence key. The unknown internal order of individual role selection remains unknown rather than being fabricated. |
-| **DP-R06 — G10 Librarian pair** | **CANONICALIZATION BLOCKED PENDING PREFIX CHRONOLOGY** | keep `DOCUMENTED_READY` | The state, actual Drunk, observed pair, rationale, source and Storyteller are strong. However, the retained source chronology does not establish every setup commitment that had historically been committed before the 16:52 Librarian decision. In particular, the later-presented Demon bluffs cannot be moved into or out of the pre-Librarian prefix from video timestamps or BotC rules. The event-prefix materializer must not guess this setup chronology. |
+| **DP-R06 — G10 Librarian pair** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | Retained manual primary-source review establishes the exact ordering: shown layout -> 16:29 Drunk assignment -> 16:52 Librarian pair -> 17:17 Demon bluffs. The bluffs are therefore source-backed as later than the Librarian decision rather than excluded by rule inference. |
 
-No row is downgraded from EL-ML1A benchmark `READY` in this audit. The blocked rows remain useful documented benchmark decisions; only their machine-canonical materialization is deferred.
+All six EL-ML1A `READY` rows now have checked-in canonical historical seeds with executable no-hindsight prefix boundaries.
 
 ## 3. DP-R05 canonical materialization
 
@@ -170,6 +170,41 @@ The source has two bounded review locator sets for the same setup commitments: t
 
 Traveller presence does not prevent EvidenceLab from preserving historical state. It remains a downstream Host enrichment requirement for legal-candidate/counterfactual execution; the 20-seat circle must never be compressed into 15 base seats.
 
+### 3.3 G10 DP-R06 Librarian materialization
+
+The final blocker was resolved by bounded chronology recovery recorded at:
+
+`docs/G10_DP_R06_LIBRARIAN_PREFIX_RECOVERY_2026-10-05.md`
+
+The retained primary-source review establishes:
+
+```text
+setup:g10:shown-layout
+    ↓
+setup:g10:drunk-assignment        ~16:29
+    ↓
+setup:g10:librarian-information   ~16:52
+    ↓
+setup:g10:demon-bluffs            ~17:17
+```
+
+The three later Demon bluffs are `Ravenkeeper / Saint / Washerwoman`. Their later position is supported by the same manually reviewed primary-source screenshots, not by Trouble Brewing rules.
+
+DP-R05 and DP-R06 now share one bounded G10 reconstruction history. DP-R05 still stops after setup order 1. DP-R06 materializes only setup orders 1–2:
+
+```text
+historical prefix
+    = setup:g10:shown-layout
+    + setup:g10:drunk-assignment
+
+excluded
+    = setup:g10:librarian-information
+    = setup:g10:demon-bluffs
+    = Night-1 and later game events
+```
+
+The DP-R06 source-backed rationale remains narrow: Undertaker was selected as the decoy because Empath and Undertaker are recurring information roles, so uncertainty over which is Drunk affects trust in both future information streams. The 39 other Host-legal Librarian outcomes remain legal unchosen candidates, not source-backed rejected alternatives.
+
 ## 4. Authority boundaries preserved
 
 This slice does not contain:
@@ -186,15 +221,13 @@ The seed is a versioned **derived interchange artifact** over existing EvidenceL
 
 ## 5. Next bounded action
 
-Continue EL-ML1B-1B with **G10 DP-R06 bounded prefix-chronology recovery**.
+**EL-ML1B-1B is complete: 6 / 6 READY rows are canonical historical seeds.**
 
-Five of the six READY rows are now canonical historical seeds. The only remaining row is DP-R06.
+Next, continue EL-ML1B with the same-game longitudinal test:
 
-Next bounded action:
-
-1. recover only the setup commitments that were historically committed before the G10 Librarian decision at 16:52;
-2. determine whether any Demon-bluff or other setup commitment belongs before that boundary from source evidence, not from presentation order or BotC rules;
-3. materialize DP-R06 only if the exact event/setup prefix can be represented without guessing;
-4. if that bounded chronology cannot be recovered, keep DP-R06 `DOCUMENTED_READY` and move to the existing PARTIAL-candidate repair queue rather than weakening the no-hindsight gate.
+1. use the now-shared G10 reconstruction to attempt the later G10 decisions already retained at ~17:29, ~18:05 and ~18:50;
+2. materialize each only when its exact historical prefix can be source-backed without hindsight leakage;
+3. then close the known R04 replay blockers and repair the rationale-rich FT1-A / WW2 / UT1-A candidates;
+4. trigger new whole-game acquisition only if existing-corpus repair still cannot reach the pilot target.
 
 No broad new acquisition is justified yet.

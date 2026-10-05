@@ -1,8 +1,8 @@
 {
   "schema_name": "clocktower-historical-decision-seed",
   "schema_version": 1,
-  "materialization_id": "historical-seed:g10-game2:drunk-assignment:v1",
-  "prefix_materialization_ref": "prefix:g10-game2:before-drunk-assignment:v1",
+  "materialization_id": "historical-seed:g10-game2:librarian-information:v1",
+  "prefix_materialization_ref": "prefix:g10-game2:before-librarian-information:v1",
   "game_group": "game-group:g10-game2",
   "source_group": "source-group:g10-megavoid-game2",
   "storyteller_independence_key": "st-the-megavoid",
@@ -316,6 +316,47 @@
       "inference_provenance": null,
       "scope": "RECONSTRUCTION",
       "reconstruction_revision_id": "revision:g10:1"
+    },
+    {
+      "assertion_id": "assertion:g10:librarian-information-choice",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g10:librarian-information",
+      "assertion_type": "OBSERVED_CHOICE",
+      "value": {
+        "recipient_seat_id": "seat:g10:4",
+        "shown_character": "DRUNK",
+        "candidate_seat_ids": [
+          "seat:g10:1",
+          "seat:g10:3"
+        ],
+        "actual_outsider_seat_id": "seat:g10:1",
+        "actual_outsider_role": "DRUNK",
+        "decoy_seat_id": "seat:g10:3",
+        "decoy_role": "UNDERTAKER"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g10:librarian-choice-1652"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g10:1"
+    },
+    {
+      "assertion_id": "assertion:g10:librarian-information-rationale",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:g10:librarian-information",
+      "assertion_type": "RATIONALE",
+      "value": {
+        "summary": "Undertaker was selected as the decoy because Empath and Undertaker are recurring information roles, so uncertainty over which is Drunk changes trust in both future information streams."
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:g10:librarian-choice-1652"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:g10:1"
     }
   ],
   "setup_history": [
@@ -451,35 +492,42 @@
     }
   ],
   "decision": {
-    "decision_id": "decision:g10:drunk-assignment",
+    "decision_id": "decision:g10:librarian-information",
     "game_id": "evidence:c1d:g10-game2",
     "reconstruction_revision_id": "revision:g10:1",
-    "decision_type": "DRUNK_ASSIGNMENT",
+    "decision_type": "LIBRARIAN_PAIR_INFORMATION",
     "controller": "STORYTELLER",
     "historical_prefix_boundary": {
-      "setup_through_order": 1,
+      "setup_through_order": 2,
       "event_through_order": null
     },
-    "subject_seat_id": "seat:g10:1",
+    "subject_seat_id": "seat:g10:4",
     "observed_choice": {
-      "selected_seat_id": "seat:g10:1",
-      "shown_role": "EMPATH",
-      "resulting_actual_role": "DRUNK"
+      "recipient_seat_id": "seat:g10:4",
+      "shown_character": "DRUNK",
+      "candidate_seat_ids": [
+        "seat:g10:1",
+        "seat:g10:3"
+      ],
+      "actual_outsider_seat_id": "seat:g10:1",
+      "actual_outsider_role": "DRUNK",
+      "decoy_seat_id": "seat:g10:3",
+      "decoy_role": "UNDERTAKER"
     },
     "resulting_history": {
-      "setup_commitment_id": "setup:g10:drunk-assignment",
-      "setup_order": 2,
+      "setup_commitment_id": "setup:g10:librarian-information",
+      "setup_order": 3,
       "semantic_event_id": null,
       "event_order": null
     },
     "rationale_assertion_ids": [
-      "assertion:g10:drunk-assignment-rationale"
+      "assertion:g10:librarian-information-rationale"
     ],
     "explicitly_considered_alternatives": null,
     "explicitly_rejected_alternatives": null
   },
   "observed_choice_assertion_ids": [
-    "assertion:g10:drunk-assignment-choice"
+    "assertion:g10:librarian-information-choice"
   ],
   "choice_verification": "VERIFIED"
 }
