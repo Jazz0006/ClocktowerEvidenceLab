@@ -17,6 +17,7 @@ from clocktower_evidence_lab.interchange.historical_decision_seed_v1 import (
 )
 
 SEED_FIXTURE = Path("docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json")
+G10_R06_SEED_FIXTURE = Path("docs/EL_ML1B_G10_DP_R06_CANONICAL_SEED_V1.json")
 G01_R01_SEED_FIXTURE = Path("docs/EL_ML1B_G01_DP_R01_CANONICAL_SEED_V1.json")
 G01_R02_SEED_FIXTURE = Path("docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json")
 G05_R03_SEED_FIXTURE = Path("docs/EL_ML1B_G05_DP_R03_CANONICAL_SEED_V1.json")
@@ -59,6 +60,50 @@ def test_checked_in_g10_dp_r05_seed_round_trips_and_materializes_leak_free_prefi
     encoded = dump_historical_decision_seed_v1(seed)
     restored = load_historical_decision_seed_v1(encoded)
     assert dump_historical_decision_seed_v1(restored) == encoded
+
+
+def test_checked_in_g10_r05_r06_share_reconstruction_and_keep_later_bluffs_out_of_r06() -> None:
+    r05 = _seed()
+    r06 = load_historical_decision_seed_v1(G10_R06_SEED_FIXTURE.read_text(encoding="utf-8"))
+
+    assert r05.game == r06.game
+    assert r05.reconstruction_revision == r06.reconstruction_revision
+    assert r05.storytellers == r06.storytellers
+    assert r05.sources == r06.sources
+    assert r05.setup_history == r06.setup_history
+    assert [item.commitment_id for item in r05.setup_history] == [
+        "setup:g10:shown-layout",
+        "setup:g10:drunk-assignment",
+        "setup:g10:librarian-information",
+        "setup:g10:demon-bluffs",
+    ]
+
+    r06_setup, r06_events = materialize_historical_prefix(
+        r06.decision, r06.setup_history, r06.event_history
+    )
+    assert [item.commitment_id for item in r06_setup] == [
+        "setup:g10:shown-layout",
+        "setup:g10:drunk-assignment",
+    ]
+    assert r06_events == ()
+    assert r06.decision.observed_choice == {
+        "recipient_seat_id": "seat:g10:4",
+        "shown_character": "DRUNK",
+        "candidate_seat_ids": ["seat:g10:1", "seat:g10:3"],
+        "actual_outsider_seat_id": "seat:g10:1",
+        "actual_outsider_role": "DRUNK",
+        "decoy_seat_id": "seat:g10:3",
+        "decoy_role": "UNDERTAKER",
+    }
+    assert all(
+        item.commitment_id not in {"setup:g10:librarian-information", "setup:g10:demon-bluffs"}
+        for item in r06_setup
+    )
+    assert r06.decision.explicitly_considered_alternatives is None
+    assert r06.decision.explicitly_rejected_alternatives is None
+
+    encoded = dump_historical_decision_seed_v1(r06)
+    assert dump_historical_decision_seed_v1(load_historical_decision_seed_v1(encoded)) == encoded
 
 
 def test_checked_in_g01_seeds_share_reconstruction_and_materialize_leak_free_prefixes() -> None:
@@ -197,11 +242,13 @@ def test_g10_dp_r05_manifest_refs_are_backed_by_checked_in_seed() -> None:
     g01_r02 = load_historical_decision_seed_v1(G01_R02_SEED_FIXTURE.read_text(encoding="utf-8"))
     g05_r03 = load_historical_decision_seed_v1(G05_R03_SEED_FIXTURE.read_text(encoding="utf-8"))
     g05_r04 = load_historical_decision_seed_v1(G05_R04_SEED_FIXTURE.read_text(encoding="utf-8"))
+    g10_r06 = load_historical_decision_seed_v1(G10_R06_SEED_FIXTURE.read_text(encoding="utf-8"))
     for benchmark_id, checked_in_seed in (
         ("benchmark:el-ml1b:dp-r01", g01_r01),
         ("benchmark:el-ml1b:dp-r02", g01_r02),
         ("benchmark:el-ml1b:dp-r03", g05_r03),
         ("benchmark:el-ml1b:dp-r04", g05_r04),
+        ("benchmark:el-ml1b:dp-r06", g10_r06),
     ):
         entry = by_id[benchmark_id]
         assert (
@@ -212,13 +259,10 @@ def test_g10_dp_r05_manifest_refs_are_backed_by_checked_in_seed() -> None:
         assert entry.observed_choice == checked_in_seed.decision.observed_choice
         assert entry.storyteller_independence_key == checked_in_seed.storyteller_independence_key
 
-    remaining = [by_id["benchmark:el-ml1b:dp-r06"]]
     assert all(
-        entry.materialization_state is BenchmarkMaterializationState.DOCUMENTED_READY
-        for entry in remaining
+        entry.materialization_state is BenchmarkMaterializationState.CANONICAL_SEED_MATERIALIZED
+        for entry in by_id.values()
     )
-    assert all(entry.canonical_decision_id is None for entry in remaining)
-    assert all(entry.prefix_materialization_ref is None for entry in remaining)
 
 
 def test_seed_rejects_unresolved_rationale_provenance() -> None:

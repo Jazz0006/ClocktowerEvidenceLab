@@ -170,6 +170,10 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
             "decision:g10:drunk-assignment",
             "prefix:g10-game2:before-drunk-assignment:v1",
         ),
+        "benchmark:el-ml1b:dp-r06": (
+            "decision:g10:librarian-information",
+            "prefix:g10-game2:before-librarian-information:v1",
+        ),
     }
     for benchmark_id, (decision_id, prefix_ref) in expected_materialized.items():
         entry = by_id[benchmark_id]
@@ -179,10 +183,4 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
         assert entry.canonical_decision_id == decision_id
         assert entry.prefix_materialization_ref == prefix_ref
 
-    remaining = [by_id["benchmark:el-ml1b:dp-r06"]]
-    assert all(
-        entry.materialization_state is BenchmarkMaterializationState.DOCUMENTED_READY
-        for entry in remaining
-    )
-    assert all(entry.canonical_decision_id is None for entry in remaining)
-    assert all(entry.prefix_materialization_ref is None for entry in remaining)
+    assert len(expected_materialized) == len(manifest.entries)
