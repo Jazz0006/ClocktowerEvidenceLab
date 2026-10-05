@@ -1,6 +1,6 @@
 # EL-ML1B-1B — Canonical Historical Decision Materialization Audit — 2026-10-05
 
-> Status: **CANONICALIZATION AUDIT COMPLETE / DP-R01 + DP-R02 + DP-R05 MATERIALIZED**
+> Status: **CANONICALIZATION AUDIT COMPLETE / DP-R01 THROUGH DP-R05 MATERIALIZED / DP-R06 REMAINS BLOCKED**
 >
 > Scope: the six historical rows in `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
 >
@@ -34,8 +34,8 @@ source-backed game / reconstruction identity
 | --- | --- | --- | --- |
 | **DP-R01 — G01 Drunk assignment** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The shared G01 reconstruction preserves the verified grouped nine-seat shown-role layout before the Drunk assignment and later Red Herring. Ben Burns is used only as the conservative split anchor; controller remains generic `STORYTELLER`, and no synthetic joint Ben+Adam identity or unsupported personal actor attribution is created. |
 | **DP-R02 — G01 Drunk-Empath Night-1 = 0** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The same G01 reconstruction preserves the verified setup, Red Herring, prior Chef `1`, observed `0`, explicit rationale, and explicit rejected `2`. Alternative `1` remains unmentioned/unknown rather than being converted into rejection evidence. |
-| **DP-R03 — G05 Chef becomes Drunk** | **CANONICALIZATION BLOCKED** | keep `DOCUMENTED_READY` | Primary review proves that the complete player-role layout was fixed before the 03:32 Drunk assignment, but the current repository does not retain that complete seat/role map. Re-acquire only that bounded setup state; do not reconstruct it from later facts or rules. |
-| **DP-R04 — G05 Red Herring = Lyra** | **CANONICALIZATION BLOCKED** | keep `DOCUMENTED_READY` | The Drunk -> Red Herring -> bluffs ordering and choice rationale are verified, but the retained canonical prefix still lacks the complete G05 setup map needed to materialize the state. Repair DP-R03/DP-R04 together from the same bounded setup source. |
+| **DP-R03 — G05 Chef becomes Drunk** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The previously missing 20-seat map was recovered from the earlier primary-video/full-grimoire reconstruction. The prefix preserves all base roles plus five Traveller roles/alignments already committed before the Drunk choice, while keeping the internal role-selection order unknown. |
+| **DP-R04 — G05 Red Herring = Lyra** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | The same reconstruction establishes a stricter prefix than the earlier audit knew: after the Drunk assignment and before Red Herring, the Washerwoman information pair had already been selected. DP-R04 therefore includes that intermediate commitment and excludes the later Demon bluffs. |
 | **DP-R05 — G10 Empath becomes Drunk** | **SAFE / MATERIALIZED** | promote to `CANONICAL_SEED_MATERIALIZED` | G10 retains the full nine-seat shown-role layout as one evidenced grouped setup commitment, the 16:29 assignment result, explicit Demon-adjacency rationale, source provenance, and stable Storyteller independence key. The unknown internal order of individual role selection remains unknown rather than being fabricated. |
 | **DP-R06 — G10 Librarian pair** | **CANONICALIZATION BLOCKED PENDING PREFIX CHRONOLOGY** | keep `DOCUMENTED_READY` | The state, actual Drunk, observed pair, rationale, source and Storyteller are strong. However, the retained source chronology does not establish every setup commitment that had historically been committed before the 16:52 Librarian decision. In particular, the later-presented Demon bluffs cannot be moved into or out of the pre-Librarian prefix from video timestamps or BotC rules. The event-prefix materializer must not guess this setup chronology. |
 
@@ -124,6 +124,52 @@ The DP-R02 source-backed negative evidence is intentionally narrow: only `2` is 
 
 Demon bluffs remain retained elsewhere as evidence, but are intentionally omitted from these bounded canonical seeds because their exact setup chronology relative to DP-R01 is not evidence-backed.
 
+### 3.2 G05 DP-R03 + DP-R04 shared reconstruction materialization
+
+The missing G05 setup state was recovered without re-inference from rules or later gameplay. The bounded recovery is recorded at:
+
+`docs/G05_A_FOND_FAREWELL_SETUP_RECOVERY_2026-10-05.md`
+
+It reuses the earlier primary-video/full-grimoire reconstruction retained in the sibling Host repository and restores the complete 20-seat table: 15 base players plus five Travellers, including source-backed Traveller alignments.
+
+Two new seeds share one G05 reconstruction:
+
+- `docs/EL_ML1B_G05_DP_R03_CANONICAL_SEED_V1.json`;
+- `docs/EL_ML1B_G05_DP_R04_CANONICAL_SEED_V1.json`.
+
+DP-R03 materializes:
+
+```text
+historical prefix
+    = setup:g05:pre-drunk-state
+      (complete 20-seat shown/public role state + Traveller alignments)
+
+excluded
+    = setup:g05:drunk-assignment
+    = setup:g05:washerwoman-info
+    = setup:g05:red-herring
+    = later Demon bluffs / Night-1 history
+```
+
+DP-R04 materializes:
+
+```text
+historical prefix
+    = setup:g05:pre-drunk-state
+    + setup:g05:drunk-assignment
+    + setup:g05:washerwoman-info
+
+excluded
+    = setup:g05:red-herring
+    = later Demon bluffs / Night-1 history
+```
+
+The intermediate Washerwoman commitment is important: the older primary reconstruction places its information selection between the Drunk choice and the Red Herring choice. Leaving it out would make the DP-R04 historical prefix incomplete.
+
+The source has two bounded review locator sets for the same setup commitments: the later EvidenceLab review records the Drunk/Red-Herring decision commitments around `03:32` / `04:04`, while the older Host reconstruction records later grimoire-state markings around `03:43` / `04:17`. The canonical seeds preserve the semantic order without pretending those locator timestamps are one total historical clock.
+
+Traveller presence does not prevent EvidenceLab from preserving historical state. It remains a downstream Host enrichment requirement for legal-candidate/counterfactual execution; the 20-seat circle must never be compressed into 15 base seats.
+
 ## 4. Authority boundaries preserved
 
 This slice does not contain:
@@ -140,13 +186,15 @@ The seed is a versioned **derived interchange artifact** over existing EvidenceL
 
 ## 5. Next bounded action
 
-Continue EL-ML1B-1B with **G05 bounded setup-map recovery for DP-R03 + DP-R04**.
+Continue EL-ML1B-1B with **G10 DP-R06 bounded prefix-chronology recovery**.
+
+Five of the six READY rows are now canonical historical seeds. The only remaining row is DP-R06.
 
 Next bounded action:
 
-1. re-acquire only the missing complete G05 seat/role map from the already-known primary source;
-2. preserve the already-verified ordering Drunk assignment -> Red Herring -> later bluffs without importing rules or later facts backward;
-3. materialize DP-R03 and DP-R04 together only if the full pre-decision setup can be source-backed;
-4. leave G10 DP-R06 blocked until its setup chronology at the Librarian boundary is evidence-backed.
+1. recover only the setup commitments that were historically committed before the G10 Librarian decision at 16:52;
+2. determine whether any Demon-bluff or other setup commitment belongs before that boundary from source evidence, not from presentation order or BotC rules;
+3. materialize DP-R06 only if the exact event/setup prefix can be represented without guessing;
+4. if that bounded chronology cannot be recovered, keep DP-R06 `DOCUMENTED_READY` and move to the existing PARTIAL-candidate repair queue rather than weakening the no-hindsight gate.
 
 No broad new acquisition is justified yet.

@@ -107,22 +107,21 @@ The first machine-readable benchmark surface is implemented:
 - allowed evaluation-mode metadata;
 - a checked-in six-row manifest at `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
 
-### EL-ML1B-1B — Canonical historical decision materialization — IN PROGRESS / 3 OF 6 MATERIALIZED
+### EL-ML1B-1B — Canonical historical decision materialization — IN PROGRESS / 5 OF 6 MATERIALIZED
 
 The six-row canonicalization audit is complete. It confirms that benchmark `READY` does not by itself justify a canonical machine seed.
 
-Three READY rows now have genuine canonical seeds:
+Five READY rows now have genuine canonical seeds:
 
-- **DP-R05 — G10 Game 2 Drunk assignment** at `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`;
 - **DP-R01 — G01 Drunk assignment** at `docs/EL_ML1B_G01_DP_R01_CANONICAL_SEED_V1.json`;
-- **DP-R02 — G01 Drunk-Empath Night-1 = 0** at `docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json`.
+- **DP-R02 — G01 Drunk-Empath Night-1 = 0** at `docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json`;
+- **DP-R03 — G05 Chef becomes Drunk** at `docs/EL_ML1B_G05_DP_R03_CANONICAL_SEED_V1.json`;
+- **DP-R04 — G05 Red Herring = Lyra** at `docs/EL_ML1B_G05_DP_R04_CANONICAL_SEED_V1.json`;
+- **DP-R05 — G10 Game 2 Drunk assignment** at `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`.
 
-G01 DP-R01 and DP-R02 share one canonical game/revision/source identity. DP-R01 yields only the evidenced pre-assignment shown-role layout. DP-R02 yields the committed setup plus the verified prior Chef `1`, excludes its own `0` result, and preserves only explicit rejected alternative `2`. Ben Burns is a conservative split anchor, not a claim of sole personal control; no synthetic Ben+Adam identity was introduced.
+G05's previously missing full setup map was recovered from an earlier primary-video/full-grimoire reconstruction and is retained in `docs/G05_A_FOND_FAREWELL_SETUP_RECOVERY_2026-10-05.md`. The recovered state includes all 20 seats and five Traveller alignments. DP-R04 also preserves the already-committed Washerwoman information selection between the Drunk and Red-Herring choices. Traveller state remains a Host enrichment requirement for legality/counterfactual execution; EvidenceLab does not compress the table or implement Traveller rules.
 
-The remaining three rows stay `DOCUMENTED_READY`. Current audit disposition:
-
-- **G05 DP-R03/DP-R04:** next bounded target; blocked because the repository records that the complete layout was fixed but does not retain the full seat/role map;
-- **G10 DP-R06:** blocked until setup chronology/completeness at the Librarian decision boundary is evidence-backed; do not infer Demon-bluff prefix membership from video order or BotC rules.
+Only **DP-R06 — G10 Librarian pair** remains `DOCUMENTED_READY`. It stays blocked until setup chronology/completeness at the Librarian decision boundary is evidence-backed; do not infer Demon-bluff prefix membership from video order or BotC rules.
 
 Authority: `docs/EL_ML1B_CANONICALIZATION_AUDIT_2026-10-05.md`.
 
@@ -327,8 +326,8 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-1B:** continue from the now-materialized G10 DP-R05 + G01 DP-R01/DP-R02 seeds and recover the missing G05 full setup map for DP-R03/DP-R04;
-2. materialize bounded prefixes for the three later G10 decisions only when exact chronology is evidence-backed, keeping every G10 point in one split group;
+1. **EL-ML1B-1B:** recover the exact G10 DP-R06 Librarian pre-decision setup chronology; five of six READY rows are already canonical seeds;
+2. materialize further bounded G10/later-game prefixes only when exact chronology is evidence-backed, keeping every G10 point in one split group;
 3. close the known R04 replay blockers before searching for another whole game;
 4. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
 5. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;

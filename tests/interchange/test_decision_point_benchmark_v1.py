@@ -158,6 +158,14 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
             "decision:g01:n1-drunk-empath-info",
             "prefix:g01:before-drunk-empath-night1:v1",
         ),
+        "benchmark:el-ml1b:dp-r03": (
+            "decision:g05:drunk-assignment",
+            "prefix:g05:before-drunk-assignment:v1",
+        ),
+        "benchmark:el-ml1b:dp-r04": (
+            "decision:g05:red-herring",
+            "prefix:g05:before-red-herring:v1",
+        ),
         "benchmark:el-ml1b:dp-r05": (
             "decision:g10:drunk-assignment",
             "prefix:g10-game2:before-drunk-assignment:v1",
@@ -171,14 +179,7 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
         assert entry.canonical_decision_id == decision_id
         assert entry.prefix_materialization_ref == prefix_ref
 
-    remaining = [
-        by_id[benchmark_id]
-        for benchmark_id in (
-            "benchmark:el-ml1b:dp-r03",
-            "benchmark:el-ml1b:dp-r04",
-            "benchmark:el-ml1b:dp-r06",
-        )
-    ]
+    remaining = [by_id["benchmark:el-ml1b:dp-r06"]]
     assert all(
         entry.materialization_state is BenchmarkMaterializationState.DOCUMENTED_READY
         for entry in remaining
