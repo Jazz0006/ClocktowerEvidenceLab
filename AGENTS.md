@@ -346,7 +346,7 @@ See `docs/TESTING_STRATEGY.md`.
 
 ## 10. Current change discipline
 
-Current active route is **C2 automatic podcast semantic collection + EL-LRE bounded replacement-policy evidence requests**.
+Current active route is **EL-ML1B decision-benchmark construction + whole-game decision-prefix repair**. C2 and EL-LRE remain bounded on-demand evidence lanes rather than the default continuation route.
 
 Until a concrete downstream need proves otherwise:
 
@@ -356,19 +356,21 @@ Until a concrete downstream need proves otherwise:
 - do not add cloud/backend infrastructure merely to scale acquisition;
 - do not commit full copyrighted audio/video or full machine transcripts;
 - do not treat ASR/LLM output as verified evidence;
-- do not add persistence migrations merely for temporary acquisition artifacts or EL-LRE0;
-- do not reopen broad C1 Drunk-assignment scouting without a concrete downstream evidence gap;
+- do not add a persistence/schema migration merely to support EL-ML1B derived benchmark/export projections;
+- do not fabricate canonical `DecisionSlice`, reconstruction, prefix, source or Storyteller IDs merely to make a documented benchmark row look machine-materialized;
+- do not reopen broad C1 Drunk-assignment scouting without a concrete benchmark/evidence gap;
 - keep current acquisition Trouble Brewing-first;
 - keep `OBSERVED_CHOICE`, `EXPLICIT_PREFERENCE`, `EXPLICIT_REJECTION`, `EXPLICIT_COMPARISON_LOSER`, downstream `LEGAL_UNCHOSEN`, and `SYNTHETIC_NEGATIVE` distinct;
-- do not resume broad C5/E3 hunting as the general acquisition objective;
-- treat C3 as a completed historical/supporting lane whose reusable comparison semantics are now generalized by EL-LRE.
+- do not resume broad C5/E3 hunting or broad podcast policy mining as the general acquisition objective;
+- keep decisions from one game in one future train/dev/eval split group;
+- treat C3 and EL-LRE as historical/supporting evidence lanes available for retrieval and bounded gap filling.
 
-For C2, automate inventory, locator handling, ASR, candidate extraction and review prioritization while retaining human primary-source review as the evidence-promotion gate. EL-LRE may prioritize bounded primary-audio review of explicit preferences, rejections, comparisons and historical choices, but it must not add BotC legality, legal-candidate enumeration, recommendation scoring, replay policy or production cutover authority.
+EL-ML1B may implement the smallest derived machine-readable benchmark/export contract required by the concrete benchmark consumer. It must preserve provenance, game/source/Storyteller grouping and hindsight boundaries, and must distinguish documented readiness from actual canonical seed materialization. Host remains authoritative for legal-candidate enumeration, rules-forced-vs-discretionary classification, recommendation scoring, replay policy and production cutover.
 
 See:
 
 - `docs/CURRENT_DEVELOPMENT_ROADMAP.md`;
+- `docs/EL_ML1A_DECISION_POINT_BENCHMARK_AUDIT_2026-10-05.md`;
+- `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`;
 - `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`;
-- `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`;
-- `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`;
 - `docs/NEXT_DEVELOPMENT_HANDOFF.md`.

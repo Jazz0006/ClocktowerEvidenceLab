@@ -95,6 +95,22 @@ Broad podcast policy mining is no longer the default marginal-value path. The ne
 
 Authority: `docs/EL_ML1A_DECISION_POINT_BENCHMARK_AUDIT_2026-10-05.md`.
 
+### EL-ML1B-1 — Benchmark Manifest V1 — IMPLEMENTATION COMPLETE / CANONICALIZATION GAP EXPOSED
+
+The first machine-readable benchmark surface is now implemented:
+
+- versioned `DecisionPointBenchmarkManifestV1` / entry contract;
+- deterministic JSON dump/load;
+- explicit `READY / PARTIAL / NOT_USABLE` readiness;
+- explicit `DOCUMENTED_READY` versus `CANONICAL_SEED_MATERIALIZED` state;
+- game/source/Storyteller split-group keys;
+- allowed evaluation-mode metadata;
+- a checked-in six-row manifest at `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
+
+The six EL-ML1A rows are intentionally exported as `DOCUMENTED_READY`, not falsely upgraded to canonical ML seeds. The audit exposed that most historical evidence still lives in documentation rather than durable machine-readable `DecisionSlice + historical prefix + provenance` records. Canonical decision IDs and prefix materialization refs therefore remain null until EvidenceLab actually imports/materializes those records.
+
+This is a real structural gap, not a reason to invent IDs. The next bounded step is **EL-ML1B-1B — canonical historical decision materialization**, beginning with the best-supported G10/G01/G05 cases and preserving one game-level split group per game.
+
 ### EL-LRE0 — Host LRE Evidence Alignment — AUDIT COMPLETE / ACTIVE ROUTE
 
 EL-LRE0 aligned EvidenceLab with Host's staged recommendation replacement route without changing the canonical evidence model or C2 ingestion architecture.
@@ -267,9 +283,9 @@ Authorities:
 
 ## 8. Immediate next action
 
-Run **EL-ML1B — benchmark manifest + existing-corpus prefix repair**:
+Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. implement the smallest derived benchmark/`RecommendationEvidenceSeedV1` projection for the six EL-ML1A READY historical decisions;
+1. **EL-ML1B-1B:** convert the six checked-in `DOCUMENTED_READY` rows into genuine canonical historical decision seeds only where `DecisionSlice + prefix + provenance` can be materialized without guessing; begin with G10/G01/G05;
 2. materialize bounded prefixes for the three later G10 decisions, keeping every G10 point in one split group;
 3. close the known R04 replay blockers before searching for another whole game;
 4. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;

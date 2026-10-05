@@ -1,0 +1,211 @@
+{
+  "schema_name": "clocktower-decision-point-benchmark",
+  "schema_version": 1,
+  "manifest_id": "benchmark-manifest:el-ml1b-ready-v1",
+  "entries": [
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r01",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "DRUNK_ASSIGNMENT",
+      "game_group": "game-group:g01",
+      "source_group": "source-group:g01-a-stud-in-scarlet",
+      "storyteller_independence_key": null,
+      "historical_evidence_refs": [
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G01 E0 replay case 1"
+      ],
+      "observed_choice": {
+        "participant": "Sullivan",
+        "shown_role": "Empath",
+        "actual_role": "Drunk"
+      },
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "DOCUMENTED_READY",
+      "canonical_decision_id": null,
+      "prefix_materialization_ref": null,
+      "rationale_evidence_refs": [],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK"
+      ],
+      "host_enrichment_requirements": [
+        "CANONICAL_DECISION_IMPORT",
+        "CANONICAL_PREFIX_MATERIALIZATION",
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
+    },
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r02",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "IMPAIRED_EMPATH_INFORMATION",
+      "game_group": "game-group:g01",
+      "source_group": "source-group:g01-a-stud-in-scarlet",
+      "storyteller_independence_key": null,
+      "historical_evidence_refs": [
+        "docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md::DS-ASIS-003"
+      ],
+      "observed_choice": 0,
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "DOCUMENTED_READY",
+      "canonical_decision_id": null,
+      "prefix_materialization_ref": null,
+      "rationale_evidence_refs": [
+        "docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md::DS-ASIS-003 rationale"
+      ],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [
+        "docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md::DS-ASIS-003 rejected 2"
+      ],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK",
+        "EXPLICIT_PAIRWISE_PREFERENCE",
+        "RATIONALE_BLIND_REVIEW"
+      ],
+      "host_enrichment_requirements": [
+        "CANONICAL_DECISION_IMPORT",
+        "CANONICAL_PREFIX_MATERIALIZATION",
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
+    },
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r03",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "DRUNK_ASSIGNMENT",
+      "game_group": "game-group:g05",
+      "source_group": "source-group:g05-a-fond-farewell",
+      "storyteller_independence_key": null,
+      "historical_evidence_refs": [
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::C1C-G05 A Fond Farewell"
+      ],
+      "observed_choice": {
+        "shown_role": "Chef",
+        "actual_role": "Drunk"
+      },
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "DOCUMENTED_READY",
+      "canonical_decision_id": null,
+      "prefix_materialization_ref": null,
+      "rationale_evidence_refs": [
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G05 planned extreme Chef misinformation"
+      ],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK",
+        "RATIONALE_BLIND_REVIEW"
+      ],
+      "host_enrichment_requirements": [
+        "CANONICAL_DECISION_IMPORT",
+        "CANONICAL_PREFIX_MATERIALIZATION",
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
+    },
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r04",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "RED_HERRING_ASSIGNMENT",
+      "game_group": "game-group:g05",
+      "source_group": "source-group:g05-a-fond-farewell",
+      "storyteller_independence_key": null,
+      "historical_evidence_refs": [
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G05 Red Herring 04:04"
+      ],
+      "observed_choice": {
+        "red_herring": "Lyra"
+      },
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "DOCUMENTED_READY",
+      "canonical_decision_id": null,
+      "prefix_materialization_ref": null,
+      "rationale_evidence_refs": [
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G05 Fortune Tellers often choose neighbours"
+      ],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK",
+        "RATIONALE_BLIND_REVIEW"
+      ],
+      "host_enrichment_requirements": [
+        "CANONICAL_DECISION_IMPORT",
+        "CANONICAL_PREFIX_MATERIALIZATION",
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
+    },
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r05",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "DRUNK_ASSIGNMENT",
+      "game_group": "game-group:g10-game2",
+      "source_group": "source-group:g10-megavoid-game2",
+      "storyteller_independence_key": "st-the-megavoid",
+      "historical_evidence_refs": [
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G10 Game 2 historical assignment replay"
+      ],
+      "observed_choice": {
+        "seat": 1,
+        "shown_role": "Empath",
+        "actual_role": "Drunk"
+      },
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "DOCUMENTED_READY",
+      "canonical_decision_id": null,
+      "prefix_materialization_ref": null,
+      "rationale_evidence_refs": [
+        "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G10 Empath adjacent to Demon"
+      ],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK",
+        "RATIONALE_BLIND_REVIEW"
+      ],
+      "host_enrichment_requirements": [
+        "CANONICAL_DECISION_IMPORT",
+        "CANONICAL_PREFIX_MATERIALIZATION",
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
+    },
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r06",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "LIBRARIAN_PAIR_INFORMATION",
+      "game_group": "game-group:g10-game2",
+      "source_group": "source-group:g10-megavoid-game2",
+      "storyteller_independence_key": "st-the-megavoid",
+      "historical_evidence_refs": [
+        "docs/G10_LIBRARIAN_PAIR_E3_REENTRY_CANDIDATE_AUDIT_2026-10-03.md::Primary-verified historical state"
+      ],
+      "observed_choice": {
+        "actual_outsider_seat": 1,
+        "actual_outsider_role": "Drunk",
+        "decoy_seat": 3,
+        "decoy_role": "Undertaker"
+      },
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "DOCUMENTED_READY",
+      "canonical_decision_id": null,
+      "prefix_materialization_ref": null,
+      "rationale_evidence_refs": [
+        "docs/G10_LIBRARIAN_PAIR_E3_REENTRY_CANDIDATE_AUDIT_2026-10-03.md::recurring information rationale"
+      ],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK",
+        "RATIONALE_BLIND_REVIEW"
+      ],
+      "host_enrichment_requirements": [
+        "CANONICAL_DECISION_IMPORT",
+        "CANONICAL_PREFIX_MATERIALIZATION",
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
+    }
+  ]
+}

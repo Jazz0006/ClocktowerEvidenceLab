@@ -94,7 +94,8 @@ Current implementation status:
 - **C2D bounded review packets + review CLI — IMPLEMENTATION GREEN**;
 - **C2D-S queue-owned full-transcript semantic review — OPERATIONAL / ACCEPTED FOR MACHINE-FIRST REVIEW ASSISTANCE**;
 - **EL-LRE0 Host LRE evidence alignment — AUDIT COMPLETE / DOCS-ONLY**;
-- **EL-ML1A Decision Point benchmark corpus audit — COMPLETE / CONTRACT ACCEPTED**: 6 conservative READY historical decision points across 3 game groups, plus >=18 high-value PARTIAL candidates. The active continuation is EL-ML1B benchmark manifest + whole-game prefix repair.
+- **EL-ML1A Decision Point benchmark corpus audit — COMPLETE / CONTRACT ACCEPTED**: 6 conservative READY historical decision points across 3 game groups, plus >=18 high-value PARTIAL candidates;
+- **EL-ML1B-1 benchmark manifest V1 — IMPLEMENTED / GREEN**: machine-readable six-row manifest + versioned interchange contract. Rows remain `DOCUMENTED_READY` until canonical `DecisionSlice` and historical-prefix refs are genuinely materialized; the active continuation is EL-ML1B-1B canonical historical-decision materialization.
 
 The podcast tooling route remains available on demand: queue-owned `prepare-next -> complete ASR -> full-transcript semantic review -> lightweight timestamped findings -> LRE-aware triage -> targeted human verification only where needed -> cleanup-current`. The fixed TB queue is exhausted and broad podcast policy mining is no longer the default continuation. Full media/transcripts remain outside Git.
 

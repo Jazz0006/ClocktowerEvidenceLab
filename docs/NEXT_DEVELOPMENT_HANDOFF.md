@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **EL-ML1A COMPLETE / DECISION BENCHMARK CONTRACT ACCEPTED / 6 READY HISTORICAL POINTS / >=18 PARTIAL CANDIDATES / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 BENCHMARK MANIFEST V1 IMPLEMENTED / 6 DOCUMENTED_READY ROWS / CANONICAL SEED MATERIALIZATION GAP EXPOSED / >=18 PARTIAL CANDIDATES / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -25,15 +25,9 @@ The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 
 ## 2. Current authority
 
-EvidenceLab now operates two complementary lanes:
+EvidenceLab's active route is now **EL-ML1B benchmark construction / historical-prefix repair**. C2 and EL-LRE remain bounded on-demand evidence lanes rather than the default continuation.
 
-```text
-C2 automatic podcast semantic collection
-        +
-Host LRE bounded evidence requests
-```
-
-C2 remains the acquisition engine. EL-LRE controls Host-facing triage.
+The benchmark route must preserve the same authority boundary: EvidenceLab owns historical evidence, prefixes, provenance and benchmark export; Host owns legality, legal candidates, policy scoring, replay and production cutover.
 
 Host's production replacement invariant is:
 
@@ -78,13 +72,15 @@ EL-ML1A established a conservative current inventory of 6 READY historical decis
 Immediate route:
 
 ```text
-materialize the 6 READY benchmark seeds
+EL-ML1B-1B canonicalize the 6 DOCUMENTED_READY rows where evidence supports it
 -> recover G10 later-decision prefixes
 -> close R04 blockers
 -> recover FT1-A / WW2 / UT1-A historical prefixes
 -> repair R01/R02/R03 and Investigator/Ravenkeeper candidates
 -> acquire new complete TB games only if READY still < 20
 ```
+
+`docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json` is the current machine-readable manifest. Its six rows intentionally have null canonical decision/prefix refs until actual canonical materialization occurs; do not fill those fields with invented IDs.
 
 Pilot target: 20–30 READY historical decision points, at least 8 games, at least 4 Storyteller independence groups, and at least 40% later-game/history-sensitive decisions.
 
