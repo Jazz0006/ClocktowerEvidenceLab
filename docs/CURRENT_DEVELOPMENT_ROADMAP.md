@@ -148,6 +148,12 @@ The circular-order blocker is now genuinely closed. ClockTracker's public `Grimo
 
 Four blockers remain and all require raw structured game/grimoire fields rather than rule inference: full actual/shown role map, Hylinn shown role, Brian exact information role, and direct Demon-bluff role IDs. ClockTracker source proves those fields exist in `fetchGame()` / `demon_bluffs`, but the current retrieval surface exposes the role tokens only as images and does not return the raw API payload. R04 therefore remains PARTIAL; do not infer the missing roles from TB mechanics.
 
+### EL-ML1B-4 — FT1-A historical-prefix gate — COMPLETE / NOT PROMOTED
+
+FT1-A was tested because it is unusually strong verified comparative evidence: historical poisoned Fortune Teller, observed `NO`, explicit legal `YES`, contemporaneous continuation/belief rationale, and a later retrospective preference shift. See `docs/EL_ML1B_4_FT1A_PREFIX_AUDIT_2026-10-06.md`.
+
+It still cannot become a canonical historical seed. The source is an expert podcast retrospective and does not identify the underlying game, player count, seat map, full roles, exact night, prior Fortune Teller history, exact Poisoner history, living/dead state or complete pre-decision event prefix. The verified choice/alternative/rationale remains high-value comparative evidence; it simply stays outside the full-state benchmark lane. No DP-R07 row is added.
+
 ### EL-ML1C — Whole-Game Source Acquisition Audit — COMPLETE / PILOT GATED
 
 EL-ML1C pre-audited how new complete Trouble Brewing games should be acquired if EL-ML1B repair cannot reach the pilot target.
@@ -347,8 +353,8 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-4:** reconstruct the exact FT1-A historical prefix because rationale evidence is already strong;
-2. continue with WW2 then UT1-A using the same no-hindsight prefix gate;
+1. **EL-ML1B-5:** apply the same historical-prefix gate to WW2;
+2. continue with UT1-A after WW2;
 3. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
 4. keep R04 PARTIAL until raw ClockTracker grimoire/game fields become machine-retrievable; its circular order is closed, but do not spend more manual-search bandwidth on the same rendered page;
 5. keep G10 17:29 / 18:05 / 18:50 PARTIAL until a source artifact exposes the missing chronological event state;
