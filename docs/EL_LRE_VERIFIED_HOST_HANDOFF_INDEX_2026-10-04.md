@@ -280,8 +280,8 @@ If Host does not open a more urgent bounded gap, the default remaining evidence 
    - ordinary Star Pass successor selection among eligible alive Minions is Storyteller-controlled;
    - active Scarlet Woman succession at the threshold is rule-forced and removes ranking discretion;
    - official Storyteller Advice cautions against exotic Recluse succession despite technical legality;
-   - Spy M11 `01:53:33–01:56:28` is primary-audio human VERIFIED: less-trusted Baron was chosen over well-trusted Spy because leaving Spy in place created a stronger support network for the new Demon; player experience/fun was secondary enrichment;
-   - Host may use successor trust/survivability, retained-Minion support value and Evil social-capital distribution as bounded qualitative dimensions;
+   - Spy M11 `01:53:33–01:56:28` is primary-audio human VERIFIED: choosing the strongest / most trusted Minion is a common tendency, but this counterexample chose less-trusted Baron over well-trusted Spy because leaving Spy in place created a stronger support network for the new Demon; player experience/fun was secondary enrichment;
+   - Host may use successor trust/survivability as a normal positive factor **without making it absolute**, alongside retained-Minion support value and Evil social-capital distribution;
    - authority: `docs/EL_LRE_DS1_DEMON_SUCCESSION_VERIFIED_HANDOFF_2026-10-05.md`.
 
 ## 6. Recommended Host re-entry

@@ -172,9 +172,9 @@ Primary-audio human-confirmed historical account:
 
 ### Why this is high value
 
-This is the clearest candidate for a real successor ranking dimension:
+This is the clearest source-backed refinement of the normal trust heuristic:
 
-`best successor` is not always the most trusted Minion.
+`the strongest / most trusted Minion is often a natural Star Pass choice, but that should not become an absolute rule.`
 
 Instead Host may need to evaluate:
 
@@ -183,7 +183,7 @@ Instead Host may need to evaluate:
 - division of Evil-team social capital;
 - player experience / agency as optional enrichment.
 
-This bounded dimension is now ready for Host enrichment: successor quality must consider both the candidate's own trust/survivability and the opportunity cost of removing a highly trusted Minion from the Evil support network. Do not generalize this into a fixed Baron-over-Spy or weak-over-strong successor rule.
+This bounded dimension is now ready for Host enrichment: successor trust/survivability remains an important positive factor and may often favor the more trusted Minion, but Host must also consider the opportunity cost of removing that trusted Minion from the Evil support network. M11 is a counterexample to `always choose the most trusted`, not evidence for `choose the less-trusted`. Do not generalize it into a fixed Baron-over-Spy or weak-over-strong successor rule.
 
 ## 9. DS1-H — R04 preserves two ordered Star Pass transitions but no rationale
 
@@ -304,9 +304,9 @@ Optional enrichment:
 - exotic Recluse succession is officially cautionary;
 - historical role/state must remain time-indexed.
 
-### Audio-ready ranking dimensions
+### Verified successor-selection dimensions
 
-From Spy M11:
+From primary-audio VERIFIED Spy M11:
 
 - successor trust/survivability;
 - retained-Minon support value;
@@ -316,6 +316,7 @@ From Spy M11:
 ### Not supported
 
 - 'always choose the most trusted Minion';
+- 'prefer the less-trusted Minion';
 - 'always choose Spy';
 - 'always choose the weakest Minion so the trusted one can support';
 - numeric trust/support weights;
@@ -333,4 +334,4 @@ The broad family is no longer ambiguous:
 - Mayor-bounce-to-Imp -> Storyteller controls the trigger, Scarlet Woman succession remains forced;
 - exotic Recluse interaction -> legal possibility with explicit official caution.
 
-Spy M11 `01:53:33–01:56:28` is now **PRIMARY-AUDIO HUMAN VERIFIED** and provides the first source-backed ordinary-Star-Pass successor comparison with explicit support-topology rationale. The next DS1 work should therefore be Host consumption / replay construction or a new bounded gap, not re-review of M11.
+Spy M11 `01:53:33–01:56:28` is now **PRIMARY-AUDIO HUMAN VERIFIED** and provides the first source-backed counterexample to an absolute trust-only Star Pass heuristic: choosing the strongest / most trusted Minion remains a common tendency, but support-topology can justify a different successor in a particular state. The next DS1 work should therefore be Host consumption / replay construction or a new bounded gap, not re-review of M11.

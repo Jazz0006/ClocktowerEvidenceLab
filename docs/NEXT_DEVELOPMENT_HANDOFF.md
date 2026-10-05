@@ -167,9 +167,9 @@ When such a bounded gap exists, the retained lead order is:
 5. **Demon succession — DS1 M11 VERIFIED / HOST-READY BOUNDED DIMENSION**
    - `docs/EL_LRE_DS1_DEMON_SUCCESSION_VERIFIED_HANDOFF_2026-10-05.md` is now the preferred downstream authority;
    - control taxonomy remains: Imp self-kill is player-controlled, ordinary multi-Minion successor choice is Storyteller-controlled, active Scarlet Woman is forced, and exotic Recluse succession is officially cautionary;
-   - primary-audio review confirmed Spy M11 `01:53:33–01:56:28`: Storyteller chose less-trusted Baron instead of well-trusted Spy because retaining the trusted Spy as support for the new Demon was more valuable in that state;
+   - primary-audio review confirmed Spy M11 `01:53:33–01:56:28`: the source describes choosing the strongest / most trusted Minion as a common tendency, then gives a counterexample where Storyteller chose less-trusted Baron instead of well-trusted Spy because retaining Spy as support for the new Demon was more valuable in that state;
    - player experience/fun was also a genuine secondary factor;
-   - Host may now test a bounded support-topology-aware successor policy; R04/R06 remain replay fixtures only.
+   - Host may now test a bounded policy where trust/survivability remains a positive factor but is not absolute; R04/R06 remain replay fixtures only.
 
 ## 8. Already-consumed / historical evidence
 
