@@ -12,7 +12,7 @@
 >
 > This handoff applies only after Host has resolved the DS1 control boundary: Imp self-kill is player-controlled; active Scarlet Woman forcing is rule-deterministic; ordinary multi-Minion Star Pass successor selection is Storyteller-controlled.
 
-## 1. DS1-V1 — best successor is not always the most trusted Minion
+## 1. DS1-V1 — common trust heuristic has a source-backed counterexample
 
 Verification: **VERIFIED**
 
@@ -20,9 +20,10 @@ Relation: **OBSERVED_CHOICE + EXPLICIT RATIONALE + SAME-STATE ALTERNATIVE**
 
 Human-confirmed meaning:
 
-- the source describes a real Storyteller-owned Star Pass successor choice;
+- the speakers describe choosing the Minion in the strongest / most trusted position as a common Star Pass tendency;
+- the source then gives a real Storyteller-owned counterexample rather than rejecting that baseline tendency;
 - the relevant alternatives were a well-trusted Spy and a less-trusted Baron;
-- the Storyteller chose the Baron as the new Demon rather than the Spy;
+- in this particular state, the Storyteller chose the Baron as the new Demon rather than the Spy;
 - the explicit rationale was that the trusted Spy had substantial value remaining as a support network for the new Demon;
 - player experience / fun also contributed to the decision, but was an auxiliary consideration rather than the sole rationale;
 - the resulting Evil structure produced a close, successful game.
@@ -33,9 +34,10 @@ Bounded generalization:
 
 ```text
 when selecting an ordinary Star Pass successor among multiple legal Minions,
-do not rank candidates only by their own current trust / survival position;
-also evaluate the value of leaving another highly trusted Minion alive
-as social support for the new Demon
+trust / survival position is a legitimate and often important positive factor,
+but do not hard-code "most trusted Minion always becomes Demon";
+also evaluate whether leaving that trusted Minion alive as social support
+creates more value for the new Demon in the current state
 ```
 
 Source-backed dimensions:
@@ -46,24 +48,25 @@ Source-backed dimensions:
 - support topology;
 - player experience / agency as optional enrichment.
 
-## 3. Explicit comparison loser
+## 3. Counterexample structure
 
 In this historical case:
 
 - chosen successor: **Baron**;
 - same-state alternative: **Spy**;
-- Spy was not rejected because Spy was weak;
-- Spy was left as Minion specifically because their strong trusted position had higher support value in that game state.
+- Spy was not a weak or generally inferior successor candidate; the source treats the trusted / strong-position Minion as a common natural choice in many Star Pass situations;
+- Spy was left as Minion in this particular counterexample because their strong trusted position had higher support value in that game state.
 
-This is stronger than a generic design option because the source preserves both the chosen outcome and the reason the apparently stronger successor candidate was left unchosen.
+This is therefore evidence **against an absolute trust-only rule**, not evidence that a less-trusted Minion is generally the better successor.
 
 ## 4. What this does not authorize
 
 Do not infer:
 
-- always choose the less-trusted Minion;
+- prefer the less-trusted Minion as a general rule;
 - always keep Spy as support;
-- always avoid giving Demonhood to the most trusted Minion;
+- avoid giving Demonhood to the most trusted Minion as a general rule;
+- discard trust / survivability as a normal positive successor factor;
 - numeric trust/support weights;
 - a complete successor ranking across all Minion combinations;
 - that player-experience/fun should override strategic state;
@@ -89,7 +92,7 @@ The DS1 family now has:
 
 1. **VERIFIED control taxonomy** — player-controlled trigger vs Storyteller successor selection vs forced Scarlet Woman;
 2. **VERIFIED negative boundary** — exotic Recluse succession is officially cautionary;
-3. **VERIFIED historical successor comparison** — Baron chosen over trusted Spy because retained Spy support was more valuable;
+3. **VERIFIED historical counterexample to an absolute trust heuristic** — although choosing the strongest / most trusted Minion is a common tendency, Baron was chosen over trusted Spy in this state because retained Spy support was more valuable;
 4. ordered R04/R06 historical fixtures that remain replay support only because their successor rationale is not recovered.
 
 This is sufficient for Host to begin a bounded ordinary-Star-Pass successor-selection policy experiment without waiting for more broad evidence collection.

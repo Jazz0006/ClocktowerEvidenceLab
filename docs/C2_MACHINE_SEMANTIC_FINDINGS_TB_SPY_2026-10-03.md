@@ -231,7 +231,7 @@ Potential downstream dimensions:
 - trusted-helper value;
 - narrative quality.
 
-**Verification / LRE disposition:** **PRIMARY-AUDIO HUMAN VERIFIED on 2026-10-05.** Human review confirmed that the Storyteller owned the Star Pass successor choice, that the compared candidates were a less-trusted Baron and a well-trusted Spy, and that Baron was chosen specifically because retaining the trusted Spy as support for the new Demon had higher value in that game state. Player experience/fun was also a real secondary consideration. Relation: **OBSERVED_CHOICE + EXPLICIT RATIONALE + SAME-STATE ALTERNATIVE**. This supports a bounded successor-selection dimension but not a complete Star Pass ranking.
+**Verification / LRE disposition:** **PRIMARY-AUDIO HUMAN VERIFIED on 2026-10-05.** Human review confirmed both parts of the source meaning: (1) choosing the Minion in the strongest / most trusted position is a common Star Pass tendency, and (2) this historical case is a counterexample, not a reversal of that tendency. The Storyteller owned the successor choice, compared a less-trusted Baron with a well-trusted Spy, and chose Baron because retaining the trusted Spy as support for the new Demon had higher value in that particular state. Player experience/fun was also a real secondary consideration. Relation: **OBSERVED_CHOICE + EXPLICIT RATIONALE + SAME-STATE ALTERNATIVE**. This supports `do not always choose the most trusted Minion`; it does **not** support `prefer the less-trusted Minion`.
 
 ### C2-SPY-M12 — poisoned Spy misinformation should remain bounded by actual legal semantics, even when used theatrically
 
