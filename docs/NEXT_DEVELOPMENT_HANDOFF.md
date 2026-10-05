@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 + 1B COMPLETE / ALL 6 READY HISTORICAL DECISIONS CANONICAL_SEED_MATERIALIZED / EL-ML1B-2 COMPLETE — 0 OF 3 G10 LONGITUDINAL PROMOTED / EL-ML1B-3 R04 DIRECT-SOURCE REPAIR COMPLETE — 1 OF 5 BLOCKERS CLOSED / EL-ML1B-4 FT1-A PREFIX AUDIT COMPLETE — NOT PROMOTED / >=18 PARTIAL CANDIDATES / NEXT EL-ML1B-5 WW2 PREFIX RECOVERY / EL-ML1C SOURCE ACQUISITION AUDIT COMPLETE / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 + 1B COMPLETE / ALL 6 READY HISTORICAL DECISIONS CANONICAL_SEED_MATERIALIZED / EL-ML1B-2 COMPLETE — 0 OF 3 G10 LONGITUDINAL PROMOTED / EL-ML1B-3 R04 DIRECT-SOURCE REPAIR COMPLETE — 1 OF 5 BLOCKERS CLOSED / EL-ML1B-4 FT1-A PREFIX AUDIT COMPLETE — NOT PROMOTED / EL-ML1B-5 WW2 PREFIX AUDIT COMPLETE — NOT PROMOTED / >=18 PARTIAL CANDIDATES / NEXT EL-ML1B-6 UT1-A PREFIX RECOVERY / EL-ML1C SOURCE ACQUISITION AUDIT COMPLETE / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -26,14 +26,15 @@
 16. `docs/EL_ML1B_3_R04_DIRECT_SOURCE_REPAIR_2026-10-06.md`
 17. `docs/C0_TB_R04_REPLAY_PREPARATION_2026-09-23.md`
 18. `docs/EL_ML1B_4_FT1A_PREFIX_AUDIT_2026-10-06.md`
-19. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-20. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
-21. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
-22. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-23. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-24. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-25. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-26. this file
+19. `docs/EL_ML1B_5_WW2_PREFIX_AUDIT_2026-10-06.md`
+20. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+21. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
+22. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+23. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+24. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+25. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+26. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+27. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -91,8 +92,8 @@ EL-ML1B-1B DP-R01..R06 canonical seeds        COMPLETE
 -> EL-ML1B-2 G10 longitudinal audit             COMPLETE / 0 OF 3 PROMOTED
 -> EL-ML1B-3 R04 direct-source repair           COMPLETE / 1 OF 5 BLOCKERS CLOSED
 -> EL-ML1B-4 FT1-A prefix audit                 COMPLETE / NOT PROMOTED
--> EL-ML1B-5 recover WW2 prefix                 NEXT
--> recover UT1-A historical prefix
+-> EL-ML1B-5 WW2 prefix audit                   COMPLETE / NOT PROMOTED
+-> EL-ML1B-6 recover UT1-A prefix               NEXT
 -> repair R01/R02/R03 and Investigator/Ravenkeeper candidates
 -> acquire new complete TB games only if READY still < 20
 ```
@@ -131,13 +132,12 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 
 ### EL-ML1B priority
 
-1. **WW2 prefix recovery next:** test whether its historical impaired-Washerwoman case identifies a reconstructable game/prefix rather than only a verified anecdotal decision.
-2. **FT1-A remains verified comparative evidence but is not a full-state seed:** the podcast source preserves choice, legal alternative, contemporaneous rationale and hindsight policy learning, but not canonical game identity/setup/event prefix. Do not invent DP-R07.
+1. **UT1-A prefix recovery next:** test whether its historical Undertaker case identifies a reconstructable game/prefix rather than only a verified anecdotal decision.
+2. **FT1-A and WW2 remain verified comparative evidence but are not full-state seeds:** both preserve valuable choice/rationale relations, but neither source identifies a complete canonical game/setup/event prefix. Do not invent DP-R07+.
 3. **R04 bounded repair is closed for now:** the 14-player circular order is source-backed from ClockTracker `token.order`; full role map, Hylinn shown role, Brian exact role and direct Demon-bluff IDs remain blocked on raw structured payload. Do not infer them from TB rules or repeat rendered-page search.
-3. **G10 longitudinal audit is closed for now:** 17:29 lacks a complete preceding Night-1 event/action sequence; 18:05 additionally lacks exact living-neighbour and Day-1 death/execution state; 18:50 lacks canonical public-claim/execution/death chronology. Keep all three PARTIAL rather than inventing DP-R07+.
-4. **G10 setup seed campaign is closed:** DP-R05 + DP-R06 share one reconstruction; the Librarian prefix contains shown layout + Drunk assignment and excludes its own 16:52 result plus the source-backed later 17:17 Demon bluffs.
-5. **Rationale-rich prefix recovery after FT1-A:** WW2 -> UT1-A.
-6. **Diversity repair:** R01/R02/R03 plus existing Investigator/Ravenkeeper historical cases.
+4. **G10 longitudinal audit is closed for now:** 17:29 lacks a complete preceding Night-1 event/action sequence; 18:05 additionally lacks exact living-neighbour and Day-1 death/execution state; 18:50 lacks canonical public-claim/execution/death chronology. Keep all three PARTIAL rather than inventing DP-R07+.
+5. **G10 setup seed campaign is closed:** DP-R05 + DP-R06 share one reconstruction; the Librarian prefix contains shown layout + Drunk assignment and excludes its own 16:52 result plus the source-backed later 17:17 Demon bluffs.
+6. **Diversity repair after UT1-A:** R01/R02/R03 plus existing Investigator/Ravenkeeper historical cases.
 7. **New complete games only if needed:** if existing repair still leaves READY below 20 or diversity/later-game coverage weak, trigger the bounded EL-ML1C `CT-1 + YT-1 + DG-1` pilot first; prefer ClockTracker records with chronological Notes plus matching Storyteller-POV video, then choose the highest-yield permitted source lane.
 
 The existing Priority-1/Priority-2 EL-LRE verified set remains retrieval/evaluation evidence and may still be consumed by Host, but it no longer defines EvidenceLab's default continuation order.
