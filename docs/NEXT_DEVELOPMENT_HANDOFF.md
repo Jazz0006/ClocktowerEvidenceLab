@@ -164,12 +164,12 @@ When such a bounded gap exists, the retained lead order is:
    - next bounded reviews: Mayor `00:54:14–00:58:19` target classes and repeated attack intent, Saint `00:34:01–00:35:04` moderate severity, Undertaker `00:39:45–00:40:25` high-value Good target, Scarlet Woman `00:53:11–00:54:31` succession-forcing special case;
    - never turn the family into a generic losing-team rescue score.
 
-5. **Demon succession — DS1 ACTIVE**
-   - `docs/EL_LRE_DS1_DEMON_SUCCESSION_TARGETED_ACQUISITION_2026-10-05.md` now separates player-controlled Imp self-kill, Storyteller successor choice, forced Scarlet Woman succession, Mayor-triggered Demon death, and exotic Recluse interactions;
-   - ordinary multi-Minion Star Pass is the actual Storyteller successor-ranking family;
-   - active Scarlet Woman removes successor discretion, while her impairment can reopen ordinary selection;
-   - next bounded review: Spy M11 `01:53:33–01:56:28`, where a less-trusted Baron is reportedly chosen as new Demon while a trusted Spy remains support;
-   - do not treat R04/R06 observed Star Pass chains as ranking evidence without rationale.
+5. **Demon succession — DS1 M11 VERIFIED / HOST-READY BOUNDED DIMENSION**
+   - `docs/EL_LRE_DS1_DEMON_SUCCESSION_VERIFIED_HANDOFF_2026-10-05.md` is now the preferred downstream authority;
+   - control taxonomy remains: Imp self-kill is player-controlled, ordinary multi-Minion successor choice is Storyteller-controlled, active Scarlet Woman is forced, and exotic Recluse succession is officially cautionary;
+   - primary-audio review confirmed Spy M11 `01:53:33–01:56:28`: Storyteller chose less-trusted Baron instead of well-trusted Spy because retaining the trusted Spy as support for the new Demon was more valuable in that state;
+   - player experience/fun was also a genuine secondary factor;
+   - Host may now test a bounded support-topology-aware successor policy; R04/R06 remain replay fixtures only.
 
 ## 8. Already-consumed / historical evidence
 

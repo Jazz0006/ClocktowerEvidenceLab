@@ -231,7 +231,7 @@ Potential downstream dimensions:
 - trusted-helper value;
 - narrative quality.
 
-**E3 disposition:** potentially valuable historical Storyteller choice, but this pass lacks a fully reconstructable committed state and production legal-alternative audit. Do not promote directly.
+**Verification / LRE disposition:** **PRIMARY-AUDIO HUMAN VERIFIED on 2026-10-05.** Human review confirmed that the Storyteller owned the Star Pass successor choice, that the compared candidates were a less-trusted Baron and a well-trusted Spy, and that Baron was chosen specifically because retaining the trusted Spy as support for the new Demon had higher value in that game state. Player experience/fun was also a real secondary consideration. Relation: **OBSERVED_CHOICE + EXPLICIT RATIONALE + SAME-STATE ALTERNATIVE**. This supports a bounded successor-selection dimension but not a complete Star Pass ranking.
 
 ### C2-SPY-M12 — poisoned Spy misinformation should remain bounded by actual legal semantics, even when used theatrically
 

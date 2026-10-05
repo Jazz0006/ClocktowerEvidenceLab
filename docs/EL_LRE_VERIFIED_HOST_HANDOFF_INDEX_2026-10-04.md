@@ -275,14 +275,14 @@ If Host does not open a more urgent bounded gap, the default remaining evidence 
    - audio-ready refinements cover target severity, repeated Demon intent, Undertaker target utility and Scarlet-Woman succession intervention;
    - authority: `docs/EL_LRE_MR1_MAYOR_REDIRECT_TARGETED_ACQUISITION_2026-10-04.md`.
 
-5. **Demon succession — DS1 targeted acquisition active**
+5. **Demon succession — DS1 VERIFIED bounded successor dimension**
    - Imp self-kill trigger is player-controlled;
    - ordinary Star Pass successor selection among eligible alive Minions is Storyteller-controlled;
    - active Scarlet Woman succession at the threshold is rule-forced and removes ranking discretion;
-   - Mayor-bounce-to-Imp may be Storyteller-controlled at the trigger layer while Scarlet Woman successor identity remains forced;
    - official Storyteller Advice cautions against exotic Recluse succession despite technical legality;
-   - Spy M11 `01:53:33–01:56:28` is the top audio-ready successor-ranking lead;
-   - authority: `docs/EL_LRE_DS1_DEMON_SUCCESSION_TARGETED_ACQUISITION_2026-10-05.md`.
+   - Spy M11 `01:53:33–01:56:28` is primary-audio human VERIFIED: less-trusted Baron was chosen over well-trusted Spy because leaving Spy in place created a stronger support network for the new Demon; player experience/fun was secondary enrichment;
+   - Host may use successor trust/survivability, retained-Minion support value and Evil social-capital distribution as bounded qualitative dimensions;
+   - authority: `docs/EL_LRE_DS1_DEMON_SUCCESSION_VERIFIED_HANDOFF_2026-10-05.md`.
 
 ## 6. Recommended Host re-entry
 
