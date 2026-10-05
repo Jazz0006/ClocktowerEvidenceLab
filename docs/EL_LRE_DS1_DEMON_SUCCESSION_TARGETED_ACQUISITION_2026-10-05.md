@@ -143,7 +143,7 @@ Host consequence:
 - exotic Recluse succession should not enter normal beginner/default successor candidate ranking merely because registration legality permits it;
 - if ever exposed as an advanced/manual option, it needs an explicit exceptional-policy scope rather than silent inclusion in the ordinary Minion domain.
 
-## 8. DS1-G — Spy M11 is the strongest current successor-selection comparison lead
+## 8. DS1-G — Spy M11 verified successor-selection comparison
 
 ### Source
 
@@ -151,7 +151,7 @@ Host consequence:
 
 Window: approximately `01:53:33–01:56:28`.
 
-Machine-understood historical account:
+Primary-audio human-confirmed historical account:
 
 - Star Pass is described as highly situational;
 - a common instinct is to pass Demonhood to the Minion in the strongest / most trusted position;
@@ -162,9 +162,13 @@ Machine-understood historical account:
 
 ### Evidence semantics
 
-- likely relation: **OBSERVED_CHOICE + EXPLICIT RATIONALE + IMPLICIT ALTERNATIVE**
-- source status: **MACHINE SEMANTIC / AUDIO-READY, NOT VERIFIED**
-- strict historical production reconstruction: incomplete.
+- relation: **OBSERVED_CHOICE + EXPLICIT RATIONALE + SAME-STATE ALTERNATIVE**
+- source status: **PRIMARY-AUDIO HUMAN VERIFIED on 2026-10-05**
+- human confirmation resolved the key control question: the Storyteller owned the successor choice;
+- Baron and Spy were genuine compared successor candidates in the same historical choice;
+- retaining the trusted Spy as support for the new Demon was explicitly part of the rationale;
+- player experience/fun was a genuine secondary consideration;
+- strict full historical production reconstruction remains incomplete, but is not required for this bounded qualitative ranking dimension.
 
 ### Why this is high value
 
@@ -179,7 +183,7 @@ Instead Host may need to evaluate:
 - division of Evil-team social capital;
 - player experience / agency as optional enrichment.
 
-Do not implement this until primary-audio verification confirms the Storyteller actually owned the successor choice and the Spy-vs-Baron comparison/rationale.
+This bounded dimension is now ready for Host enrichment: successor quality must consider both the candidate's own trust/survivability and the opportunity cost of removing a highly trusted Minion from the Evil support network. Do not generalize this into a fixed Baron-over-Spy or weak-over-strong successor rule.
 
 ## 9. DS1-H — R04 preserves two ordered Star Pass transitions but no rationale
 
@@ -329,4 +333,4 @@ The broad family is no longer ambiguous:
 - Mayor-bounce-to-Imp -> Storyteller controls the trigger, Scarlet Woman succession remains forced;
 - exotic Recluse interaction -> legal possibility with explicit official caution.
 
-The single highest-value remaining evidence task is **primary-audio verification of Spy M11 `01:53:33–01:56:28`**, because it appears to contain a real Storyteller successor choice between Baron and Spy with explicit support-topology rationale.
+Spy M11 `01:53:33–01:56:28` is now **PRIMARY-AUDIO HUMAN VERIFIED** and provides the first source-backed ordinary-Star-Pass successor comparison with explicit support-topology rationale. The next DS1 work should therefore be Host consumption / replay construction or a new bounded gap, not re-review of M11.
