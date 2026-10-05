@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 MANIFEST COMPLETE / EL-ML1B-1B IN PROGRESS / DP-R05 G10 CANONICAL SEED MATERIALIZED / 5 DOCUMENTED_READY ROWS REMAIN / >=18 PARTIAL CANDIDATES / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 MANIFEST COMPLETE / EL-ML1B-1B IN PROGRESS / DP-R05 G10 CANONICAL SEED MATERIALIZED / 5 DOCUMENTED_READY ROWS REMAIN / >=18 PARTIAL CANDIDATES / EL-ML1C SOURCE ACQUISITION AUDIT COMPLETE / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -16,12 +16,13 @@
 6. `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`
 7. `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`
 8. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-9. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
-10. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-11. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-12. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-13. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-14. this file
+9. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
+10. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+11. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+12. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+13. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+14. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+15. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -125,9 +126,11 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 4. **High-leverage repair:** close R04 blockers because one repaired game may unlock several early- and later-night decision points.
 5. **Rationale-rich prefix recovery:** FT1-A -> WW2 -> UT1-A.
 6. **Diversity repair:** R01/R02/R03 plus existing Investigator/Ravenkeeper historical cases.
-7. **New complete games only if needed:** prefer new Storyteller independence and grimoire visibility.
+7. **New complete games only if needed:** if existing repair still leaves READY below 20 or diversity/later-game coverage weak, trigger the bounded EL-ML1C `CT-1 + YT-1 + DG-1` pilot first; prefer ClockTracker records with chronological Notes plus matching Storyteller-POV video, then choose the highest-yield permitted source lane.
 
 The existing Priority-1/Priority-2 EL-LRE verified set remains retrieval/evaluation evidence and may still be consumed by Host, but it no longer defines EvidenceLab's default continuation order.
+
+EL-ML1C is already audited but **not yet a broad ingestion campaign**. Its purpose is to prevent ad-hoc source hunting if new whole games become necessary. Machine discovery/screening/draft reconstruction should be the default; ambiguous or benchmark-grade decisions remain human verification gates.
 
 ### On-demand EvidenceLab gaps retained
 

@@ -1,8 +1,8 @@
 # Clocktower Evidence Lab — Current Development Roadmap
 
-> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ON-DEMAND / EL-LRE0 ALIGNED / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ACCEPTED / EL-ML1A BENCHMARK AUDIT COMPLETE**
+> Status: **E0 COMPLETE / E1 COMPLETE / C0 COMPLETE / C1 COMPLETE / C2 ON-DEMAND / EL-LRE0 ALIGNED / C3 STAGE-1 HISTORICAL-SUPPORTING / EL-TBGS-0/1 CROSS-PROJECT ACCEPTED / EL-ML0 ACCEPTED / EL-ML1A BENCHMARK AUDIT COMPLETE / EL-ML1C SOURCE ACQUISITION AUDIT COMPLETE**
 >
-> Current task: **EL-ML1B benchmark manifest + whole-game decision-prefix repair**. C2 and EL-LRE remain available as bounded on-demand evidence lanes, but broad podcast policy mining is no longer the default. Broad Drunk acquisition and broad C5/E3 hunting remain stopped.
+> Current task: **EL-ML1B benchmark manifest + whole-game decision-prefix repair**. EL-ML1C has pre-audited the next whole-game acquisition route but broad acquisition remains gated until existing-corpus repair is measured against the 20–30 READY pilot target. C2 and EL-LRE remain available as bounded on-demand evidence lanes; broad podcast policy mining, broad Drunk acquisition and broad C5/E3 hunting remain stopped.
 
 ## 1. Program objective
 
@@ -129,6 +129,31 @@ The remaining five rows stay `DOCUMENTED_READY`. Current audit disposition:
 Authority: `docs/EL_ML1B_CANONICALIZATION_AUDIT_2026-10-05.md`.
 
 No persistence migration, Host legality, legal-candidate enumeration, recommendation scoring, or inferred rejection semantics were added.
+
+### EL-ML1C — Whole-Game Source Acquisition Audit — COMPLETE / PILOT GATED
+
+EL-ML1C pre-audited how new complete Trouble Brewing games should be acquired if EL-ML1B repair cannot reach the pilot target.
+
+Accepted source order:
+
+```text
+ClockTracker public complete-game records
+    + matching Storyteller-POV YouTube where available
+    -> preferred near-term cross-source reconstruction
+
+explicit digital-grimoire event export / read API
+    -> future highest-value structured external lane once stable/permitted
+
+Twitch / actual-play audio
+    -> supporting whole-game sources
+
+expert role / Storyteller podcasts
+    -> rationale/gap-filling lane, not default corpus growth
+```
+
+The audit confirms that ClockTracker public records can sometimes contain detailed Night/Day chronological Notes, while its internal GrimoireSnapshot history is save/edit history and owner-authenticated rather than a public semantic gameplay event stream. Storyteller-POV video remains the strongest chronology/rationale complement. Machine discovery, screening, draft reconstruction and rules-independent consistency checks should be automated; VERIFIED promotion remains human-gated for ambiguous/high-value evidence.
+
+If new acquisition is triggered, run the bounded `CT-1 + YT-1 + DG-1` pilot defined in `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md` before building any broad crawler or new persistence layer.
 
 ### EL-LRE0 — Host LRE Evidence Alignment — AUDIT COMPLETE / ACTIVE ROUTE
 
@@ -309,7 +334,7 @@ Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix r
 3. close the known R04 replay blockers before searching for another whole game;
 4. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
 5. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
-6. only if READY remains below 20 after repair, acquire new complete Trouble Brewing games with Storyteller/grimoire visibility and greater Storyteller independence.
+6. only if READY remains below 20 after repair, trigger EL-ML1C's bounded `CT-1 + YT-1 + DG-1` source pilot, then acquire new complete Trouble Brewing games from the highest-yield lane with Storyteller/grimoire visibility, later-game coverage and greater Storyteller independence.
 
 C2 and EL-LRE remain bounded on-demand lanes for benchmark-discovered evidence gaps. Keep broad quota-driven C1 scouting, broad Drunk acquisition, broad C5/E3 hunting and broad podcast policy mining stopped.
 

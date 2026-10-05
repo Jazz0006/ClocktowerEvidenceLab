@@ -75,13 +75,13 @@ Direct telemetry from the Storyteller app is explicitly deferred.
 
 Targeted expert podcasts may also be used as a complementary **rationale source**. Podcast transcripts are discovery aids only: full audio/transcripts stay outside Git, and machine-located windows require primary-audio review before they become verified evidence.
 
-See `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`.
+See `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md` for the whole-game source strategy and `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md` for the complementary podcast rationale lane.
 
-## Current product checkpoint — C2 + EL-LRE
+## Current product checkpoint — EL-ML1B benchmark build
 
 C1 Drunk Assignment Evidence Upgrade is **complete**. Its bounded acquisition target reached 3/3 replayable assignment cases and downstream replay succeeded, so broad Drunk-assignment searching remains stopped.
 
-The primary acquisition lane remains **C2 — Trouble Brewing Podcast Batch Ingestion / full-transcript semantic review**. Host-facing triage is now governed by **EL-LRE — replacement-policy evidence alignment**: bounded evidence requests are prioritized by decision family, while Host remains the owner of legality, legal alternatives, versioned policy, replay/evaluation and production cutover.
+The active route is **EL-ML1B — benchmark construction / whole-game historical-prefix repair**. Whole-game reconstruction is the default continuation unit; C2 and EL-LRE are now bounded on-demand evidence lanes. Host remains the owner of legality, legal alternatives, versioned policy, replay/evaluation and production cutover.
 
 **C3 — Drunk Candidate Comparison / Rejection Evidence** remains historically valid and Stage-1 accepted through human-verified Q04, but it is no longer the general continuation lane. Its comparison semantics are generalized by EL-LRE.
 
@@ -96,6 +96,7 @@ Current implementation status:
 - **EL-LRE0 Host LRE evidence alignment — AUDIT COMPLETE / DOCS-ONLY**;
 - **EL-ML1A Decision Point benchmark corpus audit — COMPLETE / CONTRACT ACCEPTED**: 6 conservative READY historical decision points across 3 game groups, plus >=18 high-value PARTIAL candidates;
 - **EL-ML1B-1 benchmark manifest V1 — IMPLEMENTED / GREEN**: machine-readable six-row manifest + versioned interchange contract. Rows remain `DOCUMENTED_READY` until canonical `DecisionSlice` and historical-prefix refs are genuinely materialized; the active continuation is EL-ML1B-1B canonical historical-decision materialization.
+- **EL-ML1C whole-game source acquisition audit — COMPLETE / PILOT GATED**: if existing repair cannot reach the pilot target, first compare ClockTracker complete-game records, Storyteller-POV video and digital-grimoire export/log capability with a bounded source pilot before broad ingestion.
 
 The podcast tooling route remains available on demand: queue-owned `prepare-next -> complete ASR -> full-transcript semantic review -> lightweight timestamped findings -> LRE-aware triage -> targeted human verification only where needed -> cleanup-current`. The fixed TB queue is exhausted and broad podcast policy mining is no longer the default continuation. Full media/transcripts remain outside Git.
 
