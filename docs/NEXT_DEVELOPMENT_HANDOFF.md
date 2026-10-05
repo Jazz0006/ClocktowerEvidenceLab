@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 MANIFEST COMPLETE / EL-ML1B-1B COMPLETE / ALL 6 READY HISTORICAL DECISIONS CANONICAL_SEED_MATERIALIZED / >=18 PARTIAL CANDIDATES / EL-ML1C SOURCE ACQUISITION AUDIT COMPLETE / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 + 1B COMPLETE / ALL 6 READY HISTORICAL DECISIONS CANONICAL_SEED_MATERIALIZED / EL-ML1B-2 G10 LONGITUDINAL AUDIT COMPLETE — 0 OF 3 PROMOTED / >=18 PARTIAL CANDIDATES / NEXT EL-ML1B-3 R04 BLOCKER REPAIR / EL-ML1C SOURCE ACQUISITION AUDIT COMPLETE / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -22,14 +22,15 @@
 12. `docs/EL_ML1B_G05_DP_R04_CANONICAL_SEED_V1.json`
 13. `docs/G10_DP_R06_LIBRARIAN_PREFIX_RECOVERY_2026-10-05.md`
 14. `docs/EL_ML1B_G10_DP_R06_CANONICAL_SEED_V1.json`
-15. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-16. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
-17. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
-18. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-19. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-20. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-21. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-22. this file
+15. `docs/EL_ML1B_2_G10_LONGITUDINAL_PREFIX_AUDIT_2026-10-06.md`
+16. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+17. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
+18. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+19. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+20. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+21. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+22. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+23. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -83,9 +84,9 @@ EL-ML1A established a conservative current inventory of 6 READY historical decis
 Immediate route:
 
 ```text
-EL-ML1B-1B DP-R01..R06 canonical seeds        COMPLETE / GREEN locally
--> G10 longitudinal prefix extraction           NEXT
--> close R04 blockers
+EL-ML1B-1B DP-R01..R06 canonical seeds        COMPLETE
+-> EL-ML1B-2 G10 longitudinal audit             COMPLETE / 0 OF 3 PROMOTED
+-> EL-ML1B-3 close R04 blockers                 NEXT
 -> recover FT1-A / WW2 / UT1-A historical prefixes
 -> repair R01/R02/R03 and Investigator/Ravenkeeper candidates
 -> acquire new complete TB games only if READY still < 20
@@ -125,10 +126,10 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 
 ### EL-ML1B priority
 
-1. **G10 longitudinal test next:** attempt canonical prefixes for the retained ~17:29 Drunk-Empath `0`, ~18:05 Drunk-Empath truthful `1` used deceptively, and ~18:50 Spy->Virgin Undertaker display decisions using the shared G10 reconstruction.
-2. **G10 setup seed campaign is closed:** DP-R05 + DP-R06 share one reconstruction; the Librarian prefix contains shown layout + Drunk assignment and excludes its own 16:52 result plus the source-backed later 17:17 Demon bluffs.
-3. **G05 is closed for this slice:** DP-R03 + DP-R04 share one 20-seat reconstruction; DP-R04 includes the intermediate Washerwoman information selection, and Traveller state is exported as a Host enrichment requirement rather than reimplemented in EvidenceLab.
-4. **High-leverage repair after G10:** close R04 blockers because one repaired game may unlock several early- and later-night decision points.
+1. **R04 blocker repair next:** target only the already-known missing setup/event fields and bluff confirmation; do not reconstruct R04 from scratch.
+2. **G10 longitudinal audit is closed for now:** 17:29 lacks a complete preceding Night-1 event/action sequence; 18:05 additionally lacks exact living-neighbour and Day-1 death/execution state; 18:50 lacks canonical public-claim/execution/death chronology. Keep all three PARTIAL rather than inventing DP-R07+.
+3. **G10 setup seed campaign is closed:** DP-R05 + DP-R06 share one reconstruction; the Librarian prefix contains shown layout + Drunk assignment and excludes its own 16:52 result plus the source-backed later 17:17 Demon bluffs.
+4. **G05 is closed for this slice:** DP-R03 + DP-R04 share one 20-seat reconstruction; DP-R04 includes the intermediate Washerwoman information selection, and Traveller state is exported as a Host enrichment requirement rather than reimplemented in EvidenceLab.
 5. **Rationale-rich prefix recovery:** FT1-A -> WW2 -> UT1-A.
 6. **Diversity repair:** R01/R02/R03 plus existing Investigator/Ravenkeeper historical cases.
 7. **New complete games only if needed:** if existing repair still leaves READY below 20 or diversity/later-game coverage weak, trigger the bounded EL-ML1C `CT-1 + YT-1 + DG-1` pilot first; prefer ClockTracker records with chronological Notes plus matching Storyteller-POV video, then choose the highest-yield permitted source lane.

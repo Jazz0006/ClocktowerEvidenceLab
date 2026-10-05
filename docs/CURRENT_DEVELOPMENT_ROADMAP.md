@@ -128,6 +128,18 @@ Authority: `docs/EL_ML1B_CANONICALIZATION_AUDIT_2026-10-05.md`.
 
 No persistence migration, Host legality, legal-candidate enumeration, recommendation scoring, or inferred rejection semantics were added.
 
+### EL-ML1B-2 — G10 longitudinal prefix extraction — COMPLETE / 0 OF 3 PROMOTED
+
+The three retained later G10 decisions were re-audited against the stricter full-history prefix gate; see `docs/EL_ML1B_2_G10_LONGITUDINAL_PREFIX_AUDIT_2026-10-06.md`.
+
+Result:
+
+- **~17:29 Drunk-Empath = 0:** observed choice is verified, but the complete preceding Night-1 action/private-information sequence is not serialized; absence of retained Butler/Spy/other actions cannot be converted into evidence that they did not occur;
+- **~18:05 Drunk-Empath = truthful 1 used deceptively:** exact changed living-neighbour state and intervening Day-1 execution/death chronology remain missing;
+- **~18:50 Spy -> Virgin Undertaker display:** observed execution/display semantics are strong, but exact public-claim, nomination/execution/death and preceding event chronology are not canonicalized.
+
+All three therefore remain **PARTIAL / PREFIX-BLOCKED**. No DP-R07+ rows are added and the existing six-row READY manifest remains unchanged. This validates the acquisition architecture: later-game recommendation benchmarks need chronological whole-game state, not isolated Storyteller choices.
+
 ### EL-ML1C — Whole-Game Source Acquisition Audit — COMPLETE / PILOT GATED
 
 EL-ML1C pre-audited how new complete Trouble Brewing games should be acquired if EL-ML1B repair cannot reach the pilot target.
@@ -327,12 +339,11 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-2:** use the completed shared G10 reconstruction to attempt the retained ~17:29, ~18:05 and ~18:50 later decisions as a same-game longitudinal prefix test;
-2. materialize each only when exact chronology is evidence-backed, keeping every G10 point in one split group;
-3. close the known R04 replay blockers before searching for another whole game;
-4. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
-5. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
-6. only if READY remains below 20 after repair, trigger EL-ML1C's bounded `CT-1 + YT-1 + DG-1` source pilot, then acquire new complete Trouble Brewing games from the highest-yield lane with Storyteller/grimoire visibility, later-game coverage and greater Storyteller independence.
+1. **EL-ML1B-3:** close the known R04 replay blockers before searching for another whole game; one repaired reconstruction may unlock several early- and later-night decisions;
+2. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
+3. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
+4. keep G10 17:29 / 18:05 / 18:50 PARTIAL until a source artifact exposes the missing chronological event state; do not spend more manual-review bandwidth on G10 now;
+5. only if READY remains below 20 after repair, trigger EL-ML1C's bounded `CT-1 + YT-1 + DG-1` source pilot, then acquire new complete Trouble Brewing games from the highest-yield lane with Storyteller/grimoire visibility, later-game coverage and greater Storyteller independence.
 
 C2 and EL-LRE remain bounded on-demand lanes for benchmark-discovered evidence gaps. Keep broad quota-driven C1 scouting, broad Drunk acquisition, broad C5/E3 hunting and broad podcast policy mining stopped.
 
