@@ -19,7 +19,7 @@ Primary working reconstruction:
 
 - `docs/C0_TB_RECONSTRUCTION_BATCH_01_2026-09-23.md`
 
-Replay preparation status: **REPLAY_PREP_PARTIAL / BLOCKED_ON_DIRECT_GRIMOIRE**.
+Replay preparation status: **REPLAY_PREP_PARTIAL / CIRCULAR_ORDER VERIFIED / RAW ROLE MAP STILL BLOCKED**.
 
 This replay preparation is **not yet runnable corpus truth**. It separates observed source content from reconstruction and inference so missing fields can be filled later without rewriting the event history.
 
@@ -29,7 +29,7 @@ A follow-up access pass attempted:
 - the public ClockTracker game API route;
 - public image search for the grimoire.
 
-The current research tools did not expose the mirror/grimoire/API payload. This is an access limitation, not evidence that the fields are absent. Do not repeat broad search attempts for these same fields unless a new direct-source access path becomes available.
+The 2026-09-23 research tools did not expose the mirror/grimoire/API payload. A new direct public path became available on 2026-10-06 and is audited in `docs/EL_ML1B_3_R04_DIRECT_SOURCE_REPAIR_2026-10-06.md`. That pass closes the circular-order blocker from the public render + ClockTracker source code, while raw role/bluff fields remain inaccessible through the current retrieval surface.
 
 ## 2. Source-level setup facts
 
@@ -90,13 +90,13 @@ A set-difference interpretation suggests:
 
 These mappings are **INFERRED**, not source-observed.
 
-Most importantly, the rendered token order has **not** been independently verified as canonical clockwise seat order.
+**2026-10-06 update:** the rendered token order is now verified as the persisted grimoire circular sequence. ClockTracker's current `components/Grimoire.vue` sorts public tokens by `token.order` and positions the resulting indexed sequence around the circle. Preserve the first rendered token only as an analysis-derived seat-1 origin; the source does not assign semantic significance to that origin.
 
 Therefore:
 
-- preserve it as `source_render_order_candidate`;
-- do not persist it as `GameSeat.seat_order` yet;
-- do not run adjacency-sensitive replay from it until direct grimoire verification.
+- the listed sequence may now be persisted as the source-backed circular `GameSeat.seat_order` sequence;
+- adjacency-sensitive reconstruction may use this circle order;
+- `Reyzant ↔ Paul` and `caspian3787 ↔ Wesley` remain INFERRED aliases and must not be silently promoted.
 
 ## 4. Working role reconstruction
 
@@ -333,11 +333,11 @@ This is an excellent later-phase replay case for future SDE historical shadow wo
 
 The smallest remaining R04 blockers are:
 
-1. **verified clockwise seat order**;
-2. **full actual role map from the grimoire**;
+1. ~~**verified circular seat order**~~ — **CLOSED 2026-10-06** from public grimoire render + ClockTracker `token.order` source semantics;
+2. **full actual/shown role map from the raw grimoire payload**;
 3. **Hylinn shown role**;
 4. **Brian actual/shown information role**;
-5. direct confirmation of the three Demon bluffs from grimoire metadata rather than only Notes semantics.
+5. direct confirmation of the three Demon bluffs from raw game metadata rather than only Notes semantics.
 
 These are much smaller than reconstructing the game again.
 

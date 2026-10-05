@@ -140,6 +140,14 @@ Result:
 
 All three therefore remain **PARTIAL / PREFIX-BLOCKED**. No DP-R07+ rows are added and the existing six-row READY manifest remains unchanged. This validates the acquisition architecture: later-game recommendation benchmarks need chronological whole-game state, not isolated Storyteller choices.
 
+### EL-ML1B-3 — R04 direct-source blocker repair — COMPLETE / 1 OF 5 BLOCKERS CLOSED
+
+A new direct public ClockTracker path justified re-opening the old R04 blocker list; see `docs/EL_ML1B_3_R04_DIRECT_SOURCE_REPAIR_2026-10-06.md`.
+
+The circular-order blocker is now genuinely closed. ClockTracker's public `Grimoire.vue` sorts persisted tokens by `token.order` and renders that indexed sequence around the circle, so the public R04 sequence `Hollie -> Reyzant -> Maddox -> Victor -> Rhonda -> caspian3787 -> Nico -> Hylinn -> Deonna -> Sarah -> Brian -> Chris -> Josh -> Andrew` is now source-backed circular order rather than an arbitrary render candidate.
+
+Four blockers remain and all require raw structured game/grimoire fields rather than rule inference: full actual/shown role map, Hylinn shown role, Brian exact information role, and direct Demon-bluff role IDs. ClockTracker source proves those fields exist in `fetchGame()` / `demon_bluffs`, but the current retrieval surface exposes the role tokens only as images and does not return the raw API payload. R04 therefore remains PARTIAL; do not infer the missing roles from TB mechanics.
+
 ### EL-ML1C — Whole-Game Source Acquisition Audit — COMPLETE / PILOT GATED
 
 EL-ML1C pre-audited how new complete Trouble Brewing games should be acquired if EL-ML1B repair cannot reach the pilot target.
@@ -339,11 +347,12 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-3:** close the known R04 replay blockers before searching for another whole game; one repaired reconstruction may unlock several early- and later-night decisions;
-2. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
+1. **EL-ML1B-4:** reconstruct the exact FT1-A historical prefix because rationale evidence is already strong;
+2. continue with WW2 then UT1-A using the same no-hindsight prefix gate;
 3. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
-4. keep G10 17:29 / 18:05 / 18:50 PARTIAL until a source artifact exposes the missing chronological event state; do not spend more manual-review bandwidth on G10 now;
-5. only if READY remains below 20 after repair, trigger EL-ML1C's bounded `CT-1 + YT-1 + DG-1` source pilot, then acquire new complete Trouble Brewing games from the highest-yield lane with Storyteller/grimoire visibility, later-game coverage and greater Storyteller independence.
+4. keep R04 PARTIAL until raw ClockTracker grimoire/game fields become machine-retrievable; its circular order is closed, but do not spend more manual-search bandwidth on the same rendered page;
+5. keep G10 17:29 / 18:05 / 18:50 PARTIAL until a source artifact exposes the missing chronological event state;
+6. only if READY remains below 20 after repair, trigger EL-ML1C's bounded `CT-1 + YT-1 + DG-1` source pilot, then acquire new complete Trouble Brewing games from the highest-yield lane with Storyteller/grimoire visibility, later-game coverage and greater Storyteller independence.
 
 C2 and EL-LRE remain bounded on-demand lanes for benchmark-discovered evidence gaps. Keep broad quota-driven C1 scouting, broad Drunk acquisition, broad C5/E3 hunting and broad podcast policy mining stopped.
 
