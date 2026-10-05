@@ -148,16 +148,36 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
     assert all(entry.readiness is BenchmarkReadiness.READY for entry in manifest.entries)
 
     by_id = {entry.benchmark_id: entry for entry in manifest.entries}
-    materialized = by_id["benchmark:el-ml1b:dp-r05"]
-    assert (
-        materialized.materialization_state
-        is BenchmarkMaterializationState.CANONICAL_SEED_MATERIALIZED
-    )
-    assert materialized.canonical_decision_id == "decision:g10:drunk-assignment"
-    assert materialized.prefix_materialization_ref == "prefix:g10-game2:before-drunk-assignment:v1"
+
+    expected_materialized = {
+        "benchmark:el-ml1b:dp-r01": (
+            "decision:g01:drunk-assignment",
+            "prefix:g01:before-drunk-assignment:v1",
+        ),
+        "benchmark:el-ml1b:dp-r02": (
+            "decision:g01:n1-drunk-empath-info",
+            "prefix:g01:before-drunk-empath-night1:v1",
+        ),
+        "benchmark:el-ml1b:dp-r05": (
+            "decision:g10:drunk-assignment",
+            "prefix:g10-game2:before-drunk-assignment:v1",
+        ),
+    }
+    for benchmark_id, (decision_id, prefix_ref) in expected_materialized.items():
+        entry = by_id[benchmark_id]
+        assert (
+            entry.materialization_state is BenchmarkMaterializationState.CANONICAL_SEED_MATERIALIZED
+        )
+        assert entry.canonical_decision_id == decision_id
+        assert entry.prefix_materialization_ref == prefix_ref
 
     remaining = [
-        entry for entry in manifest.entries if entry.benchmark_id != "benchmark:el-ml1b:dp-r05"
+        by_id[benchmark_id]
+        for benchmark_id in (
+            "benchmark:el-ml1b:dp-r03",
+            "benchmark:el-ml1b:dp-r04",
+            "benchmark:el-ml1b:dp-r06",
+        )
     ]
     assert all(
         entry.materialization_state is BenchmarkMaterializationState.DOCUMENTED_READY

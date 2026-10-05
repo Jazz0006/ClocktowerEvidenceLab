@@ -107,23 +107,21 @@ The first machine-readable benchmark surface is implemented:
 - allowed evaluation-mode metadata;
 - a checked-in six-row manifest at `docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json`.
 
-### EL-ML1B-1B — Canonical historical decision materialization — IN PROGRESS / 1 OF 6 MATERIALIZED
+### EL-ML1B-1B — Canonical historical decision materialization — IN PROGRESS / 3 OF 6 MATERIALIZED
 
 The six-row canonicalization audit is complete. It confirms that benchmark `READY` does not by itself justify a canonical machine seed.
 
-The first real materialization is **DP-R05 — G10 Game 2 Drunk assignment**:
+Three READY rows now have genuine canonical seeds:
 
-- generic derived `HistoricalDecisionSeedV1` contract;
-- checked-in canonical seed at `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`;
-- real `DecisionSlice` + evidenced grouped setup history + source/assertion provenance;
-- executable `HistoricalPrefixBoundary` that yields only the pre-assignment shown-role layout;
-- manifest state promoted to `CANONICAL_SEED_MATERIALIZED`;
-- Host enrichment requirement reduced to `LEGAL_CANDIDATE_DOMAIN`.
+- **DP-R05 — G10 Game 2 Drunk assignment** at `docs/EL_ML1B_G10_DP_R05_CANONICAL_SEED_V1.json`;
+- **DP-R01 — G01 Drunk assignment** at `docs/EL_ML1B_G01_DP_R01_CANONICAL_SEED_V1.json`;
+- **DP-R02 — G01 Drunk-Empath Night-1 = 0** at `docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json`.
 
-The remaining five rows stay `DOCUMENTED_READY`. Current audit disposition:
+G01 DP-R01 and DP-R02 share one canonical game/revision/source identity. DP-R01 yields only the evidenced pre-assignment shown-role layout. DP-R02 yields the committed setup plus the verified prior Chef `1`, excludes its own `0` result, and preserves only explicit rejected alternative `2`. Ben Burns is a conservative split anchor, not a claim of sole personal control; no synthetic Ben+Adam identity was introduced.
 
-- **G01 DP-R01/DP-R02:** strongest next pair; materialize together from one canonical G01 reconstruction, after resolving Storyteller/controller grouping without inventing a single Ben+Adam identity;
-- **G05 DP-R03/DP-R04:** blocked because the repository currently records that the complete layout was fixed but does not retain the full seat/role map;
+The remaining three rows stay `DOCUMENTED_READY`. Current audit disposition:
+
+- **G05 DP-R03/DP-R04:** next bounded target; blocked because the repository records that the complete layout was fixed but does not retain the full seat/role map;
 - **G10 DP-R06:** blocked until setup chronology/completeness at the Librarian decision boundary is evidence-backed; do not infer Demon-bluff prefix membership from video order or BotC rules.
 
 Authority: `docs/EL_ML1B_CANONICALIZATION_AUDIT_2026-10-05.md`.
@@ -329,8 +327,8 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-1B:** convert the six checked-in `DOCUMENTED_READY` rows into genuine canonical historical decision seeds only where `DecisionSlice + prefix + provenance` can be materialized without guessing; begin with G10/G01/G05;
-2. materialize bounded prefixes for the three later G10 decisions, keeping every G10 point in one split group;
+1. **EL-ML1B-1B:** continue from the now-materialized G10 DP-R05 + G01 DP-R01/DP-R02 seeds and recover the missing G05 full setup map for DP-R03/DP-R04;
+2. materialize bounded prefixes for the three later G10 decisions only when exact chronology is evidence-backed, keeping every G10 point in one split group;
 3. close the known R04 replay blockers before searching for another whole game;
 4. reconstruct exact pre-decision prefixes for FT1-A, WW2 and UT1-A because rationale evidence is already strong;
 5. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;

@@ -9,20 +9,20 @@
       "decision_family": "DRUNK_ASSIGNMENT",
       "game_group": "game-group:g01",
       "source_group": "source-group:g01-a-stud-in-scarlet",
-      "storyteller_independence_key": null,
+      "storyteller_independence_key": "st-ben-burns",
       "historical_evidence_refs": [
         "docs/C1C_TARGETED_DRUNK_ASSIGNMENT_ACQUISITION_2026-09-28.md::G01 E0 replay case 1"
       ],
       "observed_choice": {
-        "participant": "Sullivan",
-        "shown_role": "Empath",
-        "actual_role": "Drunk"
+        "selected_seat_id": "seat:g01:9",
+        "shown_role": "EMPATH",
+        "resulting_actual_role": "DRUNK"
       },
       "verification": "VERIFIED",
       "readiness": "READY",
-      "materialization_state": "DOCUMENTED_READY",
-      "canonical_decision_id": null,
-      "prefix_materialization_ref": null,
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:g01:drunk-assignment",
+      "prefix_materialization_ref": "prefix:g01:before-drunk-assignment:v1",
       "rationale_evidence_refs": [],
       "explicit_preference_evidence_refs": [],
       "explicit_rejection_evidence_refs": [],
@@ -30,8 +30,6 @@
         "OBSERVED_CHOICE_RANK"
       ],
       "host_enrichment_requirements": [
-        "CANONICAL_DECISION_IMPORT",
-        "CANONICAL_PREFIX_MATERIALIZATION",
         "LEGAL_CANDIDATE_DOMAIN"
       ]
     },
@@ -41,16 +39,16 @@
       "decision_family": "IMPAIRED_EMPATH_INFORMATION",
       "game_group": "game-group:g01",
       "source_group": "source-group:g01-a-stud-in-scarlet",
-      "storyteller_independence_key": null,
+      "storyteller_independence_key": "st-ben-burns",
       "historical_evidence_refs": [
         "docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md::DS-ASIS-003"
       ],
       "observed_choice": 0,
       "verification": "VERIFIED",
       "readiness": "READY",
-      "materialization_state": "DOCUMENTED_READY",
-      "canonical_decision_id": null,
-      "prefix_materialization_ref": null,
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:g01:n1-drunk-empath-info",
+      "prefix_materialization_ref": "prefix:g01:before-drunk-empath-night1:v1",
       "rationale_evidence_refs": [
         "docs/E0_EVIDENCE_CONTRACT_COMPLETION_AUDIT_2026-09-22.md::DS-ASIS-003 rationale"
       ],
@@ -64,8 +62,6 @@
         "RATIONALE_BLIND_REVIEW"
       ],
       "host_enrichment_requirements": [
-        "CANONICAL_DECISION_IMPORT",
-        "CANONICAL_PREFIX_MATERIALIZATION",
         "LEGAL_CANDIDATE_DOMAIN"
       ]
     },
