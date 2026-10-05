@@ -154,6 +154,12 @@ FT1-A was tested because it is unusually strong verified comparative evidence: h
 
 It still cannot become a canonical historical seed. The source is an expert podcast retrospective and does not identify the underlying game, player count, seat map, full roles, exact night, prior Fortune Teller history, exact Poisoner history, living/dead state or complete pre-decision event prefix. The verified choice/alternative/rationale remains high-value comparative evidence; it simply stays outside the full-state benchmark lane. No DP-R07 row is added.
 
+### EL-ML1B-5 — WW2 historical-prefix gate — COMPLETE / NOT PROMOTED
+
+WW2 is also verified historical comparative evidence: on Night 1 the Poisoner hit the Washerwoman; Andrew was the Demon; the Storyteller chose a false pair containing the Demon plus one Demon bluff, explicitly rejecting conspicuously broken misinformation that would expose poisoning; the construction later helped Andrew adopt the supported bluff. See `docs/EL_ML1B_5_WW2_PREFIX_AUDIT_2026-10-06.md`.
+
+The source still does not identify a canonical game record, player count, seat/role map, Washerwoman/Poisoner seats, Andrew's seat, exact bluff role, full bluff triplet or complete setup/Night-1 action prefix. WW2 therefore remains comparative/rationale evidence rather than a full-state benchmark seed. Its semantic rejected failure mode must not be converted into an invented concrete alternative pair or complete legal domain.
+
 ### EL-ML1C — Whole-Game Source Acquisition Audit — COMPLETE / PILOT GATED
 
 EL-ML1C pre-audited how new complete Trouble Brewing games should be acquired if EL-ML1B repair cannot reach the pilot target.
@@ -353,9 +359,9 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-5:** apply the same historical-prefix gate to WW2;
-2. continue with UT1-A after WW2;
-3. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
+1. **EL-ML1B-6:** apply the same historical-prefix gate to UT1-A;
+2. repair R01/R02/R03 and the existing Investigator/Ravenkeeper whole-game candidates as source access permits;
+3. preserve FT1-A and WW2 as verified comparative expert-decision evidence unless independent complete-game sources later identify their underlying games;
 4. keep R04 PARTIAL until raw ClockTracker grimoire/game fields become machine-retrievable; its circular order is closed, but do not spend more manual-search bandwidth on the same rendered page;
 5. keep G10 17:29 / 18:05 / 18:50 PARTIAL until a source artifact exposes the missing chronological event state;
 6. only if READY remains below 20 after repair, trigger EL-ML1C's bounded `CT-1 + YT-1 + DG-1` source pilot, then acquire new complete Trouble Brewing games from the highest-yield lane with Storyteller/grimoire visibility, later-game coverage and greater Storyteller independence.
