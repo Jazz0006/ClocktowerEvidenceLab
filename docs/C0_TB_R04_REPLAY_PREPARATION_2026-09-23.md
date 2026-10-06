@@ -284,9 +284,9 @@ Current replay readiness:
 - poison target and delivered output: READY;
 - Brian actual role = Librarian: READY from structured snapshot;
 - seat order/full role map: READY;
-- exact setup/first-night commitments preceding Brian's clue: still PARTIAL.
+- grouped initial setup + exact preceding Night-1 event prefix: MATERIALIZED as DP-R07 / `docs/EL_ML1B_R04_D03_CANONICAL_SEED_V1.json`.
 
-This remains a high-value first-night impaired-information case; the blocker has shifted from identity to historical-prefix chronology.
+Internal ordering among setup-time commitments is deliberately not fabricated; they are represented by one CANONICAL_ONLY initial-state commitment.
 
 ### R04-D04 — Drunk Hylinn Night-1 information
 
@@ -304,7 +304,7 @@ Current replay readiness:
 
 - Drunk identity and output: READY;
 - Hylinn shown ability = Empath: READY from structured related-role metadata;
-- exact pre-output setup/first-night prefix: still PARTIAL.
+- grouped initial setup + exact preceding Night-1 event prefix: MATERIALIZED as DP-R08 / `docs/EL_ML1B_R04_D04_CANONICAL_SEED_V1.json`.
 
 Do not generate legal numeric alternatives in EvidenceLab; candidate legality remains Host-owned.
 
