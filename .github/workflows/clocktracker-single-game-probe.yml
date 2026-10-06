@@ -1,0 +1,68 @@
+name: ClockTracker single-game probe
+
+on:
+  workflow_dispatch:
+    inputs:
+      game_id:
+        description: Public ClockTracker game UUID
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install acquisition tooling
+        run: python -m pip install -e .
+      - name: Fetch and normalize explicit game
+        env:
+          GAME_ID: ${{ inputs.game_id }}
+        run: |
+          clocktower-clocktracker-probe "$GAME_ID" > /tmp/clocktracker-game.json
+          python - <<'PY'
+          import json
+
+          data = json.load(open("/tmp/clocktracker-game.json", encoding="utf-8"))
+          summary = {
+              "game_id": data["game_id"],
+              "date": data["date"],
+              "script": data["script"],
+              "player_count": data["player_count"],
+              "traveler_count": data["traveler_count"],
+              "storyteller": data["storyteller"],
+              "co_storytellers": data["co_storytellers"],
+              "demon_bluffs": data["demon_bluffs"],
+              "grimoire_count": len(data["grimoires"]),
+              "grimoires": [
+                  {
+                      "grimoire_id": grim["grimoire_id"],
+                      "orders_unique": grim["orders_unique"],
+                      "seat_count": len(grim["seats"]),
+                      "seats": [
+                          {
+                              "source_index": seat["source_index"],
+                              "order": seat["order"],
+                              "player_name": seat["player_name"],
+                              "role_id": seat["role_id"],
+                              "related_role_id": seat["related_role_id"],
+                              "alignment": seat["alignment"],
+                              "is_dead": seat["is_dead"],
+                              "reminders": seat["reminders"],
+                          }
+                          for seat in grim["seats"]
+                      ],
+                  }
+                  for grim in data["grimoires"]
+              ],
+          }
+          print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
+          PY

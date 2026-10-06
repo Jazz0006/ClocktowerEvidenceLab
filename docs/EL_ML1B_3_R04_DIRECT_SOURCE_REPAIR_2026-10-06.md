@@ -1,6 +1,6 @@
 # EL-ML1B-3 — R04 direct-source blocker repair — 2026-10-06
 
-> Status: **BOUNDED REPAIR COMPLETE / 1 OF 5 BLOCKERS CLOSED / 4 RAW-GRIMOIRE FIELDS STILL BLOCKED**
+> Status: **BOUNDED REPAIR COMPLETE / 5 OF 5 ORIGINAL SOURCE-DATA BLOCKERS CLOSED / HISTORICAL PREFIX CHRONOLOGY REMAINS SEPARATE**
 >
 > Game: R04 / ClockTracker `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30`
 >
@@ -102,19 +102,19 @@ The same game object also includes `demon_bluffs` with their `role` / `role_id`.
 
 The public page's Demon Bluffs section iterates `game.data.demon_bluffs` and links each item to the corresponding role page.
 
-So the remaining information is present in ClockTracker's structured game model. The current blocker is retrieval fidelity in this EvidenceLab session, not a schema limitation or evidence-model limitation.
+Those fields were subsequently retrieved through the bounded EL-ML1C CT-1 GitHub Actions acquisition runtime. Raw R04 inspection run `37447792091` recovered 14 grimoire snapshots; parser-validation run `37448212336` successfully normalized all 14 after duplicate-order handling was made explicit.
 
-The current public search/render surface exposes the grimoire players and reminder text but leaves the character tokens as images. It also exposes the Demon Bluffs section without returning the three role IDs. Direct access to `/api/games/{id}` is not available through the current retrieval tool surface.
+The earliest returned snapshot (`79346`) contains a complete 14-token role map. One later snapshot (`79349`) contains a malformed/ambiguous persisted order (14 tokens, duplicate order 2, no order 0). The parser now preserves that page with `orders_unique=false` instead of rejecting the whole game or silently repairing it.
 
 ## 4. Five-blocker disposition
 
 | Original blocker | 2026-10-06 disposition | Reason |
 | --- | --- | --- |
-| verified circular seat order | **CLOSED** | public R04 render sequence + ClockTracker source proves rendering is persisted `token.order` around the circle |
-| full actual/shown role map | **BLOCKED ON RAW GRIMOIRE PAYLOAD** | structured fields exist upstream, but current retrieval surface returns role tokens only as images |
-| Hylinn shown role | **BLOCKED ON RAW GRIMOIRE PAYLOAD** | do not infer from repeated numeric `0` or TB role rules |
-| Brian exact actual/shown information role | **BLOCKED ON RAW GRIMOIRE PAYLOAD** | do not turn the two-player Saint clue into a role label by rules inference |
-| direct Demon bluff triplet confirmation | **BLOCKED ON RAW GAME PAYLOAD** | page contains Demon Bluffs metadata, but current retrieval surface does not expose the role IDs; Notes-based Chef / Investigator / Saint remains RECONSTRUCTED |
+| verified circular seat order | **CLOSED** | public R04 render + persisted `token.order`; structured snapshots independently confirm the 14-seat circle except one explicitly flagged malformed intermediate snapshot |
+| full actual/shown role map | **CLOSED** | snapshot `79346` exposes all 14 actual roles; Drunk related-role metadata exposes shown role |
+| Hylinn shown role | **CLOSED** | Hylinn = actual `drunk`, `related_role_id = empath` |
+| Brian exact actual/shown information role | **CLOSED** | Brian = `librarian` in structured grimoire |
+| direct Demon bluff triplet confirmation | **CLOSED** | raw game metadata = `chef / investigator / saint` |
 
 ## 5. Evidence that remains usable now
 
@@ -126,15 +126,25 @@ The new source access strengthens R04 without making it benchmark-ready:
 - Hylinn = actual Drunk remains observed;
 - poison / kill / information / execution chronology remains retained as before.
 
-The following must remain conservative:
+Structured source now directly supports the initial returned role map:
 
-- `Reyzant ↔ Paul`: INFERRED alias;
-- `caspian3787 ↔ Wesley`: INFERRED alias;
-- Paul = Imp: RECONSTRUCTED;
-- Brian role: UNKNOWN;
-- Hylinn shown role: UNKNOWN;
-- full token-role map: PARTIAL;
-- Demon bluffs Chef / Investigator / Saint: RECONSTRUCTED pending structured metadata.
+- Hollie = Scarlet Woman;
+- Reyzant = Undertaker;
+- Maddox = Soldier;
+- Victor = Ravenkeeper;
+- Rhonda = Fortune Teller;
+- caspian3787 = Imp;
+- Nico = Slayer;
+- Hylinn = Drunk shown Empath;
+- Deonna = Poisoner;
+- Sarah = Monk;
+- Brian = Librarian;
+- Chris = Spy;
+- Josh = Washerwoman;
+- Andrew = Virgin;
+- Demon bluffs = Chef / Investigator / Saint.
+
+The Notes aliases `Reyzant ↔ Paul` and `caspian3787 ↔ Wesley` remain INFERRED name mappings; structured role recovery does not by itself make those aliases source-authored.
 
 ## 6. Product / acquisition implication
 
@@ -146,6 +156,8 @@ Do **not** implement that broad fetcher inside this R04 slice. EL-ML1C remains t
 
 ## 7. Next action
 
-R04 remains PARTIAL after one blocker was genuinely closed.
+The original five source-data blockers are closed. R04 is no longer raw-grimoire blocked.
 
-Do not spend more manual-search bandwidth on the same page in this route. Continue EL-ML1B repair with the next rationale-rich candidate prefix, **FT1-A**, while retaining R04 as the first target if/when EL-ML1C's ClockTracker structured fetch lane is activated.
+R04 still should not be promoted wholesale to benchmark truth until each candidate decision is checked against exact historical-prefix chronology. The ClockTracker payload is a sequence of saved grimoire snapshots, not a semantic event log; final/reminder state must not be moved backward automatically.
+
+Use the recovered role map together with the retained Notes chronology to re-audit specific R04 decision boundaries. The strongest candidate remains the later-game poisoned-Undertaker display because its pre-decision event chain is already substantially reconstructed.

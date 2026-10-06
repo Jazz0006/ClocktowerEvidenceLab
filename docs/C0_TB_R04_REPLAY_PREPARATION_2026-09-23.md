@@ -19,7 +19,7 @@ Primary working reconstruction:
 
 - `docs/C0_TB_RECONSTRUCTION_BATCH_01_2026-09-23.md`
 
-Replay preparation status: **REPLAY_PREP_PARTIAL / CIRCULAR_ORDER VERIFIED / RAW ROLE MAP STILL BLOCKED**.
+Replay preparation status: **REPLAY_PREP_PARTIAL / STRUCTURED ROLE MAP + BLUFFS RECOVERED / DECISION-PREFIX CHRONOLOGY STILL REQUIRES PER-BOUNDARY AUDIT**.
 
 This replay preparation is **not yet runnable corpus truth**. It separates observed source content from reconstruction and inference so missing fields can be filled later without rewriting the event history.
 
@@ -29,7 +29,7 @@ A follow-up access pass attempted:
 - the public ClockTracker game API route;
 - public image search for the grimoire.
 
-The 2026-09-23 research tools did not expose the mirror/grimoire/API payload. A new direct public path became available on 2026-10-06 and is audited in `docs/EL_ML1B_3_R04_DIRECT_SOURCE_REPAIR_2026-10-06.md`. That pass closes the circular-order blocker from the public render + ClockTracker source code, while raw role/bluff fields remain inaccessible through the current retrieval surface.
+The 2026-09-23 research tools did not expose the mirror/grimoire/API payload. On 2026-10-06 the bounded EL-ML1C CT-1 route fetched the public structured payload through GitHub Actions. Runs `37447792091` and `37448212336` recovered and normalized 14 grimoire snapshots, the complete role/related-role data, reminders and Demon bluffs. One intermediate snapshot (`79349`) has ambiguous duplicate persisted order and is explicitly flagged rather than repaired.
 
 ## 2. Source-level setup facts
 
@@ -55,10 +55,10 @@ The 2026-09-23 research tools did not expose the mirror/grimoire/API payload. A 
 | --- | --- | --- | --- | --- |
 | R04-SC-001 | RED_HERRING | Sarah for Rhonda | OBSERVED | usable |
 | R04-SC-002 | DRUNK_IDENTITY | Hylinn | OBSERVED | usable |
-| R04-SC-003 | DEMON_BLUFFS | Chef / Investigator / Saint | RECONSTRUCTED from Paul's Night-1 learn + later Demon actions | needs direct grimoire confirmation |
-| R04-SC-004 | DRUNK_SHOWN_ROLE | UNKNOWN | UNKNOWN | blocker for Hylinn information replay |
+| R04-SC-003 | DEMON_BLUFFS | Chef / Investigator / Saint | OBSERVED structured game metadata | usable |
+| R04-SC-004 | DRUNK_SHOWN_ROLE | Empath | OBSERVED structured `related_role_id` for Hylinn's Drunk token | usable |
 
-Do not infer `DRUNK_SHOWN_ROLE` from the numeric value 0.
+The shown role is now source-backed by structured related-role metadata, not inferred from the numeric value 0.
 
 ## 3. Participant identity / seat-order status
 
@@ -104,24 +104,24 @@ This table records only what the Notes support directly or strongly reconstruct 
 
 | Player | Working role/state | Derivation | Notes |
 | --- | --- | --- | --- |
-| Paul | Imp | RECONSTRUCTED | learns three apparent bluffs; performs Demon kills/self-kill |
-| Deonna | Poisoner; later Imp | RECONSTRUCTED | repeated poison actions; becomes Imp Night 6 |
-| Sarah | Monk | OBSERVED | explicit setup text |
-| Hylinn | Drunk | OBSERVED | explicit Notes text |
-| Rhonda | Fortune Teller | RECONSTRUCTED | repeated two-player checks with YES/NO results |
-| Victor | Ravenkeeper | RECONSTRUCTED | explicit “ravenkeeps” action |
-| Wesley | Undertaker | RECONSTRUCTED | explicit “undertakes” actions |
-| Nico | Slayer | RECONSTRUCTED | explicit Slayer action |
-| Andrew | likely Virgin | RECONSTRUCTED | Brian dies to Virgin ability after nominating Andrew |
-| Brian | information role that receives a two-player Saint clue | UNKNOWN exact role | do not label Librarian from rules alone |
-| Josh | information role that receives a two-player Chef clue | UNKNOWN exact role | do not label Washerwoman from rules alone |
-| Chris | likely Spy | INFERRED | Night-1 note annotates Spy in Josh clue; exact source-token association needs direct grimoire |
-| Hollie | Minion; becomes Imp Night 4 | RECONSTRUCTED / exact setup role UNKNOWN | do not infer Scarlet Woman solely from later Demon transfer |
-| Maddox | role UNKNOWN | UNKNOWN | Undertaker later reports Soldier; Evidence Lab does not turn that output into actual role without source verification |
+| Hollie | Scarlet Woman; later Imp | OBSERVED structured snapshot + later Notes transition | initial snapshot `79346` = Scarlet Woman |
+| Reyzant | Undertaker | OBSERVED structured snapshot | Notes alias to Wesley remains INFERRED |
+| Maddox | Soldier | OBSERVED structured snapshot | closes earlier role UNKNOWN |
+| Victor | Ravenkeeper | OBSERVED structured snapshot | consistent with Notes action |
+| Rhonda | Fortune Teller | OBSERVED structured snapshot | consistent with repeated checks |
+| caspian3787 | Imp | OBSERVED structured snapshot | Notes alias to Paul remains INFERRED |
+| Nico | Slayer | OBSERVED structured snapshot | consistent with Notes action |
+| Hylinn | Drunk shown Empath | OBSERVED structured role + related role | `role_id=drunk`, `related_role_id=empath` |
+| Deonna | Poisoner; later Imp | OBSERVED initial structured snapshot + later Notes transition | initial snapshot = Poisoner |
+| Sarah | Monk | OBSERVED structured snapshot + Notes | Red Herring reminder also present |
+| Brian | Librarian | OBSERVED structured snapshot | closes earlier UNKNOWN exact role |
+| Chris | Spy | OBSERVED structured snapshot | closes earlier INFERRED role |
+| Josh | Washerwoman | OBSERVED structured snapshot | closes earlier UNKNOWN exact role |
+| Andrew | Virgin | OBSERVED structured snapshot | consistent with later nomination death |
 
-This is deliberately more conservative than a rules-engine reconstruction.
+The initial role map is now source-backed rather than rules-engine reconstructed. Later role transitions still remain separate historical events.
 
-CampBoardGameHost may later validate compatible actual-role assignments using its own legality owners.
+CampBoardGameHost continues to own legality and rule validation; EvidenceLab only preserves the structured source state and chronology.
 
 ## 5. Ordered semantic replay prefix
 
@@ -133,8 +133,8 @@ The following is the minimal mechanically relevant history. Nominations/vote tot
 | ---: | --- |
 | S01 | Red Herring commitment: Sarah for Rhonda |
 | S02 | Drunk identity commitment: Hylinn |
-| S03 | Demon-bluff bundle observed/reconstructed as Chef / Investigator / Saint |
-| S04 | Hylinn shown role remains UNKNOWN |
+| S03 | Demon-bluff bundle directly observed in structured metadata: Chef / Investigator / Saint |
+| S04 | Hylinn actual Drunk / shown Empath from structured `role_id` + `related_role_id` |
 
 ### Night 1
 
@@ -243,7 +243,8 @@ Current replay readiness:
 
 - observed choice: READY;
 - player count/script: READY;
-- exact seat order / full role map: BLOCKED;
+- exact seat order / full role map: READY from structured snapshots;
+- exact setup-commitment chronology before Red Herring selection: still requires bounded source audit;
 - legal alternative enumeration: intentionally delegated to CampBoardGameHost.
 
 ### R04-D02 — Demon bluff bundle
@@ -260,8 +261,9 @@ Observed/reconstructed choice:
 
 Current replay readiness:
 
-- bundle: RECONSTRUCTED, direct grimoire confirmation still desired;
-- full setup: PARTIAL;
+- bundle: READY from structured game metadata;
+- full role setup: READY from structured snapshot;
+- exact commitment boundary before Demon bluffs: still requires bounded source audit;
 - legal candidate generation belongs downstream.
 
 ### R04-D03 — poisoned Brian Night-1 information
@@ -280,10 +282,11 @@ Observed output:
 Current replay readiness:
 
 - poison target and delivered output: READY;
-- Brian exact actual/shown ability: BLOCKED;
-- seat order/full role map: BLOCKED.
+- Brian actual role = Librarian: READY from structured snapshot;
+- seat order/full role map: READY;
+- grouped initial setup + exact preceding Night-1 event prefix: MATERIALIZED as DP-R07 / `docs/EL_ML1B_R04_D03_CANONICAL_SEED_V1.json`.
 
-This is a high-value first-night impaired-information case once those setup fields are recovered.
+Internal ordering among setup-time commitments is deliberately not fabricated; they are represented by one CANONICAL_ONLY initial-state commitment.
 
 ### R04-D04 — Drunk Hylinn Night-1 information
 
@@ -300,9 +303,10 @@ Observed output:
 Current replay readiness:
 
 - Drunk identity and output: READY;
-- Hylinn shown ability: BLOCKED.
+- Hylinn shown ability = Empath: READY from structured related-role metadata;
+- grouped initial setup + exact preceding Night-1 event prefix: MATERIALIZED as DP-R08 / `docs/EL_ML1B_R04_D04_CANONICAL_SEED_V1.json`.
 
-Do not generate legal numeric alternatives until the shown ability is verified.
+Do not generate legal numeric alternatives in EvidenceLab; candidate legality remains Host-owned.
 
 ### R04-D05 — poisoned Wesley Night-4 Undertaker information
 
@@ -322,24 +326,30 @@ Observed output:
 
 Current replay readiness:
 
-- historical prefix: largely READY;
-- Wesley Undertaker identity: RECONSTRUCTED;
-- exact seat/role setup: PARTIAL;
-- current CampBoardGameHost structured shadow: NOT CAPABLE — First-Night-only.
+- historical event prefix through Night-4 order 026: largely READY from Notes;
+- structured role map contains Reyzant = Undertaker; Notes alias `Wesley ↔ Reyzant` remains INFERRED;
+- exact seat/role setup: READY at structured-source level;
+- exact full decision-time prefix, including any omitted socially relevant chronology: still requires bounded audit;
+- current CampBoardGameHost structured shadow: historical replay capability must be re-audited downstream.
 
 This is an excellent later-phase replay case for future SDE historical shadow work.
 
 ## 7. Replay blockers
 
-The smallest remaining R04 blockers are:
+The original five source-data blockers are all closed:
 
-1. ~~**verified circular seat order**~~ — **CLOSED 2026-10-06** from public grimoire render + ClockTracker `token.order` source semantics;
-2. **full actual/shown role map from the raw grimoire payload**;
-3. **Hylinn shown role**;
-4. **Brian actual/shown information role**;
-5. direct confirmation of the three Demon bluffs from raw game metadata rather than only Notes semantics.
+1. **circular seat order** — CLOSED;
+2. **full actual/shown role map** — CLOSED;
+3. **Hylinn shown role** — CLOSED as Empath;
+4. **Brian exact role** — CLOSED as Librarian;
+5. **Demon bluff triplet** — CLOSED as Chef / Investigator / Saint.
 
-These are much smaller than reconstructing the game again.
+Remaining blockers are now decision-specific rather than source-schema gaps:
+
+- exact setup commitment order for setup-time decisions;
+- exact first-night prefix before D03/D04;
+- Notes alias resolution where a decision uses `Paul` / `Wesley` rather than the structured player names;
+- any omitted public/social chronology required by a later-game rationale.
 
 ## 8. Downstream ownership
 
@@ -364,12 +374,8 @@ No downstream rule conclusion should be copied back into Evidence Lab as source 
 
 ## 9. Immediate next action
 
-Do not reconstruct another entire game yet.
+Do not repeat raw-grimoire acquisition for R04; that layer is now complete.
 
-First try to close R04 blockers through a direct ClockTracker grimoire view, screenshot, mirror source, or other primary structured representation.
+Re-audit R04 decision boundaries using the structured role map plus Notes chronology. Promote only a decision whose exact historical prefix can be represented without importing final-snapshot state backward.
 
-Those fields remain inaccessible in the current research environment.
-
-Preserve this package as `REPLAY_PREP_PARTIAL / BLOCKED_ON_DIRECT_GRIMOIRE`. Do not guess missing setup and do not spend another search-index pass on the same blockers.
-
-R02 may be prepared next, but a more valuable parallel track is targeted acquisition of explicit Storyteller rationale for the non-strategic SDE feature families that remain under-calibrated.
+The strongest next R04 candidate is D05 (poisoned Undertaker display) because its multi-night event chain is already substantially reconstructed. Setup-time D01/D02 and first-night D03/D04 remain more sensitive to unresolved setup ordering.

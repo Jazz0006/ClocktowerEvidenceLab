@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **EL-ML1A COMPLETE / EL-ML1B-1 + 1B COMPLETE / ALL 6 READY HISTORICAL DECISIONS CANONICAL_SEED_MATERIALIZED / EL-ML1B-2 COMPLETE — 0 OF 3 G10 LONGITUDINAL PROMOTED / EL-ML1B-3 R04 DIRECT-SOURCE REPAIR COMPLETE — 1 OF 5 BLOCKERS CLOSED / EL-ML1B-4 FT1-A + EL-ML1B-5 WW2 + EL-ML1B-6 UT1-A PREFIX AUDITS COMPLETE — ALL NOT PROMOTED / EL-ML1B-7 R06 POISONED-RAVENKEEPER WHOLE-GAME AUDIT COMPLETE — NOT PROMOTED / >=18 PARTIAL CANDIDATES / NEXT EL-ML1B-8 R02 DRUNK-INVESTIGATOR WHOLE-GAME REPAIR / EL-ML1C SOURCE ACQUISITION AUDIT COMPLETE / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / EL-ML1B READY INVENTORY EXPANDED TO 8 CANONICAL SEEDS ACROSS 4 GAME GROUPS / DP-R07 R04 POISONED-LIBRARIAN + DP-R08 R04 DRUNK-EMPATH MATERIALIZED / EL-ML1B-2 G10 LONGITUDINAL COMPLETE — 0 OF 3 PROMOTED / EL-ML1B-3 R04 SOURCE-DATA REPAIR COMPLETE — 5 OF 5 ORIGINAL BLOCKERS CLOSED / EL-ML1B-4 FT1-A + EL-ML1B-5 WW2 + EL-ML1B-6 UT1-A NOT PROMOTED / EL-ML1B-7 R06 RAVENKEEPER NOT PROMOTED / EL-ML1B-8 R02 STRUCTURED SETUP RECOVERED BUT SETUP-CHRONOLOGY BLOCKED / EL-ML1C CT-1 FOUNDATION LIVE-VALIDATED ON R02 + R04 / NEXT EL-ML1B-10 R04-D05 LATER-GAME PREFIX AUDIT / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -29,14 +29,18 @@
 19. `docs/EL_ML1B_5_WW2_PREFIX_AUDIT_2026-10-06.md`
 20. `docs/EL_ML1B_6_UT1A_PREFIX_AUDIT_2026-10-06.md`
 21. `docs/EL_ML1B_7_R06_RAVENKEEPER_PREFIX_AUDIT_2026-10-06.md`
-22. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-23. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
-24. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
-25. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-26. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-27. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-28. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-29. this file
+22. `docs/EL_ML1B_8_R02_DRUNK_INVESTIGATOR_REPAIR_2026-10-06.md`
+23. `docs/EL_ML1C_CT1_CLOCKTRACKER_STRUCTURED_SOURCE_PILOT_2026-10-06.md`
+24. `docs/EL_ML1B_R04_D03_CANONICAL_SEED_V1.json`
+25. `docs/EL_ML1B_R04_D04_CANONICAL_SEED_V1.json`
+26. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+27. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
+28. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+29. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+30. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+31. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+32. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+33. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -85,24 +89,24 @@ Only the first four may be source-backed EvidenceLab relations.
 
 The current EvidenceLab milestone is **EL-ML1B — benchmark manifest + whole-game decision-prefix repair**.
 
-EL-ML1A established a conservative current inventory of 6 READY historical decision points across only 3 game groups and roughly 2 Storyteller independence groups, plus at least 18 high-value PARTIAL candidates. The main bottleneck is therefore independent complete historical decision states, especially later-game/history-sensitive prefixes, not additional generic policy dimensions.
+EL-ML1A originally established 6 READY historical decision points across 3 game groups and roughly 2 Storyteller independence groups. EL-ML1B repair has now expanded the live manifest to **8 READY points across 4 game groups** by adding two R04 Night-1 decisions after CT-1 structured recovery. The remaining bottleneck is still independent complete historical decision states, especially later-game/history-sensitive prefixes, not additional generic policy dimensions.
 
 Immediate route:
 
 ```text
-EL-ML1B-1B DP-R01..R06 canonical seeds        COMPLETE
--> EL-ML1B-2 G10 longitudinal audit             COMPLETE / 0 OF 3 PROMOTED
--> EL-ML1B-3 R04 direct-source repair           COMPLETE / 1 OF 5 BLOCKERS CLOSED
--> EL-ML1B-4 FT1-A prefix audit                 COMPLETE / NOT PROMOTED
--> EL-ML1B-5 WW2 prefix audit                   COMPLETE / NOT PROMOTED
--> EL-ML1B-6 UT1-A prefix audit                 COMPLETE / NOT PROMOTED
+EL-ML1B-1B DP-R01..R06 canonical seeds         COMPLETE
+-> EL-ML1B-2 G10 longitudinal audit              COMPLETE / 0 OF 3 PROMOTED
+-> EL-ML1B-3 R04 source-data repair              COMPLETE / 5 OF 5 ORIGINAL BLOCKERS CLOSED
+-> EL-ML1B-4 FT1-A / 5 WW2 / 6 UT1-A            COMPLETE / NOT PROMOTED
 -> EL-ML1B-7 R06 poisoned-Ravenkeeper audit      COMPLETE / NOT PROMOTED
--> EL-ML1B-8 R02 Drunk-Investigator repair       NEXT
--> repair R01/R03 and other Investigator candidates
--> acquire new complete TB games only if READY still < 20
+-> EL-ML1B-8 R02 structured repair               COMPLETE / SETUP-CHRONOLOGY BLOCKED
+-> EL-ML1B-9 R04 D03 + D04 canonical seeds       COMPLETE / DP-R07 + DP-R08
+-> EL-ML1B-10 R04-D05 later-game prefix audit    NEXT
+-> repair R01/R03 and remaining whole-game candidates
+-> bounded CT-1 25-game screening only if repair yield drops
 ```
 
-`docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json` is the current machine-readable manifest. All six READY rows DP-R01 through DP-R06 now have real canonical decision/prefix refs backed by checked-in `HistoricalDecisionSeedV1` artifacts.
+`docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json` is the current machine-readable manifest. All **eight** READY rows DP-R01 through DP-R08 have real canonical decision/prefix refs backed by checked-in `HistoricalDecisionSeedV1` artifacts.
 
 Pilot target: 20–30 READY historical decision points, at least 8 games, at least 4 Storyteller independence groups, and at least 40% later-game/history-sensitive decisions.
 
@@ -136,14 +140,13 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 
 ### EL-ML1B priority
 
-1. **R02 Drunk-Investigator whole-game repair next:** use ClockTracker `de5f126b-89f5-4c78-a898-f5724a93430e`; recover the missing complete seating/actual-role setup and exact pre-Investigator Night-1 boundary before considering promotion.
-2. **R06 poisoned-Ravenkeeper remains PARTIAL:** the Night-4 impairment/death/choice/output chain is strong, but Night 1–3 and complete setup are missing, so it is not a full-state later-game seed.
-3. **FT1-A, WW2 and UT1-A remain verified comparative/rationale evidence but are not full-state seeds:** all preserve real historical decisions, while none identifies a complete canonical game/setup/event prefix. Do not invent DP-R07+ from these anecdotes.
-3. **R04 bounded repair is closed for now:** the 14-player circular order is source-backed from ClockTracker `token.order`; full role map, Hylinn shown role, Brian exact role and direct Demon-bluff IDs remain blocked on raw structured payload. Do not infer them from TB rules or repeat rendered-page search.
-4. **G10 longitudinal audit is closed for now:** 17:29 lacks a complete preceding Night-1 event/action sequence; 18:05 additionally lacks exact living-neighbour and Day-1 death/execution state; 18:50 lacks canonical public-claim/execution/death chronology. Keep all three PARTIAL rather than inventing DP-R07+.
-5. **G10 setup seed campaign is closed:** DP-R05 + DP-R06 share one reconstruction; the Librarian prefix contains shown layout + Drunk assignment and excludes its own 16:52 result plus the source-backed later 17:17 Demon bluffs.
-7. **Diversity repair after R02:** R01/R03 plus remaining Investigator historical cases.
-7. **New complete games only if needed:** if existing repair still leaves READY below 20 or diversity/later-game coverage weak, trigger the bounded EL-ML1C `CT-1 + YT-1 + DG-1` pilot first; prefer ClockTracker records with chronological Notes plus matching Storyteller-POV video, then choose the highest-yield permitted source lane.
+1. **R04-D05 later-game prefix audit next:** use the now-complete structured setup plus Notes chronology through Night 4 and test the poisoned Undertaker -> Scarlet Woman display against the no-hindsight gate.
+2. **R02 remains PARTIAL / SETUP_CHRONOLOGY_BLOCKED:** raw role/bluff recovery is complete; do not promote from final grimoire state alone.
+3. **R06 poisoned-Ravenkeeper remains PARTIAL:** the Night-4 local chain is strong, but Night 1–3 and complete setup are missing.
+4. **FT1-A, WW2 and UT1-A remain verified comparative/rationale evidence, not full-state seeds.**
+5. **G10 longitudinal audit remains closed for now:** later decisions still lack complete chronological state.
+6. **After R04-D05:** repair R01/R03 and remaining Investigator/Ravenkeeper whole-game cases.
+7. **New complete games only if needed:** if existing repair still cannot approach 20 READY points or diversity/later-game targets, start the bounded 25-game CT-1 screen, then YT-1 / DG-1 as needed.
 
 The existing Priority-1/Priority-2 EL-LRE verified set remains retrieval/evaluation evidence and may still be consumed by Host, but it no longer defines EvidenceLab's default continuation order.
 

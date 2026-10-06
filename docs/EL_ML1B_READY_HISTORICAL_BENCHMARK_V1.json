@@ -208,6 +208,67 @@
       "host_enrichment_requirements": [
         "LEGAL_CANDIDATE_DOMAIN"
       ]
+    },
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r07",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "POISONED_LIBRARIAN_INFORMATION",
+      "game_group": "game-group:r04-clocktracker",
+      "source_group": "source-group:r04-clocktracker",
+      "storyteller_independence_key": "st-scott-sancho",
+      "historical_evidence_refs": [
+        "docs/C0_TB_R04_REPLAY_PREPARATION_2026-09-23.md::R04-D03 poisoned Brian Night-1 information",
+        "docs/EL_ML1B_3_R04_DIRECT_SOURCE_REPAIR_2026-10-06.md::structured role map"
+      ],
+      "observed_choice": {
+        "shown_character": "SAINT",
+        "candidate_seat_ids": [
+          "seat:r04:1",
+          "seat:r04:9"
+        ],
+        "impaired_by": "POISONER"
+      },
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:r04:n1-poisoned-librarian-info",
+      "prefix_materialization_ref": "prefix:r04:before-n1-poisoned-librarian:v1",
+      "rationale_evidence_refs": [],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK"
+      ],
+      "host_enrichment_requirements": [
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
+    },
+    {
+      "benchmark_id": "benchmark:el-ml1b:dp-r08",
+      "evidence_kind": "HISTORICAL_DECISION",
+      "decision_family": "DRUNK_EMPATH_INFORMATION",
+      "game_group": "game-group:r04-clocktracker",
+      "source_group": "source-group:r04-clocktracker",
+      "storyteller_independence_key": "st-scott-sancho",
+      "historical_evidence_refs": [
+        "docs/C0_TB_R04_REPLAY_PREPARATION_2026-09-23.md::R04-D04 Drunk Hylinn Night-1 information",
+        "docs/EL_ML1B_3_R04_DIRECT_SOURCE_REPAIR_2026-10-06.md::Hylinn Drunk shown Empath"
+      ],
+      "observed_choice": 0,
+      "verification": "VERIFIED",
+      "readiness": "READY",
+      "materialization_state": "CANONICAL_SEED_MATERIALIZED",
+      "canonical_decision_id": "decision:r04:n1-drunk-empath-info",
+      "prefix_materialization_ref": "prefix:r04:before-n1-drunk-empath:v1",
+      "rationale_evidence_refs": [],
+      "explicit_preference_evidence_refs": [],
+      "explicit_rejection_evidence_refs": [],
+      "allowed_evaluation_modes": [
+        "OBSERVED_CHOICE_RANK"
+      ],
+      "host_enrichment_requirements": [
+        "LEGAL_CANDIDATE_DOMAIN"
+      ]
     }
   ]
 }
