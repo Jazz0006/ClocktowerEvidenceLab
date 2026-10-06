@@ -1,0 +1,36 @@
+name: CT-1 one-shot R04 notes audit
+
+on:
+  push:
+    branches:
+      - el-ml1b-10-r04-d05-prefix-audit
+    paths:
+      - .github/workflows/ct1-one-shot-r04-notes.yml
+
+permissions:
+  contents: read
+
+jobs:
+  notes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install acquisition tooling
+        run: python -m pip install -e .
+      - name: Fetch explicit R04 notes
+        env:
+          GAME_ID: ffb40a93-3d7b-42c4-bba8-bc9c363dcd30
+        run: |
+          clocktower-clocktracker-probe "$GAME_ID" > /tmp/r04.json
+          python - <<'PY'
+          import json
+          data = json.load(open("/tmp/r04.json", encoding="utf-8"))
+          print("===R04_NOTES_BEGIN===")
+          print(data["notes"])
+          print("===R04_NOTES_END===")
+          PY
