@@ -68,8 +68,9 @@ class _GamePayload(_ExternalModel):
 
 
 class ClockTrackerSeatSnapshot(_StableModel):
-    """One persisted ClockTracker grimoire token in circular order."""
+    """One persisted ClockTracker grimoire token in source-stable order."""
 
+    source_index: int
     order: int
     player_name: str | None
     player_id: str | None
@@ -87,6 +88,7 @@ class ClockTrackerGrimoireSnapshot(_StableModel):
     """One ClockTracker grimoire page without cross-page guessing."""
 
     grimoire_id: int | None
+    orders_unique: bool
     seats: tuple[ClockTrackerSeatSnapshot, ...]
 
 
@@ -170,13 +172,14 @@ def parse_clocktracker_game_json(json_text: str) -> ClockTrackerGameSnapshot:
 
 
 def _normalize_grimoire(payload: _GrimoirePayload) -> ClockTrackerGrimoireSnapshot:
-    ordered_tokens = sorted(payload.tokens, key=lambda token: token.order)
-    orders = [token.order for token in ordered_tokens]
-    if len(set(orders)) != len(orders):
-        raise ValueError("ClockTracker grimoire contains duplicate token.order values")
+    indexed_tokens = tuple(enumerate(payload.tokens))
+    ordered_tokens = sorted(indexed_tokens, key=lambda item: (item[1].order, item[0]))
+    orders = [token.order for _, token in ordered_tokens]
+    orders_unique = len(set(orders)) == len(orders)
 
     seats = tuple(
         ClockTrackerSeatSnapshot(
+            source_index=source_index,
             order=token.order,
             player_name=_clean_text(token.player_name),
             player_id=token.player_id,
@@ -191,9 +194,13 @@ def _normalize_grimoire(payload: _GrimoirePayload) -> ClockTrackerGrimoireSnapsh
                 reminder.reminder for reminder in token.reminders if reminder.reminder.strip()
             ),
         )
-        for token in ordered_tokens
+        for source_index, token in ordered_tokens
     )
-    return ClockTrackerGrimoireSnapshot(grimoire_id=payload.id, seats=seats)
+    return ClockTrackerGrimoireSnapshot(
+        grimoire_id=payload.id,
+        orders_unique=orders_unique,
+        seats=seats,
+    )
 
 
 def _clean_text(value: str | None) -> str | None:

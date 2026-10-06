@@ -95,9 +95,11 @@ def test_parse_clocktracker_game_json_preserves_structured_source_fields() -> No
     grimoire = snapshot.primary_grimoire
     assert grimoire is not None
     assert grimoire.grimoire_id == 91
+    assert grimoire.orders_unique is True
     assert [seat.order for seat in grimoire.seats] == [1, 2]
 
     first = grimoire.seats[0]
+    assert first.source_index == 1
     assert first.player_name == "First"
     assert first.role_id == "drunk"
     assert first.role_name == "Drunk"
@@ -134,16 +136,18 @@ def test_multiple_grimoire_pages_are_not_flattened_into_one_state() -> None:
     assert snapshot.complete_primary_role_map is False
 
 
-def test_duplicate_token_order_is_rejected() -> None:
+def test_duplicate_token_order_is_preserved_and_marked_ambiguous() -> None:
     payload = json.loads(_payload())
     payload["grimoire"][0]["tokens"][1]["order"] = 2
 
-    try:
-        parse_clocktracker_game_json(json.dumps(payload))
-    except ValueError as exc:
-        assert "duplicate token.order" in str(exc)
-    else:
-        raise AssertionError("duplicate token.order should be rejected")
+    snapshot = parse_clocktracker_game_json(json.dumps(payload))
+
+    grimoire = snapshot.primary_grimoire
+    assert grimoire is not None
+    assert grimoire.orders_unique is False
+    assert [seat.order for seat in grimoire.seats] == [2, 2]
+    assert [seat.source_index for seat in grimoire.seats] == [0, 1]
+    assert [seat.player_name for seat in grimoire.seats] == ["Second", "First"]
 
 
 def test_clocktracker_game_api_url_accepts_only_uuid_game_ids() -> None:

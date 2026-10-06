@@ -22,61 +22,40 @@ jobs:
           cache: pip
       - name: Install acquisition tooling
         run: python -m pip install -e .
-      - name: Fetch and inspect explicit R04 raw payload
+      - name: Fetch and normalize explicit R04 payload
         env:
           GAME_ID: ffb40a93-3d7b-42c4-bba8-bc9c363dcd30
         run: |
+          clocktower-clocktracker-probe "$GAME_ID" > /tmp/clocktracker-r04.json
           python - <<'PY'
           import json
-          import os
-          from urllib.request import Request, urlopen
 
-          game_id = os.environ["GAME_ID"]
-          request = Request(
-              f"https://clocktracker.app/api/games/{game_id}",
-              headers={"User-Agent": "ClocktowerEvidenceLab/0.1 ct1-one-shot"},
-          )
-          with urlopen(request, timeout=30) as response:
-              data = json.loads(response.read().decode("utf-8"))
-
+          data = json.load(open("/tmp/clocktracker-r04.json", encoding="utf-8"))
           summary = {
-              "game_id": data.get("id"),
-              "date": data.get("date"),
-              "script": data.get("script"),
-              "player_count": data.get("player_count"),
-              "traveler_count": data.get("traveler_count"),
-              "storyteller": data.get("storyteller"),
-              "co_storytellers": data.get("co_storytellers"),
-              "grimoires": [],
-              "demon_bluffs": [
+              "game_id": data["game_id"],
+              "player_count": data["player_count"],
+              "storyteller": data["storyteller"],
+              "demon_bluffs": data["demon_bluffs"],
+              "grimoire_count": len(data["grimoires"]),
+              "grimoires": [
                   {
-                      "role_id": bluff.get("role_id"),
-                      "name": bluff.get("name"),
-                      "nested_role": bluff.get("role"),
-                  }
-                  for bluff in data.get("demon_bluffs", [])
-              ],
-          }
-          for grim in data.get("grimoire", []):
-              summary["grimoires"].append(
-                  {
-                      "grimoire_id": grim.get("id"),
-                      "tokens": [
+                      "grimoire_id": grim["grimoire_id"],
+                      "orders_unique": grim["orders_unique"],
+                      "seat_count": len(grim["seats"]),
+                      "orders": [seat["order"] for seat in grim["seats"]],
+                      "roles": [
                           {
-                              "order": token.get("order"),
-                              "player_name": token.get("player_name"),
-                              "player_id": token.get("player_id"),
-                              "role_id": token.get("role_id"),
-                              "role": token.get("role"),
-                              "related_role_id": token.get("related_role_id"),
-                              "related_role": token.get("related_role"),
-                              "alignment": token.get("alignment"),
-                              "is_dead": token.get("is_dead"),
-                              "reminders": token.get("reminders"),
+                              "order": seat["order"],
+                              "source_index": seat["source_index"],
+                              "player_name": seat["player_name"],
+                              "role_id": seat["role_id"],
+                              "related_role_id": seat["related_role_id"],
                           }
-                          for token in grim.get("tokens", [])
+                          for seat in grim["seats"]
                       ],
                   }
-              )
+                  for grim in data["grimoires"]
+              ],
+          }
           print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
           PY
