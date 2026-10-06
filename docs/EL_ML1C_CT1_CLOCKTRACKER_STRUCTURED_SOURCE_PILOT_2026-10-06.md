@@ -1,6 +1,6 @@
 # EL-ML1C CT-1 — ClockTracker Structured-Source Pilot Foundation — 2026-10-06
 
-> Status: **FOUNDATION IMPLEMENTED / LOCAL QUALITY GREEN / LIVE FETCH BLOCKED BY CURRENT RUNTIME NETWORK**
+> Status: **FOUNDATION IMPLEMENTED / LOCAL QUALITY GREEN / LIVE R02 PROBE SUCCESS VIA GITHUB ACTIONS / R04 NEXT**
 >
 > Scope: one explicitly supplied public ClockTracker game ID at a time. No UUID enumeration and no broad crawler.
 
@@ -94,24 +94,32 @@ Full local quality after implementation:
 
 ## 6. Live pilot status
 
-Attempted live acquisition for R02:
+The local Mini MCP / conversation execution environments cannot directly reach the public ClockTracker API, but the repository already uses GitHub Actions as a network-capable acquisition runtime for C2. A bounded one-shot branch workflow therefore ran the same parser against explicit R02 ID `de5f126b-89f5-4c78-a898-f5724a93430e`.
 
-`de5f126b-89f5-4c78-a898-f5724a93430e`
+GitHub Actions run `37393104471` succeeded and recovered:
 
-The current execution environment cannot complete the public HTTP request:
+- one grimoire page with 8 ordered tokens;
+- order 0 Blackied = Drunk, related/shown Investigator;
+- order 1 Dave = Imp;
+- order 2 VibesMcGee = Ravenkeeper;
+- order 3 Jade = Undertaker + `Red Herring` reminder;
+- order 4 John = Spy;
+- order 5 Ludi = Fortune Teller + `Minion` reminder;
+- order 6 Amy = Empath + `Wrong` reminder;
+- order 7 Jake = Slayer + `No Ability` reminder;
+- Demon bluffs: Washerwoman / Recluse / Mayor;
+- current raw record Storyteller field = `@Larrikin`.
 
-- the web retrieval surface reports the ClockTracker API URL as inaccessible;
-- the local execution environment reports external DNS/network resolution failure.
-
-This is an environment-access limitation. It is not evidence that the public endpoint or fields are absent.
-
-No fake fixture is promoted as R02 evidence.
+This closes R02's raw seat/role/bluff retrieval gap. It does **not** by itself prove the semantic setup commitment order before the Night-1 Investigator misinformation, so R02 remains unpromoted under the no-hindsight gate.
 
 ## 7. First live acceptance targets
 
-When a network-capable acquisition runtime is available, the first explicit-ID probes should be:
+The first explicit-ID live target is complete:
 
-1. R02 — `de5f126b-89f5-4c78-a898-f5724a93430e`;
+1. R02 — `de5f126b-89f5-4c78-a898-f5724a93430e` — **LIVE PROBE SUCCESS**.
+
+Next:
+
 2. R04 — `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30`.
 
 For each, measure:
@@ -127,8 +135,8 @@ Only after those two explicit known cases work should CT-1 expand to the bounded
 
 ## 8. Current route consequence
 
-R02 remains **PARTIAL / RAW_STRUCTURED_SOURCE_BLOCKED** today.
+R02 is now **PARTIAL / SETUP_CHRONOLOGY_BLOCKED**, not raw-payload blocked.
 
-The active engineering blocker is no longer lack of a parser. It is live public-payload access from the acquisition runtime.
+The live acquisition path is validated: GitHub Actions can provide the public structured payload even when the local execution runtime has no external network route.
 
-Do not repeat manual rendered-page role reconstruction for R02/R04 in the meantime. Their retained evidence and the new parser are ready to consume the structured payload without changing the evidence contract.
+Use the same bounded route for R04 next. Do not return to manual rendered-page role reconstruction unless the structured source contradicts or omits a required field.

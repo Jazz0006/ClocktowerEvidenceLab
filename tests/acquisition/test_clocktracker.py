@@ -75,7 +75,7 @@ def _payload(*, second_role_id: str | None = "fortune_teller") -> str:
                     "role_id": "mayor",
                     "role": {"id": "mayor", "name": "Mayor", "type": "TOWNSFOLK"},
                 },
-                {"role_id": "saint", "role": None},
+                {"role_id": "saint", "name": "Saint", "role": None},
             ],
         }
     )
@@ -109,7 +109,7 @@ def test_parse_clocktracker_game_json_preserves_structured_source_fields() -> No
 
     assert [(bluff.role_id, bluff.role_name) for bluff in snapshot.demon_bluffs] == [
         ("mayor", "Mayor"),
-        ("saint", None),
+        ("saint", "Saint"),
     ]
 
 

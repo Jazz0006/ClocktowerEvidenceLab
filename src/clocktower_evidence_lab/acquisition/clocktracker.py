@@ -150,7 +150,7 @@ def parse_clocktracker_game_json(json_text: str) -> ClockTrackerGameSnapshot:
     demon_bluffs = tuple(
         ClockTrackerDemonBluffSnapshot(
             role_id=bluff.role_id,
-            role_name=bluff.role.name if bluff.role is not None else None,
+            role_name=(bluff.role.name if bluff.role is not None else _clean_text(bluff.name)),
         )
         for bluff in payload.demon_bluffs
     )
