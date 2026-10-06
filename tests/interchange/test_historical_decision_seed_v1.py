@@ -22,6 +22,8 @@ G01_R01_SEED_FIXTURE = Path("docs/EL_ML1B_G01_DP_R01_CANONICAL_SEED_V1.json")
 G01_R02_SEED_FIXTURE = Path("docs/EL_ML1B_G01_DP_R02_CANONICAL_SEED_V1.json")
 G05_R03_SEED_FIXTURE = Path("docs/EL_ML1B_G05_DP_R03_CANONICAL_SEED_V1.json")
 G05_R04_SEED_FIXTURE = Path("docs/EL_ML1B_G05_DP_R04_CANONICAL_SEED_V1.json")
+R04_D03_SEED_FIXTURE = Path("docs/EL_ML1B_R04_D03_CANONICAL_SEED_V1.json")
+R04_D04_SEED_FIXTURE = Path("docs/EL_ML1B_R04_D04_CANONICAL_SEED_V1.json")
 MANIFEST_FIXTURE = Path("docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json")
 
 
@@ -218,6 +220,63 @@ def test_checked_in_g05_seeds_share_reconstruction_and_preserve_intermediate_set
     )
 
 
+def test_checked_in_r04_night1_seeds_share_reconstruction_and_materialize_exact_prefixes() -> None:
+    d03 = load_historical_decision_seed_v1(R04_D03_SEED_FIXTURE.read_text(encoding="utf-8"))
+    d04 = load_historical_decision_seed_v1(R04_D04_SEED_FIXTURE.read_text(encoding="utf-8"))
+
+    assert d03.game == d04.game
+    assert d03.reconstruction_revision == d04.reconstruction_revision
+    assert d03.storytellers == d04.storytellers
+    assert d03.sources == d04.sources
+    assert d03.setup_history == d04.setup_history
+    assert d03.event_history == d04.event_history
+    assert d03.storyteller_independence_key == d04.storyteller_independence_key == "st-scott-sancho"
+    assert len(d03.game_seats) == 14
+
+    d03_setup, d03_events = materialize_historical_prefix(
+        d03.decision, d03.setup_history, d03.event_history
+    )
+    assert [item.commitment_id for item in d03_setup] == ["setup:r04:initial-state"]
+    assert [item.event_id for item in d03_events] == [
+        "event:r04:n1-poison-brian",
+        "event:r04:n1-washerwoman-info",
+    ]
+    assert d03.decision.observed_choice == {
+        "shown_character": "SAINT",
+        "candidate_seat_ids": ["seat:r04:1", "seat:r04:9"],
+        "impaired_by": "POISONER",
+    }
+
+    d04_setup, d04_events = materialize_historical_prefix(
+        d04.decision, d04.setup_history, d04.event_history
+    )
+    assert [item.commitment_id for item in d04_setup] == ["setup:r04:initial-state"]
+    assert [item.event_id for item in d04_events] == [
+        "event:r04:n1-poison-brian",
+        "event:r04:n1-washerwoman-info",
+        "event:r04:n1-librarian-info",
+    ]
+    assert d04.decision.observed_choice == 0
+
+    setup_value = d03_setup[0].value
+    assert isinstance(setup_value, dict)
+    roles = {item["seat_id"]: item for item in setup_value["seats"]}
+    assert roles["seat:r04:8"] == {
+        "seat_id": "seat:r04:8",
+        "actual_role": "DRUNK",
+        "shown_role": "EMPATH",
+    }
+    assert roles["seat:r04:11"]["actual_role"] == "LIBRARIAN"
+    assert setup_value["red_herring_seat_id"] == "seat:r04:10"
+    assert setup_value["demon_bluffs"] == ["CHEF", "INVESTIGATOR", "SAINT"]
+
+    for seed in (d03, d04):
+        encoded = dump_historical_decision_seed_v1(seed)
+        assert (
+            dump_historical_decision_seed_v1(load_historical_decision_seed_v1(encoded)) == encoded
+        )
+
+
 def test_g10_dp_r05_manifest_refs_are_backed_by_checked_in_seed() -> None:
     seed = _seed()
     manifest = load_decision_point_benchmark_manifest_v1(
@@ -243,12 +302,16 @@ def test_g10_dp_r05_manifest_refs_are_backed_by_checked_in_seed() -> None:
     g05_r03 = load_historical_decision_seed_v1(G05_R03_SEED_FIXTURE.read_text(encoding="utf-8"))
     g05_r04 = load_historical_decision_seed_v1(G05_R04_SEED_FIXTURE.read_text(encoding="utf-8"))
     g10_r06 = load_historical_decision_seed_v1(G10_R06_SEED_FIXTURE.read_text(encoding="utf-8"))
+    r04_d03 = load_historical_decision_seed_v1(R04_D03_SEED_FIXTURE.read_text(encoding="utf-8"))
+    r04_d04 = load_historical_decision_seed_v1(R04_D04_SEED_FIXTURE.read_text(encoding="utf-8"))
     for benchmark_id, checked_in_seed in (
         ("benchmark:el-ml1b:dp-r01", g01_r01),
         ("benchmark:el-ml1b:dp-r02", g01_r02),
         ("benchmark:el-ml1b:dp-r03", g05_r03),
         ("benchmark:el-ml1b:dp-r04", g05_r04),
         ("benchmark:el-ml1b:dp-r06", g10_r06),
+        ("benchmark:el-ml1b:dp-r07", r04_d03),
+        ("benchmark:el-ml1b:dp-r08", r04_d04),
     ):
         entry = by_id[benchmark_id]
         assert (

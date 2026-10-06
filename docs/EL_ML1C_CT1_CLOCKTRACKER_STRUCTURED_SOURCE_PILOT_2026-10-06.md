@@ -1,6 +1,6 @@
 # EL-ML1C CT-1 — ClockTracker Structured-Source Pilot Foundation — 2026-10-06
 
-> Status: **FOUNDATION IMPLEMENTED / LOCAL QUALITY GREEN / LIVE R02 PROBE SUCCESS VIA GITHUB ACTIONS / R04 NEXT**
+> Status: **FOUNDATION IMPLEMENTED / LOCAL QUALITY GREEN / LIVE R02 + R04 PROBES SUCCESS VIA GITHUB ACTIONS / STRUCTURED SOURCE LANE VALIDATED**
 >
 > Scope: one explicitly supplied public ClockTracker game ID at a time. No UUID enumeration and no broad crawler.
 
@@ -41,10 +41,10 @@ It provides:
 - parsing of one raw ClockTracker game JSON payload;
 - preservation of game metadata, notes, Storyteller fields and Demon bluffs;
 - separate preservation of every grimoire page;
-- token ordering by persisted `token.order`;
+- token ordering by persisted `token.order` with original source index as a stable tie-breaker;
 - preservation of player name/ID, role ID/name, related role ID/name, alignment, death state, ghost-vote state and reminders;
 - explicit completeness helper for a one-page role map;
-- rejection of duplicate token-order values;
+- explicit `orders_unique` flag for malformed/ambiguous snapshots rather than silent repair or whole-game rejection;
 - no guessing when a role or other field is absent.
 
 New probe:
@@ -83,7 +83,7 @@ Fixture tests verify:
 - role / related-role / reminder / Demon-bluff fields survive normalization;
 - missing role remains missing and fails the complete-role-map check;
 - multiple grimoire pages remain separate instead of being flattened;
-- duplicate `token.order` values are rejected;
+- duplicate `token.order` values are preserved deterministically and flagged `orders_unique=false`;
 - invalid game IDs are rejected;
 - a captured payload can be parsed through the CLI without network;
 - mismatched requested/payload game IDs are rejected.
@@ -112,15 +112,27 @@ GitHub Actions run `37393104471` succeeded and recovered:
 
 This closes R02's raw seat/role/bluff retrieval gap. It does **not** by itself prove the semantic setup commitment order before the Night-1 Investigator misinformation, so R02 remains unpromoted under the no-hindsight gate.
 
+R04 was then probed with explicit ID `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30`.
+
+- raw-inspection run `37447792091` recovered 14 historical grimoire snapshots plus Demon bluffs;
+- initial returned snapshot `79346` has a complete 14-token role map;
+- Hylinn = Drunk with related/shown Empath;
+- Brian = Librarian;
+- Josh = Washerwoman;
+- Chris = Spy;
+- Hollie = Scarlet Woman in the initial returned snapshot;
+- Demon bluffs = Chef / Investigator / Saint;
+- only snapshot `79349` has ambiguous duplicate persisted order (14 tokens, duplicate order 2, no order 0);
+- live parser-validation run `37448212336` succeeded after the parser was changed to preserve and flag that ambiguity rather than reject the entire game.
+
+This closes all five original R04 source-data blockers. R04 remains subject to per-decision historical-prefix chronology gates.
+
 ## 7. First live acceptance targets
 
-The first explicit-ID live target is complete:
+The two explicit-ID live acceptance targets are complete:
 
-1. R02 — `de5f126b-89f5-4c78-a898-f5724a93430e` — **LIVE PROBE SUCCESS**.
-
-Next:
-
-2. R04 — `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30`.
+1. R02 — `de5f126b-89f5-4c78-a898-f5724a93430e` — **LIVE PROBE SUCCESS**;
+2. R04 — `ffb40a93-3d7b-42c4-bba8-bc9c363dcd30` — **LIVE PROBE + MULTI-SNAPSHOT PARSER SUCCESS**.
 
 For each, measure:
 
@@ -131,12 +143,12 @@ For each, measure:
 - match against already-retained Notes chronology;
 - whether the historical decision prefix can be materialized without hindsight.
 
-Only after those two explicit known cases work should CT-1 expand to the bounded 25-game screening batch defined by EL-ML1C.
+Both explicit known cases now work. The parser/probe foundation is therefore ready for the bounded 25-game CT-1 screening batch when the route reaches the acquisition gate. Do not start broad screening merely because the adapter works; EL-ML1B prefix repair remains the immediate consumer.
 
 ## 8. Current route consequence
 
-R02 is now **PARTIAL / SETUP_CHRONOLOGY_BLOCKED**, not raw-payload blocked.
+R02 is now **PARTIAL / SETUP_CHRONOLOGY_BLOCKED**, not raw-payload blocked. R04's original raw-field blockers are closed; its remaining work is per-decision prefix chronology.
 
 The live acquisition path is validated: GitHub Actions can provide the public structured payload even when the local execution runtime has no external network route.
 
-Use the same bounded route for R04 next. Do not return to manual rendered-page role reconstruction unless the structured source contradicts or omits a required field.
+A reusable manual workflow, `.github/workflows/clocktracker-single-game-probe.yml`, exposes the same explicit-ID probe without leaving R02/R04-specific one-shot workflows in main.

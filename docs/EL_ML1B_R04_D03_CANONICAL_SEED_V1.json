@@ -1,0 +1,616 @@
+{
+  "schema_name": "clocktower-historical-decision-seed",
+  "schema_version": 1,
+  "game_group": "game-group:r04-clocktracker",
+  "source_group": "source-group:r04-clocktracker",
+  "storyteller_independence_key": "st-scott-sancho",
+  "game": {
+    "game_id": "evidence:c0:r04-clocktracker",
+    "script": "trouble_brewing",
+    "storyteller_assignments": [
+      {
+        "storyteller_id": "storyteller:scott-sancho",
+        "role": "STORYTELLER"
+      }
+    ],
+    "reconstruction_status": "PARTIAL",
+    "current_reconstruction_revision_id": "revision:r04:1"
+  },
+  "reconstruction_revision": {
+    "revision_id": "revision:r04:1",
+    "game_id": "evidence:c0:r04-clocktracker",
+    "parent_revision_id": null,
+    "created_at": "2026-10-06T20:40:00+11:00",
+    "change_note": "EL-ML1B R04 bounded reconstruction using ClockTracker structured setup plus Night-1 Notes chronology."
+  },
+  "storytellers": [
+    {
+      "storyteller_id": "storyteller:scott-sancho",
+      "independence_key": "st-scott-sancho",
+      "display_name": "Scott / @sancho"
+    }
+  ],
+  "game_seats": [
+    {
+      "seat_id": "seat:r04:1",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 1,
+      "seat_label": "Seat 1",
+      "display_name": "Hollie 20250910",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:2",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 2,
+      "seat_label": "Seat 2",
+      "display_name": "Reyzant",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:3",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 3,
+      "seat_label": "Seat 3",
+      "display_name": "Maddox",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:4",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 4,
+      "seat_label": "Seat 4",
+      "display_name": "Victor",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:5",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 5,
+      "seat_label": "Seat 5",
+      "display_name": "Rhonda 20250910",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:6",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 6,
+      "seat_label": "Seat 6",
+      "display_name": "caspian3787",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:7",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 7,
+      "seat_label": "Seat 7",
+      "display_name": "Nico",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:8",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 8,
+      "seat_label": "Seat 8",
+      "display_name": "Hylinn",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:9",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 9,
+      "seat_label": "Seat 9",
+      "display_name": "Deonna",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:10",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 10,
+      "seat_label": "Seat 10",
+      "display_name": "Sarah",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:11",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 11,
+      "seat_label": "Seat 11",
+      "display_name": "Brian",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:12",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 12,
+      "seat_label": "Seat 12",
+      "display_name": "Chris",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:13",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 13,
+      "seat_label": "Seat 13",
+      "display_name": "Josh 20250910",
+      "experience_metadata": null
+    },
+    {
+      "seat_id": "seat:r04:14",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "seat_order": 14,
+      "seat_label": "Seat 14",
+      "display_name": "Andrew 20250910",
+      "experience_metadata": null
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "source:r04:clocktracker",
+      "kind": "STRUCTURED_RECORD",
+      "external_locator": "https://clocktracker.app/game/ffb40a93-3d7b-42c4-bba8-bc9c363dcd30",
+      "inclusion_reason": "TARGETED_RESEARCH_CASE",
+      "platform": "ClockTracker",
+      "platform_source_id": "ffb40a93-3d7b-42c4-bba8-bc9c363dcd30",
+      "discovery_note": "Public ClockTracker R04 record. CT-1 GitHub Actions runs recovered structured snapshots and game metadata; Notes retain the semantic Night-1 chronology.",
+      "screening_status": "SCREENED",
+      "reconstructability": "PARTIAL",
+      "selection_disposition": "SELECTED",
+      "rejection_reason": null
+    }
+  ],
+  "source_game_links": [
+    {
+      "link_id": "source-game-link:r04:clocktracker",
+      "source_id": "source:r04:clocktracker",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "match_status": "VERIFIED_SAME",
+      "note": "Structured grimoire snapshots and Notes belong to the same public ClockTracker game record."
+    }
+  ],
+  "evidence_fragments": [
+    {
+      "fragment_id": "fragment:r04:structured-setup",
+      "source_id": "source:r04:clocktracker",
+      "locator_kind": "RECORD",
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "locator": "grimoire snapshot 79346 + game-level demon_bluffs",
+      "note": "CT-1 live retrieval recovered the complete 14-token role map, Hylinn Drunk->Empath related role, Sarah Red Herring reminder, and Chef/Investigator/Saint Demon bluffs."
+    },
+    {
+      "fragment_id": "fragment:r04:notes-night1",
+      "source_id": "source:r04:clocktracker",
+      "locator_kind": "SECTION",
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "locator": "Notes / Night 1",
+      "note": "ClockTracker Notes preserve Night-1 poison target and information chronology used by the R04 replay reconstruction."
+    }
+  ],
+  "evidence_assertions": [
+    {
+      "assertion_id": "assertion:r04:initial-state",
+      "subject_type": "SETUP_COMMITMENT",
+      "subject_id": "setup:r04:initial-state",
+      "assertion_type": "HISTORICAL_PREFIX_SETUP",
+      "value": {
+        "source_snapshot_id": 79346,
+        "seats": [
+          {
+            "seat_id": "seat:r04:1",
+            "actual_role": "SCARLET_WOMAN",
+            "shown_role": "SCARLET_WOMAN"
+          },
+          {
+            "seat_id": "seat:r04:2",
+            "actual_role": "UNDERTAKER",
+            "shown_role": "UNDERTAKER"
+          },
+          {
+            "seat_id": "seat:r04:3",
+            "actual_role": "SOLDIER",
+            "shown_role": "SOLDIER"
+          },
+          {
+            "seat_id": "seat:r04:4",
+            "actual_role": "RAVENKEEPER",
+            "shown_role": "RAVENKEEPER"
+          },
+          {
+            "seat_id": "seat:r04:5",
+            "actual_role": "FORTUNE_TELLER",
+            "shown_role": "FORTUNE_TELLER"
+          },
+          {
+            "seat_id": "seat:r04:6",
+            "actual_role": "IMP",
+            "shown_role": "IMP"
+          },
+          {
+            "seat_id": "seat:r04:7",
+            "actual_role": "SLAYER",
+            "shown_role": "SLAYER"
+          },
+          {
+            "seat_id": "seat:r04:8",
+            "actual_role": "DRUNK",
+            "shown_role": "EMPATH"
+          },
+          {
+            "seat_id": "seat:r04:9",
+            "actual_role": "POISONER",
+            "shown_role": "POISONER"
+          },
+          {
+            "seat_id": "seat:r04:10",
+            "actual_role": "MONK",
+            "shown_role": "MONK"
+          },
+          {
+            "seat_id": "seat:r04:11",
+            "actual_role": "LIBRARIAN",
+            "shown_role": "LIBRARIAN"
+          },
+          {
+            "seat_id": "seat:r04:12",
+            "actual_role": "SPY",
+            "shown_role": "SPY"
+          },
+          {
+            "seat_id": "seat:r04:13",
+            "actual_role": "WASHERWOMAN",
+            "shown_role": "WASHERWOMAN"
+          },
+          {
+            "seat_id": "seat:r04:14",
+            "actual_role": "VIRGIN",
+            "shown_role": "VIRGIN"
+          }
+        ],
+        "red_herring_seat_id": "seat:r04:10",
+        "demon_bluffs": [
+          "CHEF",
+          "INVESTIGATOR",
+          "SAINT"
+        ]
+      },
+      "derivation": "RECONSTRUCTED",
+      "fragment_ids": [
+        "fragment:r04:structured-setup",
+        "fragment:r04:notes-night1"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:r04:1"
+    },
+    {
+      "assertion_id": "assertion:r04:n1-poison-brian",
+      "subject_type": "SEMANTIC_EVENT",
+      "subject_id": "event:r04:n1-poison-brian",
+      "assertion_type": "PLAYER_ACTION",
+      "value": {
+        "target_seat_id": "seat:r04:11",
+        "target_role": "LIBRARIAN"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:r04:notes-night1",
+        "fragment:r04:structured-setup"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:r04:1"
+    },
+    {
+      "assertion_id": "assertion:r04:n1-washerwoman-info",
+      "subject_type": "SEMANTIC_EVENT",
+      "subject_id": "event:r04:n1-washerwoman-info",
+      "assertion_type": "INFORMATION_DELIVERED",
+      "value": {
+        "shown_character": "CHEF",
+        "candidate_seat_ids": [
+          "seat:r04:12",
+          "seat:r04:6"
+        ]
+      },
+      "derivation": "RECONSTRUCTED",
+      "fragment_ids": [
+        "fragment:r04:notes-night1",
+        "fragment:r04:structured-setup"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:r04:1"
+    },
+    {
+      "assertion_id": "assertion:r04:n1-librarian-info-result",
+      "subject_type": "SEMANTIC_EVENT",
+      "subject_id": "event:r04:n1-librarian-info",
+      "assertion_type": "INFORMATION_DELIVERED",
+      "value": {
+        "shown_character": "SAINT",
+        "candidate_seat_ids": [
+          "seat:r04:1",
+          "seat:r04:9"
+        ],
+        "impaired_by": "POISONER"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:r04:notes-night1",
+        "fragment:r04:structured-setup"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:r04:1"
+    },
+    {
+      "assertion_id": "assertion:r04:n1-drunk-empath-result",
+      "subject_type": "SEMANTIC_EVENT",
+      "subject_id": "event:r04:n1-drunk-empath-info",
+      "assertion_type": "INFORMATION_DELIVERED",
+      "value": 0,
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:r04:notes-night1",
+        "fragment:r04:structured-setup"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:r04:1"
+    },
+    {
+      "assertion_id": "assertion:r04:n1-poisoned-librarian-choice",
+      "subject_type": "DECISION_SLICE",
+      "subject_id": "decision:r04:n1-poisoned-librarian-info",
+      "assertion_type": "OBSERVED_CHOICE",
+      "value": {
+        "shown_character": "SAINT",
+        "candidate_seat_ids": [
+          "seat:r04:1",
+          "seat:r04:9"
+        ],
+        "impaired_by": "POISONER"
+      },
+      "derivation": "OBSERVED",
+      "fragment_ids": [
+        "fragment:r04:notes-night1",
+        "fragment:r04:structured-setup"
+      ],
+      "inference_provenance": null,
+      "scope": "RECONSTRUCTION",
+      "reconstruction_revision_id": "revision:r04:1"
+    }
+  ],
+  "setup_history": [
+    {
+      "commitment_id": "setup:r04:initial-state",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "reconstruction_revision_id": "revision:r04:1",
+      "setup_order": 1,
+      "setup_order_basis": "CANONICAL_ONLY",
+      "commitment_type": "INITIAL_GAME_STATE",
+      "controller": "UNKNOWN",
+      "subject_seat_id": null,
+      "target_seat_ids": [],
+      "value": {
+        "source_snapshot_id": 79346,
+        "seats": [
+          {
+            "seat_id": "seat:r04:1",
+            "actual_role": "SCARLET_WOMAN",
+            "shown_role": "SCARLET_WOMAN"
+          },
+          {
+            "seat_id": "seat:r04:2",
+            "actual_role": "UNDERTAKER",
+            "shown_role": "UNDERTAKER"
+          },
+          {
+            "seat_id": "seat:r04:3",
+            "actual_role": "SOLDIER",
+            "shown_role": "SOLDIER"
+          },
+          {
+            "seat_id": "seat:r04:4",
+            "actual_role": "RAVENKEEPER",
+            "shown_role": "RAVENKEEPER"
+          },
+          {
+            "seat_id": "seat:r04:5",
+            "actual_role": "FORTUNE_TELLER",
+            "shown_role": "FORTUNE_TELLER"
+          },
+          {
+            "seat_id": "seat:r04:6",
+            "actual_role": "IMP",
+            "shown_role": "IMP"
+          },
+          {
+            "seat_id": "seat:r04:7",
+            "actual_role": "SLAYER",
+            "shown_role": "SLAYER"
+          },
+          {
+            "seat_id": "seat:r04:8",
+            "actual_role": "DRUNK",
+            "shown_role": "EMPATH"
+          },
+          {
+            "seat_id": "seat:r04:9",
+            "actual_role": "POISONER",
+            "shown_role": "POISONER"
+          },
+          {
+            "seat_id": "seat:r04:10",
+            "actual_role": "MONK",
+            "shown_role": "MONK"
+          },
+          {
+            "seat_id": "seat:r04:11",
+            "actual_role": "LIBRARIAN",
+            "shown_role": "LIBRARIAN"
+          },
+          {
+            "seat_id": "seat:r04:12",
+            "actual_role": "SPY",
+            "shown_role": "SPY"
+          },
+          {
+            "seat_id": "seat:r04:13",
+            "actual_role": "WASHERWOMAN",
+            "shown_role": "WASHERWOMAN"
+          },
+          {
+            "seat_id": "seat:r04:14",
+            "actual_role": "VIRGIN",
+            "shown_role": "VIRGIN"
+          }
+        ],
+        "red_herring_seat_id": "seat:r04:10",
+        "demon_bluffs": [
+          "CHEF",
+          "INVESTIGATOR",
+          "SAINT"
+        ]
+      }
+    }
+  ],
+  "event_history": [
+    {
+      "event_id": "event:r04:n1-poison-brian",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "reconstruction_revision_id": "revision:r04:1",
+      "event_order": 1,
+      "phase": "NIGHT_1",
+      "event_type": "POISON_TARGET",
+      "controller": "PLAYER",
+      "actor_seat_id": "seat:r04:9",
+      "subject_seat_id": null,
+      "target_seat_ids": [
+        "seat:r04:11"
+      ],
+      "value": {
+        "target_role": "LIBRARIAN"
+      }
+    },
+    {
+      "event_id": "event:r04:n1-washerwoman-info",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "reconstruction_revision_id": "revision:r04:1",
+      "event_order": 2,
+      "phase": "NIGHT_1",
+      "event_type": "INFORMATION_DELIVERED",
+      "controller": "STORYTELLER",
+      "actor_seat_id": null,
+      "subject_seat_id": "seat:r04:13",
+      "target_seat_ids": [
+        "seat:r04:12",
+        "seat:r04:6"
+      ],
+      "value": {
+        "shown_character": "CHEF"
+      }
+    },
+    {
+      "event_id": "event:r04:n1-librarian-info",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "reconstruction_revision_id": "revision:r04:1",
+      "event_order": 3,
+      "phase": "NIGHT_1",
+      "event_type": "INFORMATION_DELIVERED",
+      "controller": "STORYTELLER",
+      "actor_seat_id": null,
+      "subject_seat_id": "seat:r04:11",
+      "target_seat_ids": [
+        "seat:r04:1",
+        "seat:r04:9"
+      ],
+      "value": {
+        "shown_character": "SAINT",
+        "impaired_by": "POISONER"
+      }
+    },
+    {
+      "event_id": "event:r04:n1-drunk-empath-info",
+      "game_id": "evidence:c0:r04-clocktracker",
+      "reconstruction_revision_id": "revision:r04:1",
+      "event_order": 4,
+      "phase": "NIGHT_1",
+      "event_type": "INFORMATION_DELIVERED",
+      "controller": "STORYTELLER",
+      "actor_seat_id": null,
+      "subject_seat_id": "seat:r04:8",
+      "target_seat_ids": [],
+      "value": 0
+    }
+  ],
+  "history_provenance": [
+    {
+      "history_item_id": "setup:r04:initial-state",
+      "evidence_assertion_ids": [
+        "assertion:r04:initial-state"
+      ]
+    },
+    {
+      "history_item_id": "event:r04:n1-poison-brian",
+      "evidence_assertion_ids": [
+        "assertion:r04:n1-poison-brian"
+      ]
+    },
+    {
+      "history_item_id": "event:r04:n1-washerwoman-info",
+      "evidence_assertion_ids": [
+        "assertion:r04:n1-washerwoman-info"
+      ]
+    },
+    {
+      "history_item_id": "event:r04:n1-librarian-info",
+      "evidence_assertion_ids": [
+        "assertion:r04:n1-librarian-info-result"
+      ]
+    },
+    {
+      "history_item_id": "event:r04:n1-drunk-empath-info",
+      "evidence_assertion_ids": [
+        "assertion:r04:n1-drunk-empath-result"
+      ]
+    }
+  ],
+  "materialization_id": "historical-seed:r04:n1-poisoned-librarian:v1",
+  "prefix_materialization_ref": "prefix:r04:before-n1-poisoned-librarian:v1",
+  "decision": {
+    "decision_id": "decision:r04:n1-poisoned-librarian-info",
+    "game_id": "evidence:c0:r04-clocktracker",
+    "reconstruction_revision_id": "revision:r04:1",
+    "decision_type": "POISONED_LIBRARIAN_INFORMATION",
+    "controller": "STORYTELLER",
+    "historical_prefix_boundary": {
+      "setup_through_order": null,
+      "event_through_order": 2
+    },
+    "subject_seat_id": "seat:r04:11",
+    "observed_choice": {
+      "shown_character": "SAINT",
+      "candidate_seat_ids": [
+        "seat:r04:1",
+        "seat:r04:9"
+      ],
+      "impaired_by": "POISONER"
+    },
+    "resulting_history": {
+      "setup_commitment_id": null,
+      "setup_order": null,
+      "semantic_event_id": "event:r04:n1-librarian-info",
+      "event_order": 3
+    },
+    "rationale_assertion_ids": null,
+    "explicitly_considered_alternatives": null,
+    "explicitly_rejected_alternatives": null
+  },
+  "observed_choice_assertion_ids": [
+    "assertion:r04:n1-poisoned-librarian-choice"
+  ],
+  "choice_verification": "VERIFIED"
+}

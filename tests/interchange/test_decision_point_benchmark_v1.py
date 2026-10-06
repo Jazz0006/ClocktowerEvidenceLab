@@ -139,11 +139,12 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
     encoded = Path("docs/EL_ML1B_READY_HISTORICAL_BENCHMARK_V1.json").read_text(encoding="utf-8")
     manifest = load_decision_point_benchmark_manifest_v1(encoded)
 
-    assert len(manifest.entries) == 6
+    assert len(manifest.entries) == 8
     assert {entry.game_group for entry in manifest.entries} == {
         "game-group:g01",
         "game-group:g05",
         "game-group:g10-game2",
+        "game-group:r04-clocktracker",
     }
     assert all(entry.readiness is BenchmarkReadiness.READY for entry in manifest.entries)
 
@@ -173,6 +174,14 @@ def test_checked_in_el_ml1b_ready_manifest_preserves_conservative_inventory() ->
         "benchmark:el-ml1b:dp-r06": (
             "decision:g10:librarian-information",
             "prefix:g10-game2:before-librarian-information:v1",
+        ),
+        "benchmark:el-ml1b:dp-r07": (
+            "decision:r04:n1-poisoned-librarian-info",
+            "prefix:r04:before-n1-poisoned-librarian:v1",
+        ),
+        "benchmark:el-ml1b:dp-r08": (
+            "decision:r04:n1-drunk-empath-info",
+            "prefix:r04:before-n1-drunk-empath:v1",
         ),
     }
     for benchmark_id, (decision_id, prefix_ref) in expected_materialized.items():

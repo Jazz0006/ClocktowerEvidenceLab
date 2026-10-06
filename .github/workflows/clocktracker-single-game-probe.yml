@@ -1,11 +1,12 @@
-name: CT-1 one-shot R04 probe
+name: ClockTracker single-game probe
 
 on:
-  push:
-    branches:
-      - el-ml1b-8-r02-prefix-audit
-    paths:
-      - .github/workflows/ct1-one-shot-r02.yml
+  workflow_dispatch:
+    inputs:
+      game_id:
+        description: Public ClockTracker game UUID
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -22,19 +23,23 @@ jobs:
           cache: pip
       - name: Install acquisition tooling
         run: python -m pip install -e .
-      - name: Fetch and normalize explicit R04 payload
+      - name: Fetch and normalize explicit game
         env:
-          GAME_ID: ffb40a93-3d7b-42c4-bba8-bc9c363dcd30
+          GAME_ID: ${{ inputs.game_id }}
         run: |
-          clocktower-clocktracker-probe "$GAME_ID" > /tmp/clocktracker-r04.json
+          clocktower-clocktracker-probe "$GAME_ID" > /tmp/clocktracker-game.json
           python - <<'PY'
           import json
 
-          data = json.load(open("/tmp/clocktracker-r04.json", encoding="utf-8"))
+          data = json.load(open("/tmp/clocktracker-game.json", encoding="utf-8"))
           summary = {
               "game_id": data["game_id"],
+              "date": data["date"],
+              "script": data["script"],
               "player_count": data["player_count"],
+              "traveler_count": data["traveler_count"],
               "storyteller": data["storyteller"],
+              "co_storytellers": data["co_storytellers"],
               "demon_bluffs": data["demon_bluffs"],
               "grimoire_count": len(data["grimoires"]),
               "grimoires": [
@@ -42,14 +47,16 @@ jobs:
                       "grimoire_id": grim["grimoire_id"],
                       "orders_unique": grim["orders_unique"],
                       "seat_count": len(grim["seats"]),
-                      "orders": [seat["order"] for seat in grim["seats"]],
-                      "roles": [
+                      "seats": [
                           {
-                              "order": seat["order"],
                               "source_index": seat["source_index"],
+                              "order": seat["order"],
                               "player_name": seat["player_name"],
                               "role_id": seat["role_id"],
                               "related_role_id": seat["related_role_id"],
+                              "alignment": seat["alignment"],
+                              "is_dead": seat["is_dead"],
+                              "reminders": seat["reminders"],
                           }
                           for seat in grim["seats"]
                       ],
