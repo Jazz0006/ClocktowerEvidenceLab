@@ -1,5 +1,14 @@
 # Clocktower Evidence Lab — AI Development Instructions
 
+## Evidence-first development policy (2026-10-15; supersedes conflicting test-first defaults)
+
+- Do not mechanically write a new test, manufacture RED/GREEN, or introduce test-only abstractions before every feature, fix, refactor or API change. Define observable acceptance, ownership, risk, and independent evidence before selecting validation.
+- Choose tests only when they protect durable behavior and give useful repeatable proof. Valid evidence also includes existing suites, focused integration, real runtime/OS/UI observation, independent fixtures, API logs, static/type/build checks, and reviewed diffs. AI-written tests cannot certify their own requirement interpretation.
+- Optional test-first is appropriate when an early executable failing example is genuinely beneficial. Avoid duplicate assertions and retire superseded implementation-shape tests only after verifying preserved contract coverage.
+- For immutable evidence, source provenance, schema migrations, unknown-value preservation and deterministic exports, retain durable automated regression and integration coverage. Never replace actual primary-source verification with self-authored synthetic expectations.
+- Retain all existing required CI, independent review, release/merge checks, security and data-integrity requirements. This section overrides any older sentence that implicitly mandates a new RED before a source edit.
+
+
 > Role: **NORMATIVE PROJECT-LEVEL WORKING AGREEMENT**
 >
 > Applies to ChatGPT, Codex and other implementation agents working on this repository.

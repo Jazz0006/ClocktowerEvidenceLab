@@ -93,21 +93,11 @@ Focused tests should cover:
 
 Live RSS/network probing should not replace deterministic parser/domain tests. Keep network-dependent checks as bounded acquisition validation, not the core unit-test contract.
 
-## 4. Test-first policy
+## 4. Evidence-first policy (2026-10-15)
 
-For a new stable invariant:
+For every change: define the protected invariant and independent observable acceptance, assess risk and existing evidence, implement, and obtain the cheapest reliable proof. Do **not** require a new test file or RED/GREEN sequence for each change. Early failing tests are an optional technique where useful.
 
-```text
-define invariant
-→ focused RED
-→ implementation
-→ focused GREEN
-→ affected integration
-```
-
-For a behavior-preserving refactor, existing tests are valid test-first evidence.
-
-Do not add brittle tests that assert internal source shape.
+Stable provenance, migrations, immutable evidence and UNKNOWN preservation still require durable, focused regression or integration coverage; an AI-authored test by itself is not independent acceptance. For exploratory acquisition and UI workflows prefer real-source/runtime verification. Refactors may rely on existing contracts, compile/static checks and exact diff audit. Do not add brittle source-shape assertions; retire outdated tests only with verified remaining coverage.
 
 ## 5. Migration policy
 
