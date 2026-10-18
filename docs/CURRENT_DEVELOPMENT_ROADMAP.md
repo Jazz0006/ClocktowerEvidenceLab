@@ -191,7 +191,15 @@ Using that structured setup plus the existing Night-1 Notes chronology, two R04 
 
 Both use one CANONICAL_ONLY grouped initial setup state so EvidenceLab does not fabricate internal ordering among Red Herring, Drunk, bluff and role-assignment setup commitments. READY inventory is now **8 historical decision points across 4 game groups**.
 
-### EL-ML1C — Whole-Game Source Acquisition Audit — CT-1 FOUNDATION VALIDATED / BROAD SCREENING STILL GATED
+### EL-ML1B-10 — R04-D05 later-game prefix gate — COMPLETE / NOT PROMOTED
+
+R04-D05 was re-audited using the complete CT-1 structured setup plus the full public ClockTracker Notes; see `docs/EL_ML1B_10_R04_D05_LATER_GAME_PREFIX_AUDIT_2026-10-06.md`.
+
+The mechanical prefix is strong: the Notes preserve Night/Day actions, information outputs, deaths/executions, nominations/votes and the Night-4 chain `Deonna poisons Undertaker -> Imp self-kills -> Hollie becomes Imp -> poisoned Undertaker shown Scarlet Woman`. However bounded Notes audit run `37450853355` confirms that role-claim chronology, discussion, private conversations and table trust/suspicion state are not recorded.
+
+Because D05 occurs on Night 4 after three days of social history, treating missing claims as an empty claim set would create a synthetic historical state. D05 therefore remains **PARTIAL / MECHANICAL_PREFIX_READY / SOCIAL_PREFIX_INCOMPLETE**. This is a source-complement gap, not a role-map or mechanical-history gap.
+
+### EL-ML1C — Whole-Game Source Acquisition Audit — CT-1 FOUNDATION VALIDATED / TARGETED VIDEO COMPLEMENT NOW REQUIRED FOR LATER-GAME GROWTH
 
 EL-ML1C pre-audited how new complete Trouble Brewing games should be acquired if EL-ML1B repair cannot reach the pilot target.
 
@@ -216,7 +224,7 @@ The audit confirms that ClockTracker public records can sometimes contain detail
 
 CT-1 foundation is now implemented and live-validated on explicit R02 and R04 game IDs; see `docs/EL_ML1C_CT1_CLOCKTRACKER_STRUCTURED_SOURCE_PILOT_2026-10-06.md`. The reusable `.github/workflows/clocktracker-single-game-probe.yml` workflow provides a network-capable explicit-ID acquisition runtime while Mini MCP remains offline.
 
-The broader 25-game CT-1 screening batch, YT-1 and DG-1 remain gated. Existing-corpus prefix repair should continue until its marginal yield drops again.
+The broader 25-game CT-1 screening batch remains gated while existing early/setup repairs still yield value. However R04-D05 demonstrates that ClockTracker alone cannot satisfy the later-game social-context target. A bounded targeted YT-1/video complement may now proceed specifically for later-game candidates with strong structured ClockTracker records; this is not authorization for broad video ingestion.
 
 ### EL-LRE0 — Host LRE Evidence Alignment — AUDIT COMPLETE / ACTIVE ROUTE
 
@@ -392,13 +400,13 @@ Authorities:
 
 Run **EL-ML1B — canonical benchmark materialization + existing-corpus prefix repair**:
 
-1. **EL-ML1B-10:** audit R04-D05 poisoned Undertaker Night-4 display (`Scarlet Woman`) using the now-complete structured setup plus Notes event history; promote only if the exact decision-time prefix is complete enough without social-state guessing;
-2. keep R02 PARTIAL until exact pre-Investigator setup chronology is source-backed;
-3. continue whole-game repair across R01/R03 and other Investigator/Ravenkeeper candidates as source access permits;
-4. keep the R06 poisoned-Ravenkeeper Night-4 case PARTIAL until Night 1–3 and complete setup state become source-backed;
+1. **EL-ML1B-11:** continue low-cost existing-corpus repair with R01/R03 and remaining early Investigator/Ravenkeeper candidates, using CT-1 structured retrieval where stable game IDs exist;
+2. **EL-ML1C YT-1 targeted complement:** for later-game candidates such as R04-D05, search for matching Storyteller/table video or equivalent source that can recover public claim/discussion state; keep this bounded and candidate-driven;
+3. keep R02 PARTIAL until exact pre-Investigator setup chronology is source-backed;
+4. keep R06 poisoned-Ravenkeeper PARTIAL until Night 1–3 and complete setup/social state are source-backed;
 5. preserve FT1-A, WW2 and UT1-A as verified comparative expert-decision evidence unless independent complete-game sources later identify their underlying games;
 6. keep G10 17:29 / 18:05 / 18:50 PARTIAL until a source artifact exposes the missing chronological event state;
-7. if existing repair still cannot approach 20 READY points or diversity/later-game targets, start the bounded 25-game CT-1 screening batch, then YT-1 / DG-1 as needed.
+7. start the broader 25-game CT-1 screening batch only when existing-corpus repair yield drops; use YT-1 / DG-1 selectively to satisfy later-game and social-context coverage.
 
 C2 and EL-LRE remain bounded on-demand lanes for benchmark-discovered evidence gaps. Keep broad quota-driven C1 scouting, broad Drunk acquisition, broad C5/E3 hunting and broad podcast policy mining stopped.
 

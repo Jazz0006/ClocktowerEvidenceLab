@@ -326,13 +326,14 @@ Observed output:
 
 Current replay readiness:
 
-- historical event prefix through Night-4 order 026: largely READY from Notes;
-- structured role map contains Reyzant = Undertaker; Notes alias `Wesley ↔ Reyzant` remains INFERRED;
+- historical **mechanical** event prefix through Night-4 order 026: READY from Notes;
+- structured role map contains Reyzant = Undertaker; Notes alias `Wesley ↔ Reyzant` remains RECONSTRUCTED / not source-authored;
 - exact seat/role setup: READY at structured-source level;
-- exact full decision-time prefix, including any omitted socially relevant chronology: still requires bounded audit;
+- bounded full-Notes audit run `37450853355` confirms nominations/votes but does not preserve role-claim, discussion or table-belief chronology;
+- benchmark status: **PARTIAL / MECHANICAL_PREFIX_READY / SOCIAL_PREFIX_INCOMPLETE**; do not promote from ClockTracker alone;
 - current CampBoardGameHost structured shadow: historical replay capability must be re-audited downstream.
 
-This is an excellent later-phase replay case for future SDE historical shadow work.
+See `docs/EL_ML1B_10_R04_D05_LATER_GAME_PREFIX_AUDIT_2026-10-06.md`.
 
 ## 7. Replay blockers
 
@@ -378,4 +379,4 @@ Do not repeat raw-grimoire acquisition for R04; that layer is now complete.
 
 Re-audit R04 decision boundaries using the structured role map plus Notes chronology. Promote only a decision whose exact historical prefix can be represented without importing final-snapshot state backward.
 
-The strongest next R04 candidate is D05 (poisoned Undertaker display) because its multi-night event chain is already substantially reconstructed. Setup-time D01/D02 and first-night D03/D04 remain more sensitive to unresolved setup ordering.
+D05 has now been audited and remains PARTIAL because later-game public claim / table-belief history is not preserved by the ClockTracker record. D03/D04 are materialized as DP-R07/DP-R08. Setup-time D01/D02 still require exact setup-commitment chronology.

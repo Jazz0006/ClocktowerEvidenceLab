@@ -1,6 +1,6 @@
 # NEXT DEVELOPMENT HANDOFF — EL-ML1B Decision Benchmark Build
 
-> Current state: **EL-ML1A COMPLETE / EL-ML1B READY INVENTORY EXPANDED TO 8 CANONICAL SEEDS ACROSS 4 GAME GROUPS / DP-R07 R04 POISONED-LIBRARIAN + DP-R08 R04 DRUNK-EMPATH MATERIALIZED / EL-ML1B-2 G10 LONGITUDINAL COMPLETE — 0 OF 3 PROMOTED / EL-ML1B-3 R04 SOURCE-DATA REPAIR COMPLETE — 5 OF 5 ORIGINAL BLOCKERS CLOSED / EL-ML1B-4 FT1-A + EL-ML1B-5 WW2 + EL-ML1B-6 UT1-A NOT PROMOTED / EL-ML1B-7 R06 RAVENKEEPER NOT PROMOTED / EL-ML1B-8 R02 STRUCTURED SETUP RECOVERED BUT SETUP-CHRONOLOGY BLOCKED / EL-ML1C CT-1 FOUNDATION LIVE-VALIDATED ON R02 + R04 / NEXT EL-ML1B-10 R04-D05 LATER-GAME PREFIX AUDIT / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
+> Current state: **EL-ML1A COMPLETE / EL-ML1B READY INVENTORY = 8 CANONICAL SEEDS ACROSS 4 GAME GROUPS / DP-R07 R04 POISONED-LIBRARIAN + DP-R08 R04 DRUNK-EMPATH MATERIALIZED / EL-ML1B-10 R04-D05 COMPLETE — MECHANICAL_PREFIX_READY BUT SOCIAL_PREFIX_INCOMPLETE / EL-ML1B-2 G10 LONGITUDINAL 0 OF 3 PROMOTED / EL-ML1B-3 R04 SOURCE-DATA REPAIR 5 OF 5 ORIGINAL BLOCKERS CLOSED / FT1-A + WW2 + UT1-A + R06 RAVENKEEPER NOT PROMOTED / R02 STRUCTURED SETUP RECOVERED BUT SETUP-CHRONOLOGY BLOCKED / EL-ML1C CT-1 LIVE-VALIDATED / TARGETED YT-1 SOCIAL-CONTEXT COMPLEMENT NOW JUSTIFIED / NEXT EL-ML1B-11 R01/R03 EXISTING-CORPUS REPAIR + BOUNDED YT-1 LATER-GAME COMPLEMENT / C2 ON-DEMAND / EL-LRE VERIFIED BUNDLE RETAINED / EL-TBGS-0/1 ACCEPTED / EL-ML0 ACCEPTED**
 >
 > Repository: `Jazz0006/ClocktowerEvidenceLab`
 >
@@ -33,14 +33,15 @@
 23. `docs/EL_ML1C_CT1_CLOCKTRACKER_STRUCTURED_SOURCE_PILOT_2026-10-06.md`
 24. `docs/EL_ML1B_R04_D03_CANONICAL_SEED_V1.json`
 25. `docs/EL_ML1B_R04_D04_CANONICAL_SEED_V1.json`
-26. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
-27. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
-28. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
-29. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
-30. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
-31. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
-32. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
-33. this file
+26. `docs/EL_ML1B_10_R04_D05_LATER_GAME_PREFIX_AUDIT_2026-10-06.md`
+27. `docs/ML_RECOMMENDATION_EVIDENCE_READINESS_CONTRACT_2026-10-03.md`
+28. `docs/EL_ML1C_WHOLE_GAME_SOURCE_ACQUISITION_AUDIT_2026-10-05.md`
+29. `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md`
+30. `docs/EL_LRE_REPLACEMENT_POLICY_EVIDENCE_ALIGNMENT_2026-10-04.md`
+31. `docs/C2_TB_PODCAST_BATCH_INGESTION_2026-09-29.md`
+32. `docs/PODCAST_EXPERT_RATIONALE_ACQUISITION_WORKFLOW.md`
+33. `docs/C3_DRUNK_CANDIDATE_COMPARISON_EVIDENCE_2026-09-30.md`
+34. this file
 
 The detailed pre-LRE C5/E3 continuation snapshot is archived at:
 `docs/archive/PRE_LRE_NEXT_DEVELOPMENT_HANDOFF_2026-10-04.md`.
@@ -101,8 +102,9 @@ EL-ML1B-1B DP-R01..R06 canonical seeds         COMPLETE
 -> EL-ML1B-7 R06 poisoned-Ravenkeeper audit      COMPLETE / NOT PROMOTED
 -> EL-ML1B-8 R02 structured repair               COMPLETE / SETUP-CHRONOLOGY BLOCKED
 -> EL-ML1B-9 R04 D03 + D04 canonical seeds       COMPLETE / DP-R07 + DP-R08
--> EL-ML1B-10 R04-D05 later-game prefix audit    NEXT
--> repair R01/R03 and remaining whole-game candidates
+-> EL-ML1B-10 R04-D05 later-game prefix audit    COMPLETE / NOT PROMOTED — SOCIAL PREFIX INCOMPLETE
+-> EL-ML1B-11 R01/R03 existing-corpus repair     NEXT
+-> targeted YT-1 later-game social-context complement IN PARALLEL / BOUNDED
 -> bounded CT-1 25-game screening only if repair yield drops
 ```
 
@@ -140,13 +142,13 @@ Use `docs/EL_LRE_VERIFIED_HOST_HANDOFF_INDEX_2026-10-04.md` as the consolidated 
 
 ### EL-ML1B priority
 
-1. **R04-D05 later-game prefix audit next:** use the now-complete structured setup plus Notes chronology through Night 4 and test the poisoned Undertaker -> Scarlet Woman display against the no-hindsight gate.
-2. **R02 remains PARTIAL / SETUP_CHRONOLOGY_BLOCKED:** raw role/bluff recovery is complete; do not promote from final grimoire state alone.
-3. **R06 poisoned-Ravenkeeper remains PARTIAL:** the Night-4 local chain is strong, but Night 1–3 and complete setup are missing.
-4. **FT1-A, WW2 and UT1-A remain verified comparative/rationale evidence, not full-state seeds.**
-5. **G10 longitudinal audit remains closed for now:** later decisions still lack complete chronological state.
-6. **After R04-D05:** repair R01/R03 and remaining Investigator/Ravenkeeper whole-game cases.
-7. **New complete games only if needed:** if existing repair still cannot approach 20 READY points or diversity/later-game targets, start the bounded 25-game CT-1 screen, then YT-1 / DG-1 as needed.
+1. **R01/R03 existing-corpus repair next:** use CT-1 when stable ClockTracker IDs exist; prioritize candidates that can add independent game/Storyteller coverage without fabricated setup chronology.
+2. **Targeted YT-1 complement for later-game:** R04-D05 proves ClockTracker alone lacks role-claim/discussion/table-belief state after several days. Search only for matching or equivalent full-game video sources needed to recover that social context; do not start broad video ingestion.
+3. **R04-D05 remains PARTIAL:** mechanical Night-4 prefix is strong, but public claim / table-belief chronology is missing.
+4. **R02 remains PARTIAL / SETUP_CHRONOLOGY_BLOCKED:** raw role/bluff recovery is complete; do not promote from final grimoire state alone.
+5. **R06 poisoned-Ravenkeeper remains PARTIAL:** the Night-4 local chain is strong, but Night 1–3 and complete setup/social state are missing.
+6. **FT1-A, WW2 and UT1-A remain verified comparative/rationale evidence, not full-state seeds.**
+7. **Broad acquisition gate:** start the bounded 25-game CT-1 screen only when existing-corpus repair yield drops; use YT-1 / DG-1 selectively to meet later-game and social-context coverage.
 
 The existing Priority-1/Priority-2 EL-LRE verified set remains retrieval/evaluation evidence and may still be consumed by Host, but it no longer defines EvidenceLab's default continuation order.
 
