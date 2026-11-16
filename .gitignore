@@ -31,3 +31,6 @@ media/
 
 # Never commit private/unreviewed submissions
 corpus/private/
+
+# Local editable-install metadata
+*.egg-info/
