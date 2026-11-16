@@ -1,0 +1,169 @@
+{
+  "game_id": "de5f126b-89f5-4c78-a898-f5724a93430e",
+  "extractor": "in-session-llm, prompt v1",
+  "names": [
+    {
+      "alias": "P1",
+      "basis": "NOT_A_PLAYER",
+      "evidence_line_ids": [
+        "PRE.1"
+      ]
+    }
+  ],
+  "setup_choices": [],
+  "clues": [
+    {
+      "line_id": "N1.1",
+      "night": 1,
+      "recipient_seat": 1,
+      "ability": "investigator",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [
+          7,
+          6
+        ],
+        "role_id": "scarlet_woman"
+      },
+      "note_annotations": [
+        "Drunk"
+      ],
+      "quote": "The Drunk Investigator sees a Scarlet Woman between the Empath and Fortune Teller"
+    },
+    {
+      "line_id": "N1.2",
+      "night": 1,
+      "recipient_seat": 7,
+      "ability": "empath",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "number": 0
+      },
+      "note_annotations": [],
+      "quote": "The Empath learns a 0"
+    },
+    {
+      "line_id": "N1.3",
+      "night": 1,
+      "recipient_seat": 6,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        7,
+        5
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "NO"
+      },
+      "note_annotations": [],
+      "quote": "The Fortune Teller picks S7 and S5 and learns No"
+    },
+    {
+      "line_id": "N2.2",
+      "night": 2,
+      "recipient_seat": 3,
+      "ability": "ravenkeeper",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "role_id": "undertaker"
+      },
+      "note_annotations": [],
+      "quote": "The Ravenkeeper learns the Undertaker"
+    },
+    {
+      "line_id": "N2.3",
+      "night": 2,
+      "recipient_seat": 4,
+      "ability": "undertaker",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "role_id": "drunk"
+      },
+      "note_annotations": [],
+      "quote": "The Undertaker learns Drunk"
+    },
+    {
+      "line_id": "N2.4",
+      "night": 2,
+      "recipient_seat": 7,
+      "ability": "empath",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "number": 0
+      },
+      "note_annotations": [],
+      "quote": "Empath gets a 0"
+    },
+    {
+      "line_id": "N2.5",
+      "night": 2,
+      "recipient_seat": 6,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        8,
+        4
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "YES"
+      },
+      "note_annotations": [
+        "Red Herring"
+      ],
+      "quote": "Fortune Teller picks S8 and S4 and gets a Yes (Red Herring)"
+    },
+    {
+      "line_id": "N3.2",
+      "night": 3,
+      "recipient_seat": 4,
+      "ability": "undertaker",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "role_id": "slayer"
+      },
+      "note_annotations": [],
+      "quote": "The Undertaker learns Slayer"
+    },
+    {
+      "line_id": "N3.3",
+      "night": 3,
+      "recipient_seat": 6,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        2,
+        4
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "YES"
+      },
+      "note_annotations": [
+        "Imp",
+        "Red Herring"
+      ],
+      "quote": "The Fortune Teller checks S2 (Imp) and S4 (Red Herring) and learns Yes"
+    },
+    {
+      "line_id": "N4.2",
+      "night": 4,
+      "recipient_seat": 6,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        7,
+        2
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "YES"
+      },
+      "note_annotations": [],
+      "quote": "The Fortune Teller picks S7 and S2 and learns Yes"
+    }
+  ],
+  "skipped": []
+}

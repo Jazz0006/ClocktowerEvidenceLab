@@ -1,0 +1,269 @@
+{
+  "game_id": "ffb40a93-3d7b-42c4-bba8-bc9c363dcd30",
+  "extractor": "in-session-llm, prompt v1",
+  "names": [
+    {
+      "alias": "P1",
+      "seat": 6,
+      "basis": "ROLE_EVIDENCE",
+      "evidence_line_ids": [
+        "N2.3",
+        "N3.3",
+        "N4.2"
+      ]
+    },
+    {
+      "alias": "P2",
+      "seat": 1,
+      "basis": "NAME_VARIANT",
+      "evidence_line_ids": [
+        "N1.4"
+      ]
+    },
+    {
+      "alias": "P3",
+      "seat": 2,
+      "basis": "ROLE_EVIDENCE",
+      "evidence_line_ids": [
+        "N2.5",
+        "N4.4"
+      ]
+    }
+  ],
+  "setup_choices": [
+    {
+      "line_id": "SETUP.1",
+      "kind": "RED_HERRING",
+      "seats": [
+        10
+      ],
+      "role_ids": [],
+      "quote": "S10 (Monk) is red herring for S5"
+    },
+    {
+      "line_id": "N1.1",
+      "kind": "DEMON_BLUFFS",
+      "seats": [
+        6
+      ],
+      "role_ids": [
+        "chef",
+        "investigator",
+        "saint"
+      ],
+      "quote": "P1 sees Chef/Investigator/Saint"
+    }
+  ],
+  "clues": [
+    {
+      "line_id": "N1.3",
+      "night": 1,
+      "recipient_seat": 13,
+      "ability": "washerwoman",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [
+          12,
+          6
+        ],
+        "role_id": "chef"
+      },
+      "note_annotations": [
+        "Spy"
+      ],
+      "quote": "S13 sees S12/P1 as Chef (Spy)"
+    },
+    {
+      "line_id": "N1.4",
+      "night": 1,
+      "recipient_seat": 11,
+      "ability": "librarian",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [
+          1,
+          9
+        ],
+        "role_id": "saint"
+      },
+      "note_annotations": [
+        "poisoned"
+      ],
+      "quote": "S11 sees P2/S9 as Saint (poisoned)"
+    },
+    {
+      "line_id": "N1.5",
+      "night": 1,
+      "recipient_seat": 8,
+      "ability": "empath",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "number": 0
+      },
+      "note_annotations": [
+        "drunk"
+      ],
+      "quote": "S8 gets 0 (drunk)"
+    },
+    {
+      "line_id": "N1.6",
+      "night": 1,
+      "recipient_seat": 5,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        7,
+        2
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "NO"
+      },
+      "note_annotations": [],
+      "quote": "S5 picks S7/P3: no"
+    },
+    {
+      "line_id": "N2.4",
+      "night": 2,
+      "recipient_seat": 4,
+      "ability": "ravenkeeper",
+      "chosen_seats": [
+        9
+      ],
+      "shown": {
+        "seats": [],
+        "role_id": "poisoner"
+      },
+      "note_annotations": [],
+      "quote": "S4 ravenkeeps S9 as Poisoner"
+    },
+    {
+      "line_id": "N2.5",
+      "night": 2,
+      "recipient_seat": 2,
+      "ability": "undertaker",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "role_id": "soldier"
+      },
+      "note_annotations": [],
+      "quote": "P3 undertakes Soldier"
+    },
+    {
+      "line_id": "N2.6",
+      "night": 2,
+      "recipient_seat": 8,
+      "ability": "empath",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "number": 0
+      },
+      "note_annotations": [
+        "drunk"
+      ],
+      "quote": "S8 gets 0 (drunk)"
+    },
+    {
+      "line_id": "N2.7",
+      "night": 2,
+      "recipient_seat": 5,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        10,
+        13
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "YES"
+      },
+      "note_annotations": [
+        "red herring"
+      ],
+      "quote": "S5 picks S10/S13: YES (red herring)"
+    },
+    {
+      "line_id": "N3.4",
+      "night": 3,
+      "recipient_seat": 5,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        10,
+        6
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "YES"
+      },
+      "note_annotations": [
+        "red herring AND demon"
+      ],
+      "quote": "S5 picks S10/P1: YES (red herring AND demon)"
+    },
+    {
+      "line_id": "N4.4",
+      "night": 4,
+      "recipient_seat": 2,
+      "ability": "undertaker",
+      "chosen_seats": [],
+      "shown": {
+        "seats": [],
+        "role_id": "scarlet_woman"
+      },
+      "note_annotations": [
+        "poisoned"
+      ],
+      "quote": "P3 undertakes Scarlet Woman (poisoned)"
+    },
+    {
+      "line_id": "N4.5",
+      "night": 4,
+      "recipient_seat": 5,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        13,
+        6
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "YES"
+      },
+      "note_annotations": [],
+      "quote": "S5 picks S13/P1: YES"
+    },
+    {
+      "line_id": "N5.3",
+      "night": 5,
+      "recipient_seat": 5,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        13,
+        14
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "NO"
+      },
+      "note_annotations": [],
+      "quote": "S5 picks S13/S14: no"
+    },
+    {
+      "line_id": "N6.4",
+      "night": 6,
+      "recipient_seat": 5,
+      "ability": "fortune_teller",
+      "chosen_seats": [
+        14,
+        6
+      ],
+      "shown": {
+        "seats": [],
+        "answer": "YES"
+      },
+      "note_annotations": [],
+      "quote": "S5 picks S14/P1: YES"
+    }
+  ],
+  "skipped": []
+}
